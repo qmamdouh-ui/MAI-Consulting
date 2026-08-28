@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+:root{
+  --blue:#003E8A;--blue-dark:#001f4d;--blue-mid:#002855;
+  --blue-light:rgba(0,62,138,.09);--gold:#C9A84C;--gold-dim:rgba(201,168,76,.15);
+  --charcoal:#4D4D4D;--white:#fff;--off:#f6f8fc;
+  --surface:#fbf9f8;--outline:rgba(0,62,138,.11);--txt:#1a1a2e;
+  --success:#1a7a4a;--error-c:#c0392b;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--off);color:var(--charcoal);overflow-x:hidden;}
+.material-symbols-outlined{font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;display:inline-block;vertical-align:middle;line-height:1;}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(140deg,#00122e 0%,var(--blue) 60%,var(--blue-dark) 100%);
+  padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;
+}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03)1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03)1px,transparent 1px);background-size:40px 40px;}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;}
+.o1{width:340px;height:340px;background:rgba(201,168,76,.07);top:-80px;right:-40px;}
+.o2{width:240px;height:240px;background:rgba(0,62,138,.2);bottom:0;left:-60px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);color:var(--gold);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border-radius:9999px;margin-bottom:22px;position:relative;}
+.badge-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(30px,5vw,52px);font-weight:800;color:var(--white);line-height:1.12;max-width:620px;margin:0 auto 14px;position:relative;}
+.hero h1 span{background:linear-gradient(90deg,var(--gold),#e8c86a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero p{font-size:15px;color:rgba(255,255,255,.65);max-width:480px;margin:0 auto;line-height:1.75;position:relative;}
+
+/* ── MAIN LAYOUT ── */
+.main{max-width:1060px;margin:0 auto;padding:52px 24px 80px;display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start;}
+@media(max-width:780px){.main{grid-template-columns:1fr;}}
+
+/* ── FORM CARD ── */
+.form-card{background:var(--white);border:1px solid var(--outline);border-radius:16px;padding:40px 36px;}
+@media(max-width:480px){.form-card{padding:28px 20px;}}
+
+.form-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:800;color:var(--txt);margin-bottom:6px;}
+.form-sub{font-size:13px;color:var(--charcoal);line-height:1.65;margin-bottom:32px;}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:560px){.form-row{grid-template-columns:1fr;}}
+
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:18px;}
+.field label{font-size:11px;font-weight:700;letter-spacing:.5px;color:var(--charcoal);text-transform:uppercase;}
+.field input,.field select,.field textarea{
+  padding:11px 14px;border:1px solid var(--outline);border-radius:8px;
+  font-size:14px;font-family:'Inter',sans-serif;color:var(--txt);
+  background:var(--off);transition:border .2s,box-shadow .2s;
+  width:100%;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--blue);
+  box-shadow:0 0 0 3px rgba(0,62,138,.08);
+}
+.field textarea{resize:vertical;min-height:120px;line-height:1.6;}
+.field select{cursor:pointer;}
+
+/* required star */
+.req{color:var(--gold);margin-left:2px;}
+
+/* checkboxes */
+.checkbox-group{display:flex;flex-direction:column;gap:10px;}
+.cb-item{display:flex;align-items:center;gap:10px;cursor:pointer;}
+.cb-item input[type=checkbox]{width:16px;height:16px;accent-color:var(--blue);cursor:pointer;flex-shrink:0;}
+.cb-item span{font-size:13px;color:var(--charcoal);line-height:1.4;}
+
+/* submit btn */
+.submit-btn{
+  width:100%;padding:15px;border-radius:8px;border:none;cursor:pointer;
+  background:var(--blue);color:var(--white);font-weight:700;font-size:15px;
+  font-family:'Inter',sans-serif;transition:all .25s;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  margin-top:8px;
+}
+.submit-btn:hover{background:var(--blue-mid);transform:translateY(-1px);}
+.submit-btn:active{transform:translateY(0);}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+.submit-btn .material-symbols-outlined{font-size:20px;}
+
+/* status messages */
+.status-msg{
+  display:none;padding:14px 18px;border-radius:8px;margin-top:16px;
+  font-size:13px;font-weight:600;line-height:1.5;
+  align-items:flex-start;gap:10px;
+}
+.status-msg.visible{display:flex;}
+.status-success{background:rgba(26,122,74,.08);border:1px solid rgba(26,122,74,.25);color:var(--success);}
+.status-error{background:rgba(192,57,43,.07);border:1px solid rgba(192,57,43,.2);color:var(--error-c);}
+.status-msg .material-symbols-outlined{font-size:18px;flex-shrink:0;margin-top:1px;}
+
+/* ── SIDEBAR ── */
+.sidebar{display:flex;flex-direction:column;gap:16px;}
+
+.info-card{background:var(--white);border:1px solid var(--outline);border-radius:14px;padding:24px;}
+.info-card-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:16px;}
+
+.contact-item{display:flex;gap:12px;align-items:flex-start;margin-bottom:16px;}
+.contact-item:last-child{margin-bottom:0;}
+.contact-icon{width:36px;height:36px;border-radius:8px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.contact-icon .material-symbols-outlined{font-size:18px;color:var(--blue);}
+.contact-item h4{font-size:12px;font-weight:700;color:var(--txt);margin-bottom:2px;}
+.contact-item p,.contact-item a{font-size:13px;color:var(--charcoal);line-height:1.5;text-decoration:none;}
+.contact-item a:hover{color:var(--blue);}
+
+/* response time card */
+.response-card{background:linear-gradient(140deg,#001830,var(--blue-mid));border-radius:14px;padding:24px;}
+.response-card h3{font-family:'Playfair Display',serif;font-size:16px;font-weight:800;color:var(--white);margin-bottom:10px;}
+.response-card p{font-size:12px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:16px;}
+.response-item{display:flex;gap:8px;align-items:center;font-size:12px;color:rgba(255,255,255,.75);margin-bottom:8px;}
+.response-item:last-child{margin-bottom:0;}
+.response-item .material-symbols-outlined{font-size:15px;color:var(--gold);}
+
+/* what to expect */
+.expect-card{background:var(--off);border:1px solid var(--outline);border-radius:14px;padding:22px;}
+.expect-step{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;}
+.expect-step:last-child{margin-bottom:0;}
+.expect-num{width:24px;height:24px;border-radius:50%;background:var(--blue);color:var(--white);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.expect-step h4{font-size:13px;font-weight:700;color:var(--txt);margin-bottom:2px;}
+.expect-step p{font-size:12px;color:var(--charcoal);line-height:1.5;}
+
+/* linkedin btn */
+.linkedin-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:12px;border-radius:8px;
+  border:1px solid var(--outline);background:var(--white);
+  font-size:13px;font-weight:700;color:var(--charcoal);
+  text-decoration:none;transition:all .25s;
+}
+.linkedin-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light);}
+.linkedin-btn .material-symbols-outlined{font-size:18px;}
+
+/* spinner */
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.spinner{width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;}
+
+
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="hero-badge"><span class="badge-dot"></span>Let's Talk</div>
+  <h1>Start a <span>Conversation</span></h1>
+  <p>Tell us about your organization and goals. We'll get back to you within one business day to explore how we can work together.</p>
+</section>
+
+
+
+<!-- ── MAIN ── -->
+<div class="main">
+
+  <!-- FORM -->
+  <div class="form-card">
+    <div class="form-title">Send Us a Message</div>
+    <p class="form-sub">Fill in the details below and we'll respond within one business day. Fields marked <span class="req">*</span> are required.</p>
+
+    <form id="contact-form" novalidate>
+
+      <div class="form-row">
+        <div class="field">
+          <label>Full Name <span class="req">*</span></label>
+          <input type="text" id="from_name" name="from_name" placeholder="e.g. Sara Johnson" required/>
+        </div>
+        <div class="field">
+          <label>Email Address <span class="req">*</span></label>
+          <input type="email" id="from_email" name="from_email" placeholder="e.g. sara@org.com" required/>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label>Organization</label>
+          <input type="text" id="organization" name="organization" placeholder="e.g. Green Future NGO"/>
+        </div>
+        <div class="field">
+          <label>Job Title / Role</label>
+          <input type="text" id="job_title" name="job_title" placeholder="e.g. Program Director"/>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label>Sector <span class="req">*</span></label>
+          <select id="sector" name="sector" required>
+            <option value="">Select your sector…</option>
+            <option>Nonprofit / NGO</option>
+            <option>Private Sector</option>
+            <option>Government / Public Sector</option>
+            <option>Training Centre</option>
+            <option>Individual / Freelancer</option>
+            <option>Academic / Research</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Team Size</label>
+          <select id="team_size" name="team_size">
+            <option value="">Select…</option>
+            <option>Just me</option>
+            <option>2–10</option>
+            <option>11–50</option>
+            <option>51–200</option>
+            <option>200+</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Service of Interest <span class="req">*</span></label>
+        <select id="service" name="service" required>
+          <option value="">What can we help you with?</option>
+          <option>AI Embedding (Individual)</option>
+          <option>AI Embedding (Team Scale)</option>
+          <option>AI Embedding (Enterprise)</option>
+          <option>AI Literacy Training</option>
+          <option>Management Consulting</option>
+          <option>Strategic Research</option>
+          <option>Training Through Partners</option>
+          <option>AI Readiness Assessment</option>
+          <option>Not sure yet — I'd like to explore</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>How did you hear about us?</label>
+        <select id="referral" name="referral">
+          <option value="">Select…</option>
+          <option>LinkedIn</option>
+          <option>Google Search</option>
+          <option>Referral from a colleague</option>
+          <option>Event or conference</option>
+          <option>Partner organization</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Your Message <span class="req">*</span></label>
+        <textarea id="message" name="message" placeholder="Tell us about your organization, your current challenges, and what you're hoping to achieve with AI…" required></textarea>
+      </div>
+
+      <div class="field">
+        <label style="margin-bottom:10px;">Preferred Contact Method</label>
+        <div class="checkbox-group">
+          <label class="cb-item"><input type="checkbox" name="contact_email" value="Email"/> <span>Email</span></label>
+          <label class="cb-item"><input type="checkbox" name="contact_call" value="Phone call"/> <span>Phone call</span></label>
+          <label class="cb-item"><input type="checkbox" name="contact_video" value="Video call"/> <span>Video call (Zoom / Teams)</span></label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submit-btn">
+        <span id="btn-text">Send Message</span>
+        <span class="material-symbols-outlined" id="btn-icon">send</span>
+        <div class="spinner" id="btn-spinner" style="display:none;"></div>
+      </button>
+
+      <!-- Status messages -->
+      <div class="status-msg status-success" id="msg-success">
+        <span class="material-symbols-outlined">check_circle</span>
+        <div>
+          <strong>Message sent successfully!</strong><br/>
+          Thank you for reaching out. Mamdouh will review your message and get back to you within one business day.
+        </div>
+      </div>
+      <div class="status-msg status-error" id="msg-error">
+        <span class="material-symbols-outlined">error</span>
+        <div id="error-text">Something went wrong. Please check your details and try again, or reach out directly at q.mamdouh@mai4consulting.com</div>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <!-- Contact details -->
+    <div class="info-card">
+      <div class="info-card-title">Contact Details</div>
+      <div class="contact-item">
+        <div class="contact-icon"><span class="material-symbols-outlined">mail</span></div>
+        <div>
+          <h4>Email</h4>
+          <a href="mailto:q.mamdouh@mai4consulting.com">q.mamdouh@mai4consulting.com</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><span class="material-symbols-outlined">language</span></div>
+        <div>
+          <h4>Website</h4>
+          <a href="https://www.mai4consulting.com" target="_blank">www.mai4consulting.com</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><span class="material-symbols-outlined">public</span></div>
+        <div>
+          <h4>Location</h4>
+          <p>Geneva, Switzerland — serving clients globally</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><span class="material-symbols-outlined">schedule</span></div>
+        <div>
+          <h4>Office Hours</h4>
+          <p>Monday – Friday, 9:00 – 18:00 CET</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Response time -->
+    <div class="response-card">
+      <h3>What Happens Next</h3>
+      <p>We read every message personally. Here's what to expect after you hit send.</p>
+      <div class="response-item"><span class="material-symbols-outlined">alarm</span>Acknowledgement within a few hours</div>
+      <div class="response-item"><span class="material-symbols-outlined">calendar_today</span>Full response within 1 business day</div>
+      <div class="response-item"><span class="material-symbols-outlined">video_call</span>Discovery call scheduled within the week</div>
+      <div class="response-item"><span class="material-symbols-outlined">description</span>Tailored proposal delivered within 5 days</div>
+    </div>
+
+    <!-- What to expect -->
+    <div class="expect-card">
+      <div class="info-card-title" style="margin-bottom:14px;">Our Engagement Process</div>
+      <div class="expect-step">
+        <div class="expect-num">1</div>
+        <div><h4>Discovery Call</h4><p>45 minutes to understand your context, goals, and the problem worth solving.</p></div>
+      </div>
+      <div class="expect-step">
+        <div class="expect-num">2</div>
+        <div><h4>Tailored Proposal</h4><p>A clear, scoped engagement plan built specifically for your organization.</p></div>
+      </div>
+      <div class="expect-step">
+        <div class="expect-num">3</div>
+        <div><h4>Collaborative Delivery</h4><p>We work alongside your team — ensuring knowledge transfer at every stage.</p></div>
+      </div>
+      <div class="expect-step">
+        <div class="expect-num">4</div>
+        <div><h4>Lasting Capability</h4><p>Engagements close with a capability your team owns — not a dependency on consultants.</p></div>
+      </div>
+    </div>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/qmamdouh/" target="_blank" class="linkedin-btn">
+      <span class="material-symbols-outlined">open_in_new</span>
+      Connect on LinkedIn
+    </a>
+
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════════
+   EMAILJS CONFIG — replace these 3 values
+   after completing the setup steps above
+══════════════════════════════════════════ */
+const EMAILJS_PUBLIC_KEY  = 'JJs3lu55OHI_pbjth';
+const EMAILJS_SERVICE_ID  = 'service_an94235';
+const EMAILJS_TEMPLATE_ID = 'template_bv6m1l3';
+
+/* initialise EmailJS */
+emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+/* ── FORM SUBMISSION ── */
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  /* hide previous status */
+  document.getElementById('msg-success').classList.remove('visible');
+  document.getElementById('msg-error').classList.remove('visible');
+
+  /* basic client-side validation */
+  var name    = document.getElementById('from_name').value.trim();
+  var email   = document.getElementById('from_email').value.trim();
+  var sector  = document.getElementById('sector').value;
+  var service = document.getElementById('service').value;
+  var message = document.getElementById('message').value.trim();
+
+  if (!name || !email || !sector || !service || !message) {
+    showError('Please fill in all required fields before submitting.');
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    showError('Please enter a valid email address.');
+    return;
+  }
+
+  /* collect preferred contact methods */
+  var preferred = [];
+  document.querySelectorAll('input[type=checkbox]:checked').forEach(function(cb) {
+    preferred.push(cb.value);
+  });
+
+  /* build template params */
+  var params = {
+    from_name:    name,
+    from_email:   email,
+    organization: document.getElementById('organization').value.trim() || '—',
+    job_title:    document.getElementById('job_title').value.trim()    || '—',
+    sector:       sector,
+    team_size:    document.getElementById('team_size').value           || '—',
+    service:      service,
+    referral:     document.getElementById('referral').value            || '—',
+    preferred:    preferred.length ? preferred.join(', ') : '—',
+    message:      message,
+    to_email:     'q.mamdouh@mai4consulting.com'
+  };
+
+  /* loading state */
+  setLoading(true);
+
+  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
+    .then(function() {
+      setLoading(false);
+      document.getElementById('msg-success').classList.add('visible');
+      document.getElementById('contact-form').reset();
+      document.getElementById('msg-success').scrollIntoView({behavior:'smooth', block:'nearest'});
+    })
+    .catch(function(err) {
+      setLoading(false);
+      var detail = err && err.text ? ' (' + err.text + ')' : '';
+      showError('Something went wrong' + detail + '. Please try again or email q.mamdouh@mai4consulting.com directly.');
+      console.error('EmailJS error:', err);
+    });
+});
+
+function setLoading(on) {
+  var btn     = document.getElementById('submit-btn');
+  var txt     = document.getElementById('btn-text');
+  var icon    = document.getElementById('btn-icon');
+  var spinner = document.getElementById('btn-spinner');
+  btn.disabled   = on;
+  txt.textContent = on ? 'Sending…' : 'Send Message';
+  icon.style.display    = on ? 'none' : '';
+  spinner.style.display = on ? 'block' : 'none';
+}
+
+function showError(msg) {
+  document.getElementById('error-text').textContent = msg;
+  var el = document.getElementById('msg-error');
+  el.classList.add('visible');
+  el.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+</script>
+
+<!-- ── PRIVACY POLICY ACCORDION ── -->
+<div style="max-width:1060px;margin:0 auto 60px;padding:0 24px;">
+
+  <button onclick="togglePrivacy()" id="pp-trigger"
+    style="width:100%;display:flex;align-items:center;justify-content:space-between;
+           padding:18px 24px;background:var(--white);border:1px solid var(--outline);
+           border-radius:12px;cursor:pointer;font-family:'Inter',sans-serif;
+           transition:all .25s;font-size:13px;font-weight:700;color:var(--txt);"
+    onmouseover="this.style.borderColor='rgba(0,62,138,.3)'"
+    onmouseout="this.style.borderColor=document.getElementById('pp-body').classList.contains('pp-open')?'rgba(0,62,138,.3)':'var(--outline)'">
+    <span style="display:flex;align-items:center;gap:10px;">
+      <span class="material-symbols-outlined" style="font-size:18px;color:var(--blue);">policy</span>
+      Privacy Policy — M.A.I. Consulting
+    </span>
+    <span style="display:flex;align-items:center;gap:8px;">
+      <span style="font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#aaa;">Last updated: January 2026</span>
+      <span class="material-symbols-outlined" id="pp-chevron" style="font-size:20px;color:var(--blue);transition:transform .3s;">expand_more</span>
+    </span>
+  </button>
+
+  <div id="pp-body" style="max-height:0;overflow:hidden;transition:max-height .5s ease;">
+    <div style="background:var(--white);border:1px solid var(--outline);border-top:none;border-radius:0 0 12px 12px;padding:36px 40px;">
+
+      <p style="font-size:13px;color:var(--charcoal);line-height:1.75;margin-bottom:28px;">
+        This Privacy Policy describes how M.A.I. Consulting ("we", "us", "our") collects, uses, and protects your personal information when you visit <a href="https://www.mai4consulting.com" style="color:var(--blue);">www.mai4consulting.com</a> or submit a contact request. By using our website, you agree to the practices described below.
+      </p>
+
+      <!-- Section -->
+      <div style="margin-bottom:28px;">
+        <h3 style="font-size:13px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">1. Who We Are</h3>
+        <p style="font-size:13px;color:var(--charcoal);line-height:1.75;">M.A.I. Consulting is an AI strategy and management consulting boutique operating globally, headquartered in Geneva, Switzerland. We are the data controller for personal information collected through this website. For privacy-related enquiries, contact us at <a href="mailto:q.mamdouh@mai4consulting.com" style="color:var(--blue);">q.mamdouh@mai4consulting.com</a>.</p>
+      </div>
+
+      <div style="margin-bottom:28px;">
+        <h3 style="font-size:13px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">2. What Data We Collect</h3>
+        <p style="font-size:13px;color:var(--charcoal);line-height:1.75;margin-bottom:10px;">We collect the following categories of data:</p>
+        <ul style="padding-left:20px;display:flex;flex-direction:column;gap:7px;">
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;"><strong>Contact data</strong> — name, email address, organization, job title, and message content submitted via our contact form.</li>
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;"><strong>Usage data</strong> — IP address, browser type, pages visited, time on page, device identifiers, and referring URL, collected automatically by our hosting platform.</li>
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;"><strong>Communication preferences</strong> — your preferred method of contact and service interests, as provided in the contact form.</li>
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;"><strong>Cookies</strong> — session and persistent cookies used for website functionality and analytics (see Section 5).</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom:28px;">
+        <h3 style="font-size:13px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">3. How We Use Your Data</h3>
+        <p style="font-size:13px;color:var(--charcoal);line-height:1.75;margin-bottom:10px;">We use collected data to:</p>
+        <ul style="padding-left:20px;display:flex;flex-direction:column;gap:7px;">
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;">Respond to your enquiries and manage our consulting relationship</li>
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;">Deliver services you have requested or expressed interest in</li>
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;">Send relevant updates, insights, or service information where you have consented</li>
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;">Improve our website performance and user experience through aggregated analytics</li>
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;">Comply with legal and regulatory obligations applicable in Switzerland and under GDPR where applicable</li>
+        </ul>
+        <p style="font-size:13px;color:var(--charcoal);line-height:1.75;margin-top:10px;">We do <strong>not</strong> sell, rent, or trade your personal data to third parties for marketing purposes.</p>
+      </div>
+
+      <div style="margin-bottom:28px;">
+        <h3 style="font-size:13px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">4. Legal Basis for Processing (GDPR)</h3>
+        <p style="font-size:13px;color:var(--charcoal);line-height:1.75;margin-bottom:10px;">Where the General Data Protection Regulation (GDPR) applies, we process your data on the following legal bases:</p>
+        <ul style="padding-left:20px;display:flex;flex-direction:column;gap:7px;">
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;"><strong>Consent</strong> — when you submit a contact form or opt in to communications</li>
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;"><strong>Legitimate interests</strong> — to improve our services and respond to business enquiries</li>
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;"><strong>Legal obligation</strong> — where required by applicable Swiss or EU law</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom:28px;">
+        <h3 style="font-size:13px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">5. Cookies & Tracking</h3>
+        <p style="font-size:13px;color:var(--charcoal);line-height:1.75;margin-bottom:10px;">We use the following types of cookies:</p>
+        <ul style="padding-left:20px;display:flex;flex-direction:column;gap:7px;">
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;"><strong>Essential cookies</strong> — required for the website to function; cannot be disabled</li>
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;"><strong>Analytics cookies</strong> — help us understand how visitors use the site (aggregated, anonymised data)</li>
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;"><strong>Preference cookies</strong> — remember your settings and choices across sessions</li>
+        </ul>
+        <p style="font-size:13px;color:var(--charcoal);line-height:1.75;margin-top:10px;">You can manage or disable cookies at any time through your browser settings. Disabling non-essential cookies will not affect your ability to use our contact form.</p>
+      </div>
+
+      <div style="margin-bottom:28px;">
+        <h3 style="font-size:13px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">6. AI Tools & Third-Party Services</h3>
+        <p style="font-size:13px;color:var(--charcoal);line-height:1.75;">As an AI consulting firm, we use AI tools (including Claude by Anthropic and Microsoft Copilot) in our work. We do not share your personal data with AI platforms without your explicit consent. Where AI tools are used in delivering services, we apply data hygiene practices — removing or anonymising personally identifiable information before any AI interaction. Our contact form is processed via <strong>EmailJS</strong>, which transmits form submissions securely. EmailJS does not store your data beyond what is necessary for transmission. We do not use your data to train any AI model.</p>
+      </div>
+
+      <div style="margin-bottom:28px;">
+        <h3 style="font-size:13px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">7. Data Retention</h3>
+        <p style="font-size:13px;color:var(--charcoal);line-height:1.75;">We retain contact form submissions and related correspondence for up to <strong>3 years</strong> following our last interaction, unless you request earlier deletion or a longer retention period is required by law. Usage and analytics data is retained for up to 12 months in aggregated form.</p>
+      </div>
+
+      <div style="margin-bottom:28px;">
+        <h3 style="font-size:13px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">8. Your Rights</h3>
+        <p style="font-size:13px;color:var(--charcoal);line-height:1.75;margin-bottom:10px;">Under GDPR and applicable Swiss data protection law (nFADP), you have the right to:</p>
+        <ul style="padding-left:20px;display:flex;flex-direction:column;gap:7px;">
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;"><strong>Access</strong> — request a copy of the personal data we hold about you</li>
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;"><strong>Rectification</strong> — request correction of inaccurate or incomplete data</li>
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;"><strong>Erasure</strong> — request deletion of your data ("right to be forgotten")</li>
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;"><strong>Portability</strong> — receive your data in a structured, machine-readable format</li>
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;"><strong>Objection</strong> — object to processing based on legitimate interests</li>
+          <li style="font-size:13px;color:var(--charcoal);line-height:1.65;"><strong>Withdraw consent</strong> — at any time, without affecting prior lawful processing</li>
+        </ul>
+        <p style="font-size:13px;color:var(--charcoal);line-height:1.75;margin-top:10px;">To exercise any of these rights, email <a href="mailto:q.mamdouh@mai4consulting.com" style="color:var(--blue);">q.mamdouh@mai4consulting.com</a>. We will respond within 30 days.</p>
+      </div>
+
+      <div style="margin-bottom:28px;">
+        <h3 style="font-size:13px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">9. International Data Transfers</h3>
+        <p style="font-size:13px;color:var(--charcoal);line-height:1.75;">Our operations are based in Geneva, Switzerland. Your data may be processed by service providers located in the European Economic Area or the United States (such as EmailJS). Where transfers occur outside the EEA, we ensure appropriate safeguards are in place in accordance with GDPR Article 46, including Standard Contractual Clauses where applicable.</p>
+      </div>
+
+      <div style="margin-bottom:28px;">
+        <h3 style="font-size:13px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">10. Children's Privacy</h3>
+        <p style="font-size:13px;color:var(--charcoal);line-height:1.75;">Our services are intended for professionals and organizations. We do not knowingly collect data from individuals under the age of 16. If you believe a minor has submitted data through our site, please contact us immediately.</p>
+      </div>
+
+      <div style="margin-bottom:28px;">
+        <h3 style="font-size:13px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">11. Security</h3>
+        <p style="font-size:13px;color:var(--charcoal);line-height:1.75;">We implement commercially reasonable technical and organizational measures to protect your personal data against unauthorized access, loss, or misuse. All data transmissions via our contact form use HTTPS encryption. However, no method of transmission over the internet is 100% secure.</p>
+      </div>
+
+      <div style="margin-bottom:28px;">
+        <h3 style="font-size:13px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">12. Changes to This Policy</h3>
+        <p style="font-size:13px;color:var(--charcoal);line-height:1.75;">We may update this Privacy Policy periodically to reflect changes in our practices or applicable law. Material changes will be communicated via a notice on our website and, where appropriate, by email. The "Last updated" date at the top of this policy will always reflect the most recent revision.</p>
+      </div>
+
+      <div>
+        <h3 style="font-size:13px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">13. Contact & Complaints</h3>
+        <p style="font-size:13px;color:var(--charcoal);line-height:1.75;">For any privacy-related questions or to exercise your rights, contact us at <a href="mailto:q.mamdouh@mai4consulting.com" style="color:var(--blue);">q.mamdouh@mai4consulting.com</a>. If you believe your data protection rights have been violated, you have the right to lodge a complaint with the Swiss Federal Data Protection and Information Commissioner (FDPIC) at <a href="https://www.edoeb.admin.ch" target="_blank" style="color:var(--blue);">www.edoeb.admin.ch</a>, or with your local EU supervisory authority.</p>
+      </div>
+
+      <div style="margin-top:28px;padding-top:20px;border-top:1px solid var(--outline);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+        <p style="font-size:11px;color:#aaa;margin:0;">© 2026 M.A.I. Consulting. All rights reserved. Geneva, Switzerland.</p>
+        <p style="font-size:11px;color:#aaa;margin:0;">Last updated: January 2026</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function togglePrivacy() {
+  var body = document.getElementById('pp-body');
+  var chevron = document.getElementById('pp-chevron');
+  var trigger = document.getElementById('pp-trigger');
+  var isOpen = body.classList.contains('pp-open');
+  if (isOpen) {
+    body.style.maxHeight = '0';
+    body.classList.remove('pp-open');
+    chevron.style.transform = 'rotate(0deg)';
+    trigger.style.borderRadius = '12px';
+    trigger.style.borderColor = 'var(--outline)';
+  } else {
+    body.style.maxHeight = body.scrollHeight + 'px';
+    body.classList.add('pp-open');
+    chevron.style.transform = 'rotate(180deg)';
+    trigger.style.borderRadius = '12px 12px 0 0';
+    trigger.style.borderColor = 'rgba(0,62,138,.3)';
+  }
+}
+</script>
+</body>
+</html>

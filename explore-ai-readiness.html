@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Readiness Assessment — M.A.I. Consulting</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+:root{
+  --blue:#003E8A;--blue-dark:#001f4d;--blue-mid:#002855;
+  --blue-light:rgba(0,62,138,.1);--gold:#C9A84C;
+  --charcoal:#4D4D4D;--white:#fff;--off:#f6f8fc;
+  --surface:#fbf9f8;--outline:rgba(0,62,138,.12);--txt:#1a1a2e;
+  --error:#c0392b;--error-bg:#fff5f5;--error-outline:rgba(192,57,43,.35);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--off);color:var(--charcoal);min-height:100vh;}
+.header{background:linear-gradient(140deg,#00122e,var(--blue));padding:40px 24px 32px;text-align:center;position:relative;overflow:hidden;}
+.header-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03)1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03)1px,transparent 1px);background-size:40px 40px;}
+.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);color:var(--gold);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border-radius:9999px;margin-bottom:20px;position:relative;}
+.badge-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.header h1{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,44px);font-weight:800;color:var(--white);line-height:1.15;max-width:640px;margin:0 auto 12px;position:relative;}
+.header h1 span{background:linear-gradient(90deg,var(--gold),#e8c86a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.header p{font-size:14px;color:rgba(255,255,255,.62);max-width:500px;margin:0 auto;position:relative;line-height:1.7;}
+.user-info-wrap{max-width:960px;margin:28px auto 0;padding:0 16px;}
+.user-info-card{background:var(--white);border:1px solid var(--outline);border-radius:14px;padding:24px 28px;}
+.ui-title-row{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;}
+.ui-title{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);}
+.ui-required-note{font-size:10px;color:#aaa;}
+.ui-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;}
+.ui-field label{font-size:11px;font-weight:600;color:var(--charcoal);letter-spacing:.5px;display:block;margin-bottom:5px;transition:color .2s;}
+.ui-field input,.ui-field select{width:100%;padding:9px 12px;border:1px solid var(--outline);border-radius:6px;font-size:13px;font-family:'Inter',sans-serif;color:var(--txt);background:var(--off);transition:border .2s,background .2s;}
+.ui-field input:focus,.ui-field select:focus{outline:none;border-color:var(--blue);}
+.ui-field.field-error label{color:var(--error);}
+.ui-field.field-error input,
+.ui-field.field-error select,
+.ui-field.field-error .phone-code-sel,
+.ui-field.field-error .phone-num-input{border-color:var(--error);background:var(--error-bg);}
+.dimension-block.dim-error{border-color:var(--error-outline);box-shadow:0 0 0 3px rgba(192,57,43,.08);}
+.dimension-block.dim-error .q-item:not(.answered){background:#fff7f7;border-left:2px solid rgba(192,57,43,.3);}
+.validation-banner{display:none;background:#fff0ee;border:1px solid rgba(192,57,43,.3);border-radius:8px;padding:12px 16px;font-size:12px;font-weight:600;color:var(--error);line-height:1.6;margin-bottom:0;}
+.validation-banner ul{margin:6px 0 0 16px;font-weight:500;}
+.main{max-width:960px;margin:24px auto;padding:0 16px 60px;display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:start;}
+@media(max-width:760px){.main{grid-template-columns:1fr;}}
+.q-panel{display:flex;flex-direction:column;gap:16px;}
+.dimension-block{background:var(--white);border:1px solid var(--outline);border-radius:14px;overflow:hidden;transition:border-color .2s,box-shadow .2s;}
+.dim-header{padding:18px 22px;display:flex;align-items:center;gap:12px;cursor:pointer;user-select:none;}
+.dim-color{width:4px;border-radius:2px;height:36px;flex-shrink:0;}
+.d0 .dim-color,.d0-c{background:var(--blue);}
+.d1 .dim-color,.d1-c{background:#1a7a4a;}
+.d2 .dim-color,.d2-c{background:#9b4e97;}
+.d3 .dim-color,.d3-c{background:#c05c00;}
+.dim-header-text{flex:1;}
+.dim-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.55;margin-bottom:2px;}
+.dim-name{font-size:15px;font-weight:800;color:var(--txt);}
+.dim-score-badge{font-size:12px;font-weight:700;padding:4px 12px;border-radius:9999px;background:var(--off);color:var(--txt);border:1px solid var(--outline);white-space:nowrap;}
+.dim-chevron{font-size:18px;color:var(--charcoal);transition:transform .3s;}
+.dim-open .dim-chevron{transform:rotate(180deg);}
+.dim-progress-bar{height:3px;background:var(--off);}
+.dim-progress-fill{height:100%;border-radius:0;transition:width .4s;}
+.dim-questions{display:none;padding:8px 0 16px;}
+.dim-open .dim-questions{display:block;}
+.q-item{padding:14px 22px;border-bottom:1px solid rgba(0,62,138,.06);transition:background .2s,border-left .2s;}
+.q-item:last-child{border-bottom:none;}
+.q-item:hover{background:rgba(0,62,138,.02);}
+.q-item.answered{background:rgba(0,62,138,.025);}
+.q-top{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;}
+.q-num{width:22px;height:22px;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--white);margin-top:1px;}
+.q-text{font-size:13px;color:var(--txt);line-height:1.55;font-weight:500;}
+.q-sub{font-size:11px;color:#999;margin-top:2px;line-height:1.4;}
+.q-input-wrap{padding-left:32px;}
+.yn-btns{display:flex;gap:8px;}
+.yn-btn{padding:7px 20px;border-radius:6px;border:1px solid var(--outline);font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;background:var(--off);color:var(--charcoal);}
+.yn-btn.sel-yes{background:var(--blue);color:var(--white);border-color:var(--blue);}
+.yn-btn.sel-no{background:#c0392b;color:var(--white);border-color:#c0392b;}
+.scale-wrap{display:flex;gap:6px;align-items:center;}
+.scale-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--outline);font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;background:var(--off);color:var(--charcoal);display:flex;align-items:center;justify-content:center;}
+.scale-btn.sel{color:var(--white);}
+.scale-lbl{font-size:10px;color:#aaa;margin-left:4px;}
+.num-wrap{display:flex;align-items:center;gap:10px;}
+.num-input{width:80px;padding:8px 10px;border:1px solid var(--outline);border-radius:6px;font-size:14px;font-weight:700;color:var(--txt);text-align:center;background:var(--off);}
+.num-input:focus{outline:none;border-color:var(--blue);}
+.num-unit{font-size:12px;color:#aaa;}
+.q-select{padding:8px 12px;border:1px solid var(--outline);border-radius:6px;font-size:13px;font-family:'Inter',sans-serif;color:var(--txt);background:var(--off);width:100%;max-width:280px;}
+.q-select:focus{outline:none;border-color:var(--blue);}
+.dashboard{position:sticky;top:24px;display:flex;flex-direction:column;gap:16px;}
+.score-card{background:linear-gradient(140deg,#001830,var(--blue-mid));border-radius:16px;padding:28px 24px;text-align:center;}
+.score-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:8px;}
+.score-big{font-family:'Playfair Display',serif;font-size:56px;font-weight:800;color:var(--gold);line-height:1;}
+.score-max{font-size:13px;color:rgba(255,255,255,.3);margin-bottom:16px;}
+.readiness-badge{display:inline-block;padding:8px 20px;border-radius:9999px;font-size:12px;font-weight:700;letter-spacing:.5px;margin-bottom:16px;transition:all .4s;}
+.prog-wrap{background:rgba(255,255,255,.1);border-radius:9999px;height:8px;overflow:hidden;}
+.prog-fill{height:100%;border-radius:9999px;background:linear-gradient(90deg,var(--gold),#e8c86a);transition:width .5s;}
+.score-pct{font-size:11px;color:rgba(255,255,255,.4);margin-top:8px;}
+.radar-card{background:var(--white);border:1px solid var(--outline);border-radius:16px;padding:22px;}
+.radar-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:14px;text-align:center;}
+.radar-canvas-wrap{display:flex;justify-content:center;}
+.dim-scores-card{background:var(--white);border:1px solid var(--outline);border-radius:16px;padding:22px;}
+.ds-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:16px;}
+.ds-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.ds-row:last-child{margin-bottom:0;}
+.ds-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.ds-name{font-size:12px;font-weight:600;color:var(--txt);flex:1;}
+.ds-bar-wrap{flex:2;background:var(--off);border-radius:9999px;height:6px;overflow:hidden;}
+.ds-bar-fill{height:100%;border-radius:9999px;transition:width .5s;}
+.ds-pct{font-size:11px;font-weight:700;color:var(--charcoal);width:30px;text-align:right;}
+.rec-card{background:var(--white);border:1px solid var(--outline);border-radius:16px;padding:22px;}
+.rec-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:12px;}
+.rec-text{font-size:13px;color:var(--charcoal);line-height:1.65;}
+.rec-dim-header{font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-top:14px;margin-bottom:6px;}
+.rec-dim-header:first-of-type{margin-top:10px;}
+.rec-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.rec-list li{display:flex;gap:8px;font-size:12px;color:var(--charcoal);line-height:1.5;}
+.rec-list li::before{content:'→';color:var(--blue);font-weight:700;flex-shrink:0;}
+.dl-btn{width:100%;padding:14px;border-radius:8px;border:none;cursor:pointer;background:var(--gold);color:#001830;font-weight:700;font-size:14px;font-family:'Inter',sans-serif;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 18px rgba(201,168,76,.3);}
+.dl-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,.45);}
+.dl-btn:disabled{opacity:.6;cursor:wait;}
+.completion-wrap{background:var(--white);border:1px solid var(--outline);border-radius:12px;padding:16px 20px;}
+.comp-label{display:flex;justify-content:space-between;font-size:11px;font-weight:600;color:var(--charcoal);margin-bottom:8px;}
+.comp-bar{background:var(--off);border-radius:9999px;height:7px;overflow:hidden;}
+.comp-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--gold));border-radius:9999px;transition:width .4s;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-grid"></div>
+  <div class="header-badge"><span class="badge-dot"></span>M.A.I. Consulting Tool</div>
+  <h1>AI Readiness <span>Assessment</span></h1>
+  <p>Evaluate your organization's readiness to embed AI across the four dimensions of the 4D Framework — and get a personalized roadmap.</p>
+</div>
+
+<div class="user-info-wrap">
+  <div class="user-info-card">
+    <div class="ui-title-row">
+      <div class="ui-title">Your Profile</div>
+      <div class="ui-required-note">All fields required</div>
+    </div>
+    <div class="ui-grid">
+
+      <div class="ui-field" id="field-name">
+        <label>Full Name <span style="color:var(--error)">*</span></label>
+        <input type="text" id="u-name" placeholder="e.g. Sara Johnson"
+               oninput="updateUser();clearFieldError('field-name')"/>
+      </div>
+
+      <div class="ui-field" id="field-org">
+        <label>Organization <span style="color:var(--error)">*</span></label>
+        <input type="text" id="u-org" placeholder="e.g. Green Future NGO"
+               oninput="updateUser();clearFieldError('field-org')"/>
+      </div>
+
+      <div class="ui-field" id="field-role">
+        <label>Role / Title <span style="color:var(--error)">*</span></label>
+        <input type="text" id="u-role" placeholder="e.g. Program Director"
+               oninput="updateUser();clearFieldError('field-role')"/>
+      </div>
+
+      <div class="ui-field" id="field-sector">
+        <label>Sector <span style="color:var(--error)">*</span></label>
+        <select id="u-sector" onchange="updateUser();clearFieldError('field-sector')">
+          <option value="">Select sector…</option>
+          <option>Nonprofit / NGO</option>
+          <option>Private Sector</option>
+          <option>Government / Public Sector</option>
+          <option>Training Centre</option>
+          <option>Individual / Freelancer</option>
+        </select>
+      </div>
+
+      <div class="ui-field" id="field-size">
+        <label>Team Size <span style="color:var(--error)">*</span></label>
+        <select id="u-size" onchange="updateUser();clearFieldError('field-size')">
+          <option value="">Select…</option>
+          <option>Just me</option>
+          <option>2–10</option>
+          <option>11–50</option>
+          <option>51–200</option>
+          <option>200+</option>
+        </select>
+      </div>
+
+      <div class="ui-field" id="field-email">
+        <label>Email Address <span style="color:var(--error)">*</span></label>
+        <input type="email" id="u-email" placeholder="e.g. sara@example.com"
+               oninput="updateUser();clearFieldError('field-email')"/>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="q-panel" id="q-panel"></div>
+  <div class="dashboard">
+    <div class="score-card">
+      <div class="score-label">Overall AI Readiness Score</div>
+      <div class="score-big" id="score-big">0</div>
+      <div class="score-max">out of 100</div>
+      <div class="readiness-badge" id="readiness-badge" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.5);">Not started</div>
+      <div class="prog-wrap"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+      <div class="score-pct" id="score-pct">Complete questions to see your score</div>
+    </div>
+    <div class="completion-wrap">
+      <div class="comp-label"><span>Progress</span><span id="comp-txt">0 / 28 answered</span></div>
+      <div class="comp-bar"><div class="comp-fill" id="comp-fill" style="width:0%"></div></div>
+    </div>
+    <div class="radar-card">
+      <div class="radar-title">4D Framework Radar</div>
+      <div class="radar-canvas-wrap"><canvas id="radar" width="260" height="230"></canvas></div>
+    </div>
+    <div class="dim-scores-card">
+      <div class="ds-title">Dimension Breakdown</div>
+      <div class="ds-row"><div class="ds-dot" style="background:var(--blue)"></div><div class="ds-name">Delegation</div><div class="ds-bar-wrap"><div class="ds-bar-fill" id="bar-0" style="width:0%;background:var(--blue)"></div></div><div class="ds-pct" id="pct-0">0%</div></div>
+      <div class="ds-row"><div class="ds-dot" style="background:#1a7a4a"></div><div class="ds-name">Description</div><div class="ds-bar-wrap"><div class="ds-bar-fill" id="bar-1" style="width:0%;background:#1a7a4a"></div></div><div class="ds-pct" id="pct-1">0%</div></div>
+      <div class="ds-row"><div class="ds-dot" style="background:#9b4e97"></div><div class="ds-name">Discernment</div><div class="ds-bar-wrap"><div class="ds-bar-fill" id="bar-2" style="width:0%;background:#9b4e97"></div></div><div class="ds-pct" id="pct-2">0%</div></div>
+      <div class="ds-row"><div class="ds-dot" style="background:#c05c00"></div><div class="ds-name">Diligence</div><div class="ds-bar-wrap"><div class="ds-bar-fill" id="bar-3" style="width:0%;background:#c05c00"></div></div><div class="ds-pct" id="pct-3">0%</div></div>
+    </div>
+    <div class="rec-card">
+      <div class="rec-title">Targeted Recommendations</div>
+      <div id="rec-content" class="rec-text">Answer questions to receive personalized recommendations based on your specific weak spots.</div>
+    </div>
+    <div class="validation-banner" id="validation-banner"></div>
+    <button class="dl-btn" id="dl-btn" onclick="downloadPDF()">⬇ Download PDF Report</button>
+  </div>
+</div>
+
+<script>
+// ── EmailJS Configuration ─────────────────────────────────────────────
+const EMAILJS_PUBLIC_KEY  = 'JJs3lu55OHI_pbjth';
+const EMAILJS_SERVICE_ID  = 'service_an94235';
+const EMAILJS_TEMPLATE_ID = 'template_ellvbp8';
+const NOTIFY_EMAIL        = 'q.mamdouh@mai4consulting.com';
+// ── Google Apps Script Web App (PDF -> Drive) ─────────────────────────
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbw8R6_1KygGdVMfe6NeVm2ZSBUy8-rGv5ppr16N3A-3UC0hc_Crvpc4QVF5s8l4www3/exec';
+// ─────────────────────────────────────────────────────────────────────
+
+const DIMS=[
+  {name:'Delegation',color:'#003E8A',label:'Knowing when & what to delegate to AI'},
+  {name:'Description',color:'#1a7a4a',label:'Communicating effectively with AI'},
+  {name:'Discernment',color:'#9b4e97',label:'Critically evaluating AI outputs'},
+  {name:'Diligence',color:'#c05c00',label:'Taking responsibility for AI use'}
+];
+
+const QUESTIONS=[
+  {dim:0,id:'d0q1',text:'Does your organization have a clear understanding of which tasks AI can and cannot do?',type:'scale',max:5,sub:'1 = No awareness  →  5 = Deep understanding'},
+  {dim:0,id:'d0q2',text:'Have you identified specific, repetitive tasks in your workflow that AI could handle?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
+  {dim:0,id:'d0q3',text:'How many AI tools does your team currently use (even occasionally)?',type:'num',max:5,unit:'tools',sub:'0=0pts, 1=1pt, 2=2pts, 3=3pts, 4=4pts, 5+=5pts',mapFn:v=>Math.min(5,v)},
+  {dim:0,id:'d0q4',text:'Do you have a policy or shared understanding of which tasks should NOT be delegated to AI?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
+  {dim:0,id:'d0q5',text:'How confident is your team in deciding when to use AI vs. when to keep work human?',type:'scale',max:5,sub:'1 = Not confident  →  5 = Very confident'},
+  {dim:0,id:'d0q6',text:'Has your organization mapped AI opportunities to its specific mission or strategic objectives?',type:'sel',max:5,sub:'',opts:['Not at all (0)','We have discussed it (2)','Partially mapped (3)','Mostly mapped (4)','Fully mapped (5)'],vals:[0,2,3,4,5]},
+  {dim:0,id:'d0q7',text:'Does leadership in your organization actively support AI adoption decisions?',type:'scale',max:5,sub:'1 = No support  →  5 = Strong champions'},
+  {dim:1,id:'d1q1',text:'When prompting AI, do you typically include context about your organization and role?',type:'scale',max:5,sub:'1 = Never  →  5 = Always'},
+  {dim:1,id:'d1q2',text:'Do you know how to write a prompt that specifies a desired format, length, and tone?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
+  {dim:1,id:'d1q3',text:'How often do you iterate on your prompts (refine them based on AI responses)?',type:'sel',max:5,sub:'',opts:['Never (0)','Rarely (1)','Sometimes (3)','Often (4)','Always (5)'],vals:[0,1,3,4,5]},
+  {dim:1,id:'d1q4',text:'Can your team describe the desired output (product), process, and performance behavior in a single prompt?',type:'scale',max:5,sub:'1 = Cannot  →  5 = Consistently do this'},
+  {dim:1,id:'d1q5',text:'Do you upload relevant organizational documents (reports, proposals) to give AI better context?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
+  {dim:1,id:'d1q6',text:'How well does your team communicate specific constraints (word limits, audience, privacy) to AI?',type:'scale',max:5,sub:'1 = Poorly  →  5 = Very well'},
+  {dim:1,id:'d1q7',text:'Do you use structured conversation techniques (e.g., asking AI to interview you, building reusable context docs)?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
+  {dim:2,id:'d2q1',text:'Does your team critically evaluate AI outputs before using them?',type:'scale',max:5,sub:'1 = We trust everything  →  5 = Always evaluate rigorously'},
+  {dim:2,id:'d2q2',text:'Can you identify when an AI output contains outdated, inaccurate, or hallucinated information?',type:'scale',max:5,sub:'1 = Rarely catch it  →  5 = Consistently catch it'},
+  {dim:2,id:'d2q3',text:'Do you verify key claims from AI with original or external sources?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
+  {dim:2,id:'d2q4',text:'Are you able to spot when AI outputs use inappropriate, biased, or deficit-based language?',type:'scale',max:5,sub:'1 = Not yet  →  5 = Reliably'},
+  {dim:2,id:'d2q5',text:'How often does your team reflect on why AI produced a particular output (process discernment)?',type:'sel',max:5,sub:'',opts:['Never (0)','Rarely (1)','Sometimes (3)','Often (4)','Always (5)'],vals:[0,1,3,4,5]},
+  {dim:2,id:'d2q6',text:'Do you evaluate whether AI outputs align with your organization\'s values and mission?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
+  {dim:2,id:'d2q7',text:'When AI gives a poor response, can your team diagnose what went wrong with the prompt?',type:'scale',max:5,sub:'1 = Never  →  5 = Consistently'},
+  {dim:3,id:'d3q1',text:'Does your team take responsibility for reviewing and vouching for all AI-generated outputs before sharing?',type:'scale',max:5,sub:'1 = Rarely  →  5 = Always'},
+  {dim:3,id:'d3q2',text:'Do you disclose AI involvement when relevant (to funders, beneficiaries, partners)?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
+  {dim:3,id:'d3q3',text:'Are you aware of the data privacy policies of the AI tools your organization uses?',type:'sel',max:5,sub:'',opts:['Not at all (0)','Somewhat (2)','Mostly (3)','Fully aware (5)'],vals:[0,2,3,5]},
+  {dim:3,id:'d3q4',text:'Does your team practice data hygiene (removing PII before sharing with AI)?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
+  {dim:3,id:'d3q5',text:'How intentional is your organization about which AI tools to use for which tasks (creation diligence)?',type:'scale',max:5,sub:'1 = We use whatever is available  →  5 = Very deliberate'},
+  {dim:3,id:'d3q6',text:'Do you have (or plan to have) an organizational AI policy that covers ethics, transparency, and oversight?',type:'sel',max:5,sub:'',opts:['No plans (0)','Discussing it (2)','Draft exists (3)','Policy in place (5)'],vals:[0,2,3,5]},
+  {dim:3,id:'d3q7',text:'Is there a process to review AI outputs periodically and catch errors that go into your work?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
+];
+
+const Q_RECS={
+  d0q1:{threshold:3,rec:'Run an internal workshop mapping which task types AI handles well (drafting, summarizing, structuring) vs. poorly (judgment, verification, sensitive context)'},
+  d0q2:{threshold:5,rec:'List your team\'s top 10 repetitive tasks this week and tag each as AI-suitable, partial-AI, or human-only'},
+  d0q3:{threshold:2,rec:'Pilot 2–3 AI tools across different task categories (writing, research, analysis) before standardizing on any one'},
+  d0q4:{threshold:5,rec:'Draft a one-page "AI no-go list" of tasks reserved for humans (sensitive HR decisions, final approvals, beneficiary contact)'},
+  d0q5:{threshold:3,rec:'Train decision-makers on a simple "use / verify / replace" framework for AI-vs-human task choices'},
+  d0q6:{threshold:3,rec:'Map your top strategic objectives against potential AI use cases and rank by impact × feasibility'},
+  d0q7:{threshold:3,rec:'Secure an executive sponsor for AI and put a standing AI item on the leadership agenda'},
+  d1q1:{threshold:3,rec:'Build a 3–5 line "context preamble" everyone reuses at the start of prompts (org name, role, audience, constraints)'},
+  d1q2:{threshold:5,rec:'Adopt the "Format / Length / Tone" prompt pattern as standard practice and document it in a one-pager'},
+  d1q3:{threshold:3,rec:'Set an expectation that no AI draft is used on first pass — minimum one refinement cycle before output is reviewed'},
+  d1q4:{threshold:3,rec:'Practice the "product + process + performance" prompt structure: what you want, how it should be made, what good looks like'},
+  d1q5:{threshold:5,rec:'Where data protection allows, attach the source brief or example to the prompt rather than describing it'},
+  d1q6:{threshold:3,rec:'Make constraint-specification mandatory in any prompt that produces external output (word limit, audience, what NOT to include)'},
+  d1q7:{threshold:5,rec:'Build a shared prompt library and a "have AI interview me" template for recurring tasks'},
+  d2q1:{threshold:3,rec:'Make critical review of AI outputs an explicit step — not an assumption — in every workflow that uses AI'},
+  d2q2:{threshold:3,rec:'Train staff on common AI failure patterns: confident hallucinations, outdated training data, fabricated citations'},
+  d2q3:{threshold:5,rec:'Require at least one external source verification for any AI-derived fact used in published or shared work'},
+  d2q4:{threshold:3,rec:'Train staff to spot deficit-based or stigmatizing framing (especially around beneficiaries, gender, age, ability)'},
+  d2q5:{threshold:3,rec:'Add a "why did the AI say that?" reflection step to high-stakes use cases, not just a quality check on the output'},
+  d2q6:{threshold:5,rec:'Add a mission-fit check to your AI review process: does this output match how we talk about our work and the people we serve?'},
+  d2q7:{threshold:3,rec:'When AI gives a poor response, debug the prompt before re-asking — the prompt is usually where the problem started'},
+  d3q1:{threshold:3,rec:'Make it explicit that whoever shares an AI-assisted output owns its accuracy — no "the AI said so" disclaimers'},
+  d3q2:{threshold:5,rec:'Adopt a simple AI-disclosure standard: when, how, and to whom you flag AI involvement (funders, partners, beneficiaries)'},
+  d3q3:{threshold:3,rec:'Review the data-handling terms of every AI vendor you use (training opt-out, retention, sub-processors, region)'},
+  d3q4:{threshold:5,rec:'Publish a short "do not paste into AI" list and train all staff on it before extending AI use further'},
+  d3q5:{threshold:3,rec:'Match tools to tasks deliberately: standardize on which tool you use for which use case rather than letting individuals choose ad hoc'},
+  d3q6:{threshold:3,rec:'Draft a one-page organizational AI policy this quarter covering acceptable use, prohibited tasks, oversight, and disclosure'},
+  d3q7:{threshold:5,rec:'Establish a routine — monthly or quarterly — to spot-check AI-assisted work already in use and catch drift'}
+};
+
+const scores={};
+let userInfo={name:'',org:'',role:'',sector:'',size:'',email:''};
+
+function buildUI(){
+  const panel=document.getElementById('q-panel');
+  const dimGroups=[[],[],[],[]];
+  QUESTIONS.forEach(q=>dimGroups[q.dim].push(q));
+  dimGroups.forEach((qs,di)=>{
+    const block=document.createElement('div');
+    block.className='dimension-block';block.id=`dim-block-${di}`;
+    block.innerHTML=`<div class="dim-header d${di}" onclick="toggleDim(${di})"><div class="dim-color"></div><div class="dim-header-text"><div class="dim-label">Dimension ${di+1} of 4</div><div class="dim-name">${DIMS[di].name}</div></div><div class="dim-score-badge" id="dim-badge-${di}">0 / 35</div><div class="dim-chevron">▾</div></div><div class="dim-progress-bar"><div class="dim-progress-fill d${di}-c" id="dim-prog-${di}" style="width:0%"></div></div><div class="dim-questions" id="dim-qs-${di}"></div>`;
+    panel.appendChild(block);
+    const qWrap=block.querySelector(`#dim-qs-${di}`);
+    qs.forEach((q,qi)=>{
+      const item=document.createElement('div');
+      item.className='q-item';item.id=`qi-${q.id}`;
+      item.innerHTML=`<div class="q-top"><div class="q-num" style="background:${DIMS[di].color}">${qi+1}</div><div><div class="q-text">${q.text} <span style="color:var(--error);font-size:11px;">*</span></div>${q.sub?`<div class="q-sub">${q.sub}</div>`:''}</div></div><div class="q-input-wrap">${buildInput(q,di)}</div>`;
+      qWrap.appendChild(item);
+    });
+  });
+  toggleDim(0);
+}
+
+function buildInput(q,di){
+  const c=DIMS[di].color;
+  if(q.type==='yn') return `<div class="yn-btns"><button class="yn-btn" onclick="setYN('${q.id}',5,this)">✓ Yes</button><button class="yn-btn" onclick="setYN('${q.id}',0,this)">✗ No</button></div>`;
+  if(q.type==='scale'){const btns=[1,2,3,4,5].map(n=>`<div class="scale-btn" onclick="setScale('${q.id}',${n},this,'${c}')">${n}</div>`).join('');return `<div class="scale-wrap">${btns}<span class="scale-lbl">← Low   High →</span></div>`;}
+  if(q.type==='num') return `<div class="num-wrap"><input class="num-input" type="number" min="0" max="99" placeholder="0" oninput="setNum('${q.id}',this.value)"/><span class="num-unit">${q.unit||''}</span></div>`;
+  if(q.type==='sel'){const opts=q.opts.map((o,i)=>`<option value="${q.vals[i]}">${o}</option>`).join('');return `<select class="q-select" onchange="setSel('${q.id}',this.value)"><option value="">Choose…</option>${opts}</select>`;}
+  return '';
+}
+
+function setYN(id,val,btn){
+  scores[id]=val;
+  const w=btn.closest('.yn-btns');
+  w.querySelectorAll('.yn-btn').forEach(b=>{b.classList.remove('sel-yes','sel-no');});
+  btn.classList.add(val===5?'sel-yes':'sel-no');
+  markAnswered(id);
+  clearDimError(QUESTIONS.find(q=>q.id===id).dim);
+  recalc();
+}
+function setScale(id,val,btn,color){
+  scores[id]=val;
+  const w=btn.closest('.scale-wrap');
+  w.querySelectorAll('.scale-btn').forEach(b=>{b.classList.remove('sel');b.style.background='';b.style.borderColor='';b.style.color='';});
+  btn.classList.add('sel');btn.style.background=color;btn.style.borderColor=color;
+  markAnswered(id);
+  clearDimError(QUESTIONS.find(q=>q.id===id).dim);
+  recalc();
+}
+function setNum(id,val){
+  const q=QUESTIONS.find(x=>x.id===id);
+  const v=parseInt(val)||0;
+  scores[id]=q.mapFn?q.mapFn(v):Math.min(5,v);
+  markAnswered(id);
+  clearDimError(q.dim);
+  recalc();
+}
+function setSel(id,val){
+  scores[id]=val===''?undefined:parseFloat(val);
+  if(scores[id]===undefined)delete scores[id];
+  markAnswered(id);
+  clearDimError(QUESTIONS.find(q=>q.id===id).dim);
+  recalc();
+}
+function markAnswered(id){const el=document.getElementById(`qi-${id}`);if(el)el.classList.add('answered');}
+function toggleDim(di){document.querySelectorAll('.dimension-block').forEach((b,i)=>{if(i===di)b.classList.toggle('dim-open');});}
+
+function updateUser(){
+  userInfo.name      = document.getElementById('u-name').value;
+  userInfo.org       = document.getElementById('u-org').value;
+  userInfo.role      = document.getElementById('u-role').value;
+  userInfo.sector    = document.getElementById('u-sector').value;
+  userInfo.size      = document.getElementById('u-size').value;
+  userInfo.email     = document.getElementById('u-email').value;
+}
+
+/* ── Validation helpers ─────────────────────────────────────────────── */
+function clearFieldError(fieldId){
+  document.getElementById(fieldId).classList.remove('field-error');
+  if(!document.querySelector('.ui-field.field-error') && !document.querySelector('.dimension-block.dim-error')){
+    document.getElementById('validation-banner').style.display='none';
+  }
+}
+function clearDimError(di){
+  const block=document.getElementById(`dim-block-${di}`);
+  if(!block)return;
+  const allAnswered=QUESTIONS.filter(q=>q.dim===di).every(q=>scores[q.id]!==undefined&&!isNaN(scores[q.id]));
+  if(allAnswered){
+    block.classList.remove('dim-error');
+    if(!document.querySelector('.ui-field.field-error') && !document.querySelector('.dimension-block.dim-error')){
+      document.getElementById('validation-banner').style.display='none';
+    }
+  }
+}
+
+function validateForm(){
+  document.querySelectorAll('.ui-field.field-error').forEach(el=>el.classList.remove('field-error'));
+  document.querySelectorAll('.dimension-block.dim-error').forEach(el=>el.classList.remove('dim-error'));
+
+  const issues=[];
+  let firstEl=null;
+
+  const profileChecks=[
+    {inputId:'u-name',   fieldId:'field-name',   label:'Full Name'},
+    {inputId:'u-org',    fieldId:'field-org',    label:'Organization'},
+    {inputId:'u-role',   fieldId:'field-role',   label:'Role / Title'},
+    {inputId:'u-sector', fieldId:'field-sector', label:'Sector'},
+    {inputId:'u-size',   fieldId:'field-size',   label:'Team Size'},
+    {inputId:'u-email',  fieldId:'field-email',  label:'Email Address'},
+  ];
+
+  profileChecks.forEach(c=>{
+    const el=document.getElementById(c.inputId);
+    if(!el||!el.value.trim()){
+      document.getElementById(c.fieldId).classList.add('field-error');
+      issues.push(c.label);
+      if(!firstEl) firstEl=document.getElementById(c.fieldId);
+    }
+  });
+
+  const emailEl=document.getElementById('u-email');
+  if(emailEl&&emailEl.value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim())){
+    document.getElementById('field-email').classList.add('field-error');
+    if(!issues.includes('Email Address')) issues.push('Valid email address');
+    if(!firstEl) firstEl=document.getElementById('field-email');
+  }
+
+  const unansweredDims=new Set();
+  QUESTIONS.forEach(q=>{
+    if(scores[q.id]===undefined||isNaN(scores[q.id])) unansweredDims.add(q.dim);
+  });
+
+  unansweredDims.forEach(di=>{
+    const block=document.getElementById(`dim-block-${di}`);
+    if(block){
+      block.classList.add('dim-error');
+      if(!block.classList.contains('dim-open')) block.classList.add('dim-open');
+      if(!firstEl) firstEl=block;
+    }
+    issues.push(`All questions in ${DIMS[di].name}`);
+  });
+
+  if(issues.length>0){
+    const banner=document.getElementById('validation-banner');
+    banner.innerHTML=`<strong>Please complete the following before downloading:</strong><ul>${issues.map(i=>`<li>${i}</li>`).join('')}</ul>`;
+    banner.style.display='block';
+    if(firstEl) firstEl.scrollIntoView({behavior:'smooth',block:'center'});
+    return false;
+  }
+
+  document.getElementById('validation-banner').style.display='none';
+  return true;
+}
+
+function getDimData(){
+  const dimScores=[0,0,0,0],dimMax=[0,0,0,0];
+  QUESTIONS.forEach(q=>{dimMax[q.dim]+=q.max;if(scores[q.id]!==undefined&&!isNaN(scores[q.id]))dimScores[q.dim]+=scores[q.id];});
+  return{dimScores,dimMax};
+}
+
+function getTriggeredRecs(){
+  const triggered=[];
+  QUESTIONS.forEach(q=>{
+    const score=scores[q.id];
+    if(score===undefined||isNaN(score))return;
+    const r=Q_RECS[q.id];
+    if(!r)return;
+    if(score<r.threshold) triggered.push({qid:q.id,dim:q.dim,q,score,gap:r.threshold-score,rec:r.rec});
+  });
+  triggered.sort((a,b)=>b.gap-a.gap||a.dim-b.dim);
+  return triggered;
+}
+
+function answerLabel(q,score){
+  if(score===undefined||isNaN(score))return '—';
+  if(q.type==='yn') return score===5?'Yes':'No';
+  if(q.type==='scale') return `${score}/5`;
+  if(q.type==='num') return `${score} tool${score===1?'':'s'}`;
+  if(q.type==='sel'){const idx=q.vals.indexOf(score);return idx>=0?q.opts[idx].replace(/\s*\(\d+\)$/,''):String(score);}
+  return String(score);
+}
+
+function recalc(){
+  const{dimScores,dimMax}=getDimData();
+  const totalScore=dimScores.reduce((a,b)=>a+b,0);
+  const totalMax=dimMax.reduce((a,b)=>a+b,0);
+  const pct=Math.round((totalScore/totalMax)*100);
+  const answered=Object.keys(scores).filter(k=>scores[k]!==undefined&&!isNaN(scores[k])).length;
+  const total=QUESTIONS.length;
+  document.getElementById('score-big').textContent=pct;
+  document.getElementById('prog-fill').style.width=pct+'%';
+  document.getElementById('score-pct').textContent=`${answered} of ${total} questions answered`;
+  document.getElementById('comp-txt').textContent=`${answered} / ${total} answered`;
+  document.getElementById('comp-fill').style.width=Math.round(answered/total*100)+'%';
+  const{label,color,bg}=getLevel(pct);
+  const badge=document.getElementById('readiness-badge');
+  badge.textContent=label;badge.style.background=bg;badge.style.color=color;
+  dimScores.forEach((s,i)=>{
+    const p=Math.round((s/dimMax[i])*100);
+    document.getElementById(`bar-${i}`).style.width=p+'%';
+    document.getElementById(`pct-${i}`).textContent=p+'%';
+    document.getElementById(`dim-badge-${i}`).textContent=`${Math.round(s)} / ${dimMax[i]}`;
+    document.getElementById(`dim-prog-${i}`).style.width=p+'%';
+  });
+  updateRec(pct,dimScores,dimMax);
+  drawRadar(dimScores,dimMax);
+}
+
+function getLevel(pct){
+  if(pct<20)return{label:'Not Ready',color:'#fff',bg:'rgba(192,28,28,.7)'};
+  if(pct<40)return{label:'Early Stage',color:'#fff',bg:'rgba(180,80,0,.7)'};
+  if(pct<60)return{label:'Developing',color:'#001830',bg:'rgba(201,168,76,.85)'};
+  if(pct<75)return{label:'Progressing',color:'#fff',bg:'rgba(26,122,74,.8)'};
+  if(pct<90)return{label:'Advanced',color:'#fff',bg:'rgba(0,62,138,.85)'};
+  return{label:'AI-Ready',color:'#001830',bg:'linear-gradient(90deg,#C9A84C,#e8c86a)'};
+}
+
+function updateRec(pct,ds,dm){
+  const answered=Object.keys(scores).filter(k=>scores[k]!==undefined&&!isNaN(scores[k])).length;
+  const phaseText=pct<40?`Your organization is in the <strong>early stages</strong> of AI readiness.`
+    :pct<70?`Your organization is <strong>developing</strong> solid AI practices.`
+    :`Your organization shows <strong>strong AI readiness</strong>.`;
+  if(answered<5){document.getElementById('rec-content').innerHTML=`<p style="font-size:12px;color:#888;">Answer at least 5 questions to see targeted recommendations based on your specific weak spots.</p>`;return;}
+  const triggered=getTriggeredRecs();
+  if(triggered.length===0){document.getElementById('rec-content').innerHTML=`<p style="font-size:12.5px;">${phaseText}</p><p style="font-size:12px;color:#1a7a4a;margin-top:10px;font-weight:600;">No urgent gaps flagged in your answers. Keep reinforcing current practices and consider expanding scope.</p>`;return;}
+  const top=triggered.slice(0,6);const byDim={};
+  top.forEach(t=>{if(!byDim[t.dim])byDim[t.dim]=[];byDim[t.dim].push(t);});
+  let html=`<p style="font-size:12.5px;">${phaseText}</p><p style="font-size:11px;color:#999;margin-top:6px;">Showing ${top.length} of ${triggered.length} flagged gaps, worst first.</p>`;
+  Object.keys(byDim).forEach(diStr=>{const di=+diStr;html+=`<div class="rec-dim-header" style="color:${DIMS[di].color}">${DIMS[di].name}</div><ul class="rec-list">`;byDim[di].forEach(t=>{html+=`<li>${t.rec}</li>`;});html+=`</ul>`;});
+  document.getElementById('rec-content').innerHTML=html;
+}
+
+function drawRadar(ds,dm,ctx,W,H){
+  if(!ctx){const c=document.getElementById('radar');ctx=c.getContext('2d');W=c.width;H=c.height;}
+  ctx.clearRect(0,0,W,H);
+  const cx=W/2,cy=H/2+8,r=Math.min(W,H)*0.32;
+  const labels=['Delegation','Description','Discernment','Diligence'];
+  const colors=['#003E8A','#1a7a4a','#9b4e97','#c05c00'];const n=4;
+  const angles=labels.map((_,i)=>(i/n)*Math.PI*2-Math.PI/2);
+  [.25,.5,.75,1].forEach(f=>{ctx.beginPath();angles.forEach((a,i)=>{const x=cx+Math.cos(a)*r*f,y=cy+Math.sin(a)*r*f;i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});ctx.closePath();ctx.strokeStyle=`rgba(0,62,138,${f===1?.18:.09})`;ctx.lineWidth=1;ctx.stroke();});
+  angles.forEach(a=>{ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+Math.cos(a)*r,cy+Math.sin(a)*r);ctx.strokeStyle='rgba(0,62,138,.12)';ctx.lineWidth=1;ctx.stroke();});
+  const pts=ds.map((s,i)=>({x:cx+Math.cos(angles[i])*r*(s/dm[i]),y:cy+Math.sin(angles[i])*r*(s/dm[i])}));
+  ctx.beginPath();pts.forEach((p,i)=>i===0?ctx.moveTo(p.x,p.y):ctx.lineTo(p.x,p.y));ctx.closePath();ctx.fillStyle='rgba(0,62,138,.12)';ctx.fill();ctx.strokeStyle='#003E8A';ctx.lineWidth=2;ctx.stroke();
+  pts.forEach((p,i)=>{ctx.beginPath();ctx.arc(p.x,p.y,5,0,Math.PI*2);ctx.fillStyle=colors[i];ctx.fill();});
+  ctx.font=`700 ${Math.max(10,r*0.14)}px Inter, sans-serif`;ctx.textAlign='center';ctx.textBaseline='middle';
+  angles.forEach((a,i)=>{const lx=cx+Math.cos(a)*(r+r*0.28),ly=cy+Math.sin(a)*(r+r*0.28);ctx.fillStyle=colors[i];ctx.fillText(labels[i],lx,ly);});
+}
+
+/* ── Email notification (sends a Google Drive link to the PDF) ───────── */
+async function sendEmailNotification(pct,label,dimScores,dimMax,triggered,pdfLink){
+  emailjs.init({publicKey:EMAILJS_PUBLIC_KEY});
+  const date=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+  const dimBreakdown=DIMS.map((d,i)=>`${d.name}: ${Math.round((dimScores[i]/dimMax[i])*100)}%`).join(' | ');
+  const topRecs=triggered.slice(0,5).map(t=>`• [${DIMS[t.dim].name}] ${t.rec}`).join('\n')||'No urgent gaps flagged.';
+  return emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID,{
+    notify_email:        NOTIFY_EMAIL,
+    assessment_date:     date,
+    user_name:           userInfo.name    ||'Not provided',
+    user_org:            userInfo.org     ||'Not provided',
+    user_role:           userInfo.role    ||'Not provided',
+    user_sector:         userInfo.sector  ||'Not provided',
+    user_size:           userInfo.size    ||'Not provided',
+    user_email:          userInfo.email   ||'Not provided',
+    overall_score:       pct,
+    readiness_level:     label,
+    dim_breakdown:       dimBreakdown,
+    gaps_count:          triggered.length,
+    top_recommendations: topRecs,
+    // NEW: link to the PDF stored in Google Drive (no attachment payload).
+    pdf_link:            pdfLink,
+  });
+}
+
+/* ── PDF generation (vector/text), upload to Drive, email link ───────── */
+async function downloadPDF(){
+  updateUser();
+  if(!validateForm()) return;
+
+  const btn=document.getElementById('dl-btn');
+  const orig=btn.innerHTML;
+  btn.disabled=true;
+  btn.innerHTML='⏳ Generating & Uploading…';
+  try{
+    const pdf = buildPrintReport(); // returns a jsPDF drawn with REAL TEXT (selectable)
+
+    const date=new Date().toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'}).replace(/\s/g,'_');
+    const safeOrg=(userInfo.org||'Report').replace(/[^a-z0-9]/gi,'_');
+    const fname=`MAI_AI_Readiness_${safeOrg}_${date}.pdf`;
+
+    // 1. Save the PDF locally for the user
+    pdf.save(fname);
+
+    // 2. Raw base64 (strip the "data:application/pdf;base64," prefix)
+    const base64Data = pdf.output('datauristring').split('base64,')[1];
+    const approxKB = Math.round(base64Data.length * 0.75 / 1024);
+    console.log(`PDF base64 ≈ ${approxKB} KB (decoded) — text PDF, uploading to Drive.`);
+
+    // 3. Upload to Google Drive via the Apps Script Web App.
+    //    Content-Type is text/plain on purpose: a JSON content-type triggers
+    //    a CORS preflight that Apps Script Web Apps do not answer, which makes
+    //    the request fail. Apps Script still reads e.postData.contents, so
+    //    JSON.parse works server-side regardless of the declared type.
+    let finalPdfLink = '';
+    try{
+      const driveResponse = await fetch(GAS_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ filename: fname, base64: base64Data })
+      });
+      const driveResult = await driveResponse.json();
+      if(driveResult && driveResult.status === 'success' && driveResult.url){
+        finalPdfLink = driveResult.url;
+        console.log('Drive upload OK:', finalPdfLink);
+      } else {
+        console.error('Drive upload failed:', driveResult);
+        finalPdfLink = 'Upload failed — please contact us directly for your report.';
+      }
+    }catch(driveErr){
+      console.error('Drive upload error:', driveErr);
+      finalPdfLink = 'Upload failed — please contact us directly for your report.';
+    }
+
+    // 4. Email the notification with the Drive link
+    const{dimScores,dimMax}=getDimData();
+    const _total=dimScores.reduce((a,b)=>a+b,0);
+    const _max=dimMax.reduce((a,b)=>a+b,0);
+    const _pct=Math.round((_total/_max)*100);
+    const{label:_label}=getLevel(_pct);
+
+    sendEmailNotification(_pct,_label,dimScores,dimMax,getTriggeredRecs(),finalPdfLink)
+      .then(r=>{ console.log('EmailJS OK:', r && r.status, r && r.text); })
+      .catch(err=>{
+        const st = err && (err.status||'');
+        const tx = err && (err.text||err.message||err);
+        console.error('EmailJS FAILED — status:', st, 'text:', tx, err);
+      });
+
+  }catch(e){
+    console.error(e);alert('Generation failed: '+e.message);
+  }finally{
+    btn.disabled=false;btn.innerHTML=orig;
+  }
+}
+
+/* Convert #rrggbb to [r,g,b]. */
+function hexRGB(hex){
+  const m=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex||'#000000');
+  return m?[parseInt(m[1],16),parseInt(m[2],16),parseInt(m[3],16)]:[0,0,0];
+}
+
+/* Build the report as a native jsPDF vector document with REAL TEXT.
+   Returns the jsPDF instance (selectable / copy-pasteable text). */
+function buildPrintReport(){
+  const{jsPDF}=window.jspdf;
+  const doc=new jsPDF({orientation:'p',unit:'mm',format:'a4',compress:true});
+
+  const PW=210, PH=297;
+  const ML=16, MR=16, CW=PW-ML-MR;
+  let y=0;
+
+  const{dimScores,dimMax}=getDimData();
+  const totalScore=dimScores.reduce((a,b)=>a+b,0);
+  const totalMax=dimMax.reduce((a,b)=>a+b,0);
+  const pct=Math.round((totalScore/totalMax)*100);
+  const{label}=getLevel(pct);
+  const answered=Object.keys(scores).filter(k=>scores[k]!==undefined&&!isNaN(scores[k])).length;
+  const date=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+  const lvlRGB = pct<40?[192,57,43]:pct<60?[154,111,30]:pct<75?[26,122,74]:pct<90?[0,62,138]:[201,168,76];
+  const phaseText=pct<40
+    ?'Your organization is in the early stages of AI readiness. The priority is foundational: build shared understanding of capabilities and limits, identify safe initial use cases, and establish basic disciplines around review and disclosure before scaling.'
+    :pct<70
+      ?'Your organization is developing solid AI practices. The next phase is consistency: turn individual habits into shared norms, document what works, and address the specific gaps flagged below.'
+      :'Your organization shows strong AI readiness. Focus now turns to scaling what works, reinforcing the few remaining weak spots, and staying current as practices evolve.';
+  const triggered=getTriggeredRecs();
+  const byDim={0:[],1:[],2:[],3:[]};
+  triggered.forEach(t=>byDim[t.dim].push(t));
+
+  const BLUE=[0,62,138], DARK=[0,24,48], GOLD=[201,168,76], INK=[26,26,46], GREY=[120,120,130], LINE=[225,228,236];
+  let curPageLabel='Page 1 · Snapshot & Recommendations';
+
+  function footer(pageLabel){
+    doc.setDrawColor(225,228,236); doc.setLineWidth(0.2);
+    doc.line(ML,PH-14,PW-MR,PH-14);
+    doc.setFont('helvetica','normal'); doc.setFontSize(7); doc.setTextColor(150,150,150);
+    doc.text(pageLabel, ML, PH-9);
+    doc.text('M.A.I. Consulting · '+date, PW-MR, PH-9, {align:'right'});
+  }
+  function ensure(space){
+    if(y+space > PH-18){ footer(curPageLabel); doc.addPage(); y=18; return true; }
+    return false;
+  }
+  function sectionTitle(t){
+    ensure(14);
+    doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(BLUE[0],BLUE[1],BLUE[2]);
+    doc.text(t.toUpperCase(), ML, y);
+    y+=2; doc.setDrawColor(LINE[0],LINE[1],LINE[2]); doc.setLineWidth(0.4);
+    doc.line(ML,y,PW-MR,y); y+=6;
+  }
+
+  /* ===== Header band ===== */
+  doc.setFillColor(DARK[0],DARK[1],DARK[2]);
+  doc.rect(0,0,PW,42,'F');
+  doc.setFillColor(GOLD[0],GOLD[1],GOLD[2]);
+  doc.rect(0,42,PW,1.4,'F');
+  doc.setFont('helvetica','bold'); doc.setFontSize(8); doc.setTextColor(180,190,205);
+  doc.text('M.A.I. CONSULTING · STRATEGY · AI · IMPACT', ML, 16);
+  doc.setFontSize(22); doc.setTextColor(255,255,255);
+  doc.text('AI Readiness', ML, 27);
+  doc.setTextColor(GOLD[0],GOLD[1],GOLD[2]);
+  doc.text('Assessment Report', ML, 36);
+  doc.setFont('helvetica','normal'); doc.setFontSize(8); doc.setTextColor(180,190,205);
+  doc.text(date+'  ·  4D Framework · 28 questions', PW-MR, 36, {align:'right'});
+  y=54;
+
+  /* ===== Profile ===== */
+  sectionTitle('Profile');
+  const prof=[
+    ['Name', userInfo.name||'—', 'Organization', userInfo.org||'—'],
+    ['Role', userInfo.role||'—', 'Email', userInfo.email||'—'],
+    ['Sector', userInfo.sector||'—', 'Team Size', userInfo.size||'—'],
+    ['Questions', answered+' / '+QUESTIONS.length, 'Total Score', totalScore+' / '+totalMax],
+    ['Overall', pct+'%  ('+label+')', 'Gaps Flagged', String(triggered.length)],
+  ];
+  doc.setFillColor(246,248,252);
+  doc.roundedRect(ML,y,CW,prof.length*8+4,2,2,'F');
+  let py=y+6;
+  const colA=ML+4, colAV=ML+30, colB=ML+CW/2+2, colBV=ML+CW/2+28;
+  prof.forEach(r=>{
+    doc.setFont('helvetica','normal'); doc.setFontSize(8); doc.setTextColor(GREY[0],GREY[1],GREY[2]);
+    doc.text(r[0], colA, py);
+    doc.text(r[2], colB, py);
+    doc.setFont('helvetica','bold'); doc.setTextColor(INK[0],INK[1],INK[2]); doc.setFontSize(8.5);
+    doc.text(String(r[1]).slice(0,34), colAV, py);
+    doc.text(String(r[3]).slice(0,34), colBV, py);
+    py+=8;
+  });
+  y+=prof.length*8+10;
+
+  /* ===== Score gauge + breakdown ===== */
+  sectionTitle('Overall Score & Dimension Breakdown');
+  const gW=46, gH=40;
+  doc.setFillColor(DARK[0],DARK[1],DARK[2]);
+  doc.roundedRect(ML,y,gW,gH,2,2,'F');
+  doc.setFont('helvetica','bold'); doc.setFontSize(7); doc.setTextColor(170,180,195);
+  doc.text('OVERALL', ML+gW/2, y+8, {align:'center'});
+  doc.setFontSize(26); doc.setTextColor(GOLD[0],GOLD[1],GOLD[2]);
+  doc.text(String(pct), ML+gW/2, y+22, {align:'center'});
+  doc.setFontSize(7); doc.setTextColor(150,160,175);
+  doc.text('out of 100', ML+gW/2, y+28, {align:'center'});
+  doc.setFillColor(lvlRGB[0],lvlRGB[1],lvlRGB[2]);
+  doc.roundedRect(ML+6,y+31,gW-12,6,3,3,'F');
+  doc.setFontSize(7); doc.setTextColor(255,255,255);
+  doc.text(label.toUpperCase(), ML+gW/2, y+35, {align:'center'});
+
+  const bx=ML+gW+8, bw=CW-gW-8;
+  let by=y+4;
+  dimScores.forEach((s,i)=>{
+    const p=Math.round((s/dimMax[i])*100);
+    const c=hexRGB(DIMS[i].color);
+    doc.setFont('helvetica','bold'); doc.setFontSize(8.5); doc.setTextColor(c[0],c[1],c[2]);
+    doc.text(DIMS[i].name, bx, by+3);
+    const barX=bx+40, barW=bw-40-14;
+    doc.setFillColor(238,240,245);
+    doc.roundedRect(barX,by,barW,3.4,1.7,1.7,'F');
+    doc.setFillColor(c[0],c[1],c[2]);
+    doc.roundedRect(barX,by,Math.max(1,barW*p/100),3.4,1.7,1.7,'F');
+    doc.setTextColor(INK[0],INK[1],INK[2]); doc.setFontSize(8.5);
+    doc.text(p+'%', bx+bw, by+3, {align:'right'});
+    by+=8.5;
+  });
+  y+=Math.max(gH, dimScores.length*8.5)+8;
+
+  /* ===== Where you stand ===== */
+  sectionTitle('Where You Stand');
+  doc.setFont('helvetica','normal'); doc.setFontSize(9); doc.setTextColor(77,77,77);
+  const ptx=doc.splitTextToSize(phaseText, CW);
+  ensure(ptx.length*4.6+4);
+  doc.text(ptx, ML, y); y+=ptx.length*4.6+8;
+
+  /* ===== Targeted recommendations ===== */
+  sectionTitle('Targeted Recommendations Based on Your Answers');
+  if(triggered.length===0){
+    doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(26,122,74);
+    const ok=doc.splitTextToSize('No urgent gaps flagged. Keep reinforcing current practices and consider expanding scope.', CW);
+    ensure(ok.length*4.6+4);
+    doc.text(ok, ML, y); y+=ok.length*4.6+6;
+  } else {
+    [0,1,2,3].filter(di=>byDim[di].length>0).forEach(di=>{
+      const D=DIMS[di]; const c=hexRGB(D.color);
+      ensure(12);
+      doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(c[0],c[1],c[2]);
+      doc.text(`${D.name} — ${byDim[di].length} gap${byDim[di].length===1?'':'s'}`, ML, y);
+      y+=5;
+      byDim[di].forEach(t=>{
+        const recL=doc.splitTextToSize('-  '+t.rec, CW-2);
+        const ansL=doc.splitTextToSize('   Triggered by: "'+t.q.text+'" -> you answered: '+answerLabel(t.q,t.score), CW-2);
+        const need=recL.length*4.0 + ansL.length*3.4 + 4;
+        ensure(need);
+        doc.setFillColor(246,248,252);
+        doc.roundedRect(ML,y-1,CW,need,1,1,'F');
+        doc.setFillColor(c[0],c[1],c[2]);
+        doc.rect(ML,y-1,1.4,need,'F');
+        doc.setFont('helvetica','normal'); doc.setFontSize(8.5); doc.setTextColor(60,60,60);
+        doc.text(recL, ML+4, y+3);
+        let yy=y+3+recL.length*4.0;
+        doc.setFont('helvetica','italic'); doc.setFontSize(7.5); doc.setTextColor(140,140,140);
+        doc.text(ansL, ML+4, yy);
+        y+=need+2;
+      });
+      y+=2;
+    });
+  }
+
+  /* ===== Page 2: Full score table ===== */
+  footer(curPageLabel); doc.addPage(); y=18; curPageLabel='Page 2 · Detail';
+  sectionTitle('Full Score Breakdown');
+  const ratings=p=>p>=85?'5/5':p>=70?'4/5':p>=50?'3/5':p>=30?'2/5':'1/5';
+  const th=['Dimension','Score','Max','%','Rating'];
+  const cwd=[CW-72,18,18,18,18];
+  function trow(cells, head){
+    ensure(7);
+    if(head){ doc.setFillColor(BLUE[0],BLUE[1],BLUE[2]); doc.rect(ML,y,CW,7,'F');
+      doc.setFont('helvetica','bold'); doc.setTextColor(255,255,255); }
+    else { doc.setFont('helvetica','normal'); doc.setTextColor(INK[0],INK[1],INK[2]); }
+    doc.setFontSize(8);
+    let x=ML;
+    cells.forEach((cell,i)=>{
+      const al = i>=1 ? 'right' : 'left';
+      const tx = al==='right'? x+cwd[i]-2 : x+2;
+      doc.text(String(cell), tx, y+4.7, {align:al});
+      x+=cwd[i];
+    });
+    doc.setDrawColor(LINE[0],LINE[1],LINE[2]); doc.setLineWidth(0.15);
+    doc.line(ML,y+7,ML+CW,y+7);
+    y+=7;
+  }
+  trow(th,true);
+  dimScores.forEach((s,i)=>{
+    const p=Math.round((s/dimMax[i])*100);
+    trow([DIMS[i].name, Math.round(s), dimMax[i], p+'%', ratings(p)],false);
+  });
+  doc.setFillColor(DARK[0],DARK[1],DARK[2]); doc.rect(ML,y,CW,7,'F');
+  doc.setFont('helvetica','bold'); doc.setTextColor(255,255,255); doc.setFontSize(8);
+  {let x=ML; const tot=['TOTAL',totalScore,totalMax,pct+'%',label];
+   tot.forEach((cell,i)=>{const al=i>=1?'right':'left';const tx=al==='right'?x+cwd[i]-2:x+2;
+     doc.text(String(cell),tx,y+4.7,{align:al}); x+=cwd[i];});}
+  y+=12;
+
+  /* ===== Question-level results ===== */
+  sectionTitle('Question-Level Results');
+  DIMS.forEach((D,di)=>{
+    const dimQs=QUESTIONS.filter(q=>q.dim===di);
+    ensure(9);
+    const c=hexRGB(D.color);
+    doc.setFillColor(250,251,253); doc.rect(ML,y,CW,6,'F');
+    doc.setDrawColor(c[0],c[1],c[2]); doc.setLineWidth(0.5); doc.line(ML,y,ML+CW,y);
+    doc.setFont('helvetica','bold'); doc.setFontSize(8); doc.setTextColor(c[0],c[1],c[2]);
+    doc.text(D.name, ML+2, y+4); y+=8;
+    dimQs.forEach((q,qi)=>{
+      const sc=scores[q.id];
+      const display=(sc===undefined||isNaN(sc))?'—':Math.round(sc);
+      const ans=answerLabel(q,sc);
+      const r=Q_RECS[q.id];
+      const flagged=(sc!==undefined&&!isNaN(sc)&&r&&sc<r.threshold);
+      const qline=doc.splitTextToSize((qi+1)+'. '+q.text, CW-44);
+      const need=Math.max(qline.length*3.8, 5)+2;
+      ensure(need);
+      doc.setFont('helvetica','normal'); doc.setFontSize(7.5); doc.setTextColor(INK[0],INK[1],INK[2]);
+      doc.text(qline, ML, y+3);
+      const rightX=ML+CW;
+      doc.setFont('helvetica','bold'); doc.setTextColor(BLUE[0],BLUE[1],BLUE[2]);
+      doc.text(`${ans}  (${display}/${q.max})`, rightX, y+3, {align:'right'});
+      if(flagged){
+        doc.setTextColor(192,57,43); doc.setFontSize(7.5);
+        doc.text('● flagged', rightX, y+3+3.6, {align:'right'});
+      }
+      y+=need;
+      doc.setDrawColor(245,245,248); doc.setLineWidth(0.1);
+      doc.line(ML,y-1,ML+CW,y-1);
+    });
+    y+=3;
+  });
+
+  /* ===== Disclaimer ===== */
+  ensure(28);
+  doc.setFillColor(246,248,252);
+  const disc='About this assessment. Based on the AI Fluency 4D Framework (Delegation, Description, Discernment, Diligence) developed by Prof. Rick Dakan and Prof. Joseph Feller in partnership with Anthropic and Giving Tuesday - CC BY-NC-SA 4.0. Recommendations on this report are generated by comparing each of your answers to a threshold of acceptable practice; items below threshold are flagged in the question-level table and a corresponding action in the recommendations section. Scores are indicative and self-reported; they do not constitute a compliance audit.';
+  const dl=doc.splitTextToSize(disc, CW-8);
+  const dh=dl.length*3.6+8;
+  doc.roundedRect(ML,y,CW,dh,1.5,1.5,'F');
+  doc.setFont('helvetica','normal'); doc.setFontSize(7); doc.setTextColor(110,110,110);
+  doc.text(dl, ML+4, y+5);
+  y+=dh+4;
+
+  footer(curPageLabel);
+  return doc;
+}
+
+function esc(s){if(s==null)return'';return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+
+buildUI();
+drawRadar([0,0,0,0],[35,35,35,35]);
+</script>
+</body>
+</html>

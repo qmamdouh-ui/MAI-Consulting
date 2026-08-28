@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services &amp; Methodology | M.A.I. Consulting</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Playfair+Display:wght@700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "on-secondary-fixed-variant":"#584400","on-secondary":"#ffffff","secondary-container":"#fed977",
+        "tertiary":"#0e2957","surface-container-lowest":"#ffffff","on-tertiary":"#ffffff",
+        "surface-tint":"#305ca9","on-tertiary-fixed-variant":"#2e4675","surface-variant":"#e4e2e2",
+        "on-surface":"#1b1c1c","blue-dark":"#001f4d","surface-dim":"#dbd9d9",
+        "primary-fixed-dim":"#aec6ff","background":"#fbf9f8","on-error":"#ffffff",
+        "on-tertiary-container":"#96ade3","error-container":"#ffdad6","surface-container":"#efeded",
+        "primary-fixed":"#d8e2ff","white":"#FFFFFF","blue-mid":"#002855",
+        "on-secondary-fixed":"#241a00","surface-container-low":"#f5f3f3",
+        "on-error-container":"#93000a","gold-dim":"rgba(201,168,76,0.18)",
+        "blue-light":"rgba(0,62,138,0.12)","secondary":"#755b00","surface":"#fbf9f8",
+        "secondary-fixed-dim":"#e6c364","on-primary-container":"#84acff",
+        "surface-container-high":"#eae8e7","tertiary-container":"#28406f",
+        "inverse-on-surface":"#f2f0f0","tertiary-fixed-dim":"#afc6fd",
+        "on-primary-fixed-variant":"#0e4490","on-primary":"#ffffff","inverse-primary":"#aec6ff",
+        "on-tertiary-fixed":"#001a42","border-subtle":"rgba(0,62,138,0.11)",
+        "off-white":"#f6f8fc","error":"#ba1a1a","text-deep":"#1a1a2e",
+        "on-surface-variant":"#434751","on-primary-fixed":"#001a42","on-background":"#1b1c1c",
+        "tertiary-fixed":"#d8e2ff","surface-bright":"#fbf9f8","primary":"#002960",
+        "outline-variant":"#c3c6d3","on-secondary-container":"#785d00",
+        "primary-container":"#003e8a","surface-container-highest":"#e4e2e2",
+        "outline":"#737782","inverse-surface":"#303030","secondary-fixed":"#ffe08f"
+      },
+      borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},
+      spacing:{"gutter":"24px","stack-md":"24px","section-padding":"96px","container-max":"1100px","stack-lg":"56px","stack-sm":"12px"},
+      fontFamily:{"body-main":["Inter"],"headline-card":["Inter"],"headline-section":["Playfair Display"],"stat-num":["Playfair Display"],"display":["Playfair Display"],"body-large":["Inter"],"label-caps":["Inter"]},
+      fontSize:{
+        "body-main":["15px",{"lineHeight":"1.75","fontWeight":"400"}],
+        "headline-card":["16px",{"lineHeight":"1.4","fontWeight":"700"}],
+        "headline-section":["46px",{"lineHeight":"1.18","fontWeight":"800"}],
+        "stat-num":["38px",{"lineHeight":"1","fontWeight":"700"}],
+        "display":["76px",{"lineHeight":"1.08","letterSpacing":"-0.02em","fontWeight":"800"}],
+        "body-large":["18px",{"lineHeight":"1.75","fontWeight":"400"}],
+        "label-caps":["10px",{"lineHeight":"1.2","letterSpacing":"3px","fontWeight":"700"}]
+      }
+    }
+  }
+}
+</script>
+<style>
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+.orb-blur{filter:blur(90px);}
+.methodology-pipeline::before{
+  content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;
+  background:linear-gradient(to bottom,#002960 0%,#fed977 100%);z-index:0;
+}
+@media(max-width:768px){.methodology-pipeline::before{left:24px;}}
+</style>
+</head>
+<body class="bg-surface font-body-main text-on-surface">
+
+<!-- ── NAV ── -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-md border-b border-border-subtle shadow-sm">
+  <div class="flex justify-between items-center max-w-[1100px] mx-auto px-6 py-4">
+    <div class="font-display text-headline-card font-extrabold tracking-tight text-primary">M.A.I. Consulting</div>
+    <div class="hidden md:flex gap-8">
+      <a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('services').scrollIntoView({behavior:'smooth'})" class="text-secondary font-bold border-b-2 border-secondary pb-1">Services</a>
+      <a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('methodology').scrollIntoView({behavior:'smooth'})" class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300">Methodology</a>
+      <a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('platforms').scrollIntoView({behavior:'smooth'})" class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300">Platforms</a>
+      <a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('insights').scrollIntoView({behavior:'smooth'})" class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300">Insights</a>
+    </div>
+    <div class="flex gap-4 items-center">
+      <a href="https://www.mai4consulting.com/contact-us" target="_blank" class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded-lg font-headline-card shadow-sm hover:shadow-md transition-all active:scale-95">Contact Us</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<header class="relative overflow-hidden pt-32 pb-24 bg-primary text-white">
+  <div class="absolute inset-0 z-0 overflow-hidden">
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-secondary rounded-full orb-blur opacity-20"></div>
+    <div class="absolute top-1/2 -right-48 w-[500px] h-[500px] bg-primary-container rounded-full orb-blur opacity-30"></div>
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image:radial-gradient(#fff 1px,transparent 1px);background-size:40px 40px;"></div>
+  </div>
+  <div class="relative z-10 max-w-[1100px] mx-auto px-6 text-center">
+    <div class="font-label-caps text-label-caps text-secondary-fixed mb-stack-sm">ARCHITECTING INTELLIGENCE</div>
+    <h1 class="font-display text-display mb-stack-md">Strategic Value via AI Transformation.</h1>
+    <p class="font-body-large text-body-large max-w-2xl mx-auto opacity-80 mb-stack-lg text-primary-fixed">
+      We bridge the gap between traditional management consulting and the frontier of Large Language Model deployment.
+    </p>
+    <div class="flex flex-wrap justify-center gap-6">
+      <button onclick="event.preventDefault(); document.getElementById('services').scrollIntoView({behavior:'smooth'})" class="bg-secondary-fixed text-on-secondary-fixed font-headline-card px-8 py-4 rounded-lg shadow-[0_0_36px_rgba(201,168,76,0.3)] hover:shadow-[0_0_48px_rgba(201,168,76,0.5)] transition-all">Explore Services</button>
+      <button onclick="event.preventDefault(); document.getElementById('methodology').scrollIntoView({behavior:'smooth'})" class="border border-white/30 hover:bg-white/10 font-headline-card px-8 py-4 rounded-lg transition-all">View Methodology</button>
+    </div>
+  </div>
+</header>
+
+<!-- ── WHAT WE DO ── -->
+<section class="py-section-padding bg-surface" id="services">
+  <div class="max-w-[1100px] mx-auto px-6">
+    <div class="mb-stack-lg text-center">
+      <div class="font-label-caps text-label-caps text-secondary mb-stack-sm uppercase">Capabilities</div>
+      <h2 class="font-headline-section text-headline-section text-primary">What We Do</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+
+      <div class="md:col-span-8 bg-white border border-border-subtle p-8 rounded-xl shadow-sm hover:shadow-md transition-all group relative overflow-hidden">
+        <div class="absolute bottom-0 left-0 w-0 h-1 bg-secondary group-hover:w-full transition-all duration-500"></div>
+        <span class="material-symbols-outlined text-secondary text-4xl mb-6">hub</span>
+        <h3 class="font-headline-section text-3xl text-primary mb-4">AI Embedding</h3>
+        <p class="text-on-surface-variant text-body-main mb-6 max-w-lg">We don't just add AI to your existing processes; we re-architect your operations to be AI-native. From automated decision-making engines to autonomous agent workflows — individual to institution.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-blue-light text-primary px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Individual</span>
+          <span class="bg-blue-light text-primary px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Team Scale</span>
+          <span class="bg-blue-light text-primary px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Enterprise</span>
+          <span class="bg-blue-light text-primary px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Agentic RAG</span>
+          <span class="bg-blue-light text-primary px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Data Pipelines</span>
+        </div>
+      </div>
+
+      <div class="md:col-span-4 bg-white border border-border-subtle p-8 rounded-xl shadow-sm hover:shadow-md transition-all group relative">
+        <div class="absolute bottom-0 left-0 w-0 h-1 bg-secondary group-hover:w-full transition-all duration-500"></div>
+        <span class="material-symbols-outlined text-secondary text-4xl mb-6">psychology</span>
+        <h3 class="font-headline-card text-2xl text-primary mb-4">AI Literacy</h3>
+        <p class="text-on-surface-variant text-body-main mb-4">A structured 5-stage journey — Awareness, Foundations, Fluency, Mastery, Integration — tailored to your sector, role, and tools.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-blue-light text-primary px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Free Tools</span>
+          <span class="bg-blue-light text-primary px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Claude Pro</span>
+          <span class="bg-blue-light text-primary px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Copilot M365</span>
+        </div>
+      </div>
+
+      <div class="md:col-span-4 bg-white border border-border-subtle p-8 rounded-xl shadow-sm hover:shadow-md transition-all group relative">
+        <div class="absolute bottom-0 left-0 w-0 h-1 bg-secondary group-hover:w-full transition-all duration-500"></div>
+        <span class="material-symbols-outlined text-secondary text-4xl mb-6">account_balance</span>
+        <h3 class="font-headline-card text-2xl text-primary mb-4">Management Consulting</h3>
+        <p class="text-on-surface-variant text-body-main mb-4">Boutique-quality strategic advisory for nonprofits and impact-driven organizations — UN SDG-aligned, design-thinking led, and mission-centered.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-blue-light text-primary px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Strategy</span>
+          <span class="bg-blue-light text-primary px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Impact Design</span>
+          <span class="bg-blue-light text-primary px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">UN SDGs</span>
+        </div>
+      </div>
+
+      <div class="md:col-span-8 bg-white border border-border-subtle p-8 rounded-xl shadow-sm hover:shadow-md transition-all group relative overflow-hidden">
+        <div class="absolute bottom-0 left-0 w-0 h-1 bg-secondary group-hover:w-full transition-all duration-500"></div>
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="flex-1">
+            <span class="material-symbols-outlined text-secondary text-4xl mb-6">analytics</span>
+            <h3 class="font-headline-section text-3xl text-primary mb-4">Strategic Research</h3>
+            <p class="text-on-surface-variant text-body-main mb-4">AI-augmented research that transforms complex questions into actionable intelligence — sector landscape analysis, policy mapping, stakeholder studies, and custom white papers for NGOs, governments, and enterprises.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-blue-light text-primary px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Landscape Analysis</span>
+              <span class="bg-blue-light text-primary px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Policy Mapping</span>
+              <span class="bg-blue-light text-primary px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">White Papers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-12 bg-primary text-white border border-primary p-8 rounded-xl shadow-md group relative overflow-hidden">
+        <div class="absolute bottom-0 left-0 w-0 h-1 bg-secondary-fixed group-hover:w-full transition-all duration-500"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
+          <div class="lg:col-span-1">
+            <span class="material-symbols-outlined text-secondary-fixed text-4xl mb-6">groups</span>
+            <h3 class="font-headline-card text-2xl text-white mb-3">Training Through Partners</h3>
+            <p class="text-white/70 text-body-main text-sm">We co-design and co-deliver AI literacy programs with accredited training centres, universities, NGOs, and corporate L&amp;D teams — extending our reach across sectors and geographies.</p>
+            <a href="https://www.mai4consulting.com/contact-us" target="_blank" class="inline-flex items-center gap-2 mt-6 bg-secondary-fixed text-on-secondary-fixed font-bold px-5 py-2.5 rounded-lg text-sm hover:opacity-90 transition-all">
+              Become a Partner <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </a>
+          </div>
+          <div class="flex flex-col gap-3">
+            <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center mb-1"><span class="material-symbols-outlined text-secondary-fixed text-xl">school</span></div>
+            <h4 class="font-bold text-white text-sm">Training Centres</h4>
+            <p class="text-white/60 text-xs leading-relaxed">Ready-to-deliver AI literacy kits, facilitator guides, and co-delivery with M.A.I. expert trainers.</p>
+          </div>
+          <div class="flex flex-col gap-3">
+            <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center mb-1"><span class="material-symbols-outlined text-secondary-fixed text-xl">account_balance</span></div>
+            <h4 class="font-bold text-white text-sm">Universities &amp; Academia</h4>
+            <p class="text-white/60 text-xs leading-relaxed">Guest lectures, executive education workshops, and curriculum design partnerships.</p>
+          </div>
+          <div class="flex flex-col gap-3">
+            <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center mb-1"><span class="material-symbols-outlined text-secondary-fixed text-xl">corporate_fare</span></div>
+            <h4 class="font-bold text-white text-sm">Corporate L&amp;D &amp; NGOs</h4>
+            <p class="text-white/60 text-xs leading-relaxed">Role-specific AI modules, multilingual delivery, and LMS-compatible content packages for field and office teams.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── METHODOLOGY ── -->
+<section class="py-section-padding bg-off-white" id="methodology">
+  <div class="max-w-[1100px] mx-auto px-6">
+    <div class="mb-stack-lg text-center">
+      <div class="font-label-caps text-label-caps text-secondary mb-stack-sm uppercase">Our Process</div>
+      <h2 class="font-headline-section text-headline-section text-primary">How We Do It</h2>
+      <p class="font-body-large text-on-surface-variant max-w-xl mx-auto mt-4">A structured journey from ambiguity to scalable digital intelligence.</p>
+    </div>
+    <div class="relative methodology-pipeline">
+      <div class="space-y-24 relative z-10">
+
+        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-24 group">
+          <div class="md:w-1/2 flex justify-end order-2 md:order-1">
+            <div class="bg-white p-8 rounded-xl border border-border-subtle shadow-sm group-hover:-translate-y-2 transition-transform duration-300 w-full md:max-w-md">
+              <h4 class="font-headline-card text-2xl text-primary mb-2">01. Discover</h4>
+              <p class="text-on-surface-variant text-body-main">Immersion into your existing operational landscape. We identify high-leverage AI opportunities and baseline current performance metrics.</p>
+            </div>
+          </div>
+          <div class="flex-none order-1 md:order-2 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold ring-4 ring-secondary-container">1</div>
+          <div class="md:w-1/2 order-3 hidden md:block"></div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-24 group">
+          <div class="md:w-1/2 hidden md:block order-1"></div>
+          <div class="flex-none order-1 md:order-2 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold ring-4 ring-secondary-container">2</div>
+          <div class="md:w-1/2 flex justify-start order-2 md:order-3">
+            <div class="bg-white p-8 rounded-xl border border-border-subtle shadow-sm group-hover:-translate-y-2 transition-transform duration-300 w-full md:max-w-md">
+              <h4 class="font-headline-card text-2xl text-primary mb-2">02. Design</h4>
+              <p class="text-on-surface-variant text-body-main">Prototyping the solution architecture. We select the optimal LLM foundation and design the human-in-the-loop governance structure.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-24 group">
+          <div class="md:w-1/2 flex justify-end order-2 md:order-1">
+            <div class="bg-white p-8 rounded-xl border border-border-subtle shadow-sm group-hover:-translate-y-2 transition-transform duration-300 w-full md:max-w-md">
+              <h4 class="font-headline-card text-2xl text-primary mb-2">03. Deploy</h4>
+              <p class="text-on-surface-variant text-body-main">Agile implementation in a controlled environment. Rapid iteration based on real-world edge cases and user feedback loops.</p>
+            </div>
+          </div>
+          <div class="flex-none order-1 md:order-2 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold ring-4 ring-secondary-container">3</div>
+          <div class="md:w-1/2 order-3 hidden md:block"></div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-24 group">
+          <div class="md:w-1/2 hidden md:block order-1"></div>
+          <div class="flex-none order-1 md:order-2 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold ring-4 ring-secondary-container">4</div>
+          <div class="md:w-1/2 flex justify-start order-2 md:order-3">
+            <div class="bg-white p-8 rounded-xl border border-border-subtle shadow-sm group-hover:-translate-y-2 transition-transform duration-300 w-full md:max-w-md">
+              <h4 class="font-headline-card text-2xl text-primary mb-2">04. Measure</h4>
+              <p class="text-on-surface-variant text-body-main">Quantifying impact against ROI targets. We analyze accuracy, latency, and organizational adoption rates to ensure value capture.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-24 group">
+          <div class="md:w-1/2 flex justify-end order-2 md:order-1">
+            <div class="bg-white p-8 rounded-xl border border-border-subtle shadow-sm group-hover:-translate-y-2 transition-transform duration-300 w-full md:max-w-md">
+              <h4 class="font-headline-card text-2xl text-primary mb-2">05. Scale</h4>
+              <p class="text-on-surface-variant text-body-main">Full-scale organizational roll-out with the change management framework required to maintain long-term digital excellence.</p>
+            </div>
+          </div>
+          <div class="flex-none order-1 md:order-2 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold ring-4 ring-secondary-container">5</div>
+          <div class="md:w-1/2 order-3 hidden md:block"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PLATFORMS ── -->
+<section class="py-section-padding bg-white" id="platforms">
+  <div class="max-w-[1100px] mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-stack-lg gap-6">
+      <div class="max-w-xl">
+        <div class="font-label-caps text-label-caps text-secondary mb-stack-sm uppercase">The Toolset</div>
+        <h2 class="font-headline-section text-headline-section text-primary">Mastery Across Platforms</h2>
+      </div>
+      <div class="flex items-center gap-2 text-on-surface-variant font-medium">
+        <span>Vendor Agnostic Approach</span>
+        <span class="material-symbols-outlined">verified</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+      <div class="flex flex-col items-center justify-center p-8 border border-border-subtle rounded-xl hover:bg-surface transition-colors">
+        <span class="material-symbols-outlined text-4xl text-primary mb-4">token</span>
+        <span class="font-headline-card text-primary text-center">Claude &amp; Claude Code</span>
+        <div class="mt-4 flex gap-1"><div class="w-2 h-2 rounded-full bg-secondary"></div><div class="w-2 h-2 rounded-full bg-secondary"></div><div class="w-2 h-2 rounded-full bg-secondary"></div></div>
+      </div>
+      <div class="flex flex-col items-center justify-center p-8 border border-border-subtle rounded-xl hover:bg-surface transition-colors">
+        <span class="material-symbols-outlined text-4xl text-primary mb-4">cloud</span>
+        <span class="font-headline-card text-primary text-center">Copilot M365</span>
+        <div class="mt-4 flex gap-1"><div class="w-2 h-2 rounded-full bg-secondary"></div><div class="w-2 h-2 rounded-full bg-secondary"></div><div class="w-2 h-2 rounded-full bg-secondary"></div></div>
+      </div>
+      <div class="flex flex-col items-center justify-center p-8 border border-border-subtle rounded-xl hover:bg-surface transition-colors">
+        <span class="material-symbols-outlined text-4xl text-primary mb-4">terminal</span>
+        <span class="font-headline-card text-primary text-center">Gemini</span>
+        <div class="mt-4 flex gap-1"><div class="w-2 h-2 rounded-full bg-secondary"></div><div class="w-2 h-2 rounded-full bg-secondary"></div><div class="w-2 h-2 rounded-full bg-secondary"></div></div>
+      </div>
+      <div class="flex flex-col items-center justify-center p-8 border border-border-subtle rounded-xl hover:bg-surface transition-colors">
+        <span class="material-symbols-outlined text-4xl text-primary mb-4">database</span>
+        <span class="font-headline-card text-primary text-center">Perplexity</span>
+        <div class="mt-4 flex gap-1"><div class="w-2 h-2 rounded-full bg-secondary"></div><div class="w-2 h-2 rounded-full bg-secondary"></div><div class="w-2 h-2 rounded-full bg-secondary"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AI EDGE STRIP ── -->
+<section class="py-12 bg-blue-dark text-white overflow-hidden relative" id="insights">
+  <div class="max-w-[1100px] mx-auto px-6 relative z-10">
+    <div class="flex flex-wrap justify-between items-center gap-12">
+      <div class="flex items-center gap-4">
+        <span class="material-symbols-outlined text-secondary-container text-4xl" style="font-variation-settings:'FILL' 1;">shield_with_heart</span>
+        <div><div class="text-xl font-bold">Ethical Safeguards</div><div class="text-on-tertiary-container/80 text-sm">Strict AI compliance protocols.</div></div>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="material-symbols-outlined text-secondary-container text-4xl" style="font-variation-settings:'FILL' 1;">speed</span>
+        <div><div class="text-xl font-bold">Rapid Prototyping</div><div class="text-on-tertiary-container/80 text-sm">From POC to live in competitive timeframes.</div></div>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="material-symbols-outlined text-secondary-container text-4xl" style="font-variation-settings:'FILL' 1;">finance</span>
+        <div><div class="text-xl font-bold">Value-Linked Fees</div><div class="text-on-tertiary-container/80 text-sm">Alignment with your ROI.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="bg-blue-dark w-full pt-24 pb-12">
+  <div class="max-w-[1100px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+    <div class="col-span-1 md:col-span-1">
+      <div class="font-display text-headline-section text-secondary-fixed mb-4">M.A.I.</div>
+      <p class="text-on-tertiary-container/70 text-body-main">Strategic Intelligence &amp; AI Transformation for the world's most ambitious institutions.</p>
+    </div>
+    <div>
+      <h5 class="font-label-caps text-label-caps text-on-tertiary-container mb-6">SERVICES</h5>
+      <ul class="space-y-4">
+        <li><a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('services').scrollIntoView({behavior:'smooth'})" class="text-on-tertiary-container/80 hover:text-white transition-colors hover:translate-x-1 inline-block">AI Embedding</a></li>
+        <li><a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('services').scrollIntoView({behavior:'smooth'})" class="text-on-tertiary-container/80 hover:text-white transition-colors hover:translate-x-1 inline-block">Management Consulting</a></li>
+        <li><a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('services').scrollIntoView({behavior:'smooth'})" class="text-on-tertiary-container/80 hover:text-white transition-colors hover:translate-x-1 inline-block">AI Literacy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="font-label-caps text-label-caps text-on-tertiary-container mb-6">RESOURCES</h5>
+      <ul class="space-y-4">
+        <li><a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('methodology').scrollIntoView({behavior:'smooth'})" class="text-on-tertiary-container/80 hover:text-white transition-colors hover:translate-x-1 inline-block">Methodology</a></li>
+        <li><a href="https://www.mai4consulting.com/use-cases" target="_blank" class="text-on-tertiary-container/80 hover:text-white transition-colors hover:translate-x-1 inline-block">Use Cases</a></li>
+        <li><a href="https://www.mai4consulting.com/contact-us" target="_blank" class="text-on-tertiary-container/80 hover:text-white transition-colors hover:translate-x-1 inline-block">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-[1100px] mx-auto px-6 mt-16 pt-8 border-t border-white/10">
+    <p class="text-on-tertiary-container/50 text-xs font-label-caps text-center">© 2026 M.A.I. Consulting. Strategic Intelligence &amp; AI Transformation. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
