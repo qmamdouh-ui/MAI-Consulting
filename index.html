@@ -63,6 +63,44 @@ tailwind.config = {
 .svc-tab-btn{background:#fff;border:1px solid rgba(0,62,138,0.11);color:#434751;padding:12px 24px;border-radius:9999px;font-weight:700;cursor:pointer;transition:all .25s;font-family:'Inter',sans-serif;font-size:14px;outline:none;}
 .svc-tab-btn:hover{background:rgba(0,41,96,0.06);color:#002960;}
 .svc-tab-btn.active{background:#002960 !important;color:#ffffff !important;border-color:#002960 !important;box-shadow:0 4px 14px rgba(0,41,96,0.25);}
+
+/* --- SITE FOOTER (canonical) --- */
+footer{
+  background:var(--blue-dark,#001f4d);
+  padding:3rem 2rem;border-top:1px solid rgba(255,255,255,.06);
+}
+.footer-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1.5rem;
+}
+.footer-logo{
+  font-family:'Playfair Display',serif;font-weight:800;
+  font-size:1.05rem;color:var(--white,#ffffff);
+}
+.footer-tagline{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:.2rem;max-width:34rem;}
+.footer-right{text-align:right;}
+.footer-right a{
+  color:rgba(255,255,255,.5);font-size:.78rem;text-decoration:none;
+  transition:color .2s;
+}
+.footer-right a:hover{color:var(--gold,#C9A84C);}
+.footer-right .footer-brand{color:rgba(255,255,255,.5);font-size:.78rem;}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.25);margin-top:.3rem;}
+.footer-nav{
+  max-width:1100px;margin:2rem auto 0;padding-top:1.5rem;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.footer-nav ul{
+  list-style:none;margin:0;padding:0;
+  display:flex;flex-wrap:wrap;gap:.6rem 1.75rem;
+}
+.footer-nav a{
+  color:rgba(255,255,255,.5);font-size:.78rem;text-decoration:none;
+  transition:color .2s;
+}
+.footer-nav a:hover{color:var(--gold,#C9A84C);}
+.footer-nav .footer-nav-current{color:var(--white,#ffffff);font-size:.78rem;}
+/* --- END SITE FOOTER --- */
 </style>
 </head>
 <body class="bg-background text-on-surface font-body-main selection:bg-secondary-container selection:text-on-secondary-container">
@@ -369,32 +407,29 @@ tailwind.config = {
 </section>
 
 <!-- ── FOOTER ── -->
-<footer class="w-full pt-24 pb-12 bg-blue-dark border-t border-white/10">
-  <div class="max-w-[1100px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+<footer>
+  <div class="footer-inner">
     <div>
-      <div class="font-display text-headline-section text-secondary-fixed mb-4">M.A.I.</div>
-      <p class="text-on-tertiary-container/80 text-sm">Strategic Intelligence &amp; AI Transformation for the world's most ambitious organizations.</p>
+      <div class="footer-logo">M.A.I. Consulting</div>
+      <div class="footer-tagline">Strategic Intelligence &amp; AI Transformation for the world's most ambitious organizations.</div>
     </div>
-    <div>
-      <h4 class="font-label-caps text-label-caps text-white mb-6">Expertise</h4>
-      <ul class="space-y-4">
-        <li><a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('sectors').scrollIntoView({behavior:'smooth'})" class="text-on-tertiary-container/80 hover:text-white transition-colors hover:translate-x-1 inline-block">Sectors</a></li>
-        <li><a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('services').scrollIntoView({behavior:'smooth'})" class="text-on-tertiary-container/80 hover:text-white transition-colors hover:translate-x-1 inline-block">Services</a></li>
-        <li><a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('ai-edge').scrollIntoView({behavior:'smooth'})" class="text-on-tertiary-container/80 hover:text-white transition-colors hover:translate-x-1 inline-block">Methodology</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="font-label-caps text-label-caps text-white mb-6">Company</h4>
-      <ul class="space-y-4">
-        <li><a href="use-cases/" target="_blank" class="text-on-tertiary-container/80 hover:text-white transition-colors hover:translate-x-1 inline-block">Use Cases</a></li>
-        <li><a href="contact-us/" target="_blank" class="text-on-tertiary-container/80 hover:text-white transition-colors hover:translate-x-1 inline-block">Privacy Policy</a></li>
-        <li><a href="contact-us/" target="_blank" class="text-on-tertiary-container/80 hover:text-white transition-colors hover:translate-x-1 inline-block">Contact</a></li>
-      </ul>
+    <div class="footer-right">
+      <span class="footer-brand">mai4consulting.com</span>
+      <div class="footer-copy">&copy; 2026 M.A.I. Consulting. Strategic Intelligence &amp; AI Transformation. All rights reserved.</div>
     </div>
   </div>
-  <div class="max-w-[1100px] mx-auto px-6 mt-24 pt-8 border-t border-white/5 text-center">
-    <p class="text-on-tertiary-container/60 text-[12px] font-label-caps">© 2026 M.A.I. Consulting. Strategic Intelligence &amp; AI Transformation. All rights reserved.</p>
-  </div>
+  <nav class="footer-nav" aria-label="Site">
+    <ul>
+      <li><span class="footer-nav-current" aria-current="page">Home</span></li>
+      <li><a href="what-we-do/">What We Do</a></li>
+      <li><a href="use-cases/">Use Cases</a></li>
+      <li><a href="our-clients/">Our Clients</a></li>
+      <li><a href="explore-your-ai-readiness/">Explore Your AI Readiness</a></li>
+      <li><a href="extensive-ai-readiness-analysis/">Extensive AI Readiness Assessment</a></li>
+      <li><a href="save-claude-tokens/">Save Claude Tokens</a></li>
+      <li><a href="contact-us/">Contact Us</a></li>
+    </ul>
+  </nav>
 </footer>
 
 <script>

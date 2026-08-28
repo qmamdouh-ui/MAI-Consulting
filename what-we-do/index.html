@@ -58,6 +58,44 @@ tailwind.config = {
   background:linear-gradient(to bottom,#002960 0%,#fed977 100%);z-index:0;
 }
 @media(max-width:768px){.methodology-pipeline::before{left:24px;}}
+
+/* --- SITE FOOTER (canonical) --- */
+footer{
+  background:var(--blue-dark,#001f4d);
+  padding:3rem 2rem;border-top:1px solid rgba(255,255,255,.06);
+}
+.footer-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1.5rem;
+}
+.footer-logo{
+  font-family:'Playfair Display',serif;font-weight:800;
+  font-size:1.05rem;color:var(--white,#ffffff);
+}
+.footer-tagline{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:.2rem;max-width:34rem;}
+.footer-right{text-align:right;}
+.footer-right a{
+  color:rgba(255,255,255,.5);font-size:.78rem;text-decoration:none;
+  transition:color .2s;
+}
+.footer-right a:hover{color:var(--gold,#C9A84C);}
+.footer-right .footer-brand{color:rgba(255,255,255,.5);font-size:.78rem;}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.25);margin-top:.3rem;}
+.footer-nav{
+  max-width:1100px;margin:2rem auto 0;padding-top:1.5rem;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.footer-nav ul{
+  list-style:none;margin:0;padding:0;
+  display:flex;flex-wrap:wrap;gap:.6rem 1.75rem;
+}
+.footer-nav a{
+  color:rgba(255,255,255,.5);font-size:.78rem;text-decoration:none;
+  transition:color .2s;
+}
+.footer-nav a:hover{color:var(--gold,#C9A84C);}
+.footer-nav .footer-nav-current{color:var(--white,#ffffff);font-size:.78rem;}
+/* --- END SITE FOOTER --- */
 </style>
 </head>
 <body class="bg-surface font-body-main text-on-surface">
@@ -324,32 +362,29 @@ tailwind.config = {
 </section>
 
 <!-- ── FOOTER ── -->
-<footer class="bg-blue-dark w-full pt-24 pb-12">
-  <div class="max-w-[1100px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
-    <div class="col-span-1 md:col-span-1">
-      <div class="font-display text-headline-section text-secondary-fixed mb-4">M.A.I.</div>
-      <p class="text-on-tertiary-container/70 text-body-main">Strategic Intelligence &amp; AI Transformation for the world's most ambitious institutions.</p>
-    </div>
+<footer>
+  <div class="footer-inner">
     <div>
-      <h5 class="font-label-caps text-label-caps text-on-tertiary-container mb-6">SERVICES</h5>
-      <ul class="space-y-4">
-        <li><a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('services').scrollIntoView({behavior:'smooth'})" class="text-on-tertiary-container/80 hover:text-white transition-colors hover:translate-x-1 inline-block">AI Embedding</a></li>
-        <li><a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('services').scrollIntoView({behavior:'smooth'})" class="text-on-tertiary-container/80 hover:text-white transition-colors hover:translate-x-1 inline-block">Management Consulting</a></li>
-        <li><a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('services').scrollIntoView({behavior:'smooth'})" class="text-on-tertiary-container/80 hover:text-white transition-colors hover:translate-x-1 inline-block">AI Literacy</a></li>
-      </ul>
+      <div class="footer-logo">M.A.I. Consulting</div>
+      <div class="footer-tagline">Strategic Intelligence &amp; AI Transformation for the world's most ambitious organizations.</div>
     </div>
-    <div>
-      <h5 class="font-label-caps text-label-caps text-on-tertiary-container mb-6">RESOURCES</h5>
-      <ul class="space-y-4">
-        <li><a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('methodology').scrollIntoView({behavior:'smooth'})" class="text-on-tertiary-container/80 hover:text-white transition-colors hover:translate-x-1 inline-block">Methodology</a></li>
-        <li><a href="../use-cases/" target="_blank" class="text-on-tertiary-container/80 hover:text-white transition-colors hover:translate-x-1 inline-block">Use Cases</a></li>
-        <li><a href="../contact-us/" target="_blank" class="text-on-tertiary-container/80 hover:text-white transition-colors hover:translate-x-1 inline-block">Contact</a></li>
-      </ul>
+    <div class="footer-right">
+      <a href="../">mai4consulting.com</a>
+      <div class="footer-copy">&copy; 2026 M.A.I. Consulting. Strategic Intelligence &amp; AI Transformation. All rights reserved.</div>
     </div>
   </div>
-  <div class="max-w-[1100px] mx-auto px-6 mt-16 pt-8 border-t border-white/10">
-    <p class="text-on-tertiary-container/50 text-xs font-label-caps text-center">© 2026 M.A.I. Consulting. Strategic Intelligence &amp; AI Transformation. All rights reserved.</p>
-  </div>
+  <nav class="footer-nav" aria-label="Site">
+    <ul>
+      <li><a href="../">Home</a></li>
+      <li><span class="footer-nav-current" aria-current="page">What We Do</span></li>
+      <li><a href="../use-cases/">Use Cases</a></li>
+      <li><a href="../our-clients/">Our Clients</a></li>
+      <li><a href="../explore-your-ai-readiness/">Explore Your AI Readiness</a></li>
+      <li><a href="../extensive-ai-readiness-analysis/">Extensive AI Readiness Assessment</a></li>
+      <li><a href="../save-claude-tokens/">Save Claude Tokens</a></li>
+      <li><a href="../contact-us/">Contact Us</a></li>
+    </ul>
+  </nav>
 </footer>
 
 </body>
