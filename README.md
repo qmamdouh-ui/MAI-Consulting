@@ -12,8 +12,40 @@ Website repository for M.A.I. Consulting.
 
 ## The published site
 
-The published site lives in the **repository root**. Anything served to visitors
-belongs here. `source-content/` is reference material and is never deployed.
+The published site lives in the **repository root**, served by GitHub Pages at
+`mai4consulting.com`. Anything served to visitors belongs here.
+
+| Path | Purpose |
+| --- | --- |
+| `/` | Home |
+| `/services/` | The offer page — four services, three packages, published starting prices |
+| `/about/` | Who delivers the work: background, credentials, standards |
+| `/cheatsheet/` | Sample of the one-page deliverable each department receives |
+| `/eu-ai-act-article-4/` | Briefing on the AI literacy obligation — the main commercial hook |
+| `/explore-your-ai-readiness/` | Free 28-question assessment (4D framework) |
+| `/extensive-ai-readiness-analysis/` | 60-question, 10-dimension assessment |
+| `/our-clients/` | Who we work with, packages table, how engagements run |
+| `/resources/` | Hub for the briefing, the sample, and the tool references |
+| `/use-cases/`, `/claude-in-chrome/`, `/save-claude-tokens/` | Reference articles |
+| `/privacy/` | Privacy policy, on its own URL so it can be linked from proposals |
+| `/what-we-do/` | Redirects to `/services/`. Kept so inbound links keep working |
+| `assets/site.css` | Shared design system — tokens, global nav, footer, components |
+| `robots.txt`, `sitemap.xml` | Crawler directives |
+
+## Design system
+
+`assets/site.css` is the single source of truth for colours, type and components:
+light `#f6f8fc` ground, navy `#001830`/`#003E8A`, gold `#C9A84C`, Playfair Display
+headings, Inter body. Pages built on it link the stylesheet. The older article and
+assessment pages keep their own inline CSS but carry the same global navigation via
+a self-contained `.mai-topbar` block, so no page styles collide.
+
+**`source-content/` is served too.** With `.nojekyll` set and the site published
+from the repository root, GitHub Pages serves every file in the repo, including
+`source-content/`. It is reachable at `mai4consulting.com/source-content/`.
+`robots.txt` disallows it from crawlers, but that is a request, not access
+control. **This repository is public** — do not commit anything here that should
+not be world-readable.
 
 ## `source-content/`
 
