@@ -123,9 +123,9 @@ footer{
     </div>
     <div class="hidden md:flex items-center gap-8">
       <a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('sectors').scrollIntoView({behavior:'smooth'})" class="text-on-surface-variant font-medium hover:text-primary transition-colors">Sectors</a>
-      <a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('services').scrollIntoView({behavior:'smooth'})" class="text-on-surface-variant font-medium hover:text-primary transition-colors">Services</a>
-      <a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('ai-edge').scrollIntoView({behavior:'smooth'})" class="text-on-surface-variant font-medium hover:text-primary transition-colors">Methodology</a>
-      <a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('testimonials').scrollIntoView({behavior:'smooth'})" class="text-on-surface-variant font-medium hover:text-primary transition-colors">Insights</a>
+      <a href="services/" class="text-on-surface-variant font-medium hover:text-primary transition-colors">Services</a>
+      <a href="explore-your-ai-readiness/" class="text-on-surface-variant font-medium hover:text-primary transition-colors">Assessment</a>
+      <a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('ai-edge').scrollIntoView({behavior:'smooth'})" class="text-on-surface-variant font-medium hover:text-primary transition-colors">Why Us</a>
     </div>
     <div class="flex items-center gap-4">
       <a href="contact-us/" class="bg-secondary text-white px-6 py-2.5 rounded-lg font-bold shadow-lg shadow-secondary/20 hover:shadow-secondary/40 active:scale-95 transition-all">Contact Us</a>
@@ -147,12 +147,12 @@ footer{
       AI that Delivers.
     </h1>
     <p class="font-body-large text-body-large text-on-surface-variant max-w-2xl mb-12">
-      Empowering leaders through prestigious institutional stability and urgent technological capability. We bridge the gap between traditional rigor and AI-native transformation.
+      We make each department AI-fluent for its own work — one page of what to use AI for, what never to, and exactly how — and write the policy that permits it.
     </p>
     <div class="flex flex-wrap gap-4 mb-24">
-      <a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('services').scrollIntoView({behavior:'smooth'})"
+      <a href="services/"
          class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold shadow-xl shadow-primary/20 hover:bg-primary-container transition-all flex items-center gap-2">
-        Explore Our Services
+        See services and packages
         <span class="material-symbols-outlined">arrow_forward</span>
       </a>
       <a href="contact-us/"
@@ -221,134 +221,64 @@ footer{
 <section class="py-section-padding bg-off-white" id="services">
   <div class="max-w-[1100px] mx-auto px-6">
     <div class="mb-stack-lg text-center">
-      <span class="font-label-caps text-label-caps text-secondary block mb-stack-sm">CORE CAPABILITIES</span>
-      <h2 class="font-headline-section text-headline-section text-primary">Intelligence-Led Services</h2>
-    </div>
-    <div class="flex flex-wrap justify-center gap-2 mb-12">
-      <button class="svc-tab-btn active" onclick="event.preventDefault(); switchSvcTab(0)">AI Embedding</button>
-      <button class="svc-tab-btn" onclick="event.preventDefault(); switchSvcTab(1)">AI Literacy</button>
-      <button class="svc-tab-btn" onclick="event.preventDefault(); switchSvcTab(2)">Management Consulting</button>
-      <button class="svc-tab-btn" onclick="event.preventDefault(); switchSvcTab(3)">Strategic Research</button>
+      <span class="font-label-caps text-label-caps text-secondary block mb-stack-sm">FOUR SERVICES</span>
+      <h2 class="font-headline-section text-headline-section text-primary">Everything We Do Is AI</h2>
+      <p class="font-body-large text-body-large text-on-surface-variant max-w-2xl mx-auto mt-4">
+        Buy one, or buy the package. Every engagement is fixed-price and fixed-scope, agreed before we start.
+      </p>
     </div>
 
-    <!-- Panel 0 -->
-    <div class="svc-panel grid-cols-1 lg:grid-cols-3 gap-8" id="svc-panel-0" style="display:grid;">
-      <div class="bg-white p-8 rounded-xl border border-border-subtle shadow-sm hover:border-secondary transition-colors flex flex-col justify-between">
-        <div>
-          <div class="mb-6"><span class="font-label-caps text-label-caps bg-blue-light text-primary px-3 py-1 rounded">INDIVIDUAL</span></div>
-          <h3 class="font-headline-card text-headline-card text-primary mb-4 text-xl">Personal AI Workspace</h3>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-start gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Claude Free, Copilot Free, ChatGPT Free — immediate productivity gains</li>
-            <li class="flex items-start gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Claude Pro, Claude Code, Artifacts &amp; Projects</li>
-            <li class="flex items-start gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Copilot M365 Researcher &amp; Analytical Agent</li>
-            <li class="flex items-start gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Copilot in Word, Excel &amp; PowerPoint</li>
-          </ul>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <a href="services/" class="bg-white p-8 rounded-xl border border-border-subtle shadow-sm hover:border-secondary hover:-translate-y-1 transition-all block no-underline">
+        <div class="flex items-baseline justify-between mb-4">
+          <span class="font-display text-3xl font-extrabold text-secondary">01</span>
+          <span class="font-label-caps text-label-caps bg-blue-light text-primary px-3 py-1 rounded">2–3 WEEKS</span>
         </div>
-        <button class="w-full py-3 rounded-lg border border-border-subtle text-on-surface-variant font-bold cursor-default opacity-70 font-body-main">More coming soon</button>
-      </div>
-      <div class="bg-primary p-8 rounded-xl shadow-xl relative scale-105 border border-primary z-10 flex flex-col justify-between">
-        <div>
-          <div class="mb-6"><span class="font-label-caps text-label-caps bg-secondary text-on-secondary-fixed px-3 py-1 rounded">TEAM SCALE</span></div>
-          <h3 class="font-headline-card text-headline-card text-white mb-4 text-xl">Collaborative Intelligence</h3>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-start gap-3 text-sm text-white/80"><span class="material-symbols-outlined text-secondary-fixed text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Shared AI knowledge bases and RAG systems</li>
-            <li class="flex items-start gap-3 text-sm text-white/80"><span class="material-symbols-outlined text-secondary-fixed text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Cross-departmental AI agents &amp; automation</li>
-            <li class="flex items-start gap-3 text-sm text-white/80"><span class="material-symbols-outlined text-secondary-fixed text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Claude for Business &amp; Copilot M365 Business</li>
-            <li class="flex items-start gap-3 text-sm text-white/80"><span class="material-symbols-outlined text-secondary-fixed text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Copilot Office Agent — cross-app orchestration</li>
-          </ul>
+        <h3 class="font-headline-card text-headline-card text-primary mb-2 text-xl">AI Readiness Assessment</h3>
+        <p class="text-secondary text-sm italic mb-4">&ldquo;Where do we actually stand?&rdquo;</p>
+        <p class="text-on-surface-variant text-sm leading-relaxed">A scored report across ten dimensions with a ranked 90-day priority list, mapped to ISO/IEC 42001, the NIST AI Risk Management Framework and EU AI Act Article&nbsp;4.</p>
+      </a>
+      <a href="services/" class="bg-white p-8 rounded-xl border border-border-subtle shadow-sm hover:border-secondary hover:-translate-y-1 transition-all block no-underline">
+        <div class="flex items-baseline justify-between mb-4">
+          <span class="font-display text-3xl font-extrabold text-secondary">02</span>
+          <span class="font-label-caps text-label-caps bg-blue-light text-primary px-3 py-1 rounded">3–4 WEEKS</span>
         </div>
-        <a href="explore-your-ai-readiness/" class="w-full py-3 rounded-lg bg-secondary text-white font-bold hover:bg-secondary-fixed-dim transition-colors shadow-lg shadow-secondary/20 text-center block font-body-main">Explore Readiness</a>
-      </div>
-      <div class="bg-white p-8 rounded-xl border border-border-subtle shadow-sm hover:border-secondary transition-colors flex flex-col justify-between">
-        <div>
-          <div class="mb-6"><span class="font-label-caps text-label-caps bg-blue-light text-primary px-3 py-1 rounded">ENTERPRISE</span></div>
-          <h3 class="font-headline-card text-headline-card text-primary mb-4 text-xl">Full-Spectrum Integration</h3>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-start gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>End-to-end data pipeline AI &amp; automation</li>
-            <li class="flex items-start gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Custom LLM fine-tuning &amp; enterprise deployment</li>
-            <li class="flex items-start gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>AI governance &amp; responsible use frameworks</li>
-            <li class="flex items-start gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Institutional AI policy design &amp; rollout</li>
-          </ul>
+        <h3 class="font-headline-card text-headline-card text-primary mb-2 text-xl">AI Use Policy</h3>
+        <p class="text-secondary text-sm italic mb-4">&ldquo;What are our people allowed to do?&rdquo;</p>
+        <p class="text-on-surface-variant text-sm leading-relaxed">A board-ready policy that starts with permissions, not prohibitions — permitted uses by role, red lines, a data classification table, disclosure rules and an approved tool list.</p>
+      </a>
+      <a href="services/" class="bg-white p-8 rounded-xl border border-border-subtle shadow-sm hover:border-secondary hover:-translate-y-1 transition-all block no-underline">
+        <div class="flex items-baseline justify-between mb-4">
+          <span class="font-display text-3xl font-extrabold text-secondary">03</span>
+          <span class="font-label-caps text-label-caps bg-blue-light text-primary px-3 py-1 rounded">2–6 WEEKS</span>
         </div>
-        <a href="explore-your-ai-readiness/" class="w-full py-3 rounded-lg bg-primary text-white font-bold hover:bg-primary-container transition-colors text-center block font-body-main">Explore Readiness</a>
-      </div>
+        <h3 class="font-headline-card text-headline-card text-primary mb-2 text-xl">Team AI Training</h3>
+        <p class="text-secondary text-sm italic mb-4">&ldquo;What do I do with AI in <em>my</em> job?&rdquo;</p>
+        <p class="text-on-surface-variant text-sm leading-relaxed">One organisation-wide session, then a 90-minute lab per department built on that team's real tasks. Each lab ends with that team's one-page cheatsheet.</p>
+      </a>
+      <a href="services/" class="bg-white p-8 rounded-xl border border-border-subtle shadow-sm hover:border-secondary hover:-translate-y-1 transition-all block no-underline">
+        <div class="flex items-baseline justify-between mb-4">
+          <span class="font-display text-3xl font-extrabold text-secondary">04</span>
+          <span class="font-label-caps text-label-caps bg-blue-light text-primary px-3 py-1 rounded">3–12 MONTHS</span>
+        </div>
+        <h3 class="font-headline-card text-headline-card text-primary mb-2 text-xl">Fluency Support</h3>
+        <p class="text-secondary text-sm italic mb-4">&ldquo;How do we stop this decaying?&rdquo;</p>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Monthly office hours, cheatsheet updates as the tools change, coaching for your internal champions, and a re-score at six months.</p>
+      </a>
     </div>
 
-    <!-- Panel 1 -->
-    <div class="svc-panel grid-cols-1 lg:grid-cols-3 gap-8" id="svc-panel-1" style="display:none;">
-      <div class="bg-white p-8 rounded-xl border border-border-subtle shadow-sm hover:border-secondary transition-colors lg:col-span-2">
-        <span class="font-label-caps text-label-caps bg-blue-light text-primary px-3 py-1 rounded inline-block mb-6">5-STAGE JOURNEY</span>
-        <h3 class="font-headline-card text-headline-card text-primary mb-6 text-xl">From Awareness to Integration</h3>
-        <div class="space-y-4">
-          <div class="flex gap-4 items-start p-4 rounded-lg bg-off-white border border-border-subtle hover:border-secondary transition-colors"><div class="w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center flex-shrink-0">1</div><div><p class="font-bold text-primary text-sm">Awareness</p><p class="text-on-surface-variant text-sm">Understanding AI's capabilities, limitations, and the full landscape of tools.</p></div></div>
-          <div class="flex gap-4 items-start p-4 rounded-lg bg-off-white border border-border-subtle hover:border-secondary transition-colors"><div class="w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center flex-shrink-0">2</div><div><p class="font-bold text-primary text-sm">Foundations</p><p class="text-on-surface-variant text-sm">First real interactions with Claude, Copilot, and free tools — building genuine confidence.</p></div></div>
-          <div class="flex gap-4 items-start p-4 rounded-lg bg-off-white border border-border-subtle hover:border-secondary transition-colors"><div class="w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center flex-shrink-0">3</div><div><p class="font-bold text-primary text-sm">Fluency</p><p class="text-on-surface-variant text-sm">Prompt engineering, iteration cycles, and consistently producing quality outputs.</p></div></div>
-          <div class="flex gap-4 items-start p-4 rounded-lg bg-off-white border border-border-subtle hover:border-secondary transition-colors"><div class="w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center flex-shrink-0">4</div><div><p class="font-bold text-primary text-sm">Mastery</p><p class="text-on-surface-variant text-sm">Advanced agent workflows and premium tool deployment for maximum professional impact.</p></div></div>
-          <div class="flex gap-4 items-start p-4 rounded-lg bg-off-white border border-border-subtle hover:border-secondary transition-colors"><div class="w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center flex-shrink-0">5</div><div><p class="font-bold text-primary text-sm">Integration</p><p class="text-on-surface-variant text-sm">Embedding AI habits permanently into daily work and organizational culture.</p></div></div>
-        </div>
-      </div>
-      <div class="bg-primary p-8 rounded-xl shadow-xl text-white flex flex-col justify-between">
-        <div>
-          <span class="font-label-caps text-label-caps bg-secondary text-white px-3 py-1 rounded inline-block mb-6">WHO IT'S FOR</span>
-          <h3 class="font-headline-card text-headline-card text-white mb-4 text-xl">Built for Every Level</h3>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-start gap-3 text-sm text-white/80"><span class="material-symbols-outlined text-secondary-fixed text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Individual professionals &amp; executives</li>
-            <li class="flex items-start gap-3 text-sm text-white/80"><span class="material-symbols-outlined text-secondary-fixed text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Nonprofit &amp; NGO teams</li>
-            <li class="flex items-start gap-3 text-sm text-white/80"><span class="material-symbols-outlined text-secondary-fixed text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Government department cohorts</li>
-            <li class="flex items-start gap-3 text-sm text-white/80"><span class="material-symbols-outlined text-secondary-fixed text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Training centres (train-the-trainer)</li>
-            <li class="flex items-start gap-3 text-sm text-white/80"><span class="material-symbols-outlined text-secondary-fixed text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Role-specific programs (HR, finance, comms…)</li>
-          </ul>
-        </div>
-        <a href="contact-us/" class="w-full py-3 rounded-lg bg-secondary text-white font-bold hover:bg-secondary-fixed-dim transition-colors shadow-lg text-center block font-body-main">Request a Training</a>
+    <div class="bg-primary rounded-xl p-8 md:p-10 text-center">
+      <h3 class="font-headline-card text-headline-card text-white mb-3 text-xl">One framework holds the four together</h3>
+      <p class="text-white/75 text-sm max-w-2xl mx-auto mb-6 leading-relaxed">
+        Delegation, Description, Discernment and Diligence — the AI Fluency framework published by Anthropic with Rick Dakan and Joseph Feller.
+        They are the axes of your score, the sections of every cheatsheet, the clause groups of your policy and the modules of every session.
+        One vocabulary, so nobody has to translate between them.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="services/" class="bg-secondary text-white px-8 py-3.5 rounded-lg font-bold hover:bg-secondary-fixed-dim transition-colors font-body-main">See services and packages</a>
+        <a href="explore-your-ai-readiness/" class="border border-white/30 text-white px-8 py-3.5 rounded-lg font-bold hover:bg-white/10 transition-colors font-body-main">Take the free assessment</a>
       </div>
     </div>
-
-    <!-- Panel 2 -->
-    <div class="svc-panel grid-cols-1 lg:grid-cols-2 gap-8" id="svc-panel-2" style="display:none;">
-      <div class="bg-white p-8 rounded-xl border border-border-subtle shadow-sm">
-        <span class="font-label-caps text-label-caps bg-blue-light text-primary px-3 py-1 rounded inline-block mb-6">STRATEGY</span>
-        <h3 class="font-headline-card text-headline-card text-primary mb-4 text-xl">Management Consulting</h3>
-        <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Boutique-quality strategic advisory for nonprofits and impact-driven organizations — combining rigorous analysis, design thinking, and sector expertise to sharpen your competitive edge.</p>
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-start gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Organizational strategy and redesign</li>
-          <li class="flex items-start gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Competitive positioning and value proposition</li>
-          <li class="flex items-start gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>UN SDG alignment and impact measurement</li>
-          <li class="flex items-start gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Humanitarian response and program design</li>
-          <li class="flex items-start gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Stakeholder engagement and coalition-building</li>
-        </ul>
-        <a href="contact-us/" class="inline-flex items-center gap-2 py-3 px-6 rounded-lg bg-primary text-white font-bold hover:bg-primary-container transition-colors font-body-main">Request a Consultation <span class="material-symbols-outlined text-lg">arrow_forward</span></a>
-      </div>
-      <div class="flex flex-col gap-6">
-        <div class="bg-white p-6 rounded-xl border border-border-subtle hover:border-secondary transition-colors flex gap-4"><div class="w-10 h-10 rounded-lg bg-blue-light flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-primary">gps_fixed</span></div><div><h4 class="font-bold text-primary text-sm mb-1">Strategic Positioning</h4><p class="text-on-surface-variant text-xs leading-relaxed">Sharpen mission clarity and market positioning to attract the right partners and funding.</p></div></div>
-        <div class="bg-white p-6 rounded-xl border border-border-subtle hover:border-secondary transition-colors flex gap-4"><div class="w-10 h-10 rounded-lg bg-blue-light flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-primary">trending_up</span></div><div><h4 class="font-bold text-primary text-sm mb-1">Impact Amplification</h4><p class="text-on-surface-variant text-xs leading-relaxed">Design measurable frameworks that demonstrate value to donors, boards, and communities.</p></div></div>
-        <div class="bg-white p-6 rounded-xl border border-border-subtle hover:border-secondary transition-colors flex gap-4"><div class="w-10 h-10 rounded-lg bg-blue-light flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-primary">handshake</span></div><div><h4 class="font-bold text-primary text-sm mb-1">Partnership &amp; Coalition</h4><p class="text-on-surface-variant text-xs leading-relaxed">Build strategic alliances that multiply reach and deepen organizational resilience.</p></div></div>
-        <div class="bg-white p-6 rounded-xl border border-border-subtle hover:border-secondary transition-colors flex gap-4"><div class="w-10 h-10 rounded-lg bg-blue-light flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-primary">public</span></div><div><h4 class="font-bold text-primary text-sm mb-1">Humanitarian Response</h4><p class="text-on-surface-variant text-xs leading-relaxed">Rapid-response consulting for organizations navigating crises, aligned with international standards.</p></div></div>
-      </div>
-    </div>
-
-    <!-- Panel 3 -->
-    <div class="svc-panel grid-cols-1 lg:grid-cols-2 gap-8" id="svc-panel-3" style="display:none;">
-      <div class="bg-white p-8 rounded-xl border border-border-subtle shadow-sm">
-        <span class="font-label-caps text-label-caps bg-blue-light text-primary px-3 py-1 rounded inline-block mb-6">RESEARCH</span>
-        <h3 class="font-headline-card text-headline-card text-primary mb-4 text-xl">Strategic Research</h3>
-        <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Rigorous, AI-augmented research that transforms complex questions into actionable intelligence — informing strategy, shaping programs, and driving evidence-based decisions.</p>
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-start gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Sector landscape and competitive analysis</li>
-          <li class="flex items-start gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Policy and regulatory environment mapping</li>
-          <li class="flex items-start gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>AI-accelerated literature and data synthesis</li>
-          <li class="flex items-start gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Stakeholder and beneficiary analysis</li>
-          <li class="flex items-start gap-3 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>Custom briefings, white papers &amp; reports</li>
-        </ul>
-        <a href="contact-us/" class="inline-flex items-center gap-2 py-3 px-6 rounded-lg bg-primary text-white font-bold hover:bg-primary-container transition-colors font-body-main">Commission Research <span class="material-symbols-outlined text-lg">arrow_forward</span></a>
-      </div>
-      <div class="grid grid-cols-2 gap-4 content-start">
-        <div class="bg-off-white p-6 rounded-xl border border-border-subtle hover:border-secondary transition-colors hover:-translate-y-1 duration-200"><div class="font-display text-3xl font-extrabold text-primary/20 mb-2">01</div><h4 class="font-bold text-primary text-sm mb-1">Question Framing</h4><p class="text-on-surface-variant text-xs leading-relaxed">Defining the right research questions aligned with your strategy.</p></div>
-        <div class="bg-off-white p-6 rounded-xl border border-border-subtle hover:border-secondary transition-colors hover:-translate-y-1 duration-200"><div class="font-display text-3xl font-extrabold text-primary/20 mb-2">02</div><h4 class="font-bold text-primary text-sm mb-1">Data Collection</h4><p class="text-on-surface-variant text-xs leading-relaxed">Mixed-method, AI-augmented gathering across primary &amp; secondary sources.</p></div>
-        <div class="bg-off-white p-6 rounded-xl border border-border-subtle hover:border-secondary transition-colors hover:-translate-y-1 duration-200"><div class="font-display text-3xl font-extrabold text-primary/20 mb-2">03</div><h4 class="font-bold text-primary text-sm mb-1">Synthesis</h4><p class="text-on-surface-variant text-xs leading-relaxed">Pattern recognition and meaning-making through expert interpretation.</p></div>
-        <div class="bg-off-white p-6 rounded-xl border border-border-subtle hover:border-secondary transition-colors hover:-translate-y-1 duration-200"><div class="font-display text-3xl font-extrabold text-primary/20 mb-2">04</div><h4 class="font-bold text-primary text-sm mb-1">Insight Delivery</h4><p class="text-on-surface-variant text-xs leading-relaxed">Actionable reports and briefings tailored to your audience and decisions.</p></div>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -357,12 +287,12 @@ footer{
   <div class="orb w-full h-[600px] bg-primary-container -bottom-1/2 left-0 opacity-20"></div>
   <div class="max-w-[1100px] mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center gap-16">
     <div class="flex-1">
-      <span class="font-label-caps text-label-caps text-secondary-fixed block mb-stack-sm">THE M.A.I. EDGE</span>
-      <h2 class="font-headline-section text-headline-section text-white mb-8">Accelerated Intelligence</h2>
+      <span class="font-label-caps text-label-caps text-secondary-fixed block mb-stack-sm">WHY US</span>
+      <h2 class="font-headline-section text-headline-section text-white mb-8">What Makes This Different</h2>
       <div class="space-y-8">
-        <div class="flex gap-4"><div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-secondary-fixed">bolt</span></div><div><h4 class="font-headline-card text-headline-card text-white mb-2">AI-Accelerated Delivery</h4><p class="text-on-tertiary-container text-sm">Strategic outputs generated 4x faster through proprietary automated research engines.</p></div></div>
-        <div class="flex gap-4"><div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-secondary-fixed">construction</span></div><div><h4 class="font-headline-card text-headline-card text-white mb-2">Custom Transformation Tools</h4><p class="text-on-tertiary-container text-sm">We don't just advise; we build the custom internal tools your organization needs to thrive.</p></div></div>
-        <div class="flex gap-4"><div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-secondary-fixed">published_with_changes</span></div><div><h4 class="font-headline-card text-headline-card text-white mb-2">Adaptive Strategy</h4><p class="text-on-tertiary-container text-sm">Real-time market sensing allows our strategies to evolve as the technology landscape shifts.</p></div></div>
+        <div class="flex gap-4"><div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-secondary-fixed">balance</span></div><div><h4 class="font-headline-card text-headline-card text-white mb-2">Vendor-independent</h4><p class="text-on-tertiary-container text-sm">We sell no licences and take no partner commissions. If the free tier is enough for your team, we will tell you so.</p></div></div>
+        <div class="flex gap-4"><div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-secondary-fixed">fact_check</span></div><div><h4 class="font-headline-card text-headline-card text-white mb-2">A published framework, not a black box</h4><p class="text-on-tertiary-container text-sm">We work from the 4D AI Fluency framework. It is public, so you can check our method against it.</p></div></div>
+        <div class="flex gap-4"><div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-secondary-fixed">description</span></div><div><h4 class="font-headline-card text-headline-card text-white mb-2">One page, not another course</h4><p class="text-on-tertiary-container text-sm">Every team leaves with a single page built from their own tasks and cleared against your own policy. Less to read, not more.</p></div></div>
       </div>
     </div>
     <div class="flex-1 flex justify-center items-center py-12">
@@ -444,17 +374,5 @@ footer{
   </nav>
 </footer>
 
-<script>
-function switchSvcTab(idx) {
-  var tabs = document.querySelectorAll('.svc-tab-btn');
-  var panels = document.querySelectorAll('.svc-panel');
-  tabs.forEach(function(btn, i) {
-    if (i === idx) { btn.classList.add('active'); } else { btn.classList.remove('active'); }
-  });
-  panels.forEach(function(panel, i) {
-    panel.style.display = (i === idx) ? 'grid' : 'none';
-  });
-}
-</script>
 </body>
 </html>
