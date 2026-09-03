@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sample Team Cheatsheet | M.A.I. Consulting</title>
+<meta name="description" content="A realistic sample of the one-page AI cheatsheet each department receives: what to delegate, how to ask, the four checks before use, and what has to be logged and disclosed."/>
+<link rel="canonical" href="https://mai4consulting.com/cheatsheet/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="M.A.I. Consulting"/>
+<meta property="og:title" content="Sample Team Cheatsheet | M.A.I. Consulting"/>
+<meta property="og:description" content="A realistic sample of the one-page AI cheatsheet each department receives: what to delegate, how to ask, the four checks before use, and what has to be logged and disclosed."/>
+<meta property="og:url" content="https://mai4consulting.com/cheatsheet/"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/site.css"/>
+<style>
+.sheet{background:#fff;border:1px solid var(--outline);border-radius:12px;
+       box-shadow:0 14px 44px rgba(0,24,48,.10);overflow:hidden;max-width:940px;margin:0 auto}
+.sheet-head{background:linear-gradient(140deg,#00122e,#003E8A);color:#fff;padding:1.5rem 1.9rem;
+       display:flex;flex-wrap:wrap;gap:.75rem;justify-content:space-between;align-items:flex-end}
+.sheet-head h3{font-size:1.35rem;color:#fff;margin:0}
+.sheet-head .who{font-size:.78rem;letter-spacing:.11em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
+.sheet-head .mark{font-size:.72rem;color:rgba(255,255,255,.5);text-align:right;line-height:1.5}
+.sheet-body{display:grid;grid-template-columns:1fr 1fr}
+.q{padding:1.6rem 1.9rem;border-bottom:1px solid var(--outline)}
+.q:nth-child(odd){border-right:1px solid var(--outline)}
+.q:nth-last-child(-n+2){border-bottom:none}
+.q-h{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.9rem}
+.q-n{font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:800;color:var(--gold)}
+.q-t{font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;color:var(--blue-dark)}
+.q-s{font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-left:auto}
+.q h5{font-size:.74rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);
+      margin:1rem 0 .5rem}
+.q h5:first-of-type{margin-top:0}
+.q ul{list-style:none;margin:0}
+.q li{position:relative;padding:.28rem 0 .28rem 1.15rem;font-size:.845rem;line-height:1.55;color:var(--charcoal)}
+.q li::before{content:'';position:absolute;left:0;top:.72rem;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.q li.no::before{background:var(--stop);border-radius:1px;width:6px;height:2px;top:.85rem}
+.q code{display:block;background:var(--off);border-left:2px solid var(--blue);border-radius:0 4px 4px 0;
+        padding:.5rem .7rem;margin:.35rem 0 .55rem;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+        font-size:.76rem;line-height:1.55;color:var(--txt);white-space:pre-wrap}
+.sheet-foot{background:var(--surface);border-top:1px solid var(--outline);padding:1.1rem 1.9rem;
+        display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;justify-content:space-between;
+        font-size:.76rem;color:var(--muted)}
+.sheet-foot b{color:var(--blue-dark)}
+@media(max-width:760px){
+  .sheet-body{grid-template-columns:1fr}
+  .q:nth-child(odd){border-right:none}
+  .q:nth-last-child(-n+2):not(:last-child){border-bottom:1px solid var(--outline)}
+}
+@media print{
+  .mai-topbar,.mai-footer,.no-print{display:none !important}
+  body{background:#fff}
+  .sheet{box-shadow:none;border:1px solid #999;max-width:100%}
+  .band{padding:0}
+}
+</style>
+</head>
+<body>
+<div class="mai-topbar">
+  <div class="mai-topbar-inner">
+    <a class="mai-brand" href="../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
+    <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="mai-links" id="mai-links">
+      <li><a href="../services/">Services</a></li>
+      <li><a href="../explore-your-ai-readiness/">Assessment</a></li>
+      <li><a href="../about/">About</a></li>
+      <li><a href="../resources/">Resources</a></li>
+      <li><a class="mai-cta" href="../contact-us/">Book a call</a></li>
+    </ul>
+  </div>
+</div>
+<section class="hero" id="top">
+  <div class="inner">
+    <div class="eyebrow"><i></i>Sample deliverable</div>
+    <h1>This is what a team actually <em>gets</em>.</h1>
+    <p class="hero-sub">
+      Not a course. Not a slide deck. One page, built from that department's real tasks and cleared against that organisation's own policy. Below is a realistic sample for a fundraising and partnerships team.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn-gold" href="../services/">See how these are produced</a>
+      <a class="btn btn-ghost" href="../contact-us/">Ask for one for your team</a>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="inner">
+    <div class="sheet">
+      <div class="sheet-head">
+        <div>
+          <div class="who">Fundraising &amp; Partnerships</div>
+          <h3>AI cheatsheet</h3>
+        </div>
+        <div class="mark">Cleared against AI Use Policy v1.2<br/>Approved tools: three &middot; Review: every 6 months</div>
+      </div>
+
+      <div class="sheet-body">
+
+        <div class="q">
+          <div class="q-h"><span class="q-n">1</span><span class="q-t">Delegate</span><span class="q-s">What AI does &mdash; and doesn't</span></div>
+          <h5>Hand these over</h5>
+          <ul>
+            <li>First draft of a donor report, from your own notes and the last one</li>
+            <li>Reformatting an existing proposal into a new funder's template</li>
+            <li>Turning a 40-page call for proposals into an eligibility checklist</li>
+            <li>Rewriting a concept note in plain language for a community audience</li>
+            <li>Ten subject-line variants for a campaign email</li>
+          </ul>
+          <h5>Never these</h5>
+          <ul>
+            <li class="no">Budget arithmetic accepted without recomputing it yourself</li>
+            <li class="no">Anything containing a beneficiary's name or case detail</li>
+            <li class="no">The decision on whether to submit, and the sign-off that follows</li>
+          </ul>
+        </div>
+
+        <div class="q">
+          <div class="q-h"><span class="q-n">2</span><span class="q-t">Describe</span><span class="q-s">How to ask</span></div>
+          <h5>Pattern A &mdash; role, audience, constraint, format</h5>
+          <code>You are drafting for [funder].
+Audience: their programme officer.
+Limit: 800 words, their four headings.
+Use only the attached figures.</code>
+          <h5>Pattern B &mdash; give the source, not a summary</h5>
+          <code>Here is last year's report and this
+year's data. Match that structure
+and tone. Flag anything the data
+does not support.</code>
+          <h5>Pattern C &mdash; make it interview you</h5>
+          <code>Before drafting, ask me the five
+questions you need answered to
+write this well.</code>
+        </div>
+
+        <div class="q">
+          <div class="q-h"><span class="q-n">3</span><span class="q-t">Discern</span><span class="q-s">Four checks before you use it</span></div>
+          <ul>
+            <li><strong>Figures.</strong> Every number traced to a source document you can point at. If you cannot find it, it is not a number</li>
+            <li><strong>Facts.</strong> Every organisation, deadline and eligibility rule checked against the original call, not against the summary</li>
+            <li><strong>Language.</strong> Read once for deficit-based wording about the people you serve. Rewrite it</li>
+            <li><strong>Defensibility.</strong> Would you say this sentence out loud in a donor meeting? If not, it does not ship</li>
+          </ul>
+          <h5>The usual failure</h5>
+          <ul>
+            <li>A plausible figure that appears in no source. It is the most common error and the most expensive one</li>
+          </ul>
+        </div>
+
+        <div class="q">
+          <div class="q-h"><span class="q-n">4</span><span class="q-t">Diligence</span><span class="q-s">Log, disclose, own</span></div>
+          <h5>Never leaves the building</h5>
+          <ul>
+            <li class="no">Personal or beneficiary data, in any tool</li>
+            <li class="no">Unpublished financials or draft budgets</li>
+            <li class="no">Anything at all in a tool not on the approved list</li>
+          </ul>
+          <h5>Say so when</h5>
+          <ul>
+            <li>The funder's terms require disclosure of AI use</li>
+            <li>A colleague will build on the output as if it were checked</li>
+          </ul>
+          <h5>Ownership</h5>
+          <ul>
+            <li>The person who sends it owns it. AI is not a co-author and carries no liability</li>
+            <li>Log which tool produced which deliverable. That log is your evidence file</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="sheet-foot">
+        <span><b>Stuck?</b> Escalation: your AI focal point, then the DPO for anything involving personal data.</span>
+        <span><b>Sample.</b> Yours is built from your team's tasks and your own approved tool list.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band-alt no-print" id="how">
+  <div class="inner">
+    <div class="kicker">How yours gets made</div>
+    <h2>Four steps, about two days of our time per department.</h2>
+    <div class="grid-4">
+      <div class="card"><span class="tag">01</span><h4 style="margin-top:.8rem">Task inventory</h4><p>A short interview with the team lead: what this department actually spends its week on, and which of it is repetitive.</p></div>
+      <div class="card"><span class="tag">02</span><h4 style="margin-top:.8rem">Tested on your files</h4><p>Every prompt pattern on the page is tried against your real documents before it goes on the page. The ones that fail are cut.</p></div>
+      <div class="card"><span class="tag">03</span><h4 style="margin-top:.8rem">Cleared against policy</h4><p>The red lines and data rules come from your own AI use policy, so nothing on the page contradicts what your organisation has approved.</p></div>
+      <div class="card"><span class="tag">04</span><h4 style="margin-top:.8rem">A 90-minute lab</h4><p>The team works through the page on live tasks. They leave having used it once, which is what makes them use it again.</p></div>
+    </div>
+    <div class="note note-gold" style="margin-top:2rem">
+      <strong>Why one page and not a course.</strong> Adding AI tools raises productivity up to about three, then reduces it. Staff carrying heavy AI-oversight loads report measurably more information overload, not less. A catalogue of 900 courses is the same disease in a new bottle. The product here is subtraction: the shortest set of instructions that changes what a team does on Monday.
+    </div>
+  </div>
+</section>
+
+<section class="band band-dark no-print" id="contact" style="text-align:center">
+  <div class="inner">
+    <h2 style="margin:0 auto 1rem">Which department in your organisation needs this first?</h2>
+    <p class="lede" style="margin:0 auto 2rem">Tell us on a 30-minute call and we will draft the task inventory for it, free, before you commit to anything.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a class="btn btn-gold" href="../contact-us/">Book a call</a>
+      <a class="btn btn-ghost" href="../services/">See services and prices</a>
+    </div>
+  </div>
+</section>
+<footer class="mai-footer">
+  <div class="mai-footer-inner">
+    <div>
+      <div class="mai-footer-logo">M.A.I. Consulting</div>
+      <div class="mai-footer-tag">Strategy &middot; AI &middot; Impact</div>
+    </div>
+    <div class="mai-footer-right">
+      <a href="../">mai4consulting.com</a>
+      <div class="mai-footer-copy">&copy; 2026 M.A.I. Consulting. All rights reserved. Geneva, Switzerland.</div>
+    </div>
+  </div>
+  <nav class="footer-nav" aria-label="Site">
+    <ul>
+      <li><a href="../">Home</a></li>
+      <li><a href="../services/">Services</a></li>
+      <li><a href="../explore-your-ai-readiness/">Assessment</a></li>
+      <li><a href="../about/">About</a></li>
+      <li><a href="../our-clients/">Who We Work With</a></li>
+      <li><a href="../contact-us/">Contact</a></li>
+      <li><span class="fn-group">Resources</span></li>
+      <li><span class="footer-nav-current" aria-current="page">Sample Cheatsheet</span></li>
+      <li><a href="../eu-ai-act-article-4/">EU AI Act Article 4</a></li>
+      <li><a href="../use-cases/">AI Use Cases</a></li>
+      <li><a href="../claude-in-chrome/">Claude in Chrome</a></li>
+      <li><a href="../save-claude-tokens/">Claude for Business</a></li>
+      <li><a href="../extensive-ai-readiness-analysis/">Extended Assessment</a></li>
+      <li><span class="fn-group">Legal</span></li>
+      <li><a href="../privacy/">Privacy</a></li>
+    </ul>
+  </nav>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('mai-burger'), l=document.getElementById('mai-links');
+  if(b&&l){b.addEventListener('click',function(){
+    var o=l.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false');
+  });}
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('[data-scroll-to]'); if(!t) return;
+    var el=document.getElementById(t.getAttribute('data-scroll-to'));
+    if(el){e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+})();
+</script>
+</body>
+</html>

@@ -404,8 +404,53 @@ table.cmp td strong{color:var(--txt);}
 .risk-label{font-size:.78rem;line-height:1.6;color:rgba(255,255,255,.62);margin-top:.5rem;}
 </style>
 <style>.footer-nav .fn-group{color:rgba(255,255,255,.28);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;}</style>
+<style>
+/* global site navigation — self-contained, does not touch page styles */
+.mai-topbar{background:linear-gradient(140deg,#00122e 0%,#003E8A 100%);position:sticky;top:0;z-index:900;
+  border-bottom:1px solid rgba(255,255,255,.07);padding:0 1.5rem;font-family:'Inter',system-ui,sans-serif}
+.mai-topbar-inner{max-width:1120px;margin:0 auto;height:60px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.mai-brand{font-family:'Playfair Display',Georgia,serif;font-weight:800;font-size:1.1rem;color:#fff;
+  text-decoration:none;letter-spacing:.02em;display:flex;align-items:center;gap:.5rem;white-space:nowrap}
+.mai-brand-dot{width:8px;height:8px;border-radius:50%;background:#C9A84C;box-shadow:0 0 0 2px rgba(201,168,76,.3);flex:none}
+.mai-links{display:flex;align-items:center;gap:.15rem;list-style:none;margin:0;padding:0}
+.mai-links li{margin:0;padding:0;list-style:none}
+.mai-links li::before{display:none !important;content:none !important}
+.mai-links a{font-size:.8rem;font-weight:500;color:rgba(255,255,255,.72);text-decoration:none;
+  padding:.45rem .8rem;border-radius:6px;transition:color .2s,background .2s;white-space:nowrap;display:inline-block}
+.mai-links a:hover{color:#fff;background:rgba(255,255,255,.09)}
+.mai-links a[aria-current="page"]{color:#fff;background:rgba(255,255,255,.11)}
+.mai-links a.mai-cta{background:#C9A84C;color:#001830;font-weight:700;margin-left:.4rem}
+.mai-links a.mai-cta:hover{background:#e8c86a;color:#001830}
+.mai-burger{display:none;background:none;border:1px solid rgba(255,255,255,.25);color:#fff;font-size:1rem;
+  line-height:1;cursor:pointer;padding:.45rem .6rem;border-radius:6px}
+@media(max-width:900px){
+  .mai-burger{display:block}
+  .mai-links{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;align-items:stretch;
+    gap:.15rem;background:#00122e;border-bottom:2px solid #C9A84C;padding:.75rem 1.5rem 1rem}
+  .mai-links.open{display:flex}
+  .mai-links a{padding:.6rem .5rem;font-size:.9rem}
+  .mai-links a.mai-cta{margin:.35rem 0 0;text-align:center}
+}
+/* page's own header must not also stick under the global bar */
+body > header{position:static !important}
+.footer-nav .fn-group{color:rgba(255,255,255,.28);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+</style>
 </head>
 <body>
+<div class="mai-topbar">
+  <div class="mai-topbar-inner">
+    <a class="mai-brand" href="../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
+    <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="mai-links" id="mai-links">
+      <li><a href="../services/">Services</a></li>
+      <li><a href="../explore-your-ai-readiness/">Assessment</a></li>
+      <li><a href="../about/">About</a></li>
+      <li><a href="../resources/">Resources</a></li>
+      <li><a class="mai-cta" href="../contact-us/">Book a call</a></li>
+    </ul>
+  </div>
+</div>
+
 
 <!-- HEADER -->
 <header>
@@ -867,11 +912,11 @@ table.cmp td strong{color:var(--txt);}
   <div class="footer-inner">
     <div>
       <div class="footer-logo">M.A.I. Consulting</div>
-      <div class="footer-tagline">Strategic Intelligence &amp; AI Transformation for the world's most ambitious organizations.</div>
+      <div class="footer-tagline">Strategy &middot; AI &middot; Impact</div>
     </div>
     <div class="footer-right">
       <a href="../">mai4consulting.com</a>
-      <div class="footer-copy">&copy; 2026 M.A.I. Consulting. Strategic Intelligence &amp; AI Transformation. All rights reserved.</div>
+      <div class="footer-copy">&copy; 2026 M.A.I. Consulting. All rights reserved. Geneva, Switzerland.</div>
     </div>
   </div>
   <nav class="footer-nav" aria-label="Site">
@@ -879,13 +924,18 @@ table.cmp td strong{color:var(--txt);}
       <li><a href="../">Home</a></li>
       <li><a href="../services/">Services</a></li>
       <li><a href="../explore-your-ai-readiness/">Assessment</a></li>
-      <li><a href="../our-clients/">Clients</a></li>
+      <li><a href="../about/">About</a></li>
+      <li><a href="../our-clients/">Who We Work With</a></li>
       <li><a href="../contact-us/">Contact</a></li>
       <li><span class="fn-group">Resources</span></li>
-      <li><a href="../use-cases/">Use Cases</a></li>
+      <li><a href="../cheatsheet/">Sample Cheatsheet</a></li>
+      <li><a href="../eu-ai-act-article-4/">EU AI Act Article 4</a></li>
+      <li><a href="../use-cases/">AI Use Cases</a></li>
       <li><span class="footer-nav-current" aria-current="page">Claude in Chrome</span></li>
       <li><a href="../save-claude-tokens/">Claude for Business</a></li>
       <li><a href="../extensive-ai-readiness-analysis/">Extended Assessment</a></li>
+      <li><span class="fn-group">Legal</span></li>
+      <li><a href="../privacy/">Privacy</a></li>
     </ul>
   </nav>
 </footer>
@@ -902,6 +952,11 @@ document.addEventListener('click', function(e){
     target.scrollIntoView({behavior:'smooth', block:'start'});
   }
 });
+</script>
+<script>
+(function(){var b=document.getElementById('mai-burger'),l=document.getElementById('mai-links');
+if(b&&l){b.addEventListener('click',function(){var o=l.classList.toggle('open');
+b.setAttribute('aria-expanded',o?'true':'false');});}})();
 </script>
 </body>
 </html>

@@ -134,6 +134,20 @@ a.std-pill:hover{color:#C9A84C;border-color:rgba(201,168,76,.5);background:rgba(
 .dl-btn{width:100%;padding:14px;border-radius:8px;border:none;cursor:pointer;background:var(--gold);color:#001830;font-weight:700;font-size:14px;font-family:'Inter',sans-serif;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 18px rgba(201,168,76,.3);}
 .dl-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,.45);}
 .dl-btn:disabled{opacity:.6;cursor:wait;}
+.next-step{margin-top:18px;background:var(--white);border:1px solid var(--outline);
+  border-left:3px solid var(--gold);border-radius:12px;padding:18px 20px;}
+.ns-k{font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue);margin-bottom:8px;}
+.ns-line{font-size:13px;line-height:1.65;color:var(--charcoal);margin:0 0 14px;}
+.ns-line b{color:var(--blue-dark,#001f4d);}
+.ns-btns{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
+.ns-btn{display:inline-block;padding:10px 16px;border-radius:8px;text-decoration:none;font-size:12.5px;
+  font-weight:700;font-family:'Inter',sans-serif;border:1px solid var(--blue);color:var(--blue);
+  background:transparent;transition:background .2s,color .2s;}
+.ns-btn:hover{background:rgba(0,62,138,.08);}
+.ns-btn.ns-primary{background:var(--gold);border-color:var(--gold);color:#001830;}
+.ns-btn.ns-primary:hover{background:var(--gold-light,#e8c86a);}
+.ns-fine{font-size:11.5px;line-height:1.6;color:#6b7280;margin:0;}
+
 .completion-wrap{background:var(--white);border:1px solid var(--outline);border-radius:12px;padding:16px 20px;}
 .comp-label{display:flex;justify-content:space-between;font-size:11px;font-weight:600;color:var(--charcoal);margin-bottom:8px;}
 .comp-bar{background:var(--off);border-radius:9999px;height:7px;overflow:hidden;}
@@ -229,8 +243,53 @@ footer{
 /* --- END SITE FOOTER --- */
 </style>
 <style>.footer-nav .fn-group{color:rgba(255,255,255,.28);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;}</style>
+<style>
+/* global site navigation — self-contained, does not touch page styles */
+.mai-topbar{background:linear-gradient(140deg,#00122e 0%,#003E8A 100%);position:sticky;top:0;z-index:900;
+  border-bottom:1px solid rgba(255,255,255,.07);padding:0 1.5rem;font-family:'Inter',system-ui,sans-serif}
+.mai-topbar-inner{max-width:1120px;margin:0 auto;height:60px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.mai-brand{font-family:'Playfair Display',Georgia,serif;font-weight:800;font-size:1.1rem;color:#fff;
+  text-decoration:none;letter-spacing:.02em;display:flex;align-items:center;gap:.5rem;white-space:nowrap}
+.mai-brand-dot{width:8px;height:8px;border-radius:50%;background:#C9A84C;box-shadow:0 0 0 2px rgba(201,168,76,.3);flex:none}
+.mai-links{display:flex;align-items:center;gap:.15rem;list-style:none;margin:0;padding:0}
+.mai-links li{margin:0;padding:0;list-style:none}
+.mai-links li::before{display:none !important;content:none !important}
+.mai-links a{font-size:.8rem;font-weight:500;color:rgba(255,255,255,.72);text-decoration:none;
+  padding:.45rem .8rem;border-radius:6px;transition:color .2s,background .2s;white-space:nowrap;display:inline-block}
+.mai-links a:hover{color:#fff;background:rgba(255,255,255,.09)}
+.mai-links a[aria-current="page"]{color:#fff;background:rgba(255,255,255,.11)}
+.mai-links a.mai-cta{background:#C9A84C;color:#001830;font-weight:700;margin-left:.4rem}
+.mai-links a.mai-cta:hover{background:#e8c86a;color:#001830}
+.mai-burger{display:none;background:none;border:1px solid rgba(255,255,255,.25);color:#fff;font-size:1rem;
+  line-height:1;cursor:pointer;padding:.45rem .6rem;border-radius:6px}
+@media(max-width:900px){
+  .mai-burger{display:block}
+  .mai-links{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;align-items:stretch;
+    gap:.15rem;background:#00122e;border-bottom:2px solid #C9A84C;padding:.75rem 1.5rem 1rem}
+  .mai-links.open{display:flex}
+  .mai-links a{padding:.6rem .5rem;font-size:.9rem}
+  .mai-links a.mai-cta{margin:.35rem 0 0;text-align:center}
+}
+/* page's own header must not also stick under the global bar */
+body > header{position:static !important}
+.footer-nav .fn-group{color:rgba(255,255,255,.28);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+</style>
 </head>
 <body>
+<div class="mai-topbar">
+  <div class="mai-topbar-inner">
+    <a class="mai-brand" href="../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
+    <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="mai-links" id="mai-links">
+      <li><a href="../services/">Services</a></li>
+      <li><a href="../explore-your-ai-readiness/">Assessment</a></li>
+      <li><a href="../about/">About</a></li>
+      <li><a href="../resources/">Resources</a></li>
+      <li><a class="mai-cta" href="../contact-us/">Book a call</a></li>
+    </ul>
+  </div>
+</div>
+
 
 <div class="header">
   <div class="header-grid"></div>
@@ -345,6 +404,15 @@ footer{
     </div>
     <div class="validation-banner" id="validation-banner"></div>
     <button class="dl-btn" id="dl-btn" onclick="downloadPDF()">⬇ Download PDF Report</button>
+    <div class="next-step" id="next-step">
+      <div class="ns-k">What to do with this</div>
+      <p class="ns-line" id="ns-line">Answer the questions to see what your score means and what to fix first.</p>
+      <div class="ns-btns">
+        <a class="ns-btn ns-primary" href="../contact-us/">Book a free 30-minute debrief</a>
+        <a class="ns-btn" href="../services/">See services and prices</a>
+      </div>
+      <p class="ns-fine">On the call we walk through your three weakest dimensions and what to do about each. No pitch &mdash; if the right first step is a free programme, that is what we will tell you.</p>
+    </div>
   </div>
 </div>
 
@@ -695,6 +763,7 @@ function recalc(){
   document.getElementById('score-pct').textContent=`${answered} of ${total} questions answered`;
   document.getElementById('comp-txt').textContent=`${answered} / ${total} answered`;
   document.getElementById('comp-fill').style.width=Math.round(answered/total*100)+'%';
+  updateNextStep(pct, answered, total);
   const{label,color,bg}=getLevel(pct);
   const badge=document.getElementById('readiness-badge');
   badge.textContent=label;badge.style.background=bg;badge.style.color=color;
@@ -1188,11 +1257,11 @@ drawRadar(DIMS.map(()=>0),DIMS.map(()=>30));
   <div class="footer-inner">
     <div>
       <div class="footer-logo">M.A.I. Consulting</div>
-      <div class="footer-tagline">Strategic Intelligence &amp; AI Transformation for the world's most ambitious organizations.</div>
+      <div class="footer-tagline">Strategy &middot; AI &middot; Impact</div>
     </div>
     <div class="footer-right">
       <a href="../">mai4consulting.com</a>
-      <div class="footer-copy">&copy; 2026 M.A.I. Consulting. Strategic Intelligence &amp; AI Transformation. All rights reserved.</div>
+      <div class="footer-copy">&copy; 2026 M.A.I. Consulting. All rights reserved. Geneva, Switzerland.</div>
     </div>
   </div>
   <nav class="footer-nav" aria-label="Site">
@@ -1200,15 +1269,43 @@ drawRadar(DIMS.map(()=>0),DIMS.map(()=>30));
       <li><a href="../">Home</a></li>
       <li><a href="../services/">Services</a></li>
       <li><a href="../explore-your-ai-readiness/">Assessment</a></li>
-      <li><a href="../our-clients/">Clients</a></li>
+      <li><a href="../about/">About</a></li>
+      <li><a href="../our-clients/">Who We Work With</a></li>
       <li><a href="../contact-us/">Contact</a></li>
       <li><span class="fn-group">Resources</span></li>
-      <li><a href="../use-cases/">Use Cases</a></li>
+      <li><a href="../cheatsheet/">Sample Cheatsheet</a></li>
+      <li><a href="../eu-ai-act-article-4/">EU AI Act Article 4</a></li>
+      <li><a href="../use-cases/">AI Use Cases</a></li>
       <li><a href="../claude-in-chrome/">Claude in Chrome</a></li>
       <li><a href="../save-claude-tokens/">Claude for Business</a></li>
       <li><span class="footer-nav-current" aria-current="page">Extended Assessment</span></li>
+      <li><span class="fn-group">Legal</span></li>
+      <li><a href="../privacy/">Privacy</a></li>
     </ul>
   </nav>
 </footer>
+<script>
+(function(){var b=document.getElementById('mai-burger'),l=document.getElementById('mai-links');
+if(b&&l){b.addEventListener('click',function(){var o=l.classList.toggle('open');
+b.setAttribute('aria-expanded',o?'true':'false');});}})();
+
+function updateNextStep(pct, answered, total){
+  var el = document.getElementById('ns-line');
+  if(!el) return;
+  var msg;
+  if(answered === 0){
+    msg = 'Answer the questions to see what your score means and what to fix first.';
+  } else if(answered < total){
+    msg = answered + ' of ' + total + ' answered. Finish the assessment for a reliable reading \u2014 partial scores skew high.';
+  } else if(pct < 40){
+    msg = '<b>Below 40.</b> This almost always means AI is already in daily use with no policy behind it. It is the ordinary case, and it is the fastest thing to fix. Start with an <b>AI Use Policy</b>.';
+  } else if(pct < 70){
+    msg = '<b>Between 40 and 70.</b> In this band the gap is usually between departments \u2014 one team is fluent and three are guessing. Start with <b>Team AI Training</b>, one lab per department.';
+  } else {
+    msg = '<b>Above 70.</b> You are ahead of most organisations your size. The risk now is decay as tools and staff change. Look at <b>Fluency Support</b> and a re-score in six months.';
+  }
+  el.innerHTML = msg;
+}
+</script>
 </body>
 </html>
