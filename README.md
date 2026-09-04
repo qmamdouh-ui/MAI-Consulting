@@ -8,6 +8,7 @@ Website repository for M.A.I. Consulting.
 | --- | --- |
 | *(repo root)* | The published site. Deployable files (HTML, CSS, JS, assets) live here. |
 | `source-content/` | Content backup only. Not part of the published site. |
+| `docs/` | Working documents. Not part of the published site. |
 | `source-content/text/` | Plain-text Markdown extraction of each backup page. |
 
 ## The published site
@@ -46,6 +47,18 @@ from the repository root, GitHub Pages serves every file in the repo, including
 `robots.txt` disallows it from crawlers, but that is a request, not access
 control. **This repository is public** — do not commit anything here that should
 not be world-readable.
+
+## `docs/`
+
+Working documents that support the site but are not served as pages.
+
+| File | Purpose |
+| --- | --- |
+| `linkedin-company-page.md` | Paste-ready copy for every field of the LinkedIn company page, drawn from the live site. Update it in the same commit as any site copy change it quotes. |
+
+Like `source-content/`, this folder is served by GitHub Pages and only
+`robots.txt`-disallowed, so the same rule applies: nothing here that should not
+be world-readable.
 
 ## `source-content/`
 
