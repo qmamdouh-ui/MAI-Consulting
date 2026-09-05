@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Compare the Market | M.A.I. Consulting</title>
+<meta name="description" content="Every alternative a mission-driven organisation would consider, with published list prices and sources: free cohorts, course platforms, certifications, governance consultancies. And the arithmetic on where we differ."/>
+<link rel="canonical" href="https://mai4consulting.com/compare/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="M.A.I. Consulting"/>
+<meta property="og:title" content="Compare the Market | M.A.I. Consulting"/>
+<meta property="og:description" content="Every alternative a mission-driven organisation would consider, with published list prices and sources: free cohorts, course platforms, certifications, governance consultancies. And the arithmetic on where we differ."/>
+<meta property="og:url" content="https://mai4consulting.com/compare/"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/site.css"/>
+<style>
+.cmp{overflow-x:auto;border:1px solid var(--outline);border-radius:10px;background:#fff}
+table.cmp-t{width:100%;border-collapse:collapse;font-size:.84rem;min-width:960px}
+table.cmp-t th{background:var(--surface);border-bottom:2px solid var(--blue);text-align:left;
+  padding:.85rem 1rem;font-weight:700;color:var(--blue-dark);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;vertical-align:bottom}
+table.cmp-t td{padding:.9rem 1rem;border-bottom:1px solid var(--outline);color:var(--charcoal);vertical-align:top;line-height:1.55}
+table.cmp-t tr:last-child td{border-bottom:none}
+table.cmp-t td strong{color:var(--blue-dark)}
+table.cmp-t tr.ours{background:rgba(201,168,76,.09)}
+table.cmp-t tr.ours td{color:var(--txt)}
+table.cmp-t .price{white-space:nowrap;font-weight:600;color:var(--blue-dark)}
+.yn{font-weight:800;font-size:.9rem}
+.y{color:var(--ok)} .n{color:var(--stop)} .p{color:var(--warn)}
+.src{font-size:.72rem;color:var(--muted);line-height:1.5}
+.src a{color:var(--blue)}
+.math{background:#fff;border:1px solid var(--outline);border-left:3px solid var(--gold);border-radius:10px;padding:1.5rem 1.7rem}
+.math h4{font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;margin-bottom:.7rem}
+.math .row{display:flex;justify-content:space-between;gap:1rem;padding:.5rem 0;border-bottom:1px solid var(--outline);font-size:.88rem}
+.math .row:last-of-type{border-bottom:none}
+.math .row b{white-space:nowrap;color:var(--blue-dark);font-variant-numeric:tabular-nums}
+.math .out{margin-top:.9rem;padding-top:.9rem;border-top:2px solid var(--blue);font-size:.9rem;color:var(--txt)}
+.pain{counter-reset:pain}
+.pain .p-item{background:#fff;border:1px solid var(--outline);border-radius:10px;padding:1.6rem 1.7rem;margin-bottom:1rem}
+.p-num{font-family:'Playfair Display',Georgia,serif;font-size:.8rem;font-weight:800;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+</style>
+</head>
+<body>
+<div class="mai-topbar">
+  <div class="mai-topbar-inner">
+    <a class="mai-brand" href="../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
+    <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="mai-links" id="mai-links">
+      <li><a href="../services/">Services</a></li>
+      <li><a href="../compare/" aria-current="page">Compare</a></li>
+      <li><a href="../knowledge/">Knowledge</a></li>
+      <li><a href="../explore-your-ai-readiness/">Assessment</a></li>
+      <li><a href="../about/">About</a></li>
+      <li><a class="mai-cta" href="../contact-us/">Book a call</a></li>
+    </ul>
+  </div>
+</div>
+<section class="hero" id="top">
+  <div class="inner">
+    <div class="eyebrow"><i></i>The market, honestly</div>
+    <h1>What else you could buy, what it costs, and where we <em>actually</em> differ.</h1>
+    <p class="hero-sub">
+      Every price on this page is a published list price with a source. We are not the cheapest option and we are not the biggest. Here is the arithmetic, so you can decide without a sales call.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn-gold" href="#" data-scroll-to="table">See the comparison</a>
+      <a class="btn btn-ghost" href="#" data-scroll-to="value">Skip to the value case</a>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="market">
+  <div class="inner">
+    <div class="kicker">The market we work in</div>
+    <h2>Organisations are being asked about AI faster than they are being helped with it.</h2>
+    <p class="lede">Three findings define the gap this practice sits in. None of them is about enthusiasm for AI.</p>
+    <div class="grid-3">
+      <div class="card card-accent">
+        <h4>Funders use AI. They are not helping you use it.</h4>
+        <p>The Center for Effective Philanthropy surveyed 451 nonprofit leaders and 215 foundation leaders in September 2025. <strong>81% of foundations report some AI use.</strong> Only <strong>11% provide AI implementation support to nonprofits</strong>, and fewer than 20% of nonprofits say a funder has even discussed AI with them.</p>
+      </div>
+      <div class="card card-accent">
+        <h4>Your staff started without you.</h4>
+        <p>Roughly <strong>two-thirds of professionals have used AI at work believing it was not permitted</strong>. Around <strong>88% have put work information into public chatbots</strong> — a third of them customer or beneficiary data. About <strong>a third of organisations have any AI policy at all.</strong></p>
+      </div>
+      <div class="card card-accent">
+        <h4>The training that exists does not land.</h4>
+        <p>About <strong>7.5% of employees</strong> report substantial AI training. Meanwhile heavy AI users report <em>more</em> burnout, and productivity rises from one tool to two, slows at three, and <strong>declines past that</strong> (BCG / UC&nbsp;Riverside, 2026).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band-alt" id="table">
+  <div class="inner">
+    <div class="kicker">The alternatives</div>
+    <h2>Everything a mission-driven organisation would realistically consider.</h2>
+    <p class="lede">Prices are published list prices as of September 2026, in the currency each provider quotes. Sources are linked below the table. Where a provider does not publish a price, the table says so — that is itself a finding.</p>
+    <div class="cmp">
+      <table class="cmp-t">
+        <thead>
+          <tr>
+            <th style="min-width:190px">Option</th>
+            <th style="min-width:170px">What you get</th>
+            <th style="min-width:130px">Published price</th>
+            <th>Policy</th>
+            <th>Per-team<br/>material</th>
+            <th>Evidence<br/>file</th>
+            <th>Measured<br/>before/after</th>
+            <th style="min-width:190px">Who it excludes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>NTEN Tech Readiness cohort</strong><br/><span class="src">6-month cohort, 8&ndash;10 h/month</span></td>
+            <td>Peer cohort, structured curriculum, sector-specific</td>
+            <td class="price">Free</td>
+            <td class="yn n">No</td><td class="yn n">No</td><td class="yn n">No</td><td class="yn n">No</td>
+            <td><strong>US-based nonprofits only.</strong> Not open to organisations based in Europe, MENA or the international sector</td>
+          </tr>
+          <tr>
+            <td><strong>NetHope AI Accelerator</strong><br/><span class="src">two-year programme</span></td>
+            <td>Education, tools, peer community, coaching</td>
+            <td class="price">Subsidised</td>
+            <td class="yn n">No</td><td class="yn n">No</td><td class="yn n">No</td><td class="yn n">No</td>
+            <td>Under 100 staff and under USD 10M budget, in named sectors. Excludes larger INGOs, UN bodies and public institutions</td>
+          </tr>
+          <tr>
+            <td><strong>NTEN AI for Nonprofits Certificate</strong><br/><span class="src">self-paced, up to 12 months</span></td>
+            <td>Individual professional certificate</td>
+            <td class="price">USD 1,000<br/><span class="src">USD 500 members &middot; per person</span></td>
+            <td class="yn n">No</td><td class="yn n">No</td><td class="yn n">No</td><td class="yn n">No</td>
+            <td>Nobody &mdash; but it certifies one person, not the organisation</td>
+          </tr>
+          <tr>
+            <td><strong>LinkedIn Learning Teams</strong></td>
+            <td>Catalogue access, generic courses</td>
+            <td class="price">USD 379.88<br/><span class="src">per user, per year</span></td>
+            <td class="yn n">No</td><td class="yn n">No</td><td class="yn n">No</td><td class="yn n">No</td>
+            <td>Nobody &mdash; and that is the problem. Nothing in it knows your data rules</td>
+          </tr>
+          <tr>
+            <td><strong>Coursera for Teams</strong></td>
+            <td>Catalogue access, university-branded courses</td>
+            <td class="price">USD 399<br/><span class="src">per user, per year</span></td>
+            <td class="yn n">No</td><td class="yn n">No</td><td class="yn n">No</td><td class="yn n">No</td>
+            <td>Nobody. Same catalogue for every organisation on earth</td>
+          </tr>
+          <tr>
+            <td><strong>Section AI Academy</strong></td>
+            <td>Cohort upskilling, corporate framing</td>
+            <td class="price">USD 750<br/><span class="src">per seat, teams to 100</span></td>
+            <td class="yn n">No</td><td class="yn n">No</td><td class="yn n">No</td><td class="yn p">Partial</td>
+            <td>Not built for beneficiary data, donor disclosure or safeguarding vocabulary</td>
+          </tr>
+          <tr>
+            <td><strong>Executive AI programmes</strong><br/><span class="src">MIT xPRO, Berkeley and similar</span></td>
+            <td>Leadership education, strong signal value</td>
+            <td class="price">USD 5,900&ndash;11,000+<br/><span class="src">per person</span></td>
+            <td class="yn n">No</td><td class="yn n">No</td><td class="yn n">No</td><td class="yn n">No</td>
+            <td>Reaches your director. Does not reach the officer who actually pastes the file</td>
+          </tr>
+          <tr>
+            <td><strong>IAPP AIGP certification</strong></td>
+            <td>Recognised individual AI governance credential</td>
+            <td class="price">USD 649&ndash;799 exam<br/><span class="src">+ USD 995&ndash;2,500 training</span></td>
+            <td class="yn n">No</td><td class="yn n">No</td><td class="yn p">Partial</td><td class="yn n">No</td>
+            <td>Qualifies a person to write a policy. Does not write one</td>
+          </tr>
+          <tr>
+            <td><strong>AI governance consultancies</strong></td>
+            <td>Framework, policy, risk tiering, audit artefacts</td>
+            <td class="price">USD 15,000&ndash;90,000<br/><span class="src">typical quoted ranges</span></td>
+            <td class="yn y">Yes</td><td class="yn n">No</td><td class="yn y">Yes</td><td class="yn n">No</td>
+            <td>Compliance-first. Trains nobody, so behaviour does not change</td>
+          </tr>
+          <tr>
+            <td><strong>Global consultancies</strong></td>
+            <td>Full-stack transformation, board credibility</td>
+            <td class="price">Not published<br/><span class="src">boutique advisory quoted at USD 195k&ndash;235k, year one</span></td>
+            <td class="yn y">Yes</td><td class="yn p">Partial</td><td class="yn y">Yes</td><td class="yn p">Partial</td>
+            <td>Will not take a CHF 20,000 engagement. You are not their client</td>
+          </tr>
+          <tr class="ours">
+            <td><strong>M.A.I. Consulting &mdash; Adoption</strong><br/><span class="src">~8 weeks, whole organisation</span></td>
+            <td>Ten-dimension assessment, board-ready policy, org-wide session, four department labs with cheatsheets, re-score at 90 days</td>
+            <td class="price">CHF 19,500<br/><span class="src">per organisation, once</span></td>
+            <td class="yn y">Yes</td><td class="yn y">Yes</td><td class="yn y">Yes</td><td class="yn y">Yes</td>
+            <td>Organisations needing model building, data pipelines or thirty trainers next month</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="src" style="margin-top:1rem">
+      Sources, checked September 2026 &mdash;
+      <a href="https://www.nten.org/learn/professional-certificates/ai-for-nonprofits">NTEN certificate</a> &middot;
+      <a href="https://www.nten.org/learn/nonprofit-tech-readiness/ai-for-nonprofits">NTEN cohort</a> &middot;
+      <a href="https://nethope.org/press-releases/accelerator-for-nonprofits-worldwide/">NetHope Accelerator</a> &middot;
+      <a href="https://trainingcost.com/lms-pricing/linkedin-learning">LinkedIn Learning</a> &middot;
+      <a href="https://trainingcost.com/lms-pricing/coursera-business">Coursera for Teams</a> &middot;
+      <a href="https://www.sectionai.com/pricing">Section</a> &middot;
+      <a href="https://www.launchready.ai/insights/ai-readiness/ai-training-cost-leadership-team-2026">executive programmes</a> &middot;
+      <a href="https://iapp.org/certify/aigp/">IAPP AIGP</a> &middot;
+      <a href="https://www.qservicesit.com/pricing/ai-governance-consulting-cost">governance consulting ranges</a> &middot;
+      <a href="https://cep.org/report-backpacks/ai-with-purpose-how-foundations-and-nonprofits-are-thinking-about-and-using-artificial-intelligence/">CEP, <em>AI With Purpose</em></a>.
+      Providers change prices; verify before deciding. Volume discounts are common on per-seat platforms and are not reflected in list prices.
+    </p>
+  </div>
+</section>
+
+<section class="band" id="value">
+  <div class="inner">
+    <div class="kicker">The value case</div>
+    <h2>Four things this actually costs you today.</h2>
+    <p class="lede">Not "you should be using AI." These are line items you can find in your own accounts and your own grant calendar.</p>
+    <div class="pain">
+
+      <div class="p-item">
+        <div class="p-num">One &mdash; revenue at risk</div>
+        <h3>A funder asks about your AI governance and you have nothing to send.</h3>
+        <p style="margin-bottom:.9rem">
+          Foundations are adding AI questions to due diligence while, on their own admission, almost none of them are helping grantees prepare: 81% of foundations use AI internally, 11% support nonprofits in implementing it. You are being assessed on something nobody has offered to help you with.
+        </p>
+        <p>
+          <strong>The arithmetic is not about productivity.</strong> One mid-size foundation grant is worth more than this entire engagement, usually by a multiple. If an unanswerable AI-governance question delays a single application by one cycle, the cost of that delay exceeds the cost of never having the gap. The policy, the tool inventory and the assessment report are the answer to that question, and they take eight weeks to produce &mdash; which is shorter than most grant cycles and longer than most deadlines allow once the question has already arrived.
+        </p>
+      </div>
+
+      <div class="p-item">
+        <div class="p-num">Two &mdash; the per-seat trap</div>
+        <h3>A catalogue licence for 150 staff costs more every year than fixing this once.</h3>
+        <div class="math" style="margin:1rem 0">
+          <h4>150 staff, list prices, one year</h4>
+          <div class="row"><span>Coursera for Teams &mdash; 150 &times; USD 399/user/year</span><b>USD 59,850</b></div>
+          <div class="row"><span>LinkedIn Learning Teams &mdash; 150 &times; USD 379.88/user/year</span><b>USD 56,982</b></div>
+          <div class="row"><span>M.A.I. Adoption &mdash; whole organisation, once</span><b>CHF 19,500</b></div>
+          <div class="out">
+            A generic catalogue costs roughly <strong>two and a half times</strong> the engagement &mdash; <strong>every year</strong> &mdash; and at the end of it you hold no policy, no per-team material, no attendance record and no score. When the licence lapses you have nothing. When this engagement ends you own the artefacts.
+            <br/><br/><span class="src">List prices; platforms discount at volume, and you should ask them to. The structure of the comparison does not change: theirs is a per-person annual rent, ours is a per-organisation one-off.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-item">
+        <div class="p-num">Three &mdash; the recoverable hours</div>
+        <h3>Proposal and report drafting is your largest recoverable cost, and it is countable.</h3>
+        <p style="margin-bottom:.9rem">
+          A full-time grant writer runs roughly <strong>USD 98,000 a year fully loaded</strong>. Outsourced, a foundation proposal is <strong>USD 1,500&ndash;5,000</strong> and a federal application <strong>USD 5,000&ndash;15,000+</strong>. Most organisations pay neither &mdash; they absorb it as programme staff time, which is why it never appears as a line and never gets managed.
+        </p>
+        <p>
+          <strong>Why this is measurable and most AI claims are not.</strong> You already know how many proposals and donor reports you produced last year. Count the hours on the next three before we start and on three after. That is the number, and it is yours, not ours. We will not put a percentage in a proposal, because anyone who quotes you an ROI figure for AI training before seeing your documents is guessing.
+        </p>
+      </div>
+
+      <div class="p-item">
+        <div class="p-num">Four &mdash; the exposure you cannot price</div>
+        <h3>Someone has already pasted a beneficiary file into a consumer chatbot.</h3>
+        <p style="margin-bottom:.9rem">
+          Not as a hypothetical: about 88% of professionals have put work information into public AI tools, a third of them customer or beneficiary data, and two-thirds have done it believing it was not permitted. A third of organisations have any policy at all. If you have not asked, you do not know, and you are carrying it either way.
+        </p>
+        <p>
+          <strong>For you this is not a fine.</strong> It is a safeguarding failure involving the people you exist to protect, discovered by a donor or a journalist rather than by you. There is no number on that. There is a number on preventing it, and it is on this page.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="band band-dark" id="different">
+  <div class="inner">
+    <div class="kicker">Where we actually differ</div>
+    <h2>Five structural differences. Check each one against the table.</h2>
+    <p class="lede">None of these is "we are more tailored." Each is a fact about how the alternatives are built.</p>
+    <div class="grid-2">
+      <div class="card">
+        <h4>1 &middot; Nobody else sells all three parts together</h4>
+        <p>Platforms and cohorts train but write no policy. Governance consultancies write policy but train nobody, so behaviour does not change. In this price band we are the only option producing the diagnosis, the policy and the per-team material as one engagement &mdash; which matters because the three fail separately.</p>
+      </div>
+      <div class="card">
+        <h4>2 &middot; The free options exclude you</h4>
+        <p>The best free programme in this space is open to <strong>US-based nonprofits only</strong>. The main subsidised accelerator caps at under 100 staff and under USD 10M budget in named sectors. A Geneva-based international body, a 200-person INGO, a public institution or a MENA organisation is outside all of it. We are not competing with free &mdash; free is not available to you.</p>
+      </div>
+      <div class="card">
+        <h4>3 &middot; Per organisation, once &mdash; not per person, forever</h4>
+        <p>Every catalogue on the table charges annually per head. We charge once per organisation. Above roughly fifty staff the arithmetic stops being close, and it compounds every renewal.</p>
+      </div>
+      <div class="card">
+        <h4>4 &middot; The price is published</h4>
+        <p>Look at the price column. Almost nobody in the consulting tier publishes one, which is why buying this normally starts with a call you cannot evaluate. Ours are on the services page, with what is in each. You can rule us out without speaking to us.</p>
+      </div>
+      <div class="card">
+        <h4>5 &middot; You keep assets, not access</h4>
+        <p>A lapsed licence leaves you with nothing. This engagement leaves a policy in force, a page per department, a tool inventory, an attendance record and two scores &mdash; which together are the file a donor, an auditor or a regulator asks to see.</p>
+      </div>
+      <div class="card" style="border-color:rgba(201,168,76,.55)">
+        <h4>And where we lose</h4>
+        <p>If you need model fine-tuning, data engineering or deployment, we do none of it. If you need thirty trainers across four countries next month, we cannot staff it. If your organisation is under 20 people, a free course is probably enough and we will say so on the call. Those are real, and pretending otherwise would waste your time and ours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="stack">
+  <div class="inner-narrow">
+    <div class="note note-gold">
+      <strong>The honest recommendation, if you are weighing this up.</strong>
+      Do the free things first. Take our assessment, which is free and takes twelve minutes. If you are a US-based nonprofit, apply to the free cohort. If you are under 100 staff in an eligible sector, apply to the accelerator. Read the framework &mdash; it is public.
+      <br/><br/>
+      Come back when you hit the wall all of those share: none of them can write <em>your</em> policy, use <em>your</em> team's documents, clear <em>your</em> data rules, or produce the evidence file <em>your</em> funder asks for. That wall is where the paid work starts, and not before.
+    </div>
+  </div>
+</section>
+
+<section class="band band-alt" id="contact" style="text-align:center">
+  <div class="inner">
+    <h2 style="margin:0 auto 1rem">Rule us out in twelve minutes, free.</h2>
+    <p class="lede" style="margin:0 auto 2rem">The assessment scores you across ten dimensions and tells you what to fix first. You keep the report whether or not you ever speak to us.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a class="btn btn-navy" href="../explore-your-ai-readiness/">Take the assessment</a>
+      <a class="btn btn-outline" href="../services/">See services and prices</a>
+    </div>
+  </div>
+</section>
+<footer class="mai-footer">
+  <div class="mai-footer-inner">
+    <div>
+      <div class="mai-footer-logo">M.A.I. Consulting</div>
+      <div class="mai-footer-tag">Strategy &middot; AI &middot; Impact</div>
+    </div>
+    <div class="mai-footer-right">
+      <a href="../">mai4consulting.com</a>
+      <div class="mai-footer-copy">&copy; 2026 M.A.I. Consulting. All rights reserved. Geneva, Switzerland.</div>
+    </div>
+  </div>
+  <nav class="footer-nav" aria-label="Site">
+    <ul>
+      <li><a href="../">Home</a></li>
+      <li><a href="../services/">Services</a></li>
+      <li><span class="footer-nav-current" aria-current="page">Compare the market</span></li>
+      <li><a href="../knowledge/">Knowledge</a></li>
+      <li><a href="../explore-your-ai-readiness/">Assessment</a></li>
+      <li><a href="../about/">About</a></li>
+      <li><a href="../our-clients/">Who We Work With</a></li>
+      <li><a href="../contact-us/">Contact</a></li>
+      <li><span class="fn-group">Read</span></li>
+      <li><a href="../cheatsheet/">Sample Cheatsheet</a></li>
+      <li><a href="../eu-ai-act-article-4/">EU AI Act Article 4</a></li>
+      <li><a href="../use-cases/">AI Use Cases</a></li>
+      <li><a href="../claude-in-chrome/">Claude in Chrome</a></li>
+      <li><a href="../save-claude-tokens/">Claude for Business</a></li>
+      <li><a href="../extensive-ai-readiness-analysis/">Extended Assessment</a></li>
+      <li><span class="fn-group">Legal</span></li>
+      <li><a href="../privacy/">Privacy</a></li>
+    </ul>
+  </nav>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('mai-burger'), l=document.getElementById('mai-links');
+  if(b&&l){b.addEventListener('click',function(){
+    var o=l.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false');
+  });}
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('[data-scroll-to]'); if(!t) return;
+    var el=document.getElementById(t.getAttribute('data-scroll-to'));
+    if(el){e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+})();
+</script>
+</body>
+</html>
