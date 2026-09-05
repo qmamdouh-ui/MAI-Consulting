@@ -72,9 +72,9 @@
 <section class="hero" id="top">
   <div class="inner">
     <div class="eyebrow"><i></i>Price estimate</div>
-    <h1>Build the engagement you need. See roughly what it <em>costs</em>.</h1>
+    <h1>Build the engagement you need and see its indicative <em>cost</em>.</h1>
     <p class="hero-sub">
-      Five choices, one indicative range. Nothing here is a quote, since every engagement is scoped and confirmed on a 30-minute call, but you should not have to book a call to learn whether this is a five-thousand or a fifty-thousand-franc conversation.
+      Five choices produce one indicative range. Nothing here is a quote, since every engagement is scoped and confirmed on a 30-minute call, but the order of magnitude should be visible before you book that call.
     </p>
   </div>
 </section>
@@ -98,7 +98,7 @@
         <h3>2 &middot; How many staff would this cover?</h3>
         <p class="hint">Size drives how many departments we work with and how many sittings a session needs.</p>
         <div class="opts">
-          <div class="opt"><input type="radio" name="size" id="s1" value="s1"/><label for="s1"><b>1 &ndash; 10</b></label></div>
+          <div class="opt"><input type="radio" name="size" id="s1" value="s1"/><label for="s1"><b>1 &ndash; 10</b><span>small-group course, in person or online</span></label></div>
           <div class="opt"><input type="radio" name="size" id="s2" value="s2" checked/><label for="s2"><b>10 &ndash; 50</b></label></div>
           <div class="opt"><input type="radio" name="size" id="s3" value="s3"/><label for="s3"><b>50 &ndash; 200</b></label></div>
           <div class="opt"><input type="radio" name="size" id="s4" value="s4"/><label for="s4"><b>200 &ndash; 500</b><span>scoped on a call</span></label></div>
@@ -156,14 +156,14 @@
     <div class="kicker">How to read the number</div>
     <h2>How to read the number.</h2>
     <p style="margin-bottom:.9rem">The range reflects the scope you selected at the rate for your type of organisation. It excludes VAT and travel. Once we have spoken for thirty minutes and know your actual departments, data and constraints, you get a fixed price and a fixed scope in writing, and that number is the one that binds.</p>
-    <p>Two things move it most: how many departments need their own material, and whether you want us to configure agents or tools on top of training and policy. Two things do not move it: negotiating, and how urgent it is. We do not charge for speed and we do not discount the rate.</p>
+    <p>Two things move it most: how many departments need their own material, and whether you want us to configure agents or tools on top of training and policy. Two things do not move it: negotiating, and how urgent it is. We do not charge for speed and we do not discount the rate.</p><p style="margin-top:.9rem">For teams of fewer than ten, the smallest band prices a small-group course. It can be delivered in person or online; for in-person courses we arrange the venue and the participants' logistics, and those arrangements are quoted with the course.</p>
   </div>
 </section>
 
 <section class="band band-dark" id="contact" style="text-align:center">
   <div class="inner">
-    <h2 style="margin:0 auto 1rem">Want the number confirmed?</h2>
-    <p class="lede" style="margin:0 auto 2rem">Thirty minutes. We check the scope, tell you if part of it is unnecessary, and send a fixed price the same week.</p>
+    <h2 style="margin:0 auto 1rem">Would you like the number confirmed?</h2>
+    <p class="lede" style="margin:0 auto 2rem">Thirty minutes. We check the scope, tell you if any part of it is unnecessary, and send a fixed price the same week.</p>
     <div class="btn-row" style="justify-content:center">
       <a class="btn btn-gold" href="../contact-us/">Book a call</a>
       <a class="btn btn-ghost" href="../services/">See the services</a>
@@ -257,7 +257,7 @@ function send(){
     .catch(function(){ b.disabled=false; b.textContent="Send to the team & keep a copy"; b.insertAdjacentHTML("afterend",'<p class="err">Could not send. Please use the <a href="../contact-us/" style="color:#fff">contact form</a>.</p>'); });
 }
 function preset(){
-  var p=(location.search.match(/preset=([a-z]+)/)||[])[1]; if(!p) return;
+  var p=(location.search.match(/preset=([a-z]+)/)||[])[1], sz=(location.search.match(/size=(s[1-5])/)||[])[1]; if(!p&&!sz) return;
   var set=function(n,v){var e=document.querySelector('input[name="'+n+'"][value="'+v+'"]'); if(e) e.checked=true;};
   if(p==="foundation"){ set("size","s2"); q("assess").checked=true; set("train","1"); set("policy","0"); }
   if(p==="adoption"){ set("size","s3"); q("assess").checked=true; set("train","2"); q("train-n").value=4; set("policy","1"); }
@@ -266,6 +266,7 @@ function preset(){
   if(p==="policy"){ q("assess").checked=false; set("train","0"); set("policy","1"); }
   if(p==="training"){ q("assess").checked=false; set("train","2"); set("policy","0"); }
   if(p==="agents"){ q("assess").checked=false; set("train","0"); set("policy","0"); q("agents").value=1; q("tools").value=1; }
+  if(sz){ set("size",sz); var d=_dn[sz]||3; q("train-n").value=d; q("policy-n").value=d; if(p==="training"&&sz==="s1") set("train","1"); }
 }
 document.querySelectorAll("#est input").forEach(function(i){ i.addEventListener("change",function(){
   if(i.name==="size"){ var d=_dn[i.value]||3; q("train-n").value=d; q("policy-n").value=d; } render(); }); i.addEventListener("input",render); });
