@@ -1,4 +1,4 @@
-# Claude for Business — M.A.I. Consulting
+# Claude for Business. M.A.I. Consulting
 
 *Source: `Save Claude Tokens.htm`*
 
@@ -12,7 +12,7 @@ Claude for Business
 
 Across Your Organization
 
-From custom AI workflows to structured CLAUDE.md files, skills, and token-efficient prompting — practical guidance for getting real value out of Claude without burning through credits.
+From custom AI workflows to structured CLAUDE.md files, skills, and token-efficient prompting, practical guidance for getting real value out of Claude without burning through credits.
 
 Explore Use Cases Save on Tokens →
 
@@ -20,7 +20,7 @@ Core Applications
 
 ### What Claude Actually Does Well
 
-Claude's most reliable value isn't chat — it's structured, repeatable work embedded into real business workflows. These are the use cases where it consistently outperforms alternatives.
+Claude's most reliable value isn't chat, it's structured, repeatable work embedded into real business workflows. These are the use cases where it consistently outperforms alternatives.
 
 📄
 
@@ -66,7 +66,7 @@ Analytics
 
 #### Custom Assistants & Tools
 
-Build purpose-built tools using the API — internal knowledge bots, client intake processors, automated report generators — using CLAUDE.md and skill files to control behavior precisely.
+Build purpose-built tools using the API, internal knowledge bots, client intake processors, automated report generators, using CLAUDE.md and skill files to control behavior precisely.
 
 Custom Build
 
@@ -74,29 +74,29 @@ Structure & Control
 
 ### Skills & CLAUDE.md Files
 
-Two mechanisms that let you encode persistent instructions, domain knowledge, and behavioral rules directly into Claude's working context — without restating them every session.
+Two mechanisms that let you encode persistent instructions, domain knowledge, and behavioral rules directly into Claude's working context, without restating them every session.
 
 #### What is CLAUDE.md?
 
-CLAUDE.md is a Markdown file Claude reads at the start of every session within a project or directory. It acts as standing instructions — your organization's style guide, terminology, prohibited behaviors, output formats, and domain context, all loaded automatically.
+CLAUDE.md is a Markdown file Claude reads at the start of every session within a project or directory. It acts as standing instructions, your organization's style guide, terminology, prohibited behaviors, output formats, and domain context, all loaded automatically.
 
 In Claude Code, CLAUDE.md files are hierarchical: a root-level file sets global defaults, while subdirectory files add context for specific modules or workstreams. This means a legal team and an engineering team can operate with different rules without manual switching.
 
-Practical tip: Put your most-used constraints in CLAUDE.md rather than in every prompt. Anything you repeat more than 3 times per week — response format, tone, citation rules, domain vocabulary — belongs there.
+Practical tip: Put your most-used constraints in CLAUDE.md rather than in every prompt. Anything you repeat more than 3 times per week, response format, tone, citation rules, domain vocabulary, belongs there.
 
 #### CLAUDE.md Structure
 
-# CLAUDE.md — Project: Consulting Engagements ## Role You are a strategy analyst at M.A.I. Consulting. Responses must be professional, evidence-based, and free of hedging language. ## Output Rules - Use Markdown tables for comparisons - Keep section headings concise - Never add preamble before answers - Cite sources inline as [Source, Year] ## Domain Context Client industry: Public sector + NGOs Primary frameworks: Logic models, ToC, SWOT Internal acronyms: ToR = Terms of Reference ## Prohibited - Do not invent data - Do not recommend tools without evidence - Do not use the word "leverage"
+# CLAUDE.md. Project: Consulting Engagements ## Role You are a strategy analyst at M.A.I. Consulting. Responses must be professional, evidence-based, and free of hedging language. ## Output Rules - Use Markdown tables for comparisons - Keep section headings concise - Never add preamble before answers - Cite sources inline as [Source, Year] ## Domain Context Client industry: Public sector + NGOs Primary frameworks: Logic models, ToC, SWOT Internal acronyms: ToR = Terms of Reference ## Prohibited - Do not invent data - Do not recommend tools without evidence - Do not use the word "leverage"
 
 #### Skills (Slash Commands)
 
-Skills are modular instruction files — typically Markdown — stored in a /skills/ directory and referenced by Claude when a specific task type is triggered. Think of them as specialized agents within a project: one skill for writing reports, another for code review, another for client intake processing.
+Skills are modular instruction files, typically Markdown, stored in a /skills/ directory and referenced by Claude when a specific task type is triggered. Think of them as specialized agents within a project: one skill for writing reports, another for code review, another for client intake processing.
 
 📋
 
 #### SKILL.md Anatomy
 
-Each skill file has a name, a description (used to trigger it automatically), and a body with exact instructions. The description is critical — it's what determines when Claude picks up the skill.
+Each skill file has a name, a description (used to trigger it automatically), and a body with exact instructions. The description is critical, it's what determines when Claude picks up the skill.
 
 📁
 
@@ -120,7 +120,7 @@ Developer Tools
 
 ### Claude Code
 
-Claude Code is a command-line agentic coding tool — not a chat interface, not a copilot plugin. It operates autonomously on your local filesystem, runs commands, reads and writes files, and executes multi-step tasks with minimal hand-holding.
+Claude Code is a command-line agentic coding tool, not a chat interface, not a copilot plugin. It operates autonomously on your local filesystem, runs commands, reads and writes files, and executes multi-step tasks with minimal hand-holding.
 
 #### What it actually does
 
@@ -134,7 +134,7 @@ Claude Code maps your project structure, reads relevant files, and builds contex
 
 ##### Executes terminal commands
 
-It can run tests, install packages, call build tools, and interpret the output — then adjust its approach based on what failed or succeeded.
+It can run tests, install packages, call build tools, and interpret the output, then adjust its approach based on what failed or succeeded.
 
 3
 
@@ -152,19 +152,19 @@ Drop a CLAUDE.md in any directory and Claude Code reads it automatically. Nested
 
 #### Codebase onboarding
 
-Ask Claude Code to explain an unfamiliar repository — it reads the structure, key files, and build config and produces a summary more useful than most READMEs.
+Ask Claude Code to explain an unfamiliar repository, it reads the structure, key files, and build config and produces a summary more useful than most READMEs.
 
 #### Automated testing
 
-Generate unit and integration tests for existing code, run them, interpret failures, and iterate until they pass — without copying anything into a browser.
+Generate unit and integration tests for existing code, run them, interpret failures, and iterate until they pass, without copying anything into a browser.
 
 #### Migration tasks
 
-API version upgrades, framework migrations, dependency updates — tasks that are mechanical but tedious. Claude Code handles the bulk edits while you review diffs.
+API version upgrades, framework migrations, dependency updates, tasks that are mechanical but tedious. Claude Code handles the bulk edits while you review diffs.
 
 #### MCP server integration
 
-Claude Code supports MCP (Model Context Protocol), allowing it to connect to external tools — databases, APIs, file systems — and act on them directly within a session.
+Claude Code supports MCP (Model Context Protocol), allowing it to connect to external tools, databases, APIs, file systems, and act on them directly within a session.
 
 Cost note: Claude Code is token-intensive by design. Each agentic step reads files and generates intermediate reasoning. Use /compact mode and targeted file scope to control spend on large repos.
 
@@ -180,7 +180,7 @@ of token cost is often from input, not output
 
 200K
 
-token context window — most use less than 10%
+token context window, most use less than 10%
 
 3×
 
@@ -218,7 +218,7 @@ Workflow
 
 #### Targeted System Prompts
 
-Bloated system prompts — ones that try to cover every possible scenario — inflate input tokens on every call. Keep system prompts focused on the specific task. Put rarely-needed instructions in user messages or skill files loaded on demand.
+Bloated system prompts, ones that try to cover every possible scenario, inflate input tokens on every call. Keep system prompts focused on the specific task. Put rarely-needed instructions in user messages or skill files loaded on demand.
 
 Prompt Design
 

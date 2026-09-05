@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Extended AI Readiness Assessment — 10 Dimensions | M.A.I. Consulting</title>
+<title>Extended AI Readiness Assessment: 10 Dimensions | M.A.I. Consulting</title>
 <meta name="description" content="A 60-question, ten-dimension evaluation of AI fluency, governance, ethics, workforce impact and future-readiness, mapped to ISO/IEC 42001, NIST AI RMF and the EU AI Act."/>
 <link rel="canonical" href="https://mai4consulting.com/extensive-ai-readiness-analysis/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="M.A.I. Consulting"/>
-<meta property="og:title" content="Extended AI Readiness Assessment — 10 Dimensions | M.A.I. Consulting"/>
+<meta property="og:title" content="Extended AI Readiness Assessment: 10 Dimensions | M.A.I. Consulting"/>
 <meta property="og:description" content="A 60-question, ten-dimension evaluation of AI fluency, governance, ethics, workforce impact and future-readiness, mapped to ISO/IEC 42001, NIST AI RMF and the EU AI Act."/>
 <meta property="og:url" content="https://mai4consulting.com/extensive-ai-readiness-analysis/"/>
 <meta name="twitter:card" content="summary"/>
@@ -244,7 +244,7 @@ footer{
 </style>
 <style>.footer-nav .fn-group{color:rgba(255,255,255,.28);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;}</style>
 <style>
-/* global site navigation — self-contained, does not touch page styles */
+/* global site navigation: self-contained, does not touch page styles */
 .mai-topbar{background:linear-gradient(140deg,#00122e 0%,#003E8A 100%);position:sticky;top:0;z-index:900;
   border-bottom:1px solid rgba(255,255,255,.07);padding:0 1.5rem;font-family:'Inter',system-ui,sans-serif}
 .mai-topbar-inner{max-width:1120px;margin:0 auto;height:60px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
@@ -297,7 +297,7 @@ body > header{position:static !important}
   <div class="header-grid"></div>
   <div class="header-badge"><span class="badge-dot"></span>M.A.I. Consulting Tool</div>
   <h1>Extended AI Readiness <span>Assessment</span></h1>
-  <p>A streamlined 10-dimension evaluation — 60 questions across AI fluency, governance, ethics, workforce impact, and future-readiness.</p>
+  <p>A 10-dimension evaluation: 60 questions across AI fluency, governance, ethics, workforce impact, and future-readiness.</p>
   <div class="std-strip">
     <a class="std-pill" href="https://www.iso.org/standard/81230.html" target="_blank" rel="noopener noreferrer">ISO/IEC 42001:2023</a>
     <a class="std-pill" href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST AI RMF 1.0</a>
@@ -367,8 +367,8 @@ body > header{position:static !important}
         <label>EU AI Act Exposure <span style="color:var(--error)">*</span></label>
         <select id="u-eu" onchange="updateUser();clearFieldError('field-eu')">
           <option value="">Select…</option>
-          <option>Yes — operate or place AI in EU</option>
-          <option>No — out of scope</option>
+          <option>Yes: operate or place AI in EU</option>
+          <option>No: out of scope</option>
           <option>Unsure</option>
         </select>
       </div>
@@ -413,7 +413,7 @@ body > header{position:static !important}
         <a class="ns-btn ns-primary" href="../contact-us/">Book a free 30-minute debrief</a>
         <a class="ns-btn" href="../services/">See services and prices</a>
       </div>
-      <p class="ns-fine">On the call we walk through your three weakest dimensions and what to do about each. No pitch &mdash; if the right first step is a free programme, that is what we will tell you.</p>
+      <p class="ns-fine">On the call we walk through your three weakest dimensions and what to do about each. No pitch. If the right first step is a free programme, that is what we will tell you.</p>
     </div>
   </div>
 </div>
@@ -462,7 +462,7 @@ const QUESTIONS=[
   {dim:2,id:'dis6',text:'Do you evaluate whether individual AI outputs align with your organization\'s values and mission?',type:'yn',max:5,sub:'Per-output check. Yes = 5 / No = 0'},
   {dim:2,id:'dis7',text:'When AI gives a poor response, can your team diagnose what went wrong with the prompt?',type:'scale',max:5,sub:'1 = Never  →  5 = Consistently'},
   {dim:3,id:'dil1',text:'Does your team take responsibility for reviewing AI-generated outputs before sharing them externally?',type:'scale',max:5,sub:'1 = Rarely  →  5 = Always'},
-  {dim:3,id:'dil2',text:'Do you disclose AI involvement when relevant (to funders, beneficiaries, partners, audiences)?',type:'yn',max:5,sub:'Yes = 5 / No = 0',ref:'EU AI Act Art. 50 — transparency'},
+  {dim:3,id:'dil2',text:'Do you disclose AI involvement when relevant (to funders, beneficiaries, partners, audiences)?',type:'yn',max:5,sub:'Yes = 5 / No = 0',ref:'EU AI Act Art. 50: transparency'},
   {dim:3,id:'dil3',text:'Does your team practice data hygiene in daily use (removing PII before sharing prompts/files with AI)?',type:'yn-partial',max:5,sub:'Daily practice. Yes = 5 / Partial = 3 / No = 0'},
   {dim:3,id:'dil4',text:'How intentional is your organization about which AI tool to use for which task?',type:'scale',max:5,sub:'1 = Whatever is available  →  5 = Deliberate, documented choices'},
   {dim:3,id:'dil5',text:'Is there a routine process to spot-check AI outputs already in production work (catching errors after the fact)?',type:'yn-partial',max:5,sub:'Routine quality check, distinct from incident handling. Yes = 5 / Partial = 3 / No = 0'},
@@ -488,7 +488,7 @@ const QUESTIONS=[
   {dim:6,id:'wfi5',text:'Has the organization committed (in writing or budgeted practice) to reskilling/redeployment rather than replacement where AI displaces tasks?',type:'sel',max:5,opts:['No, replacement is default (0)','Case-by-case (2)','Verbal commitment (3)','Documented commitment with budget (5)'],vals:[0,2,3,5],sub:'Structural commitment (Psychological Safety captures the communication dimension).'},
   {dim:6,id:'wfi6',text:'Are productivity gains from AI being measured against any losses (errors, rework, judgment failures, customer dissatisfaction)?',type:'yn-partial',max:5,sub:'Yes = 5 / Partial = 3 / No = 0'},
   {dim:7,id:'ops1',text:'Is decision-making authority for AI tool selection and use clearly defined across departments (IT, business owners, compliance)?',type:'sel',max:5,opts:['Unclear, contested (0)','Informally negotiated (2)','Defined but inconsistent (3)','Clear cross-functional governance (5)'],vals:[0,2,3,5]},
-  {dim:7,id:'ops2',text:'Is there evidence of "shadow AI" — staff using AI tools the organization does not officially sanction or know about?',type:'sel',max:5,opts:['Widespread, no visibility (0)','Some, suspected (1)','Some, monitored (3)','Limited, with sanctioned alternatives (4)','Visible and managed (5)'],vals:[0,1,3,4,5]},
+  {dim:7,id:'ops2',text:'Is there evidence of "shadow AI", meaning staff using AI tools the organization does not officially sanction or know about?',type:'sel',max:5,opts:['Widespread, no visibility (0)','Some, suspected (1)','Some, monitored (3)','Limited, with sanctioned alternatives (4)','Visible and managed (5)'],vals:[0,1,3,4,5]},
   {dim:7,id:'ops3',text:'Has AI adoption created or amplified friction between departments (IT vs business, leadership vs frontline, central vs field)?',type:'sel',max:5,opts:['Major friction, unresolved (0)','Notable, being addressed (2)','Some, manageable (3)','Little, with collaboration forums (5)'],vals:[0,2,3,5]},
   {dim:7,id:'ops4',text:'Are AI decisions (procurement, deployment, scope) AND the resulting shifts in influence/power transparent to affected staff?',type:'sel',max:5,opts:['Opaque (0)','Some visibility (2)','Mostly transparent (3)','Fully transparent with consultation (5)'],vals:[0,2,3,5],sub:'Merged: combines decision transparency and power-shift transparency.'},
   {dim:7,id:'ops5',text:'Is there a clear escalation path when AI use raises operational, ethical, or quality concerns?',type:'yn-partial',max:5,sub:'Yes = 5 / Partial = 3 / No = 0'},
@@ -892,7 +892,7 @@ async function downloadPDF(){
     // 2. Raw base64 (strip the "data:application/pdf;base64," prefix)
     const base64Data = pdf.output('datauristring').split('base64,')[1];
     const approxKB = Math.round(base64Data.length * 0.75 / 1024);
-    console.log(`PDF base64 ≈ ${approxKB} KB (decoded) — text PDF, uploading to Drive.`);
+    console.log(`PDF base64 ≈ ${approxKB} KB (decoded): text PDF, uploading to Drive.`);
 
     // 3. Upload to Google Drive via the Apps Script Web App.
     //    Content-Type is text/plain on purpose: a JSON content-type triggers
@@ -913,11 +913,11 @@ async function downloadPDF(){
         console.log('Drive upload OK:', finalPdfLink);
       } else {
         console.error('Drive upload failed:', driveResult);
-        finalPdfLink = 'Upload failed — please contact us directly for your report.';
+        finalPdfLink = 'Upload failed. Please contact us directly for your report.';
       }
     }catch(driveErr){
       console.error('Drive upload error:', driveErr);
-      finalPdfLink = 'Upload failed — please contact us directly for your report.';
+      finalPdfLink = 'Upload failed. Please contact us directly for your report.';
     }
 
     // 4. Email the notification with the Drive link
@@ -933,7 +933,7 @@ async function downloadPDF(){
       .catch(err=>{
         const st = err && (err.status||'');
         const tx = err && (err.text||err.message||err);
-        console.error('EmailJS FAILED — status:', st, 'text:', tx, err);
+        console.error('EmailJS FAILED. status:', st, 'text:', tx, err);
       });
 
   }catch(e){
@@ -945,10 +945,10 @@ async function downloadPDF(){
 
 function getMultiAnswer(id){
   const s=multiState[id];
-  if(!s)return '—';
+  if(!s)return '-';
   const parts=[...s.selected];
   if(s.other) parts.push(`Other: ${s.other}`);
-  return parts.length?parts.join('; '):'—';
+  return parts.length?parts.join('; '):'-';
 }
 
 /* Convert #rrggbb to [r,g,b]. */
@@ -1024,10 +1024,10 @@ function buildPrintReport(){
   /* ===== Profile ===== */
   sectionTitle('Profile');
   const prof=[
-    ['Name', userInfo.name||'—', 'Organization', userInfo.org||'—'],
-    ['Role', userInfo.role||'—', 'Email', userInfo.email||'—'],
-    ['Sector', userInfo.sector||'—', 'Team Size', userInfo.size||'—'],
-    ['EU AI Act', userInfo.eu||'—', 'Answered', answered+' / '+QUESTIONS.length],
+    ['Name', userInfo.name||'-', 'Organization', userInfo.org||'-'],
+    ['Role', userInfo.role||'-', 'Email', userInfo.email||'-'],
+    ['Sector', userInfo.sector||'-', 'Team Size', userInfo.size||'-'],
+    ['EU AI Act', userInfo.eu||'-', 'Answered', answered+' / '+QUESTIONS.length],
     ['Total Score', totalScore+' / '+totalMax, 'Overall', pct+'%'],
   ];
   doc.setFillColor(246,248,252);
@@ -1180,7 +1180,7 @@ function buildPrintReport(){
   });
   doc.setFillColor(DARK[0],DARK[1],DARK[2]); doc.rect(ML,y,CW,7,'F');
   doc.setFont('helvetica','bold'); doc.setTextColor(255,255,255); doc.setFontSize(7.5);
-  {let x=ML; const tot=['TOTAL','—',totalScore,totalMax,pct+'%',label];
+  {let x=ML; const tot=['TOTAL','',totalScore,totalMax,pct+'%',label];
    tot.forEach((cell,i)=>{const al=i>=2?'right':'left';const tx=al==='right'?x+cwd[i]-2:x+2;
      doc.text(String(cell).slice(0,38),tx,y+4.7,{align:al}); x+=cwd[i];});}
   y+=11;
@@ -1198,8 +1198,8 @@ function buildPrintReport(){
     doc.text(D.name, ML+2, y+4); y+=8;
     dimQs.forEach((q,qi)=>{
       let scTxt;
-      if(q.info){ scTxt='info — '+getMultiAnswer(q.id); }
-      else { const sc=scores[q.id]; scTxt=((sc===undefined||isNaN(sc))?'—':Math.round(sc))+' / '+q.max; }
+      if(q.info){ scTxt='info: '+getMultiAnswer(q.id); }
+      else { const sc=scores[q.id]; scTxt=((sc===undefined||isNaN(sc))?'-':Math.round(sc))+' / '+q.max; }
       const qline=doc.splitTextToSize((qi+1)+'. '+q.text, CW-34);
       const need=Math.max(qline.length*3.8, 5)+2;
       ensure(need);

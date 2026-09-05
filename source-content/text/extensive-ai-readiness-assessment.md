@@ -1,4 +1,4 @@
-# AI Readiness Assessment v3 — M.A.I. Consulting
+# AI Readiness Assessment v3. M.A.I. Consulting
 
 *Source: `Extensive AI Readiness Assessment.htm`*
 
@@ -6,7 +6,7 @@ M.A.I. Consulting Tool
 
 ## AI Readiness Assessment
 
-A streamlined 10-dimension evaluation — 60 questions across AI fluency, governance, ethics, workforce impact, and future-readiness.
+A streamlined 10-dimension evaluation. 60 questions across AI fluency, governance, ethics, workforce impact, and future-readiness.
 
 ISO/IEC 42001:2023 NIST AI RMF 1.0 EU AI Act GDPR · DPIA OECD AI Principles
 
@@ -32,7 +32,7 @@ Select… Just me 2–10 11–50 51–200 200+
 
 EU AI Act Exposure *
 
-Select… Yes — operate or place AI in EU No — out of scope Unsure
+Select… Yes, operate or place AI in EU No, out of scope Unsure
 
 Overall AI Readiness Score
 
@@ -279,7 +279,7 @@ _Decision rights, shadow AI, internal dynamics_
   - Informally negotiated (2)
   - Defined but inconsistent (3)
   - Clear cross-functional governance (5)
-- Is there evidence of "shadow AI" — staff using AI tools the organization does not officially sanction or know about?
+- Is there evidence of "shadow AI", staff using AI tools the organization does not officially sanction or know about?
   - Widespread, no visibility (0)
   - Some, suspected (1)
   - Some, monitored (3)

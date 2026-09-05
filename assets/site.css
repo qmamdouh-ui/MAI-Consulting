@@ -1,5 +1,5 @@
 /* ==========================================================================
-   M.A.I. Consulting — shared design system
+   M.A.I. Consulting: shared design system
    Light off-white ground, deep navy structure, gold accent.
    Playfair Display headings / Inter body.
    ========================================================================== */
@@ -215,3 +215,20 @@ table.mai td strong{color:var(--blue-dark)}
   .hero{padding:3.25rem 1.25rem 3rem}
   .mai-footer-right{text-align:left}
 }
+
+/* journey blocks: starting point, result, how, price */
+.jr{margin:.9rem 0 0;display:grid;gap:.75rem}
+.jr>div{display:grid;grid-template-columns:7.4rem minmax(0,1fr);gap:.8rem;align-items:start}
+.jr b{font-size:.64rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--blue);padding-top:.3rem;line-height:1.4}
+.jr p{font-size:.88rem;line-height:1.68;margin:0;color:var(--charcoal)}
+.jr p.rs{background:var(--blue-wash);border-left:2px solid var(--gold);border-radius:0 6px 6px 0;padding:.65rem .85rem;color:var(--txt)}
+.jr a{color:var(--blue);font-weight:700;text-decoration:none}.jr a:hover{text-decoration:underline}
+.band-dark .jr b{color:var(--gold)}.band-dark .jr p{color:rgba(255,255,255,.8)}
+.band-dark .jr p.rs{background:rgba(255,255,255,.06);color:#fff}
+.jl{font-size:.86rem;line-height:1.62;margin:.55rem 0 0;color:var(--charcoal)}
+.jl b{display:block;font-size:.62rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--blue);margin-bottom:.12rem}
+.card-link .more{display:inline-block;margin-top:.8rem;font-size:.8rem;font-weight:700;color:var(--blue)}
+@media(max-width:560px){.jr>div{grid-template-columns:1fr;gap:.25rem}.jr b{padding-top:0}}
+
+/* deep links land below the sticky top bar */
+section[id],.svc[id],.pkg[id],.offer[id],.svc-block[id]{scroll-margin-top:4.6rem}

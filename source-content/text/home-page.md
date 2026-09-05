@@ -56,7 +56,7 @@ INDIVIDUAL
 
 #### Personal AI Workspace
 
-- Claude Free, Copilot Free, ChatGPT Free — immediate productivity gains
+- Claude Free, Copilot Free, ChatGPT Free, immediate productivity gains
 - Claude Pro, Claude Code, Artifacts & Projects
 - Copilot M365 Researcher & Analytical Agent
 - Copilot in Word, Excel & PowerPoint
@@ -70,7 +70,7 @@ TEAM SCALE
 - Shared AI knowledge bases and RAG systems
 - Cross-departmental AI agents & automation
 - Claude for Business & Copilot M365 Business
-- Copilot Office Agent — cross-app orchestration
+- Copilot Office Agent, cross-app orchestration
 
 Explore Readiness
 
@@ -99,7 +99,7 @@ Understanding AI's capabilities, limitations, and the full landscape of tools.
 
 Foundations
 
-First real interactions with Claude, Copilot, and free tools — building genuine confidence.
+First real interactions with Claude, Copilot, and free tools, building genuine confidence.
 
 3
 
@@ -135,7 +135,7 @@ STRATEGY
 
 #### Management Consulting
 
-Boutique-quality strategic advisory for nonprofits and impact-driven organizations — combining rigorous analysis, design thinking, and sector expertise to sharpen your competitive edge.
+Boutique-quality strategic advisory for nonprofits and impact-driven organizations, combining rigorous analysis, design thinking, and sector expertise to sharpen your competitive edge.
 
 - Organizational strategy and redesign
 - Competitive positioning and value proposition
@@ -165,7 +165,7 @@ RESEARCH
 
 #### Strategic Research
 
-Rigorous, AI-augmented research that transforms complex questions into actionable intelligence — informing strategy, shaping programs, and driving evidence-based decisions.
+Rigorous, AI-augmented research that transforms complex questions into actionable intelligence, informing strategy, shaping programs, and driving evidence-based decisions.
 
 - Sector landscape and competitive analysis
 - Policy and regulatory environment mapping

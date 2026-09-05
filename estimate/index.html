@@ -74,7 +74,7 @@
     <div class="eyebrow"><i></i>Price estimate</div>
     <h1>Build the engagement you need. See roughly what it <em>costs</em>.</h1>
     <p class="hero-sub">
-      Five choices, one indicative range. Nothing here is a quote &mdash; every engagement is scoped and confirmed on a 30-minute call &mdash; but you should not have to book a call to learn whether this is a five-thousand or a fifty-thousand-franc conversation.
+      Five choices, one indicative range. Nothing here is a quote, since every engagement is scoped and confirmed on a 30-minute call, but you should not have to book a call to learn whether this is a five-thousand or a fifty-thousand-franc conversation.
     </p>
   </div>
 </section>
@@ -108,7 +108,7 @@
 
       <div class="step">
         <h3>3 &middot; Start with a readiness assessment?</h3>
-        <p class="hint">Recommended. It produces the baseline score, the tool inventory and the ranked gap list the rest of the work is built on &mdash; and the number you re-measure against later.</p>
+        <p class="hint">Recommended. It produces the baseline score, the tool inventory and the ranked gap list the rest of the work is built on, and the number you re-measure against later.</p>
         <label class="chk"><input type="checkbox" id="assess" checked/> Include the AI Readiness Assessment (ten dimensions, scored report, 90-day priority list)</label>
       </div>
 
@@ -125,7 +125,7 @@
 
       <div class="step">
         <h3>5 &middot; AI use policy</h3>
-        <p class="hint">General means one umbrella policy: permitted uses, red lines, data classification, disclosure, escalation, approved tools. Specific annexes add rules for a particular department or use &mdash; casework data, fundraising, HR records &mdash; where the umbrella is not enough.</p>
+        <p class="hint">General means one umbrella policy: permitted uses, red lines, data classification, disclosure, escalation, approved tools. Specific annexes add rules for a particular department or use (casework data, fundraising, HR records) where the umbrella is not enough.</p>
         <div class="opts">
           <div class="opt"><input type="radio" name="policy" id="po0" value="0"/><label for="po0"><b>No policy</b></label></div>
           <div class="opt"><input type="radio" name="policy" id="po1" value="1" checked/><label for="po1"><b>General only</b><span>one umbrella policy</span></label></div>
@@ -136,7 +136,7 @@
 
       <div class="step">
         <h3>6 &middot; Custom agents and tools</h3>
-        <p class="hint">An <strong>agent</strong> is a configured assistant for a role or workflow on the platform you already use &mdash; a grant-report drafter with your templates and rules built in. A <strong>tool</strong> is smaller: a reusable, tested set-up for one repetitive task &mdash; a call-for-proposals summariser, a meeting-notes-to-actions converter. We configure on existing platforms; we do not build software or train models.</p>
+        <p class="hint">An <strong>agent</strong> is a configured assistant for a role or workflow on the platform you already use, for example a grant-report drafter with your templates and rules built in. A <strong>tool</strong> is smaller: a reusable, tested set-up for one repetitive task, such as a call-for-proposals summariser or a meeting-notes-to-actions converter. We configure existing platforms. Writing software and training models are outside what we do.</p>
         <div class="num"><label for="agents">Custom agents:</label><input type="number" id="agents" min="0" max="5" value="0"/></div>
         <div class="num"><label for="tools">Custom tools for repetitive tasks:</label><input type="number" id="tools" min="0" max="8" value="0"/></div>
       </div>
@@ -154,9 +154,9 @@
 <section class="band band-alt" id="how">
   <div class="inner-narrow">
     <div class="kicker">How to read the number</div>
-    <h2>Indicative, not a quote.</h2>
-    <p style="margin-bottom:.9rem">The range reflects the scope you selected at the rate for your type of organisation. It excludes VAT and travel. Once we have spoken for thirty minutes and know your actual departments, data and constraints, you get a fixed price and a fixed scope in writing &mdash; and that number is the one that binds.</p>
-    <p>Two things move it most: how many departments need their own material, and whether you want us to configure agents or tools on top of training and policy. Two things do not move it: negotiating, and how urgent it is &mdash; we do not charge for speed and we do not discount the rate.</p>
+    <h2>How to read the number.</h2>
+    <p style="margin-bottom:.9rem">The range reflects the scope you selected at the rate for your type of organisation. It excludes VAT and travel. Once we have spoken for thirty minutes and know your actual departments, data and constraints, you get a fixed price and a fixed scope in writing, and that number is the one that binds.</p>
+    <p>Two things move it most: how many departments need their own material, and whether you want us to configure agents or tools on top of training and policy. Two things do not move it: negotiating, and how urgent it is. We do not charge for speed and we do not discount the rate.</p>
   </div>
 </section>
 
@@ -174,7 +174,7 @@
 <script>
 (function(){
 "use strict";
-/* scope model — figures are intentionally not rendered anywhere on the page */
+/* scope model: figures are intentionally not rendered anywhere on the page */
 var _r=1700,_m={ngo:.70,io:.90,gov:1.00,priv:1.20};
 var _a={s1:2.5,s2:4,s3:6},_u={s1:1.5,s2:2.5,s3:3.5},_p={s1:3,s2:5,s3:6.5},_dn={s1:1,s2:3,s3:5};
 function _lab(n){var d=0;for(var i=1;i<=n;i++)d+=(i===1?2:(i<=3?1.5:1.2));return d;}
@@ -192,7 +192,7 @@ function state(){
 }
 function included(st){
   var L=[];
-  if(st.assess) L.push("AI Readiness Assessment — ten-dimension scored report and 90-day priority list");
+  if(st.assess) L.push("AI Readiness Assessment: ten-dimension scored report and 90-day priority list");
   if(st.train==="1") L.push("One organisation-wide training session with a shared cheatsheet");
   if(st.train==="2") L.push("Organisation-wide session plus "+st.trainN+" department lab"+(st.trainN>1?"s":"")+", each with its own one-page cheatsheet");
   if(st.policy==="1") L.push("One umbrella AI use policy: permitted uses, red lines, data classification, disclosure, escalation, approved tools");
@@ -222,14 +222,14 @@ function render(){
   var st=state(); q("train-n-wrap").hidden=st.train!=="2"; q("policy-n-wrap").hidden=st.policy!=="2";
   var e=estimate(st), items=included(st), body=q("res-body"), html="";
   var empty=!st.assess&&st.train==="0"&&st.policy==="0"&&!st.agents&&!st.tools;
-  if(empty){ html='<div class="range">—<small>Select at least one component</small></div>'; body.innerHTML=html; last=null; return; }
+  if(empty){ html='<div class="range">&middot;<small>Select at least one component</small></div>'; body.innerHTML=html; last=null; return; }
   if(!e){
     html='<div class="range">Scoped on a call<small>'+SIZE[st.size]+' · '+TYPE[st.type]+'</small></div>'+
          '<div class="big">For organisations of this size the number depends on structure, sites and data we need to see first. Thirty minutes is enough to give you a fixed price.</div>'+
          '<ul>'+items.map(function(i){return "<li>"+i+"</li>";}).join("")+'</ul>'+
          '<a class="btn btn-gold" href="../contact-us/">Book the 30-minute call</a>';
   } else {
-    html='<div class="range">'+fmt(e.lo)+' – '+fmt(e.hi)+'<small>'+TYPE[st.type]+' · '+SIZE[st.size]+' · excl. VAT and travel</small></div>'+
+    html='<div class="range">'+fmt(e.lo)+' to '+fmt(e.hi)+'<small>'+TYPE[st.type]+' · '+SIZE[st.size]+' · excl. VAT and travel</small></div>'+
          '<ul>'+items.map(function(i){return "<li>"+i+"</li>";}).join("")+'</ul>'+
          '<p class="note">Indicative. Confirmed as a fixed price and fixed scope after a 30-minute call. Payment 40% on signature, 60% on delivery.</p>';
   }
@@ -248,11 +248,11 @@ function send(){
   b.disabled=true; b.textContent="Sending…";
   var st=last.st,e=last.e;
   var msg="PRICE ESTIMATE REQUEST\n\nOrganisation type: "+TYPE[st.type]+"\nSize: "+SIZE[st.size]+"\n\nSelections:\n- "+last.items.join("\n- ")+
-          "\n\nIndicative range shown: "+(e?fmt(e.lo)+" – "+fmt(e.hi):"none — size requires a call")+
-          "\n\nName: "+n+"\nEmail: "+em+"\nOrganisation: "+(o||"—")+"\nPage: "+location.href+"\nTime: "+new Date().toISOString();
+          "\n\nIndicative range shown: "+(e?fmt(e.lo)+" to "+fmt(e.hi):"none, size requires a call")+
+          "\n\nName: "+n+"\nEmail: "+em+"\nOrganisation: "+(o||"not given")+"\nPage: "+location.href+"\nTime: "+new Date().toISOString();
   loadEmailJS().then(function(){
     try{ window.emailjs.init({publicKey:"JJs3lu55OHI_pbjth"}); }catch(x){}
-    return window.emailjs.send("service_an94235","template_bv6m1l3",{from_name:n,from_email:em,organization:o||"—",job_title:"—",sector:TYPE[st.type],team_size:SIZE[st.size],service:"Price estimate request",referral:"Estimator",preferred:"Email",message:msg,to_email:"q.mamdouh@mai4consulting.com"});
+    return window.emailjs.send("service_an94235","template_bv6m1l3",{from_name:n,from_email:em,organization:o||"not given",job_title:"not given",sector:TYPE[st.type],team_size:SIZE[st.size],service:"Price estimate request",referral:"Estimator",preferred:"Email",message:msg,to_email:"q.mamdouh@mai4consulting.com"});
   }).then(function(){ q("send").innerHTML='<p class="ok">Sent. The team has your selections and will confirm a fixed price on the call. Use your browser\'s print or save-as-PDF for your own copy.</p>'; })
     .catch(function(){ b.disabled=false; b.textContent="Send to the team & keep a copy"; b.insertAdjacentHTML("afterend",'<p class="err">Could not send. Please use the <a href="../contact-us/" style="color:#fff">contact form</a>.</p>'); });
 }
@@ -262,6 +262,10 @@ function preset(){
   if(p==="foundation"){ set("size","s2"); q("assess").checked=true; set("train","1"); set("policy","0"); }
   if(p==="adoption"){ set("size","s3"); q("assess").checked=true; set("train","2"); q("train-n").value=4; set("policy","1"); }
   if(p==="institution"){ set("size","s4"); q("assess").checked=true; set("train","2"); set("policy","2"); }
+  if(p==="assessment"){ q("assess").checked=true; set("train","0"); set("policy","0"); }
+  if(p==="policy"){ q("assess").checked=false; set("train","0"); set("policy","1"); }
+  if(p==="training"){ q("assess").checked=false; set("train","2"); set("policy","0"); }
+  if(p==="agents"){ q("assess").checked=false; set("train","0"); set("policy","0"); q("agents").value=1; q("tools").value=1; }
 }
 document.querySelectorAll("#est input").forEach(function(i){ i.addEventListener("change",function(){
   if(i.name==="size"){ var d=_dn[i.value]||3; q("train-n").value=d; q("policy-n").value=d; } render(); }); i.addEventListener("input",render); });
