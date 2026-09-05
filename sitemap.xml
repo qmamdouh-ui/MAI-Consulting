@@ -17,4 +17,9 @@
   <url><loc>https://mai4consulting.com/claude-in-chrome/</loc><priority>0.5</priority></url>
   <url><loc>https://mai4consulting.com/save-claude-tokens/</loc><priority>0.5</priority></url>
   <url><loc>https://mai4consulting.com/privacy/</loc><priority>0.3</priority></url>
+  <url><loc>https://mai4consulting.com/services/assessment/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mai4consulting.com/services/policy/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mai4consulting.com/services/training/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mai4consulting.com/services/support/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mai4consulting.com/services/agents/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
