@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Price Estimate | M.A.I. Consulting</title>
+<meta name="description" content="Build the engagement you need and see an indicative price range for your organisation type and size. Confirmed as a fixed price on a 30-minute call."/>
+<link rel="canonical" href="https://mai4consulting.com/estimate/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="M.A.I. Consulting"/>
+<meta property="og:title" content="Price Estimate | M.A.I. Consulting"/>
+<meta property="og:description" content="Build the engagement you need and see an indicative price range for your organisation type and size. Confirmed as a fixed price on a 30-minute call."/>
+<meta property="og:url" content="https://mai4consulting.com/estimate/"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/site.css"/>
+<style>
+.est{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.9fr);gap:1.5rem;align-items:start}
+.step{background:#fff;border:1px solid var(--outline);border-radius:10px;padding:1.3rem 1.4rem;margin-bottom:1rem}
+.step h3{font-size:1.05rem;margin-bottom:.25rem}
+.step .hint{font-size:.8rem;color:var(--muted);margin-bottom:.9rem}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.55rem}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.opt label{display:block;border:1px solid var(--outline);border-radius:8px;padding:.7rem .8rem;font-size:.85rem;line-height:1.4;cursor:pointer;background:var(--surface);transition:border-color .15s,background .15s}
+.opt label b{display:block;color:var(--blue-dark);font-size:.88rem}
+.opt label span{color:var(--muted);font-size:.76rem}
+.opt input:checked+label{border-color:var(--gold);background:rgba(201,168,76,.10);box-shadow:inset 0 0 0 1px var(--gold)}
+.opt input:focus-visible+label{outline:2px solid var(--blue);outline-offset:2px}
+.num{display:flex;align-items:center;gap:.6rem;margin-top:.6rem;font-size:.84rem;color:var(--charcoal)}
+.num input[type=number]{width:4.2rem;padding:.4rem .5rem;border:1px solid var(--outline);border-radius:6px;font:inherit}
+.num[hidden]{display:none}
+.chk{display:flex;align-items:flex-start;gap:.6rem;padding:.5rem 0;font-size:.86rem;color:var(--charcoal)}
+.chk input{margin-top:.25rem;accent-color:var(--gold);width:16px;height:16px;flex:none}
+.res{position:sticky;top:5rem;background:linear-gradient(150deg,var(--blue-deepest),var(--blue-mid));color:#fff;border-radius:12px;padding:1.5rem}
+.res .k{font-size:.7rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.res .range{font-family:'Playfair Display',Georgia,serif;font-size:1.9rem;font-weight:800;color:var(--gold);line-height:1.1}
+.res .range small{display:block;font-family:'Inter',sans-serif;font-size:.74rem;font-weight:500;color:rgba(255,255,255,.6);margin-top:.35rem}
+.res ul{list-style:none;margin:1rem 0;padding:0}
+.res li{font-size:.82rem;line-height:1.55;color:rgba(255,255,255,.82);padding:.3rem 0 .3rem 1.1rem;position:relative;border-bottom:1px solid rgba(255,255,255,.07)}
+.res li::before{content:'';position:absolute;left:0;top:.8rem;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.res .note{font-size:.76rem;line-height:1.55;color:rgba(255,255,255,.62);margin:.8rem 0 1rem}
+.res .big{background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.4);border-radius:8px;padding:.9rem 1rem;font-size:.88rem;line-height:1.6;margin:.6rem 0 1rem}
+.send{border-top:1px solid rgba(255,255,255,.12);padding-top:1rem;margin-top:.5rem}
+.send input{width:100%;padding:.55rem .7rem;border:1px solid rgba(255,255,255,.25);border-radius:6px;background:rgba(255,255,255,.06);color:#fff;font:.84rem Inter,sans-serif;margin-bottom:.5rem}
+.send input::placeholder{color:rgba(255,255,255,.45)}
+.send .row{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.3rem}
+.ok{color:#b8f0cf;font-size:.82rem;font-weight:700}.err{color:#ffc9c2;font-size:.82rem}
+@media(max-width:900px){.est{grid-template-columns:1fr}.res{position:static}}
+@media print{.mai-topbar,.mai-footer,.hero .btn-row,.send,.mai-chat,.mai-chat-btn{display:none !important}.res{position:static;color:#000;background:#fff;border:1px solid #999}.res .range,.res .k{color:#000}.res li,.res .note{color:#222}}
+</style>
+</head>
+<body>
+<div class="mai-topbar">
+  <div class="mai-topbar-inner">
+    <a class="mai-brand" href="../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
+    <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="mai-links" id="mai-links">
+      <li><a href="../services/">Services</a></li>
+      <li><a href="../estimate/" aria-current="page">Estimate</a></li>
+      <li><a href="../for-funders/">For Funders</a></li>
+      <li><a href="../compare/">Compare</a></li>
+      <li><a href="../knowledge/">Knowledge</a></li>
+      <li><a href="../explore-your-ai-readiness/">Assessment</a></li>
+      <li><a class="mai-cta" href="../contact-us/">Book a call</a></li>
+    </ul>
+  </div>
+</div>
+<section class="hero" id="top">
+  <div class="inner">
+    <div class="eyebrow"><i></i>Price estimate</div>
+    <h1>Build the engagement you need. See roughly what it <em>costs</em>.</h1>
+    <p class="hero-sub">
+      Five choices, one indicative range. Nothing here is a quote &mdash; every engagement is scoped and confirmed on a 30-minute call &mdash; but you should not have to book a call to learn whether this is a five-thousand or a fifty-thousand-franc conversation.
+    </p>
+  </div>
+</section>
+
+<section class="band" id="tool">
+  <div class="inner est">
+    <form id="est" novalidate>
+
+      <div class="step">
+        <h3>1 &middot; What kind of organisation are you?</h3>
+        <p class="hint">Rates differ by sector. Nonprofit and international rates are lower than public and private rates.</p>
+        <div class="opts">
+          <div class="opt"><input type="radio" name="type" id="t-ngo" value="ngo" checked/><label for="t-ngo"><b>NGO or foundation</b><span>nonprofit, charity, association</span></label></div>
+          <div class="opt"><input type="radio" name="type" id="t-io" value="io"/><label for="t-io"><b>International organisation</b><span>UN agency, IGO, multilateral body</span></label></div>
+          <div class="opt"><input type="radio" name="type" id="t-gov" value="gov"/><label for="t-gov"><b>Government or public institution</b><span>ministry, agency, municipality</span></label></div>
+          <div class="opt"><input type="radio" name="type" id="t-priv" value="priv"/><label for="t-priv"><b>Private sector</b><span>company, firm, enterprise</span></label></div>
+        </div>
+      </div>
+
+      <div class="step">
+        <h3>2 &middot; How many staff would this cover?</h3>
+        <p class="hint">Size drives how many departments we work with and how many sittings a session needs.</p>
+        <div class="opts">
+          <div class="opt"><input type="radio" name="size" id="s1" value="s1"/><label for="s1"><b>1 &ndash; 10</b></label></div>
+          <div class="opt"><input type="radio" name="size" id="s2" value="s2" checked/><label for="s2"><b>10 &ndash; 50</b></label></div>
+          <div class="opt"><input type="radio" name="size" id="s3" value="s3"/><label for="s3"><b>50 &ndash; 200</b></label></div>
+          <div class="opt"><input type="radio" name="size" id="s4" value="s4"/><label for="s4"><b>200 &ndash; 500</b><span>scoped on a call</span></label></div>
+          <div class="opt"><input type="radio" name="size" id="s5" value="s5"/><label for="s5"><b>500+</b><span>scoped on a call</span></label></div>
+        </div>
+      </div>
+
+      <div class="step">
+        <h3>3 &middot; Start with a readiness assessment?</h3>
+        <p class="hint">Recommended. It produces the baseline score, the tool inventory and the ranked gap list the rest of the work is built on &mdash; and the number you re-measure against later.</p>
+        <label class="chk"><input type="checkbox" id="assess" checked/> Include the AI Readiness Assessment (ten dimensions, scored report, 90-day priority list)</label>
+      </div>
+
+      <div class="step">
+        <h3>4 &middot; Training</h3>
+        <p class="hint">General means one organisation-wide session on the shared rules. Department-specific adds a 90-minute lab per department on that team's own tasks, each ending in a one-page cheatsheet.</p>
+        <div class="opts">
+          <div class="opt"><input type="radio" name="train" id="tr0" value="0"/><label for="tr0"><b>No training</b></label></div>
+          <div class="opt"><input type="radio" name="train" id="tr1" value="1" checked/><label for="tr1"><b>General only</b><span>one umbrella session</span></label></div>
+          <div class="opt"><input type="radio" name="train" id="tr2" value="2"/><label for="tr2"><b>General + department-specific</b><span>umbrella session, then a lab per team</span></label></div>
+        </div>
+        <div class="num" id="train-n-wrap" hidden><label for="train-n">Number of departments or functions:</label><input type="number" id="train-n" min="1" max="8" value="3"/></div>
+      </div>
+
+      <div class="step">
+        <h3>5 &middot; AI use policy</h3>
+        <p class="hint">General means one umbrella policy: permitted uses, red lines, data classification, disclosure, escalation, approved tools. Specific annexes add rules for a particular department or use &mdash; casework data, fundraising, HR records &mdash; where the umbrella is not enough.</p>
+        <div class="opts">
+          <div class="opt"><input type="radio" name="policy" id="po0" value="0"/><label for="po0"><b>No policy</b></label></div>
+          <div class="opt"><input type="radio" name="policy" id="po1" value="1" checked/><label for="po1"><b>General only</b><span>one umbrella policy</span></label></div>
+          <div class="opt"><input type="radio" name="policy" id="po2" value="2"/><label for="po2"><b>Umbrella + specific annexes</b><span>per department or use</span></label></div>
+        </div>
+        <div class="num" id="policy-n-wrap" hidden><label for="policy-n">Number of specific annexes:</label><input type="number" id="policy-n" min="1" max="8" value="3"/></div>
+      </div>
+
+      <div class="step">
+        <h3>6 &middot; Custom agents and tools</h3>
+        <p class="hint">An <strong>agent</strong> is a configured assistant for a role or workflow on the platform you already use &mdash; a grant-report drafter with your templates and rules built in. A <strong>tool</strong> is smaller: a reusable, tested set-up for one repetitive task &mdash; a call-for-proposals summariser, a meeting-notes-to-actions converter. We configure on existing platforms; we do not build software or train models.</p>
+        <div class="num"><label for="agents">Custom agents:</label><input type="number" id="agents" min="0" max="5" value="0"/></div>
+        <div class="num"><label for="tools">Custom tools for repetitive tasks:</label><input type="number" id="tools" min="0" max="8" value="0"/></div>
+      </div>
+
+      <p style="font-size:.8rem;color:var(--muted)"><button type="button" id="reset" class="btn btn-outline" style="padding:.5rem .9rem;font-size:.76rem">Reset</button></p>
+    </form>
+
+    <aside class="res" id="res" aria-live="polite">
+      <div class="k">Indicative range</div>
+      <div id="res-body"></div>
+    </aside>
+  </div>
+</section>
+
+<section class="band band-alt" id="how">
+  <div class="inner-narrow">
+    <div class="kicker">How to read the number</div>
+    <h2>Indicative, not a quote.</h2>
+    <p style="margin-bottom:.9rem">The range reflects the scope you selected at the rate for your type of organisation. It excludes VAT and travel. Once we have spoken for thirty minutes and know your actual departments, data and constraints, you get a fixed price and a fixed scope in writing &mdash; and that number is the one that binds.</p>
+    <p>Two things move it most: how many departments need their own material, and whether you want us to configure agents or tools on top of training and policy. Two things do not move it: negotiating, and how urgent it is &mdash; we do not charge for speed and we do not discount the rate.</p>
+  </div>
+</section>
+
+<section class="band band-dark" id="contact" style="text-align:center">
+  <div class="inner">
+    <h2 style="margin:0 auto 1rem">Want the number confirmed?</h2>
+    <p class="lede" style="margin:0 auto 2rem">Thirty minutes. We check the scope, tell you if part of it is unnecessary, and send a fixed price the same week.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a class="btn btn-gold" href="../contact-us/">Book a call</a>
+      <a class="btn btn-ghost" href="../services/">See the services</a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+"use strict";
+/* scope model — figures are intentionally not rendered anywhere on the page */
+var _r=1700,_m={ngo:.70,io:.90,gov:1.00,priv:1.20};
+var _a={s1:2.5,s2:4,s3:6},_u={s1:1.5,s2:2.5,s3:3.5},_p={s1:3,s2:5,s3:6.5},_dn={s1:1,s2:3,s3:5};
+function _lab(n){var d=0;for(var i=1;i<=n;i++)d+=(i===1?2:(i<=3?1.5:1.2));return d;}
+function _ann(n){var d=0;for(var i=1;i<=n;i++)d+=(i===1?1.5:1);return d;}
+var TYPE={ngo:"NGO or foundation",io:"International organisation",gov:"Government or public institution",priv:"Private sector"};
+var SIZE={s1:"1–10 staff",s2:"10–50 staff",s3:"50–200 staff",s4:"200–500 staff",s5:"500+ staff"};
+function q(id){return document.getElementById(id);}
+function rv(n){var e=document.querySelector('input[name="'+n+'"]:checked');return e?e.value:null;}
+function rnd(x){return Math.round(x/500)*500;}
+function fmt(x){return "CHF "+x.toLocaleString("en-CH").replace(/,/g,"'");}
+function state(){
+  var t=rv("type"),s=rv("size"),tr=rv("train"),po=rv("policy");
+  return {type:t,size:s,assess:q("assess").checked,train:tr,trainN:Math.min(8,Math.max(1,+q("train-n").value||1)),
+          policy:po,policyN:Math.min(8,Math.max(1,+q("policy-n").value||1)),agents:Math.min(5,Math.max(0,+q("agents").value||0)),tools:Math.min(8,Math.max(0,+q("tools").value||0))};
+}
+function included(st){
+  var L=[];
+  if(st.assess) L.push("AI Readiness Assessment — ten-dimension scored report and 90-day priority list");
+  if(st.train==="1") L.push("One organisation-wide training session with a shared cheatsheet");
+  if(st.train==="2") L.push("Organisation-wide session plus "+st.trainN+" department lab"+(st.trainN>1?"s":"")+", each with its own one-page cheatsheet");
+  if(st.policy==="1") L.push("One umbrella AI use policy: permitted uses, red lines, data classification, disclosure, escalation, approved tools");
+  if(st.policy==="2") L.push("Umbrella AI use policy plus "+st.policyN+" specific annex"+(st.policyN>1?"es":"")+" for named departments or uses");
+  if(st.agents) L.push(st.agents+" custom agent"+(st.agents>1?"s":"")+" configured on your existing platform, tested and documented");
+  if(st.tools) L.push(st.tools+" custom tool"+(st.tools>1?"s":"")+" for repetitive tasks, tested and documented");
+  if(st.assess||st.train!=="0"||st.policy!=="0") L.push("Re-score and handover: the evidence file in your hands");
+  L.push("Discovery and scoping, always included");
+  return L;
+}
+function estimate(st){
+  if(st.size==="s4"||st.size==="s5") return null;
+  var d=1;
+  if(st.assess) d+=_a[st.size];
+  if(st.train!=="0") d+=_u[st.size];
+  if(st.train==="2") d+=_lab(st.trainN);
+  if(st.policy!=="0") d+=_p[st.size];
+  if(st.policy==="2") d+=_ann(st.policyN);
+  d+=st.agents*3+st.tools*2;
+  if(st.assess||st.train!=="0"||st.policy!=="0") d+=1;
+  var f=1; if(st.train!=="0"&&st.policy!=="0") f*=.90; if((st.agents||st.tools)&&st.train!=="0") f*=.95;
+  var v=d*f*_r*_m[st.type]; if(v<3500) v=3500;
+  return {lo:Math.max(3500,rnd(v*.88)),hi:rnd(v*1.12),mid:v};
+}
+var last=null;
+function render(){
+  var st=state(); q("train-n-wrap").hidden=st.train!=="2"; q("policy-n-wrap").hidden=st.policy!=="2";
+  var e=estimate(st), items=included(st), body=q("res-body"), html="";
+  var empty=!st.assess&&st.train==="0"&&st.policy==="0"&&!st.agents&&!st.tools;
+  if(empty){ html='<div class="range">—<small>Select at least one component</small></div>'; body.innerHTML=html; last=null; return; }
+  if(!e){
+    html='<div class="range">Scoped on a call<small>'+SIZE[st.size]+' · '+TYPE[st.type]+'</small></div>'+
+         '<div class="big">For organisations of this size the number depends on structure, sites and data we need to see first. Thirty minutes is enough to give you a fixed price.</div>'+
+         '<ul>'+items.map(function(i){return "<li>"+i+"</li>";}).join("")+'</ul>'+
+         '<a class="btn btn-gold" href="../contact-us/">Book the 30-minute call</a>';
+  } else {
+    html='<div class="range">'+fmt(e.lo)+' – '+fmt(e.hi)+'<small>'+TYPE[st.type]+' · '+SIZE[st.size]+' · excl. VAT and travel</small></div>'+
+         '<ul>'+items.map(function(i){return "<li>"+i+"</li>";}).join("")+'</ul>'+
+         '<p class="note">Indicative. Confirmed as a fixed price and fixed scope after a 30-minute call. Payment 40% on signature, 60% on delivery.</p>';
+  }
+  html+='<div class="send" id="send"><div class="k" style="margin-bottom:.5rem">Send this estimate</div>'+
+        '<input type="text" id="sn" placeholder="Your name" aria-label="Your name"/><input type="email" id="se" placeholder="Your email" aria-label="Your email"/><input type="text" id="so" placeholder="Organisation (optional)" aria-label="Organisation"/>'+
+        '<div class="row"><button type="button" class="btn btn-gold" id="sb" style="padding:.6rem 1rem;font-size:.8rem">Send to the team &amp; keep a copy</button><a class="btn btn-ghost" href="../contact-us/" style="padding:.6rem 1rem;font-size:.8rem">Book a call</a></div>'+
+        '<p class="note" style="margin:.7rem 0 0">Goes to the team by email so the call starts from your selections. Nothing else is stored.</p></div>';
+  body.innerHTML=html; last={st:st,e:e,items:items};
+  q("sb").onclick=send;
+}
+function loadEmailJS(){return new Promise(function(res,rej){ if(window.emailjs) return res(); var s=document.createElement("script"); s.src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"; s.onload=function(){res();}; s.onerror=rej; document.head.appendChild(s); });}
+function send(){
+  if(!last) return;
+  var n=q("sn").value.trim(), em=q("se").value.trim(), o=q("so").value.trim(), b=q("sb");
+  if(!n||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){ b.insertAdjacentHTML("afterend",'<p class="err">Please add your name and a valid email.</p>'); return; }
+  b.disabled=true; b.textContent="Sending…";
+  var st=last.st,e=last.e;
+  var msg="PRICE ESTIMATE REQUEST\n\nOrganisation type: "+TYPE[st.type]+"\nSize: "+SIZE[st.size]+"\n\nSelections:\n- "+last.items.join("\n- ")+
+          "\n\nIndicative range shown: "+(e?fmt(e.lo)+" – "+fmt(e.hi):"none — size requires a call")+
+          "\n\nName: "+n+"\nEmail: "+em+"\nOrganisation: "+(o||"—")+"\nPage: "+location.href+"\nTime: "+new Date().toISOString();
+  loadEmailJS().then(function(){
+    try{ window.emailjs.init({publicKey:"JJs3lu55OHI_pbjth"}); }catch(x){}
+    return window.emailjs.send("service_an94235","template_bv6m1l3",{from_name:n,from_email:em,organization:o||"—",job_title:"—",sector:TYPE[st.type],team_size:SIZE[st.size],service:"Price estimate request",referral:"Estimator",preferred:"Email",message:msg,to_email:"q.mamdouh@mai4consulting.com"});
+  }).then(function(){ q("send").innerHTML='<p class="ok">Sent. The team has your selections and will confirm a fixed price on the call. Use your browser\'s print or save-as-PDF for your own copy.</p>'; })
+    .catch(function(){ b.disabled=false; b.textContent="Send to the team & keep a copy"; b.insertAdjacentHTML("afterend",'<p class="err">Could not send. Please use the <a href="../contact-us/" style="color:#fff">contact form</a>.</p>'); });
+}
+function preset(){
+  var p=(location.search.match(/preset=([a-z]+)/)||[])[1]; if(!p) return;
+  var set=function(n,v){var e=document.querySelector('input[name="'+n+'"][value="'+v+'"]'); if(e) e.checked=true;};
+  if(p==="foundation"){ set("size","s2"); q("assess").checked=true; set("train","1"); set("policy","0"); }
+  if(p==="adoption"){ set("size","s3"); q("assess").checked=true; set("train","2"); q("train-n").value=4; set("policy","1"); }
+  if(p==="institution"){ set("size","s4"); q("assess").checked=true; set("train","2"); set("policy","2"); }
+}
+document.querySelectorAll("#est input").forEach(function(i){ i.addEventListener("change",function(){
+  if(i.name==="size"){ var d=_dn[i.value]||3; q("train-n").value=d; q("policy-n").value=d; } render(); }); i.addEventListener("input",render); });
+q("reset").onclick=function(){ q("est").reset(); q("train-n").value=3; q("policy-n").value=3; render(); };
+preset(); render();
+window.__maiEstimate=function(st){return estimate(st);};
+})();
+</script>
+<footer class="mai-footer">
+  <div class="mai-footer-inner">
+    <div>
+      <div class="mai-footer-logo">M.A.I. Consulting</div>
+      <div class="mai-footer-tag">Strategy &middot; AI &middot; Impact</div>
+    </div>
+    <div class="mai-footer-right">
+      <a href="../">mai4consulting.com</a>
+      <div class="mai-footer-copy">&copy; 2026 M.A.I. Consulting. All rights reserved. Geneva, Switzerland.</div>
+    </div>
+  </div>
+  <nav class="footer-nav" aria-label="Site">
+    <ul>
+      <li><a href="../">Home</a></li>
+      <li><a href="../services/">Services</a></li>
+      <li><span class="footer-nav-current" aria-current="page">Price estimate</span></li>
+      <li><a href="../for-funders/">For Funders</a></li>
+      <li><a href="../about/">About</a></li>
+      <li><a href="../compare/">Compare the market</a></li>
+      <li><a href="../knowledge/">Knowledge</a></li>
+      <li><a href="../explore-your-ai-readiness/">Assessment</a></li>
+      <li><a href="../our-clients/">Who We Work With</a></li>
+      <li><a href="../contact-us/">Contact</a></li>
+      <li><span class="fn-group">Read</span></li>
+      <li><a href="../cheatsheet/">Sample Cheatsheet</a></li>
+      <li><a href="../eu-ai-act-article-4/">EU AI Act Article 4</a></li>
+      <li><a href="../use-cases/">AI Use Cases</a></li>
+      <li><a href="../claude-in-chrome/">Claude in Chrome</a></li>
+      <li><a href="../save-claude-tokens/">Claude for Business</a></li>
+      <li><a href="../extensive-ai-readiness-analysis/">Extended Assessment</a></li>
+      <li><span class="fn-group">Legal</span></li>
+      <li><a href="../privacy/">Privacy</a></li>
+    </ul>
+  </nav>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('mai-burger'), l=document.getElementById('mai-links');
+  if(b&&l){b.addEventListener('click',function(){
+    var o=l.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false');
+  });}
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('[data-scroll-to]'); if(!t) return;
+    var el=document.getElementById(t.getAttribute('data-scroll-to'));
+    if(el){e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+})();
+</script>
+<script src="../assets/chat.js" defer></script>
+</body>
+</html>
