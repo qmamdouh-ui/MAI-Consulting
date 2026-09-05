@@ -18,9 +18,10 @@ The published site lives in the **repository root**, served by GitHub Pages at
 | Path | Purpose |
 | --- | --- |
 | `/` | Home |
-| `/services/` | The offer page — four services, three packages, published starting prices |
+| `/services/` | The offer page — five services and three ready-made scopes; prices via the estimator |
 | `/about/` | Who delivers the work: background, credentials, standards |
 | `/cheatsheet/` | Sample of the one-page deliverable each department receives |
+| `/estimate/` | Price estimator: type, size, scope → indicative range; 200+ staff routed to a call; selections emailed to the owner. The scope model lives in the page script and is deliberately not rendered |
 | `/for-funders/` | Portfolio programmes for foundations and donors — a second buyer, not a second sector |
 | `/compare/` | Market and competitor comparison with published prices, sources, and the value case |
 | `/knowledge/` | Published work filed by service and package, with slots for LinkedIn articles |
@@ -108,27 +109,32 @@ prices and the page states the date it was checked.
 
 ## The site assistant (`assets/chat.js`)
 
-A retrieval-only assistant on every content page. It calls no language model:
+A retrieval-only assistant on every content page, in English, French and Arabic (auto-detected per message, with a manual switch; Arabic renders right-to-left). It calls no language model:
 every answer is a knowledge-base entry written from copy on this site, so it
 cannot invent. If a question does not clear the confidence bar it says so and
 offers two options — send the question to the team (EmailJS, same account and
-template as the contact form) or open the contact form.
+template as the contact form) or open the contact form. Greetings, "who are you",
+"can you speak Arabic" and similar are answered naturally; only questions *about
+the practice* that the site does not cover trigger the hand-off. Off-topic
+questions get a friendly redirect, not a hand-off.
 
 **Teaching it a new answer.** Open `assets/chat.js`, find `var KB = [`, and add
 an entry:
 
 ```js
-{id:"short-id",
- k:{"specific phrase":6,"another phrase":5,"single word":3},   // keyword → weight
- q:["an example question","another way to ask it"],
- a:"The answer, taken from copy that exists on the site.",
- l:"page/", t:"Link label"},
+{id:"short-id", yes:true, rel:["related-id"],
+ k:{"specific phrase":6,"single word":3},          // English keywords → weight
+ kf:{"expression precise":6},                      // French (accents optional)
+ ka:{"عبارة محددة":6},                              // Arabic
+ a:{en:"Answer from the site.", fr:"Réponse.", ar:"الجواب."},
+ l:"page/", t:{en:"Link label",fr:"Libellé",ar:"التسمية"}},
 ```
 
 Weights: a question must hit at least one keyword weighted 4 or more, total at
 least 5, and beat the runner-up. Put the distinctive phrases at 5–7 and generic
 words at 2–3. Test in the browser console with
-`__maiChat.answer("your question")` — it returns the entry or `null`.
+`__maiChat.answer("your question")` — it returns the entry or `null`;
+`__maiChat.detect("…")` shows the detected language.
 
 **Off-topic guard.** `OFFTOPIC` in the same file lists terms that force a
 refusal unless a strong specific match exists. Add to it when a leak shows up.
