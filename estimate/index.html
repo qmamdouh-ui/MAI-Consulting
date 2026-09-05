@@ -64,7 +64,7 @@
       <li><a href="../for-funders/">For Funders</a></li>
       <li><a href="../compare/">Compare</a></li>
       <li><a href="../knowledge/">Knowledge</a></li>
-      <li><a href="../explore-your-ai-readiness/">Assessment</a></li>
+      <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
       <li><a class="mai-cta" href="../contact-us/">Book a call</a></li>
     </ul>
   </div>
@@ -85,20 +85,29 @@
 
       <div class="step">
         <h3>1 &middot; What kind of organisation are you?</h3>
-        <p class="hint">Rates differ by sector. Nonprofit and international rates are lower than public and private rates.</p>
+        <p class="hint">Rates differ by sector. Nonprofit and international rates are lower than public and private rates. Individuals and organisation representatives attending a course are priced per person.</p>
         <div class="opts">
           <div class="opt"><input type="radio" name="type" id="t-ngo" value="ngo" checked/><label for="t-ngo"><b>NGO or foundation</b><span>nonprofit, charity, association</span></label></div>
           <div class="opt"><input type="radio" name="type" id="t-io" value="io"/><label for="t-io"><b>International organisation</b><span>UN agency, IGO, multilateral body</span></label></div>
           <div class="opt"><input type="radio" name="type" id="t-gov" value="gov"/><label for="t-gov"><b>Government or public institution</b><span>ministry, agency, municipality</span></label></div>
           <div class="opt"><input type="radio" name="type" id="t-priv" value="priv"/><label for="t-priv"><b>Private sector</b><span>company, firm, enterprise</span></label></div>
+            <div class="opt"><input type="radio" name="type" id="t-ind" value="ind"/><label for="t-ind"><b>Individual or organisation representative</b><span>a course priced per person, fewer than ten participants</span></label></div>
         </div>
       </div>
 
-      <div class="step">
+      <div class="step" id="ind-step" hidden>
+          <h3>2 &middot; The course</h3>
+          <p class="hint">A course for fewer than ten participants, built on the participants' own tasks. It can be delivered in person or online. In-person courses include accommodation and hospitality arrangements for each participant, charged per night.</p>
+          <div class="opt"><input type="radio" name="fmt" id="f-in" value="in" checked/><label for="f-in"><b>In person</b><span>we arrange the venue, accommodation and hospitality</span></label></div>
+          <div class="opt"><input type="radio" name="fmt" id="f-on" value="on"/><label for="f-on"><b>Online</b><span>on the platform the participants already use</span></label></div>
+          <div class="num"><label for="pax">Participants (1 to 9):</label><input type="number" id="pax" min="1" max="9" value="1"/></div>
+          <div class="num" id="nights-wrap"><label for="nights">Nights on site (in person):</label><input type="number" id="nights" min="1" max="5" value="1"/></div>
+        </div>
+        <div class="step">
         <h3>2 &middot; How many staff would this cover?</h3>
         <p class="hint">Size drives how many departments we work with and how many sittings a session needs.</p>
         <div class="opts">
-          <div class="opt"><input type="radio" name="size" id="s1" value="s1"/><label for="s1"><b>1 &ndash; 10</b><span>small-group course, in person or online</span></label></div>
+          <div class="opt"><input type="radio" name="size" id="s1" value="s1"/><label for="s1"><b>1 &ndash; 10</b></label></div>
           <div class="opt"><input type="radio" name="size" id="s2" value="s2" checked/><label for="s2"><b>10 &ndash; 50</b></label></div>
           <div class="opt"><input type="radio" name="size" id="s3" value="s3"/><label for="s3"><b>50 &ndash; 200</b></label></div>
           <div class="opt"><input type="radio" name="size" id="s4" value="s4"/><label for="s4"><b>200 &ndash; 500</b><span>scoped on a call</span></label></div>
@@ -106,13 +115,13 @@
         </div>
       </div>
 
-      <div class="step">
+      <div class="step org">
         <h3>3 &middot; Start with a readiness assessment?</h3>
         <p class="hint">Recommended. It produces the baseline score, the tool inventory and the ranked gap list the rest of the work is built on, and the number you re-measure against later.</p>
         <label class="chk"><input type="checkbox" id="assess" checked/> Include the AI Readiness Assessment (ten dimensions, scored report, 90-day priority list)</label>
       </div>
 
-      <div class="step">
+      <div class="step org">
         <h3>4 &middot; Training</h3>
         <p class="hint">General means one organisation-wide session on the shared rules. Department-specific adds a 90-minute lab per department on that team's own tasks, each ending in a one-page cheatsheet.</p>
         <div class="opts">
@@ -123,7 +132,7 @@
         <div class="num" id="train-n-wrap" hidden><label for="train-n">Number of departments or functions:</label><input type="number" id="train-n" min="1" max="8" value="3"/></div>
       </div>
 
-      <div class="step">
+      <div class="step org">
         <h3>5 &middot; AI use policy</h3>
         <p class="hint">General means one umbrella policy: permitted uses, red lines, data classification, disclosure, escalation, approved tools. Specific annexes add rules for a particular department or use (casework data, fundraising, HR records) where the umbrella is not enough.</p>
         <div class="opts">
@@ -134,7 +143,7 @@
         <div class="num" id="policy-n-wrap" hidden><label for="policy-n">Number of specific annexes:</label><input type="number" id="policy-n" min="1" max="8" value="3"/></div>
       </div>
 
-      <div class="step">
+      <div class="step org">
         <h3>6 &middot; Custom agents and tools</h3>
         <p class="hint">An <strong>agent</strong> is a configured assistant for a role or workflow on the platform you already use, for example a grant-report drafter with your templates and rules built in. A <strong>tool</strong> is smaller: a reusable, tested set-up for one repetitive task, such as a call-for-proposals summariser or a meeting-notes-to-actions converter. We configure existing platforms. Writing software and training models are outside what we do.</p>
         <div class="num"><label for="agents">Custom agents:</label><input type="number" id="agents" min="0" max="5" value="0"/></div>
@@ -156,7 +165,7 @@
     <div class="kicker">How to read the number</div>
     <h2>How to read the number.</h2>
     <p style="margin-bottom:.9rem">The range reflects the scope you selected at the rate for your type of organisation. It excludes VAT and travel. Once we have spoken for thirty minutes and know your actual departments, data and constraints, you get a fixed price and a fixed scope in writing, and that number is the one that binds.</p>
-    <p>Two things move it most: how many departments need their own material, and whether you want us to configure agents or tools on top of training and policy. Two things do not move it: negotiating, and how urgent it is. We do not charge for speed and we do not discount the rate.</p><p style="margin-top:.9rem">For teams of fewer than ten, the smallest band prices a small-group course. It can be delivered in person or online; for in-person courses we arrange the venue and the participants' logistics, and those arrangements are quoted with the course.</p>
+    <p>Two things move it most: how many departments need their own material, and whether you want us to configure agents or tools on top of training and policy. Two things do not move it: negotiating, and how urgent it is. We do not charge for speed and we do not discount the rate.</p><p style="margin-top:.9rem">Individuals and organisation representatives attending a course are priced per person, and the per-person price decreases as the group grows, up to nine participants. In-person courses include accommodation and hospitality arrangements at CHF 400 per person per night; online courses carry no such charge.</p>
   </div>
 </section>
 
@@ -179,7 +188,8 @@ var _r=1700,_m={ngo:.70,io:.90,gov:1.00,priv:1.20};
 var _a={s1:2.5,s2:4,s3:6},_u={s1:1.5,s2:2.5,s3:3.5},_p={s1:3,s2:5,s3:6.5},_dn={s1:1,s2:3,s3:5};
 function _lab(n){var d=0;for(var i=1;i<=n;i++)d+=(i===1?2:(i<=3?1.5:1.2));return d;}
 function _ann(n){var d=0;for(var i=1;i<=n;i++)d+=(i===1?1.5:1);return d;}
-var TYPE={ngo:"NGO or foundation",io:"International organisation",gov:"Government or public institution",priv:"Private sector"};
+var TYPE={ngo:"NGO or foundation",io:"International organisation",gov:"Government or public institution",priv:"Private sector",ind:"Individual or organisation representative"};
+var _pp=[4600,4300,4000,3700,3400,3100,2800,2500,2200],_nt=400;
 var SIZE={s1:"1–10 staff",s2:"10–50 staff",s3:"50–200 staff",s4:"200–500 staff",s5:"500+ staff"};
 function q(id){return document.getElementById(id);}
 function rv(n){var e=document.querySelector('input[name="'+n+'"]:checked');return e?e.value:null;}
@@ -187,7 +197,7 @@ function rnd(x){return Math.round(x/500)*500;}
 function fmt(x){return "CHF "+x.toLocaleString("en-CH").replace(/,/g,"'");}
 function state(){
   var t=rv("type"),s=rv("size"),tr=rv("train"),po=rv("policy");
-  return {type:t,size:s,assess:q("assess").checked,train:tr,trainN:Math.min(8,Math.max(1,+q("train-n").value||1)),
+  return {type:t,size:s,fmt:rv("fmt"),pax:Math.min(9,Math.max(1,+q("pax").value||1)),nights:Math.min(5,Math.max(1,+q("nights").value||1)),assess:q("assess").checked,train:tr,trainN:Math.min(8,Math.max(1,+q("train-n").value||1)),
           policy:po,policyN:Math.min(8,Math.max(1,+q("policy-n").value||1)),agents:Math.min(5,Math.max(0,+q("agents").value||0)),tools:Math.min(8,Math.max(0,+q("tools").value||0))};
 }
 function included(st){
@@ -217,9 +227,30 @@ function estimate(st){
   var v=d*f*_r*_m[st.type]; if(v<3500) v=3500;
   return {lo:Math.max(3500,rnd(v*.88)),hi:rnd(v*1.12),mid:v};
 }
+function course(st){
+  var fee=_pp[st.pax-1], night=st.fmt==="in"?_nt*st.nights:0, pp=fee+night;
+  return {pp:pp,total:pp*st.pax,night:night};
+}
+function courseItems(st){
+  var L=["Course for "+st.pax+" participant"+(st.pax>1?"s":"")+", built on the participants' own tasks and documents",
+         "One page per participant group: tasks to hand to AI, tasks never to, prompt patterns, the checks before anything is sent, what to log",
+         "Attendance record and course materials in English, French or Arabic"];
+  if(st.fmt==="in") L.push("In person: venue, accommodation and hospitality arranged by us for "+st.nights+" night"+(st.nights>1?"s":"")+", "+fmt(_nt)+" per person per night included");
+  else L.push("Online, on the platform the participants already use");
+  return L;
+}
 var last=null;
 function render(){
-  var st=state(); q("train-n-wrap").hidden=st.train!=="2"; q("policy-n-wrap").hidden=st.policy!=="2";
+  var st=state(), ind=st.type==="ind";
+  q("ind-step").hidden=!ind; document.querySelectorAll("#est .step.org").forEach(function(el){ el.hidden=ind; }); q("nights-wrap").hidden=st.fmt!=="in";
+  if(ind){
+    var c=course(st), items=courseItems(st), body=q("res-body");
+    var html='<div class="range">'+fmt(c.pp)+' per person<small>'+st.pax+' participant'+(st.pax>1?"s":"")+' · '+(st.fmt==="in"?"in person, "+st.nights+" night"+(st.nights>1?"s":"")+" included":"online")+' · total '+fmt(c.total)+' · excl. VAT</small></div>'+
+             '<ul>'+items.map(function(i){return "<li>"+i+"</li>";}).join("")+'</ul>'+
+             '<p class="note">Per-person price for the group size shown. Confirmed in writing with the dates and the venue. Payment 40% on registration, 60% before the course.</p>';
+    html+=sendBlock(); body.innerHTML=html; last={st:st,e:null,items:items,c:c}; q("sb").onclick=send; return;
+  }
+  q("train-n-wrap").hidden=st.train!=="2"; q("policy-n-wrap").hidden=st.policy!=="2";
   var e=estimate(st), items=included(st), body=q("res-body"), html="";
   var empty=!st.assess&&st.train==="0"&&st.policy==="0"&&!st.agents&&!st.tools;
   if(empty){ html='<div class="range">&middot;<small>Select at least one component</small></div>'; body.innerHTML=html; last=null; return; }
@@ -233,12 +264,15 @@ function render(){
          '<ul>'+items.map(function(i){return "<li>"+i+"</li>";}).join("")+'</ul>'+
          '<p class="note">Indicative. Confirmed as a fixed price and fixed scope after a 30-minute call. Payment 40% on signature, 60% on delivery.</p>';
   }
-  html+='<div class="send" id="send"><div class="k" style="margin-bottom:.5rem">Send this estimate</div>'+
+  html+=sendBlock();
+  body.innerHTML=html; last={st:st,e:e,items:items};
+  q("sb").onclick=send;
+}
+function sendBlock(){
+  return '<div class="send" id="send"><div class="k" style="margin-bottom:.5rem">Send this estimate</div>'+
         '<input type="text" id="sn" placeholder="Your name" aria-label="Your name"/><input type="email" id="se" placeholder="Your email" aria-label="Your email"/><input type="text" id="so" placeholder="Organisation (optional)" aria-label="Organisation"/>'+
         '<div class="row"><button type="button" class="btn btn-gold" id="sb" style="padding:.6rem 1rem;font-size:.8rem">Send to the team &amp; keep a copy</button><a class="btn btn-ghost" href="../contact-us/" style="padding:.6rem 1rem;font-size:.8rem">Book a call</a></div>'+
         '<p class="note" style="margin:.7rem 0 0">Goes to the team by email so the call starts from your selections. Nothing else is stored.</p></div>';
-  body.innerHTML=html; last={st:st,e:e,items:items};
-  q("sb").onclick=send;
 }
 function loadEmailJS(){return new Promise(function(res,rej){ if(window.emailjs) return res(); var s=document.createElement("script"); s.src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"; s.onload=function(){res();}; s.onerror=rej; document.head.appendChild(s); });}
 function send(){
@@ -246,13 +280,13 @@ function send(){
   var n=q("sn").value.trim(), em=q("se").value.trim(), o=q("so").value.trim(), b=q("sb");
   if(!n||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){ b.insertAdjacentHTML("afterend",'<p class="err">Please add your name and a valid email.</p>'); return; }
   b.disabled=true; b.textContent="Sending…";
-  var st=last.st,e=last.e;
-  var msg="PRICE ESTIMATE REQUEST\n\nOrganisation type: "+TYPE[st.type]+"\nSize: "+SIZE[st.size]+"\n\nSelections:\n- "+last.items.join("\n- ")+
-          "\n\nIndicative range shown: "+(e?fmt(e.lo)+" to "+fmt(e.hi):"none, size requires a call")+
+  var st=last.st,e=last.e,c=last.c;
+  var msg="PRICE ESTIMATE REQUEST\n\nType: "+TYPE[st.type]+(c?"\nFormat: "+(st.fmt==="in"?"in person, "+st.nights+" night(s)":"online")+"\nParticipants: "+st.pax:"\nSize: "+SIZE[st.size])+"\n\nSelections:\n- "+last.items.join("\n- ")+
+          "\n\n"+(c?"Per-person price shown: "+fmt(c.pp)+" (total "+fmt(c.total)+")":"Indicative range shown: "+(e?fmt(e.lo)+" to "+fmt(e.hi):"none, size requires a call"))+
           "\n\nName: "+n+"\nEmail: "+em+"\nOrganisation: "+(o||"not given")+"\nPage: "+location.href+"\nTime: "+new Date().toISOString();
   loadEmailJS().then(function(){
     try{ window.emailjs.init({publicKey:"JJs3lu55OHI_pbjth"}); }catch(x){}
-    return window.emailjs.send("service_an94235","template_bv6m1l3",{from_name:n,from_email:em,organization:o||"not given",job_title:"not given",sector:TYPE[st.type],team_size:SIZE[st.size],service:"Price estimate request",referral:"Estimator",preferred:"Email",message:msg,to_email:"q.mamdouh@mai4consulting.com"});
+    return window.emailjs.send("service_an94235","template_bv6m1l3",{from_name:n,from_email:em,organization:o||"not given",job_title:"not given",sector:TYPE[st.type],team_size:(c?st.pax+" participant(s), "+(st.fmt==="in"?"in person":"online"):SIZE[st.size]),service:(c?"Course price request":"Price estimate request"),referral:"Estimator",preferred:"Email",message:msg,to_email:"q.mamdouh@mai4consulting.com"});
   }).then(function(){ q("send").innerHTML='<p class="ok">Sent. The team has your selections and will confirm a fixed price on the call. Use your browser\'s print or save-as-PDF for your own copy.</p>'; })
     .catch(function(){ b.disabled=false; b.textContent="Send to the team & keep a copy"; b.insertAdjacentHTML("afterend",'<p class="err">Could not send. Please use the <a href="../contact-us/" style="color:#fff">contact form</a>.</p>'); });
 }
@@ -266,13 +300,14 @@ function preset(){
   if(p==="policy"){ q("assess").checked=false; set("train","0"); set("policy","1"); }
   if(p==="training"){ q("assess").checked=false; set("train","2"); set("policy","0"); }
   if(p==="agents"){ q("assess").checked=false; set("train","0"); set("policy","0"); q("agents").value=1; q("tools").value=1; }
+  if(p==="course"){ set("type","ind"); }
   if(sz){ set("size",sz); var d=_dn[sz]||3; q("train-n").value=d; q("policy-n").value=d; if(p==="training"&&sz==="s1") set("train","1"); }
 }
 document.querySelectorAll("#est input").forEach(function(i){ i.addEventListener("change",function(){
   if(i.name==="size"){ var d=_dn[i.value]||3; q("train-n").value=d; q("policy-n").value=d; } render(); }); i.addEventListener("input",render); });
-q("reset").onclick=function(){ q("est").reset(); q("train-n").value=3; q("policy-n").value=3; render(); };
+q("reset").onclick=function(){ q("est").reset(); q("train-n").value=3; q("policy-n").value=3; q("pax").value=1; q("nights").value=1; render(); };
 preset(); render();
-window.__maiEstimate=function(st){return estimate(st);};
+window.__maiEstimate=function(st){return estimate(st);}; window.__maiCourse=function(st){return course(st);};
 })();
 </script>
 <footer class="mai-footer">
@@ -295,7 +330,7 @@ window.__maiEstimate=function(st){return estimate(st);};
       <li><a href="../about/">About</a></li>
       <li><a href="../compare/">Compare the market</a></li>
       <li><a href="../knowledge/">Knowledge</a></li>
-      <li><a href="../explore-your-ai-readiness/">Assessment</a></li>
+      <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
       <li><a href="../our-clients/">Who We Work With</a></li>
       <li><a href="../contact-us/">Contact</a></li>
       <li><span class="fn-group">Read</span></li>
