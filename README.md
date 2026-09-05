@@ -21,11 +21,13 @@ The published site lives in the **repository root**, served by GitHub Pages at
 | `/services/` | The offer page — four services, three packages, published starting prices |
 | `/about/` | Who delivers the work: background, credentials, standards |
 | `/cheatsheet/` | Sample of the one-page deliverable each department receives |
+| `/compare/` | Market and competitor comparison with published prices, sources, and the value case |
+| `/knowledge/` | Published work filed by service and package, with slots for LinkedIn articles |
+| `/resources/` | Redirects to `/knowledge/` |
 | `/eu-ai-act-article-4/` | Briefing on the AI literacy obligation — the main commercial hook |
 | `/explore-your-ai-readiness/` | Free 28-question assessment (4D framework) |
 | `/extensive-ai-readiness-analysis/` | 60-question, 10-dimension assessment |
 | `/our-clients/` | Who we work with, packages table, how engagements run |
-| `/resources/` | Hub for the briefing, the sample, and the tool references |
 | `/use-cases/`, `/claude-in-chrome/`, `/save-claude-tokens/` | Reference articles |
 | `/privacy/` | Privacy policy, on its own URL so it can be linked from proposals |
 | `/what-we-do/` | Redirects to `/services/`. Kept so inbound links keep working |
@@ -90,3 +92,15 @@ Two pages (`Explore Your AI Readiness` and `Extensive AI Readiness Assessment`)
 are interactive assessment tools whose questions live in the page's JavaScript
 rather than in static HTML. Their Markdown files reproduce those question banks
 in a clearly labelled section so the backup is complete.
+
+## Adding a LinkedIn article
+
+`knowledge/index.html` has four service sections. Each carries a commented
+copy-paste `<a class="art">` template — fill it in, place it directly above
+the dashed `.slot` block in that section, newest first. No other file changes.
+
+## Competitor pricing on `/compare/`
+
+Every price is a published list price with a linked source, dated September
+2026. Re-check them before quoting the page in a proposal; providers change
+prices and the page states the date it was checked.
