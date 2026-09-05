@@ -20,6 +20,7 @@
 <style>
 .opts-inline{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.3rem .9rem;margin:.5rem 0 .2rem}
 .opts-inline .chk{font-size:.84rem;display:flex;align-items:flex-start;gap:.45rem;line-height:1.5;cursor:pointer}
+#task-other{width:100%;max-width:32rem;border:1px solid rgba(0,62,138,.25);border-radius:8px;padding:.5rem .7rem;font:.86rem Inter,system-ui,sans-serif;color:var(--txt)}
 #spec{width:100%;border:1px solid rgba(0,62,138,.25);border-radius:8px;padding:.7rem .8rem;font:.86rem/1.6 Inter,system-ui,sans-serif;color:var(--txt);resize:vertical}
 #spec:focus{outline:2px solid var(--blue);outline-offset:1px}
 </style>
@@ -129,14 +130,14 @@
 
       <div class="step org">
         <h3>4 &middot; Training</h3>
-        <p class="hint">General means one organisation-wide session on the shared rules. Department-specific adds a 90-minute lab per department on that team's own tasks, each ending in a one-page cheatsheet.</p>
+        <p class="hint">General means one organisation-wide session on the shared rules. Department-specific adds a 90-minute lab per department on that team's own tasks, each ending in a playbook.</p>
         <div class="opts">
           <div class="opt"><input type="radio" name="train" id="tr0" value="0"/><label for="tr0"><b>No training</b></label></div>
           <div class="opt"><input type="radio" name="train" id="tr1" value="1" checked/><label for="tr1"><b>General only</b><span>one umbrella session</span></label></div>
           <div class="opt"><input type="radio" name="train" id="tr2" value="2"/><label for="tr2"><b>General + department-specific</b><span>umbrella session, then a lab per team</span></label></div>
         </div>
         <div id="train-n-wrap" hidden>
-            <p class="hint" style="margin-bottom:.4rem"><strong>Which departments need their own lab and page?</strong> Each adds a 90-minute lab built on that team's tasks, ending in its own one-page cheatsheet.<span class="ii"><button type="button" aria-label="Definition: Department lab">i</button><span class="ii-p" role="tooltip"><b>Department lab</b>A 90-minute working session with one department on its own real tasks and documents. The team&rsquo;s one-page cheatsheet is written during the lab, with the team, then cleared against your policy.</span></span></p>
+            <p class="hint" style="margin-bottom:.4rem"><strong>Which departments need their own lab and page?</strong> Each adds a 90-minute lab built on that team's tasks, ending in its own playbook.<span class="ii"><button type="button" aria-label="Definition: Department lab">i</button><span class="ii-p" role="tooltip"><b>Department lab</b>A 90-minute working session with one department on its own real tasks and documents. The team&rsquo;s playbook is written during the lab, with the team, then cleared against your policy.</span></span></p>
             <div class="opts-inline" id="depts">
               <label class="chk"><input type="checkbox" name="dept" value="Programmes and monitoring" checked/> Programmes and monitoring</label>
               <label class="chk"><input type="checkbox" name="dept" value="Fundraising and partnerships" checked/> Fundraising and partnerships</label>
@@ -165,7 +166,7 @@
 
       <div class="step org">
         <h3>6 &middot; Custom agents, skills and tools</h3>
-        <p class="hint">Three different things, priced separately. Each is configured on the platform you already use, tested on your documents and handed over with a one-page guide. We configure existing platforms; writing software and training models are outside what we do. <a href="../services/agents/" target="_blank" rel="noopener">See worked examples of each &rarr;</a></p>
+        <p class="hint">Three different things, priced separately. Each is configured on the platform you already use, tested on your documents and handed over with an operating guide. We configure existing platforms; writing software and training models are outside what we do. <a href="../services/agents/" target="_blank" rel="noopener">See worked examples of each &rarr;</a></p>
         <div class="num"><label for="agents">Custom agents:<span class="ii"><button type="button" aria-label="Definition: Agent">i</button><span class="ii-p" role="tooltip"><b>Agent</b>A configured assistant for a role or workflow, holding your templates, rules and reference documents, that handles a multi-step job end to end. Example: a grant-report drafter that follows the funder&rsquo;s headings and flags any figure it could not trace to a source file.</span></span></label><input type="number" id="agents" min="0" max="5" value="0"/></div>
         <div class="num"><label for="skills">Custom skills:<span class="ii"><button type="button" aria-label="Definition: Skill">i</button><span class="ii-p" role="tooltip"><b>Skill</b>A written instruction set the platform loads whenever a task of that type comes up, carrying your house method so every staff member gets the same approach. Example: a donor-report house-style skill holding your tone rules, headings and figure-verification step.</span></span></label><input type="number" id="skills" min="0" max="8" value="0"/></div>
         <div class="num"><label for="tools">Custom tools for repetitive tasks:<span class="ii"><button type="button" aria-label="Definition: Tool">i</button><span class="ii-p" role="tooltip"><b>Tool</b>A small, tested set-up for a single repetitive task with a fixed input and a fixed output. The narrowest of the three and the quickest to configure. Example: a call-for-proposals summariser returning eligibility, deadline, budget ceiling and required annexes in the same order every time.</span></span></label><input type="number" id="tools" min="0" max="8" value="0"/></div>
@@ -185,6 +186,11 @@
             <label class="chk"><input type="checkbox" name="task" value="Board papers and decision memos"/> Board papers and decision memos</label>
             <label class="chk"><input type="checkbox" name="task" value="Communications and social copy"/> Communications and social copy</label>
             <label class="chk"><input type="checkbox" name="task" value="Procurement and supplier comparison"/> Procurement and supplier comparison</label>
+            <label class="chk"><input type="checkbox" name="task" id="task-other-chk" value="Other"/> Other, described below</label>
+          </div>
+          <div class="num" id="task-other-wrap" hidden style="margin-top:.5rem">
+            <label for="task-other">Which other tasks?</label>
+            <input type="text" id="task-other" placeholder="For example: translating case notes, cleaning survey data" aria-label="Which other tasks"/>
           </div>
         </div>
         <div class="step">
@@ -242,6 +248,8 @@ function state(){
   var t=rv("type"),s=rv("size"),tr=rv("train"),po=rv("policy");
   var depts=[].slice.call(document.querySelectorAll('input[name="dept"]:checked')).map(function(e){return e.value;});
   var tasks=[].slice.call(document.querySelectorAll('input[name="task"]:checked')).map(function(e){return e.value;});
+  var other=(q("task-other").value||"").trim();
+  if(other) tasks=tasks.filter(function(t){return t!=="Other";}).concat(["Other: "+other]);
   return {type:t,size:s,fmt:rv("fmt"),pax:Math.min(9,Math.max(1,+q("pax").value||1)),nights:Math.min(5,Math.max(1,+q("nights").value||1)),
           assess:q("assess").checked,train:tr,depts:depts,trainN:Math.max(1,depts.length),
           policy:po,policyN:Math.min(8,Math.max(1,+q("policy-n").value||1)),
@@ -251,8 +259,8 @@ function state(){
 function included(st){
   var L=[];
   if(st.assess) L.push("AI Readiness Assessment: ten-dimension scored report and 90-day priority list");
-  if(st.train==="1") L.push("One organisation-wide training session with a shared cheatsheet");
-  if(st.train==="2") L.push("Organisation-wide session plus "+st.trainN+" department lab"+(st.trainN>1?"s":"")+", each with its own one-page cheatsheet"+(st.depts.length?" ("+st.depts.join("; ")+")":""));
+  if(st.train==="1") L.push("One organisation-wide training session with a shared playbook");
+  if(st.train==="2") L.push("Organisation-wide session plus "+st.trainN+" department lab"+(st.trainN>1?"s":"")+", each with its own playbook"+(st.depts.length?" ("+st.depts.join("; ")+")":""));
   if(st.policy==="1") L.push("One umbrella AI use policy: permitted uses, red lines, data classification, disclosure, escalation, approved tools");
   if(st.policy==="2") L.push("Umbrella AI use policy plus "+st.policyN+" specific annex"+(st.policyN>1?"es":"")+" for named departments or uses");
   if(st.agents) L.push(st.agents+" custom agent"+(st.agents>1?"s":"")+" configured on your existing platform, tested and documented");
@@ -282,7 +290,7 @@ function course(st){
 }
 function courseItems(st){
   var L=["Course for "+st.pax+" participant"+(st.pax>1?"s":"")+", built on the participants' own tasks and documents",
-         "One page per participant group: tasks to hand to AI, tasks never to, prompt patterns, the checks before anything is sent, what to log",
+         "A working playbook per participant group: the tasks to hand to AI and the tasks never to, prompt patterns tested on their documents, the checks before anything is sent, and what to log",
          "Attendance record and course materials in English, French or Arabic"];
   if(st.fmt==="in") L.push("In person: venue, accommodation and hospitality arranged by us, "+st.nights+" night"+(st.nights>1?"s":"")+" included at "+fmt(_nt)+" per person per night");
   else L.push("Online, on the platform the participants already use");
@@ -292,6 +300,7 @@ var last=null;
 function render(){
   var st=state(), ind=st.type==="ind";
   q("ind-step").hidden=!ind; document.querySelectorAll("#est .step.org").forEach(function(el){ el.hidden=ind; }); q("nights-wrap").hidden=st.fmt!=="in";
+  q("task-other-wrap").hidden=!q("task-other-chk").checked;
   if(ind){
     var c=course(st), items=courseItems(st), body=q("res-body");
     var html='<div class="range">'+fmt(c.pp)+' per person<small>'+st.pax+' participant'+(st.pax>1?"s":"")+' · '+(st.fmt==="in"?"in person, "+st.nights+" night"+(st.nights>1?"s":"")+" included":"online")+' · total '+fmt(c.total)+' · excl. VAT</small></div>'+
@@ -356,7 +365,7 @@ function preset(){
 }
 document.querySelectorAll("#est input,#est textarea").forEach(function(i){ i.addEventListener("change",function(){
   if(i.name==="size"){ q("policy-n").value=_dn[i.value]||3; } render(); }); i.addEventListener("input",render); });
-q("reset").onclick=function(){ q("est").reset(); q("policy-n").value=3; q("pax").value=1; q("nights").value=1; q("skills").value=0; q("spec").value=""; render(); };
+q("reset").onclick=function(){ q("est").reset(); q("policy-n").value=3; q("pax").value=1; q("nights").value=1; q("skills").value=0; q("spec").value=""; q("task-other").value=""; render(); };
 preset(); render();
 window.__maiEstimate=function(st){return estimate(st);}; window.__maiCourse=function(st){return course(st);};
 })();
@@ -385,7 +394,7 @@ window.__maiEstimate=function(st){return estimate(st);}; window.__maiCourse=func
       <li><a href="../our-clients/">Who We Work With</a></li>
       <li><a href="../contact-us/">Contact</a></li>
       <li><span class="fn-group">Read</span></li>
-      <li><a href="../cheatsheet/">Sample Cheatsheet</a></li>
+      <li><a href="../playbook/">Sample Playbook</a></li>
       <li><a href="../eu-ai-act-article-4/">EU AI Act Article 4</a></li>
       <li><a href="../use-cases/">AI Use Cases</a></li>
       <li><a href="../claude-in-chrome/">Claude in Chrome</a></li>
