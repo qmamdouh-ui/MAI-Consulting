@@ -105,3 +105,30 @@ the dashed `.slot` block in that section, newest first. No other file changes.
 Every price is a published list price with a linked source, dated September
 2026. Re-check them before quoting the page in a proposal; providers change
 prices and the page states the date it was checked.
+
+## The site assistant (`assets/chat.js`)
+
+A retrieval-only assistant on every content page. It calls no language model:
+every answer is a knowledge-base entry written from copy on this site, so it
+cannot invent. If a question does not clear the confidence bar it says so and
+offers two options — send the question to the team (EmailJS, same account and
+template as the contact form) or open the contact form.
+
+**Teaching it a new answer.** Open `assets/chat.js`, find `var KB = [`, and add
+an entry:
+
+```js
+{id:"short-id",
+ k:{"specific phrase":6,"another phrase":5,"single word":3},   // keyword → weight
+ q:["an example question","another way to ask it"],
+ a:"The answer, taken from copy that exists on the site.",
+ l:"page/", t:"Link label"},
+```
+
+Weights: a question must hit at least one keyword weighted 4 or more, total at
+least 5, and beat the runner-up. Put the distinctive phrases at 5–7 and generic
+words at 2–3. Test in the browser console with
+`__maiChat.answer("your question")` — it returns the entry or `null`.
+
+**Off-topic guard.** `OFFTOPIC` in the same file lists terms that force a
+refusal unless a strong specific match exists. Add to it when a leak shows up.

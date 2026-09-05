@@ -296,7 +296,7 @@ body > header{position:static !important}
 <div class="header">
   <div class="header-grid"></div>
   <div class="header-badge"><span class="badge-dot"></span>M.A.I. Consulting Tool</div>
-  <h1>AI Readiness <span>Assessment</span></h1>
+  <h1>Extended AI Readiness <span>Assessment</span></h1>
   <p>A streamlined 10-dimension evaluation — 60 questions across AI fluency, governance, ethics, workforce impact, and future-readiness.</p>
   <div class="std-strip">
     <a class="std-pill" href="https://www.iso.org/standard/81230.html" target="_blank" rel="noopener noreferrer">ISO/IEC 42001:2023</a>
@@ -884,7 +884,7 @@ async function downloadPDF(){
 
     const date=new Date().toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'}).replace(/\s/g,'_');
     const safeOrg=(userInfo.org||'Report').replace(/[^a-z0-9]/gi,'_');
-    const fname=`AI_Readiness_v3_${safeOrg}_${date}.pdf`;
+    const fname=`AI_Readiness_Extended_${safeOrg}_${date}.pdf`;
 
     // 1. Save the PDF locally for the user
     pdf.save(fname);
@@ -1312,5 +1312,6 @@ function updateNextStep(pct, answered, total){
   el.innerHTML = msg;
 }
 </script>
+<script src="../assets/chat.js" defer></script>
 </body>
 </html>
