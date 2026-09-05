@@ -187,7 +187,7 @@ footer{
 </style>
 <style>.footer-nav .fn-group{color:rgba(255,255,255,.28);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;}</style>
 <style>
-/* global site navigation — self-contained, does not touch page styles */
+/* global site navigation: self-contained, does not touch page styles */
 .mai-topbar{background:linear-gradient(140deg,#00122e 0%,#003E8A 100%);position:sticky;top:0;z-index:900;
   border-bottom:1px solid rgba(255,255,255,.07);padding:0 1.5rem;font-family:'Inter',system-ui,sans-serif}
 .mai-topbar-inner{max-width:1120px;margin:0 auto;height:60px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
@@ -240,7 +240,7 @@ body > header{position:static !important}
   <div class="header-grid"></div>
   <div class="header-badge"><span class="badge-dot"></span>M.A.I. Consulting Tool</div>
   <h1>Free AI Readiness <span>Assessment</span></h1>
-  <p>Evaluate your organization's readiness to embed AI across the four dimensions of the 4D Framework — and get a personalized roadmap.</p>
+  <p>Evaluate your organization's readiness to embed AI across the four dimensions of the 4D Framework, and get a personalised roadmap.</p>
 </div>
 
 <div class="user-info-wrap">
@@ -343,7 +343,7 @@ body > header{position:static !important}
         <a class="ns-btn ns-primary" href="../contact-us/">Book a free 30-minute debrief</a>
         <a class="ns-btn" href="../services/">See services and prices</a>
       </div>
-      <p class="ns-fine">On the call we walk through your three weakest dimensions and what to do about each. No pitch &mdash; if the right first step is a free programme, that is what we will tell you.</p>
+      <p class="ns-fine">On the call we walk through your three weakest dimensions and what to do about each. No pitch. If the right first step is a free programme, that is what we will tell you.</p>
     </div>
   </div>
 </div>
@@ -406,25 +406,25 @@ const Q_RECS={
   d0q7:{threshold:3,rec:'Secure an executive sponsor for AI and put a standing AI item on the leadership agenda'},
   d1q1:{threshold:3,rec:'Build a 3–5 line "context preamble" everyone reuses at the start of prompts (org name, role, audience, constraints)'},
   d1q2:{threshold:5,rec:'Adopt the "Format / Length / Tone" prompt pattern as standard practice and document it in a one-pager'},
-  d1q3:{threshold:3,rec:'Set an expectation that no AI draft is used on first pass — minimum one refinement cycle before output is reviewed'},
+  d1q3:{threshold:3,rec:'Set an expectation that no AI draft is used on first pass, minimum one refinement cycle before output is reviewed'},
   d1q4:{threshold:3,rec:'Practice the "product + process + performance" prompt structure: what you want, how it should be made, what good looks like'},
   d1q5:{threshold:5,rec:'Where data protection allows, attach the source brief or example to the prompt rather than describing it'},
   d1q6:{threshold:3,rec:'Make constraint-specification mandatory in any prompt that produces external output (word limit, audience, what NOT to include)'},
   d1q7:{threshold:5,rec:'Build a shared prompt library and a "have AI interview me" template for recurring tasks'},
-  d2q1:{threshold:3,rec:'Make critical review of AI outputs an explicit step — not an assumption — in every workflow that uses AI'},
+  d2q1:{threshold:3,rec:'Make critical review of AI outputs an explicit step, rather than an assumption, in every workflow that uses AI'},
   d2q2:{threshold:3,rec:'Train staff on common AI failure patterns: confident hallucinations, outdated training data, fabricated citations'},
   d2q3:{threshold:5,rec:'Require at least one external source verification for any AI-derived fact used in published or shared work'},
   d2q4:{threshold:3,rec:'Train staff to spot deficit-based or stigmatizing framing (especially around beneficiaries, gender, age, ability)'},
-  d2q5:{threshold:3,rec:'Add a "why did the AI say that?" reflection step to high-stakes use cases, not just a quality check on the output'},
+  d2q5:{threshold:3,rec:'Add a "why did the AI say that?" reflection step to high-stakes use cases, beyond a quality check on the output'},
   d2q6:{threshold:5,rec:'Add a mission-fit check to your AI review process: does this output match how we talk about our work and the people we serve?'},
-  d2q7:{threshold:3,rec:'When AI gives a poor response, debug the prompt before re-asking — the prompt is usually where the problem started'},
-  d3q1:{threshold:3,rec:'Make it explicit that whoever shares an AI-assisted output owns its accuracy — no "the AI said so" disclaimers'},
+  d2q7:{threshold:3,rec:'When AI gives a poor response, debug the prompt before re-asking, because the prompt is usually where the problem started'},
+  d3q1:{threshold:3,rec:'Make it explicit that whoever shares an AI-assisted output owns its accuracy, with no "the AI said so" disclaimers'},
   d3q2:{threshold:5,rec:'Adopt a simple AI-disclosure standard: when, how, and to whom you flag AI involvement (funders, partners, beneficiaries)'},
   d3q3:{threshold:3,rec:'Review the data-handling terms of every AI vendor you use (training opt-out, retention, sub-processors, region)'},
   d3q4:{threshold:5,rec:'Publish a short "do not paste into AI" list and train all staff on it before extending AI use further'},
   d3q5:{threshold:3,rec:'Match tools to tasks deliberately: standardize on which tool you use for which use case rather than letting individuals choose ad hoc'},
   d3q6:{threshold:3,rec:'Draft a one-page organizational AI policy this quarter covering acceptable use, prohibited tasks, oversight, and disclosure'},
-  d3q7:{threshold:5,rec:'Establish a routine — monthly or quarterly — to spot-check AI-assisted work already in use and catch drift'}
+  d3q7:{threshold:5,rec:'Establish a monthly or quarterly routine to spot-check AI-assisted work already in use and catch drift'}
 };
 
 const scores={};
@@ -602,7 +602,7 @@ function getTriggeredRecs(){
 }
 
 function answerLabel(q,score){
-  if(score===undefined||isNaN(score))return '—';
+  if(score===undefined||isNaN(score))return '-';
   if(q.type==='yn') return score===5?'Yes':'No';
   if(q.type==='scale') return `${score}/5`;
   if(q.type==='num') return `${score} tool${score===1?'':'s'}`;
@@ -724,7 +724,7 @@ async function downloadPDF(){
     // 2. Raw base64 (strip the "data:application/pdf;base64," prefix)
     const base64Data = pdf.output('datauristring').split('base64,')[1];
     const approxKB = Math.round(base64Data.length * 0.75 / 1024);
-    console.log(`PDF base64 ≈ ${approxKB} KB (decoded) — text PDF, uploading to Drive.`);
+    console.log(`PDF base64 ≈ ${approxKB} KB (decoded): text PDF, uploading to Drive.`);
 
     // 3. Upload to Google Drive via the Apps Script Web App.
     //    Content-Type is text/plain on purpose: a JSON content-type triggers
@@ -744,11 +744,11 @@ async function downloadPDF(){
         console.log('Drive upload OK:', finalPdfLink);
       } else {
         console.error('Drive upload failed:', driveResult);
-        finalPdfLink = 'Upload failed — please contact us directly for your report.';
+        finalPdfLink = 'Upload failed. Please contact us directly for your report.';
       }
     }catch(driveErr){
       console.error('Drive upload error:', driveErr);
-      finalPdfLink = 'Upload failed — please contact us directly for your report.';
+      finalPdfLink = 'Upload failed. Please contact us directly for your report.';
     }
 
     // 4. Email the notification with the Drive link
@@ -763,7 +763,7 @@ async function downloadPDF(){
       .catch(err=>{
         const st = err && (err.status||'');
         const tx = err && (err.text||err.message||err);
-        console.error('EmailJS FAILED — status:', st, 'text:', tx, err);
+        console.error('EmailJS FAILED. status:', st, 'text:', tx, err);
       });
 
   }catch(e){
@@ -846,9 +846,9 @@ function buildPrintReport(){
   /* ===== Profile ===== */
   sectionTitle('Profile');
   const prof=[
-    ['Name', userInfo.name||'—', 'Organization', userInfo.org||'—'],
-    ['Role', userInfo.role||'—', 'Email', userInfo.email||'—'],
-    ['Sector', userInfo.sector||'—', 'Team Size', userInfo.size||'—'],
+    ['Name', userInfo.name||'-', 'Organization', userInfo.org||'-'],
+    ['Role', userInfo.role||'-', 'Email', userInfo.email||'-'],
+    ['Sector', userInfo.sector||'-', 'Team Size', userInfo.size||'-'],
     ['Questions', answered+' / '+QUESTIONS.length, 'Total Score', totalScore+' / '+totalMax],
     ['Overall', pct+'%  ('+label+')', 'Gaps Flagged', String(triggered.length)],
   ];
@@ -920,7 +920,7 @@ function buildPrintReport(){
       const D=DIMS[di]; const c=hexRGB(D.color);
       ensure(12);
       doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(c[0],c[1],c[2]);
-      doc.text(`${D.name} — ${byDim[di].length} gap${byDim[di].length===1?'':'s'}`, ML, y);
+      doc.text(`${D.name}: ${byDim[di].length} gap${byDim[di].length===1?'':'s'}`, ML, y);
       y+=5;
       byDim[di].forEach(t=>{
         const recL=doc.splitTextToSize('-  '+t.rec, CW-2);
@@ -989,7 +989,7 @@ function buildPrintReport(){
     doc.text(D.name, ML+2, y+4); y+=8;
     dimQs.forEach((q,qi)=>{
       const sc=scores[q.id];
-      const display=(sc===undefined||isNaN(sc))?'—':Math.round(sc);
+      const display=(sc===undefined||isNaN(sc))?'-':Math.round(sc);
       const ans=answerLabel(q,sc);
       const r=Q_RECS[q.id];
       const flagged=(sc!==undefined&&!isNaN(sc)&&r&&sc<r.threshold);

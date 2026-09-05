@@ -18,22 +18,22 @@ The published site lives in the **repository root**, served by GitHub Pages at
 | Path | Purpose |
 | --- | --- |
 | `/` | Home |
-| `/services/` | The offer page — five services and three ready-made scopes; prices via the estimator |
+| `/services/` | The offer page: five services and three ready-made scopes; prices via the estimator |
 | `/about/` | Who delivers the work: background, credentials, standards |
 | `/cheatsheet/` | Sample of the one-page deliverable each department receives |
 | `/estimate/` | Price estimator: type, size, scope → indicative range; 200+ staff routed to a call; selections emailed to the owner. The scope model lives in the page script and is deliberately not rendered |
-| `/for-funders/` | Portfolio programmes for foundations and donors — a second buyer, not a second sector |
+| `/for-funders/` | Portfolio programmes for foundations and donors, a second buyer rather than a second sector |
 | `/compare/` | Market and competitor comparison with published prices, sources, and the value case |
 | `/knowledge/` | Published work filed by service and package, with slots for LinkedIn articles |
 | `/resources/` | Redirects to `/knowledge/` |
-| `/eu-ai-act-article-4/` | Briefing on the AI literacy obligation — the main commercial hook |
+| `/eu-ai-act-article-4/` | Briefing on the AI literacy obligation, the main commercial hook |
 | `/explore-your-ai-readiness/` | Free 28-question assessment (4D framework) |
 | `/extensive-ai-readiness-analysis/` | 60-question, 10-dimension assessment |
 | `/our-clients/` | Who we work with, packages table, how engagements run |
 | `/use-cases/`, `/claude-in-chrome/`, `/save-claude-tokens/` | Reference articles |
 | `/privacy/` | Privacy policy, on its own URL so it can be linked from proposals |
 | `/what-we-do/` | Redirects to `/services/`. Kept so inbound links keep working |
-| `assets/site.css` | Shared design system — tokens, global nav, footer, components |
+| `assets/site.css` | Shared design system: tokens, global nav, footer, components |
 | `robots.txt`, `sitemap.xml` | Crawler directives |
 
 ## Design system
@@ -48,7 +48,7 @@ a self-contained `.mai-topbar` block, so no page styles collide.
 from the repository root, GitHub Pages serves every file in the repo, including
 `source-content/`. It is reachable at `mai4consulting.com/source-content/`.
 `robots.txt` disallows it from crawlers, but that is a request, not access
-control. **This repository is public** — do not commit anything here that should
+control. **This repository is public**, so do not commit anything here that should
 not be world-readable.
 
 ## `source-content/`
@@ -63,7 +63,7 @@ and `<o:p>` tags that Word emits, and it should never be edited, deployed, or
 treated as the site's HTML. They exist so the page copy is preserved and
 recoverable independently of the live site.
 
-Note that the Word documents contain the site's HTML *pasted in as text* — the
+Note that the Word documents contain the site's HTML *pasted in as text*; the
 person who made the backup copied the page source into Word rather than saving
 the rendered page. That is why the exports are large relative to how much prose
 they hold.
@@ -83,7 +83,7 @@ Backed-up pages:
 
 Each `.htm` backup has a matching Markdown file in `source-content/text/`,
 named in lowercase with hyphens (`Home Page.htm` → `home-page.md`). These hold
-the readable content — headings, paragraphs, and lists — with all Word styling
+the readable content (headings, paragraphs, and lists) with all Word styling
 and markup stripped out. Each file records the backup it came from.
 
 Use these when you want to read or search the site copy. They are a derived,
@@ -98,7 +98,7 @@ in a clearly labelled section so the backup is complete.
 ## Adding a LinkedIn article
 
 `knowledge/index.html` has four service sections. Each carries a commented
-copy-paste `<a class="art">` template — fill it in, place it directly above
+copy-paste `<a class="art">` template: fill it in, place it directly above
 the dashed `.slot` block in that section, newest first. No other file changes.
 
 ## Competitor pricing on `/compare/`
@@ -112,7 +112,7 @@ prices and the page states the date it was checked.
 A retrieval-only assistant on every content page, in English, French and Arabic (auto-detected per message, with a manual switch; Arabic renders right-to-left). It calls no language model:
 every answer is a knowledge-base entry written from copy on this site, so it
 cannot invent. If a question does not clear the confidence bar it says so and
-offers two options — send the question to the team (EmailJS, same account and
+offers two options: send the question to the team (EmailJS, same account and
 template as the contact form) or open the contact form. Greetings, "who are you",
 "can you speak Arabic" and similar are answered naturally; only questions *about
 the practice* that the site does not cover trigger the hand-off. Off-topic
@@ -133,7 +133,7 @@ an entry:
 Weights: a question must hit at least one keyword weighted 4 or more, total at
 least 5, and beat the runner-up. Put the distinctive phrases at 5–7 and generic
 words at 2–3. Test in the browser console with
-`__maiChat.answer("your question")` — it returns the entry or `null`;
+`__maiChat.answer("your question")`; it returns the entry or `null`;
 `__maiChat.detect("…")` shows the detected language.
 
 **Off-topic guard.** `OFFTOPIC` in the same file lists terms that force a

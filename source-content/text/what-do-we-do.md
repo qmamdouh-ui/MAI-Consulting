@@ -22,31 +22,31 @@ Capabilities
 
 #### AI Embedding
 
-We don't just add AI to your existing processes; we re-architect your operations to be AI-native. From automated decision-making engines to autonomous agent workflows — individual to institution.
+We don't just add AI to your existing processes; we re-architect your operations to be AI-native. From automated decision-making engines to autonomous agent workflows, individual to institution.
 
 Individual Team Scale Enterprise Agentic RAG Data Pipelines
 
 #### AI Literacy
 
-A structured 5-stage journey — Awareness, Foundations, Fluency, Mastery, Integration — tailored to your sector, role, and tools.
+A structured 5-stage journey. Awareness, Foundations, Fluency, Mastery, Integration, tailored to your sector, role, and tools.
 
 Free Tools Claude Pro Copilot M365
 
 #### Management Consulting
 
-Boutique-quality strategic advisory for nonprofits and impact-driven organizations — UN SDG-aligned, design-thinking led, and mission-centered.
+Boutique-quality strategic advisory for nonprofits and impact-driven organizations. UN SDG-aligned, design-thinking led, and mission-centered.
 
 Strategy Impact Design UN SDGs
 
 #### Strategic Research
 
-AI-augmented research that transforms complex questions into actionable intelligence — sector landscape analysis, policy mapping, stakeholder studies, and custom white papers for NGOs, governments, and enterprises.
+AI-augmented research that transforms complex questions into actionable intelligence, sector landscape analysis, policy mapping, stakeholder studies, and custom white papers for NGOs, governments, and enterprises.
 
 Landscape Analysis Policy Mapping White Papers
 
 #### Training Through Partners
 
-We co-design and co-deliver AI literacy programs with accredited training centres, universities, NGOs, and corporate L&D teams — extending our reach across sectors and geographies.
+We co-design and co-deliver AI literacy programs with accredited training centres, universities, NGOs, and corporate L&D teams, extending our reach across sectors and geographies.
 
 Become a Partner
 

@@ -1,4 +1,4 @@
-# AI Readiness Assessment — M.A.I. Consulting
+# AI Readiness Assessment. M.A.I. Consulting
 
 *Source: `Explore Your AI Readiness.htm`*
 
@@ -6,7 +6,7 @@ M.A.I. Consulting Tool
 
 ## AI Readiness Assessment
 
-Evaluate your organization's readiness to embed AI across the four dimensions of the 4D Framework — and get a personalized roadmap.
+Evaluate your organization's readiness to embed AI across the four dimensions of the 4D Framework, and get a personalized roadmap.
 
 Your Profile
 
