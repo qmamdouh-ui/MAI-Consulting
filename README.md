@@ -21,6 +21,7 @@ The published site lives in the **repository root**, served by GitHub Pages at
 | `/services/` | The offer page — four services, three packages, published starting prices |
 | `/about/` | Who delivers the work: background, credentials, standards |
 | `/cheatsheet/` | Sample of the one-page deliverable each department receives |
+| `/for-funders/` | Portfolio programmes for foundations and donors — a second buyer, not a second sector |
 | `/compare/` | Market and competitor comparison with published prices, sources, and the value case |
 | `/knowledge/` | Published work filed by service and package, with slots for LinkedIn articles |
 | `/resources/` | Redirects to `/knowledge/` |
