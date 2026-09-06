@@ -18,6 +18,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="../assets/site.css"/>
 <style>
+.lvls{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.6rem 1.2rem;margin:.7rem 0 .3rem}
+.lvls select,#deptsize{border:1px solid rgba(0,62,138,.25);border-radius:7px;padding:.4rem .55rem;font:.85rem Inter,system-ui,sans-serif;color:var(--txt);background:#fff}
+#lvl-note{background:var(--blue-wash);border-left:2px solid var(--gold);border-radius:0 6px 6px 0;padding:.55rem .75rem;margin:.5rem 0 0}
+.lvl-det{margin-top:.6rem}
+.lvl-det summary{font-size:.8rem;font-weight:700;color:var(--blue);cursor:pointer}
+.lvl-list{margin-top:.5rem;display:grid;gap:.5rem}
+.lvl-x{font-size:.8rem;line-height:1.6;color:var(--charcoal);border-left:2px solid var(--outline);padding-left:.7rem}
+.lvl-x b{display:block;color:var(--blue-dark);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
 .opts-inline{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.3rem .9rem;margin:.5rem 0 .2rem}
 .opts-inline .chk{font-size:.84rem;display:flex;align-items:flex-start;gap:.45rem;line-height:1.5;cursor:pointer}
 #task-other{width:100%;max-width:32rem;border:1px solid rgba(0,62,138,.25);border-radius:8px;padding:.5rem .7rem;font:.86rem Inter,system-ui,sans-serif;color:var(--txt)}
@@ -123,21 +131,33 @@
       </div>
 
       <div class="step org">
-        <h3>3 &middot; Start with a readiness assessment?</h3>
-        <p class="hint">Recommended. It produces the baseline score, the tool inventory and the ranked gap list the rest of the work is built on, and the number you re-measure against later.</p>
-        <label class="chk"><input type="checkbox" id="assess" checked/> Include the AI Readiness Assessment (ten dimensions, scored report, 90-day priority list)</label><span class="ii"><button type="button" aria-label="Definition: AI Readiness Assessment">i</button><span class="ii-p" role="tooltip"><b>AI Readiness Assessment</b>Sixty questions across ten dimensions, answered by your staff and supported by interviews and a documented inventory of the AI tools in use. Produces a scored report, a ranked 90-day plan and the baseline for the re-score.</span></span><p class="hint" style="margin-top:.5rem"><a href="../services/assessment/" target="_blank" rel="noopener">See a worked example of the report and the tool inventory &rarr;</a></p>
-      </div>
-
-      <div class="step org">
-        <h3>4 &middot; Training</h3>
-        <p class="hint">General means one organisation-wide session on the shared rules. Department-specific adds a 90-minute lab per department on that team's own tasks, each ending in a playbook.</p>
-        <div class="opts">
-          <div class="opt"><input type="radio" name="train" id="tr0" value="0"/><label for="tr0"><b>No training</b></label></div>
-          <div class="opt"><input type="radio" name="train" id="tr1" value="1" checked/><label for="tr1"><b>General only</b><span>one umbrella session</span></label></div>
-          <div class="opt"><input type="radio" name="train" id="tr2" value="2"/><label for="tr2"><b>General + department-specific</b><span>umbrella session, then a lab per team</span></label></div>
+        <h3>3 &middot; Readiness assessment</h3>
+        <p class="hint">The assessment produces the baseline score, the inventory of tools in use and the ranked gap list the rest of the work is built on. Two depths, priced differently.</p>
+          <div class="opt"><input type="radio" name="assess" id="as0" value="0"/><label for="as0"><b>No assessment</b><span>you already know where the gaps are</span></label></div>
+          <div class="opt"><input type="radio" name="assess" id="as1" value="1" checked/><label for="as1"><b>Four essential dimensions</b><span>Delegation, Description, Discernment, Diligence</span></label><span class="ii"><button type="button" aria-label="Definition: Four essential dimensions">i</button><span class="ii-p" role="tooltip"><b>Four essential dimensions</b>The four competencies of AI fluency, scored across the organisation with a short interview round. It answers what staff can and cannot do, and what to train first. It does not cover governance, data protection, workforce impact or psychological safety.</span></span></div>
+          <div class="opt"><input type="radio" name="assess" id="as2" value="2"/><label for="as2"><b>All ten dimensions</b><span>the four competencies plus governance, data protection and ethics, workforce impact, operations and internal politics, psychological safety, future-readiness</span></label><span class="ii"><button type="button" aria-label="Definition: Ten dimensions">i</button><span class="ii-p" role="tooltip"><b>Ten dimensions</b>The full instrument: sixty questions, staff interviews and a documented tool inventory, scored against ISO/IEC 42001, the NIST AI RMF and EU AI Act Article 4 vocabulary. Choose this when a board, a funder or an auditor will read the report, or when the question is governance rather than skills.</span></span></div>
+          <p class="hint" style="margin-top:.5rem"><a href="../services/assessment/" target="_blank" rel="noopener">See what the report contains &rarr;</a></p>
         </div>
-        <div id="train-n-wrap" hidden>
-            <p class="hint" style="margin-bottom:.4rem"><strong>Which departments need their own lab and page?</strong> Each adds a 90-minute lab built on that team's tasks, ending in its own playbook.<span class="ii"><button type="button" aria-label="Definition: Department lab">i</button><span class="ii-p" role="tooltip"><b>Department lab</b>A 90-minute working session with one department on its own real tasks and documents. The team&rsquo;s playbook is written during the lab, with the team, then cleared against your policy.</span></span></p>
+        <div class="step org">
+          <h3>4 &middot; Training</h3>
+          <p class="hint">Training is scoped by where the group starts and where it needs to reach. The seven levels, the days between them and what each one changes are set out on the <a href="../services/training/#levels" target="_blank" rel="noopener">training page</a>.</p>
+          <div class="opt"><input type="radio" name="train" id="tr0" value="0"/><label for="tr0"><b>No training</b></label></div>
+          <div class="opt"><input type="radio" name="train" id="tr1" value="1" checked/><label for="tr1"><b>Organisation-wide programme</b><span>one group, one target level</span></label></div>
+          <div class="opt"><input type="radio" name="train" id="tr2" value="2"/><label for="tr2"><b>Programme plus department labs</b><span>the programme, then a lab per department on its own tasks</span></label></div>
+
+          <div id="lvl-wrap">
+            <div class="lvls">
+              <div class="num"><label for="lvl-from">Where the group is now:</label>
+                <select id="lvl-from"><option value="1">Level 1</option><option value="2" selected>Level 2</option><option value="3">Level 3</option><option value="4">Level 4</option><option value="5">Level 5</option><option value="6">Level 6</option></select></div>
+              <div class="num"><label for="lvl-to">Level to reach:</label>
+                <select id="lvl-to"><option value="3" selected>Level 3</option><option value="4">Level 4</option><option value="5">Level 5</option><option value="6">Level 6</option><option value="7">Level 7</option></select></div>
+            </div>
+            <p class="hint" id="lvl-note"></p>
+            <details class="lvl-det"><summary>What each level means</summary><div class="lvl-list"><div class="lvl-x"><b>Level 1</b>No working use of an assistant yet. Nothing to unlearn, and the objections are specific enough to answer with the team's own documents.</div><div class="lvl-x"><b>Level 2</b>Occasional use with no shared method: a summary here, a search there. Output varies by person and by day because the input does.</div><div class="lvl-x"><b>Level 3</b>Structured prompting and verification. The person briefs the work as they would a colleague, gives the source document, and checks figures, facts, language and defensibility before anything is sent. This is the floor we train to.</div><div class="lvl-x"><b>Level 4</b>Persistent set-ups. Projects hold the reference documents, custom instructions hold the standing rules, skills hold the house method. Nothing is briefed twice.</div><div class="lvl-x"><b>Level 5</b>Delegated work. An agent carries a job from brief to draft while the person supervises, and several workstreams run at once.</div><div class="lvl-x"><b>Level 6</b>Building for others. Designs agents and skills for colleagues, connects the sources, and reviews the team's AI-assisted output. This is what makes the capability survive turnover.</div><div class="lvl-x"><b>Level 7</b>Terminal-based agentic work with no coding background. Claude Code operates on folders of files rather than one conversation: batch document work, the same review across a year of reports, a repeatable pipeline.</div></div></details>
+          </div>
+
+          <div id="train-n-wrap" hidden>
+            <p class="hint" style="margin-bottom:.4rem"><strong>Which departments need their own lab and playbook?</strong> Each lab works on that team's real tasks and ends in its playbook.<span class="ii"><button type="button" aria-label="Definition: Department lab">i</button><span class="ii-p" role="tooltip"><b>Department lab</b>A working session with one department on its own tasks and documents. The team's playbook is written during the lab, with the team, then cleared against your policy. Longer at higher target levels, because there is more to practise.</span></span></p>
             <div class="opts-inline" id="depts">
               <label class="chk"><input type="checkbox" name="dept" value="Programmes and monitoring" checked/> Programmes and monitoring</label>
               <label class="chk"><input type="checkbox" name="dept" value="Fundraising and partnerships" checked/> Fundraising and partnerships</label>
@@ -148,12 +168,17 @@
               <label class="chk"><input type="checkbox" name="dept" value="Legal, protection or safeguarding"/> Legal, protection or safeguarding</label>
               <label class="chk"><input type="checkbox" name="dept" value="IT or operations"/> IT or operations</label>
             </div>
+            <div class="num" style="margin-top:.6rem"><label for="deptsize">Typical department size:</label>
+              <select id="deptsize">
+                <option value="s">Under 10 people</option>
+                <option value="m" selected>10 to 30 people</option>
+                <option value="l">More than 30 people</option>
+              </select><span class="ii"><button type="button" aria-label="Definition: Department size">i</button><span class="ii-p" role="tooltip"><b>Department size</b>Larger departments need more sittings to cover everyone and a wider set of documents to test against, so a lab costs more. Where departments differ in size, say so in the notes and we will scope each one properly.</span></span></div>
             <input type="hidden" id="train-n" value="3"/>
-            <p class="hint" style="margin-top:.5rem"><a href="../services/training/" target="_blank" rel="noopener">See what the general module and each department lab cover &rarr;</a></p>
+            <p class="hint" style="margin-top:.5rem"><a href="../services/training/" target="_blank" rel="noopener">See the general module and the department labs &rarr;</a></p>
           </div>
-      </div>
-
-      <div class="step org">
+        </div>
+              <div class="step org">
         <h3>5 &middot; AI use policy</h3>
         <p class="hint">General means one umbrella policy: permitted uses, red lines, data classification, disclosure, escalation, approved tools. Specific annexes add rules for a particular department or use (casework data, fundraising, HR records) where the umbrella is not enough.</p>
         <div class="opts">
@@ -166,7 +191,7 @@
 
       <div class="step org">
         <h3>6 &middot; Custom agents, skills and tools</h3>
-        <p class="hint">Three different things, priced separately. Each is configured on the platform you already use, tested on your documents and handed over with an operating guide. We configure existing platforms; writing software and training models are outside what we do. <a href="../services/agents/" target="_blank" rel="noopener">See worked examples of each &rarr;</a></p>
+        <p class="hint">Three different things, priced separately, and scaled by the size of the organisation and of the department that will use them, because testing and handover grow with both. Each is configured on the platform you already use, tested on your documents and handed over with an operating guide. We configure existing platforms; writing software and training models are outside what we do. <a href="../services/agents/" target="_blank" rel="noopener">See worked examples of each &rarr;</a></p>
         <div class="num"><label for="agents">Custom agents:<span class="ii"><button type="button" aria-label="Definition: Agent">i</button><span class="ii-p" role="tooltip"><b>Agent</b>A configured assistant for a role or workflow, holding your templates, rules and reference documents, that handles a multi-step job end to end. Example: a grant-report drafter that follows the funder&rsquo;s headings and flags any figure it could not trace to a source file.</span></span></label><input type="number" id="agents" min="0" max="5" value="0"/></div>
         <div class="num"><label for="skills">Custom skills:<span class="ii"><button type="button" aria-label="Definition: Skill">i</button><span class="ii-p" role="tooltip"><b>Skill</b>A written instruction set the platform loads whenever a task of that type comes up, carrying your house method so every staff member gets the same approach. Example: a donor-report house-style skill holding your tone rules, headings and figure-verification step.</span></span></label><input type="number" id="skills" min="0" max="8" value="0"/></div>
         <div class="num"><label for="tools">Custom tools for repetitive tasks:<span class="ii"><button type="button" aria-label="Definition: Tool">i</button><span class="ii-p" role="tooltip"><b>Tool</b>A small, tested set-up for a single repetitive task with a fixed input and a fixed output. The narrowest of the three and the quickest to configure. Example: a call-for-proposals summariser returning eligibility, deadline, budget ceiling and required annexes in the same order every time.</span></span></label><input type="number" id="tools" min="0" max="8" value="0"/></div>
@@ -174,7 +199,7 @@
 
       <div class="step org">
           <h3>7 &middot; Which tasks are you trying to improve?</h3>
-          <p class="hint">Optional, and it does not change the price. It tells us which department labs to build first and whether an agent, a skill or a tool would pay for itself.</p>
+          <p class="hint">Each task you pick is built into the training material and the playbooks: the patterns, the worked examples and the checks are prepared for that task on your documents. The first three carry most of the preparation, and further ones cost less.</p>
           <div class="opts-inline" id="tasks">
             <label class="chk"><input type="checkbox" name="task" value="Donor and narrative reporting"/> Donor and narrative reporting</label>
             <label class="chk"><input type="checkbox" name="task" value="Proposals and calls for proposals"/> Proposals and calls for proposals</label>
@@ -213,8 +238,8 @@
     <div class="kicker">How to read the number</div>
     <h2>How to read the number.</h2>
     <p style="margin-bottom:.9rem">The range reflects the scope you selected at the rate for your type of organisation. It excludes VAT and travel. Once we have spoken for thirty minutes and know your actual departments, data and constraints, you get a fixed price and a fixed scope in writing, and that number is the one that binds.</p>
-    <p>Two things move it most: how many departments need their own material, and whether you want us to configure agents or tools on top of training and policy. Two things do not move it: negotiating, and how urgent it is. We do not charge for speed and we do not discount the rate.</p><p style="margin-top:.9rem">Individuals and organisation representatives attending a course are priced per person, and the per-person price decreases as the group grows, up to nine participants. An in-person place starts at <strong>CHF 3,500 for one participant with one night included</strong>; accommodation and hospitality are charged at CHF 400 per person per night, and online courses carry no such charge.</p>
-    <p style="margin-top:.9rem">Departments, task types and anything you write in the notes box do not change the figure. They tell us what to build first, and they reach us with your estimate so the call starts from your situation rather than from a blank page.</p>
+    <p>Two things move it most: how many departments need their own material, and whether you want us to configure agents or tools on top of training and policy. Two things do not move it: negotiating, and how urgent it is. We do not charge for speed and we do not discount the rate.</p><p style="margin-top:.9rem">For any engagement, and for individuals as well as groups, we can host the training in person and build it around what the participants need. The arrangements are agreed on the call and confirmed with the fixed price.</p>
+    <p style="margin-top:.9rem">What moves the figure: the level you are training to, the size of the organisation and of the departments involved, the depth of the assessment, the number of policy annexes, and how many agents, skills and tools you want configured. What does not move it: negotiating, and how urgent it is.</p>
   </div>
 </section>
 
@@ -234,52 +259,65 @@
 "use strict";
 /* scope model: figures are intentionally not rendered anywhere on the page */
 var _r=1700,_m={ngo:.70,io:.90,gov:1.00,priv:1.20};
-var _a={s1:2.5,s2:4,s3:6},_u={s1:1.5,s2:2.5,s3:3.5},_p={s1:3,s2:5,s3:6.5},_dn={s1:1,s2:3,s3:5};
-function _lab(n){var d=0;for(var i=1;i<=n;i++)d+=(i===1?2:(i<=3?1.5:1.2));return d;}
+var _os={s1:.85,s2:1.00,s3:1.25},_ds={s:.85,m:1.00,l:1.25};
+var _a1={s1:1.5,s2:2.5,s3:3.5},_a2={s1:2.5,s2:4,s3:6};
+var _p={s1:3,s2:5,s3:6.5},_dn={s1:1,s2:3,s3:5};
+var _lvD={3:3,4:5,5:6.5,6:8,7:10};
+var _lvCr={1:0,2:0,3:1,4:1.5,5:2,6:2.5};
+var _lvF={3:1.0,4:1.15,5:1.3,6:1.45,7:1.6};
+function _prog(from,to){var d=(_lvD[to]||3)-(_lvCr[from]||0); if(d<3) d=3; return d;}
+function _labs(n,dsz,to){var f=_lvF[to]||1,tot=0;for(var i=1;i<=n;i++){tot+=_ds[dsz]*f*(i===1?1:(i===2?.9:.8));}return tot;}
 function _ann(n){var d=0;for(var i=1;i<=n;i++)d+=(i===1?1.5:1);return d;}
+function _tasks(n,os){var d=0;for(var i=1;i<=n;i++)d+=(i<=3?.25:.15);return d*os;}
 var TYPE={ngo:"NGO or foundation",io:"International organisation",gov:"Government or public institution",priv:"Private sector",ind:"Individual or organisation representative"};
 var _pp=[3100,2900,2700,2500,2300,2100,1900,1700,1500],_nt=400;
 var SIZE={s1:"1–10 staff",s2:"10–50 staff",s3:"50–200 staff",s4:"200–500 staff",s5:"500+ staff"};
 function q(id){return document.getElementById(id);}
 function rv(n){var e=document.querySelector('input[name="'+n+'"]:checked');return e?e.value:null;}
 function rnd(x){return Math.round(x/500)*500;}
+function fmtd(x){return (Math.round(x*10)/10).toString().replace(".0","");}
 function fmt(x){return "CHF "+x.toLocaleString("en-CH").replace(/,/g,"'");}
 function state(){
-  var t=rv("type"),s=rv("size"),tr=rv("train"),po=rv("policy");
+  var t=rv("type"),s=rv("size"),tr=rv("train"),po=rv("policy"),as_=rv("assess");
   var depts=[].slice.call(document.querySelectorAll('input[name="dept"]:checked')).map(function(e){return e.value;});
   var tasks=[].slice.call(document.querySelectorAll('input[name="task"]:checked')).map(function(e){return e.value;});
   var other=(q("task-other").value||"").trim();
   if(other) tasks=tasks.filter(function(t){return t!=="Other";}).concat(["Other: "+other]);
   return {type:t,size:s,fmt:rv("fmt"),pax:Math.min(9,Math.max(1,+q("pax").value||1)),nights:Math.min(5,Math.max(1,+q("nights").value||1)),
-          assess:q("assess").checked,train:tr,depts:depts,trainN:Math.max(1,depts.length),
+          assess:as_,lvFrom:+q("lvl-from").value||1,lvTo:+q("lvl-to").value||3,dsz:q("deptsize").value,train:tr,depts:depts,trainN:Math.max(1,depts.length),
           policy:po,policyN:Math.min(8,Math.max(1,+q("policy-n").value||1)),
           agents:Math.min(5,Math.max(0,+q("agents").value||0)),skills:Math.min(8,Math.max(0,+q("skills").value||0)),
           tools:Math.min(8,Math.max(0,+q("tools").value||0)),tasks:tasks,spec:(q("spec").value||"").trim()};
 }
 function included(st){
   var L=[];
-  if(st.assess) L.push("AI Readiness Assessment: ten-dimension scored report and 90-day priority list");
-  if(st.train==="1") L.push("One organisation-wide training session with a shared playbook");
-  if(st.train==="2") L.push("Organisation-wide session plus "+st.trainN+" department lab"+(st.trainN>1?"s":"")+", each with its own playbook"+(st.depts.length?" ("+st.depts.join("; ")+")":""));
+  if(st.assess==="1") L.push("AI Readiness Assessment, four essential dimensions: scored report on Delegation, Description, Discernment and Diligence, with a 90-day priority list");
+  if(st.assess==="2") L.push("AI Readiness Assessment, all ten dimensions: scored report, documented tool inventory and 90-day priority list");
+  if(st.train!=="0") L.push("Training programme from level "+st.lvFrom+" to level "+st.lvTo+", "+fmtd(_prog(st.lvFrom,st.lvTo))+" delivery days, with a shared playbook");
+  if(st.train==="2") L.push(st.trainN+" department lab"+(st.trainN>1?"s":"")+" at "+({s:"under 10",m:"10 to 30",l:"more than 30"}[st.dsz])+" people each, every one ending in that team\u2019s playbook"+(st.depts.length?" ("+st.depts.join("; ")+")":""));
   if(st.policy==="1") L.push("One umbrella AI use policy: permitted uses, red lines, data classification, disclosure, escalation, approved tools");
   if(st.policy==="2") L.push("Umbrella AI use policy plus "+st.policyN+" specific annex"+(st.policyN>1?"es":"")+" for named departments or uses");
   if(st.agents) L.push(st.agents+" custom agent"+(st.agents>1?"s":"")+" configured on your existing platform, tested and documented");
   if(st.skills) L.push(st.skills+" custom skill"+(st.skills>1?"s":"")+" carrying your house method, tested and documented");
   if(st.tools) L.push(st.tools+" custom tool"+(st.tools>1?"s":"")+" for repetitive tasks, tested and documented");
-  if(st.assess||st.train!=="0"||st.policy!=="0") L.push("Re-score and handover: the evidence file in your hands");
+  if(st.tasks&&st.tasks.length) L.push("Patterns, worked examples and checks prepared for "+st.tasks.length+" named task type"+(st.tasks.length>1?"s":""));
+  if(st.assess!=="0"||st.train!=="0"||st.policy!=="0") L.push("Re-score and handover: the documentation file in your hands");
   L.push("Discovery and scoping, always included");
   return L;
 }
 function estimate(st){
   if(st.size==="s4"||st.size==="s5") return null;
-  var d=1;
-  if(st.assess) d+=_a[st.size];
-  if(st.train!=="0") d+=_u[st.size];
-  if(st.train==="2") d+=_lab(st.trainN);
+  var os=_os[st.size]||1, d=1;
+  if(st.assess==="1") d+=_a1[st.size];
+  if(st.assess==="2") d+=_a2[st.size];
+  if(st.train!=="0") d+=_prog(st.lvFrom,st.lvTo)*os;
+  if(st.train==="2") d+=_labs(st.trainN,st.dsz,st.lvTo);
   if(st.policy!=="0") d+=_p[st.size];
   if(st.policy==="2") d+=_ann(st.policyN);
-  d+=st.agents*3+st.skills*1.5+st.tools*2;
-  if(st.assess||st.train!=="0"||st.policy!=="0") d+=1;
+  d+=_tasks((st.tasks||[]).length,os);
+  var dsf=(st.train==="2"?_ds[st.dsz]:1);
+  d+=(st.agents*3+st.skills*1.5+st.tools*2)*os*dsf;
+  if(st.assess!=="0"||st.train!=="0"||st.policy!=="0") d+=1;
   var f=1; if(st.train!=="0"&&st.policy!=="0") f*=.90; if((st.agents||st.skills||st.tools)&&st.train!=="0") f*=.95;
   var v=d*f*_r*_m[st.type]; if(v<3500) v=3500;
   return {lo:Math.max(3500,rnd(v*.88)),hi:rnd(v*1.12),mid:v};
@@ -308,9 +346,16 @@ function render(){
              '<p class="note">Per-person price for the group size shown. Confirmed in writing with the dates and the venue. Payment 40% on registration, 60% before the course.</p>';
     html+=sendBlock(); body.innerHTML=html; last={st:st,e:null,items:items,c:c}; q("sb").onclick=send; return;
   }
-  q("train-n-wrap").hidden=st.train!=="2"; q("policy-n-wrap").hidden=st.policy!=="2";
+  q("train-n-wrap").hidden=st.train!=="2"; q("policy-n-wrap").hidden=st.policy!=="2"; q("lvl-wrap").hidden=st.train==="0";
+  if(st.train!=="0"){
+    var pd=_prog(st.lvFrom,st.lvTo);
+    q("lvl-note").innerHTML=(st.lvTo<=st.lvFrom
+      ? "Choose a level above where the group is now. Reaching level 3 is the shortest engagement we take."
+      : "<strong>"+fmtd(pd)+" delivery days</strong> for the programme"+(st.lvFrom>2?", after credit for starting at level "+st.lvFrom:"")+
+        (st.train==="2"?", plus the department labs below":"")+".");
+  }
   var e=estimate(st), items=included(st), body=q("res-body"), html="";
-  var empty=!st.assess&&st.train==="0"&&st.policy==="0"&&!st.agents&&!st.skills&&!st.tools;
+  var empty=st.assess==="0"&&st.train==="0"&&st.policy==="0"&&!st.agents&&!st.skills&&!st.tools;
   if(empty){ html='<div class="range">&middot;<small>Select at least one component</small></div>'; body.innerHTML=html; last=null; return; }
   if(!e){
     html='<div class="range">Scoped on a call<small>'+SIZE[st.size]+' · '+TYPE[st.type]+'</small></div>'+
@@ -340,6 +385,7 @@ function send(){
   b.disabled=true; b.textContent="Sending…";
   var st=last.st,e=last.e,c=last.c;
   var msg="PRICE ESTIMATE REQUEST\n\nType: "+TYPE[st.type]+(c?"\nFormat: "+(st.fmt==="in"?"in person, "+st.nights+" night(s)":"online")+"\nParticipants: "+st.pax:"\nSize: "+SIZE[st.size])+"\n\nSelections:\n- "+last.items.join("\n- ")+
+          (c?"":"\n\nTraining levels: "+st.lvFrom+" to "+st.lvTo+"  |  Department size: "+({s:"under 10",m:"10 to 30",l:"more than 30"}[st.dsz]))+
           "\n\n"+(c?"Per-person price shown: "+fmt(c.pp)+" (total "+fmt(c.total)+")":"Indicative range shown: "+(e?fmt(e.lo)+" to "+fmt(e.hi):"none, size requires a call"))+
           (st.tasks&&st.tasks.length?"\n\nTasks to improve:\n- "+st.tasks.join("\n- "):"")+
           (st.spec?"\n\nNotes from the visitor:\n"+st.spec:"")+
@@ -353,19 +399,19 @@ function send(){
 function preset(){
   var p=(location.search.match(/preset=([a-z]+)/)||[])[1], sz=(location.search.match(/size=(s[1-5])/)||[])[1]; if(!p&&!sz) return;
   var set=function(n,v){var e=document.querySelector('input[name="'+n+'"][value="'+v+'"]'); if(e) e.checked=true;};
-  if(p==="foundation"){ set("size","s2"); q("assess").checked=true; set("train","1"); set("policy","0"); }
-  if(p==="adoption"){ set("size","s3"); q("assess").checked=true; set("train","2"); set("policy","1"); var d=document.querySelectorAll('input[name="dept"]'); if(d[3]) d[3].checked=true; }
-  if(p==="institution"){ set("size","s4"); q("assess").checked=true; set("train","2"); set("policy","2"); }
-  if(p==="assessment"){ q("assess").checked=true; set("train","0"); set("policy","0"); }
-  if(p==="policy"){ q("assess").checked=false; set("train","0"); set("policy","1"); }
-  if(p==="training"){ q("assess").checked=false; set("train","2"); set("policy","0"); }
-  if(p==="agents"){ q("assess").checked=false; set("train","0"); set("policy","0"); q("agents").value=1; q("skills").value=1; q("tools").value=1; }
+  if(p==="foundation"){ set("size","s2"); set("assess","1"); set("train","1"); q("lvl-to").value=3; set("policy","0"); }
+  if(p==="adoption"){ set("size","s3"); set("assess","2"); set("train","2"); q("lvl-to").value=4; set("policy","1"); var d=document.querySelectorAll('input[name="dept"]'); if(d[3]) d[3].checked=true; }
+  if(p==="institution"){ set("size","s4"); set("assess","2"); set("train","2"); q("lvl-to").value=5; set("policy","2"); }
+  if(p==="assessment"){ set("assess","2"); set("train","0"); set("policy","0"); }
+  if(p==="policy"){ set("assess","0"); set("train","0"); set("policy","1"); }
+  if(p==="training"){ set("assess","0"); set("train","2"); set("policy","0"); }
+  if(p==="agents"){ set("assess","0"); set("train","0"); set("policy","0"); q("agents").value=1; q("skills").value=1; q("tools").value=1; }
   if(p==="course"){ set("type","ind"); }
   if(sz){ set("size",sz); q("policy-n").value=_dn[sz]||3; if(p==="training"&&sz==="s1") set("train","1"); }
 }
-document.querySelectorAll("#est input,#est textarea").forEach(function(i){ i.addEventListener("change",function(){
+document.querySelectorAll("#est input,#est textarea,#est select").forEach(function(i){ i.addEventListener("change",function(){
   if(i.name==="size"){ q("policy-n").value=_dn[i.value]||3; } render(); }); i.addEventListener("input",render); });
-q("reset").onclick=function(){ q("est").reset(); q("policy-n").value=3; q("pax").value=1; q("nights").value=1; q("skills").value=0; q("spec").value=""; q("task-other").value=""; render(); };
+q("reset").onclick=function(){ q("est").reset(); q("lvl-from").value=2; q("lvl-to").value=3; q("deptsize").value="m"; q("policy-n").value=3; q("pax").value=1; q("nights").value=1; q("skills").value=0; q("spec").value=""; q("task-other").value=""; render(); };
 preset(); render();
 window.__maiEstimate=function(st){return estimate(st);}; window.__maiCourse=function(st){return course(st);};
 })();
