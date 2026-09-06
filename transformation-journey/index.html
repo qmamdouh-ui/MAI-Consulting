@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Use Cases: The Seven-Level Journey | M.A.I. Consulting</title>
+
+<link rel="canonical" href="https://mai4consulting.com/transformation-journey/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="M.A.I. Consulting"/>
+<meta property="og:title" content="Use Cases: The Seven-Level Journey | M.A.I. Consulting"/>
+<meta property="og:description" content="Twelve roles, seven capability levels. A real working week in each department as training moves a person from occasional use to agentic work."/>
+<meta property="og:url" content="https://mai4consulting.com/transformation-journey/"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/site.css"/>
+<style>
+/* page-local tokens layered on the shared design system */
+:root{
+  --gold-dim:rgba(201,168,76,.15);
+  --blue-light:rgba(0,62,138,.09);
+  --pain:#a8271a;--pain-bg:rgba(168,39,26,.07);
+  --train:#003E8A;--train-bg:rgba(0,62,138,.07);
+  --win:#1a7a4a;--win-bg:rgba(26,122,74,.08);
+}
+.material-symbols-outlined{font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;display:inline-block;vertical-align:middle;line-height:1;}
+
+.hero-stats{display:flex;gap:2.4rem;flex-wrap:wrap;margin-top:2.6rem;position:relative;z-index:1;}
+.hs b{display:block;font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--gold);font-weight:800;line-height:1;}
+.hs span{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:600;}
+
+/* ── LADDER ── */
+.ladder{display:grid;grid-template-columns:repeat(7,1fr);gap:.7rem;margin-top:1.6rem;}
+.lv{background:var(--white);border:1px solid var(--outline);border-radius:10px;padding:1rem .85rem .9rem;position:relative;transition:transform .25s,box-shadow .25s,border-color .25s;cursor:pointer;display:flex;flex-direction:column;text-align:left;}
+.lv:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,62,138,.09);border-color:rgba(0,62,138,.32);}
+.lv-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:var(--blue);line-height:1;opacity:.16;position:absolute;top:.55rem;right:.75rem;}
+.lv-name{font-size:.86rem;font-weight:800;color:var(--txt);margin:.3rem 0 .25rem;}
+.lv-who{font-size:.74rem;color:var(--charcoal);line-height:1.5;flex:1;}
+.lv-meta{margin-top:.6rem;font-size:.68rem;font-weight:700;color:var(--blue);letter-spacing:.02em;}
+.lv-meta span{color:var(--muted);font-weight:500;}
+.lv-bar{height:4px;border-radius:2px;background:linear-gradient(90deg,var(--blue),var(--gold));margin-top:.6rem;}
+@media(max-width:1000px){.ladder{grid-template-columns:repeat(4,1fr);}}
+@media(max-width:640px){.ladder{grid-template-columns:repeat(2,1fr);}}
+
+/* ── JOURNEY ── */
+.journey{display:grid;grid-template-columns:390px 1fr;gap:1.8rem;align-items:start;margin-top:1.6rem;}
+@media(max-width:980px){.journey{grid-template-columns:1fr;}}
+
+.picker{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem;}
+.pchip{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .8rem;border-radius:100px;border:1px solid var(--outline);background:var(--white);font-size:.78rem;font-weight:600;color:var(--charcoal);cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;}
+.pchip .material-symbols-outlined{font-size:16px;color:var(--blue);}
+.pchip:hover{border-color:var(--blue);color:var(--blue);}
+.pchip.active{background:var(--blue);color:var(--white);border-color:var(--blue);}
+.pchip.active .material-symbols-outlined{color:var(--gold);}
+
+/* building */
+.bwrap{position:sticky;top:5rem;}
+@media(max-width:980px){.bwrap{position:static;}}
+.building{background:linear-gradient(180deg,#001a3d 0%,#00122e 100%);border-radius:14px 14px 6px 6px;padding-bottom:.8rem;box-shadow:0 24px 60px rgba(0,31,77,.3);border:1px solid rgba(255,255,255,.06);position:relative;overflow:hidden;}
+.roof{background:linear-gradient(90deg,var(--blue-mid),var(--blue));padding:.85rem 1.1rem .75rem;border-bottom:1px solid rgba(201,168,76,.35);display:flex;justify-content:space-between;align-items:center;}
+.roof-sign{font-family:'Playfair Display',serif;font-weight:800;color:var(--white);font-size:.95rem;letter-spacing:.02em;}
+.roof-sign i{width:7px;height:7px;background:var(--gold);border-radius:50%;display:inline-block;margin-right:.5rem;box-shadow:0 0 8px var(--gold);}
+.roof-sub{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:600;}
+.floors{display:flex;flex-direction:column;position:relative;}
+.floor{display:grid;grid-template-columns:78px 1fr 34px;align-items:center;gap:.6rem;padding:.5rem .75rem;border-bottom:1px solid rgba(255,255,255,.05);cursor:pointer;transition:background .25s;position:relative;}
+.floor:hover{background:rgba(255,255,255,.04);}
+.floor.active{background:rgba(201,168,76,.08);}
+.floor.active::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);}
+.fl-label{display:flex;flex-direction:column;}
+.fl-label b{font-size:.6rem;letter-spacing:.1em;color:rgba(255,255,255,.45);font-weight:700;}
+.fl-label span{font-size:.74rem;color:var(--white);font-weight:700;line-height:1.2;}
+.floor.active .fl-label b{color:var(--gold);}
+.offices{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;}
+.win{aspect-ratio:1/1;border-radius:4px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;position:relative;transition:all .3s;cursor:pointer;}
+.win .material-symbols-outlined{font-size:14px;color:rgba(255,255,255,.28);transition:all .3s;}
+.win:hover{background:rgba(255,255,255,.12);}
+.win:hover .material-symbols-outlined{color:rgba(255,255,255,.7);}
+.win.path{border-color:rgba(201,168,76,.3);background:rgba(201,168,76,.05);}
+.win.path .material-symbols-outlined{color:rgba(201,168,76,.55);}
+.win.done{background:rgba(201,168,76,.15);border-color:rgba(201,168,76,.45);}
+.win.done .material-symbols-outlined{color:var(--gold);}
+.win.lit{background:var(--gold);border-color:var(--gold-light);box-shadow:0 0 0 3px rgba(201,168,76,.25),0 0 20px rgba(201,168,76,.5);transform:scale(1.12);z-index:2;}
+.win.lit .material-symbols-outlined{color:#001830;font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 24;}
+.win .tip{position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#fff;color:var(--txt);font-size:.62rem;font-weight:600;padding:3px 7px;border-radius:5px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;z-index:5;box-shadow:0 4px 14px rgba(0,0,0,.2);}
+.win:hover .tip{opacity:1;}
+.shaft{height:100%;min-height:46px;background:rgba(0,0,0,.35);border-radius:4px;border:1px solid rgba(255,255,255,.06);}
+.car{position:absolute;height:34px;border-radius:3px;background:linear-gradient(180deg,var(--gold-light),var(--gold));box-shadow:0 0 14px rgba(201,168,76,.55);display:flex;align-items:center;justify-content:center;transition:top .55s cubic-bezier(.4,0,.2,1);}
+.car .material-symbols-outlined{font-size:15px;color:#001830;font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 24;}
+.lobby{padding:.6rem .9rem 0;display:flex;justify-content:space-between;align-items:center;font-size:.6rem;color:rgba(255,255,255,.45);letter-spacing:.08em;text-transform:uppercase;font-weight:600;}
+.legend{display:flex;gap:.6rem;align-items:center;text-transform:none;letter-spacing:0;}
+.lg{display:inline-flex;align-items:center;gap:4px;}
+.lg i{width:9px;height:9px;border-radius:2px;display:inline-block;font-style:normal;}
+.lg-lit i{background:var(--gold);box-shadow:0 0 6px var(--gold);}
+.lg-done i{background:rgba(201,168,76,.4);border:1px solid rgba(201,168,76,.6);}
+.lg-path i{background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.4);}
+.bcap{font-size:.74rem;color:var(--charcoal);line-height:1.6;margin-top:.9rem;text-align:center;}
+.bcap b{color:var(--blue);}
+
+/* story */
+.story{background:var(--white);border:1px solid var(--outline);border-radius:14px;overflow:hidden;box-shadow:0 10px 36px rgba(0,62,138,.06);}
+.story-head{background:linear-gradient(140deg,var(--blue-mid),var(--blue));padding:1.4rem 1.5rem;color:var(--white);display:flex;gap:1.1rem;align-items:center;flex-wrap:wrap;}
+.avatar{width:56px;height:56px;border-radius:50%;background:var(--gold);color:#001830;font-family:'Playfair Display',serif;font-weight:800;font-size:1.2rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 0 4px rgba(201,168,76,.25);}
+.who{flex:1;min-width:190px;}
+.who h3{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:800;line-height:1.15;color:#fff;}
+.who p{font-size:.78rem;color:rgba(255,255,255,.72);margin-top:.2rem;line-height:1.5;}
+.lvl-badge{background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.45);color:var(--gold);border-radius:10px;padding:.6rem 1rem;text-align:center;min-width:118px;}
+.lvl-badge b{display:block;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85;}
+.lvl-badge span{display:block;font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:800;color:var(--white);line-height:1.15;margin-top:.15rem;}
+.week{background:var(--surface);border-bottom:1px solid var(--outline);padding:.85rem 1.5rem;font-size:.8rem;color:var(--charcoal);line-height:1.6;display:flex;gap:.6rem;align-items:flex-start;}
+.week .material-symbols-outlined{font-size:18px;color:var(--blue);flex-shrink:0;margin-top:1px;}
+.week b{color:var(--txt);}
+
+.stepper{display:flex;align-items:center;padding:1.1rem 1.5rem .3rem;}
+.step{flex:1;display:flex;flex-direction:column;align-items:center;position:relative;cursor:pointer;}
+.step::before{content:'';position:absolute;top:13px;left:50%;right:-50%;height:2px;background:var(--outline);z-index:0;}
+.step:last-child::before{display:none;}
+.step.done::before{background:var(--gold);}
+.step i{width:26px;height:26px;border-radius:50%;border:2px solid var(--outline);background:var(--white);font-style:normal;font-size:.68rem;font-weight:800;color:var(--charcoal);display:flex;align-items:center;justify-content:center;z-index:1;transition:all .3s;}
+.step.done i{background:var(--gold);border-color:var(--gold);color:#001830;}
+.step.cur i{background:var(--blue);border-color:var(--blue);color:var(--white);transform:scale(1.2);box-shadow:0 0 0 4px rgba(0,62,138,.15);}
+.step span{font-size:.58rem;font-weight:600;color:var(--charcoal);margin-top:.4rem;text-align:center;line-height:1.2;}
+.step.cur span{color:var(--blue);font-weight:800;}
+@media(max-width:520px){.step span{display:none;}}
+
+.blocks{padding:1.1rem 1.5rem .3rem;display:grid;gap:.75rem;}
+.blk{border-radius:10px;padding:.9rem 1.1rem .9rem 3rem;position:relative;line-height:1.62;font-size:.83rem;color:var(--txt);}
+.blk .material-symbols-outlined{position:absolute;left:.9rem;top:.9rem;font-size:20px;}
+.blk h4{font-size:.62rem;letter-spacing:.11em;text-transform:uppercase;font-weight:800;margin-bottom:.3rem;}
+.blk-pain{background:var(--pain-bg);border:1px solid rgba(168,39,26,.15);}
+.blk-pain h4,.blk-pain .material-symbols-outlined{color:var(--pain);}
+.blk-train{background:var(--train-bg);border:1px solid rgba(0,62,138,.15);}
+.blk-train h4,.blk-train .material-symbols-outlined{color:var(--train);}
+.blk-win{background:var(--win-bg);border:1px solid rgba(26,122,74,.18);}
+.blk-win h4,.blk-win .material-symbols-outlined{color:var(--win);}
+.mod-tag{display:inline-block;font-size:.68rem;font-weight:700;color:var(--blue);background:var(--white);border:1px solid rgba(0,62,138,.2);border-radius:6px;padding:.1rem .5rem;margin-bottom:.4rem;}
+.tools{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.5rem;}
+.tools span{font-size:.68rem;font-weight:600;background:var(--white);border:1px solid var(--outline);color:var(--blue);border-radius:6px;padding:.15rem .5rem;display:inline-flex;align-items:center;gap:.25rem;}
+.tools span .material-symbols-outlined{position:static;font-size:13px;color:var(--gold);}
+
+.impact{margin:.4rem 1.5rem 0;display:grid;grid-template-columns:1fr 1.4fr;gap:.8rem;}
+@media(max-width:640px){.impact{grid-template-columns:1fr;}}
+.kpi{background:linear-gradient(140deg,#001830,var(--blue-mid));border-radius:10px;padding:1.1rem 1.15rem;color:var(--white);display:flex;flex-direction:column;justify-content:center;}
+.k-label{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:700;line-height:1.4;}
+.k-vals{display:flex;align-items:baseline;gap:.6rem;margin-top:.5rem;flex-wrap:wrap;}
+.k-from{font-size:1.1rem;color:rgba(255,255,255,.45);text-decoration:line-through;font-weight:600;}
+.k-to{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:800;color:var(--gold);line-height:1;}
+.k-unit{font-size:.72rem;color:rgba(255,255,255,.65);}
+.k-delta{margin-top:.5rem;font-size:.72rem;font-weight:700;color:#8fe0b0;display:inline-flex;align-items:center;gap:.25rem;}
+.k-delta .material-symbols-outlined{font-size:15px;}
+.k-delta.neutral{color:rgba(255,255,255,.55);}
+.chart{background:var(--surface);border:1px solid var(--outline);border-radius:10px;padding:.85rem 1rem .6rem;}
+.chart-title{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--charcoal);margin-bottom:.5rem;display:flex;justify-content:space-between;}
+.chart-title em{font-style:normal;color:var(--blue);}
+.bars{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;height:118px;padding-top:16px;align-items:end;}
+.bar{position:relative;display:flex;flex-direction:column;justify-content:flex-end;height:100%;cursor:pointer;}
+.bar i{display:block;border-radius:4px 4px 0 0;background:rgba(0,62,138,.22);transition:height .5s cubic-bezier(.4,0,.2,1),background .3s;min-height:4px;}
+.bar.done i{background:var(--blue);}
+.bar.cur i{background:var(--gold);box-shadow:0 0 12px rgba(201,168,76,.5);}
+.bar b{position:absolute;top:-15px;left:0;right:0;text-align:center;font-size:.62rem;font-weight:700;color:var(--txt);opacity:0;transition:opacity .3s;}
+.bar.cur b,.bar:hover b{opacity:1;}
+.bar-x{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:5px;}
+.bar-x span{text-align:center;font-size:.58rem;font-weight:700;color:var(--charcoal);}
+.bar-x span.cur{color:var(--blue);}
+
+.story-nav{display:flex;justify-content:space-between;align-items:center;gap:.6rem;padding:1.1rem 1.5rem 1.4rem;flex-wrap:wrap;}
+.nbtn{display:inline-flex;align-items:center;gap:.35rem;padding:.65rem 1.05rem;border-radius:8px;font-size:.8rem;font-weight:700;cursor:pointer;border:1px solid var(--outline);background:var(--white);color:var(--blue);transition:all .2s;font-family:'Inter',sans-serif;}
+.nbtn:hover{border-color:var(--blue);background:var(--blue-wash);}
+.nbtn.primary{background:var(--blue);color:var(--white);border-color:var(--blue);}
+.nbtn.primary:hover{background:var(--blue-mid);}
+.nbtn:disabled{opacity:.35;cursor:not-allowed;}
+.nbtn .material-symbols-outlined{font-size:17px;}
+.autoplay{font-size:.76rem;color:var(--charcoal);display:inline-flex;align-items:center;gap:.35rem;cursor:pointer;user-select:none;}
+.autoplay input{accent-color:var(--blue);}
+
+.floorview{margin-top:1.6rem;}
+.fv-head{display:flex;justify-content:space-between;align-items:baseline;gap:.8rem;margin-bottom:.8rem;flex-wrap:wrap;}
+.fv-head h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--txt);}
+.fv-head span{font-size:.76rem;color:var(--charcoal);}
+.fv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:.6rem;}
+.fv{background:var(--white);border:1px solid var(--outline);border-radius:10px;padding:.8rem .9rem;cursor:pointer;transition:all .25s;display:flex;gap:.6rem;align-items:flex-start;}
+.fv:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,62,138,.08);border-color:rgba(0,62,138,.3);}
+.fv.active{border-color:var(--gold);background:var(--gold-dim);}
+.fv .material-symbols-outlined{font-size:19px;color:var(--blue);flex-shrink:0;margin-top:2px;}
+.fv b{display:block;font-size:.78rem;color:var(--txt);}
+.fv small{display:block;font-size:.68rem;color:var(--charcoal);margin-bottom:.25rem;}
+.fv p{font-size:.72rem;line-height:1.5;color:var(--txt);}
+
+.note-src{margin-top:1.6rem;font-size:.74rem;color:var(--muted);line-height:1.6;border-top:1px solid var(--outline);padding-top:.8rem;}
+.note-src a{color:var(--blue);}
+
+/* transitions */
+.trans{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin-top:1.6rem;}
+@media(max-width:900px){.trans{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.trans{grid-template-columns:1fr;}}
+.tr{background:var(--white);border:1px solid var(--outline);border-radius:12px;padding:1.2rem;transition:transform .25s,box-shadow .25s;}
+.tr:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,62,138,.08);}
+.tr-lv{display:flex;align-items:center;gap:.4rem;font-size:.66rem;font-weight:800;color:var(--blue);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem;}
+.tr-lv .material-symbols-outlined{font-size:15px;color:var(--gold);}
+.tr h4{font-size:.95rem;font-weight:800;color:var(--txt);margin-bottom:.4rem;line-height:1.3;}
+.tr p{font-size:.8rem;line-height:1.6;color:var(--charcoal);}
+.tr-days{display:inline-flex;gap:.5rem;margin:.7rem 0 0;font-size:.7rem;font-weight:700;color:var(--blue-dark);}
+.tr-days span{background:var(--blue-wash);border-radius:100px;padding:.15rem .55rem;}
+.tr .shift{margin-top:.7rem;padding-top:.6rem;border-top:1px solid var(--outline);font-size:.78rem;color:var(--txt);}
+.tr .shift b{color:var(--win);}
+
+.rev{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;}
+.rev.in{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<!-- ── GLOBAL TOP BAR ── -->
+<div class="mai-topbar">
+  <div class="mai-topbar-inner">
+    <a class="mai-brand" href="../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
+    <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="mai-links" id="mai-links">
+      <li><a href="../services/">Services</a></li>
+      <li><a href="../estimate/">Estimate</a></li>
+      <li><a href="../for-funders/">For Investors</a></li>
+      <li><a href="../compare/">Compare</a></li>
+      <li><a href="../knowledge/">Knowledge</a></li>
+      <li><a href="../transformation-journey/" aria-current="page">Use Cases</a></li>
+      <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
+      <li><a class="mai-cta" href="../contact-us/">Book a call</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<section class="hero" id="top">
+  <div class="inner">
+    <div class="eyebrow"><i></i>Use cases across twelve roles</div>
+    <h1>Twelve roles, seven levels, one <em>documented</em> climb.</h1>
+    <p class="hero-sub">
+      Every office in the building holds one professional, from HR to procurement. Choose a department and ride the
+      levels: what the work looked like, the training that moved them up, the Claude capability it turned on, and the
+      result. The seven levels are the same ones our training is scoped against.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn-gold" href="#building">Enter the building</a>
+      <a class="btn btn-ghost" href="#levels">See the seven levels</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hs"><b>7</b><span>Levels</span></div>
+      <div class="hs"><b>12</b><span>Roles</span></div>
+      <div class="hs"><b>84</b><span>Working weeks</span></div>
+      <div class="hs"><b>4D</b><span>Fluency framework</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LADDER ── -->
+<section class="band" id="levels">
+  <div class="inner">
+    <div class="kicker">The framework</div>
+    <h2>The seven capability levels.</h2>
+    <p class="lede">
+      Levels 1 and 2 are where people begin, not destinations. Level 3, structured prompting with verification, is the
+      floor we train to. Each level turns on a specific Claude capability. Click one to open it in the building below.
+      The full ladder, with days and time saved, lives on the <a href="../services/training/#levels">training page</a>.
+    </p>
+    <div class="ladder" id="ladder"></div>
+  </div>
+</section>
+
+<!-- ── BUILDING ── -->
+<section class="band band-alt" id="building">
+  <div class="inner">
+    <div class="kicker">The M.A.I. Tower</div>
+    <h2>Pick a person. Ride the lift. Watch the work change.</h2>
+    <p class="lede">Choose a department, then move floor by floor. The panel shows what hurt at that level, the training taken, and what became possible after it.</p>
+
+    <div class="picker" id="picker"></div>
+
+    <div class="journey">
+      <div class="bwrap rev">
+        <div class="building">
+          <div class="roof">
+            <div class="roof-sign"><i></i>M.A.I. TOWER</div>
+            <div class="roof-sub">Seven levels of fluency</div>
+          </div>
+          <div class="floors" id="floors"></div>
+          <div class="lobby">
+            <span>Lobby</span>
+            <div class="legend">
+              <span class="lg lg-lit"><i></i>Now</span>
+              <span class="lg lg-done"><i></i>Climbed</span>
+              <span class="lg lg-path"><i></i>Ahead</span>
+            </div>
+          </div>
+        </div>
+        <p class="bcap">Click any <b>floor</b> to change level, or any <b>window</b> to switch to that person on that floor.</p>
+      </div>
+
+      <div>
+        <div class="story rev" id="story">
+          <div class="story-head">
+            <div class="avatar" id="s-avatar">RH</div>
+            <div class="who"><h3 id="s-name"></h3><p id="s-role"></p></div>
+            <div class="lvl-badge"><b>Level <span id="s-lvn"></span></b><span id="s-lvname"></span></div>
+          </div>
+          <div class="week"><span class="material-symbols-outlined">calendar_month</span><div><b>A typical week:</b> <span id="s-week"></span></div></div>
+          <div class="stepper" id="stepper"></div>
+          <div class="blocks">
+            <div class="blk blk-pain"><span class="material-symbols-outlined">report</span><h4 id="h-pain">Pain point</h4><div id="s-pain"></div></div>
+            <div class="blk blk-train"><span class="material-symbols-outlined">school</span><h4 id="h-train">Training received</h4><div id="s-train"></div></div>
+            <div class="blk blk-win"><span class="material-symbols-outlined">trending_up</span><h4 id="h-win">What changed</h4><div id="s-win"></div></div>
+          </div>
+          <div class="impact">
+            <div class="kpi">
+              <div class="k-label" id="k-label"></div>
+              <div class="k-vals"><span class="k-from" id="k-from"></span><span class="k-to" id="k-to"></span><span class="k-unit" id="k-unit"></span></div>
+              <div class="k-delta" id="k-delta"></div>
+            </div>
+            <div class="chart">
+              <div class="chart-title"><span>Across the seven levels</span><em id="c-total"></em></div>
+              <div class="bars" id="bars"></div>
+              <div class="bar-x" id="barx"></div>
+            </div>
+          </div>
+          <div class="story-nav">
+            <button class="nbtn" id="prev"><span class="material-symbols-outlined">arrow_downward</span>Previous level</button>
+            <label class="autoplay"><input type="checkbox" id="auto"/> Auto-play</label>
+            <button class="nbtn primary" id="next">Move up <span class="material-symbols-outlined">arrow_upward</span></button>
+          </div>
+        </div>
+
+        <div class="floorview rev">
+          <div class="fv-head">
+            <h3>Everyone on level <span id="fv-n"></span>: <span id="fv-name"></span></h3>
+            <span>What each role can do here. Click to switch person.</span>
+          </div>
+          <div class="fv-grid" id="fvgrid"></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="note-src">
+      The twelve professionals are composite personas from M.A.I. training cohorts; names, organisations and figures are
+      illustrative and describe realistic targets for each level rather than audited results. The levels and the
+      four-part method follow the AI Fluency framework published by Anthropic with Rick Dakan and Joseph Feller
+      (<a href="https://www.anthropic.com/ai-fluency" target="_blank" rel="noopener">source</a>), and match the
+      capability ladder on our <a href="../services/training/#levels">training page</a>. Days to reach each level and the
+      time saved on scoped tasks come from that page and its cited field studies.
+    </p>
+  </div>
+</section>
+
+<!-- ── TRANSITIONS ── -->
+<section class="band">
+  <div class="inner">
+    <div class="kicker">What moves people up</div>
+    <h2>The training between the levels.</h2>
+    <p class="lede">Reaching level 3 is the shortest engagement we take, from either starting point. Above it, each step turns on a Claude capability and adds delivery days. Time saved is on the tasks in scope, not a whole job.</p>
+    <div class="trans" id="trans"></div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="band band-dark" style="text-align:center">
+  <div class="inner">
+    <h2 style="margin:0 auto 1rem">Which floor is your team on?</h2>
+    <p class="lede" style="margin:0 auto 2rem">Take the free readiness check to find your starting level, or price the climb for your organisation.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a class="btn btn-gold" href="../explore-your-ai-readiness/">Find your level</a>
+      <a class="btn btn-ghost" href="../estimate/?preset=training">Price the training</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="mai-footer">
+  <div class="mai-footer-inner">
+    <div>
+      <div class="mai-footer-logo">M.A.I. Consulting</div>
+      <div class="mai-footer-tag">Strategy &middot; AI &middot; Impact</div>
+    </div>
+    <div class="mai-footer-right">
+      <a href="../">mai4consulting.com</a>
+      <div class="mai-footer-copy">&copy; 2026 M.A.I. Consulting. All rights reserved. Geneva, Switzerland.</div>
+    </div>
+  </div>
+  <nav class="footer-nav" aria-label="Site">
+    <ul>
+      <li><a href="../">Home</a></li>
+      <li><a href="../services/">Services</a></li>
+      <li><a href="../estimate/">Price estimate</a></li>
+      <li><a href="../for-funders/">For Investors</a></li>
+      <li><a href="../about/">About</a></li>
+      <li><a href="../compare/">Compare the market</a></li>
+      <li><a href="../knowledge/">Knowledge</a></li>
+      <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
+      <li><a href="../our-clients/">Who We Work With</a></li>
+      <li><a href="../contact-us/">Contact</a></li>
+      <li><span class="fn-group">Read</span></li>
+      <li><span class="footer-nav-current" aria-current="page">Use Cases: the journey</span></li>
+      <li><a href="../playbook/">Sample Playbook</a></li>
+      <li><a href="../eu-ai-act-article-4/">EU AI Act Article 4</a></li>
+      <li><a href="../use-cases/">AI Use Cases</a></li>
+      <li><a href="../claude-in-chrome/">Claude in Chrome</a></li>
+      <li><a href="../save-claude-tokens/">Claude for Business</a></li>
+      <li><a href="../extensive-ai-readiness-analysis/">Extended Assessment</a></li>
+      <li><span class="fn-group">Legal</span></li>
+      <li><a href="../privacy/">Privacy</a></li>
+    </ul>
+  </nav>
+</footer>
+
+<script>
+/* ================= LEVELS (aligned to services/training/#levels) ================= */
+const LEVELS=[
+ {n:1,name:"Not started",who:"Has not used an assistant for work.",days:"",save:"",tools:[]},
+ {n:2,name:"Occasional",who:"Asks for a summary, a search or a first draft, with no shared method.",days:"",save:"",tools:["Claude.ai chat"]},
+ {n:3,name:"Structured",who:"Writes a full brief and grounds it in the real document, then runs the four checks before anything is sent.",days:"3 days",save:"20 to 35%",tools:["Full brief","Source grounding","The four checks"]},
+ {n:4,name:"Set up",who:"Loads context once into Projects, custom instructions and Skills, so nothing is briefed twice.",days:"5 days",save:"30 to 45%",tools:["Projects","Custom instructions","Skills"]},
+ {n:5,name:"Delegating",who:"Hands whole multi-step jobs to agents and runs several workstreams in parallel.",days:"6.5 days",save:"40 to 55%",tools:["Agents","Cowork","Parallel workstreams"]},
+ {n:6,name:"Building",who:"Builds agents and Skills for colleagues and reviews their output, so the method survives turnover.",days:"8 days",save:"45 to 60%",tools:["Shared Skills","Connectors","Claude for Team"]},
+ {n:7,name:"At the terminal",who:"Runs agentic work from the terminal with Claude Code, on folders of files, without writing code.",days:"10 days",save:"task dependent",tools:["Claude Code","Batch across files","Repeatable pipelines"]}
+];
+const STEPS=[
+ {from:1,to:2,name:"First exposure",days:"",save:"",teaches:"Opening Claude and trying a summary, a search or a first draft. There is no shared method yet, so results vary by person and by day, and the data rules have not been learned.",shift:"From never using an assistant to trying it, ad hoc."},
+ {from:2,to:3,name:"The floor: structured prompting and verification",days:"3 delivery days",save:"20 to 35%",teaches:"The general module on the 4D framework, then briefing a task the way you would brief a colleague (role, audience, constraints, format, sources), giving the real document rather than describing it, and the four checks before anything leaves the team: figures, facts, language, defensibility. The data red lines are set here.",shift:"From unpredictable output to reviewed work you can defend."},
+ {from:3,to:4,name:"Projects, custom instructions and Skills",days:"5 delivery days",save:"30 to 45%",teaches:"Projects hold the reference documents, custom instructions hold the standing rules, and Skills hold the house method, so the quality of a task stops depending on who asked.",shift:"From re-briefing every time to set-ups the whole team reuses."},
+ {from:4,to:5,name:"Delegating to agents",days:"6.5 delivery days",save:"40 to 55%",teaches:"Handing a whole multi-step job to an agent that carries it from brief to draft while the person supervises, and running several workstreams at once.",shift:"From doing each step to supervising work that runs in parallel."},
+ {from:5,to:6,name:"Building for colleagues",days:"8 delivery days",save:"45 to 60%",teaches:"Designing agents and Skills for the rest of the department, connecting the sources, and reviewing colleagues' AI-assisted output against a rubric.",shift:"From personal fluency to a capability the team keeps."},
+ {from:6,to:7,name:"Claude Code at the terminal",days:"10 delivery days",save:"task dependent",teaches:"Running agentic work from the terminal with Claude Code, on folders of files rather than one chat: batch document work, the same review across a year of reports, a repeatable pipeline. Worth it for a few people, transformative for them.",shift:"From one conversation to work no chat window can hold."}
+];
+const P=[
+{id:"hr",dept:"Human Resources",icon:"groups",name:"Rania Haddad",init:"RH",role:"HR Business Partner",org:"International NGO, Amman, 240 staff",
+ week:"three open vacancies, two new hires to onboard, one grievance case, the monthly HR dashboard for the country director, and a remote-work policy update.",
+ metric:{label:"Days from vacancy approval to shortlist",unit:"days",better:"lower",values:[18,16,10,7,5,4,3]},
+ L:[
+ {pain:"Rania has never used an assistant for HR work. Shortlisting 60 CVs is three days of reading, and job descriptions are written from a blank page each time.",train:"",win:"Baseline. Eighteen days from approval to a usable shortlist."},
+ {pain:"She occasionally asks Claude to 'write a job ad for a finance officer', but the ad could be for any organisation, so she rewrites it. Once she pastes a staff grievance in to get a summary, not knowing that is a data problem.",train:"",win:"Barely different from the baseline: the odd draft saved, but no method and a data habit that has to be unlearned. Sixteen days."},
+ {pain:"Every vacancy still starts from scratch and donor compliance wording is looked up again each time.",train:"The floor. Rania learns to brief a JD the way she would brief a colleague: the NGO context, the grade, the donor rules, the tone, the format, with the old JD and salary scale attached. She learns the four checks and the hard data rule: no personal data in a personal account, ever.",win:"A JD that took an afternoon takes forty minutes and matches house style on the first pass. She stops pasting case notes into chat. Shortlisting for 60 CVs drops to ten days because the scoring grid is applied consistently with a reason quoted against every score."},
+ {pain:"Each vacancy means re-uploading the grid, the templates and the compliance notes, and two officers get different results from the same prompts.",train:"She builds a Recruitment Project: knowledge holds the JD templates, grading grid, interview bank and donor HR rules; custom instructions hold the tone and the anonymisation rule; a Skill runs CV screening with an evidence quote per score.",win:"Any vacancy starts from the standard. Interview packs generate per candidate in minutes and onboarding packs take twenty minutes. Seven days to shortlist, identical across both officers."},
+ {pain:"The steps are standard but she still runs each one by hand every week, and the monthly dashboard eats a day and a half.",train:"She delegates the routine to an agent: it reads the applicant-tracking export, screens new applications with the Skill, drafts the shortlist memo and files it for her review. The monthly dashboard is rebuilt from the HRIS export as a live artifact she refreshes in one click.",win:"Five days to shortlist, with Rania reviewing rather than producing. She now supports recruitment for two country offices with the same headcount."},
+ {pain:"The system works because Rania built it. If she leaves, it leaves with her, and hiring managers still email her for help.",train:"On Claude for Team she turns her set-ups into shared Skills for HR staff in three countries, connects the policy folder so Claude reads it directly, and reviews colleagues' AI-assisted shortlists against a checklist before a human signs off.",win:"Four days to shortlist as the shared norm. An internal audit finds zero unexplained scores and accepts the disclosure and sign-off log."},
+ {pain:"An annual exercise reclassifies hundreds of historical role descriptions against a new grading framework, far too much for any single chat.",train:"With M.A.I., Rania runs it from the terminal with Claude Code: the framework and rules live in a project file, and Claude works across the whole folder of legacy JDs at once, producing a reviewed mapping and a change log.",win:"Three days to shortlist as the organisational norm, time-to-hire down forty percent, and the reclassification that would have taken weeks is a supervised overnight run."}
+]},
+{id:"fin",dept:"Finance",icon:"account_balance",name:"Omar Saleh",init:"OS",role:"Finance Manager",org:"Food manufacturer, three plants, 600 staff",
+ week:"month-end close, variance commentary for the board pack, the 13-week cash-flow forecast, a bank covenant report and the supplier payment run.",
+ metric:{label:"Working days to close the month",unit:"days",better:"lower",values:[9,8,7,5,4,3,2]},
+ L:[
+ {pain:"Omar does not use an assistant. Variance commentary for 22 cost centres is written on day eight from memory and a calculator.",train:"",win:"Baseline. Nine working days to close."},
+ {pain:"He tried pasting a P&L in for a quick total and got a wrong number, so he uses Claude only to explain the odd term and distrusts it with figures.",train:"",win:"Little change: eight days. The distrust is founded, because he is feeding it text with no method and no verification."},
+ {pain:"Commentary for 22 cost centres is a full day of writing and the board still asks why on half the lines.",train:"The floor. Omar learns to upload the trial balance rather than paste it, specify the format (cost centre, variance, driver, action) and make Claude show its calculations so every figure is traceable. The four checks catch the arithmetic he used to distrust.",win:"Commentary drafted in two hours, every number traceable to a cell. Seven days to close, because writing no longer waits for the last reconciliation."},
+ {pain:"Each close he rebuilds the same context: chart of accounts, materiality thresholds, house style, last month's commentary.",train:"A Month-end close Project holds the chart of accounts, the close checklist, prior commentaries and the board template, with an instruction to always reconcile to the trial balance and a Variance commentary Skill carrying the review rubric.",win:"Five days to close. New plant accountants produce consistent output from day one because the Project carries the standard, not Omar's memory."},
+ {pain:"He still runs each close step by hand, and the 13-week forecast is refreshed manually every Friday.",train:"He delegates to an agent that, on day two of close, pulls the ERP exports, reconciles intercompany balances, drafts commentary and posts exceptions to the finance channel, and refreshes the cash forecast weekly.",win:"Three days to close. Forecast error falls from twelve percent to five, and Omar reviews the exception list instead of building it."},
+ {pain:"Finance is fluent; the rest of the company emails spreadsheets and asks the team to run them through the AI.",train:"On Claude for Team, Omar builds shared Projects and a covenant-check Skill for all three plants, connects the SharePoint close folder, and reviews budget holders' AI-drafted variance notes against the rubric.",win:"Two days to close, board pack on day three. Auditors accept the reviewer log without extra sampling."},
+ {pain:"Re-running a consistent margin analysis across three years of monthly management accounts is beyond any single conversation.",train:"With M.A.I., a Claude Code run in the terminal applies the same analysis across the whole archive of monthly files, with the method in a project file.",win:"The board gets a three-year margin trend nobody had time to build before, produced as a supervised batch run rather than a quarter of analyst time."}
+]},
+{id:"mkt",dept:"Marketing",icon:"campaign",name:"Lina Farah",init:"LF",role:"Marketing Lead",org:"B2B payments platform, team of four",
+ week:"a product launch campaign, six LinkedIn posts, a webinar, the monthly performance report, and briefs for two agencies.",
+ metric:{label:"Campaigns shipped per month, same team of four",unit:"campaigns",better:"higher",values:[2,3,4,5,7,9,12]},
+ L:[
+ {pain:"Lina's team writes everything by hand. Two campaigns a month, most of the time spent producing assets rather than deciding what to say.",train:"",win:"Baseline. Two campaigns a month."},
+ {pain:"She asks for 'a LinkedIn post about our new API' now and then, gets something bland, and the team concludes AI copy sounds like AI copy.",train:"",win:"Three campaigns a month, but voice drifts between people and nothing is reliable enough to ship without a full rewrite."},
+ {pain:"Every post starts from a blank page and copy has to be checked against what legal actually allows.",train:"The floor. Lina briefs each piece properly (audience, pain, proof point, call to action, length, banned words) with the brand guide and product one-pager attached, and runs the four checks, including a claims check against the legal note.",win:"Posts that sound like the company, three an hour instead of one per half day, with over-claims caught before they go out. Four campaigns a month."},
+ {pain:"Each launch means re-uploading personas, approved claims and compliance rules; context is lost between weeks.",train:"A Brand and Campaigns Project holds the voice guide, personas, approved-claims list and top posts; Skills draft campaign briefs and posts using approved claims only.",win:"Five campaigns a month. A new hire produces on-brand copy in their first week because the Project carries the brand, not the veterans."},
+ {pain:"The monthly report takes two days of exporting and formatting, and competitor monitoring happens when someone remembers.",train:"An agent builds the weekly performance report from analytics exports with charts and recommendations, and drafts the content queue for Lina's review; a second run tracks competitor pages weekly.",win:"Seven campaigns a month. The team spends Fridays on strategy instead of formatting."},
+ {pain:"Sales enablement and product marketing keep asking Lina's team for the AI setup; the method lives in one team.",train:"On Claude for Team she publishes the campaign Skills, sets a disclosure and image-use policy, and reviews enablement's output so they produce their own assets to the same standard.",win:"Nine campaigns a month, and enablement is self-sufficient. Legal returns fall to zero for two quarters."},
+ {pain:"Retagging and repurposing two years of published content into a new messaging framework is a folder-level job.",train:"With M.A.I., Claude Code runs across the content archive from the terminal, reclassifying and drafting repurposed variants against the new framework.",win:"Twelve campaigns a month with the same four people, and a back catalogue re-based in a supervised run rather than a quarter of manual work."}
+]},
+{id:"it",dept:"IT",icon:"dns",name:"Khaled Mansour",init:"KM",role:"IT Systems Administrator",org:"Government ministry, 1,200 users",
+ week:"helpdesk tickets, the monthly patch cycle, an audit finding on access reviews, a PowerShell migration script, and a procurement spec for 150 laptops.",
+ metric:{label:"Average ticket resolution time",unit:"hours",better:"lower",values:[26,24,18,12,9,6,4]},
+ L:[
+ {pain:"Khaled does not use an assistant. Runbooks live in three people's heads and troubleshooting depends on who is on shift.",train:"",win:"Baseline. 26 hours average resolution."},
+ {pain:"He occasionally pastes an error message in for a generic fix, unsure what the ministry allows him to share, so he stops there.",train:"",win:"24 hours. The odd faster fix, but no method and no knowledge-base articles ever get written."},
+ {pain:"Knowledge-base articles never get written and scripts are trial and error.",train:"The floor. Structured troubleshooting prompts with the environment described and log lines with hostnames redacted; Claude writes and explains PowerShell that Khaled tests in a lab and corrects; each solved ticket becomes a bilingual knowledge-base article. The data rule is set.",win:"18 hours. Thirty articles in the first month take the top repeat tickets off the queue, and the migration script that was late ships in four days."},
+ {pain:"The audit finding on access reviews has been open three months because nobody has time to write the procedure.",train:"An IT Operations Project holds network descriptions, runbooks and the change template; a script-review Skill checks least privilege, dry-run, logging and rollback on everything generated.",win:"12 hours. The finding closes in three weeks with a documented quarterly access-review procedure, and runbooks exist for the twenty most common changes."},
+ {pain:"Morning triage, license reconciliation and script maintenance eat half of every day.",train:"An agent triages new tickets each morning, drafts responses for level-one issues and escalates the rest, and runs the weekly license reconciliation from the vendor portal.",win:"9 hours. Level-one tickets get a drafted response within fifteen minutes, and reconciliation drops from a day to twenty minutes."},
+ {pain:"Other directorates have started using AI with no standard, and IT is expected to fix the consequences.",train:"On the enterprise plan Khaled builds a central Skill library for three directorates, connects the ticketing system read-only for a morning summary, and reviews colleagues' scripts against the checklist.",win:"6 hours. The security officer signs off the review process, and post-mortems are written the same day."},
+ {pain:"Renaming and restructuring hundreds of legacy scripts and configs to a new standard is a whole-repository job.",train:"With M.A.I., Khaled runs Claude Code from the terminal against the automation repository, applying the standard across every file with a CLAUDE.md carrying the rules.",win:"4 hours average resolution, the backlog cleared for the first time in years, and the repo migration done as a reviewed batch."}
+]},
+{id:"leg",dept:"Legal",icon:"gavel",name:"Sara Nasser",init:"SN",role:"Legal Counsel",org:"Telecom operator, legal department of six",
+ week:"four vendor contracts to review, a regulator query, board minutes, a data-protection impact assessment, and a litigation chronology.",
+ metric:{label:"Hours to a first-pass review of a 40-page contract",unit:"hours",better:"lower",values:[6,5.5,4,2.5,2,1.5,1]},
+ L:[
+ {pain:"Sara reviews every contract by hand. A first pass on a 40-page vendor contract is six hours.",train:"",win:"Baseline. Six hours per first pass."},
+ {pain:"She once asked whether a clause was enforceable; Claude answered confidently and cited a case that does not exist, so she tells the team not to use it.",train:"",win:"5.5 hours. The occasional definition looked up, but no trust and no method, because nothing is verified."},
+ {pain:"Review is careful but slow, and the same deviations from the playbook are found again and again.",train:"The floor. Sara learns exactly why the fake citation happened and how to work with it: upload the contract and the playbook, ask for a clause-by-clause deviation table that quotes the text, and verify every reference herself. Claude is for structure and extraction, not authority.",win:"Four hours. The deviation table catches everything she would have found, and the quoting discipline means nothing is taken on trust."},
+ {pain:"Every review starts by re-explaining the playbook, fallback positions and counterparty history.",train:"A Contracts Project holds the playbook, fallback positions, precedents and style; custom instructions carry an explicit no-delegation list (opinions, privilege, settlement) and a Skill runs the first pass with risk ratings and verify flags.",win:"Two and a half hours. Junior counsel produce first passes at the same standard and positions are consistent across the team."},
+ {pain:"Contracts arrive unpredictably and regulator decisions are discovered late.",train:"An agent gives every contract dropped into the intake folder a first-pass memo by nine, checks the regulator's site weekly and drafts a summary, and builds litigation chronologies from the bundle for counsel to verify.",win:"Two hours of lawyer time per contract. Regulator decisions reach the team within a week of publication, not a quarter."},
+ {pain:"The data-protection officer asks what happens to contract data, and there is no record of what was AI-assisted.",train:"On Claude for Team with the retention settings the DPO agreed, Sara publishes the first-pass and board-minutes Skills, connects the SharePoint contract library, and reviews colleagues' output with a disclosure log.",win:"One and a half hours per first pass. The DPO signs off the setup and board minutes go out the same day as the meeting."},
+ {pain:"Auditing a decade of signed contracts for a single risky clause is far beyond one conversation.",train:"With M.A.I., Claude Code runs across the whole contract archive from the terminal, flagging every instance of the clause with its location for counsel to review.",win:"One hour per first pass, and a portfolio-wide clause audit delivered as a supervised run rather than months of paralegal time."}
+]},
+{id:"sal",dept:"Sales",icon:"handshake",name:"Youssef Karam",init:"YK",role:"Regional Sales Manager",org:"Industrial equipment distributor, eight reps",
+ week:"twenty account calls, three proposals, the pipeline review, CRM hygiene, and a public tender due Friday.",
+ metric:{label:"Proposals sent per week, whole team",unit:"proposals",better:"higher",values:[3,4,6,8,10,14,18]},
+ L:[
+ {pain:"Youssef's team builds every proposal from the last one with find-and-replace. Three a week across eight reps.",train:"",win:"Baseline. Three proposals a week."},
+ {pain:"He asked for a cold email once; it read like spam, so he tells the reps AI is for marketing people.",train:"",win:"Four a week. The odd draft, but specs come back slightly wrong and nobody has a method."},
+ {pain:"Proposals are slow because every rep rewrites the same product descriptions and gets the specs wrong.",train:"The floor. Structured briefs with account context and the product sheet attached, and the four checks against the sheet so technical claims are right before anything is sent.",win:"Six proposals a week. Three tailored follow-up emails an hour instead of one, and no spec errors in the first draft."},
+ {pain:"Pricing rules, case studies and battlecards live in five folders and every rep asks Youssef the same questions.",train:"A Sales Playbook Project holds pricing rules, case studies, battlecards and the template, with a Skill that drafts proposals using approved pricing only and a tender-compliance-matrix Skill.",win:"Eight proposals a week. New reps are productive in two weeks instead of two months because the playbook is in the workspace."},
+ {pain:"Monday pipeline prep takes the whole morning and call notes never make it into the CRM.",train:"An agent builds the Monday pipeline deck from the CRM export, turns call notes into CRM updates and drafts follow-ups reps approve from their phones, and pre-fills tender portals from the compliance matrix.",win:"Fourteen proposals a week. CRM data is complete for the first time, so finance finally believes the forecast."},
+ {pain:"Youssef's region outperforms, but three other regions run on instinct and the director wants it replicated.",train:"On Claude for Team he publishes the playbook Skills, connects the CRM, sets a customer-data policy, and reviews the other managers' output as they adopt it.",win:"Eighteen proposals a week, regional revenue up 22 percent, and the playbook is the company's, not one region's."},
+ {pain:"Re-scoring three years of lost deals against a new qualification framework is a dataset-level job.",train:"With M.A.I., Claude Code runs across the exported deal history from the terminal, classifying every lost deal by root cause against the framework.",win:"A win-loss pattern nobody had time to find, produced as a supervised batch, feeding the next year's targeting."}
+]},
+{id:"pm",dept:"Project Management",icon:"assignment",name:"Dana Khoury",init:"DK",role:"Programme Manager",org:"Development agency, three grants, four countries",
+ week:"a donor progress report, the steering committee, the risk register update, two partner MoUs, and a budget reallocation request.",
+ metric:{label:"Days to produce a donor progress report",unit:"days",better:"lower",values:[12,11,8,5,4,3,2]},
+ L:[
+ {pain:"Dana consolidates partner inputs and writes every report by hand. Twelve days per donor report.",train:"",win:"Baseline. Twelve days."},
+ {pain:"She asks Claude to summarise an eighty-page partner report; the summary misses every logframe indicator and she reads the report anyway.",train:"",win:"Eleven days. Occasional help, but without the logframe in front of it the tool misses the point."},
+ {pain:"Partner inputs arrive in different formats and the narrative is rewritten from scratch every quarter.",train:"The floor. Dana uploads the logframe, the previous report and the donor template and briefs a section-by-section draft with an indicator table, then verifies each figure against the source with the four checks.",win:"Eight days. The first draft exists on day three instead of day nine and already follows the donor's structure."},
+ {pain:"Each cycle she re-explains the programme to Claude from the beginning.",train:"A Project per programme holds the logframe, workplan, budget lines, partner contacts and donor rules; Skills draft donor-report sections and steering minutes.",win:"Five days. Country teams contribute into the same workspace, so consolidation stops being Dana's job alone."},
+ {pain:"Monthly consolidation of partner spreadsheets and portal updates are manual chores.",train:"An agent consolidates partner Excel inputs monthly into the indicator tracker and flags anomalies to the field, and drafts a weekly status brief.",win:"Four days. The steering pack is produced in a day and Dana spends the recovered time in the field."},
+ {pain:"Donors ask where figures come from, and the other two programmes still work the old way.",train:"On Claude for Team she publishes the reporting Skills across three programmes, connects the partner submission folders, and reviews country managers' output with a source table on every figure.",win:"Three days. The last two donor reports came back with zero revision requests."},
+ {pain:"Building a four-year cross-country indicator trend from every past report is a folder-level task.",train:"With M.A.I., Claude Code runs across the archive of reports from the terminal, extracting and reconciling indicators into one dataset.",win:"Two days per report, and a portfolio-wide results history produced as a supervised run instead of an evaluation contract."}
+]},
+{id:"me",dept:"Monitoring & Evaluation",icon:"query_stats",name:"Tariq Aziz",init:"TA",role:"Monitoring and Evaluation Officer",org:"UN-funded livelihoods project",
+ week:"cleaning a survey export, the indicator tracking table, an outcome-harvesting exercise, an evaluation terms of reference, and a learning brief.",
+ metric:{label:"Days from data-collection close to analysed indicator table",unit:"days",better:"lower",values:[15,13,9,6,4,3,2]},
+ L:[
+ {pain:"Tariq cleans and analyses every survey by hand. Fifteen days from collection to a usable indicator table.",train:"",win:"Baseline. Fifteen days."},
+ {pain:"He pastes survey rows in and asks Claude to analyse the survey; the output is garbled and he assumes AI is for text, not data.",train:"",win:"Thirteen days. No method, no codebook, and no verification, so nothing is trustworthy."},
+ {pain:"Cleaning is manual and the same errors get through each round.",train:"The floor. Tariq uploads the survey export with its codebook and briefs data-quality checks listed by row ID (duplicates, outliers, skip-logic), verifies each flagged row, and anonymises before uploading as a hard rule.",win:"Nine days. Data-quality issues are found in an hour instead of by the donor, and a coding error that would have overstated an outcome is caught."},
+ {pain:"Each round he rebuilds the same cleaning rules and indicator definitions.",train:"An MEL System Project holds the results framework, indicator reference sheets, cleaning rules and ToR templates; a Skill produces the indicator table from a raw export with a reproducible log.",win:"Six days. The evaluation ToR is drafted in a morning against the organisation's own standard."},
+ {pain:"Each survey round still needs Tariq to run every step by hand.",train:"An agent cleans each new round, regenerates the tables and emails anomalies to the field team, and refreshes the quarterly dashboard from live exports.",win:"Four days. Field teams fix data problems the same week they occur."},
+ {pain:"Partners ask how the analysis was done, and other projects have no shared standard.",train:"On Claude for Team Tariq publishes the MEL Skills, sets a data-protection protocol for AI use, and reviews partner focal points' output with a disclosure footnote on every product.",win:"Three days. The analysis can be re-run by anyone from the log, and the data-protection review passes."},
+ {pain:"Pooling five years of panel data across many survey files for a longitudinal analysis is beyond a chat.",train:"With M.A.I., a Claude Code notebook run from the terminal handles the panel analysis across the whole archive.",win:"Two days per round, and a longitudinal study produced as a supervised run, so evaluations shift from compliance to actual learning."}
+]},
+{id:"risk",dept:"Risk Management",icon:"shield",name:"Hala Barakat",init:"HB",role:"Operational Risk Manager",org:"Mid-size commercial bank",
+ week:"an incident review, the key-risk-indicator dashboard, two RCSA workshops, a gap analysis of a new regulatory circular, and the board risk report.",
+ metric:{label:"Days to complete a regulatory circular gap analysis",unit:"days",better:"lower",values:[10,9,6,4,3,2,1]},
+ L:[
+ {pain:"Hala maps every circular against policy by hand. Ten days per gap analysis.",train:"",win:"Baseline. Ten days."},
+ {pain:"She asks what the key operational risks for a bank are and gets a textbook list, nothing specific to her bank, so she stops.",train:"",win:"Nine days. Generic answers with no method are no use in front of a committee."},
+ {pain:"New circulars arrive faster than the team can map them against policy.",train:"The floor. Hala uploads the circular and the bank's policy and briefs a requirements-versus-policy table with quotes and gaps, then verifies each line and keeps customer data out entirely.",win:"Six days. The gap table is complete on day two and the rest of the time goes into the remediation plan."},
+ {pain:"Severity ratings are inconsistent between analysts and incident trends are invisible in the spreadsheet.",train:"An Operational Risk Project holds the taxonomy, control library, RCSA methodology and board template; Skills run circular gap analyses and incident root-cause notes with a second-opinion pass.",win:"Four days. RCSA workshop packs are drafted in an hour against the same methodology, and a payment-incident trend surfaces two months early."},
+ {pain:"The weekly KRI pack and circular monitoring are manual.",train:"An agent builds the weekly KRI pack from the GRC export, monitors the regulator's website and pre-analyses new circulars, and prepares RCSA packs per department before each workshop.",win:"Two days. New circulars are pre-analysed the day they are published."},
+ {pain:"First-line departments run assessments inconsistently and the bank has no AI usage framework.",train:"On the enterprise plan Hala publishes the risk Skills, connects SharePoint, keeps a model-risk-compliant diligence log, and reviews first-line champions' output.",win:"One day per gap analysis. Internal audit rates the AI-assisted process adequate with no findings."},
+ {pain:"Re-scoring three years of logged incidents against a revised risk taxonomy is a dataset job.",train:"With M.A.I., Claude Code runs across the incident archive from the terminal, reclassifying every record against the new taxonomy.",win:"Overdue remediation actions down sixty percent, and a re-based incident history produced as a supervised batch."}
+]},
+{id:"log",dept:"Logistics",icon:"local_shipping",name:"Mahmoud Odeh",init:"MO",role:"Logistics Coordinator",org:"Humanitarian supply chain, three field hubs",
+ week:"tracking forty shipments in the pipeline, the fleet schedule, customs paperwork, stock reconciliation, and a distribution plan for 12,000 households.",
+ metric:{label:"Hours per week on shipment tracking and reporting",unit:"hours",better:"lower",values:[16,15,11,8,6,4,2]},
+ L:[
+ {pain:"Mahmoud builds plans in a spreadsheet the night before. Sixteen hours a week on tracking and reporting.",train:"",win:"Baseline. Sixteen hours a week."},
+ {pain:"He asks for a distribution plan and gets one that ignores truck capacity, road access and hub stock, so he ignores it back.",train:"",win:"Fifteen hours. Without stating the constraints, the output is unusable and there is no method to state them."},
+ {pain:"Plans take a night to build and a morning to fix when reality differs.",train:"The floor. Mahmoud uploads the stock report, anonymised beneficiary counts by location and the truck capacities, and briefs a schedule with explicit constraints, checking it against the map.",win:"Eleven hours. A workable draft plan in twenty minutes, corrected rather than created, and customs requirements checked against the source."},
+ {pain:"SOPs, HS codes, carrier details and checklists live in different folders and every shipment starts from scratch.",train:"A Supply Chain Operations Project holds SOPs, warehouse layouts, HS codes, carriers and customs checklists; a Customs pack Skill checks consistency across packing list, invoice and waybill.",win:"Eight hours. Customs documents are prepared in fifteen minutes and are consistent with each other, halving customs holds."},
+ {pain:"Daily tracking means reading carrier emails and portals one by one.",train:"An agent builds the daily pipeline update from carrier emails and the ERP export, flags discrepancies, and regenerates the fleet schedule weekly with the latest constraints.",win:"Six hours. Discrepancies are caught the day they occur, not at month-end."},
+ {pain:"Two of the three hubs still work the old way and hub officers have had no training.",train:"On Claude for Team Mahmoud publishes the logistics Skills to all hubs, connects the shipment folder, and reviews hub officers' output.",win:"Four hours. On-time delivery rises across all hubs as the standard spreads."},
+ {pain:"Reconciling a year of delivery records against procurement orders across many files is a folder-level task.",train:"With M.A.I., Claude Code runs across the records archive from the terminal, matching deliveries to orders and flagging gaps.",win:"Two hours a week on tracking, and on-time delivery from 71 to 92 percent, with the annual reconciliation done as a supervised run."}
+]},
+{id:"proc",dept:"Procurement",icon:"shopping_cart",name:"Nour Al-Sayed",init:"NA",role:"Procurement Officer",org:"Public water utility",
+ week:"three tenders including a fourteen-bid technical evaluation, supplier due diligence, two contract renewals, a market survey, and the annual procurement plan.",
+ metric:{label:"Working days for a technical evaluation of 14 bids",unit:"days",better:"lower",values:[20,18,13,9,7,5,3]},
+ L:[
+ {pain:"Nour builds every compliance matrix by hand. A fourteen-bid technical evaluation is twenty days.",train:"",win:"Baseline. Twenty days, with the committee waiting on her matrix."},
+ {pain:"She pastes a tender clause in and asks if it is fair; the answer is generic and unusable in committee.",train:"",win:"Eighteen days. Occasional help, no method, and nothing she can defend."},
+ {pain:"Compliance matrices are built by hand and the same omissions in bids are missed.",train:"The floor. Nour uploads the terms of reference, the evaluation grid and the bid summaries and briefs a compliance matrix with a quote for every entry, verifying each and working only with non-confidential summaries.",win:"Thirteen days. Administrative compliance is established on day two, and supplier due diligence drops from a day to an hour with sources the committee can open."},
+ {pain:"Regulations, standard bidding documents and templates are re-uploaded for every tender.",train:"A Procurement Project holds the regulations, standard bidding documents, methodology and templates; Skills run bid compliance matrices and due-diligence memos.",win:"Nine days. Evaluation reports are drafted in the standard format the day after scoring."},
+ {pain:"Pre-screening new bids and tracking the procurement plan are manual.",train:"An agent pre-screens bids dropped in the tender folder for administrative compliance, runs supplier registry checks, and refreshes the plan tracker weekly.",win:"Seven days. The committee receives a pre-screened, sourced matrix on day one of evaluation."},
+ {pain:"Fifteen evaluators across the utility use fifteen different approaches, and the auditor wants a trail.",train:"On the enterprise plan Nour publishes the procurement Skills, connects SharePoint, keeps an audit trail per tender, and reviews evaluators' output.",win:"Five days. The audit closes with no findings on procurement's AI use."},
+ {pain:"Auditing three years of awarded contracts for compliance with a revised policy is a folder-level job.",train:"With M.A.I., Claude Code runs across the awards archive from the terminal, checking each against the revised policy.",win:"Three days per evaluation, and the end-to-end procurement cycle from 96 days to 45, with the compliance audit as a supervised run."}
+]},
+{id:"mc",dept:"Management Consulting",icon:"insights",name:"Faris Qasem",init:"FQ",role:"Senior Consultant",org:"Boutique strategy firm",
+ week:"a market entry study, a client workshop, a proposal for a new RFP, six expert interviews, and a steering committee deck.",
+ metric:{label:"Consultant-days per market entry study",unit:"days",better:"lower",values:[30,28,21,15,12,9,7]},
+ L:[
+ {pain:"Faris runs every study by hand. Thirty consultant-days, a third of them on synthesis and formatting.",train:"",win:"Baseline. Thirty consultant-days."},
+ {pain:"He asks for a market analysis of a sector and gets confident, unsourced generalities he could never show a client.",train:"",win:"Twenty-eight days. Occasional help, no method, nothing sourced."},
+ {pain:"Research is broad before it is deep, and data-room documents are read one by one.",train:"The floor. Structured research prompts with explicit hypotheses and output structure; he uploads the data-room files and briefs an issue tree and a gap list, then verifies, making Claude separate what the documents say from what it infers.",win:"Twenty-one days. The issue tree is ready for the kick-off instead of the second week, and every figure is sourced."},
+ {pain:"Each engagement starts from a blank workspace despite similar past work.",train:"A Project per engagement carries the firm's frameworks, style and client context; Skills synthesise expert interviews and draft steering-deck storylines.",win:"Fifteen days. Analysts are productive the same day because the context is in the Project."},
+ {pain:"First-draft decks and client-news tracking are manual.",train:"An agent builds the first-draft deck from the synthesised findings and tracks client and sector news weekly.",win:"Twelve days. The firm takes on a second engagement per partner without hiring."},
+ {pain:"The firm's advantage depends on a few fluent people, and juniors learn by watching.",train:"On Claude for Team Faris publishes the engagement Skills, sets a client disclosure policy, connects the knowledge base, and reviews juniors' output, delivering a source register with every deliverable.",win:"Nine consultant-days, twice as many engagements per partner, and the source register has become a selling point."},
+ {pain:"Building a market model across dozens of source spreadsheets is beyond a single conversation.",train:"With M.A.I., Claude Code runs from the terminal to assemble a reusable market-model generator across the source files.",win:"Seven consultant-days per study, and a modelling asset the whole firm reuses, built as a supervised run."}
+]}
+];
+
+/* ================= STATE ================= */
+let cur={p:0,l:3};
+let auto=null;
+const $=id=>document.getElementById(id);
+const fmt=v=>Number.isInteger(v)?v:v.toFixed(1);
+
+/* ================= BUILD STATIC ================= */
+function buildLadder(){
+  $('ladder').innerHTML=LEVELS.map(L=>`
+    <button class="lv" onclick="setLevel(${L.n});document.getElementById('building').scrollIntoView({behavior:'smooth'})">
+      <div class="lv-num">${L.n}</div>
+      <div class="lv-name">${L.name}</div>
+      <div class="lv-who">${L.who}</div>
+      <div class="lv-meta">${L.days?L.days+' &middot; <span>'+L.save+'</span>':'<span>starting point</span>'}</div>
+      <div class="lv-bar" style="opacity:${.35+L.n*.09}"></div>
+    </button>`).join('');
+}
+function buildPicker(){
+  $('picker').innerHTML=P.map((p,i)=>`<button class="pchip" data-p="${i}" onclick="setPersona(${i})"><span class="material-symbols-outlined">${p.icon}</span>${p.dept}</button>`).join('');
+}
+function buildFloors(){
+  $('floors').innerHTML=[...LEVELS].reverse().map(L=>`
+    <div class="floor" data-l="${L.n}" onclick="setLevel(${L.n})">
+      <div class="fl-label"><b>LEVEL ${L.n}</b><span>${L.name}</span></div>
+      <div class="offices">${P.map((p,i)=>`<div class="win" data-p="${i}" data-l="${L.n}" onclick="event.stopPropagation();setPersona(${i});setLevel(${L.n})"><span class="material-symbols-outlined">${p.icon}</span><span class="tip">${p.name.split(' ')[0]}, ${p.dept}</span></div>`).join('')}</div>
+      <div class="shaft"></div>
+    </div>`).join('');
+  const car=document.createElement('div');car.className='car';car.id='car';car.innerHTML='<span class="material-symbols-outlined">person</span>';
+  $('floors').appendChild(car);
+}
+function buildTrans(){
+  $('trans').innerHTML=STEPS.map(M=>`
+    <div class="tr">
+      <div class="tr-lv">Level ${M.from} <span class="material-symbols-outlined">arrow_forward</span> Level ${M.to}</div>
+      <h4>${M.name}</h4>
+      <p>${M.teaches}</p>
+      ${M.days?`<div class="tr-days"><span>${M.days}</span><span>${M.save}</span></div>`:''}
+      <div class="shift"><b>Visible shift:</b> ${M.shift}</div>
+    </div>`).join('');
+}
+
+/* ================= RENDER ================= */
+function render(){
+  const p=P[cur.p],l=cur.l,L=LEVELS[l-1],S=p.L[l-1];
+  document.querySelectorAll('.pchip').forEach(c=>c.classList.toggle('active',+c.dataset.p===cur.p));
+  document.querySelectorAll('.floor').forEach(f=>f.classList.toggle('active',+f.dataset.l===l));
+  document.querySelectorAll('.win').forEach(w=>{
+    const wp=+w.dataset.p,wl=+w.dataset.l;w.classList.remove('lit','done','path');
+    if(wp===cur.p){ if(wl===l)w.classList.add('lit'); else if(wl<l)w.classList.add('done'); else w.classList.add('path'); }
+  });
+  const fl=document.querySelector(`.floor[data-l="${l}"]`);
+  if(fl){const shaft=fl.querySelector('.shaft');const fr=$('floors').getBoundingClientRect();const sr=shaft.getBoundingClientRect();
+    const car=$('car');car.style.top=(sr.top-fr.top+(sr.height-34)/2)+'px';car.style.left=(sr.left-fr.left+3)+'px';car.style.width=(sr.width-6)+'px';}
+  $('s-avatar').textContent=p.init;$('s-name').textContent=p.name;$('s-role').textContent=`${p.role} · ${p.org}`;
+  $('s-lvn').textContent=l;$('s-lvname').textContent=L.name;$('s-week').textContent=p.week;
+  $('stepper').innerHTML=LEVELS.map(x=>`<div class="step ${x.n<l?'done':''} ${x.n===l?'cur':''}" onclick="setLevel(${x.n})"><i>${x.n}</i><span>${x.name}</span></div>`).join('');
+  $('h-pain').textContent=l===1?'Where it starts':'Pain point at this level';
+  $('s-pain').innerHTML=S.pain;
+  if(l<=2){
+    $('h-train').textContent='Training received';
+    $('s-train').innerHTML=`<span class="mod-tag">${l===1?'No training yet':'No formal method yet'}</span><div>${l===1?p.name.split(' ')[0]+' has never been shown how the tool works, what it is for, or what must never go into it. This is where most teams start.':'Ad hoc, self-taught use with no shared method. Levels 1 and 2 are starting points, not something we train to.'}</div>`;
+  }else{
+    const M=STEPS[l-2];
+    $('h-train').textContent=`Training received to reach level ${l}`;
+    $('s-train').innerHTML=`<span class="mod-tag">${M.name}</span><div>${S.train}</div><div class="tools">${L.tools.map(t=>`<span><span class="material-symbols-outlined">check_circle</span>${t}</span>`).join('')}</div><div class="tr-days" style="margin-top:.5rem"><span>${M.days}</span><span>time saved ${M.save}</span></div>`;
+  }
+  $('h-win').textContent=l===1?'Where the numbers stand':'What changed, and the result';
+  $('s-win').innerHTML=S.win;
+  const v=p.metric.values,from=v[0],now=v[l-1],prev=v[Math.max(0,l-2)],lower=p.metric.better==='lower';
+  $('k-label').textContent=p.metric.label;$('k-to').textContent=fmt(now);$('k-unit').textContent=p.metric.unit;
+  $('k-from').textContent=l===1?'':fmt(prev);$('k-from').style.display=l===1?'none':'inline';
+  const d=$('k-delta');
+  if(l===1){d.className='k-delta neutral';d.innerHTML='<span class="material-symbols-outlined">flag</span>Starting point';}
+  else{const pc=Math.round((now-prev)/prev*100);const good=lower?pc<0:pc>0;
+    if(pc===0){d.className='k-delta neutral';d.innerHTML='<span class="material-symbols-outlined">remove</span>No real change yet';}
+    else{d.className='k-delta'+(good?'':' neutral');d.innerHTML=`<span class="material-symbols-outlined">${lower?'south_east':'north_east'}</span>${Math.abs(pc)}% ${lower?'less':'more'} than level ${l-1}`;}}
+  const tot=Math.round((now-from)/from*100);
+  $('c-total').textContent=l===1?'':`${Math.abs(tot)}% ${lower?'down':'up'} vs level 1`;
+  const max=Math.max(...v);
+  $('bars').innerHTML=v.map((x,i)=>`<div class="bar ${i+1<l?'done':''} ${i+1===l?'cur':''}" onclick="setLevel(${i+1})"><b>${fmt(x)}</b><i style="height:${Math.max(4,x/max*100)}%"></i></div>`).join('');
+  $('barx').innerHTML=v.map((x,i)=>`<span class="${i+1===l?'cur':''}">L${i+1}</span>`).join('');
+  $('prev').disabled=l===1;$('next').disabled=l===7;
+  $('next').innerHTML=l===7?'Top floor reached <span class="material-symbols-outlined">emoji_events</span>':`Move up to level ${l+1} <span class="material-symbols-outlined">arrow_upward</span>`;
+  $('fv-n').textContent=l;$('fv-name').textContent=L.name;
+  $('fvgrid').innerHTML=P.map((q,i)=>{const s=q.L[l-1].win;const cut=s.length>145?s.slice(0,142).replace(/\s+\S*$/,'')+'…':s;
+    return `<div class="fv ${i===cur.p?'active':''}" onclick="setPersona(${i})"><span class="material-symbols-outlined">${q.icon}</span><div><b>${q.dept}</b><small>${q.name}, ${q.role}</small><p>${cut}</p></div></div>`;}).join('');
+}
+function setPersona(i){cur.p=i;render();}
+function setLevel(n){cur.l=Math.min(7,Math.max(1,n));render();}
+$('prev').onclick=()=>setLevel(cur.l-1);
+$('next').onclick=()=>setLevel(cur.l+1);
+$('auto').onchange=e=>{ if(e.target.checked){auto=setInterval(()=>{cur.l=cur.l>=7?1:cur.l+1;render();},4200);} else {clearInterval(auto);auto=null;} };
+window.addEventListener('resize',render);
+window.addEventListener('load',render);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(render);
+
+/* burger (same behaviour as the rest of the site) */
+(function(){var b=$('mai-burger'),l=$('mai-links');if(b&&l){b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});}})();
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.08});
+
+buildLadder();buildPicker();buildFloors();buildTrans();render();
+document.querySelectorAll('.rev').forEach(el=>io.observe(el));
+(function(){const q=new URLSearchParams(location.search);const h=location.hash.replace('#','');
+  const pid=q.get('p')||(P.some(x=>x.id===h)?h:null);
+  if(pid){const i=P.findIndex(x=>x.id===pid);if(i>=0)cur.p=i;}
+  if(q.get('l'))cur.l=Math.min(7,Math.max(1,+q.get('l')));
+  if(pid||q.get('l')){render();$('building').scrollIntoView();}
+})();
+</script>
+</body>
+</html>

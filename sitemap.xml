@@ -13,6 +13,7 @@
   <url><loc>https://mai4consulting.com/contact-us/</loc><priority>0.8</priority></url>
   <url><loc>https://mai4consulting.com/our-clients/</loc><priority>0.7</priority></url>
   <url><loc>https://mai4consulting.com/extensive-ai-readiness-analysis/</loc><priority>0.6</priority></url>
+  <url><loc>https://mai4consulting.com/transformation-journey/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://mai4consulting.com/use-cases/</loc><priority>0.5</priority></url>
   <url><loc>https://mai4consulting.com/claude-in-chrome/</loc><priority>0.5</priority></url>
   <url><loc>https://mai4consulting.com/save-claude-tokens/</loc><priority>0.5</priority></url>
