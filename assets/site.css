@@ -12,6 +12,10 @@
   --blue-wash:rgba(0,62,138,.08);
   --gold:#C9A84C;
   --gold-light:#e8c86a;
+  /* --gold on white measures 2.29:1. Use --gold-ink for gold-coloured text on
+     light grounds: 4.62:1 on #fff, 4.45:1 on --off. --gold stays for dark
+     grounds (7.83:1 on --blue-deepest) and for gold fills with dark text. */
+  --gold-ink:#8A6D1F;
   --charcoal:#4D4D4D;
   --txt:#1a1a2e;
   --muted:#6b7280;
@@ -32,6 +36,26 @@ body{
   overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.55;
 }
 img{max-width:100%;height:auto}
+
+/* ── SKIP LINK AND FOCUS ────────────────────────────────────────────────── */
+.skip{
+  position:absolute;left:.75rem;top:-3.5rem;z-index:1000;
+  background:var(--gold);color:#001830;font:700 .82rem Inter,system-ui,sans-serif;
+  padding:.6rem 1.1rem;border-radius:0 0 8px 8px;text-decoration:none;
+  transition:top .15s;
+}
+.skip:focus{top:0}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
+textarea:focus-visible,summary:focus-visible,[tabindex]:focus-visible{
+  outline:2px solid var(--gold);outline-offset:2px;border-radius:3px;
+}
+.band-dark a:focus-visible,.hero a:focus-visible,.mai-topbar a:focus-visible,
+.mai-topbar button:focus-visible,.mai-footer a:focus-visible{outline-color:var(--gold-light)}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
 
 /* ── GLOBAL TOP BAR ─────────────────────────────────────────────────────── */
 .mai-topbar{
@@ -241,7 +265,7 @@ section[id],.svc[id],.pkg[id],.offer[id],.svc-block[id]{scroll-margin-top:4.6rem
 .ii-p{display:none;position:absolute;z-index:60;left:50%;transform:translateX(-50%);top:calc(100% + .4rem);
   width:min(19rem,78vw);background:#00122e;color:rgba(255,255,255,.92);border:1px solid rgba(201,168,76,.4);border-radius:8px;
   padding:.7rem .85rem;font:400 .78rem/1.6 Inter,system-ui,sans-serif;box-shadow:0 10px 30px rgba(0,24,48,.3);text-align:left;text-transform:none;letter-spacing:0}
-.ii-p b{color:var(--gold);display:block;margin-bottom:.2rem;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+.ii-p b{color:var(--gold-light);display:block;margin-bottom:.2rem;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
 .ii:hover .ii-p,.ii:focus-within .ii-p{display:block}
 .band-dark .ii>button{border-color:var(--gold);color:var(--gold)}
 .band-dark .ii>button:hover,.band-dark .ii>button:focus{background:var(--gold);color:#001830}
@@ -283,7 +307,7 @@ a.cite:hover{border-bottom-style:solid}
 .ex .lbl{font-size:.64rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);display:block;margin-bottom:.3rem}
 .ex code{display:block;background:var(--off);border-radius:6px;padding:.6rem .75rem;font:.78rem/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--txt);white-space:pre-wrap;margin-top:.4rem}
 .roi{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin:1.2rem 0}
-.roi .n{font-family:'Playfair Display',Georgia,serif;font-size:1.9rem;font-weight:800;color:var(--gold);line-height:1}
+.roi .n{font-family:'Playfair Display',Georgia,serif;font-size:1.9rem;font-weight:800;color:var(--gold-ink);line-height:1}
 .roi p{font-size:.83rem;line-height:1.6;margin-top:.35rem}
 
 /* capability ladder: ordinal levels, one hue, bar length carries days */
@@ -301,7 +325,7 @@ a.cite:hover{border-bottom-style:solid}
 .lad-fill{display:block;height:100%;background:var(--blue);border-radius:100px}
 .lad-d{font-size:.76rem;font-weight:800;color:var(--blue-dark);white-space:nowrap;min-width:3.4rem;text-align:right}
 .lad-o{font-size:.79rem;line-height:1.55;color:var(--charcoal)}
-.lad-min{font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#8a6d16;
+.lad-min{font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-ink);
   background:rgba(201,168,76,.18);border:1px solid rgba(201,168,76,.5);border-radius:100px;padding:.1rem .45rem;margin-left:.35rem;white-space:nowrap}
 @media(max-width:820px){
   .lad-h{display:none}
@@ -309,3 +333,37 @@ a.cite:hover{border-bottom-style:solid}
   .lad-bar,.lad-o{grid-column:2}
   .lad-o{padding-top:.1rem}
 }
+
+
+/* ── SERVICE PRICE MARKER (from-price on service pages and cards) ───────── */
+.fromprice{
+  display:inline-flex;align-items:baseline;gap:.4rem;flex-wrap:wrap;
+  font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:800;
+  color:var(--blue-dark);line-height:1.2;
+}
+.fromprice span{
+  font-family:'Inter',sans-serif;font-size:.72rem;font-weight:600;
+  letter-spacing:.04em;color:var(--muted);
+}
+.band-dark .fromprice{color:var(--gold)}
+.band-dark .fromprice span{color:rgba(255,255,255,.6)}
+
+/* ── DISCLOSURE PANEL (used for the conflict/independence statement) ────── */
+.disclose{
+  background:var(--white);border:1px solid var(--outline);border-left:3px solid var(--blue);
+  border-radius:0 8px 8px 0;padding:1.1rem 1.3rem;margin:1.2rem 0;
+}
+.disclose h4{font-size:.9rem;margin-bottom:.4rem}
+.disclose p{font-size:.86rem;line-height:1.7;margin-bottom:.6rem}
+.disclose p:last-child{margin-bottom:0}
+
+/* ── DEFINITION ROWS (terms page) ───────────────────────────────────────── */
+.defs{display:grid;gap:.1rem;margin:1rem 0 1.5rem}
+.defs>div{
+  display:grid;grid-template-columns:minmax(0,13rem) minmax(0,1fr);gap:.4rem 1.4rem;
+  padding:.85rem 0;border-bottom:1px solid var(--outline);align-items:start;
+}
+.defs>div:last-child{border-bottom:none}
+.defs dt,.defs b{font-size:.82rem;font-weight:700;color:var(--blue-dark);line-height:1.5}
+.defs dd,.defs p{margin:0;font-size:.88rem;line-height:1.7;color:var(--charcoal)}
+@media(max-width:640px){.defs>div{grid-template-columns:1fr;gap:.15rem}}

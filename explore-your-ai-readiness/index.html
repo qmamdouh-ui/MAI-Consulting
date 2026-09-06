@@ -3,15 +3,20 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>AI Readiness Check | M.A.I. Consulting</title>
-<meta name="description" content="The AI Readiness Check: a free 28-question self-check scoring your organisation across the four competencies of AI fluency, distinct from the 60-question extended assessment and the paid assessment service."/>
+<title>Free AI Readiness Check | M.A.I. Consulting</title>
+<meta name="description" content="A free 12-minute self-check: 28 questions across the four competencies of AI fluency, with a score, a breakdown and a ranked list of what to fix first."/>
 <link rel="canonical" href="https://mai4consulting.com/explore-your-ai-readiness/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="M.A.I. Consulting"/>
-<meta property="og:title" content="Free AI Readiness Assessment | M.A.I. Consulting"/>
-<meta property="og:description" content="The AI Readiness Check: a free 28-question self-check scoring your organisation across the four competencies of AI fluency, distinct from the 60-question extended assessment and the paid assessment service."/>
+<meta property="og:title" content="Free AI Readiness Check | M.A.I. Consulting"/>
+<meta property="og:description" content="A free 12-minute self-check: 28 questions across the four competencies of AI fluency, with a score, a breakdown and a ranked list of what to fix first."/>
 <meta property="og:url" content="https://mai4consulting.com/explore-your-ai-readiness/"/>
-<meta name="twitter:card" content="summary"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="og:image" content="https://mai4consulting.com/assets/og/check.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="M.A.I. Consulting — Free AI Readiness Check"/>
+<meta name="twitter:image" content="https://mai4consulting.com/assets/og/check.png"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -26,7 +31,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;background:var(--off);color:var(--charcoal);min-height:100vh;}
+body{overflow-wrap:break-word;font-family:'Inter',sans-serif;background:var(--off);color:var(--charcoal);min-height:100vh;}
 .header{background:linear-gradient(140deg,#00122e,var(--blue));padding:40px 24px 32px;text-align:center;position:relative;overflow:hidden;}
 .header-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03)1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03)1px,transparent 1px);background-size:40px 40px;}
 .header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);color:var(--gold);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border-radius:9999px;margin-bottom:20px;position:relative;}
@@ -39,8 +44,8 @@ body{font-family:'Inter',sans-serif;background:var(--off);color:var(--charcoal);
 .user-info-card{background:var(--white);border:1px solid var(--outline);border-radius:14px;padding:24px 28px;}
 .ui-title-row{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;}
 .ui-title{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);}
-.ui-required-note{font-size:10px;color:#aaa;}
-.ui-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;}
+.ui-required-note{font-size:10px;color:#6b7280;}
+.ui-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),1fr));gap:14px;}
 .ui-field label{font-size:11px;font-weight:600;color:var(--charcoal);letter-spacing:.5px;display:block;margin-bottom:5px;transition:color .2s;}
 .ui-field input,.ui-field select{width:100%;padding:9px 12px;border:1px solid var(--outline);border-radius:6px;font-size:13px;font-family:'Inter',sans-serif;color:var(--txt);background:var(--off);transition:border .2s,background .2s;}
 .ui-field input:focus,.ui-field select:focus{outline:none;border-color:var(--blue);}
@@ -53,8 +58,8 @@ body{font-family:'Inter',sans-serif;background:var(--off);color:var(--charcoal);
 .dimension-block.dim-error .q-item:not(.answered){background:#fff7f7;border-left:2px solid rgba(192,57,43,.3);}
 .validation-banner{display:none;background:#fff0ee;border:1px solid rgba(192,57,43,.3);border-radius:8px;padding:12px 16px;font-size:12px;font-weight:600;color:var(--error);line-height:1.6;margin-bottom:0;}
 .validation-banner ul{margin:6px 0 0 16px;font-weight:500;}
-.main{max-width:960px;margin:24px auto;padding:0 16px 60px;display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:start;}
-@media(max-width:760px){.main{grid-template-columns:1fr;}}
+.main{max-width:960px;margin:24px auto;padding:0 16px 60px;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start;}
+@media(max-width:760px){.main{grid-template-columns:minmax(0,1fr);}}
 .q-panel{display:flex;flex-direction:column;gap:16px;}
 .dimension-block{background:var(--white);border:1px solid var(--outline);border-radius:14px;overflow:hidden;transition:border-color .2s,box-shadow .2s;}
 .dim-header{padding:18px 22px;display:flex;align-items:center;gap:12px;cursor:pointer;user-select:none;}
@@ -77,7 +82,7 @@ body{font-family:'Inter',sans-serif;background:var(--off);color:var(--charcoal);
 .q-item:last-child{border-bottom:none;}
 .q-item:hover{background:rgba(0,62,138,.02);}
 .q-item.answered{background:rgba(0,62,138,.025);}
-.q-top{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;}
+.q-top{min-width:0;display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;}
 .q-num{width:22px;height:22px;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--white);margin-top:1px;}
 .q-text{font-size:13px;color:var(--txt);line-height:1.55;font-weight:500;}
 .q-sub{font-size:11px;color:#999;margin-top:2px;line-height:1.4;}
@@ -89,11 +94,11 @@ body{font-family:'Inter',sans-serif;background:var(--off);color:var(--charcoal);
 .scale-wrap{display:flex;gap:6px;align-items:center;}
 .scale-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--outline);font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;background:var(--off);color:var(--charcoal);display:flex;align-items:center;justify-content:center;}
 .scale-btn.sel{color:var(--white);}
-.scale-lbl{font-size:10px;color:#aaa;margin-left:4px;}
+.scale-lbl{font-size:10px;color:#6b7280;margin-left:4px;}
 .num-wrap{display:flex;align-items:center;gap:10px;}
 .num-input{width:80px;padding:8px 10px;border:1px solid var(--outline);border-radius:6px;font-size:14px;font-weight:700;color:var(--txt);text-align:center;background:var(--off);}
 .num-input:focus{outline:none;border-color:var(--blue);}
-.num-unit{font-size:12px;color:#aaa;}
+.num-unit{font-size:12px;color:#6b7280;}
 .q-select{padding:8px 12px;border:1px solid var(--outline);border-radius:6px;font-size:13px;font-family:'Inter',sans-serif;color:var(--txt);background:var(--off);width:100%;max-width:280px;}
 .q-select:focus{outline:none;border-color:var(--blue);}
 .dashboard{position:sticky;top:24px;display:flex;flex-direction:column;gap:16px;}
@@ -184,6 +189,49 @@ footer{
 .footer-nav a:hover{color:var(--gold,#C9A84C);}
 .footer-nav .footer-nav-current{color:var(--white,#ffffff);font-size:.78rem;}
 /* --- END SITE FOOTER --- */
+
+/* .dim-header and .scale-btn are <button> elements so they are keyboard
+   operable; these resets keep them looking exactly as they did as divs. */
+.dim-header{width:100%;min-width:0;background:none;border:0;margin:0;font:inherit;color:inherit;text-align:left;}
+.scale-btn{padding:0;font-family:inherit;appearance:none;-webkit-appearance:none;}
+.scale-btn[aria-checked="true"]{color:var(--white);}
+.dim-header:focus-visible,.scale-btn:focus-visible{outline:2px solid #C9A84C;outline-offset:2px;}
+
+/* The profile now sits inside the results column, beside the download it
+   feeds, rather than gating the questions at the top of the page. */
+.dashboard .user-info-wrap{max-width:none;margin:0;padding:0;}
+.dashboard .user-info-card{padding:18px;border-radius:12px;}
+.dashboard .ui-grid{grid-template-columns:1fr;gap:12px;}
+.ui-note{font-size:11.5px;line-height:1.65;color:var(--charcoal);background:var(--off);
+  border-left:2px solid var(--gold);border-radius:0 6px 6px 0;padding:10px 12px;margin:10px 0 14px;}
+.ui-note a{color:var(--blue);font-weight:600;}
+/* answer-first banner above the question panel */
+.answer-first{background:rgba(0,62,138,.06);border:1px solid rgba(0,62,138,.16);border-radius:10px;
+  padding:12px 16px;margin-bottom:16px;font-size:13px;line-height:1.65;color:var(--charcoal);}
+.answer-first b{color:var(--blue-dark);}
+.resume-note{display:none;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  background:rgba(201,168,76,.13);border:1px solid rgba(201,168,76,.45);border-radius:10px;
+  padding:11px 15px;margin-bottom:14px;font-size:13px;line-height:1.6;color:var(--txt);}
+.resume-note.on{display:flex;}
+.resume-note button{background:none;border:1px solid var(--blue);color:var(--blue);border-radius:6px;
+  padding:5px 11px;font:700 12px Inter,system-ui,sans-serif;cursor:pointer;}
+.resume-note button:hover{background:var(--blue);color:#fff;}
+
+/* Static explanation of the instrument. This is real page content, not
+   JavaScript, so search engines and anyone reading with the tool disabled
+   can see what the assessment measures. */
+.explain{max-width:960px;margin:0 auto;padding:44px 16px 8px}
+.explain h2{font-family:'Playfair Display',Georgia,serif;font-size:1.55rem;font-weight:700;color:var(--blue-dark);margin-bottom:.5rem}
+.explain h3{font-family:'Inter',sans-serif;font-size:.95rem;font-weight:700;color:var(--blue-dark);margin-bottom:.25rem}
+.explain>p{font-size:.95rem;line-height:1.75;color:var(--charcoal);max-width:70ch;margin-bottom:1.4rem}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(255px,100%),1fr));gap:1rem;margin-bottom:1.6rem}
+.dcard{background:#fff;border:1px solid var(--outline);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:1rem 1.15rem}
+.dcard p{font-size:.85rem;line-height:1.62;color:var(--charcoal);margin:0}
+.dcard .g{font-size:.63rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#8A6D1F;margin-bottom:.3rem}
+.faqs{display:grid;gap:.5rem;margin-bottom:1.6rem}
+.faqs details{background:#fff;border:1px solid var(--outline);border-radius:9px;padding:.85rem 1.1rem}
+.faqs summary{font-size:.92rem;font-weight:700;color:var(--blue-dark);cursor:pointer}
+.faqs p{font-size:.88rem;line-height:1.72;color:var(--charcoal);margin-top:.6rem}
 </style>
 <style>.footer-nav .fn-group{color:rgba(255,255,255,.28);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;}</style>
 <style>
@@ -216,24 +264,109 @@ footer{
 /* page's own header must not also stick under the global bar */
 body > header{position:static !important}
 .footer-nav .fn-group{color:rgba(255,255,255,.28);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+
+/* ── skip link, visible focus, reduced motion (shared behaviour) ── */
+.skip{position:absolute;left:.75rem;top:-3.5rem;z-index:1000;background:#C9A84C;color:#001830;
+ font:700 .82rem Inter,system-ui,sans-serif;padding:.6rem 1.1rem;border-radius:0 0 8px 8px;
+ text-decoration:none;transition:top .15s}
+.skip:focus{top:0}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,
+summary:focus-visible,[role=radio]:focus-visible,[tabindex]:focus-visible{
+ outline:2px solid #C9A84C;outline-offset:2px;border-radius:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+ *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+ transition-duration:.001ms!important;scroll-behavior:auto!important}}
 </style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "AI Readiness Check",
+   "description": "A free 12-minute self-check: 28 questions across the four competencies of AI fluency, with a score, a breakdown and a ranked list of what to fix first.",
+   "url": "https://mai4consulting.com/explore-your-ai-readiness/",
+   "applicationCategory": "BusinessApplication",
+   "operatingSystem": "Any modern web browser",
+   "browserRequirements": "Requires JavaScript",
+   "publisher": {
+    "@id": "https://mai4consulting.com/#org"
+   },
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CHF"
+   },
+   "inLanguage": "en"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How long does the AI Readiness Check take?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "About twelve minutes for twenty-eight questions. Your answers are saved in your own browser as you go, so you can stop and come back."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is it really free, and what does it cost me?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It is free and no contact details are needed to see your result. The score, the breakdown by competency and the ranked list of what to fix first all appear on the page as you answer. Details are asked for only if you want the PDF."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What framework is it based on?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The four competencies of AI fluency: Delegation, Description, Discernment and Diligence. That framework was published by Anthropic with Rick Dakan and Joseph Feller, and it is public, so the instrument can be checked against it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is the difference between this and the Self-Assessment?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "This check is twenty-eight questions across the four competencies and takes twelve minutes. The AI Readiness Self-Assessment is sixty questions across ten dimensions, adds governance, data protection, workforce impact and psychological safety, and takes about thirty minutes. Both are free and self-administered."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you keep my answers?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Your answers stay in your own browser and are never sent to us. Only if you download the PDF do we receive your details, your score and a copy of the report."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="mai-topbar">
   <div class="mai-topbar-inner">
     <a class="mai-brand" href="../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
     <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <ul class="mai-links" id="mai-links">
       <li><a href="../services/">Services</a></li>
-      <li><a href="../estimate/">Estimate</a></li>
-      <li><a href="../for-funders/">For Investors</a></li>
-      <li><a href="../compare/">Compare</a></li>
+      <li><a href="../estimate/">Pricing</a></li>
+      <li><a href="../our-clients/">Who It's For</a></li>
+      <li><a href="../about/">About</a></li>
       <li><a href="../knowledge/">Knowledge</a></li>
-      <li><a href="../explore-your-ai-readiness/" aria-current="page">Readiness Check</a></li>
+      <li><a href="../explore-your-ai-readiness/" aria-current="page">Free Check</a></li>
       <li><a class="mai-cta" href="../contact-us/">Book a call</a></li>
     </ul>
   </div>
 </div>
+<main id="main" tabindex="-1">
 
 
 <div class="header">
@@ -241,71 +374,14 @@ body > header{position:static !important}
   <div class="header-badge"><span class="badge-dot"></span>M.A.I. Consulting Tool</div>
   <h1>AI Readiness <span>Check</span></h1>
   <p>A free twelve-minute self-check: twenty-eight questions across the four competencies of the 4D Framework, with a score, a breakdown by competency and a ranked list of what to address first.</p>
-  <p style="font-size:.82rem;opacity:.85;margin-top:.6rem">This is the short orientation instrument. The <a href="../extensive-ai-readiness-analysis/" style="color:inherit;text-decoration:underline">Extended AI Readiness Assessment</a> runs sixty questions across ten dimensions and is also free. The paid <a href="../services/assessment/#instruments" style="color:inherit;text-decoration:underline">AI Readiness Assessment service</a> applies the extended instrument to your organisation with interviews and a tool inventory.</p>
-</div>
-
-<div class="user-info-wrap">
-  <div class="user-info-card">
-    <div class="ui-title-row">
-      <div class="ui-title">Your Profile</div>
-      <div class="ui-required-note">All fields required</div>
-    </div>
-    <div class="ui-grid">
-
-      <div class="ui-field" id="field-name">
-        <label>Full Name <span style="color:var(--error)">*</span></label>
-        <input type="text" id="u-name" placeholder="e.g. Sara Johnson"
-               oninput="updateUser();clearFieldError('field-name')"/>
-      </div>
-
-      <div class="ui-field" id="field-org">
-        <label>Organization <span style="color:var(--error)">*</span></label>
-        <input type="text" id="u-org" placeholder="e.g. Green Future NGO"
-               oninput="updateUser();clearFieldError('field-org')"/>
-      </div>
-
-      <div class="ui-field" id="field-role">
-        <label>Role / Title <span style="color:var(--error)">*</span></label>
-        <input type="text" id="u-role" placeholder="e.g. Program Director"
-               oninput="updateUser();clearFieldError('field-role')"/>
-      </div>
-
-      <div class="ui-field" id="field-sector">
-        <label>Sector <span style="color:var(--error)">*</span></label>
-        <select id="u-sector" onchange="updateUser();clearFieldError('field-sector')">
-          <option value="">Select sector…</option>
-          <option>Nonprofit / NGO</option>
-          <option>Private Sector</option>
-          <option>Government / Public Sector</option>
-          <option>Training Centre</option>
-          <option>Individual / Freelancer</option>
-        </select>
-      </div>
-
-      <div class="ui-field" id="field-size">
-        <label>Team Size <span style="color:var(--error)">*</span></label>
-        <select id="u-size" onchange="updateUser();clearFieldError('field-size')">
-          <option value="">Select…</option>
-          <option>Just me</option>
-          <option>2–10</option>
-          <option>11–50</option>
-          <option>51–200</option>
-          <option>200+</option>
-        </select>
-      </div>
-
-      <div class="ui-field" id="field-email">
-        <label>Email Address <span style="color:var(--error)">*</span></label>
-        <input type="email" id="u-email" placeholder="e.g. sara@example.com"
-               oninput="updateUser();clearFieldError('field-email')"/>
-      </div>
-
-
-    </div>
-  </div>
+  <p style="font-size:.82rem;opacity:.85;margin-top:.6rem">This is the short orientation instrument. The <a href="../extensive-ai-readiness-analysis/" style="color:inherit;text-decoration:underline">AI Readiness Self-Assessment</a> runs sixty questions across ten dimensions and is also free. The paid <a href="../services/assessment/#instruments" style="color:inherit;text-decoration:underline">AI Readiness Assessment service</a> applies the self-assessment instrument to your organisation with interviews and a tool inventory.</p>
 </div>
 
 <div class="main">
+  <div class="resume-note" id="resume-note"><span id="resume-txt"></span><button type="button" id="resume-clear">Start over</button></div>
+  <div class="answer-first"><b>Answer first.</b> Your score, the breakdown by competency and the ranked list of what to fix
+  update as you go, and none of it asks for your details. Contact details are requested at the end, and only to generate
+  the PDF. Answers are kept in this browser, so you can close the tab and pick up where you left off.</div>
   <div class="q-panel" id="q-panel"></div>
   <div class="dashboard">
     <div class="score-card">
@@ -333,8 +409,72 @@ body > header{position:static !important}
     </div>
     <div class="rec-card">
       <div class="rec-title">Targeted Recommendations</div>
-      <div id="rec-content" class="rec-text">Answer questions to receive personalized recommendations based on your specific weak spots.</div>
+      <div id="rec-content" class="rec-text">Answer questions to receive tailored recommendations based on your specific weak spots.</div>
     </div>
+<div class="user-info-wrap">
+  <div class="user-info-card">
+    <div class="ui-title-row">
+      <div class="ui-title">Where should we send your report?</div>
+      <div class="ui-required-note">Needed only for the PDF</div>
+    </div>
+    <p class="ui-note">Your score, your breakdown and your recommendations are on this page already and cost nothing.
+        These details are needed only to generate the PDF and send it to you. When you download the report, a copy is
+        stored in our Google Drive and your details, score and priorities are emailed to us so we can answer if you ask us to.
+        We keep them for up to three years. <a href="../privacy/">How we handle your data</a>.</p>
+      <div class="ui-grid">
+
+      <div class="ui-field" id="field-name">
+        <label for="u-name">Full Name <span style="color:var(--error)">*</span></label>
+        <input type="text" id="u-name" placeholder="e.g. Sara Johnson"
+               oninput="updateUser();clearFieldError('field-name')"/>
+      </div>
+
+      <div class="ui-field" id="field-org">
+        <label for="u-org">Organisation <span style="color:var(--error)">*</span></label>
+        <input type="text" id="u-org" placeholder="e.g. Green Future NGO"
+               oninput="updateUser();clearFieldError('field-org')"/>
+      </div>
+
+      <div class="ui-field" id="field-role">
+        <label for="u-role">Role / Title <span style="color:var(--error)">*</span></label>
+        <input type="text" id="u-role" placeholder="e.g. Program Director"
+               oninput="updateUser();clearFieldError('field-role')"/>
+      </div>
+
+      <div class="ui-field" id="field-sector">
+        <label for="u-sector">Sector <span style="color:var(--error)">*</span></label>
+        <select id="u-sector" onchange="updateUser();clearFieldError('field-sector')">
+          <option value="">Select sector…</option>
+          <option>Nonprofit / NGO</option>
+          <option>Private Sector</option>
+          <option>Government / Public Sector</option>
+          <option>Training Centre</option>
+          <option>Individual / Freelancer</option>
+        </select>
+      </div>
+
+      <div class="ui-field" id="field-size">
+        <label for="u-size">Team Size <span style="color:var(--error)">*</span></label>
+        <select id="u-size" onchange="updateUser();clearFieldError('field-size')">
+          <option value="">Select…</option>
+          <option>Just me</option>
+          <option>2–10</option>
+          <option>11–50</option>
+          <option>51–200</option>
+          <option>200+</option>
+        </select>
+      </div>
+
+      <div class="ui-field" id="field-email">
+        <label for="u-email">Email Address <span style="color:var(--error)">*</span></label>
+        <input type="email" id="u-email" placeholder="e.g. sara@example.com"
+               oninput="updateUser();clearFieldError('field-email')"/>
+      </div>
+
+
+    </div>
+  </div>
+</div>
     <div class="validation-banner" id="validation-banner"></div>
     <button class="dl-btn" id="dl-btn" onclick="downloadPDF()">⬇ Download PDF Report</button>
     <div class="next-step" id="next-step">
@@ -342,7 +482,8 @@ body > header{position:static !important}
       <p class="ns-line" id="ns-line">Answer the questions to see what your score means and what to fix first.</p>
       <div class="ns-btns">
         <a class="ns-btn ns-primary" href="../contact-us/">Book a free 30-minute debrief</a>
-        <a class="ns-btn" href="../services/">See services and prices</a>
+        <a class="ns-btn ns-primary" id="ns-primary-svc" href="../services/" hidden>Read about the service</a>
+        <a class="ns-btn" href="../services/">See all five services</a>
       </div>
       <p class="ns-fine">On the call we walk through your three weakest dimensions and what to do about each. No pitch. If the right first step is a free programme, that is what we will tell you.</p>
     </div>
@@ -367,18 +508,18 @@ const DIMS=[
 ];
 
 const QUESTIONS=[
-  {dim:0,id:'d0q1',text:'Does your organization have a clear understanding of which tasks AI can and cannot do?',type:'scale',max:5,sub:'1 = No awareness  →  5 = Deep understanding'},
+  {dim:0,id:'d0q1',text:'Does your organisation have a clear understanding of which tasks AI can and cannot do?',type:'scale',max:5,sub:'1 = No awareness  →  5 = Deep understanding'},
   {dim:0,id:'d0q2',text:'Have you identified specific, repetitive tasks in your workflow that AI could handle?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
   {dim:0,id:'d0q3',text:'How many AI tools does your team currently use (even occasionally)?',type:'num',max:5,unit:'tools',sub:'0=0pts, 1=1pt, 2=2pts, 3=3pts, 4=4pts, 5+=5pts',mapFn:v=>Math.min(5,v)},
   {dim:0,id:'d0q4',text:'Do you have a policy or shared understanding of which tasks should NOT be delegated to AI?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
   {dim:0,id:'d0q5',text:'How confident is your team in deciding when to use AI vs. when to keep work human?',type:'scale',max:5,sub:'1 = Not confident  →  5 = Very confident'},
-  {dim:0,id:'d0q6',text:'Has your organization mapped AI opportunities to its specific mission or strategic objectives?',type:'sel',max:5,sub:'',opts:['Not at all (0)','We have discussed it (2)','Partially mapped (3)','Mostly mapped (4)','Fully mapped (5)'],vals:[0,2,3,4,5]},
-  {dim:0,id:'d0q7',text:'Does leadership in your organization actively support AI adoption decisions?',type:'scale',max:5,sub:'1 = No support  →  5 = Strong champions'},
-  {dim:1,id:'d1q1',text:'When prompting AI, do you typically include context about your organization and role?',type:'scale',max:5,sub:'1 = Never  →  5 = Always'},
+  {dim:0,id:'d0q6',text:'Has your organisation mapped AI opportunities to its specific mission or strategic objectives?',type:'sel',max:5,sub:'',opts:['Not at all (0)','We have discussed it (2)','Partially mapped (3)','Mostly mapped (4)','Fully mapped (5)'],vals:[0,2,3,4,5]},
+  {dim:0,id:'d0q7',text:'Does leadership in your organisation actively support AI adoption decisions?',type:'scale',max:5,sub:'1 = No support  →  5 = Strong champions'},
+  {dim:1,id:'d1q1',text:'When prompting AI, do you typically include context about your organisation and role?',type:'scale',max:5,sub:'1 = Never  →  5 = Always'},
   {dim:1,id:'d1q2',text:'Do you know how to write a prompt that specifies a desired format, length, and tone?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
   {dim:1,id:'d1q3',text:'How often do you iterate on your prompts (refine them based on AI responses)?',type:'sel',max:5,sub:'',opts:['Never (0)','Rarely (1)','Sometimes (3)','Often (4)','Always (5)'],vals:[0,1,3,4,5]},
-  {dim:1,id:'d1q4',text:'Can your team describe the desired output (product), process, and performance behavior in a single prompt?',type:'scale',max:5,sub:'1 = Cannot  →  5 = Consistently do this'},
-  {dim:1,id:'d1q5',text:'Do you upload relevant organizational documents (reports, proposals) to give AI better context?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
+  {dim:1,id:'d1q4',text:'Can your team describe the desired output (product), process, and performance behaviour in a single prompt?',type:'scale',max:5,sub:'1 = Cannot  →  5 = Consistently do this'},
+  {dim:1,id:'d1q5',text:'Do you upload relevant organisational documents (reports, proposals) to give AI better context?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
   {dim:1,id:'d1q6',text:'How well does your team communicate specific constraints (word limits, audience, privacy) to AI?',type:'scale',max:5,sub:'1 = Poorly  →  5 = Very well'},
   {dim:1,id:'d1q7',text:'Do you use structured conversation techniques (e.g., asking AI to interview you, building reusable context docs)?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
   {dim:2,id:'d2q1',text:'Does your team critically evaluate AI outputs before using them?',type:'scale',max:5,sub:'1 = We trust everything  →  5 = Always evaluate rigorously'},
@@ -386,14 +527,14 @@ const QUESTIONS=[
   {dim:2,id:'d2q3',text:'Do you verify key claims from AI with original or external sources?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
   {dim:2,id:'d2q4',text:'Are you able to spot when AI outputs use inappropriate, biased, or deficit-based language?',type:'scale',max:5,sub:'1 = Not yet  →  5 = Reliably'},
   {dim:2,id:'d2q5',text:'How often does your team reflect on why AI produced a particular output (process discernment)?',type:'sel',max:5,sub:'',opts:['Never (0)','Rarely (1)','Sometimes (3)','Often (4)','Always (5)'],vals:[0,1,3,4,5]},
-  {dim:2,id:'d2q6',text:'Do you evaluate whether AI outputs align with your organization\'s values and mission?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
+  {dim:2,id:'d2q6',text:'Do you evaluate whether AI outputs align with your organisation\'s values and mission?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
   {dim:2,id:'d2q7',text:'When AI gives a poor response, can your team diagnose what went wrong with the prompt?',type:'scale',max:5,sub:'1 = Never  →  5 = Consistently'},
   {dim:3,id:'d3q1',text:'Does your team take responsibility for reviewing and vouching for all AI-generated outputs before sharing?',type:'scale',max:5,sub:'1 = Rarely  →  5 = Always'},
   {dim:3,id:'d3q2',text:'Do you disclose AI involvement when relevant (to funders, beneficiaries, partners)?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
-  {dim:3,id:'d3q3',text:'Are you aware of the data privacy policies of the AI tools your organization uses?',type:'sel',max:5,sub:'',opts:['Not at all (0)','Somewhat (2)','Mostly (3)','Fully aware (5)'],vals:[0,2,3,5]},
+  {dim:3,id:'d3q3',text:'Are you aware of the data privacy policies of the AI tools your organisation uses?',type:'sel',max:5,sub:'',opts:['Not at all (0)','Somewhat (2)','Mostly (3)','Fully aware (5)'],vals:[0,2,3,5]},
   {dim:3,id:'d3q4',text:'Does your team practice data hygiene (removing PII before sharing with AI)?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
-  {dim:3,id:'d3q5',text:'How intentional is your organization about which AI tools to use for which tasks (creation diligence)?',type:'scale',max:5,sub:'1 = We use whatever is available  →  5 = Very deliberate'},
-  {dim:3,id:'d3q6',text:'Do you have (or plan to have) an organizational AI policy that covers ethics, transparency, and oversight?',type:'sel',max:5,sub:'',opts:['No plans (0)','Discussing it (2)','Draft exists (3)','Policy in place (5)'],vals:[0,2,3,5]},
+  {dim:3,id:'d3q5',text:'How intentional is your organisation about which AI tools to use for which tasks (creation diligence)?',type:'scale',max:5,sub:'1 = We use whatever is available  →  5 = Very deliberate'},
+  {dim:3,id:'d3q6',text:'Do you have (or plan to have) an organisational AI policy that covers ethics, transparency, and oversight?',type:'sel',max:5,sub:'',opts:['No plans (0)','Discussing it (2)','Draft exists (3)','Policy in place (5)'],vals:[0,2,3,5]},
   {dim:3,id:'d3q7',text:'Is there a process to review AI outputs periodically and catch errors that go into your work?',type:'yn',max:5,sub:'Yes = 5 pts / No = 0 pts'},
 ];
 
@@ -423,8 +564,8 @@ const Q_RECS={
   d3q2:{threshold:5,rec:'Adopt a simple AI-disclosure standard: when, how, and to whom you flag AI involvement (funders, partners, beneficiaries)'},
   d3q3:{threshold:3,rec:'Review the data-handling terms of every AI vendor you use (training opt-out, retention, sub-processors, region)'},
   d3q4:{threshold:5,rec:'Publish a short "do not paste into AI" list and train all staff on it before extending AI use further'},
-  d3q5:{threshold:3,rec:'Match tools to tasks deliberately: standardize on which tool you use for which use case rather than letting individuals choose ad hoc'},
-  d3q6:{threshold:3,rec:'Draft a one-page organizational AI policy this quarter covering acceptable use, prohibited tasks, oversight, and disclosure'},
+  d3q5:{threshold:3,rec:'Match tools to tasks deliberately: standardise on which tool you use for which use case rather than letting individuals choose ad hoc'},
+  d3q6:{threshold:3,rec:'Draft a one-page organisational AI policy this quarter covering acceptable use, prohibited tasks, oversight, and disclosure'},
   d3q7:{threshold:5,rec:'Establish a monthly or quarterly routine to spot-check AI-assisted work already in use and catch drift'}
 };
 
@@ -438,7 +579,7 @@ function buildUI(){
   dimGroups.forEach((qs,di)=>{
     const block=document.createElement('div');
     block.className='dimension-block';block.id=`dim-block-${di}`;
-    block.innerHTML=`<div class="dim-header d${di}" onclick="toggleDim(${di})"><div class="dim-color"></div><div class="dim-header-text"><div class="dim-label">Dimension ${di+1} of 4</div><div class="dim-name">${DIMS[di].name}</div></div><div class="dim-score-badge" id="dim-badge-${di}">0 / 35</div><div class="dim-chevron">▾</div></div><div class="dim-progress-bar"><div class="dim-progress-fill d${di}-c" id="dim-prog-${di}" style="width:0%"></div></div><div class="dim-questions" id="dim-qs-${di}"></div>`;
+    block.innerHTML=`<button type="button" class="dim-header d${di}" aria-expanded="false" aria-controls="dim-qs-${di}" onclick="toggleDim(${di})"><div class="dim-color"></div><div class="dim-header-text"><div class="dim-label">Dimension ${di+1} of 4</div><div class="dim-name">${DIMS[di].name}</div></div><div class="dim-score-badge" id="dim-badge-${di}">0 / 35</div><div class="dim-chevron" aria-hidden="true">▾</div></button><div class="dim-progress-bar"><div class="dim-progress-fill d${di}-c" id="dim-prog-${di}" style="width:0%"></div></div><div class="dim-questions" id="dim-qs-${di}"></div>`;
     panel.appendChild(block);
     const qWrap=block.querySelector(`#dim-qs-${di}`);
     qs.forEach((q,qi)=>{
@@ -454,9 +595,11 @@ function buildUI(){
 function buildInput(q,di){
   const c=DIMS[di].color;
   if(q.type==='yn') return `<div class="yn-btns"><button class="yn-btn" onclick="setYN('${q.id}',5,this)">✓ Yes</button><button class="yn-btn" onclick="setYN('${q.id}',0,this)">✗ No</button></div>`;
-  if(q.type==='scale'){const btns=[1,2,3,4,5].map(n=>`<div class="scale-btn" onclick="setScale('${q.id}',${n},this,'${c}')">${n}</div>`).join('');return `<div class="scale-wrap">${btns}<span class="scale-lbl">← Low   High →</span></div>`;}
-  if(q.type==='num') return `<div class="num-wrap"><input class="num-input" type="number" min="0" max="99" placeholder="0" oninput="setNum('${q.id}',this.value)"/><span class="num-unit">${q.unit||''}</span></div>`;
-  if(q.type==='sel'){const opts=q.opts.map((o,i)=>`<option value="${q.vals[i]}">${o}</option>`).join('');return `<select class="q-select" onchange="setSel('${q.id}',this.value)"><option value="">Choose…</option>${opts}</select>`;}
+  if(q.type==='scale'){
+    const btns=[1,2,3,4,5].map(n=>`<button type="button" class="scale-btn" role="radio" aria-checked="false" tabindex="${n===1?0:-1}" data-v="${n}" aria-label="${n} out of 5" onclick="setScale('${q.id}',${n},this,'${c}')" onkeydown="scaleKeys(event,'${q.id}','${c}')">${n}</button>`).join('');
+    return `<div class="scale-wrap" role="radiogroup" aria-label="Rate from 1, low, to 5, high">${btns}<span class="scale-lbl" aria-hidden="true">← Low   High →</span></div>`;}
+  if(q.type==='num') return `<div class="num-wrap"><input class="num-input" type="number" min="0" max="99" placeholder="0" aria-label="${q.text.replace(/\"/g,'&quot;')}" oninput="setNum('${q.id}',this.value)"/><span class="num-unit">${q.unit||''}</span></div>`;
+  if(q.type==='sel'){const opts=q.opts.map((o,i)=>`<option value="${q.vals[i]}">${o}</option>`).join('');return `<select class="q-select" aria-label="${q.text.replace(/\"/g,'&quot;')}" onchange="setSel('${q.id}',this.value)"><option value="">Choose…</option>${opts}</select>`;}
   return '';
 }
 
@@ -466,15 +609,40 @@ function setYN(id,val,btn){
   w.querySelectorAll('.yn-btn').forEach(b=>{b.classList.remove('sel-yes','sel-no');});
   btn.classList.add(val===5?'sel-yes':'sel-no');
   markAnswered(id);
+  saveProgress();
   clearDimError(QUESTIONS.find(q=>q.id===id).dim);
   recalc();
 }
+
+/* Arrow, Home and End move within a rating group; Space and Enter select.
+   Without this the scale questions cannot be answered from a keyboard. */
+function scaleKeys(ev,id,colour){
+  const grp=ev.currentTarget.closest('.scale-wrap');
+  if(!grp) return;
+  const btns=[].slice.call(grp.querySelectorAll('.scale-btn'));
+  let i=btns.indexOf(ev.currentTarget), j=null;
+  if(ev.key==='ArrowRight'||ev.key==='ArrowDown') j=(i+1)%btns.length;
+  else if(ev.key==='ArrowLeft'||ev.key==='ArrowUp') j=(i-1+btns.length)%btns.length;
+  else if(ev.key==='Home') j=0;
+  else if(ev.key==='End') j=btns.length-1;
+  else if(ev.key===' '||ev.key==='Enter'){ ev.preventDefault(); btns[i].click(); return; }
+  if(j===null) return;
+  ev.preventDefault();
+  btns[j].focus();
+  setScale(id,+btns[j].dataset.v,btns[j],colour);
+}
+
 function setScale(id,val,btn,color){
+  var _g=btn.closest('.scale-wrap');
+  if(_g) _g.querySelectorAll('.scale-btn').forEach(function(b){
+    var on=(b===btn); b.setAttribute('aria-checked',on?'true':'false'); b.tabIndex=on?0:-1;
+  });
   scores[id]=val;
   const w=btn.closest('.scale-wrap');
   w.querySelectorAll('.scale-btn').forEach(b=>{b.classList.remove('sel');b.style.background='';b.style.borderColor='';b.style.color='';});
   btn.classList.add('sel');btn.style.background=color;btn.style.borderColor=color;
   markAnswered(id);
+  saveProgress();
   clearDimError(QUESTIONS.find(q=>q.id===id).dim);
   recalc();
 }
@@ -483,6 +651,7 @@ function setNum(id,val){
   const v=parseInt(val)||0;
   scores[id]=q.mapFn?q.mapFn(v):Math.min(5,v);
   markAnswered(id);
+  saveProgress();
   clearDimError(q.dim);
   recalc();
 }
@@ -490,19 +659,35 @@ function setSel(id,val){
   scores[id]=val===''?undefined:parseFloat(val);
   if(scores[id]===undefined)delete scores[id];
   markAnswered(id);
+  saveProgress();
   clearDimError(QUESTIONS.find(q=>q.id===id).dim);
   recalc();
 }
-function markAnswered(id){const el=document.getElementById(`qi-${id}`);if(el)el.classList.add('answered');}
-function toggleDim(di){document.querySelectorAll('.dimension-block').forEach((b,i)=>{if(i===di)b.classList.toggle('dim-open');});}
+function markAnswered(id){
+  if(window.mai){
+    mai.once('assessment_started',{tool:'check'});
+    var _a=Object.keys(scores).filter(function(k){return scores[k]!==undefined&&!isNaN(scores[k]);}).length;
+    if(_a>=28) mai.once('assessment_completed',{tool:'check'});
+  }const el=document.getElementById(`qi-${id}`);if(el)el.classList.add('answered');}
+function toggleDim(di){
+  document.querySelectorAll('.dimension-block').forEach((b,i)=>{
+    if(i!==di) return;
+    const open=b.classList.toggle('dim-open');
+    const h=b.querySelector('.dim-header');
+    if(h) h.setAttribute('aria-expanded',open?'true':'false');
+  });
+}
 
+function _uiTouch(){}
 function updateUser(){
+  _uiTouch();
   userInfo.name      = document.getElementById('u-name').value;
   userInfo.org       = document.getElementById('u-org').value;
   userInfo.role      = document.getElementById('u-role').value;
   userInfo.sector    = document.getElementById('u-sector').value;
   userInfo.size      = document.getElementById('u-size').value;
   userInfo.email     = document.getElementById('u-email').value;
+  saveProgress();
 }
 
 /* ── Validation helpers ─────────────────────────────────────────────── */
@@ -533,7 +718,7 @@ function validateForm(){
 
   const profileChecks=[
     {inputId:'u-name',   fieldId:'field-name',   label:'Full Name'},
-    {inputId:'u-org',    fieldId:'field-org',    label:'Organization'},
+    {inputId:'u-org',    fieldId:'field-org',    label:'Organisation'},
     {inputId:'u-role',   fieldId:'field-role',   label:'Role / Title'},
     {inputId:'u-sector', fieldId:'field-sector', label:'Sector'},
     {inputId:'u-size',   fieldId:'field-size',   label:'Team Size'},
@@ -610,6 +795,75 @@ function answerLabel(q,score){
   if(q.type==='sel'){const idx=q.vals.indexOf(score);return idx>=0?q.opts[idx].replace(/\s*\(\d+\)$/,''):String(score);}
   return String(score);
 }
+
+
+/* ── Save and resume ─────────────────────────────────────────────────────
+   Sixty questions is half an hour of work. Answers are written to this
+   browser's localStorage on every change and restored on load, so a reload,
+   a closed tab or a mis-tapped back button does not discard the lot. Nothing
+   is sent anywhere by this: it never leaves the visitor's own browser.       */
+var STORE_KEY = 'mai-check-v1';
+function saveProgress(){
+  try{
+    localStorage.setItem(STORE_KEY, JSON.stringify({
+      v:1, t:Date.now(), scores:scores, user:userInfo
+    }));
+  }catch(e){ /* private mode, quota, or storage disabled: carry on unsaved */ }
+}
+function loadProgress(){
+  try{
+    var raw=localStorage.getItem(STORE_KEY); if(!raw) return null;
+    var d=JSON.parse(raw);
+    if(!d||d.v!==1||!d.scores) return null;
+    if(Date.now()-(d.t||0) > 1000*60*60*24*30){ localStorage.removeItem(STORE_KEY); return null; }
+    return d;
+  }catch(e){ return null; }
+}
+function clearProgress(){ try{ localStorage.removeItem(STORE_KEY); }catch(e){} }
+
+function restoreProgress(){
+  var d=loadProgress(); if(!d) return;
+  Object.keys(d.scores||{}).forEach(function(k){ scores[k]=d.scores[k]; });
+  if(d.user) Object.keys(d.user).forEach(function(k){
+    if(d.user[k]){ userInfo[k]=d.user[k]; var el=document.getElementById('u-'+k); if(el) el.value=d.user[k]; }
+  });
+  // reflect restored answers in the controls
+  QUESTIONS.forEach(function(q){
+    var v=scores[q.id]; if(v===undefined||isNaN(v)) return;
+    var item=document.getElementById('qi-'+q.id); if(!item) return;
+    if(q.type==='scale'){
+      var b=item.querySelector('.scale-btn[data-v="'+v+'"]');
+      if(b){ b.classList.add('sel'); b.style.background=DIMS[q.dim].color; b.style.borderColor=DIMS[q.dim].color;
+             b.setAttribute('aria-checked','true'); b.tabIndex=0;
+             item.querySelectorAll('.scale-btn').forEach(function(o){ if(o!==b) o.tabIndex=-1; }); }
+    } else if(q.type==='yn'){
+      var yn=item.querySelectorAll('.yn-btn');
+      if(yn.length===2){ var t=(v>0)?yn[0]:yn[1]; t.classList.add(v>0?'sel-yes':'sel-no'); }
+    } else if(q.type==='num'){
+      var ni=item.querySelector('.num-input'); if(ni) ni.value=(q.rawNum&&q.rawNum[q.id])||v;
+    } else if(q.type==='sel'||q.type==='multi'){
+      var se=item.querySelector('.q-select'); if(se) se.value=String(v);
+    }
+    markAnswered(q.id);
+  });
+  var answered=Object.keys(scores).filter(function(k){return scores[k]!==undefined&&!isNaN(scores[k]);}).length;
+  if(answered>0){
+    var note=document.getElementById('resume-note'), txt=document.getElementById('resume-txt');
+    if(note&&txt){
+      txt.innerHTML='<strong>Picked up where you left off.</strong> '+answered+' of 28 answers were '+
+        'restored from this browser.';
+      note.classList.add('on');
+    }
+  }
+  recalc();
+}
+
+/* Warn before losing answers that have not been downloaded yet. */
+var pdfTaken=false;
+window.addEventListener('beforeunload', function(e){
+  var answered=Object.keys(scores).filter(function(k){return scores[k]!==undefined&&!isNaN(scores[k]);}).length;
+  if(answered>0 && answered<28 && !pdfTaken){ e.preventDefault(); e.returnValue=''; }
+});
 
 function recalc(){
   const{dimScores,dimMax}=getDimData();
@@ -713,6 +967,8 @@ async function downloadPDF(){
   btn.disabled=true;
   btn.innerHTML='⏳ Generating & Uploading…';
   try{
+    pdfTaken=true;
+    if(window.mai) mai.track('report_downloaded',{tool:'check'});
     const pdf = buildPrintReport(); // returns a jsPDF drawn with REAL TEXT (selectable)
 
     const date=new Date().toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'}).replace(/\s/g,'_');
@@ -1033,6 +1289,18 @@ function esc(s){if(s==null)return'';return String(s).replace(/[&<>"']/g,c=>({'&'
 buildUI();
 drawRadar([0,0,0,0],[35,35,35,35]);
 </script>
+
+<div class="explain">
+  <h2>What the AI Readiness Check measures</h2>
+  <p>Twenty-eight questions across the four competencies of AI fluency. Each competency is scored separately, so the result tells you which one carries your gap rather than only how you did overall. The questions ask what your organisation actually does today, not what it intends to do.</p>
+  <div class="dgrid"><div class="dcard"><div class="g">AI Fluency (4D)</div><h3>Delegation</h3><p>Knowing which tasks to hand to AI, which to keep human, and who decides. Seven questions cover task mapping, the tools already in use, whether anything is off-limits, and whether leadership backs the decisions.</p></div><div class="dcard"><div class="g">AI Fluency (4D)</div><h3>Description</h3><p>How the work is specified: whether context, audience, format and constraints reach the tool, whether source documents are supplied rather than described, and whether prompts are refined rather than abandoned.</p></div><div class="dcard"><div class="g">AI Fluency (4D)</div><h3>Discernment</h3><p>How outputs are checked before anyone relies on them: figures traced to a source, facts checked against the original, and a review step that exists as a rule rather than an assumption.</p></div><div class="dcard"><div class="g">AI Fluency (4D)</div><h3>Diligence</h3><p>What is logged, what is disclosed and who owns the result. Covers disclosure to funders and beneficiaries, ownership of AI-assisted work, and whether a policy exists at all.</p></div></div>
+  <h2>Common questions</h2>
+  <div class="faqs"><details><summary>How long does the AI Readiness Check take?</summary><p>About twelve minutes for twenty-eight questions. Your answers are saved in your own browser as you go, so you can stop and come back.</p></details><details><summary>Is it really free, and what does it cost me?</summary><p>It is free and no contact details are needed to see your result. The score, the breakdown by competency and the ranked list of what to fix first all appear on the page as you answer. Details are asked for only if you want the PDF.</p></details><details><summary>What framework is it based on?</summary><p>The four competencies of AI fluency: Delegation, Description, Discernment and Diligence. That framework was published by Anthropic with Rick Dakan and Joseph Feller, and it is public, so the instrument can be checked against it.</p></details><details><summary>What is the difference between this and the Self-Assessment?</summary><p>This check is twenty-eight questions across the four competencies and takes twelve minutes. The AI Readiness Self-Assessment is sixty questions across ten dimensions, adds governance, data protection, workforce impact and psychological safety, and takes about thirty minutes. Both are free and self-administered.</p></details><details><summary>Do you keep my answers?</summary><p>Your answers stay in your own browser and are never sent to us. Only if you download the PDF do we receive your details, your score and a copy of the report.</p></details></div>
+  <p style="font-size:.88rem">Prefer the other one? <a href="../extensive-ai-readiness-analysis/" style="color:var(--blue);font-weight:600">Open the sixty-question AI Readiness Self-Assessment</a>.
+     Want it run on your organisation with staff interviews and a documented tool inventory?
+     <a href="../services/assessment/" style="color:var(--blue);font-weight:600">That is the paid AI Readiness Audit</a>.</p>
+</div>
+</main>
 <footer>
   <div class="footer-inner">
     <div>
@@ -1048,23 +1316,25 @@ drawRadar([0,0,0,0],[35,35,35,35]);
     <ul>
       <li><a href="../">Home</a></li>
       <li><a href="../services/">Services</a></li>
-      <li><a href="../estimate/">Price estimate</a></li>
-      <li><a href="../for-funders/">For Investors</a></li>
+      <li><a href="../estimate/">Pricing</a></li>
+      <li><a href="../our-clients/">Who It's For</a></li>
       <li><a href="../about/">About</a></li>
-      <li><a href="../compare/">Compare the market</a></li>
-      <li><a href="../knowledge/">Knowledge</a></li>
-      <li><span class="footer-nav-current" aria-current="page">Readiness Check</span></li>
-      <li><a href="../our-clients/">Who We Work With</a></li>
       <li><a href="../contact-us/">Contact</a></li>
+      <li><span class="fn-group">Decide</span></li>
+      <li><a href="../compare/">Compare the market</a></li>
+      <li><a href="../for-funders/">For funders and investors</a></li>
+      <li><span class="footer-nav-current" aria-current="page">Free readiness check</span></li>
+      <li><a href="../extensive-ai-readiness-analysis/">Self-assessment</a></li>
       <li><span class="fn-group">Read</span></li>
-      <li><a href="../playbook/">Sample Playbook</a></li>
+      <li><a href="../knowledge/">Knowledge</a></li>
+      <li><a href="../playbook/">Sample playbook</a></li>
       <li><a href="../eu-ai-act-article-4/">EU AI Act Article 4</a></li>
-      <li><a href="../use-cases/">AI Use Cases</a></li>
+      <li><a href="../use-cases/">AI use cases</a></li>
       <li><a href="../claude-in-chrome/">Claude in Chrome</a></li>
-      <li><a href="../save-claude-tokens/">Claude for Business</a></li>
-      <li><a href="../extensive-ai-readiness-analysis/">Extended Assessment</a></li>
+      <li><a href="../save-claude-tokens/">Claude for business</a></li>
       <li><span class="fn-group">Legal</span></li>
       <li><a href="../privacy/">Privacy</a></li>
+      <li><a href="../terms/">Terms</a></li>
     </ul>
   </nav>
 </footer>
@@ -1075,22 +1345,37 @@ b.setAttribute('aria-expanded',o?'true':'false');});}})();
 
 function updateNextStep(pct, answered, total){
   var el = document.getElementById('ns-line');
+  var pb = document.getElementById('ns-primary-svc');
   if(!el) return;
-  var msg;
+  var msg, svc=null;
   if(answered === 0){
     msg = 'Answer the questions to see what your score means and what to fix first.';
   } else if(answered < total){
     msg = answered + ' of ' + total + ' answered. Finish the assessment for a reliable reading \u2014 partial scores skew high.';
   } else if(pct < 40){
-    msg = '<b>Below 40.</b> This almost always means AI is already in daily use with no policy behind it. It is the ordinary case, and it is the fastest thing to fix. Start with an <b>AI Use Policy</b>.';
+    msg = '<b>Below 40.</b> This almost always means AI is already in daily use with no policy behind it. It is the ordinary case, and it is the fastest thing to fix. Start with an <a href="../services/policy/">AI Use Policy</a>.';
+    svc = {href:'../services/policy/', label:'Read about the AI Use Policy'};
   } else if(pct < 70){
-    msg = '<b>Between 40 and 70.</b> In this band the gap is usually between departments \u2014 one team is fluent and three are guessing. Start with <b>Team AI Training</b>, one lab per department.';
+    msg = '<b>Between 40 and 70.</b> In this band the gap is usually between departments \u2014 one team is fluent and three are guessing. Start with <a href="../services/training/">Team AI Training</a>, one lab per department.';
+    svc = {href:'../services/training/', label:'Read about Team AI Training'};
   } else {
-    msg = '<b>Above 70.</b> You are ahead of most organisations your size. The risk now is decay as tools and staff change. Look at <b>Fluency Support</b> and a re-score in six months.';
+    msg = '<b>Above 70.</b> You are ahead of most organisations your size. The risk now is decay as tools and staff change. Look at <a href="../services/support/">Fluency Support</a> and a re-score in six months.';
+    svc = {href:'../services/support/', label:'Read about Fluency Support'};
   }
   el.innerHTML = msg;
+  if(pb){
+    if(svc){ pb.href=svc.href; pb.textContent=svc.label; pb.hidden=false; }
+    else { pb.hidden=true; }
+  }
 }
+
+document.addEventListener('DOMContentLoaded', function(){
+  var b=document.getElementById('resume-clear');
+  if(b) b.addEventListener('click', function(){ clearProgress(); location.reload(); });
+  restoreProgress();
+});
 </script>
+<script src="../assets/analytics.js" defer></script>
 <script src="../assets/chat.js" defer></script>
 </body>
 </html>

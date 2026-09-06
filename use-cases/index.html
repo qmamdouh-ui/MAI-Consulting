@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<title>AI Use Cases: Claude &amp; Microsoft Copilot in Practice | M.A.I. Consulting</title>
-<meta name="description" content="Concrete examples of what Claude and Microsoft Copilot M365 do in real organisational work: writing, research, analysis and automation."/>
+<title>AI Use Cases in Practice | M.A.I. Consulting</title>
+<meta name="description" content="What Claude and Microsoft Copilot M365 do across writing, research, analysis and automation, with concrete examples by task."/>
 <link rel="canonical" href="https://mai4consulting.com/use-cases/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="M.A.I. Consulting"/>
-<meta property="og:title" content="AI Use Cases: Claude &amp; Microsoft Copilot in Practice | M.A.I. Consulting"/>
-<meta property="og:description" content="Concrete examples of what Claude and Microsoft Copilot M365 do in real organisational work: writing, research, analysis and automation."/>
+<meta property="og:title" content="AI Use Cases in Practice | M.A.I. Consulting"/>
+<meta property="og:description" content="What Claude and Microsoft Copilot M365 do across writing, research, analysis and automation, with concrete examples by task."/>
 <meta property="og:url" content="https://mai4consulting.com/use-cases/"/>
-<meta name="twitter:card" content="summary"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="og:image" content="https://mai4consulting.com/assets/og/usecases.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="M.A.I. Consulting — AI Use Cases in Practice"/>
+<meta name="twitter:image" content="https://mai4consulting.com/assets/og/usecases.png"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
@@ -19,7 +24,7 @@
 {
   "@context":"https://schema.org","@type":"ProfessionalService",
   "name":"M.A.I. Consulting","url":"https://www.mai4consulting.com",
-  "description":"AI use cases for Claude and Microsoft Copilot M365 across research, writing, analysis, and organizational embedding."
+  "description":"AI use cases for Claude and Microsoft Copilot M365 across research, writing, analysis, and organisational embedding."
 }
 </script>
 <style>
@@ -40,7 +45,7 @@ body{font-family:'Inter',sans-serif;background:var(--off);color:var(--charcoal);
   padding:80px 24px 60px;text-align:center;position:relative;overflow:hidden;
 }
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03)1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03)1px,transparent 1px);background-size:40px 40px;}
-.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;max-width:100%;}
 .o1{width:360px;height:360px;background:rgba(201,168,76,.07);top:-100px;right:-60px;}
 .o2{width:260px;height:260px;background:rgba(0,62,138,.2);bottom:0;left:-60px;}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);color:var(--gold);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border-radius:9999px;margin-bottom:24px;position:relative;}
@@ -79,8 +84,8 @@ section.uc-section{padding:64px 24px;}
 
 /* ── USE CASE CARDS ── */
 .uc-grid{display:grid;gap:16px;}
-.uc-grid-3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
-.uc-grid-2{grid-template-columns:repeat(auto-fit,minmax(380px,1fr));}
+.uc-grid-3{grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));}
+.uc-grid-2{grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));}
 
 .uc-card{
   background:var(--white);border:1px solid var(--outline);border-radius:14px;
@@ -156,7 +161,7 @@ section.uc-section{padding:64px 24px;}
 .research-tag{background:rgba(201,168,76,.15);color:#7a5510;}
 
 /* ── TIER SHOWCASE (3 tiers) ── */
-.tier-showcase{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:44px;}
+.tier-showcase{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:16px;margin-bottom:44px;}
 .tier-card{border-radius:14px;border:1px solid var(--outline);padding:24px;position:relative;overflow:hidden;}
 .tier-card-free{background:var(--white);}
 .tier-card-premium{background:linear-gradient(140deg,#001830,var(--blue-mid));color:var(--white);}
@@ -177,7 +182,7 @@ section.uc-section{padding:64px 24px;}
 .tier-card-premium .tier-list .material-symbols-outlined{color:var(--gold);}
 
 /* ── AGENT CARDS ── */
-.agent-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
+.agent-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:16px;}
 .agent-card{background:var(--white);border:1px solid var(--outline);border-radius:14px;padding:24px;transition:all .3s;position:relative;overflow:hidden;}
 .agent-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .3s;}
 .agent-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,62,138,.09);}
@@ -199,11 +204,11 @@ section.uc-section{padding:64px 24px;}
 .off-tab.active-ppt,.off-tab.active-ppt:hover{background:#8c2010;color:#fff;border-color:#8c2010;}
 .off-tab:hover{background:var(--off);}
 
-.office-panel{display:none;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+.office-panel{display:none;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:16px;}
 .office-panel.active{display:grid;}
 
 /* ── RESEARCH SECTION ── */
-.research-flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;position:relative;}
+.research-flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),1fr));gap:0;position:relative;}
 .research-step{padding:24px;background:var(--white);border:1px solid var(--outline);position:relative;transition:all .3s;}
 .research-step:first-child{border-radius:14px 0 0 14px;}
 .research-step:last-child{border-radius:0 14px 14px 0;}
@@ -304,24 +309,38 @@ footer{
 /* page's own header must not also stick under the global bar */
 body > header{position:static !important}
 .footer-nav .fn-group{color:rgba(255,255,255,.28);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+
+/* ── skip link, visible focus, reduced motion (shared behaviour) ── */
+.skip{position:absolute;left:.75rem;top:-3.5rem;z-index:1000;background:#C9A84C;color:#001830;
+ font:700 .82rem Inter,system-ui,sans-serif;padding:.6rem 1.1rem;border-radius:0 0 8px 8px;
+ text-decoration:none;transition:top .15s}
+.skip:focus{top:0}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,
+summary:focus-visible,[role=radio]:focus-visible,[tabindex]:focus-visible{
+ outline:2px solid #C9A84C;outline-offset:2px;border-radius:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+ *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+ transition-duration:.001ms!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="mai-topbar">
   <div class="mai-topbar-inner">
     <a class="mai-brand" href="../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
     <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <ul class="mai-links" id="mai-links">
       <li><a href="../services/">Services</a></li>
-      <li><a href="../estimate/">Estimate</a></li>
-      <li><a href="../for-funders/">For Investors</a></li>
-      <li><a href="../compare/">Compare</a></li>
+      <li><a href="../estimate/">Pricing</a></li>
+      <li><a href="../our-clients/">Who It's For</a></li>
+      <li><a href="../about/">About</a></li>
       <li><a href="../knowledge/">Knowledge</a></li>
-      <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
+      <li><a href="../explore-your-ai-readiness/">Free Check</a></li>
       <li><a class="mai-cta" href="../contact-us/">Book a call</a></li>
     </ul>
   </div>
 </div>
+<main id="main" tabindex="-1">
 
 
 <!-- ── HERO ── -->
@@ -404,7 +423,7 @@ body > header{position:static !important}
         <ul class="tier-list">
           <li><span class="material-symbols-outlined">check_circle</span>Projects, persistent memory across sessions</li>
           <li><span class="material-symbols-outlined">check_circle</span>Artifacts, build interactive tools & reports</li>
-          <li><span class="material-symbols-outlined">check_circle</span>Skills, customized behavior for your role</li>
+          <li><span class="material-symbols-outlined">check_circle</span>Skills, customised behaviour for your role</li>
           <li><span class="material-symbols-outlined">check_circle</span>Extended context for large document analysis</li>
           <li><span class="material-symbols-outlined">check_circle</span>Complex multi-step reasoning chains</li>
           <li><span class="material-symbols-outlined">check_circle</span>Claude Code for automation & scripting</li>
@@ -416,7 +435,7 @@ body > header{position:static !important}
         <div class="tier-label-badge tier-biz-badge">🏢 Claude for Business</div>
         <div class="tier-title">Institutional AI deployment</div>
         <ul class="tier-list">
-          <li><span class="material-symbols-outlined">check_circle</span>Organization-wide shared Projects</li>
+          <li><span class="material-symbols-outlined">check_circle</span>Organisation-wide shared Projects</li>
           <li><span class="material-symbols-outlined">check_circle</span>Custom system prompts for your use case</li>
           <li><span class="material-symbols-outlined">check_circle</span>Data privacy, no training on your inputs</li>
           <li><span class="material-symbols-outlined">check_circle</span>API access for workflow integration</li>
@@ -429,7 +448,7 @@ body > header{position:static !important}
     <!-- Claude use case cards -->
     <div class="sec-label rev">Core Capabilities</div>
     <h2 class="sec-title rev">What Claude Does Best</h2>
-    <p class="sec-sub rev">Practical use cases applied directly to your work, across writing, research, analysis, and organizational tasks.</p>
+    <p class="sec-sub rev">Practical use cases applied directly to your work, across writing, research, analysis, and organisational tasks.</p>
 
     <div class="uc-grid uc-grid-3 rev">
 
@@ -565,8 +584,8 @@ body > header{position:static !important}
       <div class="uc-card" data-tags="claude automation writing">
         <div class="uc-card-top">
           <div class="uc-card-icon claude-icon-bg"><span class="material-symbols-outlined claude-icon-color">tune</span></div>
-          <h3>Skills: Customized Claude Behavior</h3>
-          <p>Configure Claude to always act like your organization's expert, adopting your tone, following your guidelines, and applying your specific frameworks automatically.</p>
+          <h3>Skills: Customized Claude Behaviour</h3>
+          <p>Configure Claude to always act like your organisation's expert, adopting your tone, following your guidelines, and applying your specific frameworks automatically.</p>
         </div>
         <div class="uc-tags">
           <span class="uc-tag claude-tag">Pro</span>
@@ -624,7 +643,7 @@ body > header{position:static !important}
       </div>
       <div>
         <h2>Microsoft Copilot M365</h2>
-        <p>AI woven into your existing Microsoft ecosystem, from individual productivity to autonomous organizational agents.</p>
+        <p>AI woven into your existing Microsoft ecosystem, from individual productivity to autonomous organisational agents.</p>
       </div>
     </div>
 
@@ -637,7 +656,7 @@ body > header{position:static !important}
       <div class="agent-card">
         <div class="agent-icon copilot-icon-bg"><span class="material-symbols-outlined copilot-icon-color">search</span></div>
         <h3>Researcher Agent</h3>
-        <p>Autonomous web and organizational research, synthesizing findings from multiple sources into structured briefings.</p>
+        <p>Autonomous web and organisational research, synthesizing findings from multiple sources into structured briefings.</p>
         <ul class="agent-use-list">
           <li>In-depth competitor reports from live web sources</li>
           <li>Funding opportunity research, filtered by eligibility and deadline</li>
@@ -649,7 +668,7 @@ body > header{position:static !important}
       <div class="agent-card">
         <div class="agent-icon copilot-icon-bg"><span class="material-symbols-outlined copilot-icon-color">bar_chart</span></div>
         <h3>Analytical Agent</h3>
-        <p>Data interpretation at scale, processes your organizational data, generates visualizations, and surfaces findings you can act on.</p>
+        <p>Data interpretation at scale, processes your organisational data, generates visualizations, and surfaces findings you can act on.</p>
         <ul class="agent-use-list">
           <li>Donor giving trend analysis with year-over-year comparisons</li>
           <li>Program performance dashboards from raw survey exports</li>
@@ -920,7 +939,7 @@ body > header{position:static !important}
         <div class="uc-card-top">
           <div class="uc-card-icon" style="background:var(--gold-dim);"><span class="material-symbols-outlined" style="color:#7a5510;">compare_arrows</span></div>
           <h3>Competitive & Sector Benchmarking</h3>
-          <p>Map the competitive field, benchmark your organization against peers, and identify strategic white spaces, using AI to process what would take a team weeks.</p>
+          <p>Map the competitive field, benchmark your organisation against peers, and identify strategic white spaces, using AI to process what would take a team weeks.</p>
         </div>
         <div class="uc-tags"><span class="uc-tag research-tag">Benchmarking</span><span class="uc-tag claude-tag">Claude</span><span class="uc-tag copilot-tag">Researcher Agent</span></div>
         <div class="uc-examples">
@@ -929,7 +948,7 @@ body > header{position:static !important}
             <div class="uc-example-item"><span class="material-symbols-outlined">lightbulb</span>Analyze 8 peer NGOs' programmatic approaches and identify your competitive differentiation.</div>
             <div class="uc-example-item"><span class="material-symbols-outlined">lightbulb</span>Benchmark your AI adoption maturity against sector leaders using public data.</div>
             <div class="uc-example-item"><span class="material-symbols-outlined">lightbulb</span>Map funding flows in your sector, who funds what, and where gaps exist.</div>
-            <div class="uc-example-item"><span class="material-symbols-outlined">lightbulb</span>Compare salary scales, benefit structures, and HR policies across comparable organizations.</div>
+            <div class="uc-example-item"><span class="material-symbols-outlined">lightbulb</span>Compare salary scales, benefit structures, and HR policies across comparable organisations.</div>
           </div></div>
         </div>
       </div>
@@ -955,7 +974,7 @@ body > header{position:static !important}
         <div class="uc-card-top">
           <div class="uc-card-icon" style="background:var(--gold-dim);"><span class="material-symbols-outlined" style="color:#7a5510;">groups</span></div>
           <h3>Stakeholder & Beneficiary Intelligence</h3>
-          <p>Build deep profiles of key stakeholders, funders, and partner organizations, understanding their priorities, history, and alignment with your mission.</p>
+          <p>Build deep profiles of key stakeholders, funders, and partner organisations, understanding their priorities, history, and alignment with your mission.</p>
         </div>
         <div class="uc-tags"><span class="uc-tag research-tag">Stakeholder</span><span class="uc-tag claude-tag">Claude</span></div>
         <div class="uc-examples">
@@ -1037,6 +1056,7 @@ function switchOffice(app,btn){
   btn.className='off-tab active-'+app;
 }
 </script>
+</main>
 <footer>
   <div class="footer-inner">
     <div>
@@ -1052,23 +1072,25 @@ function switchOffice(app,btn){
     <ul>
       <li><a href="../">Home</a></li>
       <li><a href="../services/">Services</a></li>
-      <li><a href="../estimate/">Price estimate</a></li>
-      <li><a href="../for-funders/">For Investors</a></li>
+      <li><a href="../estimate/">Pricing</a></li>
+      <li><a href="../our-clients/">Who It's For</a></li>
       <li><a href="../about/">About</a></li>
-      <li><a href="../compare/">Compare the market</a></li>
-      <li><a href="../knowledge/">Knowledge</a></li>
-      <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
-      <li><a href="../our-clients/">Who We Work With</a></li>
       <li><a href="../contact-us/">Contact</a></li>
+      <li><span class="fn-group">Decide</span></li>
+      <li><a href="../compare/">Compare the market</a></li>
+      <li><a href="../for-funders/">For funders and investors</a></li>
+      <li><a href="../explore-your-ai-readiness/">Free readiness check</a></li>
+      <li><a href="../extensive-ai-readiness-analysis/">Self-assessment</a></li>
       <li><span class="fn-group">Read</span></li>
-      <li><a href="../playbook/">Sample Playbook</a></li>
+      <li><a href="../knowledge/">Knowledge</a></li>
+      <li><a href="../playbook/">Sample playbook</a></li>
       <li><a href="../eu-ai-act-article-4/">EU AI Act Article 4</a></li>
-      <li><span class="footer-nav-current" aria-current="page">AI Use Cases</span></li>
+      <li><span class="footer-nav-current" aria-current="page">AI use cases</span></li>
       <li><a href="../claude-in-chrome/">Claude in Chrome</a></li>
-      <li><a href="../save-claude-tokens/">Claude for Business</a></li>
-      <li><a href="../extensive-ai-readiness-analysis/">Extended Assessment</a></li>
+      <li><a href="../save-claude-tokens/">Claude for business</a></li>
       <li><span class="fn-group">Legal</span></li>
       <li><a href="../privacy/">Privacy</a></li>
+      <li><a href="../terms/">Terms</a></li>
     </ul>
   </nav>
 </footer>
@@ -1077,6 +1099,7 @@ function switchOffice(app,btn){
 if(b&&l){b.addEventListener('click',function(){var o=l.classList.toggle('open');
 b.setAttribute('aria-expanded',o?'true':'false');});}})();
 </script>
+<script src="../assets/analytics.js" defer></script>
 <script src="../assets/chat.js" defer></script>
 </body>
 </html>

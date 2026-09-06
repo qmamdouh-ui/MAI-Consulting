@@ -3,15 +3,20 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Claude for Business: Skills, CLAUDE.md and Token Efficiency | M.A.I. Consulting</title>
-<meta name="description" content="Practical guidance on getting value from Claude at work: structured CLAUDE.md files, skills, Claude Code, and how to cut token spend."/>
+<title>Claude for Business | M.A.I. Consulting</title>
+<meta name="description" content="Structured instruction files, skills, agentic coding, and how to cut token spend without cutting output quality."/>
 <link rel="canonical" href="https://mai4consulting.com/save-claude-tokens/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="M.A.I. Consulting"/>
-<meta property="og:title" content="Claude for Business: Skills, CLAUDE.md and Token Efficiency | M.A.I. Consulting"/>
-<meta property="og:description" content="Practical guidance on getting value from Claude at work: structured CLAUDE.md files, skills, Claude Code, and how to cut token spend."/>
+<meta property="og:title" content="Claude for Business | M.A.I. Consulting"/>
+<meta property="og:description" content="Structured instruction files, skills, agentic coding, and how to cut token spend without cutting output quality."/>
 <meta property="og:url" content="https://mai4consulting.com/save-claude-tokens/"/>
-<meta name="twitter:card" content="summary"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="og:image" content="https://mai4consulting.com/assets/og/tokens.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="M.A.I. Consulting — Claude for Business"/>
+<meta name="twitter:image" content="https://mai4consulting.com/assets/og/tokens.png"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
 <style>
@@ -183,7 +188,7 @@ h2.light em{
 /* ── CARD GRID ── */
 .card-grid{
   display:grid;gap:1.25rem;
-  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));
 }
 .card{
   background:var(--white);border:1px solid var(--outline);
@@ -285,7 +290,7 @@ h2.light em{
 .dark-section .badge{background:rgba(255,255,255,.08);color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.15);}
 
 /* ── STAT ROW ── */
-.stat-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1.5rem;margin-top:2rem;}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(180px,100%),1fr));gap:1.5rem;margin-top:2rem;}
 .stat{text-align:center;padding:1.5rem 1rem;background:var(--white);border-radius:12px;border:1px solid var(--outline);}
 .stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:800;color:var(--blue);line-height:1;}
 .stat-label{font-size:.78rem;color:var(--charcoal);margin-top:.4rem;}
@@ -373,24 +378,38 @@ footer{
 /* page's own header must not also stick under the global bar */
 body > header{position:static !important}
 .footer-nav .fn-group{color:rgba(255,255,255,.28);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+
+/* ── skip link, visible focus, reduced motion (shared behaviour) ── */
+.skip{position:absolute;left:.75rem;top:-3.5rem;z-index:1000;background:#C9A84C;color:#001830;
+ font:700 .82rem Inter,system-ui,sans-serif;padding:.6rem 1.1rem;border-radius:0 0 8px 8px;
+ text-decoration:none;transition:top .15s}
+.skip:focus{top:0}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,
+summary:focus-visible,[role=radio]:focus-visible,[tabindex]:focus-visible{
+ outline:2px solid #C9A84C;outline-offset:2px;border-radius:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+ *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+ transition-duration:.001ms!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="mai-topbar">
   <div class="mai-topbar-inner">
     <a class="mai-brand" href="../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
     <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <ul class="mai-links" id="mai-links">
       <li><a href="../services/">Services</a></li>
-      <li><a href="../estimate/">Estimate</a></li>
-      <li><a href="../for-funders/">For Investors</a></li>
-      <li><a href="../compare/">Compare</a></li>
+      <li><a href="../estimate/">Pricing</a></li>
+      <li><a href="../our-clients/">Who It's For</a></li>
+      <li><a href="../about/">About</a></li>
       <li><a href="../knowledge/">Knowledge</a></li>
-      <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
+      <li><a href="../explore-your-ai-readiness/">Free Check</a></li>
       <li><a class="mai-cta" href="../contact-us/">Book a call</a></li>
     </ul>
   </div>
 </div>
+<main id="main" tabindex="-1">
 
 
 <!-- HEADER -->
@@ -414,7 +433,7 @@ body > header{position:static !important}
 <section class="hero" id="top">
   <div class="hero-inner">
     <div class="hero-eyebrow"><span></span>Claude for Business</div>
-    <h1>Put <em>Claude</em> to Work<br/>Across Your Organization</h1>
+    <h1>Put <em>Claude</em> to Work<br/>Across Your Organisation</h1>
     <p class="hero-sub">
       From custom AI workflows to structured CLAUDE.md files, skills, and token-efficient prompting, practical guidance for getting real value out of Claude without excessive spend.
     </p>
@@ -468,7 +487,7 @@ body > header{position:static !important}
       <div class="card">
         <div class="card-icon">🤖</div>
         <h3>Custom Assistants & Tools</h3>
-        <p>Build purpose-built tools using the API, internal knowledge bots, client intake processors, automated report generators, with CLAUDE.md and skill files controlling behavior precisely.</p>
+        <p>Build purpose-built tools using the API, internal knowledge bots, client intake processors, automated report generators, with CLAUDE.md and skill files controlling behaviour precisely.</p>
         <span class="card-tag gold-tag">Custom Build</span>
       </div>
     </div>
@@ -483,14 +502,14 @@ body > header{position:static !important}
     <p class="section-label">Structure & Control</p>
     <h2>Skills &amp; <em>CLAUDE.md</em> Files</h2>
     <p class="section-desc">
-      Two mechanisms that let you encode persistent instructions, domain knowledge, and behavioral rules directly into Claude's working context without restating them every session.
+      Two mechanisms that let you encode persistent instructions, domain knowledge, and behavioural rules directly into Claude's working context without restating them every session.
     </p>
 
     <div class="two-col">
       <div>
         <h3 style="font-size:1.15rem;font-weight:700;color:var(--txt);margin-bottom:.75rem;">What is CLAUDE.md?</h3>
         <p style="font-size:.9rem;line-height:1.75;color:var(--charcoal);margin-bottom:1rem;">
-          <code style="background:var(--blue-light);padding:.15rem .4rem;border-radius:4px;font-size:.82rem;color:var(--blue);">CLAUDE.md</code> is a Markdown file Claude reads at the start of every session within a project or directory. It acts as standing instructions: your organization's style guide, terminology, prohibited behaviors, output formats, and domain context, all loaded automatically.
+          <code style="background:var(--blue-light);padding:.15rem .4rem;border-radius:4px;font-size:.82rem;color:var(--blue);">CLAUDE.md</code> is a Markdown file Claude reads at the start of every session within a project or directory. It acts as standing instructions: your organisation's style guide, terminology, prohibited behaviours, output formats, and domain context, all loaded automatically.
         </p>
         <p style="font-size:.9rem;line-height:1.75;color:var(--charcoal);">
           In Claude Code, CLAUDE.md files are hierarchical: a root-level file sets global defaults, while subdirectory files add context for specific modules or workstreams. This means a legal team and an engineering team can operate with different rules without manual switching.
@@ -536,7 +555,7 @@ Internal acronyms: ToR = Terms of Reference</span>
         Skills are modular instruction files, typically Markdown, stored in a <code style="background:var(--blue-light);padding:.15rem .4rem;border-radius:4px;font-size:.82rem;color:var(--blue);">/skills/</code> directory and referenced by Claude when a specific task type is triggered. Think of them as specialized agents within a project: one skill for writing reports, another for code review, another for client intake processing.
       </p>
 
-      <div class="card-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr));">
+      <div class="card-grid" style="grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));">
         <div class="card">
           <div class="card-icon">📋</div>
           <h3>SKILL.md Anatomy</h3>
@@ -544,7 +563,7 @@ Internal acronyms: ToR = Terms of Reference</span>
         </div>
         <div class="card">
           <div class="card-icon">📁</div>
-          <h3>File Organization</h3>
+          <h3>File Organisation</h3>
           <p>Store skills under <code style="background:var(--blue-light);font-size:.8rem;padding:.1rem .35rem;border-radius:3px;">/skills/public/</code> for shared use and <code style="background:var(--blue-light);font-size:.8rem;padding:.1rem .35rem;border-radius:3px;">/skills/user/</code> for user-specific overrides. Claude reads both and the user-level file wins on conflict.</p>
         </div>
         <div class="card">
@@ -756,16 +775,17 @@ Internal acronyms: ToR = Terms of Reference</span>
     <p class="section-label" style="text-align:center;">Work With Us</p>
     <h2 class="light" style="margin:0 auto 1rem;max-width:600px;">Ready to Build Something <em>Practical</em>?</h2>
     <p style="font-size:.98rem;line-height:1.75;color:rgba(255,255,255,.62);max-width:520px;margin:0 auto 2rem;">
-      We help organizations design Claude workflows, build CLAUDE.md systems, and deploy token-efficient AI pipelines that integrate into existing operations.
+      We help organisations design Claude workflows, build CLAUDE.md systems, and deploy token-efficient AI pipelines that integrate into existing operations.
     </p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <a class="btn-gold" href="../" target="_blank">Visit mai4consulting.com</a>
+      <a class="btn-gold" href="../">Visit mai4consulting.com</a>
       <button class="btn-ghost" data-scroll-to="top">Back to Top ↑</button>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
+</main>
 <footer>
   <div class="footer-inner">
     <div>
@@ -781,23 +801,25 @@ Internal acronyms: ToR = Terms of Reference</span>
     <ul>
       <li><a href="../">Home</a></li>
       <li><a href="../services/">Services</a></li>
-      <li><a href="../estimate/">Price estimate</a></li>
-      <li><a href="../for-funders/">For Investors</a></li>
+      <li><a href="../estimate/">Pricing</a></li>
+      <li><a href="../our-clients/">Who It's For</a></li>
       <li><a href="../about/">About</a></li>
-      <li><a href="../compare/">Compare the market</a></li>
-      <li><a href="../knowledge/">Knowledge</a></li>
-      <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
-      <li><a href="../our-clients/">Who We Work With</a></li>
       <li><a href="../contact-us/">Contact</a></li>
+      <li><span class="fn-group">Decide</span></li>
+      <li><a href="../compare/">Compare the market</a></li>
+      <li><a href="../for-funders/">For funders and investors</a></li>
+      <li><a href="../explore-your-ai-readiness/">Free readiness check</a></li>
+      <li><a href="../extensive-ai-readiness-analysis/">Self-assessment</a></li>
       <li><span class="fn-group">Read</span></li>
-      <li><a href="../playbook/">Sample Playbook</a></li>
+      <li><a href="../knowledge/">Knowledge</a></li>
+      <li><a href="../playbook/">Sample playbook</a></li>
       <li><a href="../eu-ai-act-article-4/">EU AI Act Article 4</a></li>
-      <li><a href="../use-cases/">AI Use Cases</a></li>
+      <li><a href="../use-cases/">AI use cases</a></li>
       <li><a href="../claude-in-chrome/">Claude in Chrome</a></li>
-      <li><span class="footer-nav-current" aria-current="page">Claude for Business</span></li>
-      <li><a href="../extensive-ai-readiness-analysis/">Extended Assessment</a></li>
+      <li><span class="footer-nav-current" aria-current="page">Claude for business</span></li>
       <li><span class="fn-group">Legal</span></li>
       <li><a href="../privacy/">Privacy</a></li>
+      <li><a href="../terms/">Terms</a></li>
     </ul>
   </nav>
 </footer>
@@ -820,6 +842,7 @@ document.addEventListener('click', function(e){
 if(b&&l){b.addEventListener('click',function(){var o=l.classList.toggle('open');
 b.setAttribute('aria-expanded',o?'true':'false');});}})();
 </script>
+<script src="../assets/analytics.js" defer></script>
 <script src="../assets/chat.js" defer></script>
 </body>
 </html>

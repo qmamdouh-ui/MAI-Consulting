@@ -4,21 +4,26 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Price Estimate | M.A.I. Consulting</title>
-<meta name="description" content="Build the engagement you need and see an indicative price range for your organisation type and size. Confirmed as a fixed price on a 30-minute call."/>
+<meta name="description" content="Build the engagement you need and see an indicative range for your organisation type and size. Confirmed as a fixed price on a 30-minute call."/>
 <link rel="canonical" href="https://mai4consulting.com/estimate/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="M.A.I. Consulting"/>
 <meta property="og:title" content="Price Estimate | M.A.I. Consulting"/>
-<meta property="og:description" content="Build the engagement you need and see an indicative price range for your organisation type and size. Confirmed as a fixed price on a 30-minute call."/>
+<meta property="og:description" content="Build the engagement you need and see an indicative range for your organisation type and size. Confirmed as a fixed price on a 30-minute call."/>
 <meta property="og:url" content="https://mai4consulting.com/estimate/"/>
-<meta name="twitter:card" content="summary"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="og:image" content="https://mai4consulting.com/assets/og/estimate.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="M.A.I. Consulting — Price Estimate"/>
+<meta name="twitter:image" content="https://mai4consulting.com/assets/og/estimate.png"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="../assets/site.css"/>
 <style>
-.lvls{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.6rem 1.2rem;margin:.7rem 0 .3rem}
+.lvls{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:.6rem 1.2rem;margin:.7rem 0 .3rem}
 .lvls select,#deptsize{border:1px solid rgba(0,62,138,.25);border-radius:7px;padding:.4rem .55rem;font:.85rem Inter,system-ui,sans-serif;color:var(--txt);background:#fff}
 #lvl-note{background:var(--blue-wash);border-left:2px solid var(--gold);border-radius:0 6px 6px 0;padding:.55rem .75rem;margin:.5rem 0 0}
 .lvl-det{margin-top:.6rem}
@@ -26,7 +31,7 @@
 .lvl-list{margin-top:.5rem;display:grid;gap:.5rem}
 .lvl-x{font-size:.8rem;line-height:1.6;color:var(--charcoal);border-left:2px solid var(--outline);padding-left:.7rem}
 .lvl-x b{display:block;color:var(--blue-dark);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
-.opts-inline{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.3rem .9rem;margin:.5rem 0 .2rem}
+.opts-inline{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:.3rem .9rem;margin:.5rem 0 .2rem}
 .opts-inline .chk{font-size:.84rem;display:flex;align-items:flex-start;gap:.45rem;line-height:1.5;cursor:pointer}
 #task-other{width:100%;max-width:32rem;border:1px solid rgba(0,62,138,.25);border-radius:8px;padding:.5rem .7rem;font:.86rem Inter,system-ui,sans-serif;color:var(--txt)}
 #spec{width:100%;border:1px solid rgba(0,62,138,.25);border-radius:8px;padding:.7rem .8rem;font:.86rem/1.6 Inter,system-ui,sans-serif;color:var(--txt);resize:vertical}
@@ -37,7 +42,7 @@
 .step{background:#fff;border:1px solid var(--outline);border-radius:10px;padding:1.3rem 1.4rem;margin-bottom:1rem}
 .step h3{font-size:1.05rem;margin-bottom:.25rem}
 .step .hint{font-size:.8rem;color:var(--muted);margin-bottom:.9rem}
-.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.55rem}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));gap:.55rem}
 .opt{position:relative}
 .opt input{position:absolute;opacity:0;inset:0;cursor:pointer}
 .opt label{display:block;border:1px solid var(--outline);border-radius:8px;padding:.7rem .8rem;font-size:.85rem;line-height:1.4;cursor:pointer;background:var(--surface);transition:border-color .15s,background .15s}
@@ -65,31 +70,54 @@
 .send .row{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.3rem}
 .ok{color:#b8f0cf;font-size:.82rem;font-weight:700}.err{color:#ffc9c2;font-size:.82rem}
 @media(max-width:900px){.est{grid-template-columns:1fr}.res{position:static}}
+.visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+/* live price bar: on narrow screens the result panel falls below an eight-step
+   form, so the range travels with the reader instead of waiting at the end */
+.mbar{display:none}
+@media(max-width:900px){
+  .mbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:940;
+    background:linear-gradient(150deg,var(--blue-deepest),var(--blue-mid));
+    border-top:2px solid var(--gold);box-shadow:0 -6px 24px rgba(0,24,48,.28);
+    padding:.6rem .9rem calc(.6rem + env(safe-area-inset-bottom,0px))}
+  .mbar[hidden]{display:none}
+  .mbar-in{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:.8rem}
+  .mbar-k{display:block;font-size:.6rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--gold)}
+  .mbar strong{font-family:'Playfair Display',Georgia,serif;font-size:1.12rem;font-weight:800;color:#fff;line-height:1.2}
+  .mbar-b{flex:none;background:var(--gold);color:#001830;border:none;border-radius:7px;
+    padding:.5rem .8rem;font:700 .74rem Inter,system-ui,sans-serif;cursor:pointer}
+  /* keep the chat launcher and the page end clear of the bar */
+  body{padding-bottom:4.6rem}
+  .mai-chat-btn{bottom:5.2rem!important}
+  .mai-chat{bottom:8.6rem!important}
+}
+@media print{.mbar{display:none!important}}
 @media print{.mai-topbar,.mai-footer,.hero .btn-row,.send,.mai-chat,.mai-chat-btn{display:none !important}.res{position:static;color:#000;background:#fff;border:1px solid #999}.res .range,.res .k{color:#000}.res li,.res .note{color:#222}}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="mai-topbar">
   <div class="mai-topbar-inner">
     <a class="mai-brand" href="../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
     <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <ul class="mai-links" id="mai-links">
       <li><a href="../services/">Services</a></li>
-      <li><a href="../estimate/" aria-current="page">Estimate</a></li>
-      <li><a href="../for-funders/">For Investors</a></li>
-      <li><a href="../compare/">Compare</a></li>
+      <li><a href="../estimate/" aria-current="page">Pricing</a></li>
+      <li><a href="../our-clients/">Who It's For</a></li>
+      <li><a href="../about/">About</a></li>
       <li><a href="../knowledge/">Knowledge</a></li>
-      <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
+      <li><a href="../explore-your-ai-readiness/">Free Check</a></li>
       <li><a class="mai-cta" href="../contact-us/">Book a call</a></li>
     </ul>
   </div>
 </div>
+<main id="main" tabindex="-1">
 <section class="hero" id="top">
   <div class="inner">
     <div class="eyebrow"><i></i>Price estimate</div>
     <h1>Build the engagement you need and see its indicative <em>cost</em>.</h1>
     <p class="hero-sub">
-      Five choices produce one indicative range. Nothing here is a quote, since every engagement is scoped and confirmed on a 30-minute call, but the order of magnitude should be visible before you book that call.
+      Answer as much or as little as you like and the range updates as you go. Nothing here is a quote, since every engagement is scoped and confirmed on a 30-minute call, but the order of magnitude should be visible before you book that call.
     </p>
   </div>
 </section>
@@ -99,8 +127,8 @@
     <form id="est" novalidate>
 
       <div class="step">
-        <h3>1 &middot; What kind of organisation are you?</h3>
-        <p class="hint">Rates differ by sector. Nonprofit and international rates are lower than public and private rates. Individuals and organisation representatives attending a course are priced per person.</p>
+        <h3 data-step>What kind of organisation are you?</h3>
+        <p class="hint">Rates differ by sector, and we would rather state the difference than leave you to infer it. Taking the government and public rate as 1.0, an NGO or foundation pays <strong>0.7&times;</strong> that rate, an international organisation <strong>0.9&times;</strong>, and a private-sector client <strong>1.2&times;</strong>, for identical work. Individuals and organisation representatives attending a course are priced per person instead.</p>
         <div class="opts">
           <div class="opt"><input type="radio" name="type" id="t-ngo" value="ngo" checked/><label for="t-ngo"><b>NGO or foundation</b><span>nonprofit, charity, association</span></label></div>
           <div class="opt"><input type="radio" name="type" id="t-io" value="io"/><label for="t-io"><b>International organisation</b><span>UN agency, IGO, multilateral body</span></label></div>
@@ -111,15 +139,15 @@
       </div>
 
       <div class="step" id="ind-step" hidden>
-          <h3>2 &middot; The course</h3>
+          <h3 data-step>The course</h3>
           <p class="hint">A course for fewer than ten participants, built on the participants' own tasks. It can be delivered in person or online. In-person courses include accommodation and hospitality arrangements for each participant, charged per night.</p>
           <div class="opt"><input type="radio" name="fmt" id="f-in" value="in" checked/><label for="f-in"><b>In person</b><span>we arrange the venue, accommodation and hospitality</span></label></div>
           <div class="opt"><input type="radio" name="fmt" id="f-on" value="on"/><label for="f-on"><b>Online</b><span>on the platform the participants already use</span></label></div>
           <div class="num"><label for="pax">Participants (1 to 9):</label><input type="number" id="pax" min="1" max="9" value="1"/></div>
           <div class="num" id="nights-wrap"><label for="nights">Nights on site (in person):</label><input type="number" id="nights" min="1" max="5" value="1"/></div>
         </div>
-        <div class="step">
-        <h3>2 &middot; How many staff would this cover?</h3>
+        <div class="step org">
+        <h3 data-step>How many staff would this cover?</h3>
         <p class="hint">Size drives how many departments we work with and how many sittings a session needs.</p>
         <div class="opts">
           <div class="opt"><input type="radio" name="size" id="s1" value="s1"/><label for="s1"><b>1 &ndash; 10</b></label></div>
@@ -131,16 +159,16 @@
       </div>
 
       <div class="step org">
-        <h3>3 &middot; Readiness assessment</h3>
+        <h3 data-step>Readiness assessment</h3>
         <p class="hint">The assessment produces the baseline score, the inventory of tools in use and the ranked gap list the rest of the work is built on. Two depths, priced differently.</p>
           <div class="opt"><input type="radio" name="assess" id="as0" value="0"/><label for="as0"><b>No assessment</b><span>you already know where the gaps are</span></label></div>
           <div class="opt"><input type="radio" name="assess" id="as1" value="1" checked/><label for="as1"><b>Four essential dimensions</b><span>Delegation, Description, Discernment, Diligence</span></label><span class="ii"><button type="button" aria-label="Definition: Four essential dimensions">i</button><span class="ii-p" role="tooltip"><b>Four essential dimensions</b>The four competencies of AI fluency, scored across the organisation with a short interview round. It answers what staff can and cannot do, and what to train first. It does not cover governance, data protection, workforce impact or psychological safety.</span></span></div>
           <div class="opt"><input type="radio" name="assess" id="as2" value="2"/><label for="as2"><b>All ten dimensions</b><span>the four competencies plus governance, data protection and ethics, workforce impact, operations and internal politics, psychological safety, future-readiness</span></label><span class="ii"><button type="button" aria-label="Definition: Ten dimensions">i</button><span class="ii-p" role="tooltip"><b>Ten dimensions</b>The full instrument: sixty questions, staff interviews and a documented tool inventory, scored against ISO/IEC 42001, the NIST AI RMF and EU AI Act Article 4 vocabulary. Choose this when a board, a funder or an auditor will read the report, or when the question is governance rather than skills.</span></span></div>
-          <p class="hint" style="margin-top:.5rem"><a href="../services/assessment/" target="_blank" rel="noopener">See what the report contains &rarr;</a></p>
+          <p class="hint" style="margin-top:.5rem"><a href="../services/assessment/">See what the report contains &rarr;</a></p>
         </div>
         <div class="step org">
-          <h3>4 &middot; Training</h3>
-          <p class="hint">Training is scoped by where the group starts and where it needs to reach. The seven levels, the days between them and what each one changes are set out on the <a href="../services/training/#levels" target="_blank" rel="noopener">training page</a>.</p>
+          <h3 data-step>Training</h3>
+          <p class="hint">Training is scoped by where the group starts and where it needs to reach. The seven levels, the days between them and what each one changes are set out on the <a href="../services/training/#levels">training page</a>.</p>
           <div class="opt"><input type="radio" name="train" id="tr0" value="0"/><label for="tr0"><b>No training</b></label></div>
           <div class="opt"><input type="radio" name="train" id="tr1" value="1" checked/><label for="tr1"><b>Organisation-wide programme</b><span>one group, one target level</span></label></div>
           <div class="opt"><input type="radio" name="train" id="tr2" value="2"/><label for="tr2"><b>Programme plus department labs</b><span>the programme, then a lab per department on its own tasks</span></label></div>
@@ -175,30 +203,30 @@
                 <option value="l">More than 30 people</option>
               </select><span class="ii"><button type="button" aria-label="Definition: Department size">i</button><span class="ii-p" role="tooltip"><b>Department size</b>Larger departments need more sittings to cover everyone and a wider set of documents to test against, so a lab costs more. Where departments differ in size, say so in the notes and we will scope each one properly.</span></span></div>
             <input type="hidden" id="train-n" value="3"/>
-            <p class="hint" style="margin-top:.5rem"><a href="../services/training/" target="_blank" rel="noopener">See the general module and the department labs &rarr;</a></p>
+            <p class="hint" style="margin-top:.5rem"><a href="../services/training/">See the general module and the department labs &rarr;</a></p>
           </div>
         </div>
               <div class="step org">
-        <h3>5 &middot; AI use policy</h3>
+        <h3 data-step>AI use policy</h3>
         <p class="hint">General means one umbrella policy: permitted uses, red lines, data classification, disclosure, escalation, approved tools. Specific annexes add rules for a particular department or use (casework data, fundraising, HR records) where the umbrella is not enough.</p>
         <div class="opts">
           <div class="opt"><input type="radio" name="policy" id="po0" value="0"/><label for="po0"><b>No policy</b></label></div>
           <div class="opt"><input type="radio" name="policy" id="po1" value="1" checked/><label for="po1"><b>General only</b><span>one umbrella policy</span></label></div>
           <div class="opt"><input type="radio" name="policy" id="po2" value="2"/><label for="po2"><b>Umbrella + specific annexes</b><span>per department or use</span></label></div>
         </div>
-        <div class="num" id="policy-n-wrap" hidden><label for="policy-n">Number of specific annexes:<span class="ii"><button type="button" aria-label="Definition: Specific annex">i</button><span class="ii-p" role="tooltip"><b>Specific annex</b>An addition to the umbrella policy covering one department or one use where the general rules are not enough: casework data, fundraising, HR records, procurement. Each annex is drafted with the team it governs.</span></span></label><input type="number" id="policy-n" min="1" max="8" value="3"/></div><p class="hint" style="margin-top:.5rem"><a href="../services/policy/" target="_blank" rel="noopener">See the policy structure and sample clauses &rarr;</a></p>
+        <div class="num" id="policy-n-wrap" hidden><label for="policy-n">Number of specific annexes:<span class="ii"><button type="button" aria-label="Definition: Specific annex">i</button><span class="ii-p" role="tooltip"><b>Specific annex</b>An addition to the umbrella policy covering one department or one use where the general rules are not enough: casework data, fundraising, HR records, procurement. Each annex is drafted with the team it governs.</span></span></label><input type="number" id="policy-n" min="1" max="8" value="3"/></div><p class="hint" style="margin-top:.5rem"><a href="../services/policy/">See the policy structure and sample clauses &rarr;</a></p>
       </div>
 
       <div class="step org">
-        <h3>6 &middot; Custom agents, skills and tools</h3>
-        <p class="hint">Three different things, priced separately, and scaled by the size of the organisation and of the department that will use them, because testing and handover grow with both. Each is configured on the platform you already use, tested on your documents and handed over with an operating guide. We configure existing platforms; writing software and training models are outside what we do. <a href="../services/agents/" target="_blank" rel="noopener">See worked examples of each &rarr;</a></p>
+        <h3 data-step>Custom agents, skills and tools</h3>
+        <p class="hint">Three different things, priced separately, and scaled by the size of the organisation and of the department that will use them, because testing and handover grow with both. Each is configured on the platform you already use, tested on your documents and handed over with an operating guide. We configure existing platforms; writing software and training models are outside what we do. <a href="../services/agents/">See worked examples of each &rarr;</a></p>
         <div class="num"><label for="agents">Custom agents:<span class="ii"><button type="button" aria-label="Definition: Agent">i</button><span class="ii-p" role="tooltip"><b>Agent</b>A configured assistant for a role or workflow, holding your templates, rules and reference documents, that handles a multi-step job end to end. Example: a grant-report drafter that follows the funder&rsquo;s headings and flags any figure it could not trace to a source file.</span></span></label><input type="number" id="agents" min="0" max="5" value="0"/></div>
         <div class="num"><label for="skills">Custom skills:<span class="ii"><button type="button" aria-label="Definition: Skill">i</button><span class="ii-p" role="tooltip"><b>Skill</b>A written instruction set the platform loads whenever a task of that type comes up, carrying your house method so every staff member gets the same approach. Example: a donor-report house-style skill holding your tone rules, headings and figure-verification step.</span></span></label><input type="number" id="skills" min="0" max="8" value="0"/></div>
         <div class="num"><label for="tools">Custom tools for repetitive tasks:<span class="ii"><button type="button" aria-label="Definition: Tool">i</button><span class="ii-p" role="tooltip"><b>Tool</b>A small, tested set-up for a single repetitive task with a fixed input and a fixed output. The narrowest of the three and the quickest to configure. Example: a call-for-proposals summariser returning eligibility, deadline, budget ceiling and required annexes in the same order every time.</span></span></label><input type="number" id="tools" min="0" max="8" value="0"/></div>
       </div>
 
       <div class="step org">
-          <h3>7 &middot; Which tasks are you trying to improve?</h3>
+          <h3 data-step>Which tasks are you trying to improve?</h3>
           <p class="hint">Each task you pick is built into the training material and the playbooks: the patterns, the worked examples and the checks are prepared for that task on your documents. The first three carry most of the preparation, and further ones cost less.</p>
           <div class="opts-inline" id="tasks">
             <label class="chk"><input type="checkbox" name="task" value="Donor and narrative reporting"/> Donor and narrative reporting</label>
@@ -219,16 +247,24 @@
           </div>
         </div>
         <div class="step">
-          <h3 id="spec-h">8 &middot; Anything we should know</h3>
+          <h3 id="spec-h" data-step>Anything we should know</h3>
           <p class="hint">Languages, deadlines, sites, data constraints, a funder requirement, or a task not listed above. This is sent with your estimate.</p>
           <textarea id="spec" rows="4" placeholder="For example: two offices, sessions needed in French and Arabic, board meeting on 12 March, casework data involved." aria-label="Anything we should know"></textarea>
         </div>
         <p style="font-size:.8rem;color:var(--muted)"><button type="button" id="reset" class="btn btn-outline" style="padding:.5rem .9rem;font-size:.76rem">Reset</button></p>
     </form>
 
-    <aside class="res" id="res" aria-live="polite">
-      <div class="k">Indicative range</div>
+    <div id="mbar" class="mbar" hidden aria-hidden="true">
+      <div class="mbar-in">
+        <div><span class="mbar-k">Indicative range</span><strong id="mbar-v">&middot;</strong></div>
+        <button type="button" class="mbar-b" id="mbar-jump">See what&rsquo;s included</button>
+      </div>
+    </div>
+
+    <aside class="res" id="res">
+      <div class="k" id="res-k">Indicative range</div>
       <div id="res-body"></div>
+      <p id="res-live" class="visually-hidden" aria-live="polite" aria-atomic="true"></p>
     </aside>
   </div>
 </section>
@@ -238,8 +274,9 @@
     <div class="kicker">How to read the number</div>
     <h2>How to read the number.</h2>
     <p style="margin-bottom:.9rem">The range reflects the scope you selected at the rate for your type of organisation. It excludes VAT and travel. Once we have spoken for thirty minutes and know your actual departments, data and constraints, you get a fixed price and a fixed scope in writing, and that number is the one that binds.</p>
-    <p>Two things move it most: how many departments need their own material, and whether you want us to configure agents or tools on top of training and policy. Two things do not move it: negotiating, and how urgent it is. We do not charge for speed and we do not discount the rate.</p><p style="margin-top:.9rem">For any engagement, and for individuals as well as groups, we can host the training in person and build it around what the participants need. The arrangements are agreed on the call and confirmed with the fixed price.</p>
-    <p style="margin-top:.9rem">What moves the figure: the level you are training to, the size of the organisation and of the departments involved, the depth of the assessment, the number of policy annexes, and how many agents, skills and tools you want configured. What does not move it: negotiating, and how urgent it is.</p>
+    <p><strong>What moves the figure:</strong> the level you are training to, the size of the organisation and of the departments involved, the depth of the assessment, the number of policy annexes, and how many agents, skills and tools you want configured. Of those, two move it most: how many departments need their own material, and whether you want agents or tools configured on top of training and policy.</p>
+    <p style="margin-top:.9rem"><strong>What does not move it:</strong> negotiating, and how urgent it is. We do not charge for speed and we do not discount the rate.</p>
+    <p style="margin-top:.9rem">For any engagement, and for individuals as well as groups, we can host the training in person and build it around what the participants need. The arrangements are agreed on the call and confirmed with the fixed price.</p>
   </div>
 </section>
 
@@ -334,17 +371,36 @@ function courseItems(st){
   else L.push("Online, on the platform the participants already use");
   return L;
 }
-var last=null;
+var last=null, touched=false;
+/* Steps are numbered from what is on screen, so hiding the organisation
+   steps for an individual leaves 1, 2, 3 rather than 1, 2, 2, 8. */
+function renumber(){
+  var n=0;
+  document.querySelectorAll("#est .step").forEach(function(el){
+    var h=el.querySelector("h3[data-step]"); if(!h) return;
+    if(el.hidden){ h.removeAttribute("data-n"); return; }
+    n++; h.setAttribute("data-n",n);
+    var base=h.getAttribute("data-label")||h.textContent.replace(/^\d+\s*·\s*/,"");
+    h.setAttribute("data-label",base);
+    h.textContent=n+" · "+base;
+  });
+}
+function mbar(txt){
+  var b=q("mbar"), v=q("mbar-v"); if(!b||!v) return;
+  v.textContent=txt; b.hidden=false; b.setAttribute("aria-hidden","false");
+}
 function render(){
   var st=state(), ind=st.type==="ind";
   q("ind-step").hidden=!ind; document.querySelectorAll("#est .step.org").forEach(function(el){ el.hidden=ind; }); q("nights-wrap").hidden=st.fmt!=="in";
+  renumber();
   q("task-other-wrap").hidden=!q("task-other-chk").checked;
   if(ind){
     var c=course(st), items=courseItems(st), body=q("res-body");
     var html='<div class="range">'+fmt(c.pp)+' per person<small>'+st.pax+' participant'+(st.pax>1?"s":"")+' · '+(st.fmt==="in"?"in person, "+st.nights+" night"+(st.nights>1?"s":"")+" included":"online")+' · total '+fmt(c.total)+' · excl. VAT</small></div>'+
              '<ul>'+items.map(function(i){return "<li>"+i+"</li>";}).join("")+'</ul>'+
              '<p class="note">Per-person price for the group size shown. Confirmed in writing with the dates and the venue. Payment 40% on registration, 60% before the course.</p>';
-    html+=sendBlock(); body.innerHTML=html; last={st:st,e:null,items:items,c:c}; q("sb").onclick=send; return;
+    html+=sendBlock(); body.innerHTML=html; last={st:st,e:null,items:items,c:c}; bindSend();
+    liveRange(fmt(c.pp)+" per person", st); mbar(fmt(c.pp)+" per person"); return;
   }
   q("train-n-wrap").hidden=st.train!=="2"; q("policy-n-wrap").hidden=st.policy!=="2"; q("lvl-wrap").hidden=st.train==="0";
   if(st.train!=="0"){
@@ -355,27 +411,57 @@ function render(){
         (st.train==="2"?", plus the department labs below":"")+".");
   }
   var e=estimate(st), items=included(st), body=q("res-body"), html="";
+  var k=q("res-k");
+  if(k) k.textContent = touched ? "Indicative range" : "Example scope · change it below";
   var empty=st.assess==="0"&&st.train==="0"&&st.policy==="0"&&!st.agents&&!st.skills&&!st.tools;
-  if(empty){ html='<div class="range">&middot;<small>Select at least one component</small></div>'; body.innerHTML=html; last=null; return; }
+  if(empty){ html='<div class="range">&middot;<small>Select at least one component above</small></div>';
+    body.innerHTML=html; last=null; mbar("Select a component"); liveRange("nothing selected",st); return; }
   if(!e){
     html='<div class="range">Scoped on a call<small>'+SIZE[st.size]+' · '+TYPE[st.type]+'</small></div>'+
          '<div class="big">For organisations of this size the number depends on structure, sites and data we need to see first. Thirty minutes is enough to give you a fixed price.</div>'+
          '<ul>'+items.map(function(i){return "<li>"+i+"</li>";}).join("")+'</ul>'+
-         '<a class="btn btn-gold" href="../contact-us/">Book the 30-minute call</a>';
+         '<a class="btn btn-gold" href="../contact-us/">Book a call</a>';
   } else {
     html='<div class="range">'+fmt(e.lo)+' to '+fmt(e.hi)+'<small>'+TYPE[st.type]+' · '+SIZE[st.size]+' · excl. VAT and travel</small></div>'+
          '<ul>'+items.map(function(i){return "<li>"+i+"</li>";}).join("")+'</ul>'+
-         '<p class="note">Indicative. Confirmed as a fixed price and fixed scope after a 30-minute call. Payment 40% on signature, 60% on delivery.</p>';
+         '<p class="note">Indicative. Confirmed as a fixed price and fixed scope after a 30-minute call. Payment 40% on signature, 60% on delivery. <a href="../terms/" style="color:#fff;text-decoration:underline">Full terms</a>.</p>';
+    mbar(fmt(e.lo)+" to "+fmt(e.hi));
+    if(window.mai) mai.once("estimate_shown",{type:st.type,size:st.size});
   }
   html+=sendBlock();
   body.innerHTML=html; last={st:st,e:e,items:items};
-  q("sb").onclick=send;
+  bindSend();
+  liveRange(e?(fmt(e.lo)+" to "+fmt(e.hi)):"Scoped on a call", st);
 }
+function bindSend(){
+  var b=q("sb"); if(b) b.onclick=send;
+  ["sn","se","so"].forEach(function(id){
+    var el=q(id); if(el) el.addEventListener("input",keepSendVals);
+  });
+}
+/* One short sentence for screen readers, instead of re-announcing the panel. */
+function liveRange(txt,st){
+  var el=q("res-live"); if(!el) return;
+  clearTimeout(liveRange._t);
+  liveRange._t=setTimeout(function(){ el.textContent="Indicative range updated: "+txt+"."; },700);
+}
+/* The result panel is rebuilt on every keystroke, so anything already typed
+   into the send fields is carried across the rebuild rather than wiped. */
+var sendVals={sn:"",se:"",so:""};
+function keepSendVals(){
+  ["sn","se","so"].forEach(function(id){ var e=q(id); if(e) sendVals[id]=e.value; });
+}
+function esc(t){return String(t==null?"":t).replace(/[&<>"']/g,function(c){
+  return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
 function sendBlock(){
-  return '<div class="send" id="send"><div class="k" style="margin-bottom:.5rem">Send this estimate</div>'+
-        '<input type="text" id="sn" placeholder="Your name" aria-label="Your name"/><input type="email" id="se" placeholder="Your email" aria-label="Your email"/><input type="text" id="so" placeholder="Organisation (optional)" aria-label="Organisation"/>'+
-        '<div class="row"><button type="button" class="btn btn-gold" id="sb" style="padding:.6rem 1rem;font-size:.8rem">Send to the team &amp; keep a copy</button><a class="btn btn-ghost" href="../contact-us/" style="padding:.6rem 1rem;font-size:.8rem">Book a call</a></div>'+
-        '<p class="note" style="margin:.7rem 0 0">Goes to the team by email so the call starts from your selections. Nothing else is stored.</p></div>';
+  return '<div class="send" id="send"><div class="k" style="margin-bottom:.5rem">Send this scope</div>'+
+        '<label class="visually-hidden" for="sn">Your name</label><input type="text" id="sn" name="name" autocomplete="name" placeholder="Your name" value="'+esc(sendVals.sn)+'"/>'+
+        '<label class="visually-hidden" for="se">Your email</label><input type="email" id="se" name="email" autocomplete="email" placeholder="Your email" value="'+esc(sendVals.se)+'"/>'+
+        '<label class="visually-hidden" for="so">Organisation (optional)</label><input type="text" id="so" name="organization" autocomplete="organization" placeholder="Organisation (optional)" value="'+esc(sendVals.so)+'"/>'+
+        '<div class="row"><button type="button" class="btn btn-gold" id="sb" style="padding:.6rem 1rem;font-size:.8rem">Email me this scope</button><a class="btn btn-ghost" href="../contact-us/" style="padding:.6rem 1rem;font-size:.8rem">Book a call</a></div>'+
+        '<p class="note" style="margin:.7rem 0 0">A copy goes to you and a copy to the team, so the call starts from your selections. '+
+        'Your name, email and organisation are used to answer you and are kept for up to three years. '+
+        '<a href="../privacy/" style="color:#fff;text-decoration:underline">How we handle your data</a>.</p></div>';
 }
 function loadEmailJS(){return new Promise(function(res,rej){ if(window.emailjs) return res(); var s=document.createElement("script"); s.src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"; s.onload=function(){res();}; s.onerror=rej; document.head.appendChild(s); });}
 function send(){
@@ -390,11 +476,34 @@ function send(){
           (st.tasks&&st.tasks.length?"\n\nTasks to improve:\n- "+st.tasks.join("\n- "):"")+
           (st.spec?"\n\nNotes from the visitor:\n"+st.spec:"")+
           "\n\nName: "+n+"\nEmail: "+em+"\nOrganisation: "+(o||"not given")+"\nPage: "+location.href+"\nTime: "+new Date().toISOString();
+  function payload(to,intro){
+    return {from_name:n,from_email:em,organization:o||"not given",job_title:"not given",
+      sector:TYPE[st.type],
+      team_size:(c?st.pax+" participant(s), "+(st.fmt==="in"?"in person":"online"):SIZE[st.size]),
+      service:(c?"Course price request":"Price estimate request"),
+      referral:"Estimator",preferred:"Email",message:intro+msg,to_email:to};
+  }
+  var TO_TEAM="q.mamdouh@mai4consulting.com";
+  var COPY="YOUR COPY OF THIS SCOPE\n\nThis is the scope you built on mai4consulting.com/estimate/, "+
+           "kept so you have it in writing. The range is indicative; a fixed price and fixed scope "+
+           "follow a 30-minute call. Terms: mai4consulting.com/terms/\n\n"+
+           "----------------------------------------\n\n";
   loadEmailJS().then(function(){
     try{ window.emailjs.init({publicKey:"JJs3lu55OHI_pbjth"}); }catch(x){}
-    return window.emailjs.send("service_an94235","template_bv6m1l3",{from_name:n,from_email:em,organization:o||"not given",job_title:"not given",sector:TYPE[st.type],team_size:(c?st.pax+" participant(s), "+(st.fmt==="in"?"in person":"online"):SIZE[st.size]),service:(c?"Course price request":"Price estimate request"),referral:"Estimator",preferred:"Email",message:msg,to_email:"q.mamdouh@mai4consulting.com"});
-  }).then(function(){ q("send").innerHTML='<p class="ok">Sent. The team has your selections and will confirm a fixed price on the call. Use your browser\'s print or save-as-PDF for your own copy.</p>'; })
-    .catch(function(){ b.disabled=false; b.textContent="Send to the team & keep a copy"; b.insertAdjacentHTML("afterend",'<p class="err">Could not send. Please use the <a href="../contact-us/" style="color:#fff">contact form</a>.</p>'); });
+    return window.emailjs.send("service_an94235","template_bv6m1l3",payload(TO_TEAM,""));
+  }).then(function(){
+    /* The button says the visitor keeps a copy, so the visitor is sent one.
+       If this second send fails the first has already succeeded, so the
+       failure is reported without losing the enquiry. */
+    return window.emailjs.send("service_an94235","template_bv6m1l3",payload(em,COPY))
+      .then(function(){return true;},function(){return false;});
+  }).then(function(copied){
+    if(window.mai) mai.track("estimate_sent",{type:st.type,size:(c?"course":st.size)});
+    q("send").innerHTML='<p class="ok">Sent.'+(copied?' A copy is on its way to '+esc(em)+'.':'')+
+      ' The team has your selections and will confirm a fixed price on the call.</p>'+
+      (copied?'':'<p class="note" style="margin:.5rem 0 0">We could not email you a copy. Use your browser\'s print or save-as-PDF to keep one.</p>');
+  })
+    .catch(function(){ b.disabled=false; b.textContent="Email me this scope"; b.insertAdjacentHTML("afterend",'<p class="err">Could not send. Please use the <a href="../contact-us/" style="color:#fff">contact form</a>.</p>'); });
 }
 function preset(){
   var p=(location.search.match(/preset=([a-z]+)/)||[])[1], sz=(location.search.match(/size=(s[1-5])/)||[])[1]; if(!p&&!sz) return;
@@ -409,13 +518,22 @@ function preset(){
   if(p==="course"){ set("type","ind"); }
   if(sz){ set("size",sz); q("policy-n").value=_dn[sz]||3; if(p==="training"&&sz==="s1") set("train","1"); }
 }
-document.querySelectorAll("#est input,#est textarea,#est select").forEach(function(i){ i.addEventListener("change",function(){
-  if(i.name==="size"){ q("policy-n").value=_dn[i.value]||3; } render(); }); i.addEventListener("input",render); });
-q("reset").onclick=function(){ q("est").reset(); q("lvl-from").value=2; q("lvl-to").value=3; q("deptsize").value="m"; q("policy-n").value=3; q("pax").value=1; q("nights").value=1; q("skills").value=0; q("spec").value=""; q("task-other").value=""; render(); };
+document.querySelectorAll("#est input,#est textarea,#est select").forEach(function(i){
+  i.addEventListener("change",function(){
+    touched=true;
+    if(i.name==="size"){ q("policy-n").value=_dn[i.value]||3; } render(); });
+  i.addEventListener("input",function(){ touched=true; render(); }); });
+q("reset").onclick=function(){ touched=false; sendVals={sn:"",se:"",so:""}; q("est").reset(); q("lvl-from").value=2; q("lvl-to").value=3; q("deptsize").value="m"; q("policy-n").value=3; q("pax").value=1; q("nights").value=1; q("skills").value=0; q("spec").value=""; q("task-other").value=""; render(); };
+var jb=q("mbar-jump");
+if(jb) jb.addEventListener("click",function(){
+  var r=q("res"); if(r) r.scrollIntoView({behavior:"smooth",block:"start"});
+});
 preset(); render();
+if(window.mai) mai.once("estimator_opened");
 window.__maiEstimate=function(st){return estimate(st);}; window.__maiCourse=function(st){return course(st);};
 })();
 </script>
+</main>
 <footer class="mai-footer">
   <div class="mai-footer-inner">
     <div>
@@ -431,23 +549,25 @@ window.__maiEstimate=function(st){return estimate(st);}; window.__maiCourse=func
     <ul>
       <li><a href="../">Home</a></li>
       <li><a href="../services/">Services</a></li>
-      <li><span class="footer-nav-current" aria-current="page">Price estimate</span></li>
-      <li><a href="../for-funders/">For Investors</a></li>
+      <li><span class="footer-nav-current" aria-current="page">Pricing</span></li>
+      <li><a href="../our-clients/">Who It's For</a></li>
       <li><a href="../about/">About</a></li>
-      <li><a href="../compare/">Compare the market</a></li>
-      <li><a href="../knowledge/">Knowledge</a></li>
-      <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
-      <li><a href="../our-clients/">Who We Work With</a></li>
       <li><a href="../contact-us/">Contact</a></li>
+      <li><span class="fn-group">Decide</span></li>
+      <li><a href="../compare/">Compare the market</a></li>
+      <li><a href="../for-funders/">For funders and investors</a></li>
+      <li><a href="../explore-your-ai-readiness/">Free readiness check</a></li>
+      <li><a href="../extensive-ai-readiness-analysis/">Self-assessment</a></li>
       <li><span class="fn-group">Read</span></li>
-      <li><a href="../playbook/">Sample Playbook</a></li>
+      <li><a href="../knowledge/">Knowledge</a></li>
+      <li><a href="../playbook/">Sample playbook</a></li>
       <li><a href="../eu-ai-act-article-4/">EU AI Act Article 4</a></li>
-      <li><a href="../use-cases/">AI Use Cases</a></li>
+      <li><a href="../use-cases/">AI use cases</a></li>
       <li><a href="../claude-in-chrome/">Claude in Chrome</a></li>
-      <li><a href="../save-claude-tokens/">Claude for Business</a></li>
-      <li><a href="../extensive-ai-readiness-analysis/">Extended Assessment</a></li>
+      <li><a href="../save-claude-tokens/">Claude for business</a></li>
       <li><span class="fn-group">Legal</span></li>
       <li><a href="../privacy/">Privacy</a></li>
+      <li><a href="../terms/">Terms</a></li>
     </ul>
   </nav>
 </footer>
@@ -465,6 +585,7 @@ window.__maiEstimate=function(st){return estimate(st);}; window.__maiCourse=func
   });
 })();
 </script>
+<script src="../assets/analytics.js" defer></script>
 <script src="../assets/chat.js" defer></script>
 </body>
 </html>

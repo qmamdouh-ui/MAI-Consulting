@@ -3,15 +3,20 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Claude in Chrome: Impact, Trade-offs and Warnings | M.A.I. Consulting</title>
-<meta name="description" content="What the Claude in Chrome browser extension does, where it pays off, what it costs, the security warnings that matter, and a practical cheat sheet: from M.A.I. Consulting."/>
+<title>Claude in Chrome: Risks and Trade-offs | M.A.I. Consulting</title>
+<meta name="description" content="What a browser agent does on your behalf, where it earns its place, and the security warnings that matter before you let one near a logged-in session."/>
 <link rel="canonical" href="https://mai4consulting.com/claude-in-chrome/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="M.A.I. Consulting"/>
-<meta property="og:title" content="Claude in Chrome: Impact, Trade-offs and Warnings | M.A.I. Consulting"/>
-<meta property="og:description" content="What the Claude in Chrome browser extension does, where it pays off, what it costs, the security warnings that matter, and a practical cheat sheet: from M.A.I. Consulting."/>
+<meta property="og:title" content="Claude in Chrome: Risks and Trade-offs | M.A.I. Consulting"/>
+<meta property="og:description" content="What a browser agent does on your behalf, where it earns its place, and the security warnings that matter before you let one near a logged-in session."/>
 <meta property="og:url" content="https://mai4consulting.com/claude-in-chrome/"/>
-<meta name="twitter:card" content="summary"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="og:image" content="https://mai4consulting.com/assets/og/chrome.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="M.A.I. Consulting — Claude in Chrome: Risks and Trade-offs"/>
+<meta name="twitter:image" content="https://mai4consulting.com/assets/og/chrome.png"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
 <style>
@@ -33,7 +38,7 @@
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-body{
+body{overflow-wrap:break-word;
   font-family:'Inter',sans-serif;
   background:var(--off);
   color:var(--charcoal);
@@ -183,7 +188,7 @@ h2.light em{
 /* ── CARD GRID ── */
 .card-grid{
   display:grid;gap:1.25rem;
-  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));
 }
 .card{
   background:var(--white);border:1px solid var(--outline);
@@ -241,8 +246,8 @@ h2.light em{
 .code-block .kw{color:var(--gold);}
 
 /* ── TWO-COL ── */
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
-@media(max-width:700px){.two-col{grid-template-columns:1fr}}
+.two-col{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3.5rem;align-items:start;}
+@media(max-width:700px){.two-col{grid-template-columns:minmax(0,1fr);gap:2rem}}
 
 /* ── STEP LIST ── */
 .step-list{display:flex;flex-direction:column;gap:1.25rem;margin-top:1.5rem;}
@@ -285,7 +290,7 @@ h2.light em{
 .dark-section .badge{background:rgba(255,255,255,.08);color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.15);}
 
 /* ── STAT ROW ── */
-.stat-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1.5rem;margin-top:2rem;}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(180px,100%),1fr));gap:1.5rem;margin-top:2rem;}
 .stat{text-align:center;padding:1.5rem 1rem;background:var(--white);border-radius:12px;border:1px solid var(--outline);}
 .stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:800;color:var(--blue);line-height:1;}
 .stat-label{font-size:.78rem;color:var(--charcoal);margin-top:.4rem;}
@@ -387,7 +392,7 @@ table.cmp td strong{color:var(--txt);}
 .dark-section .check-mark{background:rgba(201,168,76,.15);color:var(--gold);}
 
 /* sources */
-.src-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:.75rem;margin-top:1.5rem;}
+.src-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:.75rem;margin-top:1.5rem;}
 .src-list li{
   background:var(--white);border:1px solid var(--outline);border-radius:10px;padding:.9rem 1.1rem;
   font-size:.8rem;line-height:1.55;
@@ -397,7 +402,7 @@ table.cmp td strong{color:var(--txt);}
 .src-list a:hover{text-decoration:underline;color:var(--gold);}
 
 /* risk stat */
-.risk-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem;margin-top:2rem;}
+.risk-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(200px,100%),1fr));gap:1.25rem;margin-top:2rem;}
 .risk{padding:1.5rem 1.25rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;}
 .risk-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:var(--gold);line-height:1;white-space:nowrap;}
 .risk-num.narrow{font-size:1.55rem;}
@@ -434,24 +439,38 @@ table.cmp td strong{color:var(--txt);}
 /* page's own header must not also stick under the global bar */
 body > header{position:static !important}
 .footer-nav .fn-group{color:rgba(255,255,255,.28);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+
+/* ── skip link, visible focus, reduced motion (shared behaviour) ── */
+.skip{position:absolute;left:.75rem;top:-3.5rem;z-index:1000;background:#C9A84C;color:#001830;
+ font:700 .82rem Inter,system-ui,sans-serif;padding:.6rem 1.1rem;border-radius:0 0 8px 8px;
+ text-decoration:none;transition:top .15s}
+.skip:focus{top:0}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,
+summary:focus-visible,[role=radio]:focus-visible,[tabindex]:focus-visible{
+ outline:2px solid #C9A84C;outline-offset:2px;border-radius:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+ *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+ transition-duration:.001ms!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="mai-topbar">
   <div class="mai-topbar-inner">
     <a class="mai-brand" href="../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
     <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <ul class="mai-links" id="mai-links">
       <li><a href="../services/">Services</a></li>
-      <li><a href="../estimate/">Estimate</a></li>
-      <li><a href="../for-funders/">For Investors</a></li>
-      <li><a href="../compare/">Compare</a></li>
+      <li><a href="../estimate/">Pricing</a></li>
+      <li><a href="../our-clients/">Who It's For</a></li>
+      <li><a href="../about/">About</a></li>
       <li><a href="../knowledge/">Knowledge</a></li>
-      <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
+      <li><a href="../explore-your-ai-readiness/">Free Check</a></li>
       <li><a class="mai-cta" href="../contact-us/">Book a call</a></li>
     </ul>
   </div>
 </div>
+<main id="main" tabindex="-1">
 
 
 <!-- HEADER -->
@@ -555,7 +574,7 @@ body > header{position:static !important}
         <div class="card">
           <div class="card-icon">🏛️</div>
           <h3>Admin controls</h3>
-          <p>Team and Enterprise owners set organisation-wide allowlists and blocklists from Organization settings, which apply on top of whatever individual users permit. An allowlist-first rollout is the only defensible starting posture in a regulated environment.</p>
+          <p>Team and Enterprise owners set organisation-wide allowlists and blocklists from Organisation settings, which apply on top of whatever individual users permit. An allowlist-first rollout is the only defensible starting posture in a regulated environment.</p>
           <span class="card-tag">Team / Enterprise</span>
         </div>
       </div>
@@ -758,7 +777,7 @@ body > header{position:static !important}
       <div class="check-item">
         <div class="check-mark">3</div>
         <p><strong>Start allowlist-first and expand deliberately</strong>
-        Team and Enterprise admins configure allowlists and blocklists under Organization settings. Begin with the handful of domains the pilot actually needs, and add sites on request with a named owner for each.</p>
+        Team and Enterprise admins configure allowlists and blocklists under Organisation settings. Begin with the handful of domains the pilot actually needs, and add sites on request with a named owner for each.</p>
       </div>
       <div class="check-item">
         <div class="check-mark">4</div>
@@ -853,7 +872,7 @@ body > header{position:static !important}
 
 <span class="cmt">── ADMIN (TEAM / ENTERPRISE) ──────────────────────────────</span>
 
-<span class="kw">Location</span>    <span class="str">Organization settings → Claude in Chrome</span>
+<span class="kw">Location</span>    <span class="str">Organisation settings → Claude in Chrome</span>
 <span class="kw">Allowlist</span>   <span class="str">Approved domains only. the safe rollout default</span>
 <span class="kw">Blocklist</span>   <span class="str">Hard denies; overrides individual user permissions</span>
 <span class="kw">Defaults</span>    <span class="str">On for Team; on for Enterprise from 10 Sep 2026 unless disabled</span>
@@ -910,6 +929,7 @@ body > header{position:static !important}
 </section>
 
 <!-- FOOTER -->
+</main>
 <footer>
   <div class="footer-inner">
     <div>
@@ -925,23 +945,25 @@ body > header{position:static !important}
     <ul>
       <li><a href="../">Home</a></li>
       <li><a href="../services/">Services</a></li>
-      <li><a href="../estimate/">Price estimate</a></li>
-      <li><a href="../for-funders/">For Investors</a></li>
+      <li><a href="../estimate/">Pricing</a></li>
+      <li><a href="../our-clients/">Who It's For</a></li>
       <li><a href="../about/">About</a></li>
-      <li><a href="../compare/">Compare the market</a></li>
-      <li><a href="../knowledge/">Knowledge</a></li>
-      <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
-      <li><a href="../our-clients/">Who We Work With</a></li>
       <li><a href="../contact-us/">Contact</a></li>
+      <li><span class="fn-group">Decide</span></li>
+      <li><a href="../compare/">Compare the market</a></li>
+      <li><a href="../for-funders/">For funders and investors</a></li>
+      <li><a href="../explore-your-ai-readiness/">Free readiness check</a></li>
+      <li><a href="../extensive-ai-readiness-analysis/">Self-assessment</a></li>
       <li><span class="fn-group">Read</span></li>
-      <li><a href="../playbook/">Sample Playbook</a></li>
+      <li><a href="../knowledge/">Knowledge</a></li>
+      <li><a href="../playbook/">Sample playbook</a></li>
       <li><a href="../eu-ai-act-article-4/">EU AI Act Article 4</a></li>
-      <li><a href="../use-cases/">AI Use Cases</a></li>
+      <li><a href="../use-cases/">AI use cases</a></li>
       <li><span class="footer-nav-current" aria-current="page">Claude in Chrome</span></li>
-      <li><a href="../save-claude-tokens/">Claude for Business</a></li>
-      <li><a href="../extensive-ai-readiness-analysis/">Extended Assessment</a></li>
+      <li><a href="../save-claude-tokens/">Claude for business</a></li>
       <li><span class="fn-group">Legal</span></li>
       <li><a href="../privacy/">Privacy</a></li>
+      <li><a href="../terms/">Terms</a></li>
     </ul>
   </nav>
 </footer>
@@ -964,6 +986,7 @@ document.addEventListener('click', function(e){
 if(b&&l){b.addEventListener('click',function(){var o=l.classList.toggle('open');
 b.setAttribute('aria-expanded',o?'true':'false');});}})();
 </script>
+<script src="../assets/analytics.js" defer></script>
 <script src="../assets/chat.js" defer></script>
 </body>
 </html>

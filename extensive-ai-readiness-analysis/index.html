@@ -3,15 +3,20 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Extended AI Readiness Assessment: 10 Dimensions | M.A.I. Consulting</title>
-<meta name="description" content="A 60-question, ten-dimension evaluation of AI fluency, governance, ethics, workforce impact and future-readiness, mapped to ISO/IEC 42001, NIST AI RMF and the EU AI Act."/>
+<title>AI Readiness Self-Assessment | M.A.I. Consulting</title>
+<meta name="description" content="The full free instrument: 60 questions across 10 dimensions, mapped to ISO/IEC 42001, the NIST AI RMF and EU AI Act Article 4. About 30 minutes."/>
 <link rel="canonical" href="https://mai4consulting.com/extensive-ai-readiness-analysis/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="M.A.I. Consulting"/>
-<meta property="og:title" content="Extended AI Readiness Assessment: 10 Dimensions | M.A.I. Consulting"/>
-<meta property="og:description" content="A 60-question, ten-dimension evaluation of AI fluency, governance, ethics, workforce impact and future-readiness, mapped to ISO/IEC 42001, NIST AI RMF and the EU AI Act."/>
+<meta property="og:title" content="AI Readiness Self-Assessment | M.A.I. Consulting"/>
+<meta property="og:description" content="The full free instrument: 60 questions across 10 dimensions, mapped to ISO/IEC 42001, the NIST AI RMF and EU AI Act Article 4. About 30 minutes."/>
 <meta property="og:url" content="https://mai4consulting.com/extensive-ai-readiness-analysis/"/>
-<meta name="twitter:card" content="summary"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="og:image" content="https://mai4consulting.com/assets/og/extended.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="M.A.I. Consulting — AI Readiness Self-Assessment"/>
+<meta name="twitter:image" content="https://mai4consulting.com/assets/og/extended.png"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -26,7 +31,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;background:var(--off);color:var(--charcoal);min-height:100vh;}
+body{overflow-wrap:break-word;font-family:'Inter',sans-serif;background:var(--off);color:var(--charcoal);min-height:100vh;}
 .header{background:linear-gradient(140deg,#00122e,var(--blue));padding:40px 24px 32px;text-align:center;position:relative;overflow:hidden;}
 .header-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03)1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03)1px,transparent 1px);background-size:40px 40px;}
 .header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);color:var(--gold);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border-radius:9999px;margin-bottom:20px;position:relative;}
@@ -42,8 +47,8 @@ a.std-pill:hover{color:#C9A84C;border-color:rgba(201,168,76,.5);background:rgba(
 .user-info-card{background:var(--white);border:1px solid var(--outline);border-radius:14px;padding:24px 28px;}
 .ui-title-row{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;}
 .ui-title{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);}
-.ui-required-note{font-size:10px;color:#aaa;}
-.ui-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;}
+.ui-required-note{font-size:10px;color:#6b7280;}
+.ui-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),1fr));gap:14px;}
 .ui-field label{font-size:11px;font-weight:600;color:var(--charcoal);letter-spacing:.5px;display:block;margin-bottom:5px;transition:color .2s;}
 .ui-field input,.ui-field select{width:100%;padding:9px 12px;border:1px solid var(--outline);border-radius:6px;font-size:13px;font-family:'Inter',sans-serif;color:var(--txt);background:var(--off);transition:border .2s,background .2s;}
 .ui-field input:focus,.ui-field select:focus{outline:none;border-color:var(--blue);}
@@ -54,8 +59,8 @@ a.std-pill:hover{color:#C9A84C;border-color:rgba(201,168,76,.5);background:rgba(
 .dimension-block.dim-error .q-item:not(.answered){background:#fff7f7;border-left:2px solid rgba(192,57,43,.3);}
 .validation-banner{display:none;background:#fff0ee;border:1px solid rgba(192,57,43,.3);border-radius:8px;padding:12px 16px;font-size:12px;font-weight:600;color:var(--error);line-height:1.6;}
 .validation-banner ul{margin:6px 0 0 16px;font-weight:500;}
-.main{max-width:1080px;margin:24px auto;padding:0 16px 60px;display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:start;}
-@media(max-width:820px){.main{grid-template-columns:1fr;}}
+.main{max-width:1080px;margin:24px auto;padding:0 16px 60px;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start;}
+@media(max-width:820px){.main{grid-template-columns:minmax(0,1fr);}}
 .q-panel{display:flex;flex-direction:column;gap:14px;}
 .dimension-block{background:var(--white);border:1px solid var(--outline);border-radius:14px;overflow:hidden;transition:border-color .2s,box-shadow .2s;}
 .dim-header{padding:18px 22px;display:flex;align-items:center;gap:12px;cursor:pointer;user-select:none;}
@@ -75,7 +80,7 @@ a.std-pill:hover{color:#C9A84C;border-color:rgba(201,168,76,.5);background:rgba(
 .q-item:last-child{border-bottom:none;}
 .q-item:hover{background:rgba(0,62,138,.02);}
 .q-item.answered{background:rgba(0,62,138,.025);}
-.q-top{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;}
+.q-top{min-width:0;display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;}
 .q-num{width:22px;height:22px;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--white);margin-top:1px;}
 .q-text{font-size:13px;color:var(--txt);line-height:1.55;font-weight:500;}
 .q-sub{font-size:11px;color:#999;margin-top:2px;line-height:1.4;}
@@ -90,14 +95,14 @@ a.std-pill:hover{color:#C9A84C;border-color:rgba(201,168,76,.5);background:rgba(
 .scale-wrap{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
 .scale-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--outline);font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;background:var(--off);color:var(--charcoal);display:flex;align-items:center;justify-content:center;}
 .scale-btn.sel{color:var(--white);}
-.scale-lbl{font-size:10px;color:#aaa;margin-left:4px;}
+.scale-lbl{font-size:10px;color:#6b7280;margin-left:4px;}
 .num-wrap{display:flex;align-items:center;gap:10px;}
 .num-input{width:80px;padding:8px 10px;border:1px solid var(--outline);border-radius:6px;font-size:14px;font-weight:700;color:var(--txt);text-align:center;background:var(--off);}
 .num-input:focus{outline:none;border-color:var(--blue);}
-.num-unit{font-size:12px;color:#aaa;}
+.num-unit{font-size:12px;color:#6b7280;}
 .q-select{padding:8px 12px;border:1px solid var(--outline);border-radius:6px;font-size:13px;font-family:'Inter',sans-serif;color:var(--txt);background:var(--off);width:100%;max-width:340px;}
 .q-select:focus{outline:none;border-color:var(--blue);}
-.multi-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin-bottom:10px;}
+.multi-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:8px;margin-bottom:10px;}
 .multi-opt{display:flex;align-items:flex-start;gap:8px;padding:9px 12px;border:1px solid var(--outline);border-radius:6px;background:var(--off);cursor:pointer;font-size:12px;line-height:1.4;transition:all .2s;}
 .multi-opt:hover{border-color:var(--blue);}
 .multi-opt input{margin-top:2px;cursor:pointer;}
@@ -241,6 +246,49 @@ footer{
 .footer-nav a:hover{color:var(--gold,#C9A84C);}
 .footer-nav .footer-nav-current{color:var(--white,#ffffff);font-size:.78rem;}
 /* --- END SITE FOOTER --- */
+
+/* .dim-header and .scale-btn are <button> elements so they are keyboard
+   operable; these resets keep them looking exactly as they did as divs. */
+.dim-header{width:100%;min-width:0;background:none;border:0;margin:0;font:inherit;color:inherit;text-align:left;}
+.scale-btn{padding:0;font-family:inherit;appearance:none;-webkit-appearance:none;}
+.scale-btn[aria-checked="true"]{color:var(--white);}
+.dim-header:focus-visible,.scale-btn:focus-visible{outline:2px solid #C9A84C;outline-offset:2px;}
+
+/* The profile now sits inside the results column, beside the download it
+   feeds, rather than gating the questions at the top of the page. */
+.dashboard .user-info-wrap{max-width:none;margin:0;padding:0;}
+.dashboard .user-info-card{padding:18px;border-radius:12px;}
+.dashboard .ui-grid{grid-template-columns:1fr;gap:12px;}
+.ui-note{font-size:11.5px;line-height:1.65;color:var(--charcoal);background:var(--off);
+  border-left:2px solid var(--gold);border-radius:0 6px 6px 0;padding:10px 12px;margin:10px 0 14px;}
+.ui-note a{color:var(--blue);font-weight:600;}
+/* answer-first banner above the question panel */
+.answer-first{background:rgba(0,62,138,.06);border:1px solid rgba(0,62,138,.16);border-radius:10px;
+  padding:12px 16px;margin-bottom:16px;font-size:13px;line-height:1.65;color:var(--charcoal);}
+.answer-first b{color:var(--blue-dark);}
+.resume-note{display:none;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  background:rgba(201,168,76,.13);border:1px solid rgba(201,168,76,.45);border-radius:10px;
+  padding:11px 15px;margin-bottom:14px;font-size:13px;line-height:1.6;color:var(--txt);}
+.resume-note.on{display:flex;}
+.resume-note button{background:none;border:1px solid var(--blue);color:var(--blue);border-radius:6px;
+  padding:5px 11px;font:700 12px Inter,system-ui,sans-serif;cursor:pointer;}
+.resume-note button:hover{background:var(--blue);color:#fff;}
+
+/* Static explanation of the instrument. This is real page content, not
+   JavaScript, so search engines and anyone reading with the tool disabled
+   can see what the assessment measures. */
+.explain{max-width:960px;margin:0 auto;padding:44px 16px 8px}
+.explain h2{font-family:'Playfair Display',Georgia,serif;font-size:1.55rem;font-weight:700;color:var(--blue-dark);margin-bottom:.5rem}
+.explain h3{font-family:'Inter',sans-serif;font-size:.95rem;font-weight:700;color:var(--blue-dark);margin-bottom:.25rem}
+.explain>p{font-size:.95rem;line-height:1.75;color:var(--charcoal);max-width:70ch;margin-bottom:1.4rem}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(255px,100%),1fr));gap:1rem;margin-bottom:1.6rem}
+.dcard{background:#fff;border:1px solid var(--outline);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:1rem 1.15rem}
+.dcard p{font-size:.85rem;line-height:1.62;color:var(--charcoal);margin:0}
+.dcard .g{font-size:.63rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#8A6D1F;margin-bottom:.3rem}
+.faqs{display:grid;gap:.5rem;margin-bottom:1.6rem}
+.faqs details{background:#fff;border:1px solid var(--outline);border-radius:9px;padding:.85rem 1.1rem}
+.faqs summary{font-size:.92rem;font-weight:700;color:var(--blue-dark);cursor:pointer}
+.faqs p{font-size:.88rem;line-height:1.72;color:var(--charcoal);margin-top:.6rem}
 </style>
 <style>.footer-nav .fn-group{color:rgba(255,255,255,.28);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;}</style>
 <style>
@@ -273,30 +321,115 @@ footer{
 /* page's own header must not also stick under the global bar */
 body > header{position:static !important}
 .footer-nav .fn-group{color:rgba(255,255,255,.28);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+
+/* ── skip link, visible focus, reduced motion (shared behaviour) ── */
+.skip{position:absolute;left:.75rem;top:-3.5rem;z-index:1000;background:#C9A84C;color:#001830;
+ font:700 .82rem Inter,system-ui,sans-serif;padding:.6rem 1.1rem;border-radius:0 0 8px 8px;
+ text-decoration:none;transition:top .15s}
+.skip:focus{top:0}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,
+summary:focus-visible,[role=radio]:focus-visible,[tabindex]:focus-visible{
+ outline:2px solid #C9A84C;outline-offset:2px;border-radius:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+ *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+ transition-duration:.001ms!important;scroll-behavior:auto!important}}
 </style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "AI Readiness Self-Assessment",
+   "description": "A free 60-question self-assessment across 10 dimensions, mapped to ISO/IEC 42001, the NIST AI RMF and EU AI Act Article 4.",
+   "url": "https://mai4consulting.com/extensive-ai-readiness-analysis/",
+   "applicationCategory": "BusinessApplication",
+   "operatingSystem": "Any modern web browser",
+   "browserRequirements": "Requires JavaScript",
+   "publisher": {
+    "@id": "https://mai4consulting.com/#org"
+   },
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CHF"
+   },
+   "inLanguage": "en"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How long does the AI Readiness Self-Assessment take?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "About thirty minutes for sixty questions across ten dimensions. Answers are saved in your own browser as you go, so you can close the tab and finish later."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What standards does it map to?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ISO/IEC 42001:2023, the NIST AI Risk Management Framework 1.0, EU AI Act Article 4, the GDPR, the OECD AI Principles and the UNESCO Recommendation on the Ethics of AI. The report uses their vocabulary so it is legible to the people who ask about them."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is this an audit or a certification?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Neither. It is a self-administered management instrument. It is not an audit, we are not a certification body, and it is not legal advice. The paid AI Readiness Audit applies the same instrument with staff interviews and a documented tool inventory, so the answers are evidenced rather than recalled."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How is it scored?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sixty questions across ten dimensions, 300 points in total, normalised to a score out of 100. Each dimension is scored separately so you can see which ones carry the gap rather than only the overall figure."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Who should answer it?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "One person can complete it, but the reading is better if a small group does: someone from programmes, someone from operations or finance, and whoever owns data protection. Where they disagree is usually where the real finding is."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="mai-topbar">
   <div class="mai-topbar-inner">
     <a class="mai-brand" href="../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
     <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <ul class="mai-links" id="mai-links">
       <li><a href="../services/">Services</a></li>
-      <li><a href="../estimate/">Estimate</a></li>
-      <li><a href="../for-funders/">For Investors</a></li>
-      <li><a href="../compare/">Compare</a></li>
+      <li><a href="../estimate/">Pricing</a></li>
+      <li><a href="../our-clients/">Who It's For</a></li>
+      <li><a href="../about/">About</a></li>
       <li><a href="../knowledge/">Knowledge</a></li>
-      <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
+      <li><a href="../explore-your-ai-readiness/">Free Check</a></li>
       <li><a class="mai-cta" href="../contact-us/">Book a call</a></li>
     </ul>
   </div>
 </div>
+<main id="main" tabindex="-1">
 
 
 <div class="header">
   <div class="header-grid"></div>
   <div class="header-badge"><span class="badge-dot"></span>M.A.I. Consulting Tool</div>
-  <h1>Extended AI Readiness <span>Assessment</span></h1>
+  <h1>AI Readiness <span>Self-Assessment</span></h1>
   <p>A 10-dimension evaluation: 60 questions across AI fluency, governance, ethics, workforce impact, and future-readiness.</p>
   <p style="font-size:.82rem;opacity:.85;margin-top:.6rem">This is the full instrument, free to run yourself in about thirty minutes. The shorter <a href="../explore-your-ai-readiness/" style="color:inherit;text-decoration:underline">AI Readiness Check</a> takes twelve minutes. The paid <a href="../services/assessment/#instruments" style="color:inherit;text-decoration:underline">AI Readiness Assessment service</a> applies this instrument to your organisation with staff interviews, a tool inventory and a 90-day priority list.</p>
   <div class="std-strip">
@@ -308,77 +441,11 @@ body > header{position:static !important}
   </div>
 </div>
 
-<div class="user-info-wrap">
-  <div class="user-info-card">
-    <div class="ui-title-row">
-      <div class="ui-title">Your Profile</div>
-      <div class="ui-required-note">Fields marked * are required</div>
-    </div>
-    <div class="ui-grid">
-
-      <div class="ui-field" id="field-name">
-        <label>Full Name <span style="color:var(--error)">*</span></label>
-        <input type="text" id="u-name" placeholder="e.g. Sara Johnson" oninput="updateUser();clearFieldError('field-name')"/>
-      </div>
-
-      <div class="ui-field" id="field-org">
-        <label>Organization <span style="color:var(--error)">*</span></label>
-        <input type="text" id="u-org" placeholder="e.g. Green Future NGO" oninput="updateUser();clearFieldError('field-org')"/>
-      </div>
-
-      <div class="ui-field" id="field-role">
-        <label>Role / Title <span style="color:var(--error)">*</span></label>
-        <input type="text" id="u-role" placeholder="e.g. Program Director" oninput="updateUser();clearFieldError('field-role')"/>
-      </div>
-
-      <div class="ui-field" id="field-email">
-        <label>Email Address <span style="color:var(--error)">*</span></label>
-        <input type="email" id="u-email" placeholder="e.g. sara@example.com"
-               oninput="updateUser();clearFieldError('field-email')"/>
-      </div>
-
-      <div class="ui-field" id="field-sector">
-        <label>Sector <span style="color:var(--error)">*</span></label>
-        <select id="u-sector" onchange="updateUser();clearFieldError('field-sector')">
-          <option value="">Select sector…</option>
-          <option>Nonprofit / NGO</option>
-          <option>Private Sector</option>
-          <option>Government / Public Sector</option>
-          <option>Training Centre</option>
-          <option>Healthcare</option>
-          <option>Financial Services</option>
-          <option>Education</option>
-          <option>Individual / Freelancer</option>
-        </select>
-      </div>
-
-      <div class="ui-field" id="field-size">
-        <label>Team Size <span style="color:var(--error)">*</span></label>
-        <select id="u-size" onchange="updateUser();clearFieldError('field-size')">
-          <option value="">Select…</option>
-          <option>Just me</option>
-          <option>2–10</option>
-          <option>11–50</option>
-          <option>51–200</option>
-          <option>200+</option>
-        </select>
-      </div>
-
-      <div class="ui-field" id="field-eu">
-        <label>EU AI Act Exposure <span style="color:var(--error)">*</span></label>
-        <select id="u-eu" onchange="updateUser();clearFieldError('field-eu')">
-          <option value="">Select…</option>
-          <option>Yes: operate or place AI in EU</option>
-          <option>No: out of scope</option>
-          <option>Unsure</option>
-        </select>
-      </div>
-
-    </div>
-  </div>
-</div>
-
 <div class="main">
+  <div class="resume-note" id="resume-note"><span id="resume-txt"></span><button type="button" id="resume-clear">Start over</button></div>
+  <div class="answer-first"><b>Answer first.</b> Sixty questions take about half an hour, so answers are saved in this
+  browser as you go: close the tab, come back, and the assessment is where you left it. Your score and priorities update
+  live and ask for nothing. Contact details are requested at the end, and only to generate the PDF.</div>
   <div class="q-panel" id="q-panel"></div>
   <div class="dashboard">
     <div class="score-card">
@@ -403,8 +470,81 @@ body > header{position:static !important}
     </div>
     <div class="rec-card">
       <div class="rec-title">Top Priorities</div>
-      <div id="rec-content" class="rec-text">Answer questions to receive personalized recommendations across your weakest dimensions.</div>
+      <div id="rec-content" class="rec-text">Answer questions to receive tailored recommendations across your weakest dimensions.</div>
     </div>
+<div class="user-info-wrap">
+  <div class="user-info-card">
+    <div class="ui-title-row">
+      <div class="ui-title">Where should we send your report?</div>
+      <div class="ui-required-note">Needed only for the PDF</div>
+    </div>
+    <p class="ui-note">Your score, your breakdown and your recommendations are on this page already and cost nothing.
+        These details are needed only to generate the PDF and send it to you. When you download the report, a copy is
+        stored in our Google Drive and your details, score and priorities are emailed to us so we can answer if you ask us to.
+        We keep them for up to three years. <a href="../privacy/">How we handle your data</a>.</p>
+      <div class="ui-grid">
+
+      <div class="ui-field" id="field-name">
+        <label for="u-name">Full Name <span style="color:var(--error)">*</span></label>
+        <input type="text" id="u-name" placeholder="e.g. Sara Johnson" oninput="updateUser();clearFieldError('field-name')"/>
+      </div>
+
+      <div class="ui-field" id="field-org">
+        <label for="u-org">Organisation <span style="color:var(--error)">*</span></label>
+        <input type="text" id="u-org" placeholder="e.g. Green Future NGO" oninput="updateUser();clearFieldError('field-org')"/>
+      </div>
+
+      <div class="ui-field" id="field-role">
+        <label for="u-role">Role / Title <span style="color:var(--error)">*</span></label>
+        <input type="text" id="u-role" placeholder="e.g. Program Director" oninput="updateUser();clearFieldError('field-role')"/>
+      </div>
+
+      <div class="ui-field" id="field-email">
+        <label for="u-email">Email Address <span style="color:var(--error)">*</span></label>
+        <input type="email" id="u-email" placeholder="e.g. sara@example.com"
+               oninput="updateUser();clearFieldError('field-email')"/>
+      </div>
+
+      <div class="ui-field" id="field-sector">
+        <label for="u-sector">Sector <span style="color:var(--error)">*</span></label>
+        <select id="u-sector" onchange="updateUser();clearFieldError('field-sector')">
+          <option value="">Select sector…</option>
+          <option>Nonprofit / NGO</option>
+          <option>Private Sector</option>
+          <option>Government / Public Sector</option>
+          <option>Training Centre</option>
+          <option>Healthcare</option>
+          <option>Financial Services</option>
+          <option>Education</option>
+          <option>Individual / Freelancer</option>
+        </select>
+      </div>
+
+      <div class="ui-field" id="field-size">
+        <label for="u-size">Team Size <span style="color:var(--error)">*</span></label>
+        <select id="u-size" onchange="updateUser();clearFieldError('field-size')">
+          <option value="">Select…</option>
+          <option>Just me</option>
+          <option>2–10</option>
+          <option>11–50</option>
+          <option>51–200</option>
+          <option>200+</option>
+        </select>
+      </div>
+
+      <div class="ui-field" id="field-eu">
+        <label for="u-eu">EU AI Act Exposure <span style="color:var(--error)">*</span></label>
+        <select id="u-eu" onchange="updateUser();clearFieldError('field-eu')">
+          <option value="">Select…</option>
+          <option>Yes: operate or place AI in EU</option>
+          <option>No: out of scope</option>
+          <option>Unsure</option>
+        </select>
+      </div>
+
+    </div>
+  </div>
+</div>
     <div class="validation-banner" id="validation-banner"></div>
     <button class="dl-btn" id="dl-btn" onclick="downloadPDF()">⬇ Download PDF Report</button>
     <div class="next-step" id="next-step">
@@ -412,7 +552,8 @@ body > header{position:static !important}
       <p class="ns-line" id="ns-line">Answer the questions to see what your score means and what to fix first.</p>
       <div class="ns-btns">
         <a class="ns-btn ns-primary" href="../contact-us/">Book a free 30-minute debrief</a>
-        <a class="ns-btn" href="../services/">See services and prices</a>
+        <a class="ns-btn ns-primary" id="ns-primary-svc" href="../services/" hidden>Read about the service</a>
+        <a class="ns-btn" href="../services/">See all five services</a>
       </div>
       <p class="ns-fine">On the call we walk through your three weakest dimensions and what to do about each. No pitch. If the right first step is a free programme, that is what we will tell you.</p>
     </div>
@@ -436,23 +577,23 @@ const DIMS=[
   {name:'Diligence',color:'#c05c00',short:'DIL',sub:'Reviewing, disclosing, taking responsibility',group:'AI Fluency (4D)'},
   {name:'Data Protection & Ethics',color:'#0e6ba8',short:'DPE',sub:'Privacy, lawful use, bias, ethical principles',group:'Risk & Compliance'},
   {name:'Governance & Compliance',color:'#205373',short:'GOV',sub:'Policy, ownership, standards, oversight',group:'Risk & Compliance'},
-  {name:'Workforce Impact',color:'#a13670',short:'WFI',sub:'Jobs, morale, distraction, role redesign',group:'Human & Organizational'},
-  {name:'Operations & Politics',color:'#7a4ba8',short:'OPS',sub:'Decision rights, shadow AI, internal dynamics',group:'Human & Organizational'},
-  {name:'Psychological Safety',color:'#c43d3d',short:'PSY',sub:'Voice, fear, leadership behaviour',group:'Human & Organizational'},
+  {name:'Workforce Impact',color:'#a13670',short:'WFI',sub:'Jobs, morale, distraction, role redesign',group:'Human & Organisational'},
+  {name:'Operations & Politics',color:'#7a4ba8',short:'OPS',sub:'Decision rights, shadow AI, internal dynamics',group:'Human & Organisational'},
+  {name:'Psychological Safety',color:'#c43d3d',short:'PSY',sub:'Voice, fear, leadership behaviour',group:'Human & Organisational'},
   {name:'Anticipation & Future-Readiness',color:'#1d8c8c',short:'ANT',sub:'Scanning, experimenting, sharing, learning',group:'Future-Readiness'}
 ];
 
 const QUESTIONS=[
-  {dim:0,id:'del1',text:'Does your organization have a clear understanding of which tasks AI can and cannot do?',type:'scale',max:5,sub:'1 = No awareness  →  5 = Deep understanding'},
+  {dim:0,id:'del1',text:'Does your organisation have a clear understanding of which tasks AI can and cannot do?',type:'scale',max:5,sub:'1 = No awareness  →  5 = Deep understanding'},
   {dim:0,id:'del2',text:'Have you identified specific, repetitive tasks in your workflow that AI could handle?',type:'yn',max:5,sub:'Yes = 5 / No = 0'},
   {dim:0,id:'del3',text:'How many AI tools does your team currently use (even occasionally)?',type:'num',max:5,unit:'tools',sub:'0=0pts, 1=1pt, … 5+=5pts',mapFn:v=>Math.min(5,v)},
   {dim:0,id:'del4',text:'How confident is your team in deciding when to use AI vs. when to keep work human?',type:'scale',max:5,sub:'1 = Not confident  →  5 = Very confident'},
-  {dim:0,id:'del5',text:'Has your organization mapped AI opportunities to its mission or strategic objectives?',type:'sel',max:5,opts:['Not at all (0)','Discussed (2)','Partially mapped (3)','Mostly mapped (4)','Fully mapped (5)'],vals:[0,2,3,4,5]},
-  {dim:1,id:'des1',text:'When prompting AI, do you typically include context about your organization and role?',type:'scale',max:5,sub:'1 = Never  →  5 = Always'},
+  {dim:0,id:'del5',text:'Has your organisation mapped AI opportunities to its mission or strategic objectives?',type:'sel',max:5,opts:['Not at all (0)','Discussed (2)','Partially mapped (3)','Mostly mapped (4)','Fully mapped (5)'],vals:[0,2,3,4,5]},
+  {dim:1,id:'des1',text:'When prompting AI, do you typically include context about your organisation and role?',type:'scale',max:5,sub:'1 = Never  →  5 = Always'},
   {dim:1,id:'des2',text:'Do you know how to write a prompt that specifies a desired format, length, and tone?',type:'yn',max:5,sub:'Yes = 5 / No = 0'},
   {dim:1,id:'des3',text:'How often do you iterate on your prompts (refine them based on AI responses)?',type:'sel',max:5,opts:['Never (0)','Rarely (1)','Sometimes (3)','Often (4)','Always (5)'],vals:[0,1,3,4,5]},
   {dim:1,id:'des4',text:'Can your team describe the desired output, process, and performance behaviour in a single prompt?',type:'scale',max:5,sub:'1 = Cannot  →  5 = Consistently'},
-  {dim:1,id:'des5',text:'Do you provide AI with relevant organizational context (documents, briefs, examples) when the task warrants it?',type:'yn',max:5,sub:'Yes = 5 / No = 0'},
+  {dim:1,id:'des5',text:'Do you provide AI with relevant organisational context (documents, briefs, examples) when the task warrants it?',type:'yn',max:5,sub:'Yes = 5 / No = 0'},
   {dim:1,id:'des6',text:'How well does your team communicate constraints (word limits, audience, scope) to AI?',type:'scale',max:5,sub:'1 = Poorly  →  5 = Very well'},
   {dim:1,id:'des7',text:'Do you use structured conversation techniques (asking AI to interview you, reusable context docs, prompt templates)?',type:'yn',max:5,sub:'Yes = 5 / No = 0'},
   {dim:2,id:'dis1',text:'Does your team critically evaluate AI outputs before using them?',type:'scale',max:5,sub:'1 = We trust everything  →  5 = Always evaluate rigorously'},
@@ -460,36 +601,36 @@ const QUESTIONS=[
   {dim:2,id:'dis3',text:'Do you verify key claims from AI with original or external sources?',type:'yn',max:5,sub:'Yes = 5 / No = 0'},
   {dim:2,id:'dis4',text:'Are individuals on your team able to spot biased, deficit-based, or stigmatizing language in AI outputs?',type:'scale',max:5,sub:'Individual-level skill. 1 = Not yet  →  5 = Reliably'},
   {dim:2,id:'dis5',text:'How often does your team reflect on why AI produced a particular output (process discernment)?',type:'sel',max:5,opts:['Never (0)','Rarely (1)','Sometimes (3)','Often (4)','Always (5)'],vals:[0,1,3,4,5]},
-  {dim:2,id:'dis6',text:'Do you evaluate whether individual AI outputs align with your organization\'s values and mission?',type:'yn',max:5,sub:'Per-output check. Yes = 5 / No = 0'},
+  {dim:2,id:'dis6',text:'Do you evaluate whether individual AI outputs align with your organisation\'s values and mission?',type:'yn',max:5,sub:'Per-output check. Yes = 5 / No = 0'},
   {dim:2,id:'dis7',text:'When AI gives a poor response, can your team diagnose what went wrong with the prompt?',type:'scale',max:5,sub:'1 = Never  →  5 = Consistently'},
   {dim:3,id:'dil1',text:'Does your team take responsibility for reviewing AI-generated outputs before sharing them externally?',type:'scale',max:5,sub:'1 = Rarely  →  5 = Always'},
   {dim:3,id:'dil2',text:'Do you disclose AI involvement when relevant (to funders, beneficiaries, partners, audiences)?',type:'yn',max:5,sub:'Yes = 5 / No = 0',ref:'EU AI Act Art. 50: transparency'},
   {dim:3,id:'dil3',text:'Does your team practice data hygiene in daily use (removing PII before sharing prompts/files with AI)?',type:'yn-partial',max:5,sub:'Daily practice. Yes = 5 / Partial = 3 / No = 0'},
-  {dim:3,id:'dil4',text:'How intentional is your organization about which AI tool to use for which task?',type:'scale',max:5,sub:'1 = Whatever is available  →  5 = Deliberate, documented choices'},
+  {dim:3,id:'dil4',text:'How intentional is your organisation about which AI tool to use for which task?',type:'scale',max:5,sub:'1 = Whatever is available  →  5 = Deliberate, documented choices'},
   {dim:3,id:'dil5',text:'Is there a routine process to spot-check AI outputs already in production work (catching errors after the fact)?',type:'yn-partial',max:5,sub:'Routine quality check, distinct from incident handling. Yes = 5 / Partial = 3 / No = 0'},
-  {dim:4,id:'dpe1',text:'Has your organization conducted a Data Protection Impact Assessment (DPIA) for any AI system processing personal data?',type:'sel',max:5,opts:['Not aware DPIAs apply to AI (0)','Aware, never done (1)','Done informally (3)','DPIA(s) completed and documented (5)'],vals:[0,1,3,5],ref:'GDPR Art. 35'},
+  {dim:4,id:'dpe1',text:'Has your organisation conducted a Data Protection Impact Assessment (DPIA) for any AI system processing personal data?',type:'sel',max:5,opts:['Not aware DPIAs apply to AI (0)','Aware, never done (1)','Done informally (3)','DPIA(s) completed and documented (5)'],vals:[0,1,3,5],ref:'GDPR Art. 35'},
   {dim:4,id:'dpe2',text:'Do you have a documented list of data categories that must NOT be entered into external AI tools (PII, health, financial, beneficiary data)?',type:'yn-partial',max:5,sub:'Policy artifact. Yes = 5 / Partial = 3 / No = 0'},
   {dim:4,id:'dpe3',text:'How well do you understand the data-handling terms of the AI vendors you use (training opt-out, retention, region, sub-processors)?',type:'scale',max:5,sub:'1 = Not at all  →  5 = Thoroughly, for every vendor'},
-  {dim:4,id:'dpe4',text:'Does your organization run protocols to assess AI outputs for harmful bias (gender, race, age, disability, language)?',type:'sel',max:5,opts:['Never (0)','Ad hoc when flagged (2)','Regularly for sensitive use cases (4)','Systematic bias-testing protocol (5)'],vals:[0,2,4,5],sub:'Organizational protocol (complements individual spotting in Discernment).'},
+  {dim:4,id:'dpe4',text:'Does your organisation run protocols to assess AI outputs for harmful bias (gender, race, age, disability, language)?',type:'sel',max:5,opts:['Never (0)','Ad hoc when flagged (2)','Regularly for sensitive use cases (4)','Systematic bias-testing protocol (5)'],vals:[0,2,4,5],sub:'Organisational protocol (complements individual spotting in Discernment).'},
   {dim:4,id:'dpe5',text:'Is informed consent obtained when AI is used to process data of beneficiaries, clients, customers, or staff?',type:'sel',max:5,opts:['Not considered (0)','Inconsistently (2)','For most cases (4)','Always, with clear records (5)'],vals:[0,2,4,5]},
-  {dim:4,id:'dpe6',text:'Has your organization adopted explicit ethical principles for AI use (fairness, transparency, human dignity, non-maleficence)?',type:'sel',max:5,opts:['No (0)','Informally discussed (2)','Written, not yet operationalized (3)','Adopted and integrated in workflows (5)'],vals:[0,2,3,5]},
+  {dim:4,id:'dpe6',text:'Has your organisation adopted explicit ethical principles for AI use (fairness, transparency, human dignity, non-maleficence)?',type:'sel',max:5,opts:['No (0)','Informally discussed (2)','Written, not yet operationalized (3)','Adopted and integrated in workflows (5)'],vals:[0,2,3,5]},
   {dim:4,id:'dpe7',text:'Are sensitive AI use cases (those affecting vulnerable people, livelihoods, or rights) subject to an ethics review before deployment?',type:'yn-partial',max:5,sub:'Yes = 5 / Partial = 3 / No = 0'},
-  {dim:4,id:'dpe_std',text:'Which ethical AI standard(s) or framework(s) has your organization adopted or aligned with?',type:'multi',max:0,info:true,sub:'Select all that apply. This question is informational and does not affect your score.',opts:['OECD AI Principles','UNESCO Recommendation on the Ethics of AI','EU Ethics Guidelines for Trustworthy AI','IEEE Ethically Aligned Design','Asilomar AI Principles','Sector-specific code (e.g. WHO, OECD/G20 finance)','Internal/proprietary code only','None adopted yet']},
-  {dim:5,id:'gov1',text:'Does your organization have a written AI policy covering acceptable use, prohibited tasks, oversight, and transparency?',type:'sel',max:5,opts:['No policy and no plans (0)','Discussing it (2)','Draft exists (3)','Policy approved and in force (5)'],vals:[0,2,3,5],sub:'Consolidated policy question (covers acceptable use, prohibited tasks, oversight).'},
-  {dim:5,id:'gov2',text:'Is there a named accountable owner for AI in your organization (executive sponsor, AI lead, ethics officer) with leadership backing?',type:'sel',max:5,opts:['No (0)','Informally (2)','Yes, role unclear (3)','Yes, formally appointed with mandate and leadership support (5)'],vals:[0,2,3,5],ref:'NIST AI RMF · GOVERN'},
+  {dim:4,id:'dpe_std',text:'Which ethical AI standard(s) or framework(s) has your organisation adopted or aligned with?',type:'multi',max:0,info:true,sub:'Select all that apply. This question is informational and does not affect your score.',opts:['OECD AI Principles','UNESCO Recommendation on the Ethics of AI','EU Ethics Guidelines for Trustworthy AI','IEEE Ethically Aligned Design','Asilomar AI Principles','Sector-specific code (e.g. WHO, OECD/G20 finance)','Internal/proprietary code only','None adopted yet']},
+  {dim:5,id:'gov1',text:'Does your organisation have a written AI policy covering acceptable use, prohibited tasks, oversight, and transparency?',type:'sel',max:5,opts:['No policy and no plans (0)','Discussing it (2)','Draft exists (3)','Policy approved and in force (5)'],vals:[0,2,3,5],sub:'Consolidated policy question (covers acceptable use, prohibited tasks, oversight).'},
+  {dim:5,id:'gov2',text:'Is there a named accountable owner for AI in your organisation (executive sponsor, AI lead, ethics officer) with leadership backing?',type:'sel',max:5,opts:['No (0)','Informally (2)','Yes, role unclear (3)','Yes, formally appointed with mandate and leadership support (5)'],vals:[0,2,3,5],ref:'NIST AI RMF · GOVERN'},
   {dim:5,id:'gov3',text:'Do you maintain an inventory of AI systems in use, with purpose, data flows, and risk classification?',type:'sel',max:5,opts:['No inventory (0)','List of tools only (2)','Inventory with use cases (3)','Full inventory with risk tiers and data flows (5)'],vals:[0,2,3,5],ref:'EU AI Act · ISO 42001'},
-  {dim:5,id:'gov4',text:'How aligned is your organization with a recognized AI governance framework (maturity level)?',type:'sel',max:5,opts:['Not aware of frameworks (0)','Aware, not yet mapped (1)','Self-assessed against one (3)','Mapped against multiple with gap plan (4)','Certified or formally audited (5)'],vals:[0,1,3,4,5],sub:'Pair with the next question to record which framework(s).'},
+  {dim:5,id:'gov4',text:'How aligned is your organisation with a recognised AI governance framework (maturity level)?',type:'sel',max:5,opts:['Not aware of frameworks (0)','Aware, not yet mapped (1)','Self-assessed against one (3)','Mapped against multiple with gap plan (4)','Certified or formally audited (5)'],vals:[0,1,3,4,5],sub:'Pair with the next question to record which framework(s).'},
   {dim:5,id:'gov5',text:'For AI systems with significant impact on people, do you conduct (or plan) a Fundamental Rights Impact Assessment or equivalent?',type:'yn-partial',max:5,sub:'Yes = 5 / Partial = 3 / No / Unaware = 0',ref:'EU AI Act Art. 27'},
   {dim:5,id:'gov6',text:'Are AI-related incidents (errors, near-misses, harms, complaints) formally logged and reviewed?',type:'sel',max:5,opts:['No process (0)','Informal awareness (2)','Logged ad hoc (3)','Documented incident process with reviews (5)'],vals:[0,2,3,5],ref:'NIST AI RMF · MANAGE',sub:'Incident handling (distinct from routine spot-checks in Diligence).'},
-  {dim:5,id:'gov_std',text:'Which AI governance / compliance standard(s) has your organization adopted or aligned with?',type:'multi',max:0,info:true,sub:'Select all that apply. This question is informational and does not affect your score.',opts:['ISO/IEC 42001:2023 (AI Management System)','NIST AI RMF 1.0','EU AI Act (Reg. 2024/1689)','GDPR / national data-protection law','ISO/IEC 23894 (AI risk management guidance)','ISO/IEC 27001 (information security)','Singapore Model AI Governance Framework','Sector regulator guidance (specify in "Other")','Other (specify below)','None adopted yet'],allowOther:true},
+  {dim:5,id:'gov_std',text:'Which AI governance / compliance standard(s) has your organisation adopted or aligned with?',type:'multi',max:0,info:true,sub:'Select all that apply. This question is informational and does not affect your score.',opts:['ISO/IEC 42001:2023 (AI Management System)','NIST AI RMF 1.0','EU AI Act (Reg. 2024/1689)','GDPR / national data-protection law','ISO/IEC 23894 (AI risk management guidance)','ISO/IEC 27001 (information security)','Singapore Model AI Governance Framework','Sector regulator guidance (specify in "Other")','Other (specify below)','None adopted yet'],allowOther:true},
   {dim:6,id:'wfi1',text:'Has leadership assessed how AI is changing specific roles (tasks added, removed, redesigned)?',type:'sel',max:5,opts:['No (0)','Informal observation (2)','Reviewed for some teams (3)','Systematic role-impact analysis (5)'],vals:[0,2,3,5]},
   {dim:6,id:'wfi2',text:'Have you observed AI causing distraction, fragmentation, or "tool fatigue" among staff?',type:'sel',max:5,opts:['Major problem, not addressed (0)','Noticeable, no plan (1)','Noticeable, mitigation in progress (3)','Monitored, low impact (4)','Not an issue / actively managed (5)'],vals:[0,1,3,4,5]},
   {dim:6,id:'wfi3',text:'Is staff workload tracked to ensure AI reduces burden rather than adding hidden new work (review, prompting, verification)?',type:'yn-partial',max:5,sub:'Yes = 5 / Partial = 3 / No = 0'},
   {dim:6,id:'wfi4',text:'How would you describe staff morale regarding AI rollout in the last 6–12 months?',type:'sel',max:5,opts:['Declining noticeably (0)','Mixed, leaning negative (2)','Stable (3)','Mixed, leaning positive (4)','Engaged and positive (5)'],vals:[0,2,3,4,5]},
-  {dim:6,id:'wfi5',text:'Has the organization committed (in writing or budgeted practice) to reskilling/redeployment rather than replacement where AI displaces tasks?',type:'sel',max:5,opts:['No, replacement is default (0)','Case-by-case (2)','Verbal commitment (3)','Documented commitment with budget (5)'],vals:[0,2,3,5],sub:'Structural commitment (Psychological Safety captures the communication dimension).'},
+  {dim:6,id:'wfi5',text:'Has the organisation committed (in writing or budgeted practice) to reskilling/redeployment rather than replacement where AI displaces tasks?',type:'sel',max:5,opts:['No, replacement is default (0)','Case-by-case (2)','Verbal commitment (3)','Documented commitment with budget (5)'],vals:[0,2,3,5],sub:'Structural commitment (Psychological Safety captures the communication dimension).'},
   {dim:6,id:'wfi6',text:'Are productivity gains from AI being measured against any losses (errors, rework, judgment failures, customer dissatisfaction)?',type:'yn-partial',max:5,sub:'Yes = 5 / Partial = 3 / No = 0'},
   {dim:7,id:'ops1',text:'Is decision-making authority for AI tool selection and use clearly defined across departments (IT, business owners, compliance)?',type:'sel',max:5,opts:['Unclear, contested (0)','Informally negotiated (2)','Defined but inconsistent (3)','Clear cross-functional governance (5)'],vals:[0,2,3,5]},
-  {dim:7,id:'ops2',text:'Is there evidence of "shadow AI", meaning staff using AI tools the organization does not officially sanction or know about?',type:'sel',max:5,opts:['Widespread, no visibility (0)','Some, suspected (1)','Some, monitored (3)','Limited, with sanctioned alternatives (4)','Visible and managed (5)'],vals:[0,1,3,4,5]},
+  {dim:7,id:'ops2',text:'Is there evidence of "shadow AI", meaning staff using AI tools the organisation does not officially sanction or know about?',type:'sel',max:5,opts:['Widespread, no visibility (0)','Some, suspected (1)','Some, monitored (3)','Limited, with sanctioned alternatives (4)','Visible and managed (5)'],vals:[0,1,3,4,5]},
   {dim:7,id:'ops3',text:'Has AI adoption created or amplified friction between departments (IT vs business, leadership vs frontline, central vs field)?',type:'sel',max:5,opts:['Major friction, unresolved (0)','Notable, being addressed (2)','Some, manageable (3)','Little, with collaboration forums (5)'],vals:[0,2,3,5]},
   {dim:7,id:'ops4',text:'Are AI decisions (procurement, deployment, scope) AND the resulting shifts in influence/power transparent to affected staff?',type:'sel',max:5,opts:['Opaque (0)','Some visibility (2)','Mostly transparent (3)','Fully transparent with consultation (5)'],vals:[0,2,3,5],sub:'Merged: combines decision transparency and power-shift transparency.'},
   {dim:7,id:'ops5',text:'Is there a clear escalation path when AI use raises operational, ethical, or quality concerns?',type:'yn-partial',max:5,sub:'Yes = 5 / Partial = 3 / No = 0'},
@@ -503,8 +644,8 @@ const QUESTIONS=[
   {dim:9,id:'ant2',text:'Is there protected time or budget for individuals to experiment with AI (sandbox time, learning hours, tool budget)?',type:'sel',max:5,opts:['None (0)','Informal (2)','Some staff have it (3)','Formal for most (4)','Formal for all, with budget (5)'],vals:[0,2,3,4,5]},
   {dim:9,id:'ant3',text:'Do team members share AI use cases, prompts, or lessons with each other (internal channels, demos, docs)?',type:'sel',max:5,opts:['Never (0)','Rarely (1)','Sometimes (3)','Often (4)','Regularly with shared library (5)'],vals:[0,1,3,4,5]},
   {dim:9,id:'ant4',text:'How many staff read or follow at least one credible AI source weekly (newsletter, podcast, peer community)?',type:'sel',max:5,opts:['None / unknown (0)','A few individuals (2)','Many do (3)','Most do (4)','It is an organizational habit (5)'],vals:[0,2,3,4,5]},
-  {dim:9,id:'ant5',text:'Does the organization participate in external AI peer communities, working groups, or sector networks?',type:'sel',max:5,opts:['No (0)','One-off events (2)','Active in 1 community (3)','Active in multiple (5)'],vals:[0,2,3,5]},
-  {dim:9,id:'ant6',text:'How prepared is your organization to adapt within 3 months to a major AI capability or regulatory shift?',type:'scale',max:5,sub:'1 = Not prepared  →  5 = Routine adaptation cycle'}
+  {dim:9,id:'ant5',text:'Does the organisation participate in external AI peer communities, working groups, or sector networks?',type:'sel',max:5,opts:['No (0)','One-off events (2)','Active in 1 community (3)','Active in multiple (5)'],vals:[0,2,3,5]},
+  {dim:9,id:'ant6',text:'How prepared is your organisation to adapt within 3 months to a major AI capability or regulatory shift?',type:'scale',max:5,sub:'1 = Not prepared  →  5 = Routine adaptation cycle'}
 ];
 
 const RECS={
@@ -536,7 +677,7 @@ function buildUI(){
     const max=scoredQs.reduce((a,q)=>a+q.max,0);
     const block=document.createElement('div');
     block.className='dimension-block';block.id=`dim-block-${di}`;
-    block.innerHTML=`<div class="dim-header" onclick="toggleDim(${di})">
+    block.innerHTML=`<button type="button" class="dim-header" aria-expanded="false" aria-controls="dim-qs-${di}" onclick="toggleDim(${di})">
       <div class="dim-color" style="background:${D.color}"></div>
       <div class="dim-header-text">
         <div class="dim-label">Dimension ${di+1} of ${DIMS.length} · ${D.group}</div>
@@ -544,8 +685,8 @@ function buildUI(){
         <div class="dim-sub">${D.sub}</div>
       </div>
       <div class="dim-score-badge" id="dim-badge-${di}">0 / ${max}</div>
-      <div class="dim-chevron">▾</div>
-    </div>
+      <div class="dim-chevron" aria-hidden="true">▾</div>
+    </button>
     <div class="dim-progress-bar"><div class="dim-progress-fill" id="dim-prog-${di}" style="width:0%;background:${D.color}"></div></div>
     <div class="dim-questions" id="dim-qs-${di}"></div>`;
     panel.appendChild(block);
@@ -584,9 +725,11 @@ function buildInput(q,di){
   const c=DIMS[di].color;
   if(q.type==='yn') return `<div class="yn-btns"><button class="yn-btn" onclick="setYN('${q.id}',5,this)">✓ Yes</button><button class="yn-btn" onclick="setYN('${q.id}',0,this)">✗ No</button></div>`;
   if(q.type==='yn-partial') return `<div class="yn-btns"><button class="yn-btn" onclick="setYN('${q.id}',5,this,'yes')">✓ Yes</button><button class="yn-btn" onclick="setYN('${q.id}',3,this,'partial')">~ Partial</button><button class="yn-btn" onclick="setYN('${q.id}',0,this,'no')">✗ No</button></div>`;
-  if(q.type==='scale'){const btns=[1,2,3,4,5].map(n=>`<div class="scale-btn" onclick="setScale('${q.id}',${n},this,'${c}')">${n}</div>`).join('');return `<div class="scale-wrap">${btns}<span class="scale-lbl">← Low   High →</span></div>`;}
-  if(q.type==='num') return `<div class="num-wrap"><input class="num-input" type="number" min="0" max="99" placeholder="0" oninput="setNum('${q.id}',this.value)"/><span class="num-unit">${q.unit||''}</span></div>`;
-  if(q.type==='sel'){const opts=q.opts.map((o,i)=>`<option value="${q.vals[i]}">${o}</option>`).join('');return `<select class="q-select" onchange="setSel('${q.id}',this.value)"><option value="">Choose…</option>${opts}</select>`;}
+  if(q.type==='scale'){
+    const btns=[1,2,3,4,5].map(n=>`<button type="button" class="scale-btn" role="radio" aria-checked="false" tabindex="${n===1?0:-1}" data-v="${n}" aria-label="${n} out of 5" onclick="setScale('${q.id}',${n},this,'${c}')" onkeydown="scaleKeys(event,'${q.id}','${c}')">${n}</button>`).join('');
+    return `<div class="scale-wrap" role="radiogroup" aria-label="Rate from 1, low, to 5, high">${btns}<span class="scale-lbl" aria-hidden="true">← Low   High →</span></div>`;}
+  if(q.type==='num') return `<div class="num-wrap"><input class="num-input" type="number" min="0" max="99" placeholder="0" aria-label="${q.text.replace(/\"/g,'&quot;')}" oninput="setNum('${q.id}',this.value)"/><span class="num-unit">${q.unit||''}</span></div>`;
+  if(q.type==='sel'){const opts=q.opts.map((o,i)=>`<option value="${q.vals[i]}">${o}</option>`).join('');return `<select class="q-select" aria-label="${q.text.replace(/\"/g,'&quot;')}" onchange="setSel('${q.id}',this.value)"><option value="">Choose…</option>${opts}</select>`;}
   if(q.type==='multi'){
     const opts=q.opts.map((o,i)=>`<label class="multi-opt" id="mo-${q.id}-${i}"><input type="checkbox" onchange="setMulti('${q.id}',${i},this.checked,'${escAttr(o)}')"/><span>${o}</span></label>`).join('');
     const other=q.allowOther?`<div class="multi-other"><input type="text" placeholder="Other / specify…" oninput="setMultiOther('${q.id}',this.value)"/></div>`:'';
@@ -602,15 +745,40 @@ function setYN(id,val,btn,which){
   if(which==='partial') btn.classList.add('sel-partial');
   else btn.classList.add(val===5?'sel-yes':val===3?'sel-partial':'sel-no');
   markAnswered(id);
+  saveProgress();
   clearDimError(QUESTIONS.find(q=>q.id===id).dim);
   recalc();
 }
+
+/* Arrow, Home and End move within a rating group; Space and Enter select.
+   Without this the scale questions cannot be answered from a keyboard. */
+function scaleKeys(ev,id,colour){
+  const grp=ev.currentTarget.closest('.scale-wrap');
+  if(!grp) return;
+  const btns=[].slice.call(grp.querySelectorAll('.scale-btn'));
+  let i=btns.indexOf(ev.currentTarget), j=null;
+  if(ev.key==='ArrowRight'||ev.key==='ArrowDown') j=(i+1)%btns.length;
+  else if(ev.key==='ArrowLeft'||ev.key==='ArrowUp') j=(i-1+btns.length)%btns.length;
+  else if(ev.key==='Home') j=0;
+  else if(ev.key==='End') j=btns.length-1;
+  else if(ev.key===' '||ev.key==='Enter'){ ev.preventDefault(); btns[i].click(); return; }
+  if(j===null) return;
+  ev.preventDefault();
+  btns[j].focus();
+  setScale(id,+btns[j].dataset.v,btns[j],colour);
+}
+
 function setScale(id,val,btn,color){
+  var _g=btn.closest('.scale-wrap');
+  if(_g) _g.querySelectorAll('.scale-btn').forEach(function(b){
+    var on=(b===btn); b.setAttribute('aria-checked',on?'true':'false'); b.tabIndex=on?0:-1;
+  });
   scores[id]=val;
   const w=btn.closest('.scale-wrap');
   w.querySelectorAll('.scale-btn').forEach(b=>{b.classList.remove('sel');b.style.background='';b.style.borderColor='';b.style.color='';});
   btn.classList.add('sel');btn.style.background=color;btn.style.borderColor=color;
   markAnswered(id);
+  saveProgress();
   clearDimError(QUESTIONS.find(q=>q.id===id).dim);
   recalc();
 }
@@ -618,12 +786,14 @@ function setNum(id,val){
   const q=QUESTIONS.find(x=>x.id===id);
   const v=parseInt(val)||0;
   scores[id]=q.mapFn?q.mapFn(v):Math.min(5,v);
-  markAnswered(id);recalc();
+  markAnswered(id);
+  saveProgress();recalc();
 }
 function setSel(id,val){
   scores[id]=val===''?undefined:parseFloat(val);
   if(scores[id]===undefined)delete scores[id];
   markAnswered(id);
+  saveProgress();
   clearDimError(QUESTIONS.find(q=>q.id===id).dim);
   recalc();
 }
@@ -635,16 +805,31 @@ function setMulti(id,idx,checked,label){
   if(!checked && pos!==-1) list.splice(pos,1);
   document.getElementById(`mo-${id}-${idx}`).classList.toggle('sel',checked);
   markAnswered(id);
+  saveProgress();
 }
 function setMultiOther(id,val){
   if(!multiState[id])multiState[id]={selected:[],other:''};
   multiState[id].other=val;
   if(val) markAnswered(id);
 }
-function markAnswered(id){const el=document.getElementById(`qi-${id}`);if(el)el.classList.add('answered');}
-function toggleDim(di){document.querySelectorAll('.dimension-block').forEach((b,i)=>{if(i===di)b.classList.toggle('dim-open');});}
+function markAnswered(id){
+  if(window.mai){
+    mai.once('assessment_started',{tool:'extended'});
+    var _a=Object.keys(scores).filter(function(k){return scores[k]!==undefined&&!isNaN(scores[k]);}).length;
+    if(_a>=60) mai.once('assessment_completed',{tool:'extended'});
+  }const el=document.getElementById(`qi-${id}`);if(el)el.classList.add('answered');}
+function toggleDim(di){
+  document.querySelectorAll('.dimension-block').forEach((b,i)=>{
+    if(i!==di) return;
+    const open=b.classList.toggle('dim-open');
+    const h=b.querySelector('.dim-header');
+    if(h) h.setAttribute('aria-expanded',open?'true':'false');
+  });
+}
 
+function _uiTouch(){}
 function updateUser(){
+  _uiTouch();
   userInfo.name   = document.getElementById('u-name').value;
   userInfo.org    = document.getElementById('u-org').value;
   userInfo.role   = document.getElementById('u-role').value;
@@ -684,7 +869,7 @@ function validateForm(){
 
   const profileChecks=[
     {inputId:'u-name',   fieldId:'field-name',   label:'Full Name'},
-    {inputId:'u-org',    fieldId:'field-org',    label:'Organization'},
+    {inputId:'u-org',    fieldId:'field-org',    label:'Organisation'},
     {inputId:'u-role',   fieldId:'field-role',   label:'Role / Title'},
     {inputId:'u-email',  fieldId:'field-email',  label:'Email Address'},
     {inputId:'u-sector', fieldId:'field-sector', label:'Sector'},
@@ -753,6 +938,75 @@ function countAnswered(){
   });
   return n;
 }
+
+
+/* ── Save and resume ─────────────────────────────────────────────────────
+   Sixty questions is half an hour of work. Answers are written to this
+   browser's localStorage on every change and restored on load, so a reload,
+   a closed tab or a mis-tapped back button does not discard the lot. Nothing
+   is sent anywhere by this: it never leaves the visitor's own browser.       */
+var STORE_KEY = 'mai-extended-v1';
+function saveProgress(){
+  try{
+    localStorage.setItem(STORE_KEY, JSON.stringify({
+      v:1, t:Date.now(), scores:scores, user:userInfo
+    }));
+  }catch(e){ /* private mode, quota, or storage disabled: carry on unsaved */ }
+}
+function loadProgress(){
+  try{
+    var raw=localStorage.getItem(STORE_KEY); if(!raw) return null;
+    var d=JSON.parse(raw);
+    if(!d||d.v!==1||!d.scores) return null;
+    if(Date.now()-(d.t||0) > 1000*60*60*24*30){ localStorage.removeItem(STORE_KEY); return null; }
+    return d;
+  }catch(e){ return null; }
+}
+function clearProgress(){ try{ localStorage.removeItem(STORE_KEY); }catch(e){} }
+
+function restoreProgress(){
+  var d=loadProgress(); if(!d) return;
+  Object.keys(d.scores||{}).forEach(function(k){ scores[k]=d.scores[k]; });
+  if(d.user) Object.keys(d.user).forEach(function(k){
+    if(d.user[k]){ userInfo[k]=d.user[k]; var el=document.getElementById('u-'+k); if(el) el.value=d.user[k]; }
+  });
+  // reflect restored answers in the controls
+  QUESTIONS.forEach(function(q){
+    var v=scores[q.id]; if(v===undefined||isNaN(v)) return;
+    var item=document.getElementById('qi-'+q.id); if(!item) return;
+    if(q.type==='scale'){
+      var b=item.querySelector('.scale-btn[data-v="'+v+'"]');
+      if(b){ b.classList.add('sel'); b.style.background=DIMS[q.dim].color; b.style.borderColor=DIMS[q.dim].color;
+             b.setAttribute('aria-checked','true'); b.tabIndex=0;
+             item.querySelectorAll('.scale-btn').forEach(function(o){ if(o!==b) o.tabIndex=-1; }); }
+    } else if(q.type==='yn'){
+      var yn=item.querySelectorAll('.yn-btn');
+      if(yn.length===2){ var t=(v>0)?yn[0]:yn[1]; t.classList.add(v>0?'sel-yes':'sel-no'); }
+    } else if(q.type==='num'){
+      var ni=item.querySelector('.num-input'); if(ni) ni.value=(q.rawNum&&q.rawNum[q.id])||v;
+    } else if(q.type==='sel'||q.type==='multi'){
+      var se=item.querySelector('.q-select'); if(se) se.value=String(v);
+    }
+    markAnswered(q.id);
+  });
+  var answered=Object.keys(scores).filter(function(k){return scores[k]!==undefined&&!isNaN(scores[k]);}).length;
+  if(answered>0){
+    var note=document.getElementById('resume-note'), txt=document.getElementById('resume-txt');
+    if(note&&txt){
+      txt.innerHTML='<strong>Picked up where you left off.</strong> '+answered+' of 60 answers were '+
+        'restored from this browser.';
+      note.classList.add('on');
+    }
+  }
+  recalc();
+}
+
+/* Warn before losing answers that have not been downloaded yet. */
+var pdfTaken=false;
+window.addEventListener('beforeunload', function(e){
+  var answered=Object.keys(scores).filter(function(k){return scores[k]!==undefined&&!isNaN(scores[k]);}).length;
+  if(answered>0 && answered<60 && !pdfTaken){ e.preventDefault(); e.returnValue=''; }
+});
 
 function recalc(){
   const{dimScores,dimMax}=getDimData();
@@ -881,6 +1135,8 @@ async function downloadPDF(){
   btn.disabled=true;
   btn.innerHTML='⏳ Generating & Uploading…';
   try{
+    pdfTaken=true;
+    if(window.mai) mai.track('report_downloaded',{tool:'extended'});
     const pdf = buildPrintReport(); // returns a jsPDF drawn with real text/vectors
 
     const date=new Date().toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'}).replace(/\s/g,'_');
@@ -1256,6 +1512,18 @@ function escAttr(s){return String(s).replace(/'/g,"\\'").replace(/"/g,'&quot;');
 buildUI();
 drawRadar(DIMS.map(()=>0),DIMS.map(()=>30));
 </script>
+
+<div class="explain">
+  <h2>The ten dimensions this assessment measures</h2>
+  <p>Sixty questions across ten dimensions, scored out of 300 and normalised to 100. The first four are the competencies of AI fluency; the remaining six cover the governance, data protection, workforce and cultural conditions that decide whether fluency turns into anything. Each dimension is scored separately.</p>
+  <div class="dgrid"><div class="dcard"><div class="g">AI Fluency (4D)</div><h3>Delegation</h3><p>Knowing when and what to delegate to AI, what to keep human, and who decides.</p></div><div class="dcard"><div class="g">AI Fluency (4D)</div><h3>Description</h3><p>Communicating effectively with AI: context, audience, format, constraints and source material.</p></div><div class="dcard"><div class="g">AI Fluency (4D)</div><h3>Discernment</h3><p>Critically evaluating AI outputs before anyone relies on them.</p></div><div class="dcard"><div class="g">AI Fluency (4D)</div><h3>Diligence</h3><p>Reviewing, disclosing and taking responsibility for AI-assisted work.</p></div><div class="dcard"><div class="g">Risk & Compliance</div><h3>Data Protection &amp; Ethics</h3><p>Privacy, lawful basis, beneficiary and personal data, bias, and the ethical principles applied in practice rather than on paper.</p></div><div class="dcard"><div class="g">Risk & Compliance</div><h3>Governance &amp; Compliance</h3><p>Policy, ownership, oversight and the standards your counterparts cite: ISO/IEC 42001, the NIST AI Risk Management Framework and EU AI Act Article 4.</p></div><div class="dcard"><div class="g">Human &amp; Organisational</div><h3>Workforce Impact</h3><p>Jobs, morale, distraction and role redesign: what AI adoption is doing to the people doing the work.</p></div><div class="dcard"><div class="g">Human &amp; Organisational</div><h3>Operations &amp; Politics</h3><p>Decision rights, shadow AI on personal accounts, and the internal dynamics that decide whether a policy is followed or routed around.</p></div><div class="dcard"><div class="g">Human &amp; Organisational</div><h3>Psychological Safety</h3><p>Whether staff can say what they actually do with AI, and whether leadership behaviour makes that safe.</p></div><div class="dcard"><div class="g">Future-Readiness</div><h3>Anticipation &amp; Future-Readiness</h3><p>Scanning, experimenting, sharing what works, and learning as the tools change underneath you.</p></div></div>
+  <h2>Common questions</h2>
+  <div class="faqs"><details><summary>How long does the AI Readiness Self-Assessment take?</summary><p>About thirty minutes for sixty questions across ten dimensions. Answers are saved in your own browser as you go, so you can close the tab and finish later.</p></details><details><summary>What standards does it map to?</summary><p>ISO/IEC 42001:2023, the NIST AI Risk Management Framework 1.0, EU AI Act Article 4, the GDPR, the OECD AI Principles and the UNESCO Recommendation on the Ethics of AI. The report uses their vocabulary so it is legible to the people who ask about them.</p></details><details><summary>Is this an audit or a certification?</summary><p>Neither. It is a self-administered management instrument. It is not an audit, we are not a certification body, and it is not legal advice. The paid AI Readiness Audit applies the same instrument with staff interviews and a documented tool inventory, so the answers are evidenced rather than recalled.</p></details><details><summary>How is it scored?</summary><p>Sixty questions across ten dimensions, 300 points in total, normalised to a score out of 100. Each dimension is scored separately so you can see which ones carry the gap rather than only the overall figure.</p></details><details><summary>Who should answer it?</summary><p>One person can complete it, but the reading is better if a small group does: someone from programmes, someone from operations or finance, and whoever owns data protection. Where they disagree is usually where the real finding is.</p></details></div>
+  <p style="font-size:.88rem">Prefer the other one? <a href="../explore-your-ai-readiness/" style="color:var(--blue);font-weight:600">Take the twelve-minute AI Readiness Check instead</a>.
+     Want it run on your organisation with staff interviews and a documented tool inventory?
+     <a href="../services/assessment/" style="color:var(--blue);font-weight:600">That is the paid AI Readiness Audit</a>.</p>
+</div>
+</main>
 <footer>
   <div class="footer-inner">
     <div>
@@ -1271,23 +1539,25 @@ drawRadar(DIMS.map(()=>0),DIMS.map(()=>30));
     <ul>
       <li><a href="../">Home</a></li>
       <li><a href="../services/">Services</a></li>
-      <li><a href="../estimate/">Price estimate</a></li>
-      <li><a href="../for-funders/">For Investors</a></li>
+      <li><a href="../estimate/">Pricing</a></li>
+      <li><a href="../our-clients/">Who It's For</a></li>
       <li><a href="../about/">About</a></li>
-      <li><a href="../compare/">Compare the market</a></li>
-      <li><a href="../knowledge/">Knowledge</a></li>
-      <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
-      <li><a href="../our-clients/">Who We Work With</a></li>
       <li><a href="../contact-us/">Contact</a></li>
+      <li><span class="fn-group">Decide</span></li>
+      <li><a href="../compare/">Compare the market</a></li>
+      <li><a href="../for-funders/">For funders and investors</a></li>
+      <li><a href="../explore-your-ai-readiness/">Free readiness check</a></li>
+      <li><span class="footer-nav-current" aria-current="page">Self-assessment</span></li>
       <li><span class="fn-group">Read</span></li>
-      <li><a href="../playbook/">Sample Playbook</a></li>
+      <li><a href="../knowledge/">Knowledge</a></li>
+      <li><a href="../playbook/">Sample playbook</a></li>
       <li><a href="../eu-ai-act-article-4/">EU AI Act Article 4</a></li>
-      <li><a href="../use-cases/">AI Use Cases</a></li>
+      <li><a href="../use-cases/">AI use cases</a></li>
       <li><a href="../claude-in-chrome/">Claude in Chrome</a></li>
-      <li><a href="../save-claude-tokens/">Claude for Business</a></li>
-      <li><span class="footer-nav-current" aria-current="page">Extended Assessment</span></li>
+      <li><a href="../save-claude-tokens/">Claude for business</a></li>
       <li><span class="fn-group">Legal</span></li>
       <li><a href="../privacy/">Privacy</a></li>
+      <li><a href="../terms/">Terms</a></li>
     </ul>
   </nav>
 </footer>
@@ -1298,22 +1568,37 @@ b.setAttribute('aria-expanded',o?'true':'false');});}})();
 
 function updateNextStep(pct, answered, total){
   var el = document.getElementById('ns-line');
+  var pb = document.getElementById('ns-primary-svc');
   if(!el) return;
-  var msg;
+  var msg, svc=null;
   if(answered === 0){
     msg = 'Answer the questions to see what your score means and what to fix first.';
   } else if(answered < total){
     msg = answered + ' of ' + total + ' answered. Finish the assessment for a reliable reading \u2014 partial scores skew high.';
   } else if(pct < 40){
-    msg = '<b>Below 40.</b> This almost always means AI is already in daily use with no policy behind it. It is the ordinary case, and it is the fastest thing to fix. Start with an <b>AI Use Policy</b>.';
+    msg = '<b>Below 40.</b> This almost always means AI is already in daily use with no policy behind it. It is the ordinary case, and it is the fastest thing to fix. Start with an <a href="../services/policy/">AI Use Policy</a>.';
+    svc = {href:'../services/policy/', label:'Read about the AI Use Policy'};
   } else if(pct < 70){
-    msg = '<b>Between 40 and 70.</b> In this band the gap is usually between departments \u2014 one team is fluent and three are uncertain. Start with <b>Team AI Training</b>, one lab per department.';
+    msg = '<b>Between 40 and 70.</b> In this band the gap is usually between departments \u2014 one team is fluent and three are uncertain. Start with <a href="../services/training/">Team AI Training</a>, one lab per department.';
+    svc = {href:'../services/training/', label:'Read about Team AI Training'};
   } else {
-    msg = '<b>Above 70.</b> You are ahead of most organisations your size. The risk now is decay as tools and staff change. Look at <b>Fluency Support</b> and a re-score in six months.';
+    msg = '<b>Above 70.</b> You are ahead of most organisations your size. The risk now is decay as tools and staff change. Look at <a href="../services/support/">Fluency Support</a> and a re-score in six months.';
+    svc = {href:'../services/support/', label:'Read about Fluency Support'};
   }
   el.innerHTML = msg;
+  if(pb){
+    if(svc){ pb.href=svc.href; pb.textContent=svc.label; pb.hidden=false; }
+    else { pb.hidden=true; }
+  }
 }
+
+document.addEventListener('DOMContentLoaded', function(){
+  var b=document.getElementById('resume-clear');
+  if(b) b.addEventListener('click', function(){ clearProgress(); location.reload(); });
+  restoreProgress();
+});
 </script>
+<script src="../assets/analytics.js" defer></script>
 <script src="../assets/chat.js" defer></script>
 </body>
 </html>

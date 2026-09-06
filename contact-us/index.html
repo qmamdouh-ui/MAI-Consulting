@@ -2,600 +2,497 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Contact | M.A.I. Consulting</title>
-<meta name="description" content="Tell us about your organisation and goals. We reply within one business day. Geneva, Switzerland. Clients worldwide."/>
+<meta name="description" content="Book a 30-minute call or send a message. Acknowledgement within hours, a full reply within one business day, a fixed-price proposal within five days."/>
 <link rel="canonical" href="https://mai4consulting.com/contact-us/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="M.A.I. Consulting"/>
 <meta property="og:title" content="Contact | M.A.I. Consulting"/>
-<meta property="og:description" content="Tell us about your organisation and goals. We reply within one business day. Geneva, Switzerland. Clients worldwide."/>
+<meta property="og:description" content="Book a 30-minute call or send a message. Acknowledgement within hours, a full reply within one business day, a fixed-price proposal within five days."/>
 <meta property="og:url" content="https://mai4consulting.com/contact-us/"/>
-<meta name="twitter:card" content="summary"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="og:image" content="https://mai4consulting.com/assets/og/contact.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="M.A.I. Consulting — Contact"/>
+<meta name="twitter:image" content="https://mai4consulting.com/assets/og/contact.png"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/site.css"/>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
-:root{
-  --blue:#003E8A;--blue-dark:#001f4d;--blue-mid:#002855;
-  --blue-light:rgba(0,62,138,.09);--gold:#C9A84C;--gold-dim:rgba(201,168,76,.15);
-  --charcoal:#4D4D4D;--white:#fff;--off:#f6f8fc;
-  --surface:#fbf9f8;--outline:rgba(0,62,138,.11);--txt:#1a1a2e;
-  --success:#1a7a4a;--error-c:#c0392b;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;background:var(--off);color:var(--charcoal);overflow-x:hidden;}
-.material-symbols-outlined{font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;display:inline-block;vertical-align:middle;line-height:1;}
+.two{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(300px,.85fr);gap:1.5rem;align-items:start}
+/* Grid and flex children default to min-width:auto, so one long unbreakable
+   token (the contact email) can push a whole column past the viewport. */
+.two>*{min-width:0}
+.book,.fcard,.scard{min-width:0}
+a[href^="mailto:"]{overflow-wrap:anywhere;word-break:break-word}
+@media(max-width:860px){.two{grid-template-columns:1fr}}
 
-/* ── HERO ── */
-.hero{
-  background:linear-gradient(140deg,#00122e 0%,var(--blue) 60%,var(--blue-dark) 100%);
-  padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;
-}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03)1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03)1px,transparent 1px);background-size:40px 40px;}
-.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;}
-.o1{width:340px;height:340px;background:rgba(201,168,76,.07);top:-80px;right:-40px;}
-.o2{width:240px;height:240px;background:rgba(0,62,138,.2);bottom:0;left:-60px;}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);color:var(--gold);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border-radius:9999px;margin-bottom:22px;position:relative;}
-.badge-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);animation:blink 2s infinite;}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(30px,5vw,52px);font-weight:800;color:var(--white);line-height:1.12;max-width:620px;margin:0 auto 14px;position:relative;}
-.hero h1 span{background:linear-gradient(90deg,var(--gold),#e8c86a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.hero p{font-size:15px;color:rgba(255,255,255,.65);max-width:480px;margin:0 auto;line-height:1.75;position:relative;}
+/* booking panel */
+.book{background:#fff;border:2px solid var(--gold);border-radius:12px;padding:1.5rem 1.6rem;margin-bottom:1.25rem}
+.book h2{font-size:1.35rem;margin-bottom:.4rem}
+.book .lede{font-size:.93rem;margin-bottom:1.1rem}
+#sched-frame{width:100%;min-height:640px;border:1px solid var(--outline);border-radius:8px;background:var(--off)}
+.book-fallback{background:var(--blue-wash);border-radius:8px;padding:1rem 1.15rem;font-size:.88rem;line-height:1.7;color:var(--charcoal)}
+.book-fallback strong{color:var(--blue-dark)}
 
-/* ── MAIN LAYOUT ── */
-.main{max-width:1060px;margin:0 auto;padding:52px 24px 80px;display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start;}
-@media(max-width:780px){.main{grid-template-columns:1fr;}}
+/* form */
+.fcard{background:#fff;border:1px solid var(--outline);border-radius:12px;padding:1.75rem 1.8rem}
+@media(max-width:520px){.fcard{padding:1.25rem 1.1rem}}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:600px){.frow{grid-template-columns:1fr}}
+.f{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1.05rem}
+.f label{font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-dark)}
+.f .req{color:var(--gold-ink)}
+.f .help{font-size:.76rem;color:var(--muted);line-height:1.5;font-weight:400;text-transform:none;letter-spacing:0}
+.f input,.f select,.f textarea{
+  padding:.68rem .85rem;border:1px solid var(--outline);border-radius:8px;
+  font:400 .9rem/1.5 Inter,system-ui,sans-serif;color:var(--txt);background:var(--off);width:100%;
+  transition:border-color .2s,box-shadow .2s}
+.f input:focus,.f select:focus,.f textarea:focus{
+  outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,62,138,.1)}
+.f textarea{resize:vertical;min-height:7.5rem}
+.f input[aria-invalid="true"],.f select[aria-invalid="true"],.f textarea[aria-invalid="true"]{
+  border-color:var(--stop);background:rgba(168,39,26,.04)}
+fieldset{border:none;margin:0 0 1.05rem;padding:0}
+legend{font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-dark);padding:0;margin-bottom:.5rem}
+.cbs{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}
+.cb{display:flex;align-items:center;gap:.5rem;font-size:.88rem;color:var(--charcoal);cursor:pointer}
+.cb input{width:16px;height:16px;accent-color:var(--blue);flex:none;margin:0}
+.consent{font-size:.8rem;line-height:1.65;color:var(--muted);border-top:1px solid var(--outline);padding-top:.9rem;margin-top:.2rem}
+.consent a{color:var(--blue);font-weight:600}
+.sub{width:100%;padding:.9rem;font-size:.95rem;margin-top:.9rem}
+.sub:disabled{opacity:.6;cursor:not-allowed}
+.status{display:none;border-radius:8px;padding:.9rem 1.1rem;margin-top:1rem;font-size:.88rem;line-height:1.65;font-weight:600}
+.status.on{display:block}
+.status.ok{background:rgba(26,122,74,.08);border:1px solid rgba(26,122,74,.3);color:#15603a}
+.status.bad{background:rgba(168,39,26,.06);border:1px solid rgba(168,39,26,.28);color:#8f2116}
+.status a{color:inherit}
 
-/* ── FORM CARD ── */
-.form-card{background:var(--white);border:1px solid var(--outline);border-radius:16px;padding:40px 36px;}
-@media(max-width:480px){.form-card{padding:28px 20px;}}
-
-.form-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:800;color:var(--txt);margin-bottom:6px;}
-.form-sub{font-size:13px;color:var(--charcoal);line-height:1.65;margin-bottom:32px;}
-
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-@media(max-width:560px){.form-row{grid-template-columns:1fr;}}
-
-.field{display:flex;flex-direction:column;gap:6px;margin-bottom:18px;}
-.field label{font-size:11px;font-weight:700;letter-spacing:.5px;color:var(--charcoal);text-transform:uppercase;}
-.field input,.field select,.field textarea{
-  padding:11px 14px;border:1px solid var(--outline);border-radius:8px;
-  font-size:14px;font-family:'Inter',sans-serif;color:var(--txt);
-  background:var(--off);transition:border .2s,box-shadow .2s;
-  width:100%;
-}
-.field input:focus,.field select:focus,.field textarea:focus{
-  outline:none;border-color:var(--blue);
-  box-shadow:0 0 0 3px rgba(0,62,138,.08);
-}
-.field textarea{resize:vertical;min-height:120px;line-height:1.6;}
-.field select{cursor:pointer;}
-
-/* required star */
-.req{color:var(--gold);margin-left:2px;}
-
-/* checkboxes */
-.checkbox-group{display:flex;flex-direction:column;gap:10px;}
-.cb-item{display:flex;align-items:center;gap:10px;cursor:pointer;}
-.cb-item input[type=checkbox]{width:16px;height:16px;accent-color:var(--blue);cursor:pointer;flex-shrink:0;}
-.cb-item span{font-size:13px;color:var(--charcoal);line-height:1.4;}
-
-/* submit btn */
-.submit-btn{
-  width:100%;padding:15px;border-radius:8px;border:none;cursor:pointer;
-  background:var(--blue);color:var(--white);font-weight:700;font-size:15px;
-  font-family:'Inter',sans-serif;transition:all .25s;
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  margin-top:8px;
-}
-.submit-btn:hover{background:var(--blue-mid);transform:translateY(-1px);}
-.submit-btn:active{transform:translateY(0);}
-.submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
-.submit-btn .material-symbols-outlined{font-size:20px;}
-
-/* status messages */
-.status-msg{
-  display:none;padding:14px 18px;border-radius:8px;margin-top:16px;
-  font-size:13px;font-weight:600;line-height:1.5;
-  align-items:flex-start;gap:10px;
-}
-.status-msg.visible{display:flex;}
-.status-success{background:rgba(26,122,74,.08);border:1px solid rgba(26,122,74,.25);color:var(--success);}
-.status-error{background:rgba(192,57,43,.07);border:1px solid rgba(192,57,43,.2);color:var(--error-c);}
-.status-msg .material-symbols-outlined{font-size:18px;flex-shrink:0;margin-top:1px;}
-
-/* ── SIDEBAR ── */
-.sidebar{display:flex;flex-direction:column;gap:16px;}
-
-.info-card{background:var(--white);border:1px solid var(--outline);border-radius:14px;padding:24px;}
-.info-card-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:16px;}
-
-.contact-item{display:flex;gap:12px;align-items:flex-start;margin-bottom:16px;}
-.contact-item:last-child{margin-bottom:0;}
-.contact-icon{width:36px;height:36px;border-radius:8px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.contact-icon .material-symbols-outlined{font-size:18px;color:var(--blue);}
-.contact-item h4{font-size:12px;font-weight:700;color:var(--txt);margin-bottom:2px;}
-.contact-item p,.contact-item a{font-size:13px;color:var(--charcoal);line-height:1.5;text-decoration:none;}
-.contact-item a:hover{color:var(--blue);}
-
-/* response time card */
-.response-card{background:linear-gradient(140deg,#001830,var(--blue-mid));border-radius:14px;padding:24px;}
-.response-card h3{font-family:'Playfair Display',serif;font-size:16px;font-weight:800;color:var(--white);margin-bottom:10px;}
-.response-card p{font-size:12px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:16px;}
-.response-item{display:flex;gap:8px;align-items:center;font-size:12px;color:rgba(255,255,255,.75);margin-bottom:8px;}
-.response-item:last-child{margin-bottom:0;}
-.response-item .material-symbols-outlined{font-size:15px;color:var(--gold);}
-
-/* what to expect */
-.expect-card{background:var(--off);border:1px solid var(--outline);border-radius:14px;padding:22px;}
-.expect-step{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;}
-.expect-step:last-child{margin-bottom:0;}
-.expect-num{width:24px;height:24px;border-radius:50%;background:var(--blue);color:var(--white);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
-.expect-step h4{font-size:13px;font-weight:700;color:var(--txt);margin-bottom:2px;}
-.expect-step p{font-size:12px;color:var(--charcoal);line-height:1.5;}
-
-/* linkedin btn */
-.linkedin-btn{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  width:100%;padding:12px;border-radius:8px;
-  border:1px solid var(--outline);background:var(--white);
-  font-size:13px;font-weight:700;color:var(--charcoal);
-  text-decoration:none;transition:all .25s;
-}
-.linkedin-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light);}
-.linkedin-btn .material-symbols-outlined{font-size:18px;}
-
-/* spinner */
-@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-.spinner{width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;}
-
-
-
-/* --- SITE FOOTER (canonical) --- */
-footer{
-  background:var(--blue-dark,#001f4d);
-  padding:3rem 2rem;border-top:1px solid rgba(255,255,255,.06);
-}
-.footer-inner{
-  max-width:1100px;margin:0 auto;
-  display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1.5rem;
-}
-.footer-logo{
-  font-family:'Playfair Display',serif;font-weight:800;
-  font-size:1.05rem;color:var(--white,#ffffff);
-}
-.footer-tagline{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:.2rem;max-width:34rem;}
-.footer-right{text-align:right;}
-.footer-right a{
-  color:rgba(255,255,255,.5);font-size:.78rem;text-decoration:none;
-  transition:color .2s;
-}
-.footer-right a:hover{color:var(--gold,#C9A84C);}
-.footer-right .footer-brand{color:rgba(255,255,255,.5);font-size:.78rem;}
-.footer-copy{font-size:.72rem;color:rgba(255,255,255,.25);margin-top:.3rem;}
-.footer-nav{
-  max-width:1100px;margin:2rem auto 0;padding-top:1.5rem;
-  border-top:1px solid rgba(255,255,255,.06);
-}
-.footer-nav ul{
-  list-style:none;margin:0;padding:0;
-  display:flex;flex-wrap:wrap;gap:.6rem 1.75rem;
-}
-.footer-nav a{
-  color:rgba(255,255,255,.5);font-size:.78rem;text-decoration:none;
-  transition:color .2s;
-}
-.footer-nav a:hover{color:var(--gold,#C9A84C);}
-.footer-nav .footer-nav-current{color:var(--white,#ffffff);font-size:.78rem;}
-/* --- END SITE FOOTER --- */
-</style>
-<style>.footer-nav .fn-group{color:rgba(255,255,255,.28);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;}</style>
-<style>
-/* global site navigation: self-contained, does not touch page styles */
-.mai-topbar{background:linear-gradient(140deg,#00122e 0%,#003E8A 100%);position:sticky;top:0;z-index:900;
-  border-bottom:1px solid rgba(255,255,255,.07);padding:0 1.5rem;font-family:'Inter',system-ui,sans-serif}
-.mai-topbar-inner{max-width:1120px;margin:0 auto;height:60px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.mai-brand{font-family:'Playfair Display',Georgia,serif;font-weight:800;font-size:1.1rem;color:#fff;
-  text-decoration:none;letter-spacing:.02em;display:flex;align-items:center;gap:.5rem;white-space:nowrap}
-.mai-brand-dot{width:8px;height:8px;border-radius:50%;background:#C9A84C;box-shadow:0 0 0 2px rgba(201,168,76,.3);flex:none}
-.mai-links{display:flex;align-items:center;gap:.15rem;list-style:none;margin:0;padding:0}
-.mai-links li{margin:0;padding:0;list-style:none}
-.mai-links li::before{display:none !important;content:none !important}
-.mai-links a{font-size:.8rem;font-weight:500;color:rgba(255,255,255,.72);text-decoration:none;
-  padding:.45rem .8rem;border-radius:6px;transition:color .2s,background .2s;white-space:nowrap;display:inline-block}
-.mai-links a:hover{color:#fff;background:rgba(255,255,255,.09)}
-.mai-links a[aria-current="page"]{color:#fff;background:rgba(255,255,255,.11)}
-.mai-links a.mai-cta{background:#C9A84C;color:#001830;font-weight:700;margin-left:.4rem}
-.mai-links a.mai-cta:hover{background:#e8c86a;color:#001830}
-.mai-burger{display:none;background:none;border:1px solid rgba(255,255,255,.25);color:#fff;font-size:1rem;
-  line-height:1;cursor:pointer;padding:.45rem .6rem;border-radius:6px}
-@media(max-width:900px){
-  .mai-burger{display:block}
-  .mai-links{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;align-items:stretch;
-    gap:.15rem;background:#00122e;border-bottom:2px solid #C9A84C;padding:.75rem 1.5rem 1rem}
-  .mai-links.open{display:flex}
-  .mai-links a{padding:.6rem .5rem;font-size:.9rem}
-  .mai-links a.mai-cta{margin:.35rem 0 0;text-align:center}
-}
-/* page's own header must not also stick under the global bar */
-body > header{position:static !important}
-.footer-nav .fn-group{color:rgba(255,255,255,.28);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+/* sidebar */
+.side{display:grid;gap:1rem}
+.scard{background:#fff;border:1px solid var(--outline);border-radius:12px;padding:1.3rem 1.4rem}
+.scard .k{font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:.9rem}
+.crow{display:grid;grid-template-columns:auto 1fr;gap:.7rem;margin-bottom:.9rem;align-items:start}
+.crow:last-child{margin-bottom:0}
+.crow .b{width:7px;height:7px;border-radius:50%;background:var(--gold);margin-top:.45rem}
+.crow h4{font-size:.8rem;margin-bottom:.1rem}
+.crow p,.crow a{font-size:.85rem;line-height:1.55;color:var(--charcoal);text-decoration:none;margin:0}
+.crow a{color:var(--blue);font-weight:600}
+.tl{counter-reset:tl;display:grid;gap:.75rem}
+.tl>div{display:grid;grid-template-columns:1.55rem 1fr;gap:.7rem;align-items:start}
+.tl .n{width:1.55rem;height:1.55rem;border-radius:50%;background:var(--blue-wash);color:var(--blue);
+  font:800 .7rem Inter,sans-serif;display:flex;align-items:center;justify-content:center}
+.tl b{display:block;font-size:.82rem;color:var(--blue-dark);line-height:1.4}
+.tl span{font-size:.79rem;color:var(--muted);line-height:1.55}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="mai-topbar">
   <div class="mai-topbar-inner">
     <a class="mai-brand" href="../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
     <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <ul class="mai-links" id="mai-links">
       <li><a href="../services/">Services</a></li>
-      <li><a href="../estimate/">Estimate</a></li>
-      <li><a href="../for-funders/">For Investors</a></li>
-      <li><a href="../compare/">Compare</a></li>
+      <li><a href="../estimate/">Pricing</a></li>
+      <li><a href="../our-clients/">Who It's For</a></li>
+      <li><a href="../about/">About</a></li>
       <li><a href="../knowledge/">Knowledge</a></li>
-      <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
-      <li><a class="mai-cta" href="../contact-us/">Book a call</a></li>
+      <li><a href="../explore-your-ai-readiness/">Free Check</a></li>
+      <li><a class="mai-cta" href="../contact-us/" aria-current="page">Book a call</a></li>
     </ul>
   </div>
 </div>
-
-
-<!-- ── HERO ── -->
-<section class="hero">
-  <div class="hero-grid"></div>
-  <div class="orb o1"></div><div class="orb o2"></div>
-  <div class="hero-badge"><span class="badge-dot"></span>Let's Talk</div>
-  <h1>Start a <span>Conversation</span></h1>
-  <p>Tell us about your organization and goals. We'll get back to you within one business day to explore how we can work together.</p>
+<main id="main" tabindex="-1">
+<section class="hero" id="top">
+  <div class="inner">
+    <div class="eyebrow"><i></i>Contact</div>
+    <h1>Thirty minutes, and you will know which service you need &mdash; or that you <em>do not</em> need us yet.</h1>
+    <p class="hero-sub">
+      No pitch and no obligation. We ask what is already happening with AI in your organisation, tell you which of
+      the five services fits, and say so plainly when the honest answer is a free programme or nothing at all.
+    </p>
+  </div>
 </section>
 
-
-
-<!-- ── MAIN ── -->
-<div class="main">
-
-  <!-- FORM -->
-  <div class="form-card">
-    <div class="form-title">Send Us a Message</div>
-    <p class="form-sub">Fill in the details below and we'll respond within one business day. Fields marked <span class="req">*</span> are required.</p>
-
-    <form id="contact-form" novalidate>
-
-      <div class="form-row">
-        <div class="field">
-          <label>Full Name <span class="req">*</span></label>
-          <input type="text" id="from_name" name="from_name" placeholder="e.g. Sara Johnson" required/>
-        </div>
-        <div class="field">
-          <label>Email Address <span class="req">*</span></label>
-          <input type="email" id="from_email" name="from_email" placeholder="e.g. sara@org.com" required/>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="field">
-          <label>Organization</label>
-          <input type="text" id="organization" name="organization" placeholder="e.g. Green Future NGO"/>
-        </div>
-        <div class="field">
-          <label>Job Title / Role</label>
-          <input type="text" id="job_title" name="job_title" placeholder="e.g. Program Director"/>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="field">
-          <label>Sector <span class="req">*</span></label>
-          <select id="sector" name="sector" required>
-            <option value="">Select your sector…</option>
-            <option>Nonprofit / NGO</option>
-            <option>Private Sector</option>
-            <option>Government / Public Sector</option>
-            <option>Training Centre</option>
-            <option>Individual / Freelancer</option>
-            <option>Academic / Research</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Team Size</label>
-          <select id="team_size" name="team_size">
-            <option value="">Select…</option>
-            <option>Just me</option>
-            <option>2–10</option>
-            <option>11–50</option>
-            <option>51–200</option>
-            <option>200+</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="field">
-        <label>Service of Interest <span class="req">*</span></label>
-        <select id="service" name="service" required>
-          <option value="">What can we help you with?</option>
-<option>I want to know where we stand: AI Readiness Assessment</option>
-<option>My staff use AI and we have no policy: AI Use Policy</option>
-<option>My teams need practical training: Team AI Training</option>
-<option>We need several of them: a package</option><option>We want a repetitive task set up once: Custom Agents and Tools</option>
-<option>Something else</option>
-</select>
-      </div>
-
-      <div class="field">
-        <label>How did you hear about us?</label>
-        <select id="referral" name="referral">
-          <option value="">Select…</option>
-          <option>LinkedIn</option>
-          <option>Google Search</option>
-          <option>Referral from a colleague</option>
-          <option>Event or conference</option>
-          <option>Partner organization</option>
-          <option>Other</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label>Your Message <span class="req">*</span></label>
-        <textarea id="message" name="message" placeholder="Tell us about your organization, your current challenges, and what you're hoping to achieve with AI…" required></textarea>
-      </div>
-
-      <div class="field">
-        <label style="margin-bottom:10px;">Preferred Contact Method</label>
-        <div class="checkbox-group">
-          <label class="cb-item"><input type="checkbox" name="contact_email" value="Email"/> <span>Email</span></label>
-          <label class="cb-item"><input type="checkbox" name="contact_call" value="Phone call"/> <span>Phone call</span></label>
-          <label class="cb-item"><input type="checkbox" name="contact_video" value="Video call"/> <span>Video call (Zoom / Teams)</span></label>
-        </div>
-      </div>
-
-      <button type="submit" class="submit-btn" id="submit-btn">
-        <span id="btn-text">Send Message</span>
-        <span class="material-symbols-outlined" id="btn-icon">send</span>
-        <div class="spinner" id="btn-spinner" style="display:none;"></div>
-      </button>
-
-      <!-- Status messages -->
-      <div class="status-msg status-success" id="msg-success">
-        <span class="material-symbols-outlined">check_circle</span>
-        <div>
-          <strong>Message sent successfully!</strong><br/>
-          Thank you for reaching out. Mamdouh will review your message and get back to you within one business day.
-        </div>
-      </div>
-      <div class="status-msg status-error" id="msg-error">
-        <span class="material-symbols-outlined">error</span>
-        <div id="error-text">Something went wrong. Please check your details and try again, or reach out directly at q.mamdouh@mai4consulting.com</div>
-      </div>
-
-    </form>
-  </div>
-
-  <!-- SIDEBAR -->
-  <div class="sidebar">
-
-    <!-- Contact details -->
-    <div class="info-card">
-      <div class="info-card-title">Contact Details</div>
-      <div class="contact-item">
-        <div class="contact-icon"><span class="material-symbols-outlined">mail</span></div>
-        <div>
-          <h4>Email</h4>
-          <a href="mailto:q.mamdouh@mai4consulting.com">q.mamdouh@mai4consulting.com</a>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon"><span class="material-symbols-outlined">language</span></div>
-        <div>
-          <h4>Website</h4>
-          <a href="../">www.mai4consulting.com</a>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon"><span class="material-symbols-outlined">public</span></div>
-        <div>
-          <h4>Location</h4>
-          <p>Geneva, Switzerland. Clients worldwide.</p>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon"><span class="material-symbols-outlined">schedule</span></div>
-        <div>
-          <h4>Office Hours</h4>
-          <p>Monday to Friday, 9:00 to 18:00 CET</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Response time -->
-    <div class="response-card">
-      <h3>What Happens Next</h3>
-      <p>We read every message personally. This is what happens after you send it.</p>
-      <div class="response-item"><span class="material-symbols-outlined">alarm</span>Acknowledgement within a few hours</div>
-      <div class="response-item"><span class="material-symbols-outlined">calendar_today</span>Full response within 1 business day</div>
-      <div class="response-item"><span class="material-symbols-outlined">video_call</span>Discovery call scheduled within the week</div>
-      <div class="response-item"><span class="material-symbols-outlined">description</span>Fixed-price proposal within 5 days of the call</div>
-    </div>
-
-    <!-- What to expect -->
-    <div class="expect-card">
-      <div class="info-card-title" style="margin-bottom:14px;">Our Engagement Process</div>
-      <div class="expect-step">
-        <div class="expect-num">1</div>
-        <div><h4>Discovery Call</h4><p>Thirty minutes on what is already happening with AI in your organisation and which service, if any, you need.</p></div>
-      </div>
-      <div class="expect-step">
-        <div class="expect-num">2</div>
-        <div><h4>Fixed-Price Proposal</h4><p>A scoped plan for your organisation with the result it delivers, the method and a fixed price in writing.</p></div>
-      </div>
-      <div class="expect-step">
-        <div class="expect-num">3</div>
-        <div><h4>Delivery With Your Team</h4><p>We work alongside your people so the knowledge stays with them at every stage.</p></div>
-      </div>
-      <div class="expect-step">
-        <div class="expect-num">4</div>
-        <div><h4>Lasting Capability</h4><p>Engagements close with a capability your team owns rather than a dependency on consultants.</p></div>
-      </div>
-    </div>
-
-    <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/company/94284867/" target="_blank" class="linkedin-btn">
-      <span class="material-symbols-outlined">open_in_new</span>
-      Connect on LinkedIn
-    </a>
-
-  </div>
-</div>
-
-<script>
-/* ══════════════════════════════════════════
-   EMAILJS CONFIG: replace these 3 values
-   after completing the setup steps above
-══════════════════════════════════════════ */
-const EMAILJS_PUBLIC_KEY  = 'JJs3lu55OHI_pbjth';
-const EMAILJS_SERVICE_ID  = 'service_an94235';
-const EMAILJS_TEMPLATE_ID = 'template_bv6m1l3';
-
-/* initialise EmailJS */
-emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
-
-/* ── FORM SUBMISSION ── */
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  /* hide previous status */
-  document.getElementById('msg-success').classList.remove('visible');
-  document.getElementById('msg-error').classList.remove('visible');
-
-  /* basic client-side validation */
-  var name    = document.getElementById('from_name').value.trim();
-  var email   = document.getElementById('from_email').value.trim();
-  var sector  = document.getElementById('sector').value;
-  var service = document.getElementById('service').value;
-  var message = document.getElementById('message').value.trim();
-
-  if (!name || !email || !sector || !service || !message) {
-    showError('Please fill in all required fields before submitting.');
-    return;
-  }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    showError('Please enter a valid email address.');
-    return;
-  }
-
-  /* collect preferred contact methods */
-  var preferred = [];
-  document.querySelectorAll('input[type=checkbox]:checked').forEach(function(cb) {
-    preferred.push(cb.value);
-  });
-
-  /* build template params */
-  var params = {
-    from_name:    name,
-    from_email:   email,
-    organization: document.getElementById('organization').value.trim() || 'not given',
-    job_title:    document.getElementById('job_title').value.trim()    || 'not given',
-    sector:       sector,
-    team_size:    document.getElementById('team_size').value           || 'not given',
-    service:      service,
-    referral:     document.getElementById('referral').value            || 'not given',
-    preferred:    preferred.length ? preferred.join(', ') : 'not given',
-    message:      message,
-    to_email:     'q.mamdouh@mai4consulting.com'
-  };
-
-  /* loading state */
-  setLoading(true);
-
-  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
-    .then(function() {
-      setLoading(false);
-      document.getElementById('msg-success').classList.add('visible');
-      document.getElementById('contact-form').reset();
-      document.getElementById('msg-success').scrollIntoView({behavior:'smooth', block:'nearest'});
-    })
-    .catch(function(err) {
-      setLoading(false);
-      var detail = err && err.text ? ' (' + err.text + ')' : '';
-      showError('Something went wrong' + detail + '. Please try again or email q.mamdouh@mai4consulting.com directly.');
-      console.error('EmailJS error:', err);
-    });
-});
-
-function setLoading(on) {
-  var btn     = document.getElementById('submit-btn');
-  var txt     = document.getElementById('btn-text');
-  var icon    = document.getElementById('btn-icon');
-  var spinner = document.getElementById('btn-spinner');
-  btn.disabled   = on;
-  txt.textContent = on ? 'Sending…' : 'Send Message';
-  icon.style.display    = on ? 'none' : '';
-  spinner.style.display = on ? 'block' : 'none';
-}
-
-function showError(msg) {
-  document.getElementById('error-text').textContent = msg;
-  var el = document.getElementById('msg-error');
-  el.classList.add('visible');
-  el.scrollIntoView({behavior:'smooth', block:'nearest'});
-}
-</script>
-
-<!-- ── PRIVACY ── -->
-<div style="max-width:1060px;margin:0 auto 60px;padding:0 24px;">
-  <a href="../privacy/"
-     style="display:flex;align-items:center;justify-content:space-between;gap:12px;
-            padding:18px 24px;background:var(--white);border:1px solid var(--outline);
-            border-radius:12px;text-decoration:none;font-family:'Inter',sans-serif;
-            font-size:13px;font-weight:700;color:var(--txt);">
-    <span>Privacy Policy: how we handle your data</span>
-    <span style="font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--blue);">Read the policy &rarr;</span>
-  </a>
-</div>
-
-<footer>
-  <div class="footer-inner">
+<section class="band" id="book">
+  <div class="inner two">
     <div>
-      <div class="footer-logo">M.A.I. Consulting</div>
-      <div class="footer-tagline">Strategy &middot; AI &middot; Impact</div>
+
+      <div class="book" id="booking">
+        <div class="kicker" id="book-k">How the call is arranged</div>
+        <h2 id="book-h">Send the form and a slot follows the same week.</h2>
+        <p class="lede" id="book-p">Thirty minutes, video or phone, in English, French or Arabic.</p>
+
+        <!-- ══════════════════════════════════════════════════════════════════
+             SCHEDULER: paste your booking link into SCHEDULER_URL in the
+             script at the foot of this page (Cal.com, Calendly, Google
+             Appointment Schedules or similar) and the calendar appears here.
+             While it is empty this panel shows the message-first route
+             instead, so the page never advertises a booking it cannot take.
+             ══════════════════════════════════════════════════════════════ -->
+        <div id="sched-slot" hidden></div>
+
+        <div class="book-fallback" id="sched-fallback">
+          <p style="margin-bottom:.6rem"><strong>Self-service booking is not switched on yet, so the form below is the way in.</strong></p>
+          <p style="margin:0">Send it and you get an acknowledgement within a few hours, a full reply within one
+            business day, and a slot offered for that same week. If it is quicker for you, write straight to
+            <a href="mailto:q.mamdouh@mai4consulting.com" style="color:var(--blue);font-weight:600">q.mamdouh@mai4consulting.com</a>.</p>
+        </div>
+      </div>
+
+      <div class="fcard">
+        <div class="kicker">Or send a message</div>
+        <h2 style="font-size:1.35rem;margin-bottom:.4rem">Tell us what is happening and we will come back with a time.</h2>
+        <p style="font-size:.88rem;color:var(--muted);margin-bottom:1.5rem">
+          Fields marked <span class="req">*</span> are required. Everything else helps us prepare, and you can leave it blank.
+        </p>
+
+        <form id="contact-form" novalidate>
+          <div class="frow">
+            <div class="f">
+              <label for="from_name">Full name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="from_name" name="from_name" autocomplete="name" placeholder="e.g. Sara Johnson" required aria-required="true"/>
+            </div>
+            <div class="f">
+              <label for="from_email">Email address <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="from_email" name="from_email" autocomplete="email" placeholder="e.g. sara@org.example" required aria-required="true"/>
+            </div>
+          </div>
+
+          <div class="frow">
+            <div class="f">
+              <label for="organization">Organisation</label>
+              <input type="text" id="organization" name="organization" autocomplete="organization" placeholder="e.g. Green Future NGO"/>
+            </div>
+            <div class="f">
+              <label for="job_title">Role or job title</label>
+              <input type="text" id="job_title" name="job_title" autocomplete="organization-title" placeholder="e.g. Programme Director"/>
+            </div>
+          </div>
+
+          <div class="frow">
+            <div class="f">
+              <label for="sector">Sector <span class="req" aria-hidden="true">*</span></label>
+              <select id="sector" name="sector" required aria-required="true">
+                <option value="">Select your sector&hellip;</option>
+                <option>Nonprofit or NGO</option>
+                <option>International organisation or UN agency</option>
+                <option>Government or public institution</option>
+                <option>Foundation, donor or investor</option>
+                <option>Private sector</option>
+                <option>Training centre or academy</option>
+                <option>Individual or freelancer</option>
+                <option>Academic or research</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="f">
+              <label for="team_size">How many staff</label>
+              <select id="team_size" name="team_size">
+                <option value="">Select&hellip;</option>
+                <option>Just me</option>
+                <option>2&ndash;10</option>
+                <option>11&ndash;50</option>
+                <option>51&ndash;200</option>
+                <option>201&ndash;500</option>
+                <option>500+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="f">
+            <label for="service">What can we help with <span class="req" aria-hidden="true">*</span></label>
+            <select id="service" name="service" required aria-required="true">
+              <option value="">Select&hellip;</option>
+              <option>I want to know where we stand: AI Readiness Assessment</option>
+              <option>My staff use AI and we have no rules: AI Use Policy</option>
+              <option>My teams need practical training: Team AI Training</option>
+              <option>Keeping it alive after training: Fluency Support</option>
+              <option>A repetitive task set up once: Custom Agents and Tools</option>
+              <option>Several of them: a package</option>
+              <option>A portfolio programme for organisations we fund</option>
+              <option>A course for fewer than ten participants</option>
+              <option>Something else</option>
+            </select>
+          </div>
+
+          <div class="f">
+            <label for="message">Your message <span class="req" aria-hidden="true">*</span></label>
+            <span class="help" id="message-help">What is already happening with AI in your organisation, what has prompted the question, and any deadline you are working to.</span>
+            <textarea id="message" name="message" required aria-required="true" aria-describedby="message-help"
+              placeholder="For example: our board asked for a position on AI before the March meeting, staff already use it on donor reports, and we have no policy."></textarea>
+          </div>
+
+          <fieldset>
+            <legend>How would you rather be contacted</legend>
+            <div class="cbs">
+              <label class="cb"><input type="checkbox" name="pref" value="Email" checked/> Email</label>
+              <label class="cb"><input type="checkbox" name="pref" value="Video call" id="pref-video"/> Video call</label>
+              <label class="cb"><input type="checkbox" name="pref" value="Phone call" id="pref-phone"/> Phone call</label>
+            </div>
+          </fieldset>
+
+          <div class="f" id="phone-wrap" hidden>
+            <label for="phone">Phone number <span class="help">so we can actually call you</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="e.g. +41 22 000 00 00"/>
+          </div>
+
+          <div class="f">
+            <label for="referral">How did you hear about us</label>
+            <select id="referral" name="referral">
+              <option value="">Select&hellip;</option>
+              <option>LinkedIn</option>
+              <option>Google search</option>
+              <option>Referral from a colleague</option>
+              <option>Event or conference</option>
+              <option>Partner organisation</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <p class="consent">
+            Sending this gives us your name, email and message so we can reply. We keep it for up to three years,
+            we do not add you to a mailing list, and you can ask us to delete it at any time.
+            <a href="../privacy/">How we handle your data</a> &middot; <a href="../terms/">Terms</a>.
+          </p>
+
+          <button type="submit" class="btn btn-navy sub" id="submit-btn">Send message</button>
+
+          <div class="status ok" id="msg-success" role="status"></div>
+          <div class="status bad" id="msg-error" role="alert"></div>
+        </form>
+      </div>
     </div>
-    <div class="footer-right">
+
+    <aside class="side">
+      <div class="scard">
+        <div class="k">What happens after you send it</div>
+        <div class="tl">
+          <div><span class="n">1</span><div><b>Acknowledgement within a few hours</b><span>A person reads it, not an autoresponder rule.</span></div></div>
+          <div><span class="n">2</span><div><b>A full reply within one business day</b><span>With a first read on which service, if any, applies.</span></div></div>
+          <div><span class="n">3</span><div><b>A 30-minute call that same week</b><span>Video or phone, in English, French or Arabic.</span></div></div>
+          <div><span class="n">4</span><div><b>A fixed-price proposal within five days of the call</b><span>Fixed scope, in writing. No retainer to see it.</span></div></div>
+        </div>
+      </div>
+
+      <div class="scard">
+        <div class="k">Direct details</div>
+        <div class="crow"><span class="b"></span><div><h4>Email</h4><a href="mailto:q.mamdouh@mai4consulting.com">q.mamdouh@mai4consulting.com</a></div></div>
+        <div class="crow"><span class="b"></span><div><h4>Based in</h4><p>Geneva, Switzerland. Delivered remotely or on site, worldwide.</p></div></div>
+        <div class="crow"><span class="b"></span><div><h4>Working hours</h4><p>Monday to Friday, 09:00&ndash;18:00 CET.</p></div></div>
+        <div class="crow"><span class="b"></span><div><h4>Languages</h4><p>English, French or Arabic, for the call and the materials.</p></div></div>
+        <div class="crow"><span class="b"></span><div><h4>Company details</h4><a href="../terms/">Entity, tax and supplier information</a></div></div>
+      </div>
+
+      <div class="scard">
+        <div class="k">Before you write</div>
+        <p style="font-size:.87rem;line-height:1.7;color:var(--charcoal);margin-bottom:.9rem">
+          Two things make the call more useful, and both are free and take twelve minutes each way.
+        </p>
+        <p style="margin-bottom:.6rem"><a class="btn btn-outline" href="../explore-your-ai-readiness/" style="padding:.55rem 1rem;font-size:.78rem">Take the free check (12&nbsp;min)</a></p>
+        <p><a class="btn btn-outline" href="../estimate/" style="padding:.55rem 1rem;font-size:.78rem">Price your engagement</a></p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="band band-alt" id="process">
+  <div class="inner">
+    <div class="kicker">How an engagement runs</div>
+    <h2>Four steps, and you own what is left behind.</h2>
+    <div class="grid-4">
+      <div class="card"><h4>01 &middot; Discovery call</h4><p>Thirty minutes on what is happening with AI in your organisation and which of the five services applies, if any.</p></div>
+      <div class="card"><h4>02 &middot; Fixed-price proposal</h4><p>A scoped plan with the result it delivers, the method and a fixed price in writing. <a href="../terms/" style="color:var(--blue)">Terms</a>.</p></div>
+      <div class="card"><h4>03 &middot; Delivery with your team</h4><p>Policy drafted with your people. Sessions built on your teams' real tasks and real documents.</p></div>
+      <div class="card"><h4>04 &middot; Handover</h4><p>A re-score, the evidence file and the playbooks in your hands. Engagements close with a capability you own.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="mai-footer">
+  <div class="mai-footer-inner">
+    <div>
+      <div class="mai-footer-logo">M.A.I. Consulting</div>
+      <div class="mai-footer-tag">Strategy &middot; AI &middot; Impact</div>
+    </div>
+    <div class="mai-footer-right">
       <a href="../">mai4consulting.com</a>
-      <div class="footer-copy">&copy; 2026 M.A.I. Consulting. All rights reserved. Geneva, Switzerland.</div>
+      <div class="mai-footer-copy">&copy; 2026 M.A.I. Consulting. All rights reserved. Geneva, Switzerland.</div>
     </div>
   </div>
   <nav class="footer-nav" aria-label="Site">
     <ul>
       <li><a href="../">Home</a></li>
       <li><a href="../services/">Services</a></li>
-      <li><a href="../estimate/">Price estimate</a></li>
-      <li><a href="../for-funders/">For Investors</a></li>
+      <li><a href="../estimate/">Pricing</a></li>
+      <li><a href="../our-clients/">Who It's For</a></li>
       <li><a href="../about/">About</a></li>
-      <li><a href="../compare/">Compare the market</a></li>
-      <li><a href="../knowledge/">Knowledge</a></li>
-      <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
-      <li><a href="../our-clients/">Who We Work With</a></li>
       <li><span class="footer-nav-current" aria-current="page">Contact</span></li>
+      <li><span class="fn-group">Decide</span></li>
+      <li><a href="../compare/">Compare the market</a></li>
+      <li><a href="../for-funders/">For funders and investors</a></li>
+      <li><a href="../explore-your-ai-readiness/">Free readiness check</a></li>
+      <li><a href="../extensive-ai-readiness-analysis/">Self-assessment</a></li>
       <li><span class="fn-group">Read</span></li>
-      <li><a href="../playbook/">Sample Playbook</a></li>
+      <li><a href="../knowledge/">Knowledge</a></li>
+      <li><a href="../playbook/">Sample playbook</a></li>
       <li><a href="../eu-ai-act-article-4/">EU AI Act Article 4</a></li>
-      <li><a href="../use-cases/">AI Use Cases</a></li>
+      <li><a href="../use-cases/">AI use cases</a></li>
       <li><a href="../claude-in-chrome/">Claude in Chrome</a></li>
-      <li><a href="../save-claude-tokens/">Claude for Business</a></li>
-      <li><a href="../extensive-ai-readiness-analysis/">Extended Assessment</a></li>
+      <li><a href="../save-claude-tokens/">Claude for business</a></li>
       <li><span class="fn-group">Legal</span></li>
       <li><a href="../privacy/">Privacy</a></li>
+      <li><a href="../terms/">Terms</a></li>
     </ul>
   </nav>
 </footer>
+
 <script>
-(function(){var b=document.getElementById('mai-burger'),l=document.getElementById('mai-links');
-if(b&&l){b.addEventListener('click',function(){var o=l.classList.toggle('open');
-b.setAttribute('aria-expanded',o?'true':'false');});}})();
+(function(){
+  var b=document.getElementById('mai-burger'), l=document.getElementById('mai-links');
+  if(b&&l){b.addEventListener('click',function(){
+    var o=l.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false');
+  });}
+})();
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SCHEDULER
+   Paste a booking link here and the calendar replaces the message-first
+   panel above. Anything that can be framed works: Cal.com, Calendly,
+   Google Appointment Schedules, Microsoft Bookings.
+       var SCHEDULER_URL = 'https://cal.com/your-handle/30min';
+   Leave it empty and the page keeps the honest message-first wording, so it
+   never promises a booking that cannot be made.
+   ══════════════════════════════════════════════════════════════════════════ */
+var SCHEDULER_URL = '';
+
+(function(){
+  function d(id){ return document.getElementById(id); }
+  if(!SCHEDULER_URL) return;
+  var slot=d('sched-slot'), fb=d('sched-fallback');
+  var f=document.createElement('iframe');
+  f.id='sched-frame'; f.src=SCHEDULER_URL; f.title='Booking calendar';
+  f.loading='lazy'; f.setAttribute('frameborder','0');
+  slot.appendChild(f); slot.hidden=false;
+  if(fb) fb.remove();
+  var k=d('book-k'), h=d('book-h'), t=d('book-p');
+  if(k) k.textContent='The fastest route';
+  if(h) h.textContent='Pick a time in the calendar.';
+  if(t) t.textContent='Thirty minutes, video or phone, in English, French or Arabic. '+
+    'Choose a slot and you have the appointment straight away, with no email exchange in between.';
+})();
+
+/* ── The phone field appears only when a phone call is what they asked for ── */
+(function(){
+  var cb=document.getElementById('pref-phone'), wrap=document.getElementById('phone-wrap');
+  if(!cb||!wrap) return;
+  var sync=function(){ wrap.hidden=!cb.checked; };
+  cb.addEventListener('change',sync); sync();
+})();
+
+/* ── FORM SUBMISSION ──────────────────────────────────────────────────── */
+var EMAILJS_PUBLIC_KEY  = 'JJs3lu55OHI_pbjth';
+var EMAILJS_SERVICE_ID  = 'service_an94235';
+var EMAILJS_TEMPLATE_ID = 'template_bv6m1l3';
+var NOTIFY_EMAIL        = 'q.mamdouh@mai4consulting.com';
+
+try{ emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); }catch(e){}
+
+(function(){
+  var form=document.getElementById('contact-form');
+  var okBox=document.getElementById('msg-success'), badBox=document.getElementById('msg-error');
+  var btn=document.getElementById('submit-btn');
+
+  function get(id){ return document.getElementById(id); }
+  function val(id){ var e=get(id); return e ? e.value.trim() : ''; }
+  function mark(id,bad){
+    var e=get(id); if(!e) return;
+    if(bad) e.setAttribute('aria-invalid','true'); else e.removeAttribute('aria-invalid');
+  }
+  function fail(html,focusId){
+    okBox.classList.remove('on');
+    badBox.innerHTML=html; badBox.classList.add('on');
+    if(focusId && get(focusId)) get(focusId).focus();
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    okBox.classList.remove('on'); badBox.classList.remove('on');
+
+    var required=[['from_name','your name'],['from_email','your email address'],
+                  ['sector','your sector'],['service','what we can help with'],
+                  ['message','a short message']];
+    var missing=[], first=null;
+    required.forEach(function(r){
+      var empty=!val(r[0]);
+      mark(r[0],empty);
+      if(empty){ missing.push(r[1]); if(!first) first=r[0]; }
+    });
+    if(missing.length){
+      return fail('Add '+missing.join(', ')+' and send again.', first);
+    }
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val('from_email'))){
+      mark('from_email',true);
+      return fail('That email address does not look complete. Check it and send again.','from_email');
+    }
+    if(get('pref-phone').checked && !val('phone')){
+      mark('phone',true);
+      return fail('You asked to be called, so add a phone number, or untick &ldquo;Phone call&rdquo;.','phone');
+    }
+
+    var pref=[].slice.call(document.querySelectorAll('input[name="pref"]:checked'))
+               .map(function(c){return c.value;}).join(', ') || 'Email';
+
+    var msg = val('message')
+      + '\n\n---\nOrganisation: ' + (val('organization')||'not given')
+      + '\nRole: ' + (val('job_title')||'not given')
+      + '\nStaff: ' + (val('team_size')||'not given')
+      + '\nPreferred contact: ' + pref
+      + (val('phone') ? '\nPhone: ' + val('phone') : '')
+      + '\nHeard about us via: ' + (val('referral')||'not given')
+      + '\nPage: ' + location.href
+      + '\nTime: ' + new Date().toISOString();
+
+    btn.disabled=true; btn.textContent='Sending…';
+
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+      from_name:    val('from_name'),
+      from_email:   val('from_email'),
+      organization: val('organization') || 'not given',
+      job_title:    val('job_title')    || 'not given',
+      sector:       val('sector'),
+      team_size:    val('team_size')    || 'not given',
+      service:      val('service'),
+      referral:     val('referral')     || 'not given',
+      preferred:    pref,
+      message:      msg,
+      to_email:     NOTIFY_EMAIL
+    }).then(function(){
+      if(window.mai) mai.track('contact_submitted',{service:val('service'),sector:val('sector')});
+      form.reset();
+      var pw=document.getElementById('phone-wrap'); if(pw) pw.hidden=true;
+      okBox.innerHTML='<strong>Message sent.</strong> You will have an acknowledgement within a few hours and a '+
+        'full reply within one business day. If it has not arrived by then, write directly to '+
+        '<a href="mailto:'+NOTIFY_EMAIL+'">'+NOTIFY_EMAIL+'</a>.';
+      okBox.classList.add('on');
+      okBox.scrollIntoView({behavior:'smooth',block:'center'});
+      btn.disabled=false; btn.textContent='Send message';
+    }).catch(function(){
+      btn.disabled=false; btn.textContent='Send message';
+      fail('The message did not go through. Write to <a href="mailto:'+NOTIFY_EMAIL+'">'+NOTIFY_EMAIL+'</a> '+
+           'and it will reach the same place.');
+    });
+  });
+})();
 </script>
+<script src="../assets/analytics.js" defer></script>
 <script src="../assets/chat.js" defer></script>
 </body>
 </html>
