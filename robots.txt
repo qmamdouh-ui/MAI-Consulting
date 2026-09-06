@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /source-content/
+Disallow: /docs/
 
 Sitemap: https://mai4consulting.com/sitemap.xml
