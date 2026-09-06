@@ -301,9 +301,9 @@ var KB=[
   k:{"privacy":6,"personal data":5,"with my data":7,"my information":6,"data protection":4,"do with my":6,"cookies":4,"gdpr":2,"store my":5},
   kf:{"confidentialite":6,"vie privee":6,"mes donnees":7,"donnees personnelles":6,"cookies":4,"rgpd":3,"conservez":5},
   ka:{"الخصوصية":6,"بياناتي":8,"معلوماتي":6,"البيانات الشخصية":6,"تحتفظون":5,"تخزنون":5,"كوكيز":4},
-  a:{en:"The privacy policy is on its own page: what is collected through the site and the contact form, the legal basis under GDPR and Swiss law, retention, and your rights. This assistant stores nothing; a question you choose to send to the team goes by email and nowhere else.",
-     fr:"La politique de confidentialité a sa propre page : ce qui est collecté via le site et le formulaire, la base légale au titre du RGPD et du droit suisse, la conservation et vos droits. Cet assistant ne stocke rien ; une question que vous choisissez d’envoyer à l’équipe part par courriel et nulle part ailleurs.",
-     ar:"لسياسة الخصوصية صفحةٌ خاصّة تبيّن ما يُجمَع عبر الموقع ونموذج التواصل، والأساسَ القانوني بموجب اللائحة العامة لحماية البيانات والقانون السويسري، ومدّةَ الاحتفاظ، وحقوقَكم. ولا يحتفظ هذا المساعدُ بأيّ شيء، وما تختارون إرساله إلى الفريق يُرسَل بالبريد الإلكتروني ولا يذهب إلى أيّ مكان آخر."},
+  a:{en:"The privacy policy is on its own page: what is collected through the site and the contact form, the legal basis under GDPR and Swiss law, retention, and your rights. The conversation with this assistant stays in your browser. If you leave your details at the end, the conversation and those details are emailed to the M.A.I. Consulting inbox and nowhere else.",
+     fr:"La politique de confidentialité a sa propre page : ce qui est collecté via le site et le formulaire, la base légale au titre du RGPD et du droit suisse, la conservation et vos droits. La conversation avec cet assistant reste dans votre navigateur. Si vous laissez vos coordonnées à la fin, la conversation et ces coordonnées partent par courriel vers la boîte de M.A.I. Consulting, et nulle part ailleurs.",
+     ar:"لسياسة الخصوصية صفحةٌ خاصّة تبيّن ما يُجمَع عبر الموقع ونموذج التواصل، والأساسَ القانوني بموجب اللائحة العامة لحماية البيانات والقانون السويسري، ومدّةَ الاحتفاظ، وحقوقَكم. وتبقى المحادثة مع هذا المساعد في متصفّحكم. وإن تركتم بياناتكم في النهاية، أُرسِلت المحادثة وتلك البيانات بالبريد الإلكتروني إلى بريد «إم إيه آي للاستشارات» ولا تذهب إلى أيّ مكان آخر."},
   l:"privacy/",t:{en:"Read the privacy policy",fr:"Lire la politique",ar:"سياسة الخصوصية"}},
 
  {id:"small-groups",yes:true,rel:["training-svc","price","location"],
@@ -354,8 +354,8 @@ function detect(q){
   return "en";
 }
 var UI={
- en:{title:"Site assistant",sub:"Answers come only from this website",ph:"Ask about services, prices, who it is for…",send:"Ask",
-     note:"I repeat what is written on the site and cannot invent an answer. If a question about the practice is not covered here, I will offer to pass it to the team.",
+ en:{title:"Site assistant",sub:"Understands your need, then passes it to the team",ph:"Ask about services, prices, who it is for…",send:"Ask",
+     note:"I ask a few questions to understand what you need, and answer from what is written on this site. I do not quote prices: the call does that. What you tell me is emailed to the team so nobody asks you to repeat it.",
      hello:"Hello! I can tell you about the services, roughly what they cost, who they are for, or how an engagement runs, in English, French or Arabic. What would you like to know?",
      dk:"That one is not on the website, and I would rather not guess. I can pass it to the team, who usually reply within a business day, or you can use the contact form.",
      off:"That is outside what I can help with here. I know this practice, its services, prices, who they are for and how it works. Ask me one of those and I will do my best.",
@@ -367,8 +367,8 @@ var UI={
      fine:"Doing well, thank you. What can I help you find?",
      chips:["What does it cost?","Who is this for?","What is the playbook?","Do you work with funders?","What is Article 4?","How do I book a call?"],
      more:"Read more"},
- fr:{title:"Assistant du site",sub:"Les réponses viennent uniquement de ce site",ph:"Services, tarifs, pour qui…",send:"Envoyer",
-     note:"Je répète ce qui est écrit sur le site et ne peux rien inventer. Si une question sur le cabinet n’est pas couverte ici, je proposerai de la transmettre à l’équipe.",
+ fr:{title:"Assistant du site",sub:"Cerne votre besoin, puis le transmet à l’équipe",ph:"Services, tarifs, pour qui…",send:"Envoyer",
+     note:"Je pose quelques questions pour cerner votre besoin et je réponds à partir de ce qui est écrit sur ce site. Je ne donne pas de prix : c’est l’entretien qui le fait. Ce que vous me dites est transmis par courriel à l’équipe, pour que personne ne vous fasse répéter.",
      hello:"Bonjour ! Je peux vous parler des services, de leur coût approximatif, de leurs destinataires ou du déroulement d’une mission, en français, en anglais ou en arabe. Que souhaitez-vous savoir ?",
      dk:"Ce point n’est pas sur le site et je préfère ne pas deviner. Je peux le transmettre à l’équipe, qui répond en général sous un jour ouvré, ou vous pouvez utiliser le formulaire de contact.",
      off:"Cela sort de ce que je peux faire ici. Je connais ce cabinet, ses services, ses tarifs, ses destinataires et son fonctionnement. Posez-moi une question sur l’un de ces sujets.",
@@ -380,8 +380,8 @@ var UI={
      fine:"Très bien, merci. Que puis-je vous aider à trouver ?",
      chips:["Combien ça coûte ?","Pour qui est-ce ?","La fiche pratique ?","Travaillez-vous avec des bailleurs ?","L’article 4 ?","Prendre rendez-vous"],
      more:"En savoir plus"},
- ar:{title:"مساعد الموقع",sub:"الأجوبة من هذا الموقع وحده",ph:"اسأل عن الخدمات أو الأسعار أو لمن هي…",send:"اسأل",
-     note:"أكرّر ما هو مكتوبٌ على الموقع ولا أستطيع اختراعَ جواب. وإن كان سؤالٌ عن المكتب غيرَ مشمول هنا عرضتُ عليكم إحالتَه إلى الفريق.",
+ ar:{title:"مساعد الموقع",sub:"يفهم حاجتكم ثم يحيلها إلى الفريق",ph:"اسأل عن الخدمات أو الأسعار أو لمن هي…",send:"اسأل",
+     note:"أطرح أسئلةً قليلة لأفهم حاجتكم، وأجيب ممّا هو مكتوبٌ على هذا الموقع. ولا أعطي أسعاراً؛ فذلك شأنُ المكالمة. وما تقولونه يصل إلى الفريق بالبريد كي لا يطلب منكم أحدٌ إعادتَه.",
      hello:"أهلاً بكم! أستطيع أن أحدّثكم عن الخدمات وتكلفتها التقريبية ولمن هي وكيف تسير المهمّة، بالعربية أو الإنجليزية أو الفرنسية. ما الذي تودّون معرفته؟",
      dk:"هذا الأمر ليس على الموقع، وأُفضِّل ألّا أخمّن. أستطيع إحالتَه إلى الفريق، وهم يردّون عادةً في غضون يوم عمل، أو يمكنكم استعمال نموذج التواصل.",
      off:"هذا خارج ما أستطيع مساعدتكم فيه هنا؛ فأنا أعرف هذا المكتب وخدماته وأسعاره ولمن هي وكيف يعمل. اسألوني عن أحد هذه الأمور وسأجيبكم قدر استطاعتي.",
@@ -454,6 +454,420 @@ var SMALL=[
 function smallKey(q){ if(q.length>=120) return null; var n=norm(q); for(var i=0;i<SMALL.length;i++){ if(SMALL[i].re.test(q)||SMALL[i].re.test(n)) return SMALL[i].key; } return null; }
 var YN=rx("^(do|does|can|could|is|are|will|would|have|has|should|est-ce|avez|etes|êtes|pouvez|faites|proposez|هل|أ|ا)\\b","i");
 
+/* ─────────────────────────── intake agent ───────────────────────────
+   Runs a real conversation: profiles the visitor, reasons over what it has
+   heard, recommends from the services on this site, then takes contact
+   details and emails the whole thing to the team. It never quotes a price.
+   Answers to questions still come only from KB, so it cannot invent. */
+
+var AGT = {
+  en: {
+    open: "Hello. I work with the M.A.I. Consulting team, and my job here is to understand what you need well enough that whoever calls you already knows your situation. It takes about two minutes, and you can ask me anything along the way. What brings you to the site today?",
+    openChips: ["Our staff use AI with no rules", "We need training", "A funder is asking about AI", "We want to automate a task", "Just looking around"],
+    ackShort: ["Understood.", "That helps.", "Noted.", "Right."],
+    back: "Back to where we were.",
+    q: {
+      who: "Who am I speaking with, in terms of your role? Director, data protection, HR, programmes, fundraising, something else?",
+      org: "And the organisation: an NGO or foundation, a UN agency or international organisation, a government body, a private company, or are you asking as an individual?",
+      size: "Roughly how many people would this cover?",
+      level: "Where would you say your team is with AI at the moment? Most people fall into one of these.",
+      trigger: "Is there something specific driving this now, like a board meeting, a funder questionnaire, or a deadline?",
+      when: "And roughly when would you want this to happen?"
+    },
+    chips: {
+      who: ["Director", "Data protection", "HR or learning", "Programmes", "Fundraising", "Funder or investor"],
+      org: ["NGO or foundation", "UN or international", "Government", "Private company", "I am an individual"],
+      size: ["Just me", "Under 10", "10 to 50", "50 to 200", "More than 200"],
+      level: ["Barely used it", "Occasional use, no method", "We prompt properly", "We use projects and skills", "We use agents", "Not sure"],
+      trigger: ["A board or funder asked", "An incident or near miss", "Nothing urgent, planning ahead", "A deadline"],
+      when: ["As soon as possible", "This quarter", "Next few months", "Just exploring"]
+    },
+    adviseIntro: "Thank you. Here is how I read it.",
+    noPrice: "I do not quote prices, and I would rather not guess at one. The estimator on the site gives an indicative range for a scope you build yourself, and the thirty-minute call turns it into a fixed price in writing.",
+    toCapture: "If that sounds close, leave me your details and someone will call you to confirm the scope and the price. They go to the M.A.I. Consulting inbox with this conversation attached, and nowhere else. If it does not, tell me what I have missed and I will adjust.",
+    cap: {
+      name: "Your name?",
+      email: "And the best email to reach you on?",
+      org: "What is the organisation called? Say skip if you would rather not.",
+      phone: "A phone number, if you would like a call rather than an email. Say skip otherwise.",
+      when: "Any preference on when to be called? Say skip if not."
+    },
+    badEmail: "That does not look like an email address. Could you check it?",
+    sending: "Sending this to the team.",
+    sent: "Sent. The team has your details and the whole of this conversation, so nobody will ask you to repeat yourself. They reply within one business day.",
+    failed: "I could not send it from here. Please use the contact form and it will reach the same inbox.",
+    skip: "skip",
+    ask_more: "Anything else you want to know while you are here?",
+    closeChips: ["Open the estimator", "See the services", "Book a call"],
+    browse: "Of course. Ask me anything: how an engagement is scoped, what goes into a policy, what the training covers at each level. If it turns useful, I can pass your details to the team at the end.",
+    noted: "I have written it down, and it goes to the team with the rest of this conversation.",
+    resume: "Shall we carry on where we were?",
+    priceQ: "On price"
+  },
+  fr: {
+    open: "Bonjour. Je travaille avec l'équipe de M.A.I. Consulting, et mon rôle ici est de comprendre votre besoin assez précisément pour que la personne qui vous rappellera connaisse déjà votre situation. Comptez deux minutes, et posez-moi vos questions au passage. Qu'est-ce qui vous amène aujourd'hui ?",
+    openChips: ["Nos équipes utilisent l'IA sans règles", "Nous avons besoin d'une formation", "Un bailleur nous interroge", "Nous voulons automatiser une tâche", "Je regarde simplement"],
+    ackShort: ["Compris.", "C'est utile.", "Noté.", "Très bien."],
+    back: "Revenons à notre fil.",
+    q: {
+      who: "À qui ai-je l'honneur, en termes de fonction ? Direction, protection des données, RH, programmes, collecte de fonds, autre ?",
+      org: "Et l'organisation : une ONG ou une fondation, une agence des Nations unies ou une organisation internationale, une administration, une entreprise privée, ou parlez-vous à titre individuel ?",
+      size: "Combien de personnes cela concernerait-il, approximativement ?",
+      level: "Où en est votre équipe avec l'IA aujourd'hui ? La plupart se reconnaissent dans l'une de ces situations.",
+      trigger: "Y a-t-il un élément déclencheur, comme un conseil d'administration, un questionnaire de bailleur ou une échéance ?",
+      when: "Et à quel horizon souhaiteriez-vous que cela se fasse ?"
+    },
+    chips: {
+      who: ["Direction", "Protection des données", "RH ou formation", "Programmes", "Collecte de fonds", "Bailleur ou investisseur"],
+      org: ["ONG ou fondation", "ONU ou international", "Administration", "Entreprise privée", "À titre individuel"],
+      size: ["Moi seul", "Moins de 10", "10 à 50", "50 à 200", "Plus de 200"],
+      level: ["Presque jamais utilisé", "Usage occasionnel, sans méthode", "Nous formulons correctement", "Projets et compétences", "Nous utilisons des agents", "Je ne sais pas"],
+      trigger: ["Un conseil ou un bailleur", "Un incident", "Rien d'urgent, nous anticipons", "Une échéance"],
+      when: ["Dès que possible", "Ce trimestre", "Dans quelques mois", "Exploration"]
+    },
+    adviseIntro: "Merci. Voici ma lecture.",
+    noPrice: "Je ne donne pas de prix et je préfère ne pas en inventer. L'estimateur du site affiche une fourchette indicative pour un périmètre que vous composez vous-même, et l'entretien de trente minutes la transforme en prix fixe par écrit.",
+    toCapture: "Si cela vous paraît juste, laissez-moi vos coordonnées et quelqu'un vous appellera pour confirmer le périmètre et le prix. Elles partent vers la boîte de M.A.I. Consulting avec cette conversation, et nulle part ailleurs. Sinon, dites-moi ce que j'ai mal compris et je corrige.",
+    cap: {
+      name: "Votre nom ?",
+      email: "Et la meilleure adresse pour vous joindre ?",
+      org: "Le nom de l'organisation ? Dites passer si vous préférez ne pas le donner.",
+      phone: "Un numéro de téléphone, si vous préférez un appel. Dites passer sinon.",
+      when: "Une préférence d'horaire pour l'appel ? Dites passer sinon."
+    },
+    badEmail: "Cela ne ressemble pas à une adresse électronique. Pouvez-vous vérifier ?",
+    sending: "J'envoie tout cela à l'équipe.",
+    sent: "Envoyé. L'équipe a vos coordonnées et l'ensemble de cet échange : personne ne vous demandera de répéter. Réponse sous un jour ouvré.",
+    failed: "Je n'ai pas pu l'envoyer d'ici. Utilisez le formulaire de contact, il arrive dans la même boîte.",
+    skip: "passer",
+    ask_more: "Autre chose que vous aimeriez savoir pendant que vous êtes là ?",
+    closeChips: ["Ouvrir l'estimateur", "Voir les services", "Prendre rendez-vous"],
+    browse: "Bien sûr. Posez-moi ce que vous voulez : le cadrage d'une mission, le contenu d'une politique, ce que couvre la formation à chaque niveau. Si cela devient utile, je transmettrai vos coordonnées à l'équipe.",
+    noted: "Je l'ai noté, et cela partira à l'équipe avec le reste de cette conversation.",
+    resume: "Reprenons où nous en étions ?",
+    priceQ: "Sur le prix"
+  },
+  ar: {
+    open: "أهلاً بكم. أعمل مع فريق «إم إيه آي كونسلتنغ»، ومهمّتي هنا أن أفهم حاجتكم فهماً كافياً ليعرف مَن يتّصل بكم وضعَكم سلفاً. يستغرق ذلك دقيقتين، ويمكنكم سؤالي عن أيّ شيء في أثنائه. ما الذي جاء بكم اليوم؟",
+    openChips: ["موظفونا يستعملون الذكاء الاصطناعي بلا قواعد", "نحتاج تدريباً", "جهة مانحة تسألنا", "نريد أتمتة مهمّة", "أتصفّح فقط"],
+    ackShort: ["فهمت.", "هذا مفيد.", "سجّلتُ ذلك.", "حسناً."],
+    back: "لنعد إلى ما كنّا فيه.",
+    q: {
+      who: "مع مَن أتحدّث، من حيث الدور؟ الإدارة، حماية البيانات، الموارد البشرية، البرامج، جمع التبرّعات، أو غير ذلك؟",
+      org: "وما نوع المؤسسة: منظمة غير حكومية أو مؤسسة مانحة، وكالة أممية أو منظمة دولية، جهة حكومية، شركة خاصة، أم تسألون بصفتكم الشخصية؟",
+      size: "كم عددُ من يشملهم هذا تقريباً؟",
+      level: "أين يقف فريقكم اليوم من الذكاء الاصطناعي؟ أكثر الناس يجدون أنفسهم في إحدى هذه الحالات.",
+      trigger: "هل ثمّة ما يدفع إلى هذا الآن، كاجتماع مجلس إدارة أو استبيان من مانح أو موعد نهائي؟",
+      when: "ومتى تودّون أن يتمّ ذلك تقريباً؟"
+    },
+    chips: {
+      who: ["الإدارة", "حماية البيانات", "الموارد البشرية", "البرامج", "جمع التبرعات", "جهة مانحة أو مستثمر"],
+      org: ["منظمة غير حكومية", "أممية أو دولية", "جهة حكومية", "شركة خاصة", "بصفتي فرداً"],
+      size: ["أنا فقط", "أقل من عشرة", "من عشرة إلى خمسين", "من خمسين إلى مئتين", "أكثر من مئتين"],
+      level: ["بالكاد استعملناه", "استعمال متقطّع بلا منهج", "نصوغ الطلبات جيداً", "نستعمل المشاريع والمهارات", "نستعمل الوكلاء", "لست متأكداً"],
+      trigger: ["سؤال من مجلس أو مانح", "حادثة أو ما يشبهها", "لا شيء عاجل، نخطّط", "موعد نهائي"],
+      when: ["بأسرع ما يمكن", "هذا الربع", "خلال أشهر", "استكشاف فقط"]
+    },
+    adviseIntro: "شكراً لكم. هذه قراءتي للأمر.",
+    noPrice: "لا أعطي أسعاراً ولا أحبّ التخمين فيها. تعرض حاسبةُ التقدير على الموقع فئةً تقريبية لنطاقٍ تركّبونه بأنفسكم، والمكالمةُ من ثلاثين دقيقة تحوّلها إلى سعر ثابت مكتوب.",
+    toCapture: "إن بدا لكم هذا قريباً من حاجتكم فاتركوا لي بياناتكم وسيتّصل بكم أحدُ الفريق لتثبيت النطاق والسعر. وتصل بياناتكم مع هذه المحادثة إلى بريد الفريق ولا تذهب إلى أيّ مكان آخر. وإن لم يكن كذلك فقولوا لي ما فاتني وأصحّحه.",
+    cap: {
+      name: "ما اسمكم؟",
+      email: "وما أفضل بريد إلكتروني للوصول إليكم؟",
+      org: "ما اسم المؤسسة؟ قولوا «تخطٍّ» إن كنتم تفضّلون عدم ذكره.",
+      phone: "رقم هاتف، إن كنتم تفضّلون مكالمة. وإلّا فقولوا «تخطٍّ».",
+      when: "هل لديكم وقت مفضّل للاتصال؟ وإلّا فقولوا «تخطٍّ»."
+    },
+    badEmail: "لا يبدو هذا عنواناً بريدياً. هل تتفضّلون بالتحقّق؟",
+    sending: "أُرسل هذا إلى الفريق.",
+    sent: "أُرسل. لدى الفريق بياناتُكم وهذه المحادثة كاملةً، فلن يطلب منكم أحدٌ إعادةَ ما قلتم. ويردّون في غضون يوم عمل.",
+    failed: "تعذّر الإرسال من هنا. استعملوا نموذج التواصل، فهو يصل إلى البريد نفسه.",
+    skip: "تخط",
+    ask_more: "هل من شيء آخر تودّون معرفته ما دمتم هنا؟",
+    closeChips: ["افتح حاسبة التقدير", "اطّلع على الخدمات", "احجز مكالمة"],
+    browse: "بالتأكيد. اسألوني عمّا تشاؤون: كيف يُحدَّد نطاق العمل، وما الذي تتضمنه السياسة، وما يغطيه التدريب في كل مستوى. وإن تبيّن أن الأمر مفيد، أنقل بياناتكم إلى الفريق في النهاية.",
+    noted: "دوّنته، وسيصل إلى الفريق مع بقية هذه المحادثة.",
+    resume: "أنعود إلى حيث كنّا؟",
+    priceQ: "بخصوص السعر"
+  }
+};
+
+/* the slot parsers below match Arabic as well as Latin text, so they compile through rx() */
+var _rxc = {};
+function arN(src) { return src.replace(/[\u0625\u0623\u0622\u0671]/g, "\u0627").replace(/\u0629/g, "\u0647")
+  .replace(/\u0649/g, "\u064a").replace(/\u0624/g, "\u0648").replace(/\u0626/g, "\u064a")
+  .replace(/[\u064B-\u065F\u0670\u0640]/g, ""); }
+function hit(n, src) { var r = _rxc[src] || (_rxc[src] = rx(arN(src), "i")); return r.test(n); }
+
+/* ── slot parsers: read a value out of whatever the visitor typed ── */
+function pWho(n) {
+  if (hit(n, "\\b(funder|donor|bailleur|investor|مانح(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b[^.]{0,24}\\b(is asking|asked|wants|requires|is requesting|questionnaire|demande|interroge|يسأل(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|تسأل(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|يطلب(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) n = n.replace(/\b(funder|donor|bailleur|investor|مانح)\b/g, " ");
+  if (hit(n, "\\b(director|executive|ceo|chief|head of the organisation|directeur|direction|directrice|مدير(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|المدير التنفيذي(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|الادار(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "executive director";
+  if (hit(n, "\\b(data protection|dpo|privacy|protection des donnees|delegue|حماي[هة] البيانات(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|الخصوصي(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "data protection lead";
+  if (hit(n, "\\b(hr|human resources|learning|l and d|training manager|rh|ressources humaines|formation|الموارد البشري(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|التدريب(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "HR or learning lead";
+  if (hit(n, "\\b(programme officer|program officer|grant officer|portfolio manager|investment manager|charge de programme|مسؤول برامج(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|مدير محفظة(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")
+      && hit(n, "\\b(fund|funder|foundation|grant|donor|investor|incubator|accelerator|fondation|bailleur|مانح(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|مؤسس(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)")) return "funder or investor";
+  if (hit(n, "\\b(programme|program|project manager|meal|m and e|monitoring|programmes|البرامج(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|الرصد(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "programmes lead";
+  if (hit(n, "\\b(fundrais|grants|development officer|partnership|collecte|bailleur relations|جمع التبرعات(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|المنح(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "fundraising lead";
+  if (hit(n, "\\b(i am|i'm|we are|we're|je suis|nous sommes|working at|work at|officer at|انا(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|نحن(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b[^.]{0,40}\\b(funder|investor|donor|grantmaker|incubator|accelerator|foundation officer|bailleur|investisseur|incubateur|مانح(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|مستثمر(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|حاضن(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")
+      || hit(n, "\\b(programme officer|program officer|grant officer|portfolio manager|investment manager|charge de programme|مسؤول برامج(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|مدير محفظة(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "funder or investor";
+  if (hit(n, "\\b(it (department|team|lead|manager|director|officer|unit)|head of it|ict|information technology|systems admin|sysadmin|digital lead|informatique|تقنية المعلومات(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|مسؤول الأنظمة(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "IT lead";
+  if (hit(n, "\\b(comms|communication|advocacy|media|communication|اتصال(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|اعلام(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "communications lead";
+  if (hit(n, "\\b(finance|admin|operations|finance|الماليه(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|العمليات(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "finance or operations lead";
+  if (hit(n, "\\b(consultant|freelance|myself|independent|individual|a titre individuel|بصفتي فرد(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|مستقل(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "individual";
+  return null;
+}
+function pOrg(n) {
+  if (hit(n, "\\b(funder|donor|bailleur|investor|مانح(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b[^.]{0,24}\\b(is asking|asked|wants|requires|is requesting|questionnaire|demande|interroge|يسأل(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|تسأل(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|يطلب(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) n = n.replace(/\b(funder|donor|bailleur|investor|مانح)\b/g, " ");
+  if (hit(n, "\\b(grantmaker|grant.?making|incubator|accelerator|impact investor|venture|development agency|we fund|funds? (other )?(organisations|organizations|ngos|charities)|our grantees|portfolio (of|companies)|incubateur|accelerateur|nous financons|جهة مانحة(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|حاضنة(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|مسرعة(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|نموّل(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|نمول(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "funder or investor";
+  if (hit(n, "\\b(ngo|nonprofit|non profit|charity|association|foundation|ong|association|منظم[هة] غير حكومي(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|جمعي(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|مؤسس[هة] مانح(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "NGO or foundation";
+  if (hit(n, "\\b(un |united nations|unhcr|unicef|undp|who|iom|wfp|international organisation|international organization|igo|nations unies|onu|وكاله اممي(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|الامم المتحد(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|منظم[هة] دولي(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "UN or international organisation";
+  if (hit(n, "\\b(government|ministry|municipal|public institution|public sector|state|gouvernement|ministere|administration|حكوم(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|وزار(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|بلدي(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|القطاع العام(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "government or public institution";
+  if (hit(n, "\\b(company|private|corporate|business|firm|enterprise|sarl|gmbh|entreprise|societe|شرك(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|قطاع خاص(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "private company";
+  if (hit(n, "\\b(individual|myself|just me|personal|a titre individuel|moi seul|بصفتي فرد(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|انا فقط(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "individual";
+  if (hit(n, "\\b(we are|we're|i am|i'm|our organisation is|our organization is|as a|nous sommes|je suis|نحن(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|أنا(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|انا(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b[^.]{0,30}\\b(funder|investor|donor agency|foundation that funds|grantmaker|incubator|accelerator|bailleur|investisseur|incubateur|جهة مانحة(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|مستثمر(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|حاضنة(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "funder or investor";
+  return null;
+}
+function pSize(n) {
+  n = n.replace(/[\u0660-\u0669]/g, function (d) { return String.fromCharCode(d.charCodeAt(0) - 0x0660 + 48); });
+  if (hit(n, "\\b(just me|only me|myself|one person|solo|moi seul|une personne|انا فقط(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|شخص واحد(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "1";
+  if (hit(n, "\\b(under 10|less than 10|fewer than ten|moins de 10|اقل من عشر(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "under 10";
+  if (hit(n, "\\b(more than 200|over 200|plus de 200|اكثر من مئتين(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|اكثر من ٢٠٠(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "over 200";
+  var m = n.match(rx("\\b(\\d{1,5})\\s*(?:\\+|plus)?\\s*(?:people|staff|persons|employees|personnes|salaries|موظف|اشخاص|شخص)?\\b", "i"));
+  if (!m) {
+    var W = [["\\b(ten|dix|عشره|عشر موظف)\\b", 10], ["\\b(twenty|vingt|عشرين|عشرون)\\b", 20],
+             ["\\b(thirty|trente|ثلاثين|ثلاثون)\\b", 30], ["\\b(forty|quarante|اربعين|اربعون)\\b", 40],
+             ["\\b(fifty|cinquante|خمسين|خمسون)\\b", 50], ["\\b(hundred|cent|مئه|مائه|ماءه)\\b", 100],
+             ["\\b(two hundred|deux cents|مئتين|مئتان)\\b", 200], ["\\b(five hundred|cinq cents|خمسمئه|خمسمائه)\\b", 500],
+             ["\\b(thousand|mille|الف)\\b", 1000]];
+    for (var i = W.length - 1; i >= 0; i--) if (hit(n, W[i][0])) { m = [null, String(W[i][1])]; break; }
+  }
+  if (m) { var v = +m[1]; if (v <= 1) return "1"; if (v < 10) return "under 10"; if (v <= 50) return "10 to 50"; if (v <= 200) return "50 to 200"; if (v <= 500) return "200 to 500"; return "over 500"; }
+  if (hit(n, "\\b(10 to 50|10-50|dix a cinquante|عشره الى خمسين(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|من عشرة الى خمسين(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "10 to 50";
+  if (hit(n, "\\b(50 to 200|50-200|cinquante a deux cents|خمسين الى مئتين(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "50 to 200";
+  return null;
+}
+function pLevel(n) {
+  if (hit(n, "\\b(not sure|no idea|dont know|do not know|je ne sais pas|لست متاكد(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|لا اعرف(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "not sure";
+  if (hit(n, "\\b(terminal|claude code|command line|pipeline|batch)\\b")) return "6";
+  if (hit(n, "\\b(agents?|cowork|co work|parallel|delegat|وكلاء(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|وكيل(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "5";
+  if (hit(n, "\\b(projects|skills|custom instructions|projets|competences|المشاريع(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|المهارات(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "4";
+  if (hit(n, "\\b(prompt|prompting|properly|structured|formulons|صياغ(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|هندسة(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "3";
+  if (hit(n, "\\b(occasional|sometimes|summar|search|now and then|basic|occasionnel|parfois|احيانا(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|متقطع(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|تلخيص(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "2";
+  if (hit(n, "\\b(barely|never|not started|nothing|no one uses|jamais|presque jamais|بالكاد(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|لم نبدا(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|ابدا(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "1";
+  var m = n.match(rx("\\b(?:level|niveau|مستوى)\\s*([1-7])\\b", "i"));
+  if (m) return m[1];
+  return null;
+}
+function pTrigger(n) {
+  if (hit(n, "\\b(board|trustee|conseil|مجلس(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "a board asked";
+  if (hit(n, "\\b(funder|donor|questionnaire|due diligence|bailleur|مانح(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|استبيان(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "a funder asked";
+  if (hit(n, "\\b(incident|breach|near miss|leak|exposed|incident|fuite|حادث(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|تسريب(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "an incident or near miss";
+  if (hit(n, "\\b(deadline|audit|inspection|echeance|موعد نهائي(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|تدقيق(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "a deadline or audit";
+  if (hit(n, "\\b(nothing urgent|planning|exploring|pas urgent|anticipons|لا شيء عاجل(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|نخطط(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "planning ahead";
+  return null;
+}
+function pWhen(n) {
+  if (hit(n, "\\b(asap|as soon|urgent|immediately|des que possible|urgent|باسرع(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|عاجل(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "as soon as possible";
+  if (hit(n, "\\b(this quarter|next month|within weeks|ce trimestre|le mois prochain|هذا الربع(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|الشهر القادم(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "this quarter";
+  if (hit(n, "\\b(next few months|later this year|dans quelques mois|خلال اشهر(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "in the next few months";
+  if (hit(n, "\\b(exploring|no timeline|just looking|exploration|استكشاف(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|اتصفح(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) return "exploring, no fixed date";
+  return null;
+}
+
+var SLOTS = [
+  { id: "who", parse: pWho },
+  { id: "org", parse: pOrg },
+  { id: "size", parse: pSize },
+  { id: "level", parse: pLevel },
+  { id: "trigger", parse: pTrigger },
+  { id: "when", parse: pWhen }
+];
+
+/* ── needs read out of free text at any point ── */
+function needsFrom(n, cur) {
+  var c = cur || {};
+  if (hit(n, "\\b(no rules|no policy|without rules|not allowed|prohibit|shadow|sans regles|pas de politique|بلا قواعد(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|بدون سياسة(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|سياسة(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) c.policy = 1;
+  if (hit(n, "\\b(train|training|course|workshop|upskill|formation|former|تدريب(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|دورة(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) c.training = 1;
+  if (hit(n, "\\b(where we stand|assess|assessment|audit|baseline|diagnos|evaluation|maturite|تقييم(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|جاهزية(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) c.assessment = 1;
+  if (hit(n, "\\b(automate|automation|repetitive|every week|same task|agent|skill|tool|automatiser|repetitif|اتمتة(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|متكرر(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|وكيل(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|اداة(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) c.agents = 1;
+  if (hit(n, "\\b(grantee|grantees|portfolio|cohort|we fund|funds? (other )?(organisations|organizations|ngos|charities)|beneficiaries we fund|portefeuille|cohorte|nous financons|محفظة(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|الممنوحين(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|نموّل(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|نمول(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) c.portfolio = 1;
+  if (hit(n, "\\b(funder is asking|funder asked|donor is asking|due diligence|questionnaire|bailleur (nous )?(interroge|demande)|جهة مانحة تسال(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|مانح يسال(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|استبيان(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) { c.policy = 1; c.assessment = 1; }
+  if (hit(n, "\\b(board (has )?asked|board wants|trustees|conseil (d.administration )?(a demande|demande)|مجلس (الادارة )?(سال(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|يطلب(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?))\\b")) c.assessment = 1;
+  if (hit(n, "\\b(keep it|decay|six months later|sustain|maintenir|dans la duree|استمرار(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|يتلاشى(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) c.support = 1;
+  if (hit(n, "\\b(multi.?site|several offices|regulated|audited|multi.?pays|plusieurs bureaux|متعدد المواقع(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|مراقب(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) c.institution = 1;
+  return c;
+}
+
+/* ── the recommendation text, in the three site languages ── */
+var RECL = {
+  en: { portfolio: "Portfolio programmes", course: "The training, and the levels", assessment: "The readiness assessment",
+        policy: "What the policy contains", levels: "The seven levels", agents: "Agents, skills and tools", support: "Fluency support" },
+  fr: { portfolio: "Programmes de portefeuille", course: "La formation et les niveaux", assessment: "Le diagnostic de préparation",
+        policy: "Le contenu de la politique", levels: "Les sept niveaux", agents: "Agents, compétences et outils", support: "Accompagnement" },
+  ar: { portfolio: "برامج المحافظ", course: "التدريب والمستويات", assessment: "تقييم الجاهزية",
+        policy: "محتوى السياسة", levels: "المستويات السبعة", agents: "الوكلاء والمهارات والأدوات", support: "المتابعة والدعم" }
+};
+var REC = {
+  en: {
+    portfolio: "You are asking on behalf of the organisations you back rather than for one organisation, so the work is a portfolio programme: one assessment run across the cohort, a shared policy each organisation adapts, cohort training, and a single report to you on where the portfolio stands.",
+    course: "For a single person or a team of fewer than ten, a full engagement is the wrong instrument. A course for fewer than ten participants, built on your own tasks and priced per person, gets you the same method without the assessment and policy programme around it.",
+    assess_deep: "Since the question is coming from outside the organisation, the assessment is worth running at its full depth: ten dimensions, staff interviews and a documented inventory of the tools actually in use. That produces something a board or a funder can read, rather than an internal impression.",
+    assess_light: "The place to start is the readiness assessment. Four essential dimensions are enough when the question is what your staff can and cannot do; the full ten add governance and data protection, which matter more once somebody outside the organisation is asking.",
+    policy_incident: "Given what has already happened, the policy is the urgent piece. Written as permissions rather than prohibitions, so the work people have to do stays possible inside the rules and stops happening on personal accounts.",
+    policy: "You will need the AI use policy: permitted uses by role, the red lines, a data classification table, disclosure rules and an approved tool list. It is what turns an unanswerable funder question into an attachment.",
+    train_upper: "Your teams are already past the basics, so the training worth buying is the upper part of the ladder: building agents and skills for colleagues, and in some organisations terminal-based work for a few people. That is eight to ten delivery days rather than three.",
+    train_floor: "For training, the floor we take is reaching level three: structured briefing, source-grounded requests and the four checks before anything is sent. Three delivery days from where you describe, then a lab per department on that team's own tasks.",
+    agents: "The repetitive task you mentioned is worth looking at separately. Configured once on the platform you already pay for, tested on your own documents and handed over with an operating guide, it stops depending on who runs it.",
+    support: "Keeping it alive afterwards is a separate retainer: monthly office hours, playbook revisions as the tools change, and a re-score at six months.",
+    institution: "At your size, and with sites or oversight in the picture, this is closer to the Institution scope, which is confirmed on a call rather than in the estimator."
+  },
+  fr: {
+    portfolio: "Vous posez la question pour les organisations que vous financez, pas pour une seule structure. Le format adapté est un programme de portefeuille : un diagnostic mené sur toute la cohorte, une politique commune que chaque organisation adapte, une formation groupée, et un rapport unique qui vous dit où en est le portefeuille.",
+    course: "Pour une personne seule ou une équipe de moins de dix, un engagement complet n'est pas le bon instrument. Un cours de moins de dix participants, construit sur vos propres tâches et facturé par personne, transmet la même méthode sans le programme de diagnostic et de politique autour.",
+    assess_deep: "Comme la question vient de l'extérieur de l'organisation, le diagnostic mérite sa version complète : dix dimensions, entretiens avec les équipes et inventaire documenté des outils réellement utilisés. Cela donne un document lisible par un conseil ou un bailleur, et non une impression interne.",
+    assess_light: "Le point de départ est le diagnostic de préparation. Quatre dimensions essentielles suffisent quand la question porte sur ce que vos équipes savent faire ; les dix complètes ajoutent la gouvernance et la protection des données, décisives dès que quelqu'un d'extérieur pose la question.",
+    policy_incident: "Après ce qui s'est déjà produit, la politique est la pièce urgente. Rédigée comme des autorisations plutôt que des interdictions, pour que le travail reste possible à l'intérieur des règles et cesse de se faire sur des comptes personnels.",
+    policy: "Il vous faut la politique d'usage : usages autorisés par fonction, lignes rouges, table de classification des données, règles de divulgation et liste d'outils approuvés. C'est ce qui transforme une question de bailleur sans réponse en pièce jointe.",
+    train_upper: "Vos équipes ont dépassé les bases. La partie de l'échelle qui vaut l'investissement est la partie haute : construire des agents et des compétences pour les collègues, et pour quelques personnes le travail en terminal. Cela représente huit à dix jours de livraison, pas trois.",
+    train_floor: "Pour la formation, le plancher que nous acceptons est d'atteindre le niveau trois : cadrage structuré, demandes ancrées dans vos sources et les quatre vérifications avant tout envoi. Trois jours de livraison depuis le point que vous décrivez, puis un atelier par département sur ses propres tâches.",
+    agents: "La tâche répétitive que vous mentionnez mérite un traitement à part. Configurée une fois sur la plateforme que vous payez déjà, testée sur vos propres documents et remise avec un guide d'exploitation, elle cesse de dépendre de la personne qui la lance.",
+    support: "Maintenir le niveau ensuite relève d'un forfait distinct : permanences mensuelles, révisions du guide au fil des évolutions des outils, et un nouveau score à six mois.",
+    institution: "À votre taille, et avec plusieurs sites ou une tutelle dans le tableau, on se rapproche du périmètre Institution, qui se confirme lors d'un entretien plutôt que dans l'estimateur."
+  },
+  ar: {
+    portfolio: "سؤالكم يخص المنظمات التي تدعمونها لا منظمة واحدة، وهذا يعني برنامج محفظة: تقييم واحد يُجرى على المجموعة، وسياسة مشتركة تكيّفها كل منظمة، وتدريب جماعي، وتقرير واحد يوضح لكم أين تقف المحفظة.",
+    course: "لشخص واحد أو فريق أقل من عشرة، الارتباط الكامل ليس الأداة المناسبة. دورة لأقل من عشرة مشاركين، مبنية على مهامكم الفعلية ومسعّرة لكل شخص، تنقل المنهج نفسه دون برنامج التقييم والسياسة المحيط به.",
+    assess_deep: "بما أن السؤال يأتي من خارج المنظمة، يستحق التقييم نسخته الكاملة: عشرة أبعاد، ومقابلات مع الموظفين، وجرد موثّق للأدوات المستعملة فعلاً. ينتج عن ذلك مستند يقرأه مجلس أو جهة مانحة، لا انطباع داخلي.",
+    assess_light: "نقطة البداية هي تقييم الجاهزية. أربعة أبعاد أساسية تكفي حين يكون السؤال عمّا يستطيع موظفوكم فعله، والأبعاد العشرة تضيف الحوكمة وحماية البيانات، وهما ما يهم حين يسأل طرف من خارج المنظمة.",
+    policy_incident: "بعد ما حدث، السياسة هي الجزء العاجل. تُكتب كأذونات لا كمحظورات، حتى يبقى العمل المطلوب ممكناً داخل القواعد ويتوقف عن الحدوث على حسابات شخصية.",
+    policy: "تحتاجون سياسة استخدام: الاستخدامات المسموحة بحسب الدور، والخطوط الحمراء، وجدول تصنيف البيانات، وقواعد الإفصاح، وقائمة الأدوات المعتمدة. هذا ما يحوّل سؤال جهة مانحة بلا إجابة إلى مرفق.",
+    train_upper: "فرقكم تجاوزت الأساسيات، والجزء المفيد من السلّم هو أعلاه: بناء وكلاء ومهارات للزملاء، ولدى بعض المنظمات العمل عبر الطرفية لعدد محدود من الأشخاص. هذا ثمانية إلى عشرة أيام تنفيذ لا ثلاثة.",
+    train_floor: "في التدريب، الحد الأدنى الذي نقبله هو بلوغ المستوى الثالث: صياغة منظمة، وطلبات مستندة إلى مصادركم، والفحوص الأربعة قبل أي إرسال. ثلاثة أيام تنفيذ من النقطة التي تصفونها، ثم ورشة لكل قسم على مهامه.",
+    agents: "المهمة المتكررة التي ذكرتموها تستحق معالجة منفصلة. تُهيّأ مرة واحدة على المنصة التي تدفعون ثمنها أصلاً، وتُختبر على مستنداتكم، وتُسلَّم مع دليل تشغيل، فتتوقف عن الاعتماد على من يشغّلها.",
+    support: "الحفاظ على المستوى بعد ذلك بند منفصل: ساعات مكتبية شهرية، وتحديث الدليل مع تغيّر الأدوات، وإعادة تقييم بعد ستة أشهر.",
+    institution: "بحجمكم، ومع وجود مواقع متعددة أو جهة رقابية، يقترب هذا من نطاق المؤسسة، ويُحسم في مكالمة لا في الحاسبة."
+  }
+};
+function recText(rec, l) {
+  var t = REC[l] || REC.en;
+  return (rec && rec.keys ? rec.keys : []).map(function (k) { return t[k] || REC.en[k] || ""; }).join(" ").trim();
+}
+function recLinks(rec, l) {
+  var t = RECL[l] || RECL.en;
+  return (rec && rec.links ? rec.links : []).map(function (x) { return [x[0], t[x[1]] || RECL.en[x[1]] || x[1]]; });
+}
+
+/* ── the reasoning step: profile in, recommendation out ── */
+function recommend(S) {
+  var s = S.slots, n = S.needs || {}, out = [], first = null, links = [];
+  var isFunder = (s.org === "funder or investor" || s.who === "funder or investor" || n.portfolio);
+  var isIndiv = (s.org === "individual" || s.who === "individual" || s.size === "1" || s.size === "under 10");
+  var big = (s.size === "200 to 500" || s.size === "over 200" || s.size === "over 500");
+
+  if (isFunder) {
+    first = "portfolio";
+    out.push("portfolio");
+    links.push(["for-funders/", "portfolio"]);
+  } else if (isIndiv) {
+    first = "course";
+    out.push("course");
+    links.push(["services/training/", "course"]);
+  } else {
+    /* what the visitor named leads; inferred needs follow */
+    var named = [], inferred = [];
+    if (n.agents) named.push("agents");
+    if (n.policy) named.push("policy");
+    if (n.training) named.push("training");
+    if (n.assessment) named.push("assessment");
+    if (n.support) named.push("support");
+    if (s.trigger === "a funder asked" || s.trigger === "a board asked") { inferred.push("assessment"); inferred.push("policy"); }
+    if (s.trigger === "an incident or near miss") inferred.push("policy");
+    if (!s.level || s.level === "not sure") inferred.push("assessment");
+    if (s.level === "1" || s.level === "2" || s.level === "3") inferred.push("training");
+    var order = [];
+    named.concat(inferred).forEach(function (k) { if (order.indexOf(k) < 0) order.push(k); });
+    if (!order.length) order = ["assessment", "training"];
+    /* an assessment named or implied belongs first when it is in scope at all */
+    if (order.indexOf("assessment") > 0 && (n.assessment || s.trigger === "a funder asked" || s.trigger === "a board asked")) {
+      order = ["assessment"].concat(order.filter(function (k) { return k !== "assessment"; }));
+    }
+    first = order[0];
+
+    if (order.indexOf("assessment") > -1) {
+      var deep = (s.trigger === "a funder asked" || s.trigger === "a deadline or audit" || n.institution || big);
+      out.push(deep ? "assess_deep" : "assess_light");
+      links.push(["services/assessment/", "assessment"]);
+    }
+    if (order.indexOf("policy") > -1) {
+      out.push(s.trigger === "an incident or near miss" ? "policy_incident" : "policy");
+      links.push(["services/policy/", "policy"]);
+    }
+    if (order.indexOf("training") > -1) {
+      var lv = s.level && s.level !== "not sure" ? +s.level : 2;
+      out.push(lv >= 4 ? "train_upper" : "train_floor");
+      links.push(["services/training/#levels", "levels"]);
+    }
+    if (order.indexOf("agents") > -1) {
+      out.push("agents");
+      links.push(["services/agents/", "agents"]);
+    }
+    if (order.indexOf("support") > -1) {
+      out.push("support");
+      links.push(["services/support/", "support"]);
+    }
+    if (n.institution || big) out.push("institution");
+  }
+  return { keys: out, links: links.slice(0, 3), first: first };
+}
+
+function profileLines(S) {
+  var s = S.slots, L = [];
+  if (s.who) L.push("Role: " + s.who);
+  if (s.org) L.push("Organisation type: " + s.org);
+  if (s.size) L.push("Size: " + s.size);
+  if (s.level) L.push("Current AI level: " + (/^[1-7]$/.test(s.level) ? "level " + s.level : s.level));
+  if (s.trigger) L.push("Trigger: " + s.trigger);
+  if (s.when) L.push("Timing: " + s.when);
+  var n = S.needs || {}, needs = Object.keys(n);
+  if (needs.length) L.push("Needs mentioned: " + needs.join(", "));
+  return L;
+}
+
+/* ── the summary email ── */
+function sendSummary(S, lang) {
+  var c = S.contact || {}, rec = S.rec || {};
+  var msg = "CONVERSATION WITH THE SITE ASSISTANT\n" +
+    "\nLanguage: " + lang.toUpperCase() +
+    "\nPage: " + location.href +
+    "\nStarted: " + (S.started || "") + "\nEnded: " + new Date().toISOString() +
+    "\n\n--- PROFILE ---\n" + (profileLines(S).join("\n") || "nothing captured") +
+    "\n\n--- WHAT THE ASSISTANT RECOMMENDED ---\n" + (recText(rec, "en") || "no recommendation reached") +
+    "\n\n--- CONTACT ---\nName: " + (c.name || "not given") +
+    "\nEmail: " + (c.email || "not given") +
+    "\nOrganisation: " + (c.org || "not given") +
+    "\nPhone: " + (c.phone || "not given") +
+    "\nPreferred time: " + (c.when || "not given") +
+    "\n\n--- FULL TRANSCRIPT ---\n" +
+    S.log.map(function (t) { return (t.r === "u" ? "Visitor: " : "Assistant: ") + t.t; }).join("\n\n");
+  return loadEmailJS().then(function () {
+    try { window.emailjs.init({ publicKey: "JJs3lu55OHI_pbjth" }); } catch (e) {}
+    return window.emailjs.send("service_an94235", "template_bv6m1l3", {
+      from_name: (c.name || "Website visitor") + " (via the site assistant)",
+      from_email: c.email || "no-reply@mai4consulting.com",
+      organization: c.org || "not given",
+      job_title: S.slots.who || "not given",
+      sector: S.slots.org || "not given",
+      team_size: S.slots.size || "not given",
+      service: "Assistant intake: " + (rec.first || "general enquiry"),
+      referral: "Site assistant",
+      preferred: c.phone ? ("Phone " + c.phone + (c.when ? ", " + c.when : "")) : "Email",
+      message: msg,
+      to_email: "q.mamdouh@mai4consulting.com"
+    });
+  });
+}
+
 /* ─────────────────────────── UI ─────────────────────────── */
 var P=(function(){var s=document.querySelector('script[src*="assets/chat.js"]'); if(!s) return ""; var m=s.getAttribute("src").match(/^(.*?)assets\/chat\.js/); return m?m[1]:"";})();
 var CSS='\
@@ -508,7 +922,7 @@ function build(){
   document.body.appendChild(btn); document.body.appendChild(box);
   m=box.querySelector("#mai-chat-m"); chips=box.querySelector("#mai-chips"); inp=box.querySelector("#mai-chat-i");
   hTitle=box.querySelector("#mai-t"); hSub=box.querySelector("#mai-s"); hNote=box.querySelector("#mai-n"); sendBtn=box.querySelector("#mai-send");
-  box.querySelectorAll("#mai-lang button").forEach(function(b){ langBtns[b.getAttribute("data-l")]=b; b.onclick=function(){ setLang(b.getAttribute("data-l")); add("bot",esc(T().hello)); renderChips(T().chips); }; });
+  box.querySelectorAll("#mai-lang button").forEach(function(b){ langBtns[b.getAttribute("data-l")]=b; b.onclick=function(){ setLang(b.getAttribute("data-l")); say(esc(S.stage==="intake"&&!S.log.length?A().open:resumeLine())); renderChips(S.stage==="intake"&&!filled()?A().openChips:T().chips); }; });
   var startLang=/^ar\b/i.test(navigator.language||"")?"ar":(/^fr\b/i.test(navigator.language||"")?"fr":"en");
   setLang(startLang);
   function add(kind,html){var d=el("div","mai-msg "+kind,html); m.appendChild(d); m.scrollTop=m.scrollHeight; return d;}
@@ -530,31 +944,195 @@ function build(){
         .catch(function(){ w.innerHTML='<span style="font-size:.8rem;color:#a8271a">'+esc(t.fail)+'<a href="'+P+'contact-us/">'+esc(t.contact)+'</a>.</span>'; });
     };
   }
-  function ask(q){
-    q=(q||"").trim(); if(!q) return; add("user",esc(q)); inp.value="";
-    var dl=detect(q); if(dl!==lang) setLang(dl);
-    var t=T(), core=q, greeted=false;
-    /* a greeting in front of a real question: greet, then answer the question */
-    var g=SMALL[0].re; if((g.test(q)||g.test(norm(q)))){ var rest=q.replace(g,"").replace(/^[\s,.!?;:،؟…-]+/,"").trim(); if(rest.length>10){ core=rest; greeted=true; } }
-    var e=answer(core,lang);
-    var sk=smallKey(core);
-    /* small talk wins when it is the whole message; "help me with a policy" should still reach the policy answer */
-    if(sk && (sk!=="cando" || !e) && (core.length<70 || !e)){ add("bot",esc((greeted?t.hello+" ":"")+t[sk])); renderChips(t.chips); return; }
-    if(e){
-      var isYN=YN.test(core.trim())||YN.test(norm(core));
-      var lead=(e.yes&&isYN&&!/^(yes|oui|نعم)/i.test(e.a[lang]||e.a.en))?t.yes:"";
-      add("bot",esc((greeted?t.hello.split(/[.!؟?]/)[0]+"! ":"")+lead+(e.a[lang]||e.a.en))+'<br/><a class="more" href="'+P+e.l+'">'+esc(e.t[lang]||e.t.en)+' &rarr;</a>');
-      renderChips(relChips(e)); return;
-    }
-    if(greeted){ add("bot",esc(t.hello)); }
-    if(!(WORLD.test(core)||WORLD.test(norm(core))) && (COMPANY.test(core)||COMPANY.test(norm(core)))) { unanswered(core); } else { add("bot",esc(t.off)); }
-    renderChips(t.chips);
+  /* ── conversation state ── */
+  var S = { stage: "intake", slots: {}, needs: {}, log: [], asked: [], cur: null, rec: null, contact: {}, cap: null, started: new Date().toISOString() };
+  function A() { return AGT[lang] || AGT.en; }
+  function logT(r, t) { S.log.push({ r: r, t: t }); if (S.log.length > 60) S.log.shift(); }
+  function say(html, plain) { add("bot", html); logT("b", plain || html.replace(/<[^>]*>/g, "")); }
+  function pick(a) { return a[Math.floor(Math.random() * a.length)]; }
+  /* the agent quotes no prices: strip any figure a knowledge answer carries */
+  function noFig(txt) {
+    if (!/(CHF|EUR|USD|\u20ac|\u0024)\s?[\d\u0660-\u0669]/i.test(txt)) return txt;
+    return txt.split(/(?<=[.!?\u061F\u06D4])\s+/).filter(function (sn) {
+      return !/(CHF|EUR|USD|\u20ac|\u0024)\s?[\d\u0660-\u0669]/i.test(sn);
+    }).join(" ").trim() + " " + A().noPrice;
   }
+  function linkList(links) {
+    return links.map(function (l) { return '<a class="more" href="' + P + l[0] + '" target="_blank" rel="noopener">' + esc(l[1]) + ' &rarr;</a>'; }).join('<br/>');
+  }
+  function filled() { var k = 0; for (var i in S.slots) if (S.slots[i]) k++; return k; }
+  function nextSlot() {
+    for (var i = 0; i < SLOTS.length; i++) { if (!S.slots[SLOTS[i].id] && S.asked.indexOf(SLOTS[i].id) < 0) return SLOTS[i].id; }
+    return null;
+  }
+  function askSlot(id, prefix) {
+    var a = A();
+    S.cur = id; if (S.asked.indexOf(id) < 0) S.asked.push(id);
+    say(esc((prefix ? prefix + " " : "") + a.q[id]));
+    renderChips(a.chips[id]);
+  }
+  function informative(n) {
+    if (Object.keys(needsFrom(n, {})).length) return true;
+    for (var i = 0; i < SLOTS.length; i++) if (!S.slots[SLOTS[i].id] && SLOTS[i].parse(n)) return true;
+    return false;
+  }
+  function harvest(raw) {
+    var n = norm(raw), got = 0;
+    SLOTS.forEach(function (sl) {
+      if (S.slots[sl.id]) return;
+      var v = sl.parse(n);
+      if (v) { S.slots[sl.id] = v; got++; }
+    });
+    S.needs = needsFrom(n, S.needs);
+    return got;
+  }
+  function enough() {
+    var s = S.slots;
+    if (s.org === "funder or investor" || s.who === "funder or investor") return filled() >= 3;
+    if (s.org === "individual" || s.who === "individual" || s.size === "1") return filled() >= 3;
+    return (s.org && s.size && s.level && (s.trigger || Object.keys(S.needs).length))
+        || filled() >= 5 || S.asked.length >= SLOTS.length;
+  }
+  function advise() {
+    var a = A();
+    S.rec = recommend(S);
+    S.stage = "advise";
+    var rtx = recText(S.rec, lang), rl = recLinks(S.rec, lang);
+    say(esc(a.adviseIntro + " " + rtx) + (rl.length ? '<br/>' + linkList(rl) : ''), a.adviseIntro + " " + rtx);
+    say(esc(a.noPrice));
+    say(esc(a.toCapture));
+    S.stage = "capture"; S.cap = "name";
+    say(esc(a.cap.name)); renderChips([]);
+  }
+  var CAPQ = ["name", "email", "org", "phone", "when"];
+  function isSkip(n) { return /^(skip|no|none|nope|pass|passer|non|aucun|تخط|تخطي|لا)$/.test(n.trim()); }
+  function capture(raw) {
+    var a = A(), n = norm(raw);
+    if (S.cap === "email") {
+      var m = raw.match(/[^@\s<>()]+@[^@\s<>()]+\.[a-z]{2,}/i);
+      if (!m) { say(esc(a.badEmail)); return; }
+      S.contact.email = m[0];
+    } else if (isSkip(n) && S.cap !== "name") {
+      S.contact[S.cap] = "";
+    } else {
+      S.contact[S.cap] = raw.trim().slice(0, 200);
+    }
+    var i = CAPQ.indexOf(S.cap);
+    if (i < CAPQ.length - 1) { S.cap = CAPQ[i + 1]; say(esc(a.cap[S.cap])); return; }
+    /* done: send */
+    S.cap = null; S.stage = "sent";
+    var d = add("bot", esc(a.sending));
+    sendSummary(S, lang).then(function () {
+      d.innerHTML = esc(a.sent) + '<br/>' + linkList([["estimate/", A().closeChips[0]], ["contact-us/", A().closeChips[2]]]);
+      logT("b", a.sent);
+    }).catch(function () {
+      d.innerHTML = esc(a.failed) + '<br/><a class="more" href="' + P + 'contact-us/">' + esc(T().contact) + ' &rarr;</a>';
+    });
+    renderChips(a.closeChips);
+  }
+  function nudge(prefix) {
+    var a = A();
+    if (S.stage === "sent") { renderChips(a.closeChips); return; }
+    if (S.stage === "capture" && S.cap) { say(esc((prefix ? prefix + " " : "") + a.cap[S.cap])); return; }
+    if (enough() && filled() >= 3) { advise(); return; }
+    var nx = nextSlot();
+    if (nx) { askSlot(nx, prefix); return; }
+    say(esc(a.ask_more)); renderChips(T().chips);
+  }
+  function resumeLine() {
+    var a = A();
+    if (S.stage === "capture" && S.cap) return a.cap[S.cap];
+    if (S.cur && !S.slots[S.cur]) return a.q[S.cur];
+    var nx = nextSlot(); return nx ? a.q[nx] : a.ask_more;
+  }
+
+  function ask(q) {
+    q = (q || "").trim(); if (!q) return;
+    add("user", esc(q)); logT("u", q); inp.value = "";
+    /* a short answer with no French or Arabic marker is not a switch back to English */
+    var dl = detect(q);
+    if (dl !== lang && (dl !== "en" || q.trim().split(/\s+/).length >= 5)) setLang(dl);
+    var a = A(), t = T(), n = norm(q);
+
+    /* capture stage: everything is an answer to the field we asked for */
+    if (S.stage === "capture" && S.cap) {
+      var kb0 = answer(q, lang);
+      if (kb0 && q.length > 25 && /\?/.test(q)) {   /* a real question mid-capture still gets answered */
+        say(esc(noFig(kb0.a[lang] || kb0.a.en)) + '<br/><a class="more" href="' + P + kb0.l + '" target="_blank" rel="noopener">' + esc(kb0.t[lang] || kb0.t.en) + ' &rarr;</a>');
+        say(esc(a.back + " " + a.cap[S.cap])); return;
+      }
+      capture(q); return;
+    }
+
+    /* a visitor who is browsing is offered answers, not an intake question */
+    if (S.stage === "intake" && !filled() &&
+        hit(n, "\\b(just looking|just browsing|only looking|looking around|nothing specific|not sure yet|je regarde|je regarde simplement|simple curiosite|اتصفح(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|اطلع فقط(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) {
+      say(esc(a.browse)); renderChips(t.chips); return;
+    }
+
+    /* small talk anywhere */
+    var sk = smallKey(q);
+    if (sk && q.length < 70 && !informative(n)) { say(esc(t[sk])); nudge(""); return; }
+
+    /* the visitor asks for the recommendation directly */
+    if (hit(n, "\\b(what do you recommend|what should we (do|buy)|which service|what would you suggest|que recommandez|que nous conseillez|quel service|ماذا تنصح(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|اي خدمة(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|ما الذي تنصحون(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b")) {
+      harvest(q); advise(); return;
+    }
+
+    /* a message answering the question on the table is an answer, even when it also matches an entry */
+    var kb = answer(q, lang);
+    var pending = (S.stage === "intake" && S.cur && !S.slots[S.cur]);
+    var asksSomething = /[?\u061F]/.test(q) || YN.test(q.trim()) || YN.test(n) ||
+      hit(n, "\\b(what|how|which|who|when|where|why|difference|tell me|quel|quelle|comment|combien|pourquoi|difference|ما(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|ماذا(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|كيف(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|كم(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|هل(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|لماذا(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|اين(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?|الفرق(?:ه|ات|ون|ين|ا|ي|ها|هم|كم|نا)?)\\b");
+    if (kb && pending && !asksSomething) kb = null;
+
+    /* price: never quoted */
+    if (kb && kb.id === "price") {
+      say(esc(a.noPrice) + '<br/>' + linkList([["estimate/", a.closeChips[0]]]));
+      nudge("");
+      return;
+    }
+
+    /* a question we can answer from the site */
+    if (kb) {
+      var isYN = YN.test(q.trim()) || YN.test(n);
+      var lead = (kb.yes && isYN && !/^(yes|oui|نعم)/i.test(kb.a[lang] || kb.a.en)) ? t.yes : "";
+      say(esc(noFig(lead + (kb.a[lang] || kb.a.en))) + '<br/><a class="more" href="' + P + kb.l + '" target="_blank" rel="noopener">' + esc(kb.t[lang] || kb.t.en) + ' &rarr;</a>');
+      harvest(q);
+      nudge(a.back);
+      return;
+    }
+
+    /* a question the site does not answer */
+    if (!kb && asksSomething) {
+      var world = WORLD.test(q) || WORLD.test(n);
+      if (world || !informative(n)) {
+        say(esc(world ? t.off : t.dk + " " + a.noted));
+        nudge("");
+        return;
+      }
+    }
+
+    /* not a question we hold: treat it as information about them */
+    var got = harvest(q);
+    if (S.stage === "sent") { renderChips(a.closeChips); return; }
+
+    if (!got && S.cur && !S.slots[S.cur] && q.trim().length <= 120) {
+      /* could not read an answer: keep the visitor's own words, do not nag, move on */
+      S.slots[S.cur] = q.trim();
+    }
+    if (enough()) { advise(); return; }
+    var nx = nextSlot();
+    if (nx) { askSlot(nx, got ? pick(a.ackShort) : ""); return; }
+    advise();
+  }
+
   box.querySelector("#mai-chat-f").addEventListener("submit",function(ev){ev.preventDefault(); ask(inp.value);});
-  function open(o){ box.classList.toggle("open",o); btn.setAttribute("aria-expanded",o?"true":"false"); if(o){ if(!m.children.length){ add("bot",esc(T().hello)); renderChips(T().chips);} inp.focus(); } }
+  function open(o){ box.classList.toggle("open",o); btn.setAttribute("aria-expanded",o?"true":"false"); if(o){ if(!m.children.length){ say(esc(A().open)); renderChips(A().openChips);} inp.focus(); } }
   btn.onclick=function(){open(!box.classList.contains("open"));};
   box.querySelector(".mai-chat-x").onclick=function(){open(false);};
   document.addEventListener("keydown",function(e){ if(e.key==="Escape") open(false); });
+  window.__maiAgent={state:function(){var o={};for(var k in S)o[k]=S[k];o.lang=lang;return o;},ask:ask,recommend:function(){return recommend(S);},parse:function(q,slot){for(var i=0;i<SLOTS.length;i++)if(SLOTS[i].id===slot)return SLOTS[i].parse(norm(q));return null;},needs:function(q){return needsFrom(norm(q),{});},reset:function(){S={stage:"intake",slots:{},needs:{},log:[],asked:[],cur:null,rec:null,contact:{},cap:null,started:new Date().toISOString()};m.innerHTML="";}};
   window.__maiChat={answer:function(q,l){return answer(q,l||detect(q));},detect:detect,KB:KB,small:smallKey,rank:function(q){var nq=norm(q);return KB.map(function(e){var r=score(e,"en",nq);return [e.id,r.s,r.specific];}).sort(function(a,b){return b[1]-a[1];}).slice(0,4);},company:function(q){return !(WORLD.test(q)||WORLD.test(norm(q)))&&(COMPANY.test(q)||COMPANY.test(norm(q)));}};
 }
 
