@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Blast radius: designing what an automation can reach | M.A.I. Consulting</title>
+<meta name="description" content="Before connecting an agent to a new system, ask what it could reach on its worst day. Grant access per task rather than per agent, and separate read, write and send, so one mistake stays contained."/>
+<link rel="canonical" href="https://mai4consulting.com/knowledge/blast-radius-what-an-automation-can-reach/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="M.A.I. Consulting"/>
+<meta property="og:title" content="Blast radius: designing what an automation can reach"/>
+<meta property="og:description" content="Before connecting an agent to a new system, ask what it could reach on its worst day. Grant access per task rather than per agent, and separate read, write and send, so one mistake stays contained."/>
+<meta property="og:url" content="https://mai4consulting.com/knowledge/blast-radius-what-an-automation-can-reach/"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../../assets/site.css"/>
+<link rel="stylesheet" href="../../assets/knowledge.css"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Blast radius: designing what an automation can reach", "description": "Before connecting an agent to a new system, ask what it could reach on its worst day. Grant access per task rather than per agent, and separate read, write and send, so one mistake stays contained.", "datePublished": "2026-10-02", "mainEntityOfPage": "https://mai4consulting.com/knowledge/blast-radius-what-an-automation-can-reach/", "author": {"@type": "Organization", "name": "M.A.I. Consulting"}, "publisher": {"@type": "Organization", "name": "M.A.I. Consulting"}}</script>
+</head>
+<body>
+<div class="mai-topbar">
+  <div class="mai-topbar-inner">
+    <a class="mai-brand" href="../../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
+    <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="mai-links" id="mai-links">
+      <li><a href="../../services/">Services</a></li>
+      <li><a href="../../estimate/">Estimate</a></li>
+      <li><a href="../../for-funders/">For Investors</a></li>
+      <li><a href="../../compare/">Compare</a></li>
+      <li><a href="../../knowledge/" aria-current="page">Knowledge</a></li>
+      <li><a href="../../explore-your-ai-readiness/">Readiness Check</a></li>
+      <li><a href="../../transformation-journey/">Use Cases</a></li>
+      <li><a class="mai-cta" href="../../contact-us/">Book a call</a></li>
+    </ul>
+  </div>
+</div>
+<section class="hero hero-art"><div class="inner-narrow">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../../knowledge/">Knowledge</a> <span>/</span> <a href="../../knowledge/#s-agents">Custom Agents &amp; Tools</a></nav>
+  <div class="art-meta"><span class="pill">Framework</span><span class="pill pill-line">Advanced</span><span>2 October 2026</span><span>4 min read</span></div>
+  <h1>Blast radius: designing what an automation can reach</h1>
+  <p class="hero-sub">Before connecting an agent to a new system, ask what it could reach on its worst day. Grant access per task rather than per agent, and separate read, write and send, so one mistake stays contained.</p>
+  <p class="byline">By M.A.I. Consulting</p>
+</div></section>
+<section class="band"><div class="inner-narrow prose">
+<p>The last two pieces in this series dealt with how an agent gets compromised: a hidden instruction in a request, or one buried in a document the agent was only supposed to read. This piece deals with the question that matters once compromise has already happened, because pretending it never will is not a plan. If an agent does exactly the wrong thing, on its worst day, how much of the organisation can it actually touch? That question has a name in security work: blast radius. It is answerable in advance, and answering it properly is mostly a design decision, not a technical one.</p>
+<p>Blast radius is not a hypothetical for people who expect to be attacked. It is the honest answer to what a single mistake, a single piece of bad input, or a single moment of over-trust in a tool actually costs, regardless of whether anyone was ever trying to cause harm.</p>
+<h2>The question to ask before the question of whether it will happen</h2>
+<p>Most conversations about agent risk start with "how likely is this to go wrong," which is a reasonable question but the wrong first one. The first question is "if it goes wrong, what does it reach." An agent connected to one clearly bounded system has a small blast radius by construction, regardless of how good or bad its judgement turns out to be on a given day. An agent connected to everything, because connecting it to everything was convenient at setup time, has a large blast radius regardless of how careful its design otherwise is. Likelihood is worth estimating. Reach is worth designing.</p>
+<h2>Why convenience quietly expands the radius</h2>
+<p>The natural direction of least resistance during setup is to grant broad access once, so nobody has to come back and grant a bit more later. A single service account with wide permissions across email, file storage, and a CRM is genuinely easier to configure than three narrowly scoped credentials, one per system, each doing only what that specific task needs. The saving is real and it is also exactly backwards: the whole point of scoping access narrowly is that it is inconvenient in exactly the way that limits damage, and the setup-time convenience of one broad credential is paid for later, all at once, the day something goes wrong inside it.</p>
+<h2>Designing the radius deliberately</h2>
+<ul>
+<li><strong>Grant access per task, not per agent.</strong> An agent that does three distinct things should usually hold three distinct, narrowly scoped credentials, not one broad one that happens to cover all three, because a compromise of the broad credential compromises all three tasks at once.</li>
+<li><strong>Separate read from write, and write from send.</strong> An agent that reads a document store, drafts a reply, and sends it are three different levels of consequence; collapsing them into one uninterrupted permission set removes the natural checkpoints between them.</li>
+<li><strong>Treat every system connection as a design decision, not a configuration default.</strong> The question is never "can this agent reach that system," which a permissions screen answers instantly. It is "should it, given what happens if today is the day it reaches it wrongly."</li>
+<li><strong>Assume the agent will eventually be wrong about something and design for that day, not around it.</strong> A narrow blast radius does not require an agent that never makes a mistake. It requires an organisation that already decided, in advance, how much a mistake is allowed to cost.</li>
+</ul>
+<blockquote>
+<p>Blast radius is not a question you answer once, when the agent goes live. It is a design constraint you carry through every new system you connect it to afterwards, because each new connection either was scoped deliberately or was allowed to happen because it was the easy default.</p>
+</blockquote>
+<h2>The practical takeaway</h2>
+<p><strong>Before connecting an agent to any new system, ask what it would be able to reach on its worst day, not just what it needs on its best one, and grant access per task rather than per agent so a single compromise stays contained.</strong></p>
+<h2>Sources</h2>
+<ul>
+<li>OWASP Top 10 for LLM Applications (2025 edition): recommended defence-in-depth controls, least-privilege tooling, input/output filtering, human approval for high-risk actions, adversarial testing.</li>
+</ul>
+</div></section>
+<section class="band band-alt"><div class="inner-narrow"><div class="kicker">Series &middot; Agent security &middot; part 3 of 5</div><div class="series-nav"><a href="../../knowledge/prompt-injection-explained-for-executives-dpos/"><small>Previous</small>Prompt injection explained for executives and DPOs who will never write a filter</a><a href="../../knowledge/browser-agents-logged-in-session-risk/" class="r"><small>Next</small>Browser agents in a logged-in session: should you allow them at all?</a></div></div></section>
+<section class="band"><div class="inner"><div class="kicker">Keep reading</div><div class="grid-3"><a class="art" href="../../knowledge/indirect-injection-document-store-attack-surface/"><span class="m">Explainer &middot; 1 October 2026</span><h4>Indirect injection: your own document store is an attack surface</h4><p>To an agent that reads it, any shared drive or ticket system many people could edit is untrusted content. Scope read access, curate trusted sources and log what the agent reads.</p><span class="foot">Custom Agents &amp; Tools &middot; 4 min</span></a><a class="art" href="../../knowledge/prompt-injection-explained-for-executives-dpos/"><span class="m">Explainer &middot; 1 October 2026</span><h4>Prompt injection explained for executives and DPOs who will never write a filter</h4><p>Prompt injection hides instructions in content an agent reads, and OWASP ranks it the top LLM risk. A plain-language explanation, a vendor&#x27;s own test figures, and layered defences any organisation can apply.</p><span class="foot">Custom Agents &amp; Tools &middot; 4 min</span></a><a class="art" href="../../knowledge/tasks-never-automate-agent-short-list/"><span class="m">Briefing &middot; 30 September 2026</span><h4>The tasks we will never automate with an agent, and why the list is short but absolute</h4><p>A short, absolute list of tasks no agent should be configured to do: safeguarding referrals, eligibility decisions, payment authorisation and public statements on live matters, where the human is the safeguard.</p><span class="foot">Custom Agents &amp; Tools &middot; 3 min</span></a></div></div></section>
+<section class="band band-dark" style="text-align:center"><div class="inner">
+  <div class="kicker">05 · Custom Agents &amp; Tools</div>
+  <h2 style="margin:0 auto 1rem">Can the tool we already pay for do this task for us, every time?</h2>
+  <p class="lede" style="margin:0 auto 2rem">If this is the question on your desk, a thirty-minute call tells you whether the service fits, or that you do not need us yet.</p>
+  <div class="btn-row" style="justify-content:center"><a class="btn btn-gold" href="../../services/agents/">See the service</a><a class="btn btn-ghost" href="../../contact-us/">Book a call</a><a class="btn btn-ghost" href="https://www.linkedin.com/company/94284867/" target="_blank" rel="noopener">Follow on LinkedIn</a></div>
+</div></section>
+<footer class="mai-footer">
+  <div class="mai-footer-inner">
+    <div>
+      <div class="mai-footer-logo">M.A.I. Consulting</div>
+      <div class="mai-footer-tag">Strategy &middot; AI &middot; Impact</div>
+    </div>
+    <div class="mai-footer-right">
+      <div class="footer-nav"><a href="../../services/">Services</a> <a href="../../knowledge/">Knowledge</a> <a href="../../about/">About</a> <a href="../../privacy/">Privacy</a> <a href="../../contact-us/">Contact</a></div>
+      <div class="mai-footer-copy">mai4consulting.com &middot; &copy; 2026 M.A.I. Consulting</div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var b=document.getElementById('mai-burger'), l=document.getElementById('mai-links');
+  if(b&&l){b.addEventListener('click',function(){var o=l.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false');});}
+})();
+</script>
+<script src="../../assets/chat.js" defer></script>
+</body>
+</html>

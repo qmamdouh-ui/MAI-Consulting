@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Context engineering vs prompt engineering | M.A.I. Consulting</title>
+<meta name="description" content="Once a task is repeated or built into an agent, what content reaches the model matters more than how the prompt is worded, and retrieved content must be treated as untrusted."/>
+<link rel="canonical" href="https://mai4consulting.com/knowledge/context-engineering-vs-prompt-engineering/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="M.A.I. Consulting"/>
+<meta property="og:title" content="Context engineering vs prompt engineering"/>
+<meta property="og:description" content="Once a task is repeated or built into an agent, what content reaches the model matters more than how the prompt is worded, and retrieved content must be treated as untrusted."/>
+<meta property="og:url" content="https://mai4consulting.com/knowledge/context-engineering-vs-prompt-engineering/"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../../assets/site.css"/>
+<link rel="stylesheet" href="../../assets/knowledge.css"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Context engineering vs prompt engineering", "description": "Once a task is repeated or built into an agent, what content reaches the model matters more than how the prompt is worded, and retrieved content must be treated as untrusted.", "datePublished": "2026-09-21", "mainEntityOfPage": "https://mai4consulting.com/knowledge/context-engineering-vs-prompt-engineering/", "author": {"@type": "Organization", "name": "M.A.I. Consulting"}, "publisher": {"@type": "Organization", "name": "M.A.I. Consulting"}}</script>
+</head>
+<body>
+<div class="mai-topbar">
+  <div class="mai-topbar-inner">
+    <a class="mai-brand" href="../../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
+    <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="mai-links" id="mai-links">
+      <li><a href="../../services/">Services</a></li>
+      <li><a href="../../estimate/">Estimate</a></li>
+      <li><a href="../../for-funders/">For Investors</a></li>
+      <li><a href="../../compare/">Compare</a></li>
+      <li><a href="../../knowledge/" aria-current="page">Knowledge</a></li>
+      <li><a href="../../explore-your-ai-readiness/">Readiness Check</a></li>
+      <li><a href="../../transformation-journey/">Use Cases</a></li>
+      <li><a class="mai-cta" href="../../contact-us/">Book a call</a></li>
+    </ul>
+  </div>
+</div>
+<section class="hero hero-art"><div class="inner-narrow">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../../knowledge/">Knowledge</a> <span>/</span> <a href="../../knowledge/#s-agents">Custom Agents &amp; Tools</a></nav>
+  <div class="art-meta"><span class="pill">Explainer</span><span class="pill pill-line">Advanced</span><span>21 September 2026</span><span>4 min read</span></div>
+  <h1>Context engineering vs prompt engineering</h1>
+  <p class="hero-sub">Once a task is repeated or built into an agent, what content reaches the model matters more than how the prompt is worded, and retrieved content must be treated as untrusted.</p>
+  <p class="byline">By M.A.I. Consulting</p>
+</div></section>
+<section class="band"><div class="inner-narrow prose">
+<p>The last piece in this series was about prompt patterns: how to word an instruction so it survives a messy real document. That is prompt engineering, and it has a ceiling. Once a task moves from a one-off request into something repeated across dozens of documents, or wired into an actual agent, the wording of the instruction stops being the thing that decides success. What decides it is what content the model was actually given to work with before the instruction ever arrived.</p>
+<p>That is context engineering: deciding what evidence, documents, tool output, and prior state enter the model's working context, in what order, and what is deliberately left out. This piece is about why that layer usually matters more than instruction wording once a task stops being a one-off.</p>
+<h2>What context engineering actually means</h2>
+<p>Prompt engineering shapes the instruction. Context engineering shapes the evidence base the instruction operates on: which documents or chunks get retrieved, how much of each, the order they appear in, whether prior conversation or tool output is carried forward, and what is excluded entirely. Two identically worded prompts can produce completely different quality of output depending only on what was assembled into the context before either one ran.</p>
+<h2>Why prompt wording hits a ceiling</h2>
+<p>A perfectly worded prompt run against an incomplete or badly ordered context still fails, because the model cannot answer from evidence it was never given. Past that point, further polishing the wording produces diminishing returns; the fix that actually moves the outcome is upstream of the prompt, in what was retrieved and included, not in how the request was phrased.</p>
+<h2>What good context engineering looks like</h2>
+<ul>
+<li><strong>Include only what the task genuinely needs, not everything available.</strong> Irrelevant context does not sit passively; it dilutes the model's attention on the material that actually matters and adds token cost for no accuracy gain.</li>
+<li><strong>Order matters, because models weight some positions in the context more heavily than others.</strong> The most load-bearing document or instruction should not be buried in the middle of a long context if you can help it.</li>
+<li><strong>Decide explicitly what is excluded, and say so, rather than silently truncating.</strong> This extends the "name what to ignore" pattern from the last piece up a level: at the retrieval stage, not just inside a single document.</li>
+<li><strong>Treat retrieved or tool-sourced content as untrusted until proven otherwise.</strong> OWASP ranks prompt injection as the top risk in its 2025 Top 10 for LLM applications for the second consecutive edition, and indirect prompt injection specifically happens when a model reads untrusted content from documents, emails, tickets, or knowledge bases assembled into its context, exactly the material context engineering decides to include.</li>
+</ul>
+<blockquote>
+<p>A better-worded prompt cannot fix a worse-assembled context.</p>
+</blockquote>
+<h2>The trade-off between the two disciplines</h2>
+<p>Context engineering costs real design time: deciding retrieval scope, ordering, and exclusion rules is slower than tweaking a single prompt's wording, and for a genuine one-off task that upfront design cost may never pay back. The honest answer is that the trade-off flips as soon as a task is repeated: the design cost of a good retrieval and assembly pipeline is paid once, while a badly worded one-off prompt costs nothing to fix by hand the next time it is wrong, which is exactly why prompt engineering alone is still the right tool for genuinely one-off requests.</p>
+<h2>The practical takeaway</h2>
+<p><strong>Once a task is repeated or wired into an agent, invest in what content reaches the model and in what order before spending more time on how the instruction is phrased, and treat any retrieved or tool-sourced content in that context as untrusted until it has been checked.</strong></p>
+<h2>Sources</h2>
+<ul>
+<li>OWASP Top 10 for Large Language Model Applications 2025: prompt injection ranked LLM01, the top risk, for the second consecutive edition; indirect prompt injection occurs when a model reads untrusted content from websites, documents, emails, tickets, repositories, or knowledge bases.</li>
+</ul>
+</div></section>
+<section class="band band-alt"><div class="inner-narrow"><div class="kicker">Series &middot; Redesigning work at task level &middot; part 6 of 7</div><div class="series-nav"><a href="../../knowledge/before-after-grant-report-measured-honestly/"><small>Previous</small>Before and after: one grant report with AI, honestly measured</a><a href="../../knowledge/four-checks-before-ai-work-leaves-building/" class="r"><small>Next</small>The four checks before anything leaves the building</a></div></div></section>
+<section class="band"><div class="inner"><div class="kicker">Keep reading</div><div class="grid-3"><a class="art" href="../../knowledge/prompt-patterns-for-real-documents/"><span class="m">Guide &middot; 20 September 2026</span><h4>Prompt patterns that survive contact with real documents</h4><p>Four structural prompt patterns that hold up on messy real documents, including showing the actual template, naming what to ignore, requesting uncertainty flags and chunking long files.</p><span class="foot">Team AI Training &middot; 3 min</span></a></div></div></section>
+<section class="band band-dark" style="text-align:center"><div class="inner">
+  <div class="kicker">05 · Custom Agents &amp; Tools</div>
+  <h2 style="margin:0 auto 1rem">Can the tool we already pay for do this task for us, every time?</h2>
+  <p class="lede" style="margin:0 auto 2rem">If this is the question on your desk, a thirty-minute call tells you whether the service fits, or that you do not need us yet.</p>
+  <div class="btn-row" style="justify-content:center"><a class="btn btn-gold" href="../../services/agents/">See the service</a><a class="btn btn-ghost" href="../../contact-us/">Book a call</a><a class="btn btn-ghost" href="https://www.linkedin.com/company/94284867/" target="_blank" rel="noopener">Follow on LinkedIn</a></div>
+</div></section>
+<footer class="mai-footer">
+  <div class="mai-footer-inner">
+    <div>
+      <div class="mai-footer-logo">M.A.I. Consulting</div>
+      <div class="mai-footer-tag">Strategy &middot; AI &middot; Impact</div>
+    </div>
+    <div class="mai-footer-right">
+      <div class="footer-nav"><a href="../../services/">Services</a> <a href="../../knowledge/">Knowledge</a> <a href="../../about/">About</a> <a href="../../privacy/">Privacy</a> <a href="../../contact-us/">Contact</a></div>
+      <div class="mai-footer-copy">mai4consulting.com &middot; &copy; 2026 M.A.I. Consulting</div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var b=document.getElementById('mai-burger'), l=document.getElementById('mai-links');
+  if(b&&l){b.addEventListener('click',function(){var o=l.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false');});}
+})();
+</script>
+<script src="../../assets/chat.js" defer></script>
+</body>
+</html>

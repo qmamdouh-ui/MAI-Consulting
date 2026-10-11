@@ -24,7 +24,7 @@ The published site lives in the **repository root**, served by GitHub Pages at
 | `/estimate/` | Price estimator: type, size, scope → indicative range; 200+ staff routed to a call; selections emailed to the owner. The scope model lives in the page script and is deliberately not rendered |
 | `/for-funders/` | Portfolio programmes for foundations and donors, a second buyer rather than a second sector |
 | `/compare/` | Market and competitor comparison with published prices, sources, and the value case |
-| `/knowledge/` | Published work filed by service and package, with slots for LinkedIn articles |
+| `/knowledge/` | Searchable library of published articles filed by service, format, level and reading path, plus package guide |
 | `/resources/` | Redirects to `/knowledge/` |
 | `/eu-ai-act-article-4/` | Briefing on the AI literacy obligation, the main commercial hook |
 | `/explore-your-ai-readiness/` | Free 28-question assessment (4D framework) |
@@ -97,9 +97,8 @@ in a clearly labelled section so the backup is complete.
 
 ## Adding a LinkedIn article
 
-`knowledge/index.html` has four service sections. Each carries a commented
-copy-paste `<a class="art">` template: fill it in, place it directly above
-the dashed `.slot` block in that section, newest first. No other file changes.
+The Knowledge section is generated. One markdown file per article lives in `knowledge/content/` (format in `knowledge/content/_README.md`); `python tools/build_knowledge.py` writes the article pages (`/knowledge/<slug>/`), `knowledge/articles.json`, the hub (between the `BUILD` markers in `knowledge/index.html`) and the article block of `sitemap.xml`. Do not hand-edit generated output. Only articles dated today or earlier are built, and nothing unpublished should be committed here because the repository is public.
+
 
 ## Competitor pricing on `/compare/`
 

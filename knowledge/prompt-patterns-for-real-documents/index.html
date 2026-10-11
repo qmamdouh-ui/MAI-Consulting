@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Prompt patterns that survive contact with real documents | M.A.I. Consulting</title>
+<meta name="description" content="Four structural prompt patterns that hold up on messy real documents, including showing the actual template, naming what to ignore, requesting uncertainty flags and chunking long files."/>
+<link rel="canonical" href="https://mai4consulting.com/knowledge/prompt-patterns-for-real-documents/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="M.A.I. Consulting"/>
+<meta property="og:title" content="Prompt patterns that survive contact with real documents"/>
+<meta property="og:description" content="Four structural prompt patterns that hold up on messy real documents, including showing the actual template, naming what to ignore, requesting uncertainty flags and chunking long files."/>
+<meta property="og:url" content="https://mai4consulting.com/knowledge/prompt-patterns-for-real-documents/"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../../assets/site.css"/>
+<link rel="stylesheet" href="../../assets/knowledge.css"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Prompt patterns that survive contact with real documents", "description": "Four structural prompt patterns that hold up on messy real documents, including showing the actual template, naming what to ignore, requesting uncertainty flags and chunking long files.", "datePublished": "2026-09-20", "mainEntityOfPage": "https://mai4consulting.com/knowledge/prompt-patterns-for-real-documents/", "author": {"@type": "Organization", "name": "M.A.I. Consulting"}, "publisher": {"@type": "Organization", "name": "M.A.I. Consulting"}}</script>
+</head>
+<body>
+<div class="mai-topbar">
+  <div class="mai-topbar-inner">
+    <a class="mai-brand" href="../../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
+    <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="mai-links" id="mai-links">
+      <li><a href="../../services/">Services</a></li>
+      <li><a href="../../estimate/">Estimate</a></li>
+      <li><a href="../../for-funders/">For Investors</a></li>
+      <li><a href="../../compare/">Compare</a></li>
+      <li><a href="../../knowledge/" aria-current="page">Knowledge</a></li>
+      <li><a href="../../explore-your-ai-readiness/">Readiness Check</a></li>
+      <li><a href="../../transformation-journey/">Use Cases</a></li>
+      <li><a class="mai-cta" href="../../contact-us/">Book a call</a></li>
+    </ul>
+  </div>
+</div>
+<section class="hero hero-art"><div class="inner-narrow">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../../knowledge/">Knowledge</a> <span>/</span> <a href="../../knowledge/#s-training">Team AI Training</a></nav>
+  <div class="art-meta"><span class="pill">Guide</span><span class="pill pill-line">Practitioner</span><span>20 September 2026</span><span>3 min read</span></div>
+  <h1>Prompt patterns that survive contact with real documents</h1>
+  <p class="hero-sub">Four structural prompt patterns that hold up on messy real documents, including showing the actual template, naming what to ignore, requesting uncertainty flags and chunking long files.</p>
+  <p class="byline">By M.A.I. Consulting</p>
+</div></section>
+<section class="band"><div class="inner-narrow prose">
+<p>Naming a handover point, as the last two pieces in this series covered, assumes the tool actually produces something usable at that point. It does not, if the prompt getting it there was written like a demo. Most people learn to prompt from clean, short, obviously-structured example text, and almost no real document in an NGO looks like that: it is a scanned PDF with a wonky header, three donors' worth of inconsistent report templates, redacted names, and a footer repeating on every page.</p>
+<p>This piece is a set of patterns that hold up against that mess, not clever tricks, but structural fixes for the specific ways real documents break a prompt that only ever saw tidy demo text.</p>
+<h2>Why demo prompts fail on real files</h2>
+<p>A demo prompt works because the example text is short, complete, and has an obvious structure the model can infer without help. A real file is none of those things: it is long, it repeats itself, it mixes several document types under one file name, and important information sits next to boilerplate the model has no way of distinguishing from content unless told. A prompt tuned only on the demo has learned nothing about any of that, and it fails silently rather than with an error, which is the more dangerous failure mode.</p>
+<h2>Patterns that hold up on messy documents</h2>
+<ul>
+<li><strong>Show the model the actual structure before asking it to use it.</strong> Paste a real example of your organisation's header, section labels, or template layout rather than assuming the model will infer your specific format from a generic instruction; "extract the budget line" means something different in every donor's template.</li>
+<li><strong>Name what to ignore, not just what to extract.</strong> Letterheads, repeated page footers, superseded draft watermarks, and boilerplate legal text confuse extraction far more often than the actual content does, and telling the model to ignore them by name is more reliable than hoping it works that out.</li>
+<li><strong>Ask for the extraction and the uncertainty flag together.</strong> "Extract the total grant amount; if you cannot find it stated explicitly, say so rather than estimating" prevents the model from confidently guessing a number that was never actually in the document, which is a much harder error to catch than a visible blank.</li>
+<li><strong>Chunk long documents deliberately instead of letting length quietly degrade quality.</strong> A forty-page report handed over in one prompt does not fail with an error, it fails by getting steadily less accurate towards the end, and working through it section by section with page or heading anchors keeps that decay from being invisible.</li>
+</ul>
+<blockquote>
+<p>A prompt that only works on clean text has learned nothing about the job.</p>
+</blockquote>
+<h2>The trade-off in writing prompts this way</h2>
+<p>Writing a prompt with named exceptions, an explicit ignore-list, and a section-by-section structure takes longer than typing a quick throwaway instruction, and for a genuinely short, clean document that extra structure is often wasted effort. The honest answer is that the throwaway prompt's real cost is invisible until it meets a messy file, at which point it does not error, it just produces a wrong answer that looks plausible, and that is a worse failure than a slower prompt because nobody is prompted to go back and check it, which is exactly the verification tax this series covered in the last piece.</p>
+<h2>The practical takeaway</h2>
+<p><strong>Write prompts against your real documents, not demo text: show the actual structure, name what to ignore, ask for uncertainty flags alongside extractions, and chunk long files deliberately rather than trusting one long prompt to hold its accuracy to the end.</strong></p>
+<p><em>No external statistic cited; this article presents an internal practical guide rather than third-party evidence.</em></p>
+</div></section>
+<section class="band band-alt"><div class="inner-narrow"><div class="kicker">Series &middot; Redesigning work at task level &middot; part 2 of 7</div><div class="series-nav"><a href="../../knowledge/unit-of-ai-value-is-a-task/"><small>Previous</small>The unit of AI value is a task, never a job</a><a href="../../knowledge/task-decomposition-handover-point/" class="r"><small>Next</small>Task decomposition for AI: finding the handover point</a></div></div></section>
+<section class="band"><div class="inner"><div class="kicker">Keep reading</div><div class="grid-3"><a class="art" href="../../knowledge/task-decomposition-handover-point/"><span class="m">Guide &middot; 20 September 2026</span><h4>Task decomposition for AI: finding the handover point</h4><p>How to break a task into steps and write down the handover point, usually just before the first judgement call, where AI output ends and human responsibility begins.</p><span class="foot">Team AI Training &middot; 4 min</span></a><a class="art" href="../../knowledge/verification-tax-ai-checking-cost/"><span class="m">Analysis &middot; 20 September 2026</span><h4>The verification tax: what checking costs, and when it exceeds the gain</h4><p>Checking AI output has a real time cost that productivity claims omit, and this piece shows how to price it and when it cancels out the saving.</p><span class="foot">Team AI Training &middot; 4 min</span></a></div></div></section>
+<section class="band band-dark" style="text-align:center"><div class="inner">
+  <div class="kicker">03 · Team AI Training</div>
+  <h2 style="margin:0 auto 1rem">How should AI be used in my role?</h2>
+  <p class="lede" style="margin:0 auto 2rem">If this is the question on your desk, a thirty-minute call tells you whether the service fits, or that you do not need us yet.</p>
+  <div class="btn-row" style="justify-content:center"><a class="btn btn-gold" href="../../services/training/">See the service</a><a class="btn btn-ghost" href="../../contact-us/">Book a call</a><a class="btn btn-ghost" href="https://www.linkedin.com/company/94284867/" target="_blank" rel="noopener">Follow on LinkedIn</a></div>
+</div></section>
+<footer class="mai-footer">
+  <div class="mai-footer-inner">
+    <div>
+      <div class="mai-footer-logo">M.A.I. Consulting</div>
+      <div class="mai-footer-tag">Strategy &middot; AI &middot; Impact</div>
+    </div>
+    <div class="mai-footer-right">
+      <div class="footer-nav"><a href="../../services/">Services</a> <a href="../../knowledge/">Knowledge</a> <a href="../../about/">About</a> <a href="../../privacy/">Privacy</a> <a href="../../contact-us/">Contact</a></div>
+      <div class="mai-footer-copy">mai4consulting.com &middot; &copy; 2026 M.A.I. Consulting</div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var b=document.getElementById('mai-burger'), l=document.getElementById('mai-links');
+  if(b&&l){b.addEventListener('click',function(){var o=l.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false');});}
+})();
+</script>
+<script src="../../assets/chat.js" defer></script>
+</body>
+</html>

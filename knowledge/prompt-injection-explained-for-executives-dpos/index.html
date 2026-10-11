@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Prompt injection explained for executives and DPOs who will never write a filter | M.A.I. Consulting</title>
+<meta name="description" content="Prompt injection hides instructions in content an agent reads, and OWASP ranks it the top LLM risk. A plain-language explanation, a vendor&#x27;s own test figures, and layered defences any organisation can apply."/>
+<link rel="canonical" href="https://mai4consulting.com/knowledge/prompt-injection-explained-for-executives-dpos/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="M.A.I. Consulting"/>
+<meta property="og:title" content="Prompt injection explained for executives and DPOs who will never write a filter"/>
+<meta property="og:description" content="Prompt injection hides instructions in content an agent reads, and OWASP ranks it the top LLM risk. A plain-language explanation, a vendor&#x27;s own test figures, and layered defences any organisation can apply."/>
+<meta property="og:url" content="https://mai4consulting.com/knowledge/prompt-injection-explained-for-executives-dpos/"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../../assets/site.css"/>
+<link rel="stylesheet" href="../../assets/knowledge.css"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Prompt injection explained for executives and DPOs who will never write a filter", "description": "Prompt injection hides instructions in content an agent reads, and OWASP ranks it the top LLM risk. A plain-language explanation, a vendor's own test figures, and layered defences any organisation can apply.", "datePublished": "2026-10-01", "mainEntityOfPage": "https://mai4consulting.com/knowledge/prompt-injection-explained-for-executives-dpos/", "author": {"@type": "Organization", "name": "M.A.I. Consulting"}, "publisher": {"@type": "Organization", "name": "M.A.I. Consulting"}}</script>
+</head>
+<body>
+<div class="mai-topbar">
+  <div class="mai-topbar-inner">
+    <a class="mai-brand" href="../../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
+    <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="mai-links" id="mai-links">
+      <li><a href="../../services/">Services</a></li>
+      <li><a href="../../estimate/">Estimate</a></li>
+      <li><a href="../../for-funders/">For Investors</a></li>
+      <li><a href="../../compare/">Compare</a></li>
+      <li><a href="../../knowledge/" aria-current="page">Knowledge</a></li>
+      <li><a href="../../explore-your-ai-readiness/">Readiness Check</a></li>
+      <li><a href="../../transformation-journey/">Use Cases</a></li>
+      <li><a class="mai-cta" href="../../contact-us/">Book a call</a></li>
+    </ul>
+  </div>
+</div>
+<section class="hero hero-art"><div class="inner-narrow">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../../knowledge/">Knowledge</a> <span>/</span> <a href="../../knowledge/#s-agents">Custom Agents &amp; Tools</a></nav>
+  <div class="art-meta"><span class="pill">Explainer</span><span class="pill pill-line">Entry</span><span>1 October 2026</span><span>4 min read</span></div>
+  <h1>Prompt injection explained for executives and DPOs who will never write a filter</h1>
+  <p class="hero-sub">Prompt injection hides instructions in content an agent reads, and OWASP ranks it the top LLM risk. A plain-language explanation, a vendor&#x27;s own test figures, and layered defences any organisation can apply.</p>
+  <p class="byline">By M.A.I. Consulting</p>
+</div></section>
+<section class="band"><div class="inner-narrow prose">
+<p>This series opens a new cluster on agent security with the attack that matters most, not because it is the most technically dramatic, but because it is the one an executive director or a DPO genuinely needs to understand in plain terms, without ever needing to write a line of defensive code themselves. Prompt injection has been ranked LLM01, the single highest risk, for the second consecutive edition of the OWASP Top 10 for LLM Applications. That is not a niche concern. It is the industry's own vendor-neutral standards body naming this the thing to worry about first.</p>
+<p>This piece explains what the attack actually is, in language that does not require understanding how a language model works, and what an organisation without a security team can realistically do about it.</p>
+<h2>The attack, described without jargon</h2>
+<p>A prompt injection happens when someone hides an instruction inside content an AI agent is going to read, rather than inside the request a person typed. The agent cannot always tell the difference between "the task I was asked to do" and "an instruction that happened to be sitting inside a document I was reading while doing that task." If the hidden instruction is convincing enough, the agent follows it, doing something the person who set it running never asked for and may never see coming.</p>
+<h2>Why this matters more once an agent reads your own documents</h2>
+<p>The more dangerous version of this attack, called indirect prompt injection, occurs when a model reads untrusted content from websites, documents, emails, tickets, repositories, or knowledge bases. This series has spent considerable length arguing that an agent should be built against a documented method, given a named owner, and never handed the tasks on this series' own never-configure list. Prompt injection is the reason all of that matters even for an agent doing something as ordinary as reading a shared drive. The attack does not require the agent to browse the open internet. It only requires the agent to read something an organisation already has lying around that someone else could have touched.</p>
+<h2>What a real-world test actually found</h2>
+<p>Anthropic's own red-team testing of Claude in Chrome, a browser-using agent, found a prompt-injection success rate of 23.6% unmitigated, falling to 11.2% with mitigations in autonomous mode, and specific browser-focused attack types dropping from 35.7% to 0% once targeted defences were applied. Two things are worth being honest about here. First, this is a vendor reporting on its own product, so it should be read as a data point rather than an independent audit, and paired with the OWASP framing above for balance. Second, even the improved, mitigated number is not zero. Mitigation reduces the risk substantially. It does not remove it, and no organisation evaluating an agent should be told otherwise.</p>
+<h2>What OWASP actually recommends, in practice</h2>
+<ul>
+<li><strong>Least-privilege tooling</strong> means an agent only gets access to the specific systems and actions its task genuinely requires, not broad access "in case it is useful later."</li>
+<li><strong>Input and output filtering</strong> means checking what an agent reads and what it produces for the kind of hidden instructions this piece has described, not a perfect defence, but a meaningful reduction.</li>
+<li><strong>Human approval for high-risk actions</strong> is the same principle this series has already argued for under the never-configure list, applied here specifically to the moment an agent is about to act on something it read rather than something it was told.</li>
+<li><strong>Adversarial testing</strong> means deliberately trying to trick the agent before it goes into real use, rather than discovering the gap the first time someone else tries it for real.</li>
+</ul>
+<blockquote>
+<p>Prompt injection is not a bug that gets patched once and forgotten. It is a structural feature of how these systems currently work, which is exactly why OWASP's own guidance is layered defence rather than a single fix, and exactly why the never-configure list and the named-owner discipline this series has argued for matter as much for security as they do for governance.</p>
+</blockquote>
+<h2>The practical takeaway</h2>
+<p><strong>Treat prompt injection as the top risk it is ranked, understand that mitigation reduces but does not eliminate it, and apply the same layered defence, least-privilege access, filtering, human approval on high-risk actions, and adversarial testing, that this series has already argued for on governance grounds.</strong></p>
+<h2>Sources</h2>
+<ul>
+<li>OWASP Top 10 for LLM Applications (2025 edition): prompt injection ranked LLM01, the top risk, for the second consecutive edition. https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-v2025.pdf</li>
+<li>OWASP Top 10 for LLM Applications (2025 edition): indirect prompt injection defined as occurring when a model reads untrusted content from websites, documents, emails, tickets, repositories or knowledge bases.</li>
+<li>OWASP Top 10 for LLM Applications (2025 edition): recommended defence-in-depth controls, least-privilege tooling, input/output filtering, human approval for high-risk actions, adversarial testing.</li>
+<li>Anthropic red-team results for Claude in Chrome, as cited on M.A.I.'s own reference page (vendor self-reported, 2026-08): 23.6% prompt-injection success unmitigated; 11.2% with mitigations in autonomous mode; 35.7% to 0% on four browser-specific attack types.</li>
+</ul>
+</div></section>
+<section class="band band-alt"><div class="inner-narrow"><div class="kicker">Series &middot; Agent security &middot; part 2 of 5</div><div class="series-nav"><a href="../../knowledge/indirect-injection-document-store-attack-surface/"><small>Previous</small>Indirect injection: your own document store is an attack surface</a><a href="../../knowledge/blast-radius-what-an-automation-can-reach/" class="r"><small>Next</small>Blast radius: designing what an automation can reach</a></div></div></section>
+<section class="band"><div class="inner"><div class="kicker">Keep reading</div><div class="grid-3"><a class="art" href="../../knowledge/named-owner-operating-guide-test-set-agent/"><span class="m">Guide &middot; 1 October 2026</span><h4>Named owner, operating guide, test set: what makes an agent survive its author</h4><p>An agent only its builder understands is a personal project running in production. A named owner, a written operating guide and a periodic test set are the minimum bar before calling it finished.</p><span class="foot">Custom Agents &amp; Tools &middot; 4 min</span></a><a class="art" href="../../knowledge/tasks-never-automate-agent-short-list/"><span class="m">Briefing &middot; 30 September 2026</span><h4>The tasks we will never automate with an agent, and why the list is short but absolute</h4><p>A short, absolute list of tasks no agent should be configured to do: safeguarding referrals, eligibility decisions, payment authorisation and public statements on live matters, where the human is the safeguard.</p><span class="foot">Custom Agents &amp; Tools &middot; 3 min</span></a><a class="art" href="../../knowledge/ai-policy-red-lines-never-delegated/"><span class="m">Guide &middot; 24 September 2026</span><h4>AI policy red lines: the decisions that never get delegated</h4><p>A short checklist of decisions an AI policy should never delegate, such as ending employment, safeguarding judgements and legal signatures, and why keeping the list short protects the rest of the policy.</p><span class="foot">AI Use Policy &middot; 4 min</span></a></div></div></section>
+<section class="band band-dark" style="text-align:center"><div class="inner">
+  <div class="kicker">05 · Custom Agents &amp; Tools</div>
+  <h2 style="margin:0 auto 1rem">Can the tool we already pay for do this task for us, every time?</h2>
+  <p class="lede" style="margin:0 auto 2rem">If this is the question on your desk, a thirty-minute call tells you whether the service fits, or that you do not need us yet.</p>
+  <div class="btn-row" style="justify-content:center"><a class="btn btn-gold" href="../../services/agents/">See the service</a><a class="btn btn-ghost" href="../../contact-us/">Book a call</a><a class="btn btn-ghost" href="https://www.linkedin.com/company/94284867/" target="_blank" rel="noopener">Follow on LinkedIn</a></div>
+</div></section>
+<footer class="mai-footer">
+  <div class="mai-footer-inner">
+    <div>
+      <div class="mai-footer-logo">M.A.I. Consulting</div>
+      <div class="mai-footer-tag">Strategy &middot; AI &middot; Impact</div>
+    </div>
+    <div class="mai-footer-right">
+      <div class="footer-nav"><a href="../../services/">Services</a> <a href="../../knowledge/">Knowledge</a> <a href="../../about/">About</a> <a href="../../privacy/">Privacy</a> <a href="../../contact-us/">Contact</a></div>
+      <div class="mai-footer-copy">mai4consulting.com &middot; &copy; 2026 M.A.I. Consulting</div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var b=document.getElementById('mai-burger'), l=document.getElementById('mai-links');
+  if(b&&l){b.addEventListener('click',function(){var o=l.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false');});}
+})();
+</script>
+<script src="../../assets/chat.js" defer></script>
+</body>
+</html>

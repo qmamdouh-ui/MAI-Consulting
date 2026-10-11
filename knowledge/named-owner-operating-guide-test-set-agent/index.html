@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Named owner, operating guide, test set: what makes an agent survive its author | M.A.I. Consulting</title>
+<meta name="description" content="An agent only its builder understands is a personal project running in production. A named owner, a written operating guide and a periodic test set are the minimum bar before calling it finished."/>
+<link rel="canonical" href="https://mai4consulting.com/knowledge/named-owner-operating-guide-test-set-agent/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="M.A.I. Consulting"/>
+<meta property="og:title" content="Named owner, operating guide, test set: what makes an agent survive its author"/>
+<meta property="og:description" content="An agent only its builder understands is a personal project running in production. A named owner, a written operating guide and a periodic test set are the minimum bar before calling it finished."/>
+<meta property="og:url" content="https://mai4consulting.com/knowledge/named-owner-operating-guide-test-set-agent/"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../../assets/site.css"/>
+<link rel="stylesheet" href="../../assets/knowledge.css"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Named owner, operating guide, test set: what makes an agent survive its author", "description": "An agent only its builder understands is a personal project running in production. A named owner, a written operating guide and a periodic test set are the minimum bar before calling it finished.", "datePublished": "2026-10-01", "mainEntityOfPage": "https://mai4consulting.com/knowledge/named-owner-operating-guide-test-set-agent/", "author": {"@type": "Organization", "name": "M.A.I. Consulting"}, "publisher": {"@type": "Organization", "name": "M.A.I. Consulting"}}</script>
+</head>
+<body>
+<div class="mai-topbar">
+  <div class="mai-topbar-inner">
+    <a class="mai-brand" href="../../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
+    <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="mai-links" id="mai-links">
+      <li><a href="../../services/">Services</a></li>
+      <li><a href="../../estimate/">Estimate</a></li>
+      <li><a href="../../for-funders/">For Investors</a></li>
+      <li><a href="../../compare/">Compare</a></li>
+      <li><a href="../../knowledge/" aria-current="page">Knowledge</a></li>
+      <li><a href="../../explore-your-ai-readiness/">Readiness Check</a></li>
+      <li><a href="../../transformation-journey/">Use Cases</a></li>
+      <li><a class="mai-cta" href="../../contact-us/">Book a call</a></li>
+    </ul>
+  </div>
+</div>
+<section class="hero hero-art"><div class="inner-narrow">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../../knowledge/">Knowledge</a> <span>/</span> <a href="../../knowledge/#s-agents">Custom Agents &amp; Tools</a></nav>
+  <div class="art-meta"><span class="pill">Guide</span><span class="pill pill-line">Advanced</span><span>1 October 2026</span><span>4 min read</span></div>
+  <h1>Named owner, operating guide, test set: what makes an agent survive its author</h1>
+  <p class="hero-sub">An agent only its builder understands is a personal project running in production. A named owner, a written operating guide and a periodic test set are the minimum bar before calling it finished.</p>
+  <p class="byline">By M.A.I. Consulting</p>
+</div></section>
+<section class="band"><div class="inner-narrow prose">
+<p>This closes the cluster this series has spent five pieces building: what an agent actually is, why the method has to come first, and where the absolute limits sit. This piece answers the practical question that follows once an agent is genuinely built and working: what stops it quietly breaking, or quietly drifting into something nobody understands, the day the person who built it moves on. The honest answer is three artefacts, none of them technical, all of them cheap compared to the cost of finding out the hard way that nobody else can touch the thing.</p>
+<p>An agent that only its builder understands is not actually finished. It is a personal tool wearing the appearance of organisational infrastructure, and the gap between those two things only becomes visible at the worst possible moment, usually right after the builder has already left.</p>
+<h2>A named owner, distinct from the builder</h2>
+<p>The person who built the agent and the person who owns it going forward do not need to be the same person, and for most organisations this size, keeping them the same is actually the risk. Ownership here means something specific: one named person, not a team, who is accountable for the agent still doing what it is supposed to do, who gets told first when something looks wrong, and who has the authority to switch it off. If the builder leaves and nobody was ever named as owner, the agent does not fail cleanly. It keeps running, unattended, until something breaks badly enough that someone finally asks who is meant to be watching it.</p>
+<h2>An operating guide the owner did not have to write themselves</h2>
+<p>The operating guide is the artefact that actually transfers the knowledge the builder is carrying around in their head: what the agent does, what it does not do, what normal output looks like, what a wrong output looks like, and what to do when one shows up. This is not a technical specification. It is closer to the method this series argued for building before the agent existed in the first place, now updated to describe what actually got built rather than what was intended. An owner who inherits an agent with no operating guide is not really an owner. They are a person with responsibility for something they cannot actually evaluate.</p>
+<h2>A test set that catches drift before a person does</h2>
+<p>The test set is a small, fixed collection of real inputs with known-correct outputs, run periodically against the agent to confirm it still behaves the way it did when it was accepted. This matters because the way an agent quietly stops working is rarely a dramatic failure. It is a slow drift, a platform update, a small change in the documents it reads, a shift in the task itself, that nobody notices until the output has been subtly wrong for weeks. A test set turns that invisible drift into something a person can actually check on a schedule, rather than something that only surfaces once a beneficiary or a funder points it out.</p>
+<h2>What each artefact actually protects against</h2>
+<ul>
+<li><strong>The named owner protects against nobody noticing.</strong> Without one, a departing builder takes the only working understanding of the agent with them, and the gap stays invisible until something forces it into view.</li>
+<li><strong>The operating guide protects against nobody being able to help.</strong> An owner without a guide can restart the agent, but cannot judge whether what it is doing is still correct.</li>
+<li><strong>The test set protects against slow, silent drift.</strong> The failure mode that never announces itself is the one that does the most damage, because nobody is looking for it.</li>
+<li><strong>Together, the three protect the organisation from finding out by accident</strong> that something it depends on has not actually been supervised in months.</li>
+</ul>
+<blockquote>
+<p>A working agent with no named owner, no operating guide, and no test set is not really an organisational asset. It is a personal project that happens to be running in production, and the organisation will not find out the difference until the person who built it is no longer there to explain it.</p>
+</blockquote>
+<h2>The practical takeaway</h2>
+<p><strong>Treat a named owner, a written operating guide, and a periodic test set as the minimum bar for calling an agent finished, not optional extras added once time allows, since without all three the agent only survives for as long as its builder stays.</strong></p>
+<p><em>No external statistic cited; this article presents an internal practical framework rather than third-party evidence.</em></p>
+</div></section>
+<section class="band band-alt"><div class="inner-narrow"><div class="kicker">Series &middot; Deciding what to automate &middot; part 4 of 4</div><div class="series-nav"><a href="../../knowledge/write-the-method-before-you-buy-the-agent/"><small>Previous</small>Write the method before you buy the agent</a><span></span></div></div></section>
+<section class="band"><div class="inner"><div class="kicker">Keep reading</div><div class="grid-3"><a class="art" href="../../knowledge/tasks-never-automate-agent-short-list/"><span class="m">Briefing &middot; 30 September 2026</span><h4>The tasks we will never automate with an agent, and why the list is short but absolute</h4><p>A short, absolute list of tasks no agent should be configured to do: safeguarding referrals, eligibility decisions, payment authorisation and public statements on live matters, where the human is the safeguard.</p><span class="foot">Custom Agents &amp; Tools &middot; 3 min</span></a><a class="art" href="../../knowledge/write-the-method-before-you-buy-the-agent/"><span class="m">Analysis &middot; 30 September 2026</span><h4>Write the method before you buy the agent</h4><p>If nobody can write down in plain steps how a task is done today, buying an agent for it is premature. The written method is the real readiness test, and it surfaces hidden disagreements early.</p><span class="foot">Custom Agents &amp; Tools &middot; 4 min</span></a><a class="art" href="../../knowledge/agent-skill-or-tool-what-each-costs/"><span class="m">Analysis &middot; 30 September 2026</span><h4>Agent, skill or tool: what to build and what each really costs</h4><p>A tool, a skill and an agent cost very different amounts to build, run and govern. One question, whether the task must decide what happens next, tells you which one to choose.</p><span class="foot">Custom Agents &amp; Tools &middot; 4 min</span></a></div></div></section>
+<section class="band band-dark" style="text-align:center"><div class="inner">
+  <div class="kicker">05 · Custom Agents &amp; Tools</div>
+  <h2 style="margin:0 auto 1rem">Can the tool we already pay for do this task for us, every time?</h2>
+  <p class="lede" style="margin:0 auto 2rem">If this is the question on your desk, a thirty-minute call tells you whether the service fits, or that you do not need us yet.</p>
+  <div class="btn-row" style="justify-content:center"><a class="btn btn-gold" href="../../services/agents/">See the service</a><a class="btn btn-ghost" href="../../contact-us/">Book a call</a><a class="btn btn-ghost" href="https://www.linkedin.com/company/94284867/" target="_blank" rel="noopener">Follow on LinkedIn</a></div>
+</div></section>
+<footer class="mai-footer">
+  <div class="mai-footer-inner">
+    <div>
+      <div class="mai-footer-logo">M.A.I. Consulting</div>
+      <div class="mai-footer-tag">Strategy &middot; AI &middot; Impact</div>
+    </div>
+    <div class="mai-footer-right">
+      <div class="footer-nav"><a href="../../services/">Services</a> <a href="../../knowledge/">Knowledge</a> <a href="../../about/">About</a> <a href="../../privacy/">Privacy</a> <a href="../../contact-us/">Contact</a></div>
+      <div class="mai-footer-copy">mai4consulting.com &middot; &copy; 2026 M.A.I. Consulting</div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var b=document.getElementById('mai-burger'), l=document.getElementById('mai-links');
+  if(b&&l){b.addEventListener('click',function(){var o=l.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false');});}
+})();
+</script>
+<script src="../../assets/chat.js" defer></script>
+</body>
+</html>

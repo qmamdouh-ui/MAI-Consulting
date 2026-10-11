@@ -1,0 +1,19 @@
+kb-1a: {title: "The EU AI Act, as it now stands", blurb: "What Article 4 actually requires today, what the Digital Omnibus did and did not move, and who counts as a deployer."}
+kb-1c: {title: "Start by seeing your own AI use", blurb: "The evidence on delegation, then the three artefacts that make real use visible: a tool inventory, a data classification and an honest list of what models cannot do."}
+kb-2a: {title: "Measuring readiness: the ten dimensions", blurb: "What a readiness score measures, the ten dimensions behind it, and what to do with a mid-range result."}
+kb-2b: {title: "Choosing where to start", blurb: "Which department goes first, how to pilot for evidence rather than anecdote, and when the honest answer is not to use AI."}
+kb-2c: {title: "Making training stick", blurb: "Capability levels, attendance records, breadth versus depth, and why the playbook belongs to the team."}
+kb-3a: {title: "Department playbooks", blurb: "What to delegate, what never to delegate and what to check, department by department."}
+kb-3b: {title: "Redesigning work at task level", blurb: "The task is the unit of AI value. Decomposing it, prompting on real documents, and counting the cost of checking."}
+kb-3c: {title: "Role-by-role patterns", blurb: "Research, funder intelligence, monitoring and evaluation, board papers, plain language and translation review."}
+kb-4a: {title: "Writing an AI use policy", blurb: "Permissions first, red lines, role tables, annexes, escalation and the review cycle."}
+kb-4b: {title: "Data and disclosure", blurb: "Beneficiary data, personal data in prompts, impact assessments, funder disclosure and safeguarding checks."}
+kb-4c: {title: "Building the evidence file", blurb: "The five artefacts that demonstrate compliance, and what an auditor, a board and a funder each ask to see."}
+kb-4d: {title: "Standards you can use without certifying", blurb: "ISO/IEC 42001, the NIST AI RMF, and OECD and UNESCO principles, applied at the scale of a small organisation."}
+kb-5a: {title: "Deciding what to automate", blurb: "Agent, skill or tool; the tasks we will not configure; and what makes an agent survive its author."}
+kb-5b: {title: "Agent security", blurb: "Prompt injection, document-store attack surfaces, blast radius, browser agents and human oversight that adds value."}
+ai-consulting: {title: "AI Consulting: leadership briefings", blurb: "Board-level pieces on ownership, accountability, value and vendor risk, from the M.A.I. Consulting newsletter."}
+fluency-foundations: {title: "AI fluency foundations", blurb: "Prompting, the 4Ds, delegation and discernment: the habits that make everything else work."}
+work-with-ai: {title: "Working with AI day to day", blurb: "Workflows, Microsoft 365 Copilot and choosing the right tool for the task."}
+lead-adoption: {title: "Leading AI adoption", blurb: "Leading a team through adoption, and AI for mission-driven organisations."}
+build-agents: {title: "Building skills and agents", blurb: "From a repeated task to a reusable Skill or agent."}

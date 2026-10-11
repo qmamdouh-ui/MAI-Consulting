@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI readiness dimensions 4-6: verification, logging, data protection | M.A.I. Consulting</title>
+<meta name="description" content="What a low score looks like on verification, logging and data protection, with a quick diagnostic for each and why data protection needs continuing oversight rather than a one-off fix."/>
+<link rel="canonical" href="https://mai4consulting.com/knowledge/ai-readiness-dimensions-4-6-verification-logging/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="M.A.I. Consulting"/>
+<meta property="og:title" content="AI readiness dimensions 4-6: verification, logging, data protection"/>
+<meta property="og:description" content="What a low score looks like on verification, logging and data protection, with a quick diagnostic for each and why data protection needs continuing oversight rather than a one-off fix."/>
+<meta property="og:url" content="https://mai4consulting.com/knowledge/ai-readiness-dimensions-4-6-verification-logging/"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../../assets/site.css"/>
+<link rel="stylesheet" href="../../assets/knowledge.css"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AI readiness dimensions 4-6: verification, logging, data protection", "description": "What a low score looks like on verification, logging and data protection, with a quick diagnostic for each and why data protection needs continuing oversight rather than a one-off fix.", "datePublished": "2026-09-13", "mainEntityOfPage": "https://mai4consulting.com/knowledge/ai-readiness-dimensions-4-6-verification-logging/", "author": {"@type": "Organization", "name": "M.A.I. Consulting"}, "publisher": {"@type": "Organization", "name": "M.A.I. Consulting"}}</script>
+</head>
+<body>
+<div class="mai-topbar">
+  <div class="mai-topbar-inner">
+    <a class="mai-brand" href="../../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
+    <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="mai-links" id="mai-links">
+      <li><a href="../../services/">Services</a></li>
+      <li><a href="../../estimate/">Estimate</a></li>
+      <li><a href="../../for-funders/">For Investors</a></li>
+      <li><a href="../../compare/">Compare</a></li>
+      <li><a href="../../knowledge/" aria-current="page">Knowledge</a></li>
+      <li><a href="../../explore-your-ai-readiness/">Readiness Check</a></li>
+      <li><a href="../../transformation-journey/">Use Cases</a></li>
+      <li><a class="mai-cta" href="../../contact-us/">Book a call</a></li>
+    </ul>
+  </div>
+</div>
+<section class="hero hero-art"><div class="inner-narrow">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../../knowledge/">Knowledge</a> <span>/</span> <a href="../../knowledge/#s-assessment">AI Readiness Assessment</a></nav>
+  <div class="art-meta"><span class="pill">Guide</span><span class="pill pill-line">Practitioner</span><span>13 September 2026</span><span>4 min read</span></div>
+  <h1>AI readiness dimensions 4-6: verification, logging, data protection</h1>
+  <p class="hero-sub">What a low score looks like on verification, logging and data protection, with a quick diagnostic for each and why data protection needs continuing oversight rather than a one-off fix.</p>
+  <p class="byline">By M.A.I. Consulting</p>
+</div></section>
+<section class="band"><div class="inner-narrow prose">
+<p>We diagnosed the first three dimensions last time, the ones an Ops team meets every day because they sit closest to the surface. This piece takes the next three, and they sit closer to a different desk. Verification, logging, and data protection are the ones a DPO cares about most, because they are the dimensions where a low score does not just slow work down. It creates the conditions for an incident.</p>
+<p>The same treatment applies: what a low score actually looks like, not just the definition.</p>
+<h2>Verification: what a low score actually looks like</h2>
+<p>A low verification score looks like an output being used because it read confidently, not because anyone checked it against a source. It looks like a workflow with no defined check step at all, so verification happens only when someone happens to feel uncertain, which is precisely when confident-sounding wrong answers are least likely to trigger that feeling. It looks like the person with the domain knowledge to catch an error never seeing the output before it goes out the door.</p>
+<p>The fix is procedural, not cultural: name the check step, name who does it, and put it before the point where the document leaves the building, not after.</p>
+<h2>Logging: what a low score actually looks like</h2>
+<p>A low logging score is invisible until someone asks the question that matters: did AI touch this document, and if so, how? A low score means nobody can answer with certainty. The record, if it exists at all, lives in one person's memory of a Tuesday three months ago, which is not a record.</p>
+<p>This is the cheapest of the three to fix and the easiest to let slide, because there is no immediate cost to skipping it, right up until the day there is. A line in a shared log, added at the time rather than reconstructed afterwards, closes almost all of the gap.</p>
+<h2>Data protection: what a low score actually looks like</h2>
+<p>A low data protection score looks like staff pasting a document into a general-purpose tool without checking, or knowing, which of the four classes it falls into. We have written before about that four-class table: Public, Internal, Confidential, Restricted. A low score here means the table exists on paper and nobody consults it before pasting, because the classification step has never been attached to the moment the decision is actually made.</p>
+<p>The honest answer, asked directly, is usually "I didn't think about it," which is not carelessness so much as a missing habit: the classification question was never built into the two seconds before someone hits paste.</p>
+<h2>Three quick diagnostics, one per dimension</h2>
+<ul>
+<li><strong>For verification.</strong> Ask to see the last AI-assisted output used in a real decision, and ask who checked it against the source before it went out. "Nobody, it looked right" is the low score.</li>
+<li><strong>For logging.</strong> Pick one specific task from last week and ask whether AI was used on it. If nobody can answer with certainty either way, the logging dimension is low, regardless of what the policy says should happen.</li>
+<li><strong>For data protection.</strong> Show someone a real document and ask which of the four classes it falls into, and whether they would paste it into the tool they use most. Hesitation or a wrong classification is the tell.</li>
+</ul>
+<blockquote>
+<p>The dimension that matters least on a good day is the one that matters most on a bad one.</p>
+</blockquote>
+<h2>The trade-off these three do not share</h2>
+<p>Verification and logging are both procedural fixes: name the step, put it in the workflow, enforce it. Neither requires deep expertise to close, only discipline, and both respond to a checklist backed by actual enforcement rather than a training session nobody follows up on. Data protection is different in kind, not just degree. It requires staff to correctly apply a classification judgement in real time, under the same time pressure that produces every other shortcut, and a single mistake here, a beneficiary record pasted into the wrong place, is not symmetric with a missed log entry. It deserves closer, ongoing oversight, not the same one-off session as the other two.</p>
+<h2>The practical takeaway</h2>
+<p><strong>Fix verification and logging with a named checklist step and real enforcement; treat data protection as the one of the three that needs continuing oversight, because the cost of a single mistake here is not the same as the cost of a missed log entry.</strong></p>
+<p><em>No external statistic cited; this article extends the organisation's own assessment methodology and references its own prior data classification work rather than presenting third-party evidence.</em></p>
+</div></section>
+<section class="band band-alt"><div class="inner-narrow"><div class="kicker">Series &middot; Measuring readiness: the ten dimensions &middot; part 4 of 6</div><div class="series-nav"><a href="../../knowledge/what-readiness-score-measures/"><small>Previous</small>What a readiness score is actually measuring</a><a href="../../knowledge/ai-readiness-dimensions-7-10-workforce-impact/" class="r"><small>Next</small>AI readiness dimensions 7-10: workforce impact, politics, safety, future-readiness</a></div></div></section>
+<section class="band"><div class="inner"><div class="kicker">Keep reading</div><div class="grid-3"><a class="art" href="../../knowledge/ai-readiness-dimensions-1-3-fluency-delegation/"><span class="m">Guide &middot; 12 September 2026</span><h4>AI readiness dimensions 1-3: fluency, delegation practice, description discipline</h4><p>What a low score looks like on fluency, delegation practice and description discipline, with one quick diagnostic each and a realistic view of how long each takes to fix.</p><span class="foot">AI Readiness Assessment &middot; 4 min</span></a><a class="art" href="../../knowledge/data-classification-from-zero/"><span class="m">Guide &middot; 11 September 2026</span><h4>Data classification from zero: what can go into an AI tool</h4><p>A one-page, four-class scheme (Public, Internal, Confidential, Restricted) and a single who-is-harmed test that tell staff what can go into a general-purpose AI tool.</p><span class="foot">AI Use Policy &middot; 4 min</span></a></div></div></section>
+<section class="band band-dark" style="text-align:center"><div class="inner">
+  <div class="kicker">01 · AI Readiness Assessment</div>
+  <h2 style="margin:0 auto 1rem">Where do we stand, and what do we fix first?</h2>
+  <p class="lede" style="margin:0 auto 2rem">If this is the question on your desk, a thirty-minute call tells you whether the service fits, or that you do not need us yet.</p>
+  <div class="btn-row" style="justify-content:center"><a class="btn btn-gold" href="../../services/assessment/">See the service</a><a class="btn btn-ghost" href="../../contact-us/">Book a call</a><a class="btn btn-ghost" href="https://www.linkedin.com/company/94284867/" target="_blank" rel="noopener">Follow on LinkedIn</a></div>
+</div></section>
+<footer class="mai-footer">
+  <div class="mai-footer-inner">
+    <div>
+      <div class="mai-footer-logo">M.A.I. Consulting</div>
+      <div class="mai-footer-tag">Strategy &middot; AI &middot; Impact</div>
+    </div>
+    <div class="mai-footer-right">
+      <div class="footer-nav"><a href="../../services/">Services</a> <a href="../../knowledge/">Knowledge</a> <a href="../../about/">About</a> <a href="../../privacy/">Privacy</a> <a href="../../contact-us/">Contact</a></div>
+      <div class="mai-footer-copy">mai4consulting.com &middot; &copy; 2026 M.A.I. Consulting</div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var b=document.getElementById('mai-burger'), l=document.getElementById('mai-links');
+  if(b&&l){b.addEventListener('click',function(){var o=l.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false');});}
+})();
+</script>
+<script src="../../assets/chat.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Task decomposition for AI: finding the handover point | M.A.I. Consulting</title>
+<meta name="description" content="How to break a task into steps and write down the handover point, usually just before the first judgement call, where AI output ends and human responsibility begins."/>
+<link rel="canonical" href="https://mai4consulting.com/knowledge/task-decomposition-handover-point/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="M.A.I. Consulting"/>
+<meta property="og:title" content="Task decomposition for AI: finding the handover point"/>
+<meta property="og:description" content="How to break a task into steps and write down the handover point, usually just before the first judgement call, where AI output ends and human responsibility begins."/>
+<meta property="og:url" content="https://mai4consulting.com/knowledge/task-decomposition-handover-point/"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../../assets/site.css"/>
+<link rel="stylesheet" href="../../assets/knowledge.css"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Task decomposition for AI: finding the handover point", "description": "How to break a task into steps and write down the handover point, usually just before the first judgement call, where AI output ends and human responsibility begins.", "datePublished": "2026-09-20", "mainEntityOfPage": "https://mai4consulting.com/knowledge/task-decomposition-handover-point/", "author": {"@type": "Organization", "name": "M.A.I. Consulting"}, "publisher": {"@type": "Organization", "name": "M.A.I. Consulting"}}</script>
+</head>
+<body>
+<div class="mai-topbar">
+  <div class="mai-topbar-inner">
+    <a class="mai-brand" href="../../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
+    <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="mai-links" id="mai-links">
+      <li><a href="../../services/">Services</a></li>
+      <li><a href="../../estimate/">Estimate</a></li>
+      <li><a href="../../for-funders/">For Investors</a></li>
+      <li><a href="../../compare/">Compare</a></li>
+      <li><a href="../../knowledge/" aria-current="page">Knowledge</a></li>
+      <li><a href="../../explore-your-ai-readiness/">Readiness Check</a></li>
+      <li><a href="../../transformation-journey/">Use Cases</a></li>
+      <li><a class="mai-cta" href="../../contact-us/">Book a call</a></li>
+    </ul>
+  </div>
+</div>
+<section class="hero hero-art"><div class="inner-narrow">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../../knowledge/">Knowledge</a> <span>/</span> <a href="../../knowledge/#s-training">Team AI Training</a></nav>
+  <div class="art-meta"><span class="pill">Guide</span><span class="pill pill-line">Practitioner</span><span>20 September 2026</span><span>4 min read</span></div>
+  <h1>Task decomposition for AI: finding the handover point</h1>
+  <p class="hero-sub">How to break a task into steps and write down the handover point, usually just before the first judgement call, where AI output ends and human responsibility begins.</p>
+  <p class="byline">By M.A.I. Consulting</p>
+</div></section>
+<section class="band"><div class="inner-narrow prose">
+<p>Last time, this series argued that the task, not the job, is the only unit small enough to reason about honestly. That claim raises an immediate practical problem: most tasks are not atomic. "Draft the board report" is not one step, it is a sequence: gather the numbers, structure them into a narrative, write the first draft, review it, finalise it. Delegating "the task" without saying which of those steps a tool actually does produces exactly the vague, unsupervised arrangement this series has warned against throughout.</p>
+<p>This piece is about finding the handover point, the specific place inside a decomposed task where a tool's output stops and a human's judgement takes over, and writing that point down rather than leaving it to whoever happens to be running the task that week.</p>
+<h2>Why a vague handover produces an unpredictable result</h2>
+<p>"Use the tool to help with the report" is an instruction with no handover point in it, and different staff will draw the line in different places without realising they have made a decision at all. One person lets the tool touch only the first paragraph. Another lets it draft the whole narrative including the conclusion, which is exactly the sub-step this series' department playbooks kept reserving for a human. Neither person is wrong by the instruction they were given, because the instruction never specified where the boundary actually sits.</p>
+<h2>Where the handover point usually belongs</h2>
+<p>The clearest boundary in most decomposed tasks sits right before the first genuine judgement call. Gathering the numbers, structuring them, and producing a first-pass narrative are all steps a tool can do because they follow from data that already exists. The moment the task requires deciding what the numbers mean, which risk to flag, or how to frame a sensitive result, the handover has already happened, whether anyone named it or not.</p>
+<h2>What makes a handover point actually useful</h2>
+<ul>
+<li><strong>It sits where the output can be checked without redoing the work.</strong> A good handover point produces something a human can verify by reading it, not something that requires re-deriving the numbers from scratch to know whether it is right.</li>
+<li><strong>It is stated as a specific sub-step, not a vague verb.</strong> "Produce a first draft from these five data tables" names a handover point. "Help with the report" does not, and the difference is exactly what determines whether two people doing the same task end up with the same division of labour.</li>
+<li><strong>It sits before the first judgement call, not after it.</strong> Every department playbook in this series drew its never-delegate line at the point a named human had to answer for a decision, and the handover point is simply that same line applied one task at a time.</li>
+<li><strong>The same task can have more than one legitimate handover point</strong>, depending on how much oversight a team wants at a given moment, but whichever point is chosen has to be written down, because an unstated handover point is not a lighter-touch policy, it is just an unsupervised one.</li>
+</ul>
+<blockquote>
+<p>A task without a stated handover point is not delegated. It is just unsupervised.</p>
+</blockquote>
+<h2>The trade-off in naming the handover point precisely</h2>
+<p>Decomposing a task into its sub-steps and naming the exact handover point takes real time upfront, usually a short workshop with whoever actually does the work, and it is slower to start than simply handing someone a tool and asking them to figure out where it helps. The honest answer is that the informal approach is cheap only because it defers the cost: every person who does the task ends up drawing their own boundary, and those boundaries drift further apart the longer nobody writes one down. The workshop cost is paid once. The cost of an unstated handover point is paid every time someone new starts the task and has to guess where the line sits.</p>
+<h2>The practical takeaway</h2>
+<p><strong>Decompose every delegated task into its sub-steps, name the exact point where tool output becomes human input, usually the step right before the first judgement call, and write that handover point down rather than leaving it to individual habit.</strong></p>
+<p><em>No external statistic cited; this article presents an internal workflow-design framework rather than third-party evidence.</em></p>
+</div></section>
+<section class="band band-alt"><div class="inner-narrow"><div class="kicker">Series &middot; Redesigning work at task level &middot; part 3 of 7</div><div class="series-nav"><a href="../../knowledge/prompt-patterns-for-real-documents/"><small>Previous</small>Prompt patterns that survive contact with real documents</a><a href="../../knowledge/verification-tax-ai-checking-cost/" class="r"><small>Next</small>The verification tax: what checking costs, and when it exceeds the gain</a></div></div></section>
+<section class="band"><div class="inner"><div class="kicker">Keep reading</div><div class="grid-3"><a class="art" href="../../knowledge/unit-of-ai-value-is-a-task/"><span class="m">Explainer &middot; 19 September 2026</span><h4>The unit of AI value is a task, never a job</h4><p>Why AI adoption decisions should be made task by task rather than for a whole job or department, and how a task inventory replaces the blanket yes or no.</p><span class="foot">Team AI Training &middot; 4 min</span></a></div></div></section>
+<section class="band band-dark" style="text-align:center"><div class="inner">
+  <div class="kicker">03 · Team AI Training</div>
+  <h2 style="margin:0 auto 1rem">How should AI be used in my role?</h2>
+  <p class="lede" style="margin:0 auto 2rem">If this is the question on your desk, a thirty-minute call tells you whether the service fits, or that you do not need us yet.</p>
+  <div class="btn-row" style="justify-content:center"><a class="btn btn-gold" href="../../services/training/">See the service</a><a class="btn btn-ghost" href="../../contact-us/">Book a call</a><a class="btn btn-ghost" href="https://www.linkedin.com/company/94284867/" target="_blank" rel="noopener">Follow on LinkedIn</a></div>
+</div></section>
+<footer class="mai-footer">
+  <div class="mai-footer-inner">
+    <div>
+      <div class="mai-footer-logo">M.A.I. Consulting</div>
+      <div class="mai-footer-tag">Strategy &middot; AI &middot; Impact</div>
+    </div>
+    <div class="mai-footer-right">
+      <div class="footer-nav"><a href="../../services/">Services</a> <a href="../../knowledge/">Knowledge</a> <a href="../../about/">About</a> <a href="../../privacy/">Privacy</a> <a href="../../contact-us/">Contact</a></div>
+      <div class="mai-footer-copy">mai4consulting.com &middot; &copy; 2026 M.A.I. Consulting</div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var b=document.getElementById('mai-burger'), l=document.getElementById('mai-links');
+  if(b&&l){b.addEventListener('click',function(){var o=l.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false');});}
+})();
+</script>
+<script src="../../assets/chat.js" defer></script>
+</body>
+</html>

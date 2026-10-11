@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Why most AI work tasks go slowly, and a four-step method that fixes it | M.A.I. Consulting</title>
+<meta name="description" content="AI-assisted tasks run fast when you name the output format first, make the model flag ambiguity, treat the first result as a draft you check against the source, and pick one small workflow to repeat."/>
+<link rel="canonical" href="https://mai4consulting.com/knowledge/ai-workflow-method-for-messy-work/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="M.A.I. Consulting"/>
+<meta property="og:title" content="Why most AI work tasks go slowly, and a four-step method that fixes it"/>
+<meta property="og:description" content="AI-assisted tasks run fast when you name the output format first, make the model flag ambiguity, treat the first result as a draft you check against the source, and pick one small workflow to repeat."/>
+<meta property="og:url" content="https://mai4consulting.com/knowledge/ai-workflow-method-for-messy-work/"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../../assets/site.css"/>
+<link rel="stylesheet" href="../../assets/knowledge.css"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Why most AI work tasks go slowly, and a four-step method that fixes it", "description": "AI-assisted tasks run fast when you name the output format first, make the model flag ambiguity, treat the first result as a draft you check against the source, and pick one small workflow to repeat.", "datePublished": "2026-09-23", "mainEntityOfPage": "https://mai4consulting.com/knowledge/ai-workflow-method-for-messy-work/", "author": {"@type": "Person", "name": "Mamdouh Alqudsi"}, "publisher": {"@type": "Organization", "name": "M.A.I. Consulting"}}</script>
+</head>
+<body>
+<div class="mai-topbar">
+  <div class="mai-topbar-inner">
+    <a class="mai-brand" href="../../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
+    <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="mai-links" id="mai-links">
+      <li><a href="../../services/">Services</a></li>
+      <li><a href="../../estimate/">Estimate</a></li>
+      <li><a href="../../for-funders/">For Investors</a></li>
+      <li><a href="../../compare/">Compare</a></li>
+      <li><a href="../../knowledge/" aria-current="page">Knowledge</a></li>
+      <li><a href="../../explore-your-ai-readiness/">Readiness Check</a></li>
+      <li><a href="../../transformation-journey/">Use Cases</a></li>
+      <li><a class="mai-cta" href="../../contact-us/">Book a call</a></li>
+    </ul>
+  </div>
+</div>
+<section class="hero hero-art"><div class="inner-narrow">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../../knowledge/">Knowledge</a> <span>/</span> <a href="../../knowledge/#s-training">Team AI Training</a></nav>
+  <div class="art-meta"><span class="pill">Framework</span><span class="pill pill-line">Entry</span><span>23 September 2026</span><span>5 min read</span></div>
+  <h1>Why most AI work tasks go slowly, and a four-step method that fixes it</h1>
+  <p class="hero-sub">AI-assisted tasks run fast when you name the output format first, make the model flag ambiguity, treat the first result as a draft you check against the source, and pick one small workflow to repeat.</p>
+  <p class="byline">By Mamdouh Alqudsi</p>
+</div></section>
+<section class="band"><div class="inner-narrow prose">
+<p>You hand the AI a real piece of work, get back something accurate and unusable, and conclude the tool is not for this kind of task. In most cases the model was not the problem. The missing piece was a middle step between "AI can do this" and "AI did this for me today".</p>
+<p>This guide sets out that middle step as a short method, drawn from five worked examples: a pile of supplier emails, an eleven-page tangle of meeting transcripts, three documents due in one week, three important messages that needed a last read, and the question of which workflow to build first.</p>
+<h2>A worked example: nine supplier emails</h2>
+<p>The task was to summarise who owed what by when from nine supplier emails in three formats, with a Friday deadline. The first request, "a summary of these emails", returned a paragraph of prose. It was accurate, and it still meant re-extracting every date and amount by hand.</p>
+<p>The second attempt named the output first: a table with supplier, amount and due date as columns, before the emails were described at all. Two emails had conflicting amounts within their threads, so the request also asked the model to flag conflicts rather than resolve them quietly. That flag caught a discrepancy before it reached anyone else.</p>
+<p>The first table was still a draft. One date did not match its source email. Spotting it took one read-through of five rows. In the source article's account the whole job took twenty minutes: three prompts, one conflict settled with a phone call, one date corrected and a final read. That is the ordinary work of checking output against a source, the same check you would give a summary from a junior colleague.</p>
+<h2>The method</h2>
+<h3>1. Name the output before the content</h3>
+<p>State the shape you want (a table, a memo, a set of headings, a two-paragraph summary) before you describe the material. The structure then arrives because it was asked for, not guessed. The output that needed the least editing in the example was the one built from the most specific request.</p>
+<h3>2. Ask for ambiguity to be flagged</h3>
+<p>Tell the model what to do with doubt: flag conflicting figures, mark what is unclear, say what is missing. Left alone, it will resolve a conflict silently and present the result with equal confidence.</p>
+<h3>3. Treat the first result as a draft, and check it against the source</h3>
+<p>Read the output with the original beside it. A short structured output (a five-row table) is quick to verify, which is another reason to ask for structure. A paragraph is slower to check and slower to fix.</p>
+<p>The same habit applies when the task is to improve your own writing. Before sending something important, ask three questions of the page:</p>
+<ul>
+<li>What would confuse someone seeing this for the first time?</li>
+<li>Is it clear exactly what I want the reader to do next?</li>
+<li>How might the tone land on someone having a bad day?</li>
+</ul>
+<p>In the source example, the third question caught a curtness the writer had read as calm. A second pair of eyes, in that article's phrase, can be a different set of questions rather than a second person. It cannot settle how direct to be with a particular client. That judgment stays with someone who knows the person.</p>
+<h3>4. Start with the structure of the document type, and label the draft</h3>
+<p>For proposals, memos and updates, the example found the same method worked for all three:</p>
+<ul>
+<li>Ask for the standard shape of the document first, so you never face a truly blank page.</li>
+<li>Put the raw facts in before the framing, so the draft stays grounded in what is true rather than what sounds good.</li>
+<li>Say out loud that it is a rough first pass. Sending it forward with "tell me what's wrong with it" changes how it is read and makes it easier to send something imperfect.</li>
+</ul>
+<p>Structure gets the three documents started. A proposal still needs a sales instinct about what the client cares about, a memo needs an understanding of who will read it and what they care about, and an update needs honesty about what happened that week.</p>
+<h2>Cleaning up a messy document: topics, then order, then content</h2>
+<p>One further example shows the value of sequence. A client sent eleven pages of transcripts, half-finished requirements and side notes and asked for "something we can actually build from". The pass that worked had three steps in a fixed order:</p>
+<ol>
+<li>List every distinct topic present, and nothing else.</li>
+<li>Group the topics into a logical order and name the sections from them.</li>
+<li>Move the content under each heading, keeping the clearest statement of each requirement and deleting the other versions.</li>
+</ol>
+<p>Skipping the order causes trouble in both directions. Naming sections before you know the topics gives headings that do not match what is underneath. Moving content before grouping gives a document that has to be reshuffled.</p>
+<h2>Choosing the first workflow to build</h2>
+<p>If you can build only one repeatable workflow this month, the source article's advice is to pick one that meets three tests:</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fixes something you already do badly</td>
+<td>Better to improve the meeting prep you rush than to start a report you have never written</td>
+</tr>
+<tr>
+<td>Has a before and after you can feel</td>
+<td>A two-hour task becoming a fifteen-minute one earns trust at once</td>
+</tr>
+<tr>
+<td>Small enough to build in an afternoon</td>
+<td>If it needs a project plan first, it is the wrong first workflow</td>
+</tr>
+</tbody>
+</table>
+<p>Only the person doing the work can say honestly which task drains the most energy. Do not choose by what would look impressive on a slide.</p>
+<blockquote>
+<p>A workflow you actually run every week beats a perfect one you built once and never opened again.</p>
+</blockquote>
+<h2>What to do next</h2>
+<ul>
+<li>Take one task you did badly this week and write the output format you would want before you describe the material.</li>
+<li>Add one sentence telling the AI to flag conflicts and gaps instead of resolving them.</li>
+<li>Check every figure and date in the result against its source before it goes anywhere.</li>
+<li>Before your next important email, run the three review questions on it.</li>
+<li>Choose your single first workflow using the three tests, and build it this week.</li>
+</ul>
+</div></section>
+<section class="band band-alt"><div class="inner-narrow"><div class="kicker">Series &middot; Working with AI day to day &middot; part 5 of 9</div><div class="series-nav"><a href="../../knowledge/copilot-app-by-app-and-when-to-use-claude/"><small>Previous</small>Copilot in Outlook, Teams, Word, Excel and PowerPoint, and when to reach for Claude</a><a href="../../knowledge/ai-assisted-decision-documents/" class="r"><small>Next</small>Decision-ready documents from raw material: briefs, memos, decks and dashboards</a></div></div></section>
+<section class="band"><div class="inner"><div class="kicker">Keep reading</div><div class="grid-3"><a class="art" href="../../knowledge/task-decomposition-handover-point/"><span class="m">Guide &middot; 20 September 2026</span><h4>Task decomposition for AI: finding the handover point</h4><p>How to break a task into steps and write down the handover point, usually just before the first judgement call, where AI output ends and human responsibility begins.</p><span class="foot">Team AI Training &middot; 4 min</span></a><a class="art" href="../../knowledge/verification-tax-ai-checking-cost/"><span class="m">Analysis &middot; 20 September 2026</span><h4>The verification tax: what checking costs, and when it exceeds the gain</h4><p>Checking AI output has a real time cost that productivity claims omit, and this piece shows how to price it and when it cancels out the saving.</p><span class="foot">Team AI Training &middot; 4 min</span></a><a class="art" href="../../knowledge/prompt-patterns-for-real-documents/"><span class="m">Guide &middot; 20 September 2026</span><h4>Prompt patterns that survive contact with real documents</h4><p>Four structural prompt patterns that hold up on messy real documents, including showing the actual template, naming what to ignore, requesting uncertainty flags and chunking long files.</p><span class="foot">Team AI Training &middot; 3 min</span></a></div></div></section>
+<section class="band band-dark" style="text-align:center"><div class="inner">
+  <div class="kicker">03 · Team AI Training</div>
+  <h2 style="margin:0 auto 1rem">How should AI be used in my role?</h2>
+  <p class="lede" style="margin:0 auto 2rem">If this is the question on your desk, a thirty-minute call tells you whether the service fits, or that you do not need us yet.</p>
+  <div class="btn-row" style="justify-content:center"><a class="btn btn-gold" href="../../services/training/">See the service</a><a class="btn btn-ghost" href="../../contact-us/">Book a call</a><a class="btn btn-ghost" href="https://www.linkedin.com/company/94284867/" target="_blank" rel="noopener">Follow on LinkedIn</a></div>
+</div></section>
+<footer class="mai-footer">
+  <div class="mai-footer-inner">
+    <div>
+      <div class="mai-footer-logo">M.A.I. Consulting</div>
+      <div class="mai-footer-tag">Strategy &middot; AI &middot; Impact</div>
+    </div>
+    <div class="mai-footer-right">
+      <div class="footer-nav"><a href="../../services/">Services</a> <a href="../../knowledge/">Knowledge</a> <a href="../../about/">About</a> <a href="../../privacy/">Privacy</a> <a href="../../contact-us/">Contact</a></div>
+      <div class="mai-footer-copy">mai4consulting.com &middot; &copy; 2026 M.A.I. Consulting</div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var b=document.getElementById('mai-burger'), l=document.getElementById('mai-links');
+  if(b&&l){b.addEventListener('click',function(){var o=l.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false');});}
+})();
+</script>
+<script src="../../assets/chat.js" defer></script>
+</body>
+</html>

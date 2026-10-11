@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Indirect injection: your own document store is an attack surface | M.A.I. Consulting</title>
+<meta name="description" content="To an agent that reads it, any shared drive or ticket system many people could edit is untrusted content. Scope read access, curate trusted sources and log what the agent reads."/>
+<link rel="canonical" href="https://mai4consulting.com/knowledge/indirect-injection-document-store-attack-surface/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="M.A.I. Consulting"/>
+<meta property="og:title" content="Indirect injection: your own document store is an attack surface"/>
+<meta property="og:description" content="To an agent that reads it, any shared drive or ticket system many people could edit is untrusted content. Scope read access, curate trusted sources and log what the agent reads."/>
+<meta property="og:url" content="https://mai4consulting.com/knowledge/indirect-injection-document-store-attack-surface/"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../../assets/site.css"/>
+<link rel="stylesheet" href="../../assets/knowledge.css"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Indirect injection: your own document store is an attack surface", "description": "To an agent that reads it, any shared drive or ticket system many people could edit is untrusted content. Scope read access, curate trusted sources and log what the agent reads.", "datePublished": "2026-10-01", "mainEntityOfPage": "https://mai4consulting.com/knowledge/indirect-injection-document-store-attack-surface/", "author": {"@type": "Organization", "name": "M.A.I. Consulting"}, "publisher": {"@type": "Organization", "name": "M.A.I. Consulting"}}</script>
+</head>
+<body>
+<div class="mai-topbar">
+  <div class="mai-topbar-inner">
+    <a class="mai-brand" href="../../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
+    <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="mai-links" id="mai-links">
+      <li><a href="../../services/">Services</a></li>
+      <li><a href="../../estimate/">Estimate</a></li>
+      <li><a href="../../for-funders/">For Investors</a></li>
+      <li><a href="../../compare/">Compare</a></li>
+      <li><a href="../../knowledge/" aria-current="page">Knowledge</a></li>
+      <li><a href="../../explore-your-ai-readiness/">Readiness Check</a></li>
+      <li><a href="../../transformation-journey/">Use Cases</a></li>
+      <li><a class="mai-cta" href="../../contact-us/">Book a call</a></li>
+    </ul>
+  </div>
+</div>
+<section class="hero hero-art"><div class="inner-narrow">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../../knowledge/">Knowledge</a> <span>/</span> <a href="../../knowledge/#s-agents">Custom Agents &amp; Tools</a></nav>
+  <div class="art-meta"><span class="pill">Explainer</span><span class="pill pill-line">Advanced</span><span>1 October 2026</span><span>4 min read</span></div>
+  <h1>Indirect injection: your own document store is an attack surface</h1>
+  <p class="hero-sub">To an agent that reads it, any shared drive or ticket system many people could edit is untrusted content. Scope read access, curate trusted sources and log what the agent reads.</p>
+  <p class="byline">By M.A.I. Consulting</p>
+</div></section>
+<section class="band"><div class="inner-narrow prose">
+<p>The last piece in this series described prompt injection in general terms: an instruction hidden inside content an agent reads, rather than inside the request a person typed. This piece narrows that down to the version most relevant to an organisation this size, because it does not require an attacker, a phishing email, or anything dramatic. It requires only that an agent has read access to a shared drive, a ticketing system, or a document store that more than one person has ever been able to write to.</p>
+<p>That is the uncomfortable part. Indirect prompt injection, as OWASP defines it, occurs when a model reads untrusted content from websites, documents, emails, tickets, repositories, or knowledge bases. Most organisations already have all four. The attack surface was not created by adopting an agent. It was created years ago, by every shared drive nobody fully audited, and the agent is simply the first thing that reads all of it at once, uncritically, and acts on what it finds.</p>
+<h2>Where "untrusted" actually starts</h2>
+<p>The instinct is to treat internal documents as trusted by default, because they came from inside the organisation. That instinct is the vulnerability. A document is untrusted, in the sense this piece means, the moment more than one person could have edited or uploaded it without a second person reviewing the change. A shared grant-report folder, a beneficiary-submitted form, a ticket a member of the public opened, a document a departed contractor left behind: none of these were ever adversarially reviewed before an agent started reading them, and "nobody has abused this yet" is not the same claim as "this could not be abused."</p>
+<h2>Why a document store is worse than a single email</h2>
+<p>A phishing email is one message, sent once, to whichever inboxes it reaches. A document store an agent reads regularly is a standing surface: anything placed inside it at any point in the past, by anyone who ever had write access, however that access was granted or forgotten about, is available to be read the next time the agent runs its task. The risk does not arrive with the attack. It has usually been sitting there for months, inert, until an agent with enough autonomy to act on what it reads starts routinely opening it.</p>
+<h2>What actually reduces this risk</h2>
+<ul>
+<li><strong>Scope what the agent can read</strong>, not just what it can write. Read access is treated as low-risk far more often than it deserves, precisely because reading looks passive; an agent that reads broadly and acts on what it finds has effectively inherited the write permissions of everyone who ever touched that folder.</li>
+<li><strong>Separate genuinely trusted content from everything else.</strong> A small, curated set of documents the agent is built to work from is a fundamentally different risk profile from "point it at the shared drive and let it find what it needs."</li>
+<li><strong>Log what the agent reads, not only what it outputs.</strong> When something goes wrong, the output alone rarely explains why; the read log is what lets a person trace the instruction back to the document that planted it.</li>
+<li><strong>Treat a document store's access history as part of its risk profile.</strong> A folder six people could write to at some point over three years carries meaningfully more risk than one two people have ever touched, regardless of how careful everyone involved has been.</li>
+</ul>
+<blockquote>
+<p>An agent does not need to be tricked by a sophisticated attacker to be compromised by indirect injection. It only needs to read something an organisation has already been quietly accumulating, unreviewed, for as long as the folder has existed.</p>
+</blockquote>
+<h2>The practical takeaway</h2>
+<p><strong>Audit what an agent can read before worrying about what it can write, treat every document store with more than one historical contributor as untrusted by default, and log what the agent reads so a wrong output can actually be traced back to its source.</strong></p>
+<h2>Sources</h2>
+<ul>
+<li>OWASP Top 10 for LLM Applications (2025 edition): indirect prompt injection defined as occurring when a model reads untrusted content from websites, documents, emails, tickets, repositories or knowledge bases.</li>
+<li>OWASP Top 10 for LLM Applications (2025 edition): prompt injection ranked LLM01, the top risk, for the second consecutive edition.</li>
+<li>OWASP Top 10 for LLM Applications (2025 edition): recommended defence-in-depth controls, least-privilege tooling, input/output filtering, human approval for high-risk actions, adversarial testing.</li>
+</ul>
+</div></section>
+<section class="band band-alt"><div class="inner-narrow"><div class="kicker">Series &middot; Agent security &middot; part 1 of 5</div><div class="series-nav"><span></span><a href="../../knowledge/prompt-injection-explained-for-executives-dpos/" class="r"><small>Next</small>Prompt injection explained for executives and DPOs who will never write a filter</a></div></div></section>
+<section class="band"><div class="inner"><div class="kicker">Keep reading</div><div class="grid-3"><a class="art" href="../../knowledge/prompt-injection-explained-for-executives-dpos/"><span class="m">Explainer &middot; 1 October 2026</span><h4>Prompt injection explained for executives and DPOs who will never write a filter</h4><p>Prompt injection hides instructions in content an agent reads, and OWASP ranks it the top LLM risk. A plain-language explanation, a vendor&#x27;s own test figures, and layered defences any organisation can apply.</p><span class="foot">Custom Agents &amp; Tools &middot; 4 min</span></a><a class="art" href="../../knowledge/named-owner-operating-guide-test-set-agent/"><span class="m">Guide &middot; 1 October 2026</span><h4>Named owner, operating guide, test set: what makes an agent survive its author</h4><p>An agent only its builder understands is a personal project running in production. A named owner, a written operating guide and a periodic test set are the minimum bar before calling it finished.</p><span class="foot">Custom Agents &amp; Tools &middot; 4 min</span></a><a class="art" href="../../knowledge/tasks-never-automate-agent-short-list/"><span class="m">Briefing &middot; 30 September 2026</span><h4>The tasks we will never automate with an agent, and why the list is short but absolute</h4><p>A short, absolute list of tasks no agent should be configured to do: safeguarding referrals, eligibility decisions, payment authorisation and public statements on live matters, where the human is the safeguard.</p><span class="foot">Custom Agents &amp; Tools &middot; 3 min</span></a></div></div></section>
+<section class="band band-dark" style="text-align:center"><div class="inner">
+  <div class="kicker">05 · Custom Agents &amp; Tools</div>
+  <h2 style="margin:0 auto 1rem">Can the tool we already pay for do this task for us, every time?</h2>
+  <p class="lede" style="margin:0 auto 2rem">If this is the question on your desk, a thirty-minute call tells you whether the service fits, or that you do not need us yet.</p>
+  <div class="btn-row" style="justify-content:center"><a class="btn btn-gold" href="../../services/agents/">See the service</a><a class="btn btn-ghost" href="../../contact-us/">Book a call</a><a class="btn btn-ghost" href="https://www.linkedin.com/company/94284867/" target="_blank" rel="noopener">Follow on LinkedIn</a></div>
+</div></section>
+<footer class="mai-footer">
+  <div class="mai-footer-inner">
+    <div>
+      <div class="mai-footer-logo">M.A.I. Consulting</div>
+      <div class="mai-footer-tag">Strategy &middot; AI &middot; Impact</div>
+    </div>
+    <div class="mai-footer-right">
+      <div class="footer-nav"><a href="../../services/">Services</a> <a href="../../knowledge/">Knowledge</a> <a href="../../about/">About</a> <a href="../../privacy/">Privacy</a> <a href="../../contact-us/">Contact</a></div>
+      <div class="mai-footer-copy">mai4consulting.com &middot; &copy; 2026 M.A.I. Consulting</div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var b=document.getElementById('mai-burger'), l=document.getElementById('mai-links');
+  if(b&&l){b.addEventListener('click',function(){var o=l.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false');});}
+})();
+</script>
+<script src="../../assets/chat.js" defer></script>
+</body>
+</html>
