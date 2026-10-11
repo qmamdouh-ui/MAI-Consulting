@@ -6,9 +6,8 @@
 #   .\tools\knowledge-sync.ps1 -Register -Remove -Apply   delete the task
 #
 # One run = up to 3 attempts, $RetryMinutes apart. An attempt is:
-#   1. tools\linkedin_snapshot.py: read-only look at the owner's profile and the Page's published list
-#      (persistent Chromium profile the owner logged into himself; never clicks or posts)
-#   2. the knowledge-curator agent, which evaluates what is live and brings, merges or skips it
+#   1. (only with -UseLinkedIn) tools\linkedin_snapshot.py: read-only look at the profile and the Page
+#   2. the knowledge-curator agent, which reads the local queues and brings, merges or skips what is live
 # If all 3 attempts fail the run stops and waits for the next scheduled week; nothing is half-published.
 # Single instance (lock file), hard timeout per agent run, log in logs\knowledge-sync\<date>.log.
 
@@ -18,6 +17,7 @@ param(
     [switch]$Register,
     [switch]$Apply,
     [switch]$Remove,
+    [switch]$UseLinkedIn,   # opt-in read-only LinkedIn snapshot; off by default (needs a logged-in profile)
     [int]$TimeoutMinutes = 45,
     [int]$MaxAttempts = 3,
     [int]$RetryMinutes = 10
@@ -64,17 +64,20 @@ function Invoke-Attempt([int]$n) {
     $snap = Join-Path $snapDir "$today.json"
     New-Item -ItemType Directory -Force -Path $snapDir | Out-Null
 
-    # 1. read-only LinkedIn snapshot
-    Write-Log "attempt $n/${MaxAttempts}: LinkedIn snapshot"
-    $py = Start-Process -FilePath 'python' -ArgumentList @((Join-Path $PSScriptRoot 'linkedin_snapshot.py'), '--out', $snap) `
-        -WorkingDirectory $Root -NoNewWindow -PassThru -RedirectStandardOutput "$snap.out" -RedirectStandardError "$snap.err"
-    $null = $py.Handle
-    if (-not $py.WaitForExit(10 * 60 * 1000)) { & taskkill.exe /PID $py.Id /T /F | Out-Null; Write-Log 'snapshot TIMEOUT'; return $false }
-    foreach ($f in "$snap.out", "$snap.err") {
-        if ((Test-Path $f) -and (Get-Item $f).Length -gt 0) { Write-Log ('snapshot: ' + ((Get-Content -LiteralPath $f -Raw) -replace '\s+$', '')) }
-        Remove-Item -LiteralPath $f -ErrorAction SilentlyContinue
+    if ($UseLinkedIn) {
+        # 1. read-only LinkedIn snapshot
+        Write-Log "attempt $n/${MaxAttempts}: LinkedIn snapshot"
+        $py = Start-Process -FilePath 'python' -ArgumentList @((Join-Path $PSScriptRoot 'linkedin_snapshot.py'), '--out', $snap) `
+            -WorkingDirectory $Root -NoNewWindow -PassThru -RedirectStandardOutput "$snap.out" -RedirectStandardError "$snap.err"
+        $null = $py.Handle
+        if (-not $py.WaitForExit(10 * 60 * 1000)) { & taskkill.exe /PID $py.Id /T /F | Out-Null; Write-Log 'snapshot TIMEOUT'; return $false }
+        foreach ($f in "$snap.out", "$snap.err") {
+            if ((Test-Path $f) -and (Get-Item $f).Length -gt 0) { Write-Log ('snapshot: ' + ((Get-Content -LiteralPath $f -Raw) -replace '\s+$', '')) }
+            Remove-Item -LiteralPath $f -ErrorAction SilentlyContinue
+        }
+        if ($py.ExitCode -ne 0) { Write-Log "snapshot FAILED exit=$($py.ExitCode) (2 = not logged in; run login_setup.py)"; return $false }
+
     }
-    if ($py.ExitCode -ne 0) { Write-Log "snapshot FAILED exit=$($py.ExitCode) (2 = not logged in; run login_setup.py)"; return $false }
 
     # 2. agent
     $cmd = Get-Command claude -ErrorAction SilentlyContinue
@@ -83,8 +86,8 @@ function Invoke-Attempt([int]$n) {
     $publishText = if ($Publish) {
         'PUBLISH MODE IS ON: only if tools/check_knowledge.py exits 0 and the build succeeded, merge the sync branch into main (fast-forward) and `git push origin main`. If anything fails, do not merge or push; stay on the branch and say BLOCKED with the reason.'
     } else { 'Do NOT merge into main and do NOT push. Stop on the committed branch.' }
-    $task = "Run the weekly Knowledge sync in UNATTENDED mode as defined in your agent file (section `"Unattended mode`"). Today is $today (Europe/Zurich). The LinkedIn snapshot taken minutes ago is at $snap (evidence of what is really published; use it as the primary source). $publishText"
-    $unattended = 'You are running unattended: no human is present and nobody can answer questions. Do not summarise these instructions, do not ask for clarification, do not open a browser and do not touch linkedin.com (the snapshot file already holds what you need). Either do the task or stop with one plain line starting "BLOCKED:" saying exactly what is missing. Finding nothing new is a normal outcome: log it and stop. End with a short report: found, brought, merged, skipped (with reasons), anything in the queues but missing from the snapshot, and anything needing the owner.'
+    $task = "Run the weekly Knowledge sync in UNATTENDED mode as defined in your agent file (section `"Unattended mode`"). Today is $today (Europe/Zurich). Sources are the local queues and LinkedIn-Strategy state named in your agent file; no LinkedIn snapshot is used. $publishText"
+    $unattended = 'You are running unattended: no human is present and nobody can answer questions. Do not summarise these instructions, do not ask for clarification, do not open a browser and do not touch linkedin.com. Either do the task or stop with one plain line starting "BLOCKED:" saying exactly what is missing. Finding nothing new is a normal outcome: log it and stop. End with a short report: found, brought, merged, skipped (with reasons), anything you published on schedule dates alone (not confirmed on LinkedIn), and anything needing the owner.'
     $promptFile = Join-Path $env:TEMP "knowledge-sync-$PID.prompt.txt"
     $outFile = Join-Path $env:TEMP "knowledge-sync-$PID.out.txt"
     $errFile = Join-Path $env:TEMP "knowledge-sync-$PID.err.txt"
