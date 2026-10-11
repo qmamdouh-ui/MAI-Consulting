@@ -16,7 +16,7 @@ tags:
 - AIStrategy
 - Leadership
 related: []
-linkedin_url: ''
+linkedin_url: https://www.linkedin.com/pulse/advice-sales-pitch-five-tests-any-ai-recommendation-including-6z0ee
 source_ref: 'ai-consulting queue #9 (https://www.linkedin.com/article/edit/7508801828713656320/)'
 featured: false
 ---

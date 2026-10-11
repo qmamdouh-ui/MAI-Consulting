@@ -16,7 +16,7 @@ tags:
 - AIStrategy
 - Leadership
 related: []
-linkedin_url: ''
+linkedin_url: https://www.linkedin.com/pulse/before-you-trust-experimental-ai-feature-production-clients-jwj9e
 source_ref: 'ai-consulting queue #10 (https://www.linkedin.com/article/edit/7508802889327415296/)'
 featured: false
 ---

@@ -16,7 +16,7 @@ tags:
 - AIStrategy
 - Leadership
 related: []
-linkedin_url: ''
+linkedin_url: https://www.linkedin.com/pulse/pilot-theatre-why-ai-demos-succeed-production-fails-mai4consulting-k85be
 source_ref: 'ai-consulting queue #7 (https://www.linkedin.com/article/edit/7508804500120444928/)'
 featured: false
 ---

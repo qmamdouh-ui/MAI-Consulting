@@ -16,7 +16,7 @@ tags:
 - DigitalResilience
 - NonprofitLeadership
 related: []
-linkedin_url: ''
+linkedin_url: https://www.linkedin.com/pulse/vendor-concentration-exit-plan-diversifying-ai-suppliers-ltene
 source_ref: 'ai-consulting queue #8 (https://www.linkedin.com/article/edit/7511352744788684800/)'
 featured: false
 ---

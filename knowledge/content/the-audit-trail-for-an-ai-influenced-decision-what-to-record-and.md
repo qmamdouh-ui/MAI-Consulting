@@ -16,7 +16,7 @@ tags:
 - RiskManagement
 - AIConsulting
 related: []
-linkedin_url: ''
+linkedin_url: https://www.linkedin.com/pulse/audit-trail-ai-influenced-decision-what-record-how-long-kznxe
 source_ref: 'ai-consulting queue #11 (https://www.linkedin.com/article/edit/7508803724320968704/)'
 featured: false
 ---
