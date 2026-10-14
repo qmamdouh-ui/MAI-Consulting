@@ -113,11 +113,11 @@
 
       <div class="step" id="ind-step" hidden>
           <h3>2 &middot; The course</h3>
-          <p class="hint">A course for fewer than ten participants, built on the participants' own tasks. It can be delivered in person or online. In-person courses include accommodation and hospitality arrangements for each participant, charged per night.</p>
-          <div class="opt"><input type="radio" name="fmt" id="f-in" value="in" checked/><label for="f-in"><b>In person</b><span>we arrange the venue, accommodation and hospitality</span></label></div>
-          <div class="opt"><input type="radio" name="fmt" id="f-on" value="on"/><label for="f-on"><b>Online</b><span>on the platform the participants already use</span></label></div>
+          <p class="hint">A course for fewer than ten participants, built on the participants' own tasks. It can be delivered in person or online. The course runs three days. Online it costs tuition only. In person the price also covers the Geneva venue, hotel nights, lunches and breaks, and the arrangements around them.</p>
+          <div class="opt"><input type="radio" name="fmt" id="f-in" value="in" checked/><label for="f-in"><b>In person</b><span>venue, hotel, hospitality and logistics arranged by us and priced in</span></label></div>
+          <div class="opt"><input type="radio" name="fmt" id="f-on" value="on"/><label for="f-on"><b>Online</b><span>six half-days on the platform the participants already use, tuition only</span></label></div>
           <div class="num"><label for="pax">Participants (1 to 9):</label><input type="number" id="pax" min="1" max="9" value="1"/></div>
-          <div class="num" id="nights-wrap"><label for="nights">Nights on site (in person):</label><input type="number" id="nights" min="1" max="5" value="1"/></div>
+          <div class="num" id="nights-wrap"><label for="nights">Nights on site (in person):</label><input type="number" id="nights" min="1" max="5" value="3"/></div>
         </div>
         <div class="step">
         <h3>2 &middot; How many staff would this cover?</h3>
@@ -271,7 +271,10 @@ function _labs(n,dsz,to){var f=_lvF[to]||1,tot=0;for(var i=1;i<=n;i++){tot+=_ds[
 function _ann(n){var d=0;for(var i=1;i<=n;i++)d+=(i===1?1.5:1);return d;}
 function _tasks(n,os){var d=0;for(var i=1;i<=n;i++)d+=(i<=3?.25:.15);return d*os;}
 var TYPE={ngo:"NGO or foundation",io:"International organisation",gov:"Government or public institution",priv:"Private sector",ind:"Individual or organisation representative"};
-var _pp=[3100,2900,2700,2500,2300,2100,1900,1700,1500],_nt=400;
+var _pp=[4800,2900,2700,2500,2300,2100,1900,1700,1500];
+/* course: 3 days (level 3). Tuition per person by group size is the same online or in person.
+   In person adds venue per day per group, hotel per night and hospitality per day per person, and a coordination fee per group. */
+var _cd=3,_vd=900,_hn=250,_hd=90,_co=400;
 var SIZE={s1:"1–10 staff",s2:"10–50 staff",s3:"50–200 staff",s4:"200–500 staff",s5:"500+ staff"};
 function q(id){return document.getElementById(id);}
 function rv(n){var e=document.querySelector('input[name="'+n+'"]:checked');return e?e.value:null;}
@@ -324,15 +327,23 @@ function estimate(st){
   return {lo:Math.max(3500,rnd(v*.88)),hi:rnd(v*1.12),mid:v};
 }
 function course(st){
-  var fee=_pp[st.pax-1], night=st.fmt==="in"?_nt*st.nights:0, pp=fee+night;
-  return {pp:pp,total:pp*st.pax,night:night};
+  var n=st.pax, on=st.fmt!=="in", tui=_pp[n-1];
+  var venue=on?0:_vd*_cd, hotel=on?0:_hn*st.nights*n, host=on?0:_hd*_cd*n, coord=on?0:_co;
+  var total=tui*n+venue+hotel+host+coord;
+  return {pp:Math.round(total/n/10)*10,total:total,tui:tui,venue:venue,hotel:hotel,host:host,coord:coord,n:n,on:on};
 }
-function courseItems(st){
-  var L=["Course for "+st.pax+" participant"+(st.pax>1?"s":"")+", built on the participants' own tasks and documents",
+function courseItems(st,c){
+  var n=st.pax, L=["Three-day course (level 3) for "+n+" participant"+(n>1?"s":"")+", built on the participants' own tasks and documents: tuition "+fmt(c.tui)+" per person",
          "A working playbook per participant group: the tasks to hand to AI and the tasks never to, prompt patterns tested on their documents, the checks before anything is sent, and what to log",
          "Attendance record and course materials in English, French or Arabic"];
-  if(st.fmt==="in") L.push("In person: venue, accommodation and hospitality arranged by us, "+st.nights+" night"+(st.nights>1?"s":"")+" included at "+fmt(_nt)+" per person per night");
-  else L.push("Online, on the platform the participants already use");
+  if(c.on){
+    L.push("Online, as six half-days on the platform the participants already use. No venue, travel or accommodation to pay for");
+  } else {
+    L.push("Venue and facilities in Geneva for three days: "+fmt(_vd)+" per day for the group, "+fmt(c.venue));
+    L.push("Accommodation: "+n+" participant"+(n>1?"s":"")+" x "+st.nights+" night"+(st.nights>1?"s":"")+" at "+fmt(_hn)+", "+fmt(c.hotel)+", invoiced at actual cost");
+    L.push("Hospitality: lunches and breaks, "+fmt(_hd)+" per person per day, "+fmt(c.host));
+    L.push("Coordination of transfers, visa support letters, dietary and accessibility needs: "+fmt(c.coord)+" per group. Other requests are quoted at cost");
+  }
   return L;
 }
 var last=null;
@@ -341,10 +352,10 @@ function render(){
   q("ind-step").hidden=!ind; document.querySelectorAll("#est .step.org").forEach(function(el){ el.hidden=ind; }); q("nights-wrap").hidden=st.fmt!=="in";
   q("task-other-wrap").hidden=!q("task-other-chk").checked;
   if(ind){
-    var c=course(st), items=courseItems(st), body=q("res-body");
-    var html='<div class="range">'+fmt(c.pp)+' per person<small>'+st.pax+' participant'+(st.pax>1?"s":"")+' · '+(st.fmt==="in"?"in person, "+st.nights+" night"+(st.nights>1?"s":"")+" included":"online")+' · total '+fmt(c.total)+' · excl. VAT</small></div>'+
+    var c=course(st), items=courseItems(st,c), body=q("res-body");
+    var html='<div class="range">'+fmt(c.pp)+' per person<small>'+st.pax+' participant'+(st.pax>1?"s":"")+' · '+(st.fmt==="in"?"in person, venue, "+st.nights+" night"+(st.nights>1?"s":"")+" and hospitality included":"online, three days")+' · total '+fmt(c.total)+' · excl. VAT</small></div>'+
              '<ul>'+items.map(function(i){return "<li>"+i+"</li>";}).join("")+'</ul>'+
-             '<p class="note">Per-person price for the group size shown. Confirmed in writing with the dates and the venue. Payment 40% on registration, 60% before the course.</p>';
+             '<p class="note">Per-person price for the group size shown, all costs included. Hotel and venue are invoiced at actual cost, so the final figure follows the dates and the venue. Confirmed in writing. Payment 40% on registration, 60% before the course.</p>';
     html+=sendBlock(); body.innerHTML=html; last={st:st,e:null,items:items,c:c}; q("sb").onclick=send; return;
   }
   q("train-n-wrap").hidden=st.train!=="2"; q("policy-n-wrap").hidden=st.policy!=="2"; q("lvl-wrap").hidden=st.train==="0";
@@ -412,7 +423,7 @@ function preset(){
 }
 document.querySelectorAll("#est input,#est textarea,#est select").forEach(function(i){ i.addEventListener("change",function(){
   if(i.name==="size"){ q("policy-n").value=_dn[i.value]||3; } render(); }); i.addEventListener("input",render); });
-q("reset").onclick=function(){ q("est").reset(); q("lvl-from").value=2; q("lvl-to").value=3; q("deptsize").value="m"; q("policy-n").value=3; q("pax").value=1; q("nights").value=1; q("skills").value=0; q("spec").value=""; q("task-other").value=""; render(); };
+q("reset").onclick=function(){ q("est").reset(); q("lvl-from").value=2; q("lvl-to").value=3; q("deptsize").value="m"; q("policy-n").value=3; q("pax").value=1; q("nights").value=3; q("skills").value=0; q("spec").value=""; q("task-other").value=""; render(); };
 preset(); render();
 window.__maiEstimate=function(st){return estimate(st);}; window.__maiCourse=function(st){return course(st);};
 })();
