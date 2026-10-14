@@ -113,7 +113,7 @@ HEAD = """<!DOCTYPE html>
       <li><a href="{up}knowledge/" aria-current="page">Knowledge</a></li>
       <li><a href="{up}explore-your-ai-readiness/">Readiness Check</a></li>
       <li><a href="{up}transformation-journey/">Use Cases</a></li>
-      <li><a class="mai-cta" href="{up}contact-us/">Book a call</a></li>
+      <li><a class="mai-cta" href="{up}book/">Book a call</a></li>
     </ul>
   </div>
 </div>
@@ -192,7 +192,7 @@ def article_page(a, by_slug, series_map):
   <div class="kicker">{e(n + ' · ' if n else '')}{e(label)}</div>
   <h2 style="margin:0 auto 1rem">{e(q)}</h2>
   <p class="lede" style="margin:0 auto 2rem">If this is the question on your desk, a thirty-minute call tells you whether the service fits, or that you do not need us yet.</p>
-  <div class="btn-row" style="justify-content:center"><a class="btn btn-gold" href="{up}{SERVICE_PAGE[a['service']]}">See the service</a><a class="btn btn-ghost" href="{up}contact-us/">Book a call</a>{li}</div>
+  <div class="btn-row" style="justify-content:center"><a class="btn btn-gold" href="{up}{SERVICE_PAGE[a['service']]}">See the service</a><a class="btn btn-ghost" href="{up}book/">Book a call</a>{li}</div>
 </div></section>
 """
     out += FOOT.format(up=up)

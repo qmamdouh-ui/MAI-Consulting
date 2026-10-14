@@ -81,7 +81,7 @@
       <li><a href="../knowledge/">Knowledge</a></li>
       <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
       <li><a href="../transformation-journey/">Use Cases</a></li>
-      <li><a class="mai-cta" href="../contact-us/">Book a call</a></li>
+      <li><a class="mai-cta" href="../book/">Book a call</a></li>
     </ul>
   </div>
 </div>
@@ -249,7 +249,7 @@
     <h2 style="margin:0 auto 1rem">Would you like the number confirmed?</h2>
     <p class="lede" style="margin:0 auto 2rem">Thirty minutes. We check the scope, tell you if any part of it is unnecessary, and send a fixed price the same week.</p>
     <div class="btn-row" style="justify-content:center">
-      <a class="btn btn-gold" href="../contact-us/">Book a call</a>
+      <a class="btn btn-gold" href="../book/">Book a call</a>
       <a class="btn btn-ghost" href="../services/">See the services</a>
     </div>
   </div>
@@ -373,7 +373,7 @@ function render(){
     html='<div class="range">Scoped on a call<small>'+SIZE[st.size]+' · '+TYPE[st.type]+'</small></div>'+
          '<div class="big">For organisations of this size the number depends on structure, sites and data we need to see first. Thirty minutes is enough to give you a fixed price.</div>'+
          '<ul>'+items.map(function(i){return "<li>"+i+"</li>";}).join("")+'</ul>'+
-         '<a class="btn btn-gold" href="../contact-us/">Book the 30-minute call</a>';
+         '<a class="btn btn-gold" href="../book/">Book the 30-minute call</a>';
   } else {
     html='<div class="range">'+fmt(e.lo)+' to '+fmt(e.hi)+'<small>'+TYPE[st.type]+' · '+SIZE[st.size]+' · excl. VAT and travel</small></div>'+
          '<ul>'+items.map(function(i){return "<li>"+i+"</li>";}).join("")+'</ul>'+
@@ -386,7 +386,7 @@ function render(){
 function sendBlock(){
   return '<div class="send" id="send"><div class="k" style="margin-bottom:.5rem">Send this estimate</div>'+
         '<input type="text" id="sn" placeholder="Your name" aria-label="Your name"/><input type="email" id="se" placeholder="Your email" aria-label="Your email"/><input type="text" id="so" placeholder="Organisation (optional)" aria-label="Organisation"/>'+
-        '<div class="row"><button type="button" class="btn btn-gold" id="sb" style="padding:.6rem 1rem;font-size:.8rem">Send to the team &amp; keep a copy</button><a class="btn btn-ghost" href="../contact-us/" style="padding:.6rem 1rem;font-size:.8rem">Book a call</a></div>'+
+        '<div class="row"><button type="button" class="btn btn-gold" id="sb" style="padding:.6rem 1rem;font-size:.8rem">Send to the team &amp; keep a copy</button><a class="btn btn-ghost" href="../book/" style="padding:.6rem 1rem;font-size:.8rem">Book a call</a></div>'+
         '<p class="note" style="margin:.7rem 0 0">Goes to the team by email so the call starts from your selections. Nothing else is stored.</p></div>';
 }
 function loadEmailJS(){return new Promise(function(res,rej){ if(window.emailjs) return res(); var s=document.createElement("script"); s.src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"; s.onload=function(){res();}; s.onerror=rej; document.head.appendChild(s); });}
