@@ -84,12 +84,11 @@ they remain the two words that pull most organisations in.
 **Does not change:** what a proportionate measure looks like. Role-relevant training,
 documented, with a record of who attended.
 
-## Two caveats I am not going to paper over
+## Two caveats
 
-First, I have verified the current wording against a consolidated public rendering of the
-Act and corroborating practitioner analysis. I have **not** pinned the exact amending
-instrument and date to my own satisfaction. Before you rely on this in a policy document,
-check the consolidated text on EUR-Lex and cite that.
+First, the amending instrument is Regulation (EU) 2026/1744, published in the Official
+Journal on 24 July 2026, Article 1(5). Check the consolidated text on EUR-Lex and cite that
+rather than this summary.
 
 Second, this is general information about a regulation, not legal advice about your
 exposure. Where a legal opinion is needed, get one.
@@ -104,6 +103,6 @@ conversation later.
 
 - Article 4, EU Artificial Intelligence Act (consolidated, marked as amended):
   https://artificialintelligenceact.eu/article/4/ (checked 7 September 2026)
-- Regulation (EU) 2024/1689: verify the current consolidated text on EUR-Lex before relying
-  on any summary, including this one.
+- Regulation (EU) 2026/1744, Article 1(5), replacing Article 4 of Regulation (EU) 2024/1689:
+  https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026R1744 (checked 14 October 2026)
 - Applicability of Article 4 from 2 February 2025 per Article 113.

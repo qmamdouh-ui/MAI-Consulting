@@ -26,7 +26,7 @@ The published site lives in the **repository root**, served by GitHub Pages at
 | `/compare/` | Market and competitor comparison with published prices, sources, and the value case |
 | `/knowledge/` | Searchable library of published articles filed by service, format, level and reading path, plus package guide |
 | `/resources/` | Redirects to `/knowledge/` |
-| `/eu-ai-act-article-4/` | Briefing on the AI literacy obligation, the main commercial hook |
+| `/eu-ai-act-article-4/` | Briefing on the AI-literacy duty as rewritten in July 2026; supporting evidence for the funder-readiness offer, no longer the main hook. See `docs/SITE_OPERATIONS.md` |
 | `/explore-your-ai-readiness/` | Free 28-question assessment (4D framework) |
 | `/extensive-ai-readiness-analysis/` | 60-question, 10-dimension assessment |
 | `/our-clients/` | Who we work with, packages table, how engagements run |

@@ -4,6 +4,8 @@
    site does not cover, and then offers to send the question to the team. General chat
    (greetings, "can you speak Arabic", "who are you") is answered naturally.
    To teach it: add an entry to KB with a/fr/ar answers and keywords in the three languages. */
+/* load the page-view counter (assets/analytics.js; inert until a site code is set) */
+(function(){try{var c=document.currentScript;if(c&&c.src){var a=document.createElement("script");a.async=true;a.src=c.src.replace(/chat\.js(\?.*)?$/,"analytics.js");document.head.appendChild(a);}}catch(e){}})();
 (function(){
 "use strict";
 
@@ -163,12 +165,12 @@ var KB=[
   l:"about/",t:{en:"See the standards",fr:"Voir les normes",ar:"المعايير"}},
 
  {id:"article4",yes:true,rel:["policy-svc","evidence"],
-  k:{"article 4":7,"art 4":6,"ai act":6,"eu ai act":7,"literacy":4,"obligation":4,"regulation":3,"legal requirement":5,"comply":3,"mandatory":4,"required by law":5},
+  k:{"article 4":7,"art 4":6,"ai act":6,"eu ai act":7,"literacy":4,"obligation":4,"digital omnibus":6,"2026/1744":7,"amended":4,"regulation":3,"legal requirement":5,"comply":3,"mandatory":4,"required by law":5},
   kf:{"article 4":7,"reglement europeen":6,"ai act":6,"obligation":5,"obligatoire":5,"litteratie":4,"la loi":3,"legalement":4},
   ka:{"المادة 4":8,"قانون الاتحاد الأوروبي":6,"قانون الذكاء الاصطناعي":7,"التزام":4,"إلزامي":5,"ملزم":5,"قانوني":3,"الإلمام":4},
-  a:{en:"Since 2 February 2025, Article 4 of the EU AI Act has required organisations deploying AI to ensure that staff, and contractors acting on their behalf, have AI literacy proportionate to their role, context and risk. It is outcome-based: you have to be able to demonstrate it. Department-specific training, a documented policy and an attendance record are what that demonstration looks like. The site carries a briefing on what a 60-person organisation is required to do.",
-     fr:"Depuis le 2 février 2025, l’article 4 du règlement européen sur l’IA impose aux organisations qui déploient l’IA de garantir que leur personnel, et les prestataires agissant pour elles, dispose d’une maîtrise de l’IA proportionnée à leur rôle, au contexte et au risque. L’obligation porte sur le résultat : il faut pouvoir le démontrer. Une formation par département, une politique documentée et un registre de présence en sont la démonstration. Le site propose une note sur ce qu’une organisation de 60 personnes doit concrètement faire.",
-     ar:"منذ الثاني من فبراير 2025 تُلزم المادةُ 4 من قانون الاتحاد الأوروبي للذكاء الاصطناعي المؤسساتَ التي تستعمل الذكاء الاصطناعي بأن تضمن لموظفيها، وللمتعاقدين العاملين باسمها، إلماماً بالذكاء الاصطناعي يتناسب مع أدوارهم وسياق عملهم ومستوى المخاطر. والالتزامُ قائمٌ على النتيجة، أي أنّ عليكم إثباتَه. ويتحقّق هذا الإثبات بتدريبٍ لكل قسم وسياسةٍ موثَّقة وسجلِّ حضور. وعلى الموقع إحاطةٌ عمّا يجب على مؤسسة من ستين موظفاً أن تفعله فعلاً."},
+  a:{en:"Article 4 of the EU AI Act has applied since 2 February 2025. A July 2026 amendment (Regulation (EU) 2026/1744) rewrote it: providers and deployers must take measures to support the development of AI literacy among staff, and contractors acting on their behalf, and they do not have to guarantee a specific level for any individual. The measures should be proportionate to role, context and risk. Department-specific training, a documented policy and an attendance record are what those measures look like on paper. Switzerland is outside the EU, so the Act reaches a Geneva organisation through its EU-facing activity. The site carries a briefing on what a 60-person organisation should do.",
+     fr:"L’article 4 du règlement européen sur l’IA s’applique depuis le 2 février 2025. Une modification de juillet 2026 (règlement (UE) 2026/1744) l’a réécrit : les fournisseurs et les déployeurs doivent prendre des mesures pour soutenir le développement de la maîtrise de l’IA de leur personnel, et des prestataires agissant pour eux, sans devoir garantir un niveau précis pour chaque personne. Les mesures doivent être proportionnées au rôle, au contexte et au risque. Une formation par département, une politique documentée et un registre de présence sont la trace de ces mesures. La Suisse n’est pas dans l’UE : le règlement atteint une organisation genevoise par ses activités tournées vers l’UE. Le site propose une note sur ce qu’une organisation de 60 personnes devrait faire.",
+     ar:"تسري المادةُ 4 من قانون الاتحاد الأوروبي للذكاء الاصطناعي منذ الثاني من فبراير 2025، وقد أُعيدت صياغتُها في يوليو 2026 بموجب اللائحة (الاتحاد الأوروبي) 2026/1744: على المزوِّدين والمستخدِمين اتخاذُ تدابير لدعم تنمية الإلمام بالذكاء الاصطناعي لدى موظفيهم وللمتعاقدين العاملين باسمهم، دون أن يلزمهم ضمانُ مستوى محدّد لأي فرد. وينبغي أن تتناسب التدابيرُ مع الدور والسياق والمخاطر. وتظهر هذه التدابيرُ في تدريبٍ لكل قسم وسياسةٍ موثَّقة وسجلِّ حضور. وسويسرا خارج الاتحاد، فيصل القانون إلى المؤسسة الجنيفية عبر أنشطتها الموجَّهة إلى الاتحاد. وعلى الموقع إحاطةٌ عمّا ينبغي لمؤسسة من ستين موظفاً أن تفعله."},
   l:"eu-ai-act-article-4/",t:{en:"Read the Article 4 briefing",fr:"Lire la note",ar:"اقرأ الإحاطة"}},
 
  {id:"how-runs",yes:true,rel:["duration","contact","evidence"],
