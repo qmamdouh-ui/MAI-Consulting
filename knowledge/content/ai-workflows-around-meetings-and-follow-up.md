@@ -17,13 +17,13 @@ featured: false
 ---
 A call lands with ten minutes' notice, a workshop ends with forty sticky notes and no plan, a promising conversation needs a follow-up that never quite gets written. The work around a meeting is where momentum is lost, because it is rarely scheduled and always rushed.
 
-Four examples show how a few well-chosen requests close those gaps. Each ends with something only you can supply, and that is worth planning for.
+Four illustrative scenarios show how a few well-chosen requests close those gaps. Each ends with something only you can supply, and that is worth planning for.
 
 ## Before: prepare in the time you have
 
 ### The ten-minute meeting prep
 
-A client call arrived with ten minutes' notice and no time to reread the account history. The source article describes twenty minutes of scrolling reduced to the time it took to walk to the room. You paste in the last few email threads and ask for three things:
+A client call arrives with ten minutes' notice and no time to reread the account history. Twenty minutes of scrolling can shrink to the time it takes to walk to the room. You paste in the last few email threads and ask for three things:
 
 - A one-paragraph summary of where the relationship stands.
 - The three topics most likely to come up, based on recent history.
@@ -45,7 +45,7 @@ The scenario was rewritten by hand because it needed a detail from the learner's
 
 ### The two-minute follow-up
 
-A good call ended with three action items and a vague promise to follow up soon, and soon usually meant when there was time to write something professional. The two-minute version, which the source says made same-day sending far more likely:
+A good call ended with three action items and a vague promise to follow up soon, and soon usually meant when there was time to write something professional. The two-minute version, which makes same-day sending far more likely:
 
 - Start from three rough bullets from the call, not a blank subject line.
 - Ask for the email to open with the next step, not a recap, so it works for someone skimming on a phone.

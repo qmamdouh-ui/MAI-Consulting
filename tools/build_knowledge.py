@@ -107,12 +107,12 @@ HEAD = """<!DOCTYPE html>
     <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <ul class="mai-links" id="mai-links">
       <li><a href="{up}services/">Services</a></li>
+      <li><a href="{up}use-cases/">Levels</a></li>
       <li><a href="{up}estimate/">Estimate</a></li>
-      <li><a href="{up}for-funders/">For Investors</a></li>
-      <li><a href="{up}compare/">Compare</a></li>
+      <li><a href="{up}explore-your-ai-readiness/">Free check</a></li>
       <li><a href="{up}knowledge/" aria-current="page">Knowledge</a></li>
-      <li><a href="{up}explore-your-ai-readiness/">Readiness Check</a></li>
-      <li><a href="{up}transformation-journey/">Use Cases</a></li>
+      <li><a href="{up}for-funders/">For funders</a></li>
+      <li><a href="{up}about/">About</a></li>
       <li><a class="mai-cta" href="{up}book/">Book a call</a></li>
     </ul>
   </div>
@@ -126,7 +126,7 @@ FOOT = """<footer class="mai-footer">
       <div class="mai-footer-tag">Strategy &middot; AI &middot; Impact</div>
     </div>
     <div class="mai-footer-right">
-      <div class="footer-nav"><a href="{up}services/">Services</a> <a href="{up}knowledge/">Knowledge</a> <a href="{up}about/">About</a> <a href="{up}privacy/">Privacy</a> <a href="{up}contact-us/">Contact</a></div>
+      <div class="footer-nav"><a href="{up}services/">Services</a> <a href="{up}use-cases/">The seven levels</a> <a href="{up}knowledge/">Knowledge</a> <a href="{up}explore-your-ai-readiness/">Free check</a> <a href="{up}about/">About</a> <a href="{up}privacy/">Privacy</a> <a href="{up}contact-us/">Contact</a></div>
       <div class="mai-footer-copy">mai4consulting.com &middot; &copy; 2026 M.A.I. Consulting</div>
     </div>
   </div>
@@ -287,7 +287,7 @@ REFERENCE = {
               '<a class="art" href="../claude-in-chrome/"><span class="m">Reference &middot; risk</span><h4>Claude in Chrome: impact, trade-offs and warnings</h4><p>What a browser agent does on your behalf, and what to check first.</p></a>',
     "training": '<a class="art" href="../playbook/"><span class="m">Sample deliverable</span><h4>A team playbook</h4><p>The working playbook a department receives.</p></a>'
                 '<a class="art" href="../use-cases/"><span class="m">Reference &middot; practice</span><h4>AI use cases in practice</h4><p>What Claude and Copilot do across writing, research, analysis and automation.</p></a>'
-                '<a class="art" href="../save-claude-tokens/"><span class="m">Reference &middot; tooling</span><h4>Claude for business</h4><p>Instruction files, skills, and how to cut token spend.</p></a>',
+                '<a class="art" href="../save-claude-tokens/"><span class="m">Reference &middot; tooling</span><h4>Claude: Skills, CLAUDE.md and token efficiency</h4><p>Instruction files, skills, and how to cut token spend. Reference for level 6 and 7 readers.</p></a>',
 }
 
 

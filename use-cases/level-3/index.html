@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Level 3: Structured | M.A.I. Consulting</title>
+<meta name="description" content="Level 3, Structured: what a language model is, the context window, model tiers, your data rules; the full brief, the source document and the four checks. Free page with cheat sheet, example prompts and the three-day plan."/>
+<link rel="canonical" href="https://mai4consulting.com/use-cases/level-3/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="M.A.I. Consulting"/>
+<meta property="og:title" content="Level 3: Structured | M.A.I. Consulting"/>
+<meta property="og:description" content="Level 3, Structured: what a language model is, the context window, model tiers, your data rules; the full brief, the source document and the four checks. Free page with cheat sheet, example prompts and the three-day plan."/>
+<meta property="og:url" content="https://mai4consulting.com/use-cases/level-3/"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../../assets/site.css"/>
+<link rel="stylesheet" href="../../assets/levels.css"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mai4consulting.com/"},{"@type":"ListItem","position":2,"name":"The seven levels","item":"https://mai4consulting.com/use-cases/"},{"@type":"ListItem","position":3,"name":"Level 3: Structured","item":"https://mai4consulting.com/use-cases/level-3/"}]}</script>
+</head>
+<body>
+<div class="mai-topbar">
+  <div class="mai-topbar-inner">
+    <a class="mai-brand" href="../../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
+    <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="mai-links" id="mai-links">
+      <li><a href="../../services/">Services</a></li>
+      <li><a href="../../use-cases/" aria-current="page">Levels</a></li>
+      <li><a href="../../estimate/">Estimate</a></li>
+      <li><a href="../../explore-your-ai-readiness/">Free check</a></li>
+      <li><a href="../../knowledge/">Knowledge</a></li>
+      <li><a href="../../for-funders/">For funders</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a class="mai-cta" href="../../book/">Book a call</a></li>
+    </ul>
+  </div>
+</div>
+<section class="hero" id="top">
+  <div class="inner">
+    <div class="eyebrow"><i></i>Level 3 of seven &middot; free page</div>
+    <h1>Level 3: <em>Structured</em></h1>
+    <p class="hero-sub">Write a full brief, ground it in the real document, verify before anything leaves the team. The floor everyone should stand on.</p>
+    <div class="btn-row">
+      <a class="btn btn-gold" href="../../estimate/?preset=course">Price the course</a>
+      <a class="btn btn-ghost" href="../../book/">Book a 30-minute call</a>
+    </div>
+    <div class="lv-facts">
+      <div><b>3 days</b><span>delivery days from level 2</span></div>
+      <div><b>20 to 30% on tasks in scope</b><span>planning assumption</span></div>
+      <div><b>EUR 2,400</b><span>this step, per group of up to nine</span></div>
+    </div>
+  </div>
+</section>
+<section class="band-tight" style="background:var(--surface);border-bottom:1px solid var(--outline);padding:1.1rem 1.5rem"><div class="inner"><div class="lvnav"><span class="lbl">Levels</span><a href="../level-3/" aria-current="page">3 &middot; Structured</a><a href="../level-4/">4 &middot; Set up</a><a href="../level-5/">5 &middot; Delegating</a><a href="../level-6/">6 &middot; Building</a><a href="../level-7/">7 &middot; At the terminal</a><a href="../">All levels</a></div></div></section>
+<section class="band" id="who"><div class="inner"><div class="kicker">Who this level is for</div><h2>Three people who need exactly this, and nothing more.</h2><div class="aud">
+<div><b>NGO and international-organisation staff</b><p>You write donor reports, briefing notes, concept notes and minutes. You are not sure what may go into a tool, and you have seen a plausible figure that appeared in no source.</p></div>
+<div><b>Employee in a small organisation</b><p>You draft, summarise and translate for a small team with no IT department and no AI policy, and the free tier is what you have. You need a method that is safe on that.</p></div>
+<div><b>Student or recent graduate</b><p>You read for a thesis or a first job, you have seen a fabricated reference, and you want a method the university's disclosure rules and a first employer will accept.</p></div>
+</div></div></section>
+<section class="band band-alt" id="understand"><div class="inner-narrow"><div class="kicker">Understand</div><h2>The background, kept to the minimum sufficient.</h2><p class="lede">Free knowledge, written for a non-technical reader. If you can explain each of these to a colleague in a sentence, you have the background this level needs.</p><ul class="kv">
+<li><b>What a large language model is</b>A system that predicts text from patterns, trained on data up to a cut-off date. It has no memory between conversations unless a feature adds it, no access to your files unless you give them, and it can state false things fluently. That last point is the whole reason level 3 exists: fluency is not evidence.</li>
+<li><b>The context window</b>Everything you paste or upload, plus the conversation so far, is the model's working memory for that chat. It is large but not infinite, and long chats degrade: the model starts to lose track of what was said early on. Start a fresh chat for a new task.</li>
+<li><b>Model tiers, and web versus own knowledge</b>Every assistant offers a fast, cheap tier and a slow, strong one. The fast tier is fine for reformatting and first drafts; use the strong one for analysis and anything you will defend. Separately, know whether the answer comes from the model's own training (fixed at the cut-off, can be stale or invented) or from a web search it ran for you (dated, citable, still to be checked).</li>
+<li><b>The four competencies as a vocabulary</b>Delegation (which tasks to hand over and which to keep), Description (how to ask), Discernment (how to check what comes back) and Diligence (what to log, disclose and own). They are the four parts of every playbook and the four headings of the three days.</li>
+<li><b>Your organisation's data rules</b>What may never go into a prompt: beneficiary, personal and confidential data. And what the tool does with your inputs under the plan you are on: on a free tier, inputs may be used for training; on a paid or organisational plan, usually not. Read the terms of the plan you actually use, once, with someone who can interpret them.</li>
+</ul></div></section>
+<section class="band" id="do"><div class="inner"><div class="two"><div><div class="kicker">Do</div><h2 style="font-size:1.5rem">The skills.</h2><ul class="kv">
+<li><b>Write a full brief</b>Role, audience, purpose, constraints, format, sources, and what good looks like. If you would not hand a colleague a one-line request for this task, do not hand the tool one either.</li>
+<li><b>Ground the request in the real document</b>Upload or paste the source rather than describing it. A description of the logframe is not the logframe.</li>
+<li><b>Iterate</b>Ask for options, ask for a critique of the draft, ask for a second pass with one specific change. Three short rounds beat one long prompt.</li>
+<li><b>Run the four checks before anything leaves the team</b>Figures (every number traced to a source), facts (names, dates and rules checked against the original), language (read once for tone and for deficit-based wording about people), defensibility (would you say this sentence in the meeting?).</li>
+<li><b>Keep a one-line log</b>Tool, task, date, and whether disclosure applies, where your funder, employer or university requires it. The log is your evidence file.</li>
+</ul></div><div><div class="kicker">Tools</div><h2 style="font-size:1.5rem">What you need, and only that.</h2><div class="note note-navy" style="margin:1rem 0 0">A chat assistant with file upload: Claude, ChatGPT, Copilot or Gemini, whichever is on your organisation's approved tool list. Nothing else is needed at this level. If there is no approved list yet, the paid tier of one of these, with training on inputs turned off, is the safe default.</div>
+<div class="kicker" style="margin-top:1.8rem">Proof</div><h2 style="font-size:1.5rem">How we know you are there.</h2><div class="proof"><b>Proof of level 3.</b> Three real tasks from your own work, briefed, grounded, checked and delivered, with the checks recorded. Not an exercise: work that went out.</div></div></div></div></section>
+<section class="band band-alt" id="risks"><div class="inner"><div class="two"><div><div class="kicker">Risks that enter here</div><h2 style="font-size:1.5rem">New at this level, and taught with their refusal cases.</h2><ul class="risk">
+<li>Hallucinated figures and citations: a number or a reference that reads perfectly and exists nowhere. The most common error and the most expensive one.</li>
+<li>Pasting data that must not leave the building: a case note, a grievance, a payroll line, a beneficiary list. Once pasted, you cannot take it back.</li>
+<li>Over-trusting a confident tone. The model sounds equally sure when it is right and when it is wrong.</li>
+<li>Using the free tier for work where inputs may be used for training, without knowing it.</li>
+</ul></div><div><div class="kicker">Skip for now</div><h2 style="font-size:1.5rem">What the free content pushes at you that you do not need yet.</h2><ul class="skip">
+<li>Prompt-engineering frameworks with acronyms</li>
+<li>API keys</li>
+<li>Agents</li>
+<li>Automation</li>
+<li>Model benchmarks</li>
+<li>Fine-tuning</li>
+</ul><p style="font-size:.86rem;color:var(--muted);margin-top:1rem">Not useless, just not yet. Each of these appears at the level where it earns its place, or in a different course.</p></div></div></div></section>
+<section class="band" id="cheat"><div class="inner-narrow"><div class="kicker">Cheat sheet</div><h2>Level 3 on one page.</h2><p class="lede">Print it, pin it next to the screen, and hand it to the colleague who asks how you do it.</p>
+<div class="cheat"><div class="cheat-h"><b>Level 3 &middot; Structured</b><span>M.A.I. Consulting &middot; mai4consulting.com/use-cases/level-3/</span><button type="button" class="print-btn" onclick="window.print()">Print</button></div><table><thead><tr><th>Item</th><th>Rule</th></tr></thead><tbody>
+<tr><td>Before you start</td><td>Is this tool on the approved list? Is any beneficiary, personal or confidential data in what I am about to paste? If yes to the second, stop.</td></tr>
+<tr><td>The brief</td><td>Role &middot; Audience &middot; Purpose &middot; Constraints &middot; Format &middot; Sources &middot; What good looks like.</td></tr>
+<tr><td>Give the source</td><td>Upload or paste the document itself. Never describe it.</td></tr>
+<tr><td>New task, new chat</td><td>Long chats degrade. Start fresh for each task.</td></tr>
+<tr><td>Model choice</td><td>Fast tier for drafts and reformatting. Strong tier for analysis and anything you will defend.</td></tr>
+<tr><td>Web or own knowledge</td><td>Dated, factual, recent: web search on. Style, structure, rewriting: the model's own.</td></tr>
+<tr><td>Iterate</td><td>"Give me three options." "Critique this draft, do not rewrite it." "Second pass: change only X."</td></tr>
+<tr><td>Check 1: figures</td><td>Every number traced to a source you can point at. If you cannot find it, it is not a number.</td></tr>
+<tr><td>Check 2: facts</td><td>Names, dates, eligibility rules checked against the original, not the summary.</td></tr>
+<tr><td>Check 3: language</td><td>Read once for tone and for deficit-based wording about the people you serve.</td></tr>
+<tr><td>Check 4: defensibility</td><td>Would you say this sentence out loud in the meeting? If not, it is not sent.</td></tr>
+<tr><td>Log</td><td>One line: tool, task, date, disclosure needed yes/no.</td></tr>
+</tbody></table></div></div></section>
+<section class="band band-alt" id="prompts"><div class="inner"><div class="kicker">Example prompts</div><h2>Realistic, for the work this audience actually does.</h2><p class="lede">Square brackets are yours to fill. Every example keeps personal data out and keeps the decision with the person.</p><div class="prompts">
+<div class="pr"><h4>A donor report section</h4><code>You are drafting the Results section of a progress report for [funder]. Audience: their programme officer. Purpose: show progress against the three indicators in the attached logframe. Constraints: 600 words, their headings, no figure that is not in the attached results table. Sources: last year's accepted report (attached) for tone and structure. Good looks like: every figure traceable to a row in the table, plain language, no adjectives about impact.</code><p class="why"><b>Why it works:</b> Role, audience, purpose, constraints, format, sources and a definition of good, with the sources attached rather than described.</p></div>
+<div class="pr"><h4>A policy brief from a regulation</h4><code>Attached: a 40-page regulation and our two-page position paper. Write a two-page policy brief for a parliamentary adviser who has ten minutes: the issue, what the regulation changes, three implications for [sector], one recommendation. Quote the article number for every claim about the regulation. Flag anything in our position paper that the regulation does not support.</code><p class="why"><b>Why it works:</b> Grounded in both documents, asks for article numbers you can check, and asks the tool to find the gaps rather than paper over them.</p></div>
+<div class="pr"><h4>A thesis literature matrix, one paper at a time</h4><code>Attached: one journal article (PDF). Fill this table: research question; method; sample and country; main finding; stated limitation; one quote with page number that supports the main finding. Do not add anything that is not in the PDF. If a cell cannot be filled from the text, write "not stated".</code><p class="why"><b>Why it works:</b> A fixed format, page-anchored quotes, and an explicit "not stated" that removes the incentive to invent.</p></div>
+<div class="pr"><h4>A meeting follow-up</h4><code>Here are my raw notes from today's partner meeting (names replaced by roles). Draft a follow-up email from me to the partner lead: decisions taken, actions with owner and date, open questions. Formal but warm, under 200 words. Then list anything in my notes that is ambiguous, so I can fix it before sending.</code><p class="why"><b>Why it works:</b> Personal names are out before the paste, and the tool is asked to surface what it could not resolve instead of guessing.</p></div>
+<div class="pr"><h4>A critique pass before submission</h4><code>Act as a sceptical reviewer for [funder]. Read the attached draft and list the ten questions you would ask, hardest first, each with the paragraph it refers to. Do not rewrite anything.</code><p class="why"><b>Why it works:</b> Iteration by critique: the output is a list of questions for you to verify, not text to trust.</p></div>
+<div class="pr"><h4>A translation review</h4><code>Attached: the French original and our English translation of a public notice. Compare them paragraph by paragraph. List every place the meaning differs, every number or date that does not match, and any term that departs from the attached glossary. Do not produce a new translation.</code><p class="why"><b>Why it works:</b> Source-grounded, constrained to a comparison, and it leaves the translation decisions with you.</p></div>
+<div class="pr"><h4>A plain-language rewrite</h4><code>Rewrite the attached procedure for staff who are not specialists: reading age 14, active voice, numbered steps, one idea per sentence. Keep every rule, figure and threshold exactly as in the original, and list the ones you were unsure how to simplify.</code><p class="why"><b>Why it works:</b> Clear constraints, an instruction to preserve the facts, and a request to flag uncertainty rather than hide it.</p></div>
+</div></div></section>
+<section class="band" id="training"><div class="inner"><div class="kicker">What the training looks like</div><h2>3 delivery days, each with an output you keep.</h2><p class="lede">Online or in person, in groups of up to nine, on your own tasks and documents. Every day ends with something that did not exist that morning.</p><div class="days">
+<div class="day"><span class="tag">Day 1</span><h4>What the tool is, and the rules</h4><p>What a model is, the context window, model tiers, web search versus own knowledge, the four competencies, and your organisation's data rules read together. Each participant brings three real tasks and we sort them: hand over, keep, never.</p><div class="out"><b>Output</b>Your task list marked hand over / keep / never, and your data rules on one page.</div></div>
+<div class="day"><span class="tag">Day 2</span><h4>The brief and the source</h4><p>Writing full briefs on your own tasks, grounding them in the real documents, iterating in short rounds. Two of your three tasks are completed live, on your approved tool.</p><div class="out"><b>Output</b>Two tasks delivered, with the briefs that worked saved for reuse.</div></div>
+<div class="day"><span class="tag">Day 3</span><h4>The four checks and the log</h4><p>Verification practice on yesterday's outputs, including a planted error to find; the defensibility test; disclosure and the one-line log. The third task is completed and your playbook page is written.</p><div class="out"><b>Output</b>Third task delivered with checks recorded, your personal playbook page, and the attendance record.</div></div>
+</div></div></section>
+<section class="band band-alt" id="price"><div class="inner-narrow"><div class="kicker">Price</div><h2>3 days at EUR 800 per delivery day.</h2>
+<div class="price"><div class="big">EUR 2,400<small>this step &middot; per group of up to nine</small></div><ul>
+<li><b>Same rate for everyone.</b> EUR 800 per delivery day, whether you come as an individual, a representative sent by your organisation, or a team.</li>
+<li><b>Shared among the participants.</b> The group price is divided among those who attend; nine people share it nine ways.</li>
+<li><b>Online adds nothing.</b> In person adds venue, hotel, hospitality and travel at cost, itemised on the invoice.</li>
+<li><b>Time saved: 20 to 30% on tasks in scope.</b> Level 3 sits at the lower edge of the published field studies because verification is added to the work.</li>
+</ul></div><div class="btn-row" style="margin-top:1.4rem"><a class="btn btn-navy" href="../../estimate/?preset=course">Price the course in the estimator</a><a class="btn btn-outline" href="../../estimate/?preset=training">Price it for a team</a></div></div></section>
+<section class="band band-dark" id="contact" style="text-align:center"><div class="inner"><h2 style="margin:0 auto 1rem">Is level 3 the right next step for you?</h2><p class="lede" style="margin:0 auto 2rem">Thirty minutes is enough to place you on the ladder and say honestly whether this is the level to book. Or read <a href="../level-4/" style="color:var(--gold)">level 4: Set up</a> next.</p><div class="btn-row" style="justify-content:center"><a class="btn btn-gold" href="../../book/">Book a call</a><a class="btn btn-ghost" href="../">Back to all levels</a></div></div></section>
+<footer class="mai-footer">
+  <div class="mai-footer-inner">
+    <div>
+      <div class="mai-footer-logo">M.A.I. Consulting</div>
+      <div class="mai-footer-tag">Strategy &middot; AI &middot; Impact</div>
+    </div>
+    <div class="mai-footer-right">
+      <a href="../../">mai4consulting.com</a>
+      <div class="mai-footer-copy">&copy; 2026 M.A.I. Consulting. All rights reserved. Geneva, Switzerland.</div>
+    </div>
+  </div>
+  <nav class="footer-nav" aria-label="Site">
+    <ul>
+      <li><a href="../../">Home</a></li>
+      <li><span class="fn-group">Services</span></li>
+      <li><a href="../../services/">All services</a></li>
+      <li><a href="../../services/assessment/">Readiness Assessment</a></li>
+      <li><a href="../../services/policy/">AI Use Policy</a></li>
+      <li><a href="../../services/training/">Team AI Training</a></li>
+      <li><a href="../../services/support/">Fluency Support</a></li>
+      <li><a href="../../services/agents/">Custom Agents, Skills & Tools</a></li>
+      <li><a href="../../for-funders/">For funders</a></li>
+      <li><a href="../../estimate/">Price estimate</a></li>
+      <li><span class="fn-group">Learn</span></li>
+      <li><a href="../../use-cases/">The seven levels</a></li>
+      <li><span class="footer-nav-current" aria-current="page">Level 3: Structured</span></li>
+      <li><a href="../../use-cases/level-4/">Level 4: Set up</a></li>
+      <li><a href="../../use-cases/level-5/">Level 5: Delegating</a></li>
+      <li><a href="../../use-cases/level-6/">Level 6: Building</a></li>
+      <li><a href="../../use-cases/level-7/">Level 7: At the terminal</a></li>
+      <li><a href="../../transformation-journey/">The journey, role by role</a></li>
+      <li><a href="../../playbook/">Sample playbook</a></li>
+      <li><a href="../../knowledge/">Knowledge library</a></li>
+      <li><span class="fn-group">Free tools</span></li>
+      <li><a href="../../explore-your-ai-readiness/">AI Readiness Check (12 min)</a></li>
+      <li><a href="../../extensive-ai-readiness-analysis/">Extended assessment (60 questions)</a></li>
+      <li><span class="fn-group">Reference</span></li>
+      <li><a href="../../eu-ai-act-article-4/">EU AI Act Article 4</a></li>
+      <li><a href="../../claude-in-chrome/">Claude in Chrome</a></li>
+      <li><a href="../../save-claude-tokens/">Claude: Skills, CLAUDE.md and tokens</a></li>
+      <li><span class="fn-group">Company</span></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="../../our-clients/">Who we work with</a></li>
+      <li><a href="../../compare/">Compare the market</a></li>
+      <li><a href="../../contact-us/">Contact</a></li>
+      <li><a href="../../book/">Book a call</a></li>
+      <li><a href="../../privacy/">Privacy</a></li>
+    </ul>
+  </nav>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('mai-burger'), l=document.getElementById('mai-links');
+  if(b&&l){b.addEventListener('click',function(){
+    var o=l.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false');
+  });}
+})();
+</script>
+<script src="../../assets/chat.js" defer></script>
+</body>
+</html>

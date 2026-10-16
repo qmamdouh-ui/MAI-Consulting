@@ -33,7 +33,7 @@ A DPIA is a structured assessment of how one specific processing activity affect
 
 ## The trigger, in practical terms
 
-Under the GDPR framework most European and Swiss organisations work within some version of, a DPIA becomes mandatory when processing is likely to result in a high risk to individuals, and that most commonly means one or more of: processing special category data, health status, protection status, biometric data, at meaningful scale; systematic profiling that produces a decision with a legal or otherwise significant effect on a person; or the use of a genuinely novel technology in a way regulators have not already assessed as low-risk. Most regulators also publish their own list of processing types they consider mandatory by default, and that list is the one worth checking directly rather than relying on general guidance like this piece.
+Under the GDPR framework most European and Swiss organisations work within some version of, a DPIA becomes mandatory when processing is likely to result in a high risk to individuals, and that usually means one or more of: processing special category data, health status, protection status, biometric data, at meaningful scale; systematic profiling that produces a decision with a legal or otherwise significant effect on a person; or the use of a genuinely novel technology in a way regulators have not already assessed as low-risk. Most regulators also publish their own list of processing types they consider mandatory by default, and that list is the one worth checking directly rather than relying on general guidance like this piece.
 
 ## Running it against this series' own examples
 

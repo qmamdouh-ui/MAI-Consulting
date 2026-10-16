@@ -23,7 +23,7 @@ cluster: 1A Regulatory position
 
 **Correction, 14 October 2026.** An earlier version of this entry, dated 8 September, described the Digital Omnibus as a proposal and said no proposal moved Article 4. Both statements were out of date: the Omnibus was already law. This version replaces it.
 
-The most common thing I hear at the moment, usually with visible relief, is that the AI Act
+A claim now circulating, usually with visible relief, is that the AI Act
 has been pushed back and there is now time.
 
 Part of it was pushed back. The part that applies to most mission-driven organisations was

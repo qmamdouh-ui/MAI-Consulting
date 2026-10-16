@@ -68,7 +68,7 @@ It also connects to capability work. Under the 4D AI Fluency framework, Diligenc
 
 Leaders set the tone by asking for the reasoning, not just the result. In a review of an AI-supported workflow, the useful first question is not "does it work?" but "what would a new colleague need to know to change this safely?" If the answer is "ask the person who built it", the organisation is carrying a single point of failure, and that risk should be logged like any other.
 
-Turnover is a fact of life in project-funded organisations, where contracts end when grants do. That makes the problem more acute in our sector than in most. Build the habit while the workflows are few. Retrofitting ledgers across forty undocumented workflows is a project. Writing the first five is a routine.
+Turnover is a fact of life in project-funded organisations, where contracts end when grants do. That makes the problem more acute in the sector than in most. Build the habit while the workflows are few. Retrofitting ledgers across forty undocumented workflows is a project. Writing the first five is a routine.
 
 ## Questions for your next leadership meeting
 

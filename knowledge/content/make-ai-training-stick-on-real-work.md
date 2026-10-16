@@ -15,9 +15,9 @@ linkedin_url: ''
 source_ref: "profile articles #101, #102, #104, #105, #109, #112, #121, #122, #124, #125, #134 (newsletter eds 21, 22, 24)"
 featured: false
 ---
-You have bought the licences and run the kickoff, and three months later most of your team works exactly as before. In one example described in the source articles, adoption stalled at around ten percent after licences and a single webinar. The tool had not changed. Nobody had been given a reason, a process or the time to change how they worked.
+You have bought the licences and run the kickoff, and three months later most of your team works exactly as before. Take an illustrative case: adoption stalls at around a tenth of the team after licences and a single webinar. The tool has not changed. Nobody had been given a reason, a process or the time to change how they worked.
 
-This guide is for managers and team leads responsible for the change itself. It covers why rollouts stall, how to run a first session and a first week that produce real use, how to handle a team split between enthusiasts and sceptics, how to keep the habit alive once the training ends, and how to teach checking first, train without a budget, design funded programmes for the months after, and spread a habit colleague to colleague.
+This guide is for managers and team leads responsible for the change itself. The cases in it are illustrative scenarios, not reports from client engagements. It covers why rollouts stall, how to run a first session and a first week that produce real use, how to handle a team split between enthusiasts and sceptics, how to keep the habit alive once the training ends, and how to teach checking first, train without a budget, design funded programmes for the months after, and spread a habit colleague to colleague.
 
 ## Adoption is a management job
 
@@ -31,7 +31,7 @@ A tool nobody was shown how to use gets used by whoever was already inclined to 
 
 ## Why passive training fails
 
-In another example, ninety people sat through ninety minutes of AI training, rated it highly in a satisfaction survey, and changed nothing about how they worked. The session was not badly built. It asked people to watch and remember, and watching has never changed a habit. A session people enjoyed and a session that changed behaviour are graded on different scales.
+In another illustrative case, ninety people sit through ninety minutes of AI training, rated it highly in a satisfaction survey, and changed nothing about how they worked. The session was not badly built. It asked people to watch and remember, and watching has never changed a habit. A session people enjoyed and a session that changed behaviour are graded on different scales.
 
 Behaviour changes when:
 
@@ -99,11 +99,11 @@ A donor funded a two-day AI workshop for twelve partner organisations, with slid
 - **Teach one recurring task, not the tool in general.** A broad tour produces enthusiasm and no next action.
 - **End with a check-in, not only a certificate.** A short follow-up a month later, asking what people used and what got in the way, catches the drop-off while there is time to act. A scheduled call, a shared channel or a peer pairing is enough, but it has to be designed in from the start.
 
-The same logic applies to inclusion programmes. A vocational training centre gave every graduate free access to a leading AI tool, and six months later the graduates using it well were the ones who already had strong digital literacy. Access had given an existing advantage a new outlet. The next cohort got the same tool plus explicit instruction in how to ask it useful questions, and placement outcomes changed. People with less confidence or less prior exposure ask vaguer questions, use the tool hesitantly, and stick to the one use they can already imagine. Treat directing the tool as the skill being taught: structured practice on personally relevant tasks, feedback on why one request worked better than another, and enough repetition that a good question becomes habit.
+The same logic applies to inclusion programmes. A vocational training centre gave every graduate free access to a leading AI tool, and six months later the graduates using it well were the ones who already had strong digital literacy. Access had given an existing advantage a new outlet. The next intake got the same tool plus explicit instruction in how to ask it useful questions, and placement outcomes changed. People with less confidence or less prior exposure ask vaguer questions, use the tool hesitantly, and stick to the one use they can already imagine. Treat directing the tool as the skill being taught: structured practice on personally relevant tasks, feedback on why one request worked better than another, and enough repetition that a good question becomes habit.
 
 ## Teach one colleague on a real task
 
-The largest jump in output in the source series did not come from a better prompt. It came from one person spending twenty minutes showing a colleague how they draft, check and send AI-assisted work. A personal habit has a ceiling of one person's week; a taught habit also removes the bottleneck where every request routes through the one person who knows how. Explaining it aloud exposes which steps were real judgement calls. No slides were needed: they sat together, opened a real task and narrated each decision, what to delegate, how to phrase the request, what to check before it went out.
+The largest jump in a team's output rarely comes from a better prompt. It comes from one person spending twenty minutes showing a colleague how they draft, check and send AI-assisted work. A personal habit has a ceiling of one person's week; a taught habit also removes the bottleneck where every request routes through the one person who knows how. Explaining it aloud exposes which steps were real judgement calls. No slides were needed: they sat together, opened a real task and narrated each decision, what to delegate, how to phrase the request, what to check before it went out.
 
 ## What to do next
 

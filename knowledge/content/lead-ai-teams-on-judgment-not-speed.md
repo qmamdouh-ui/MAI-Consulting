@@ -17,11 +17,11 @@ featured: false
 ---
 Your team has the tool, and you now have to decide what good AI-assisted work looks like, how to review it and how to know whether it is working. The usual answers (feature training, reviewing the finished page, counting output) reward the wrong things.
 
-This guide covers the management habits that build judgment: what to teach first, the vocabulary you need, how to spread expertise, how to review work, what goal to set and what to measure. It follows the guide on making adoption stick on real work, which covers sessions, exercises and follow-up.
+This guide covers the management habits that build judgment: what to teach first, the vocabulary you need, how to spread expertise, how to review work, what goal to set and what to measure. It follows the guide on making adoption stick on real work, which covers sessions, exercises and follow-up. The scenarios below are illustrative, not reports from client engagements.
 
 ## Teach checking before features
 
-One team rolled out a new tool with a full curriculum: use cases, a prompt library, a wiki and a chat channel. Six weeks later adoption was still uneven. The gap was not knowledge of the tool. Almost nobody had been taught the habit that made every other skill usable: checking the output before trusting it. Teaching people to use a tool without teaching them to check it only teaches them to trust it faster.
+Picture a team that rolls out a new tool with a full curriculum: use cases, a prompt library, a wiki and a chat channel. Six weeks later adoption is still uneven. The gap was not knowledge of the tool. Almost nobody had been taught the habit that made every other skill usable: checking the output before trusting it. Teaching people to use a tool without teaching them to check it only teaches them to trust it faster.
 
 Verification outranks the rest of the curriculum for three reasons:
 
@@ -33,7 +33,7 @@ It gets skipped because a slide about being careful looks like a footnote beside
 
 ## Learn a handful of words well
 
-A manager at a project review heard her team debate using "a model," "an agent" or "the AI" for a client problem and could not tell whether these were three tools or one described three ways. She was not behind on AI. She was behind on the handful of words her team used daily.
+Picture a manager at a project review who hears her team debate using "a model," "an agent" or "the AI" for a client problem and could not tell whether these were three tools or one described three ways. She was not behind on AI. She was behind on the handful of words her team used daily.
 
 - **Model, tool, agent.** A model is the underlying engine, a tool is the product built on it, and an agent is a tool that takes multi-step actions on its own. Knowing which a proposal concerns changes the questions worth asking.
 - **Hallucination.** The model confidently stating something false. Knowing the word lets you ask "how would we catch that?" before the failure.
@@ -43,7 +43,7 @@ A manager who knows six words well asks better questions than one who knows sixt
 
 ## Make your thinking visible
 
-An experienced analyst was often asked how she decided which parts of a report to trust and which to rewrite. She found it hard to answer until she began narrating while she worked: "I'm checking this number against the source table because it's the kind of thing the tool tends to get wrong." Within a week, two junior colleagues were making the same checks unprompted.
+Picture an experienced analyst who is often asked how she decides which parts of a report to trust and which to rewrite. She found it hard to answer until she began narrating while she worked: "I'm checking this number against the source table because it's the kind of thing the tool tends to get wrong." Within a week, two junior colleagues were making the same checks unprompted.
 
 Narrating beats explaining afterwards. It captures the reasoning live, including the false starts. It shows what to check, not only what to do: watching someone accept an output teaches nothing, while hearing "I'd normally trust this, except the source data here is old" teaches the skill. And it costs nothing to start. It feels slower and more exposed at first, but the uncertainty is the part worth hearing.
 

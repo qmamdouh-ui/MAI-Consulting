@@ -36,7 +36,7 @@ Beyond the strict obligations, there is a wider set of cases where disclosure is
 ## Where disclosure backfires
 
 - **A generic "we use AI" line hands the reader's own imagination the job of assessing risk**, instead of the organisation's actual safeguards. Vague disclosure often creates more anxiety than no disclosure at all, because it names a concern without ever answering it.
-- **Disclosing into a context where the funder has no real framework to evaluate what they are hearing.** Industry research suggests roughly two-thirds of foundations and nonprofits report that few or none of their own staff have a solid understanding of AI, which means an honest, carefully scoped disclosure can land through a lens shaped by generic hype or fear rather than the organisation's specific practice.
+- **Disclosing into a context where the funder has no real framework to evaluate what they are hearing.** The Center for Effective Philanthropy's 2025 survey, AI With Purpose, found that almost two-thirds of foundations and nonprofits report that none or only a few of their staff have a solid understanding of AI, which means an honest, carefully scoped disclosure can land through a lens shaped by generic hype or fear rather than the organisation's specific practice.
 - **Over-disclosing on routine, low-risk administrative tasks trains the reader to treat every future disclosure as noteworthy**, which dilutes the signal for the disclosures that actually matter.
 - **Disclosing only reactively, after being asked, reads as a reluctant admission rather than an established governance practice**, even when the underlying substance is exactly the same as it would have been if raised proactively.
 
@@ -52,4 +52,4 @@ The pattern across all three categories is the same one this series has argued f
 
 ## Sources
 
-- S012: Center for Effective Philanthropy, "AI with Purpose": roughly two-thirds of foundations and nonprofits report that none or few of their staff have a solid understanding of AI (medium confidence, exact report URL not yet pinned, treated here as directional).
+- Center for Effective Philanthropy, "AI With Purpose: How Foundations and Nonprofits Are Thinking About and Using Artificial Intelligence" (2025): almost two-thirds of nonprofits and foundations report that none or only a few of their staff have a solid understanding of AI and its applications. https://cep.org/report-backpacks/ai-with-purpose-how-foundations-and-nonprofits-are-thinking-about-and-using-artificial-intelligence/

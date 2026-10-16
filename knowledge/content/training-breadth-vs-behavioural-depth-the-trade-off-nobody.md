@@ -1,7 +1,7 @@
 ---
 slug: training-breadth-vs-behavioural-depth-the-trade-off-nobody
 title: 'Training breadth vs behavioural depth: the trade-off nobody prices'
-summary: Spreading training thinly across everyone gives a good completion rate but rarely moves anyone past guided use, while depth costs visibility; here is how to decide where the hours go.
+summary: Spreading training thinly across everyone gives a good completion rate but rarely moves anyone past occasional use, while depth costs visibility; here is how to decide where the hours go.
 short_slug: training-breadth-vs-behavioural-depth
 featured: false
 service: training
@@ -22,7 +22,7 @@ source_ref: 'mai-kb tree #27 / draft 7502904020483698688'
 cluster: 2C Making training stick
 ---
 
-We wrote last time about the seven capability levels and why Level 3, independent competent use, is the floor below which nothing durable has happened yet. The obvious next question, in any budget conversation, is where the limited training hours actually go: spread thin across everyone, or concentrated on fewer people until they cross that floor. Most training plans quietly avoid answering this question and default to breadth, because breadth is the answer nobody has to defend in a room.
+We wrote last time about the seven capability levels and why Level 3, Structured use, is the floor below which nothing durable has happened yet. The obvious next question, in any budget conversation, is where the limited training hours actually go: spread thin across everyone, or concentrated on fewer people until they cross that floor. Most training plans quietly avoid answering this question and default to breadth, because breadth is the answer nobody has to defend in a room.
 
 This piece is about naming that default for what it is, and about the cost that comes with each side of the choice, because both sides have one.
 
@@ -32,11 +32,11 @@ Training everyone a little produces a completion percentage that looks good in a
 
 ## What breadth actually buys you
 
-A wide, shallow rollout genuinely does something: it lowers fear across the organisation, builds a shared vocabulary so people can at least discuss the tools without embarrassment, and reduces the resistance the next, deeper phase of training will meet. What it does not do is move anyone past guided use. Breadth training, honestly assessed, produces Level 2 at best, and Level 2 is the level that evaporates the moment the trainer leaves the room.
+A wide, shallow rollout genuinely does something: it lowers fear across the organisation, builds a shared vocabulary so people can at least discuss the tools without embarrassment, and reduces the resistance the next, deeper phase of training will meet. What it does not do is move anyone past occasional use. Breadth training, honestly assessed, produces Level 2, Occasional, at best, and Level 2 is the level that evaporates the moment the trainer leaves the room.
 
 ## What depth actually buys you
 
-Concentrating the same hours on a smaller group, until they reach Level 3 and beyond, produces something breadth cannot: people who can do the actual work correctly, alone, and who can then unblock a colleague without escalating to the champion. A department with three genuinely competent people spreads capability sideways in a way that thirty people at guided use never do, because the three can teach, and the thirty at guided use have nothing durable to pass on.
+Concentrating the same hours on a smaller group, until they reach Level 3 and beyond, produces something breadth cannot: people who can do the actual work correctly, alone, and who can then unblock a colleague without escalating to the champion. A department with three genuinely competent people spreads capability sideways in a way that thirty people at occasional use never do, because the three can teach, and the thirty at occasional use have nothing durable to pass on.
 
 ## Four questions that decide where the budget actually goes
 

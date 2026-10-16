@@ -21,7 +21,7 @@ source_ref: 'ai-consulting queue #5 (https://www.linkedin.com/article/edit/75088
 featured: false
 ---
 
-"It saves me two hours a week." It is the most common sentence in any AI adoption survey, and the least useful. It is a claim about an individual's experience, it cannot be verified, and it says nothing about what happened to the two hours.
+"It saves me two hours a week." It is the standard sentence in AI adoption surveys, and the least useful. It is a claim about an individual's experience, it cannot be verified, and it says nothing about what happened to the two hours.
 
 A board asking whether an AI investment paid off cannot spend the answer. A funder cannot report it. A finance director cannot budget against it. *Saved time is a raw material, and most organisations never turn it into anything a decision-maker can use.*
 

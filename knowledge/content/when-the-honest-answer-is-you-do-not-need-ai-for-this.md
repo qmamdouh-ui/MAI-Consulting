@@ -22,7 +22,7 @@ source_ref: 'mai-kb tree #25 / draft 7502896230096609280'
 cluster: 2B Choosing where to start
 ---
 
-Every AI conversation we have starts from the same unspoken assumption: that the organisation should be using more AI, somewhere, for something. Often that assumption is correct. Sometimes, after the assessment, the pilot design and the training plan, the honest answer for a particular task is that it does not need AI at all, and saying so out loud is harder than it sounds once the tool is procured, the champion is enthusiastic, and the board has already been told adoption is the plan.
+Nearly every conversation about AI in an organisation starts from the same unspoken assumption: that the organisation should be using more AI, somewhere, for something. Often that assumption is correct. Sometimes, after the assessment, the pilot design and the training plan, the honest answer for a particular task is that it does not need AI at all, and saying so out loud is harder than it sounds once the tool is procured, the champion is enthusiastic, and the board has already been told adoption is the plan.
 
 This piece is about recognising that task before the money and the goodwill are spent on it, and about why saying no is a legitimate outcome of an evaluation, not a failure of one.
 

@@ -33,7 +33,7 @@ A certification means an independent third party assessed the organisation again
 
 ## Why calling it certification is a mistake, not just imprecise
 
-The word invites a specific, entirely predictable follow-up: who certified this, against what published standard, and can we see their accreditation? A self-documented file has no honest answer to that question, because the premise of the question is false. That gap, exposed once in front of a board member, a funder's own counsel, or an auditor who simply asks the obvious next question, costs far more credibility than the honest label would ever have cost up front. An organisation that overclaims gets caught exactly once and is disbelieved on everything else it says afterwards, including the parts that were entirely true.
+The word invites a specific, entirely predictable follow-up: who certified this, against what published standard, and can they show their accreditation? A self-documented file has no honest answer to that question, because the premise of the question is false. That gap, exposed once in front of a board member, a funder's own counsel, or an auditor who simply asks the obvious next question, costs far more credibility than the honest label would ever have cost up front. An organisation that overclaims gets caught exactly once and is disbelieved on everything else it says afterwards, including the parts that were entirely true.
 
 ## What saying "documented, not certified" actually buys
 

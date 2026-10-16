@@ -66,7 +66,7 @@ You do not need new software. For one use case, over four weeks, record five thi
 
 Be careful about two temptations. The first is to count only the successes and quietly drop the abandoned attempts. The second is to price staff time at zero because it is salaried. Both make the number look better and both make it useless for decisions.
 
-## Three objections we hear, and our answers
+## Three likely objections, and our answers
 
 **"Our staff are salaried, so their time is free."** It is not free, it is committed. Every minute spent reviewing an AI draft is a minute not spent on something else, and the opportunity cost is real even when no invoice arrives. Use a loaded hourly rate agreed with finance, and use the same rate before and after.
 

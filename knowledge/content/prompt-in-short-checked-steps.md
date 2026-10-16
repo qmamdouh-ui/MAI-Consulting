@@ -21,7 +21,7 @@ This guide is hands-on and task-level. It assumes you already use an AI chat too
 
 ## Ask for one outcome at a time
 
-When three things are on your mind, it is tempting to write all three into one message and assume one trip will save two. It rarely does. As the source article puts it, stacking three requests into one prompt does not save three trips: it usually costs five.
+When three things are on your mind, it is tempting to write all three into one message and assume one trip will save two. It rarely does. Stacking three requests into one prompt does not save three trips: it usually costs five.
 
 A colleague can ask a clarifying question or tell you what they skipped. A single AI response does not do that by default. It tries to satisfy everything in one pass, and when the asks pull in different directions, something gets shortchanged without any signal of what. The reply still reads as complete, with full sentences and a confident tone, so the gap only shows later, usually in the part that mattered most.
 

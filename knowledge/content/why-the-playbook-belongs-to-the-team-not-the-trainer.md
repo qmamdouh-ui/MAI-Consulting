@@ -22,7 +22,7 @@ source_ref: 'mai-kb tree #28 / draft 7502907451915100160'
 cluster: 2C Making training stick
 ---
 
-We wrote before about the seven capability levels, and the highest of them, practice-shaping, was the person who writes the playbook for whoever comes after them. This piece is about who that person actually needs to be, because the instinct almost every organisation follows here is wrong in a specific, fixable way.
+We wrote before about the seven capability levels, and at Level 6, Building, the person who builds Skills and agents for colleagues also owns the operating guide, which in practice means writing the playbook for whoever comes after them. This piece is about who that person actually needs to be, because the instinct almost every organisation follows here is wrong in a specific, fixable way.
 
 The instinct, once a training engagement is going well, is to ask the trainer or consultant to write it all down properly before they leave: capture their expertise in a polished reference document the team can consult afterwards. It feels efficient. It is usually how a playbook ends up dead within a month.
 

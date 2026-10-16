@@ -26,7 +26,7 @@ featured: false
 
 Consider a programme manager we will call Amira. This is an illustrative composite, not a real person. Her director has told the leadership team that every department will show AI-driven efficiency gains this year. Her team of six, meanwhile, is quietly uncertain whether the tools will make some of their roles redundant. Two of them use AI daily and do not say so. One refuses on principle. Her peers in other departments are waiting to see what she does first. And her own workload has not shrunk, because someone must still review everything.
 
-Amira is not resisting change. She is standing at the point where every pressure in the organisation meets. In our experience, this is where AI adoption stalls, and it is the level that most adoption programmes address least.
+Amira is not resisting change. She is standing at the point where every pressure in the organisation meets. This is where AI adoption tends to stall, and it is the level that most adoption programmes address least.
 
 *Executives set the ambition and staff do the work, but managers decide whether the two ever connect.*
 

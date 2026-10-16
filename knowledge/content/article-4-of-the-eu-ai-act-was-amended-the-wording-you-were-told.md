@@ -53,7 +53,7 @@ a measure taken. On the face of the text, that is closer to compliance than it w
 
 ## The trap
 
-Here is where I would be careful, and where I think a lot of advice is about to go wrong.
+Here is where we would be careful, and where we think a lot of advice is about to go wrong.
 
 Read narrowly, the amendment looks like a relaxation, and the temptation is to do less. But
 the obligation was never the reason to build AI literacy, and the regulation is not the

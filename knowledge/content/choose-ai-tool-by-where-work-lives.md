@@ -21,7 +21,7 @@ This guide replaces the chart with three questions, a rough map of where each to
 
 ## The three questions
 
-Going back and forth between Claude, Copilot, ChatGPT and Gemini for several weeks produced bigger and bigger comparison charts, and none of them made the choice faster. What did was cutting the decision to three questions and ignoring everything else until they were answered.
+Comparing Claude, Copilot, ChatGPT and Gemini side by side tends to produce bigger and bigger charts, and none of them makes the choice faster. What does is cutting the decision to three questions and ignoring everything else until they are answered.
 
 1. **Where does this task already live?** A document, a spreadsheet, an inbox. The tool built into that environment usually wins on convenience alone, before quality enters the conversation.
 2. **What does a bad first attempt cost?** If it is cheap to fix, speed wins. If it is expensive to unwind, a slower, more careful tool is worth the wait.
@@ -62,7 +62,7 @@ For short, low-stakes tasks such as an email reply or a quick rewrite, the diffe
 
 ## If you are choosing for a team
 
-Every rollout conversation eventually reaches "which tool should everyone standardise on?" It is the wrong first question. Teams that started there ended up relitigating the choice each time a new model appeared. Teams that started elsewhere did not. Ask these first:
+Every rollout conversation eventually reaches "which tool should everyone standardise on?" It is the wrong first question. Starting there tends to mean relitigating the choice each time a new model appears. Ask these first:
 
 - **Where does the team's work already live?** A team in Microsoft 365 gets more from Copilot on day one than from a technically stronger tool that requires leaving the document.
 - **Which failure can the team least afford?** A team that ships fast and iterates can tolerate a confident but wrong first draft. A team sending anything to a regulator or client without review cannot.

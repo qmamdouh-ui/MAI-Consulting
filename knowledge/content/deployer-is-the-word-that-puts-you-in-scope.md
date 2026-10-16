@@ -21,7 +21,7 @@ source_ref: 'mai-kb tree #3 / draft 7502821707511156736'
 cluster: 1A Regulatory position
 ---
 
-The most common reason an organisation decides the AI Act is not its problem is a sentence
+The usual reason an organisation decides the AI Act is not its problem is a sentence
 that sounds obviously true: *we do not build AI systems.*
 
 That is almost certainly correct. It is also not the test.
@@ -40,7 +40,7 @@ is a deployer. You did not build anything. You are still in scope.
 
 ## Why this catches mission-driven organisations specifically
 
-Three reasons, in the order I usually encounter them.
+Three reasons.
 
 **You have no AI in your systems register.** Nobody procured an AI system. Staff opened a
 browser tab. There is no contract, no line in the budget, no entry on the risk register, so
@@ -64,7 +64,7 @@ same person using their personal account to draft a funder report on Tuesday aft
 doing it in the course of your work, on your behalf. The account it was billed to is not the
 test. Whose work it was, is.
 
-This is the single most consequential misreading I see: organisations treating "not
+This is the single most consequential misreading: organisations treating "not
 procured by us" as equivalent to "not used by us".
 
 ## What deployer status actually obliges

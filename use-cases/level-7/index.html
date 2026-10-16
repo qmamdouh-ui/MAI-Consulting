@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Level 7: At the terminal | M.A.I. Consulting</title>
+<meta name="description" content="Level 7, At the terminal: what a terminal is, Claude Code without code, CLAUDE.md, hooks, permission modes, git and scheduled runs, and what is still engineering. Free page with cheat sheet, example tasks on a folder of files and the two-day plan."/>
+<link rel="canonical" href="https://mai4consulting.com/use-cases/level-7/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="M.A.I. Consulting"/>
+<meta property="og:title" content="Level 7: At the terminal | M.A.I. Consulting"/>
+<meta property="og:description" content="Level 7, At the terminal: what a terminal is, Claude Code without code, CLAUDE.md, hooks, permission modes, git and scheduled runs, and what is still engineering. Free page with cheat sheet, example tasks on a folder of files and the two-day plan."/>
+<meta property="og:url" content="https://mai4consulting.com/use-cases/level-7/"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../../assets/site.css"/>
+<link rel="stylesheet" href="../../assets/levels.css"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mai4consulting.com/"},{"@type":"ListItem","position":2,"name":"The seven levels","item":"https://mai4consulting.com/use-cases/"},{"@type":"ListItem","position":3,"name":"Level 7: At the terminal","item":"https://mai4consulting.com/use-cases/level-7/"}]}</script>
+</head>
+<body>
+<div class="mai-topbar">
+  <div class="mai-topbar-inner">
+    <a class="mai-brand" href="../../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
+    <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="mai-links" id="mai-links">
+      <li><a href="../../services/">Services</a></li>
+      <li><a href="../../use-cases/" aria-current="page">Levels</a></li>
+      <li><a href="../../estimate/">Estimate</a></li>
+      <li><a href="../../explore-your-ai-readiness/">Free check</a></li>
+      <li><a href="../../knowledge/">Knowledge</a></li>
+      <li><a href="../../for-funders/">For funders</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a class="mai-cta" href="../../book/">Book a call</a></li>
+    </ul>
+  </div>
+</div>
+<section class="hero" id="top">
+  <div class="inner">
+    <div class="eyebrow"><i></i>Level 7 of seven &middot; free page</div>
+    <h1>Level 7: <em>At the terminal</em></h1>
+    <p class="hero-sub">Run agentic work on folders of files from the terminal, with Claude Code, without writing code: the same thing done to a hundred documents in one supervised run.</p>
+    <div class="btn-row">
+      <a class="btn btn-gold" href="../../estimate/?preset=course">Price the course</a>
+      <a class="btn btn-ghost" href="../../book/">Book a 30-minute call</a>
+    </div>
+    <div class="lv-facts">
+      <div><b>2 days</b><span>delivery days from level 6</span></div>
+      <div><b>Task-dependent</b><span>planning assumption</span></div>
+      <div><b>EUR 1,600</b><span>this step, per group of up to nine</span></div>
+    </div>
+  </div>
+</section>
+<section class="band-tight" style="background:var(--surface);border-bottom:1px solid var(--outline);padding:1.1rem 1.5rem"><div class="inner"><div class="lvnav"><span class="lbl">Levels</span><a href="../level-3/">3 &middot; Structured</a><a href="../level-4/">4 &middot; Set up</a><a href="../level-5/">5 &middot; Delegating</a><a href="../level-6/">6 &middot; Building</a><a href="../level-7/" aria-current="page">7 &middot; At the terminal</a><a href="../">All levels</a></div></div></section>
+<section class="band" id="who"><div class="inner"><div class="kicker">Who this level is for</div><h2>Three people who need exactly this, and nothing more.</h2><div class="aud">
+<div><b>NGO and international-organisation staff</b><p>A year of reports to review the same way, three hundred documents to restructure, a monthly report built from the same folder of inputs every time.</p></div>
+<div><b>Employee in a small organisation</b><p>Twelve years of procedures, certificates and records that need one consistent, indexed archive before the audit, and nobody to do it.</p></div>
+<div><b>Student or recent graduate</b><p>Two hundred PDFs to rename, classify and summarise into one matrix before the final chapter.</p></div>
+</div></div></section>
+<section class="band band-alt" id="understand"><div class="inner-narrow"><div class="kicker">Understand</div><h2>The background, kept to the minimum sufficient.</h2><p class="lede">Free knowledge, written for a non-technical reader. If you can explain each of these to a colleague in a sentence, you have the background this level needs.</p><ul class="kv">
+<li><b>What a terminal is and why it matters</b>A text window where you type what to do and where. It works on folders and files, not on one conversation, so it can do the same thing to a hundred documents. That is the whole difference from a chat window.</li>
+<li><b>Claude Code basics, without code</b>The working folder (one per job); a CLAUDE.md file with the standing instructions (what the files are, the rules, the output format, what never to touch); Skills and slash commands for repeated jobs; hooks that stop dangerous actions before they happen; MCP servers added to the terminal; and permission modes that decide whether it asks before each change.</li>
+<li><b>Files and folders as the unit of work</b>Versioning with a simple git routine, three commands, so nothing is lost: a commit before the run and a commit after. Scheduled runs, so the monthly job runs on the first of the month and a person reads the log.</li>
+<li><b>What is still engineering</b>Anything with a database, a public interface, other people's credentials, or an integration that can fail silently should go to an engineer. Level 7 is batch document work on your own files. It is not software, and it does not need to be.</li>
+</ul></div></section>
+<section class="band" id="do"><div class="inner"><div class="two"><div><div class="kicker">Do</div><h2 style="font-size:1.5rem">The skills.</h2><ul class="kv">
+<li><b>Batch work</b>Rename, restructure, classify or review hundreds of files in one run, with a dry run first that changes nothing.</li>
+<li><b>Run the same review across a year of reports</b>And get one consolidated result with a reference to every file and page.</li>
+<li><b>Build one repeatable pipeline</b>For example the monthly donor report from a folder of inputs, with a dry run and a log, and a runbook a colleague can follow.</li>
+<li><b>Keep secrets out of files</b>No passwords, tokens or keys in the folder or in CLAUDE.md. Use hooks and permission modes to limit what the agent can touch.</li>
+</ul></div><div><div class="kicker">Tools</div><h2 style="font-size:1.5rem">What you need, and only that.</h2><div class="note note-navy" style="margin:1rem 0 0">Claude Code (or an equivalent terminal agent), a terminal, git, a scheduled task, and the MCP servers the organisation has approved. A copy of the real folder, never the only copy.</div>
+<div class="kicker" style="margin-top:1.8rem">Proof</div><h2 style="font-size:1.5rem">How we know you are there.</h2><div class="proof"><b>Proof of level 7.</b> One pipeline that runs on real files, with a dry run, a log, and a second person who has run it from the runbook.</div></div></div></div></section>
+<section class="band band-alt" id="risks"><div class="inner"><div class="two"><div><div class="kicker">Risks that enter here</div><h2 style="font-size:1.5rem">New at this level, and taught with their refusal cases.</h2><ul class="risk">
+<li>An agent that deletes or overwrites, because it was allowed to and nobody asked for a dry run.</li>
+<li>Credentials in files, where every run and every commit can see them.</li>
+<li>A pipeline nobody else can run, which is a single point of failure with a nicer name.</li>
+<li>Work that should have been software: a database, an interface, an integration. Hand it to an engineer.</li>
+</ul></div><div><div class="kicker">Skip for now</div><h2 style="font-size:1.5rem">What the free content pushes at you that you do not need yet.</h2><ul class="skip">
+<li>Learning a programming language. It is not needed for this level, and it is a different course.</li>
+</ul><p style="font-size:.86rem;color:var(--muted);margin-top:1rem">Not useless, just not yet. Each of these appears at the level where it earns its place, or in a different course.</p></div></div></div></section>
+<section class="band" id="cheat"><div class="inner-narrow"><div class="kicker">Cheat sheet</div><h2>Level 7 on one page.</h2><p class="lede">Print it, pin it next to the screen, and hand it to the colleague who asks how you do it.</p>
+<div class="cheat"><div class="cheat-h"><b>Level 7 &middot; At the terminal</b><span>M.A.I. Consulting &middot; mai4consulting.com/use-cases/level-7/</span><button type="button" class="print-btn" onclick="window.print()">Print</button></div><table><thead><tr><th>Item</th><th>Rule</th></tr></thead><tbody>
+<tr><td>The terminal</td><td>A text window: type what to do and where. Claude Code lives there and works on the folder you are in.</td></tr>
+<tr><td>Working folder</td><td>One folder per job. Copy the files in. Never run on the only copy.</td></tr>
+<tr><td>CLAUDE.md</td><td>Plain text, in the folder: what the files are, the rules, the output format, what never to touch.</td></tr>
+<tr><td>Dry run first</td><td>"List what you would change. Change nothing."</td></tr>
+<tr><td>Permission modes</td><td>Ask before every write until you trust the run. Never "allow all" on real files.</td></tr>
+<tr><td>Hooks</td><td>A rule that runs before an action and can block it: no deletes, no writes outside the folder.</td></tr>
+<tr><td>git routine</td><td>Initialise once. Commit before the run, commit after. Three commands, nothing lost.</td></tr>
+<tr><td>Secrets out</td><td>No passwords, tokens or keys in the folder or in CLAUDE.md.</td></tr>
+<tr><td>Log</td><td>Every run writes what it did to a log file. Keep it.</td></tr>
+<tr><td>Scheduled runs</td><td>Same job, same folder, once a month. A person reads the log.</td></tr>
+<tr><td>Second runner</td><td>Someone else runs it from the runbook before it counts.</td></tr>
+<tr><td>Still engineering</td><td>A database, a public interface, other people's credentials, an integration that can fail silently. Send it to an engineer.</td></tr>
+</tbody></table></div></div></section>
+<section class="band band-alt" id="prompts"><div class="inner"><div class="kicker">Example Claude Code tasks</div><h2>Realistic, for the work this audience actually does.</h2><p class="lede">Square brackets are yours to fill. Every example keeps personal data out and keeps the decision with the person.</p><div class="prompts">
+<div class="pr"><h4>A dry-run rename and classification</h4><code>In this folder are 312 PDF and DOCX reports from 2019 to 2026. Dry run: for each file, propose a new name in the format YYYY-MM_programme_type_title and the sub-folder it belongs in, by programme. Write the proposal to proposal.csv. Change nothing.</code><p class="why"><b>Why it works:</b> The first run on a real folder changes nothing and produces a list a human can read.</p></div>
+<div class="pr"><h4>The same review across a year of reports</h4><code>Apply the review checklist in CLAUDE.md to every donor report in reports/. For each, write a one-page review to reviews/ with the checklist items scored and the page reference for each finding. Then write summary.md: the five most common findings across all reports. Do not modify the reports.</code><p class="why"><b>Why it works:</b> One method, applied identically to every file, with the originals untouched and the output consolidated.</p></div>
+<div class="pr"><h4>The monthly pipeline</h4><code>Build the monthly donor report from inputs/2026-10/ using template.md and the rules in CLAUDE.md. Write to output/2026-10_report.md and a log to logs/2026-10.txt listing every input file used and every figure with its source file and cell. Stop and ask if any input file is missing or if a figure has no source.</code><p class="why"><b>Why it works:</b> Inputs, template, output and log are all named, and the stop condition keeps judgement with you.</p></div>
+<div class="pr"><h4>Consolidation across an archive</h4><code>Extract the indicator table from each of the 48 quarterly reports in archive/ into one indicators.csv with the columns year, quarter, country, indicator, value, source file, page. Where a value cannot be found, write NA. Do not estimate.</code><p class="why"><b>Why it works:</b> A folder-level extraction with a reference on every row and no estimation allowed.</p></div>
+<div class="pr"><h4>A personal-data sweep before anything else</h4><code>Scan every file in this folder for personal-data patterns: names in case stories, phone numbers, ID numbers, email addresses. Do not change any file. Write flagged.csv listing file, page and pattern type. I will review each one.</code><p class="why"><b>Why it works:</b> The data rule from level 3, applied to a whole archive before any other run touches it.</p></div>
+<div class="pr"><h4>Guard rails set up and explained</h4><code>Set up this folder so that you ask before every write, nothing outside this folder can be modified, and no file is ever deleted, only moved to _trash/. Then show me the settings you created and explain each line in plain language.</code><p class="why"><b>Why it works:</b> Hooks and permission modes are created and explained, so the person who runs it understands what protects them.</p></div>
+<div class="pr"><h4>The hand-over runbook</h4><code>Write RUNBOOK.md for a colleague who has never used a terminal: how to open the terminal in this folder, how to run the monthly report with a dry run first, how to read the log, what to do if it stops, and how to commit before and after. I will ask them to run it while I watch.</code><p class="why"><b>Why it works:</b> The proof of level 7 written down: a second person runs it from the guide.</p></div>
+</div></div></section>
+<section class="band" id="training"><div class="inner"><div class="kicker">What the training looks like</div><h2>2 delivery days, each with an output you keep.</h2><p class="lede">Online or in person, in groups of up to nine, on your own tasks and documents. Every day ends with something that did not exist that morning.</p><div class="days">
+<div class="day"><span class="tag">Day 1</span><h4>The terminal, the folder, the rules</h4><p>What a terminal is; opening it; Claude Code in a copy of one of your real folders. The CLAUDE.md written for that folder. Permission modes and a hook that blocks deletes and writes outside the folder. A dry run on a real batch task (rename, classify or review), then the real run. The git routine before and after.</p><div class="out"><b>Output</b>One batch task run on a copy of your files, with a dry run, a log and the before-and-after commits.</div></div>
+<div class="day"><span class="tag">Day 2</span><h4>One pipeline, a second runner</h4><p>Building one repeatable pipeline, for example the monthly report from a folder of inputs, with its log and a scheduled run. The secrets sweep. The "still engineering" test applied to your own list of ideas. A colleague runs the pipeline from the runbook while you watch.</p><div class="out"><b>Output</b>The pipeline, its runbook, a log from a second person's run, and your level-7 playbook entry.</div></div>
+</div></div></section>
+<section class="band band-alt" id="price"><div class="inner-narrow"><div class="kicker">Price</div><h2>2 days at EUR 800 per delivery day.</h2>
+<div class="price"><div class="big">EUR 1,600<small>this step &middot; per group of up to nine</small></div><ul>
+<li><b>Same rate for everyone.</b> EUR 800 per delivery day, whether you come as an individual, a representative sent by your organisation, or a team. Cumulative from level 2: 10 delivery days, EUR 8,000.</li>
+<li><b>Shared among the participants.</b> The group price is divided among those who attend; nine people share it nine ways.</li>
+<li><b>Online adds nothing.</b> In person adds venue, hotel, hospitality and travel at cost, itemised on the invoice.</li>
+<li><b>Time saved: Task-dependent.</b> Level 7 pays off through volume: batch work can exceed any chat figure, and no single number would be honest.</li>
+</ul></div><div class="btn-row" style="margin-top:1.4rem"><a class="btn btn-navy" href="../../estimate/?preset=course">Price the course in the estimator</a><a class="btn btn-outline" href="../../estimate/?preset=training">Price it for a team</a></div></div></section>
+<section class="band band-dark" id="contact" style="text-align:center"><div class="inner"><h2 style="margin:0 auto 1rem">Is level 7 the right next step for you?</h2><p class="lede" style="margin:0 auto 2rem">Thirty minutes is enough to place you on the ladder and say honestly whether this is the level to book.</p><div class="btn-row" style="justify-content:center"><a class="btn btn-gold" href="../../book/">Book a call</a><a class="btn btn-ghost" href="../">Back to all levels</a></div></div></section>
+<footer class="mai-footer">
+  <div class="mai-footer-inner">
+    <div>
+      <div class="mai-footer-logo">M.A.I. Consulting</div>
+      <div class="mai-footer-tag">Strategy &middot; AI &middot; Impact</div>
+    </div>
+    <div class="mai-footer-right">
+      <a href="../../">mai4consulting.com</a>
+      <div class="mai-footer-copy">&copy; 2026 M.A.I. Consulting. All rights reserved. Geneva, Switzerland.</div>
+    </div>
+  </div>
+  <nav class="footer-nav" aria-label="Site">
+    <ul>
+      <li><a href="../../">Home</a></li>
+      <li><span class="fn-group">Services</span></li>
+      <li><a href="../../services/">All services</a></li>
+      <li><a href="../../services/assessment/">Readiness Assessment</a></li>
+      <li><a href="../../services/policy/">AI Use Policy</a></li>
+      <li><a href="../../services/training/">Team AI Training</a></li>
+      <li><a href="../../services/support/">Fluency Support</a></li>
+      <li><a href="../../services/agents/">Custom Agents, Skills & Tools</a></li>
+      <li><a href="../../for-funders/">For funders</a></li>
+      <li><a href="../../estimate/">Price estimate</a></li>
+      <li><span class="fn-group">Learn</span></li>
+      <li><a href="../../use-cases/">The seven levels</a></li>
+      <li><a href="../../use-cases/level-3/">Level 3: Structured</a></li>
+      <li><a href="../../use-cases/level-4/">Level 4: Set up</a></li>
+      <li><a href="../../use-cases/level-5/">Level 5: Delegating</a></li>
+      <li><a href="../../use-cases/level-6/">Level 6: Building</a></li>
+      <li><span class="footer-nav-current" aria-current="page">Level 7: At the terminal</span></li>
+      <li><a href="../../transformation-journey/">The journey, role by role</a></li>
+      <li><a href="../../playbook/">Sample playbook</a></li>
+      <li><a href="../../knowledge/">Knowledge library</a></li>
+      <li><span class="fn-group">Free tools</span></li>
+      <li><a href="../../explore-your-ai-readiness/">AI Readiness Check (12 min)</a></li>
+      <li><a href="../../extensive-ai-readiness-analysis/">Extended assessment (60 questions)</a></li>
+      <li><span class="fn-group">Reference</span></li>
+      <li><a href="../../eu-ai-act-article-4/">EU AI Act Article 4</a></li>
+      <li><a href="../../claude-in-chrome/">Claude in Chrome</a></li>
+      <li><a href="../../save-claude-tokens/">Claude: Skills, CLAUDE.md and tokens</a></li>
+      <li><span class="fn-group">Company</span></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="../../our-clients/">Who we work with</a></li>
+      <li><a href="../../compare/">Compare the market</a></li>
+      <li><a href="../../contact-us/">Contact</a></li>
+      <li><a href="../../book/">Book a call</a></li>
+      <li><a href="../../privacy/">Privacy</a></li>
+    </ul>
+  </nav>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('mai-burger'), l=document.getElementById('mai-links');
+  if(b&&l){b.addEventListener('click',function(){
+    var o=l.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false');
+  });}
+})();
+</script>
+<script src="../../assets/chat.js" defer></script>
+</body>
+</html>

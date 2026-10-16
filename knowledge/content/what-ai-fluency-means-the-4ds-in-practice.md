@@ -32,7 +32,7 @@ Fluency is a small, repeatable habit: know what the task needs, ask for exactly 
 It lasts because:
 
 - **It works with any tool,** this year's or next year's, which is why it outlasts advice tied to a particular product.
-- **It separates a wasted subscription from a real habit.** In the cases behind this guide, organisations that got value asked for something specific and checked the result; stalled rollouts skipped one of the two steps.
+- **It separates a wasted subscription from a real habit.** In the illustrative cases behind this guide, organisations that get value ask for something specific and check the result; stalled rollouts skip one of the two steps.
 - **It can be taught in five minutes,** unlike a starter kit or a training programme.
 
 Someone with only this habit can get value on day one. They ask the tool to draft a specific email instead of "help with communications", and read what comes back sceptically before sending it. That avoids the two failures that recur most: vague requests that produce vague, unused output, and confident wrong answers that go out unchecked.

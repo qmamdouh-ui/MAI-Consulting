@@ -22,7 +22,7 @@ source_ref: 'mai-kb tree #30 / draft 7502914710409945088'
 cluster: 2C Making training stick
 ---
 
-Every organisation we have assessed shows the same quiet asymmetry: the people deciding how AI gets adopted are often the group with the least direct experience actually using it. This is not a personal failing of any individual leader. It is a structural pattern, worth naming plainly, because it changes what training at the top actually needs to look like.
+A quiet asymmetry is easy to find in most organisations: the people deciding how AI gets adopted are often the group with the least direct experience actually using it. This is not a personal failing of any individual leader. It is a structural pattern, worth naming plainly, because it changes what training at the top actually needs to look like.
 
 This piece is about why leadership so often ends up the least fluent group in the building, and what training upward requires that training everyone else does not.
 

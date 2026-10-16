@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Claude for Business: Skills, CLAUDE.md and Token Efficiency | M.A.I. Consulting</title>
+<title>Claude: Skills, CLAUDE.md and token efficiency | M.A.I. Consulting</title>
 
-<meta name="description" content="Practical guidance for using Claude at work without excess spend: custom workflows, CLAUDE.md files, skills and token-efficient prompting for an organisation."/>
+<meta name="description" content="Reference material for level 6 and 7 readers: CLAUDE.md files, skills, Claude Code and how to keep token spend down. Not a service."/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="M.A.I. Consulting"/>
-<meta property="og:title" content="Claude for Business: Skills, CLAUDE.md and Token Efficiency | M.A.I. Consulting"/>
-<meta property="og:description" content="Practical guidance for using Claude at work without excess spend: custom workflows, CLAUDE.md files, skills and token-efficient prompting for an organisation."/>
+<meta property="og:title" content="Claude: Skills, CLAUDE.md and token efficiency | M.A.I. Consulting"/>
+<meta property="og:description" content="Reference material for level 6 and 7 readers: CLAUDE.md files, skills, Claude Code and how to keep token spend down. Not a service."/>
 <meta property="og:url" content="https://mai4consulting.com/save-claude-tokens/"/>
 <meta name="twitter:card" content="summary"/>
 <link rel="canonical" href="https://mai4consulting.com/save-claude-tokens/"/>
@@ -389,12 +389,12 @@ body > header{position:static !important}
     <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <ul class="mai-links" id="mai-links">
       <li><a href="../services/">Services</a></li>
+      <li><a href="../use-cases/">Levels</a></li>
       <li><a href="../estimate/">Estimate</a></li>
-      <li><a href="../for-funders/">For Investors</a></li>
-      <li><a href="../compare/">Compare</a></li>
+      <li><a href="../explore-your-ai-readiness/">Free check</a></li>
       <li><a href="../knowledge/">Knowledge</a></li>
-      <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
-      <li><a href="../transformation-journey/">Use Cases</a></li>
+      <li><a href="../for-funders/">For funders</a></li>
+      <li><a href="../about/">About</a></li>
       <li><a class="mai-cta" href="../book/">Book a call</a></li>
     </ul>
   </div>
@@ -421,10 +421,11 @@ body > header{position:static !important}
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-inner">
-    <div class="hero-eyebrow"><span></span>Claude for Business</div>
-    <h1>Put <em>Claude</em> to Work<br/>Across Your Organization</h1>
+    <div class="hero-eyebrow"><span></span>Reference &middot; Claude</div>
+    <h1>Claude: <em>Skills</em>, CLAUDE.md<br/>and token efficiency</h1>
     <p class="hero-sub">
-      From custom AI workflows to structured CLAUDE.md files, skills, and token-efficient prompting, practical guidance for getting real value out of Claude without excessive spend.
+      Who this is for: readers at <a href="../use-cases/level-7/" style="color:var(--gold-light)">level 6 and 7</a>, who build Skills and agents for colleagues or run Claude Code from the terminal.<br/>
+      What it is: reference material kept for accuracy, not a service. Check the current <a href="https://docs.claude.com" target="_blank" rel="noopener" style="color:var(--gold-light)">Claude docs</a> and <a href="https://www.anthropic.com/pricing" target="_blank" rel="noopener" style="color:var(--gold-light)">pricing page</a> before relying on any figure.
     </p>
     <div class="hero-actions">
       <button class="btn-gold" data-scroll-to="use-cases">Explore Use Cases</button>
@@ -452,7 +453,7 @@ body > header{position:static !important}
       <div class="card">
         <div class="card-icon">✍️</div>
         <h3>Long-Form Drafting</h3>
-        <p>Strategy memos, grant proposals, board decks, client reports. Claude handles first drafts and iterative rewrites well. The 200K context window means it can hold an entire document in scope while editing.</p>
+        <p>Strategy memos, grant proposals, board decks, client reports. Claude handles first drafts and iterative rewrites well. A large context window means it can hold an entire document in scope while editing; the current size per model is on the docs page.</p>
         <span class="card-tag">Daily Use</span>
       </div>
       <div class="card">
@@ -464,7 +465,7 @@ body > header{position:static !important}
       <div class="card">
         <div class="card-icon">💻</div>
         <h3>Code Generation & Review</h3>
-        <p>Generate, explain, refactor, or debug code in Python, JavaScript, SQL, and most common languages. Most effective when given explicit requirements, existing code context, and the environment constraints upfront.</p>
+        <p>Generate, explain, refactor, or debug code in Python, JavaScript, SQL, and most widely used languages. Most effective when given explicit requirements, existing code context, and the environment constraints upfront.</p>
         <span class="card-tag">Engineering</span>
       </div>
       <div class="card">
@@ -553,7 +554,7 @@ Internal acronyms: ToR = Terms of Reference</span>
         <div class="card">
           <div class="card-icon">📁</div>
           <h3>File Organization</h3>
-          <p>Store skills under <code style="background:var(--blue-light);font-size:.8rem;padding:.1rem .35rem;border-radius:3px;">/skills/public/</code> for shared use and <code style="background:var(--blue-light);font-size:.8rem;padding:.1rem .35rem;border-radius:3px;">/skills/user/</code> for user-specific overrides. Claude reads both and the user-level file wins on conflict.</p>
+          <p>In Claude Code, project skills live under <code style="background:var(--blue-light);font-size:.8rem;padding:.1rem .35rem;border-radius:3px;">.claude/skills/</code> in the repository, shared with everyone who clones it, and personal skills under <code style="background:var(--blue-light);font-size:.8rem;padding:.1rem .35rem;border-radius:3px;">~/.claude/skills/</code>. Check the docs for how the two are resolved when names overlap.</p>
         </div>
         <div class="card">
           <div class="card-icon">🔗</div>
@@ -563,7 +564,7 @@ Internal acronyms: ToR = Terms of Reference</span>
         <div class="card">
           <div class="card-icon">⚡</div>
           <h3>Slash Commands</h3>
-          <p>In Claude.ai Projects, you can invoke a skill manually with a slash command. This gives teams a shared palette of pre-configured workflows accessible without remembering any syntax.</p>
+          <p>In Claude Code, a skill can be invoked by name as a slash command; in the Claude apps, skills are picked up from their description when a task matches. Either way a team gets a shared palette of pre-configured workflows without memorising syntax.</p>
         </div>
       </div>
     </div>
@@ -652,23 +653,8 @@ Internal acronyms: ToR = Terms of Reference</span>
       Token spend is the primary cost lever when using Claude at scale. Most waste comes from three sources: oversized contexts, repetitive system prompts, and unnecessarily long outputs. Each is fixable.
     </p>
 
-    <div class="stat-row">
-      <div class="stat">
-        <div class="stat-num">~75%</div>
-        <div class="stat-label">of token cost is often from input, not output</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">200K</div>
-        <div class="stat-label">token context window; most use less than 10%</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">3×</div>
-        <div class="stat-label">typical cost difference between Sonnet and Opus</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">60%</div>
-        <div class="stat-label">token reduction possible via prompt caching on repeated system prompts</div>
-      </div>
+    <div class="callout">
+      <p><strong>Where the money goes.</strong> Input tokens usually dominate a bill, because every call resends the context; output tokens are priced higher per token but there are fewer of them. Model tiers differ in price by a wide margin, cached input is billed at a fraction of the normal rate, and the Batch API is discounted for work that can wait. The exact figures change: check the current <a href="https://www.anthropic.com/pricing" target="_blank" rel="noopener" style="color:var(--blue)">pricing page</a> and the <a href="https://docs.claude.com" target="_blank" rel="noopener" style="color:var(--blue)">docs</a> before building a budget on any of them.</p>
     </div>
 
     <div style="margin-top:3.5rem;">
@@ -676,7 +662,7 @@ Internal acronyms: ToR = Terms of Reference</span>
         <div class="card">
           <div class="card-icon">🗂️</div>
           <h3>Prompt Caching</h3>
-          <p>If you send a long system prompt or large document repeatedly (e.g., a knowledge base), use Anthropic's <strong>prompt caching</strong> API feature. Cached tokens cost 90% less per re-use. Cache invalidates after 5 minutes of inactivity by default.</p>
+          <p>If you send a long system prompt or large document repeatedly (e.g., a knowledge base), use Anthropic's <strong>prompt caching</strong> API feature. Cached input is billed at a much lower rate per re-use, and the cache expires after a short period of inactivity. The current rate and lifetime are on the pricing page and in the docs.</p>
           <div class="badge-row">
             <span class="badge">API Only</span>
             <span class="badge">High Impact</span>
@@ -710,7 +696,7 @@ Internal acronyms: ToR = Terms of Reference</span>
         <div class="card">
           <div class="card-icon">📉</div>
           <h3>Output Length Control</h3>
-          <p>Claude defaults to verbose responses unless told otherwise. Explicit instructions like "respond in under 150 words", "use a single sentence", or "no explanation, just the JSON" can cut output tokens by 50–70% on extraction and classification tasks.</p>
+          <p>Claude defaults to verbose responses unless told otherwise. Explicit instructions like "respond in under 150 words", "use a single sentence", or "no explanation, just the JSON" cut output tokens substantially on extraction and classification tasks.</p>
           <div class="badge-row">
             <span class="badge">Prompt Design</span>
             <span class="badge">Easy Win</span>
@@ -719,10 +705,10 @@ Internal acronyms: ToR = Terms of Reference</span>
         <div class="card">
           <div class="card-icon">🔌</div>
           <h3>Batch API</h3>
-          <p>For high-volume, non-real-time tasks (classification runs, document processing pipelines), Anthropic's Batch API processes requests asynchronously at a 50% discount versus synchronous calls. Results return within 24 hours.</p>
+          <p>For high-volume, non-real-time tasks (classification runs, document processing pipelines), Anthropic's Batch API processes requests asynchronously at a discount to synchronous calls, with results returned within a stated window rather than immediately. Check the current discount and turnaround on the pricing page.</p>
           <div class="badge-row">
             <span class="badge">API Only</span>
-            <span class="badge gold-tag">50% Discount</span>
+            <span class="badge gold-tag">Discounted</span>
           </div>
         </div>
       </div>
@@ -734,13 +720,13 @@ Internal acronyms: ToR = Terms of Reference</span>
 <span class="cmt">── Input Token Reduction ──────────────────────────────────</span>
 
 <span class="kw">Prompt caching</span>      <span class="str">→ Cache static system prompts / documents</span>
-                     <span class="cmt">  90% cost reduction on cache hits</span>
+                     <span class="cmt">  Cache hits are billed at a reduced rate; see pricing page</span>
 
 <span class="kw">Trim conversation</span>   <span class="str">→ Summarize history every ~10 turns</span>
                      <span class="cmt">  Prevents context from compounding</span>
 
 <span class="kw">Scope your context</span>  <span class="str">→ Only include files/data Claude needs</span>
-                     <span class="cmt">  In Claude Code: use --include flags</span>
+                     <span class="cmt">  In Claude Code: name the files and folders in the request</span>
 
 <span class="cmt">── Output Token Reduction ────────────────────────────────</span>
 
@@ -762,9 +748,9 @@ Internal acronyms: ToR = Terms of Reference</span>
 <section id="contact" class="dark-section" style="padding:4.5rem 2rem;">
   <div class="section-inner" style="text-align:center;">
     <p class="section-label" style="text-align:center;">Work With Us</p>
-    <h2 class="light" style="margin:0 auto 1rem;max-width:600px;">Ready to Build Something <em>Practical</em>?</h2>
+    <h2 class="light" style="margin:0 auto 1rem;max-width:600px;">Getting a team to <em>level 6 or 7</em>?</h2>
     <p style="font-size:.98rem;line-height:1.75;color:rgba(255,255,255,.62);max-width:520px;margin:0 auto 2rem;">
-      We help organizations design Claude workflows, build CLAUDE.md systems, and deploy token-efficient AI pipelines that integrate into existing operations.
+      This page is reference material. The service behind it is training: we train the people who write the CLAUDE.md files and Skills, and configure agents on the platforms a team already uses. We build no pipelines or software.
     </p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
       <a class="btn-gold" href="../" target="_blank">Visit mai4consulting.com</a>
@@ -788,24 +774,38 @@ Internal acronyms: ToR = Terms of Reference</span>
   <nav class="footer-nav" aria-label="Site">
     <ul>
       <li><a href="../">Home</a></li>
-      <li><a href="../services/">Services</a></li>
+      <li><span class="fn-group">Services</span></li>
+      <li><a href="../services/">All services</a></li>
+      <li><a href="../services/assessment/">Readiness Assessment</a></li>
+      <li><a href="../services/policy/">AI Use Policy</a></li>
+      <li><a href="../services/training/">Team AI Training</a></li>
+      <li><a href="../services/support/">Fluency Support</a></li>
+      <li><a href="../services/agents/">Custom Agents, Skills & Tools</a></li>
+      <li><a href="../for-funders/">For funders</a></li>
       <li><a href="../estimate/">Price estimate</a></li>
-      <li><a href="../for-funders/">For Investors</a></li>
-      <li><a href="../about/">About</a></li>
-      <li><a href="../compare/">Compare the market</a></li>
-      <li><a href="../knowledge/">Knowledge</a></li>
-      <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
-      <li><a href="../our-clients/">Who We Work With</a></li>
-      <li><a href="../contact-us/">Contact</a></li>
-      <li><span class="fn-group">Read</span></li>
-      <li><a href="../playbook/">Sample Playbook</a></li>
+      <li><span class="fn-group">Learn</span></li>
+      <li><a href="../use-cases/">The seven levels</a></li>
+      <li><a href="../use-cases/level-3/">Level 3: Structured</a></li>
+      <li><a href="../use-cases/level-4/">Level 4: Set up</a></li>
+      <li><a href="../use-cases/level-5/">Level 5: Delegating</a></li>
+      <li><a href="../use-cases/level-6/">Level 6: Building</a></li>
+      <li><a href="../use-cases/level-7/">Level 7: At the terminal</a></li>
+      <li><a href="../transformation-journey/">The journey, role by role</a></li>
+      <li><a href="../playbook/">Sample playbook</a></li>
+      <li><a href="../knowledge/">Knowledge library</a></li>
+      <li><span class="fn-group">Free tools</span></li>
+      <li><a href="../explore-your-ai-readiness/">AI Readiness Check (12 min)</a></li>
+      <li><a href="../extensive-ai-readiness-analysis/">Extended assessment (60 questions)</a></li>
+      <li><span class="fn-group">Reference</span></li>
       <li><a href="../eu-ai-act-article-4/">EU AI Act Article 4</a></li>
-      <li><a href="../use-cases/">AI Use Cases</a></li>
-      <li><a href="../transformation-journey/">Use Cases: the journey</a></li>
       <li><a href="../claude-in-chrome/">Claude in Chrome</a></li>
-      <li><span class="footer-nav-current" aria-current="page">Claude for Business</span></li>
-      <li><a href="../extensive-ai-readiness-analysis/">Extended Assessment</a></li>
-      <li><span class="fn-group">Legal</span></li>
+      <li><span class="footer-nav-current" aria-current="page">Claude: Skills, CLAUDE.md and tokens</span></li>
+      <li><span class="fn-group">Company</span></li>
+      <li><a href="../about/">About</a></li>
+      <li><a href="../our-clients/">Who we work with</a></li>
+      <li><a href="../compare/">Compare the market</a></li>
+      <li><a href="../contact-us/">Contact</a></li>
+      <li><a href="../book/">Book a call</a></li>
       <li><a href="../privacy/">Privacy</a></li>
     </ul>
   </nav>

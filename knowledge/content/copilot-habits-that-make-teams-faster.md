@@ -21,7 +21,7 @@ This briefing draws on Mamdouh's experience with the AI Smart Work Champion prog
 
 ## The habit to teach first
 
-The people who got value quickly were not more skilled. They asked for the specific thing instead of the vague thing. Three parts make up the habit:
+The people who get value quickly are not more skilled. They ask for the specific thing instead of the vague thing. Three parts make up the habit:
 
 - **Name the format before the content.** "A two-paragraph summary for someone who wasn't in the meeting" gave something usable at once. "Summarise this" gave something that needed a full rewrite.
 - **Name the audience out loud.** Saying who will read it (a donor, a board member, a colleague catching up) changed the tone of the response more than any other single instruction. In the programme, naming the audience and goal first is what turned Copilot from a search bar into something closer to a colleague being briefed.
@@ -29,7 +29,7 @@ The people who got value quickly were not more skilled. They asked for the speci
 
 Know also what Copilot can see. It works from what is actually open and connected, not everything on a hard drive, and understanding that stopped many wasted first attempts.
 
-Teaching method matters. Watching someone else use Copilot well did not reliably teach the habit. Training that had people type their own prompts did. Generic scenarios also never matched a real inbox or spreadsheet, and closing that gap took a few weeks of using the tool on real work.
+Teaching method matters. Watching someone else use Copilot well does not reliably teach the habit. Training where people type their own prompts does. Generic scenarios rarely match a real inbox or spreadsheet, and closing that gap takes a few weeks of using the tool on real work.
 
 ## Why a draft beats a blank page
 
@@ -39,7 +39,7 @@ The productivity gap people expect is typing speed. The one that shows up week t
 - A wrong draft still narrows the problem. It turns "what should this say" into "this part is right and this part isn't".
 - Most people critique faster than they create, and a draft plays to that.
 
-This extends to rewriting. People who got the most from Copilot in Word rewrote existing text more often than they generated new text. Habits that made it useful: start from something (notes, an old draft, bullet points), ask for an outline before prose, and select a paragraph to make it more concise, formal or direct.
+This extends to rewriting. Copilot in Word earns its place more often by rewriting existing text than by generating new text. Habits that made it useful: start from something (notes, an old draft, bullet points), ask for an outline before prose, and select a paragraph to make it more concise, formal or direct.
 
 One exception: for a genuinely new idea that does not yet exist in any form, asking for a draft too early sometimes produced a plausible answer that closed off better directions. Think first, then draft.
 

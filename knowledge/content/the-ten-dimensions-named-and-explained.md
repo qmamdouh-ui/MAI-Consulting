@@ -28,7 +28,7 @@ None of what follows is a secret formula. It is a plain list of what the ten dim
 
 ## Why ten, and why these ten
 
-Fewer dimensions and the score stops distinguishing between organisations that are genuinely different. More, and nobody outside the assessment team remembers what is actually being measured, which defeats the point of naming them at all. Ten is the number that has, in practice, held up across the organisations we have assessed: enough to separate operational competence from organisational climate, few enough that a board member can hold the list in their head after one reading.
+Fewer dimensions and the score stops distinguishing between organisations that are genuinely different. More, and nobody outside the assessment team remembers what is actually being measured, which defeats the point of naming them at all. Ten is the number the instrument settled on: enough to separate operational competence from organisational climate, few enough that a board member can hold the list in their head after one reading.
 
 ## The ten dimensions, named and explained
 

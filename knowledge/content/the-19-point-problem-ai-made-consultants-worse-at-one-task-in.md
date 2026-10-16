@@ -81,7 +81,7 @@ not obvious nonsense. It is a well-structured, professionally worded, wrong answ
 output" guidance is unaffordable and gets ignored. Targeted checks on identified task types
 get done.
 
-## Where I would push back on my own argument
+## Where we would push back on our own argument
 
 Two honest limits.
 

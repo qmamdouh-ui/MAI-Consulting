@@ -52,7 +52,7 @@ Maintaining this costs real time: an initial pass to build it, then a recurring 
 
 ## Why this is a prerequisite, not a nice-to-have
 
-Everything downstream depends on it. A usage policy that names permitted tools by role is unenforceable if the register of actual tools in use does not exist. A readiness assessment scores current practice against a picture that, without this, is guesswork dressed up as data. The evidence file a board or funder eventually asks for starts here, because "what tools do you use, and for what" is the first question in nearly every version of that conversation we have seen.
+Everything downstream depends on it. A usage policy that names permitted tools by role is unenforceable if the register of actual tools in use does not exist. A readiness assessment scores current practice against a picture that, without this, is guesswork dressed up as data. The evidence file a board or funder eventually asks for starts here, because "what tools do you use, and for what" is the first question in any version of that conversation.
 
 ## The practical takeaway
 

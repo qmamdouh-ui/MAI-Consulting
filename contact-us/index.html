@@ -232,12 +232,12 @@ body > header{position:static !important}
     <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <ul class="mai-links" id="mai-links">
       <li><a href="../services/">Services</a></li>
+      <li><a href="../use-cases/">Levels</a></li>
       <li><a href="../estimate/">Estimate</a></li>
-      <li><a href="../for-funders/">For Investors</a></li>
-      <li><a href="../compare/">Compare</a></li>
+      <li><a href="../explore-your-ai-readiness/">Free check</a></li>
       <li><a href="../knowledge/">Knowledge</a></li>
-      <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
-      <li><a href="../transformation-journey/">Use Cases</a></li>
+      <li><a href="../for-funders/">For funders</a></li>
+      <li><a href="../about/">About</a></li>
       <li><a class="mai-cta" href="../book/">Book a call</a></li>
     </ul>
   </div>
@@ -250,7 +250,7 @@ body > header{position:static !important}
   <div class="orb o1"></div><div class="orb o2"></div>
   <div class="hero-badge"><span class="badge-dot"></span>Let's Talk</div>
   <h1>Start a <span>Conversation</span></h1>
-  <p>Tell us about your organization and goals. We'll get back to you within one business day to explore how we can work together.</p>
+  <p>Tell us about your organisation and goals. We reply within one business day.</p>
 </section>
 
 
@@ -278,7 +278,7 @@ body > header{position:static !important}
 
       <div class="form-row">
         <div class="field">
-          <label>Organization</label>
+          <label>Organisation</label>
           <input type="text" id="organization" name="organization" placeholder="e.g. Green Future NGO"/>
         </div>
         <div class="field">
@@ -293,6 +293,7 @@ body > header{position:static !important}
           <select id="sector" name="sector" required>
             <option value="">Select your sector…</option>
             <option>Nonprofit / NGO</option>
+            <option>International organisation / UN agency</option>
             <option>Private Sector</option>
             <option>Government / Public Sector</option>
             <option>Training Centre</option>
@@ -321,7 +322,9 @@ body > header{position:static !important}
 <option>I want to know where we stand: AI Readiness Assessment</option>
 <option>My staff use AI and we have no policy: AI Use Policy</option>
 <option>My teams need practical training: Team AI Training</option>
-<option>We need several of them: a package</option><option>We want a repetitive task set up once: Custom Agents and Tools</option>
+<option>We trained months ago and nobody has re-measured: Fluency Support</option>
+<option>We want a repetitive task set up once: Custom Agents and Tools</option>
+<option>We need several of them: a package</option>
 <option>Something else</option>
 </select>
       </div>
@@ -334,14 +337,14 @@ body > header{position:static !important}
           <option>Google Search</option>
           <option>Referral from a colleague</option>
           <option>Event or conference</option>
-          <option>Partner organization</option>
+          <option>Partner organisation</option>
           <option>Other</option>
         </select>
       </div>
 
       <div class="field">
         <label>Your Message <span class="req">*</span></label>
-        <textarea id="message" name="message" placeholder="Tell us about your organization, your current challenges, and what you're hoping to achieve with AI…" required></textarea>
+        <textarea id="message" name="message" placeholder="Tell us about your organisation, your current challenges, and what you're hoping to achieve with AI…" required></textarea>
       </div>
 
       <div class="field">
@@ -351,6 +354,13 @@ body > header{position:static !important}
           <label class="cb-item"><input type="checkbox" name="contact_call" value="Phone call"/> <span>Phone call (we will email you to ask for a number)</span></label>
           <label class="cb-item"><input type="checkbox" name="contact_video" value="Video call"/> <span>Video call (Zoom / Teams)</span></label>
         </div>
+      </div>
+
+      <div class="field" id="field-consent">
+        <label class="cb-item" style="text-transform:none;letter-spacing:0;font-weight:500;align-items:flex-start;">
+          <input type="checkbox" id="consent" name="consent" style="margin-top:2px;"/>
+          <span>I agree to M.A.I. Consulting handling these details to reply to me, as described in the <a href="../privacy/" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700;">privacy policy</a>. Your message is sent to us by email through EmailJS and kept for up to three years. <span class="req">*</span></span>
+        </label>
       </div>
 
       <button type="submit" class="submit-btn" id="submit-btn">
@@ -415,8 +425,7 @@ body > header{position:static !important}
     <div class="response-card">
       <h3>What Happens Next</h3>
       <p>We read every message personally. This is what happens after you send it.</p>
-      <div class="response-item"><span class="material-symbols-outlined">alarm</span>Acknowledgement within a few hours</div>
-      <div class="response-item"><span class="material-symbols-outlined">calendar_today</span>Full response within 1 business day</div>
+      <div class="response-item"><span class="material-symbols-outlined">calendar_today</span>Reply within one business day</div>
       <div class="response-item"><span class="material-symbols-outlined">video_call</span>Discovery call scheduled within the week</div>
       <div class="response-item"><span class="material-symbols-outlined">description</span>Fixed-price proposal within 5 days of the call</div>
     </div>
@@ -486,10 +495,14 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     showError('Please enter a valid email address.');
     return;
   }
+  if (!document.getElementById('consent').checked) {
+    showError('Please tick the privacy box so we may handle your details and reply.');
+    return;
+  }
 
-  /* collect preferred contact methods */
+  /* collect preferred contact methods (the consent box is not one of them) */
   var preferred = [];
-  document.querySelectorAll('input[type=checkbox]:checked').forEach(function(cb) {
+  document.querySelectorAll('input[type=checkbox][name^="contact_"]:checked').forEach(function(cb) {
     preferred.push(cb.value);
   });
 
@@ -505,6 +518,7 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     referral:     document.getElementById('referral').value            || 'not given',
     preferred:    preferred.length ? preferred.join(', ') : 'not given',
     message:      message,
+    privacy_consent: 'yes',
     to_email:     'q.mamdouh@mai4consulting.com'
   };
 
@@ -571,24 +585,38 @@ function showError(msg) {
   <nav class="footer-nav" aria-label="Site">
     <ul>
       <li><a href="../">Home</a></li>
-      <li><a href="../services/">Services</a></li>
+      <li><span class="fn-group">Services</span></li>
+      <li><a href="../services/">All services</a></li>
+      <li><a href="../services/assessment/">Readiness Assessment</a></li>
+      <li><a href="../services/policy/">AI Use Policy</a></li>
+      <li><a href="../services/training/">Team AI Training</a></li>
+      <li><a href="../services/support/">Fluency Support</a></li>
+      <li><a href="../services/agents/">Custom Agents, Skills & Tools</a></li>
+      <li><a href="../for-funders/">For funders</a></li>
       <li><a href="../estimate/">Price estimate</a></li>
-      <li><a href="../for-funders/">For Investors</a></li>
-      <li><a href="../about/">About</a></li>
-      <li><a href="../compare/">Compare the market</a></li>
-      <li><a href="../knowledge/">Knowledge</a></li>
-      <li><a href="../explore-your-ai-readiness/">Readiness Check</a></li>
-      <li><a href="../our-clients/">Who We Work With</a></li>
-      <li><span class="footer-nav-current" aria-current="page">Contact</span></li>
-      <li><span class="fn-group">Read</span></li>
-      <li><a href="../playbook/">Sample Playbook</a></li>
+      <li><span class="fn-group">Learn</span></li>
+      <li><a href="../use-cases/">The seven levels</a></li>
+      <li><a href="../use-cases/level-3/">Level 3: Structured</a></li>
+      <li><a href="../use-cases/level-4/">Level 4: Set up</a></li>
+      <li><a href="../use-cases/level-5/">Level 5: Delegating</a></li>
+      <li><a href="../use-cases/level-6/">Level 6: Building</a></li>
+      <li><a href="../use-cases/level-7/">Level 7: At the terminal</a></li>
+      <li><a href="../transformation-journey/">The journey, role by role</a></li>
+      <li><a href="../playbook/">Sample playbook</a></li>
+      <li><a href="../knowledge/">Knowledge library</a></li>
+      <li><span class="fn-group">Free tools</span></li>
+      <li><a href="../explore-your-ai-readiness/">AI Readiness Check (12 min)</a></li>
+      <li><a href="../extensive-ai-readiness-analysis/">Extended assessment (60 questions)</a></li>
+      <li><span class="fn-group">Reference</span></li>
       <li><a href="../eu-ai-act-article-4/">EU AI Act Article 4</a></li>
-      <li><a href="../use-cases/">AI Use Cases</a></li>
-      <li><a href="../transformation-journey/">Use Cases: the journey</a></li>
       <li><a href="../claude-in-chrome/">Claude in Chrome</a></li>
-      <li><a href="../save-claude-tokens/">Claude for Business</a></li>
-      <li><a href="../extensive-ai-readiness-analysis/">Extended Assessment</a></li>
-      <li><span class="fn-group">Legal</span></li>
+      <li><a href="../save-claude-tokens/">Claude: Skills, CLAUDE.md and tokens</a></li>
+      <li><span class="fn-group">Company</span></li>
+      <li><a href="../about/">About</a></li>
+      <li><a href="../our-clients/">Who we work with</a></li>
+      <li><a href="../compare/">Compare the market</a></li>
+      <li><span class="footer-nav-current" aria-current="page">Contact</span></li>
+      <li><a href="../book/">Book a call</a></li>
       <li><a href="../privacy/">Privacy</a></li>
     </ul>
   </nav>

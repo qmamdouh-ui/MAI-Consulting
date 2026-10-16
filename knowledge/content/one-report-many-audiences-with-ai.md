@@ -17,17 +17,17 @@ featured: false
 ---
 The same information has to go to several people, or the same report has to go out every week, and each version is written as if for the first time. The cost is not the typing. It is rebuilding structure, tone and framing again and again, and the risk is that the versions quietly drift apart.
 
-Four examples show the alternative: fix the structure and the facts once, then adapt from that single source with explicit instructions.
+Four illustrative scenarios show the alternative: fix the structure and the facts once, then adapt from that single source with explicit instructions.
 
 ## Recurring reports: write the structure once
 
-A Friday status update used to take an hour of pulling numbers from three dashboards. The report itself never changed, only how the first draft was built. The pattern in the source article:
+A Friday status update used to take an hour of pulling numbers from three dashboards. The report itself never changed, only how the first draft was built. The pattern:
 
 - Decide the sections, order and framing the first time, and never rework them. Only the numbers and commentary change.
 - Hand over the raw export and ask for this week's figures to be filled in using last week's report as the template.
-- Ask explicitly for anything that moved more than usual to be called out. The source uses "more than 15% from last week" as its example threshold, which is a choice for you to set for your own data.
+- Ask explicitly for anything that moved more than usual to be called out. A threshold such as "more than 15% from last week" is a choice for you to set for your own data.
 
-A human still adds a one-line explanation to each flagged change. The model can say that a number moved but not always why. The report goes out only after that pass. In the article's phrase, what is worth automating is not the writing but the fifteen minutes spent remembering last week's format.
+A human still adds a one-line explanation to each flagged change. The model can say that a number moved but not always why. The report goes out only after that pass. What is worth automating is not the writing but the fifteen minutes spent remembering last week's format.
 
 ## One report, several audiences
 

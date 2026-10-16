@@ -23,7 +23,7 @@ featured: false
 
 The pilot went well. The team was enthusiastic, the outputs were impressive, and the steering group agreed to scale. Six months later the tool is used by a handful of people, the promised savings have not appeared, and nobody can quite say why the success did not travel.
 
-We see this pattern often enough to give it a name: pilot theatre. It is not a failure of technology and rarely a failure of effort. It is a design flaw in the pilot itself. Most pilots are built to demonstrate that something can work. Very few are built to discover whether it will work under the conditions of ordinary Tuesday-afternoon operations.
+The pattern is common enough to deserve a name: pilot theatre. It is not a failure of technology and rarely a failure of effort. It is a design flaw in the pilot itself. Most pilots are built to demonstrate that something can work. Very few are built to discover whether it will work under the conditions of ordinary Tuesday-afternoon operations.
 
 *A pilot that cannot fail is not evidence. It is a rehearsal.*
 

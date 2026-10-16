@@ -17,7 +17,7 @@ featured: false
 ---
 You hand the AI a real piece of work, get back something accurate and unusable, and conclude the tool is not for this kind of task. In most cases the model was not the problem. The missing piece was a middle step between "AI can do this" and "AI did this for me today".
 
-This guide sets out that middle step as a short method, drawn from five worked examples: a pile of supplier emails, an eleven-page tangle of meeting transcripts, three documents due in one week, three important messages that needed a last read, and the question of which workflow to build first.
+This guide sets out that middle step as a short method, illustrated with five scenarios: a pile of supplier emails, an eleven-page tangle of meeting transcripts, three documents due in one week, three important messages that needed a last read, and the question of which workflow to build first.
 
 ## A worked example: nine supplier emails
 
@@ -25,7 +25,7 @@ The task was to summarise who owed what by when from nine supplier emails in thr
 
 The second attempt named the output first: a table with supplier, amount and due date as columns, before the emails were described at all. Two emails had conflicting amounts within their threads, so the request also asked the model to flag conflicts rather than resolve them quietly. That flag caught a discrepancy before it reached anyone else.
 
-The first table was still a draft. One date did not match its source email. Spotting it took one read-through of five rows. In the source article's account the whole job took twenty minutes: three prompts, one conflict settled with a phone call, one date corrected and a final read. That is the ordinary work of checking output against a source, the same check you would give a summary from a junior colleague.
+The first table was still a draft. One date did not match its source email. Spotting it took one read-through of five rows. In this scenario the whole job takes about twenty minutes: three prompts, one conflict settled with a phone call, one date corrected and a final read. That is the ordinary work of checking output against a source, the same check you would give a summary from a junior colleague.
 
 ## The method
 
@@ -47,7 +47,7 @@ The same habit applies when the task is to improve your own writing. Before send
 - Is it clear exactly what I want the reader to do next?
 - How might the tone land on someone having a bad day?
 
-In the source example, the third question caught a curtness the writer had read as calm. A second pair of eyes, in that article's phrase, can be a different set of questions rather than a second person. It cannot settle how direct to be with a particular client. That judgment stays with someone who knows the person.
+In the scenario, the third question catches a curtness the writer had read as calm. A second pair of eyes can be a different set of questions rather than a second person. It cannot settle how direct to be with a particular client. That judgment stays with someone who knows the person.
 
 ### 4. Start with the structure of the document type, and label the draft
 
@@ -61,7 +61,7 @@ Structure gets the three documents started. A proposal still needs a sales insti
 
 ## Cleaning up a messy document: topics, then order, then content
 
-One further example shows the value of sequence. A client sent eleven pages of transcripts, half-finished requirements and side notes and asked for "something we can actually build from". The pass that worked had three steps in a fixed order:
+One further scenario shows the value of sequence. Suppose a client sends eleven pages of transcripts, half-finished requirements and side notes and asks for "something we can actually build from". The pass that works has three steps in a fixed order:
 
 1. List every distinct topic present, and nothing else.
 2. Group the topics into a logical order and name the sections from them.
@@ -71,7 +71,7 @@ Skipping the order causes trouble in both directions. Naming sections before you
 
 ## Choosing the first workflow to build
 
-If you can build only one repeatable workflow this month, the source article's advice is to pick one that meets three tests:
+If you can build only one repeatable workflow this month, pick one that meets three tests:
 
 | Test | What it means |
 |---|---|

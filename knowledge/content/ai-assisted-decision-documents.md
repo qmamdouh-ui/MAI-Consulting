@@ -17,13 +17,13 @@ featured: false
 ---
 Someone needs to make a decision, and what you have is a forty-page proposal, three weeks of notes, a spreadsheet with dozens of columns or a pile of research. Shortening that material is not enough. A decision-maker needs the few things that would change their answer, and the work of finding them is what eats the time.
 
-Six worked examples share one principle: decide what the reader must be able to decide, then use AI to sort, draft and lay out around that. The writing was never the slow part. The sorting was.
+Six illustrative examples share one principle: decide what the reader must be able to decide, then use AI to sort, draft and lay out around that. The writing was never the slow part. The sorting was. The examples are scenarios, not reports from client engagements.
 
 ## Start from the decision, not the document
 
 ### Briefs from long documents
 
-A forty-page vendor proposal arrived with a decision due by end of day. The first pass gave an accurate condensed version in the proposal's own order, which suited someone verifying details and nobody deciding by 5pm. The fix was to ask for a brief structured around the decision. It had to answer three questions:
+Take an illustrative case: a forty-page vendor proposal arrives with a decision due by end of day. The first pass gives an accurate condensed version in the proposal's own order, which suited someone verifying details and nobody deciding by 5pm. The fix was to ask for a brief structured around the decision. It had to answer three questions:
 
 - What is actually being proposed, in one paragraph, stripped of padding?
 - What does it cost in every sense that matters: price, timeline, and what the vendor needs from you to deliver?
@@ -33,7 +33,7 @@ A brief that only describes the yes option does not give anyone a real decision.
 
 ### Memos from scattered notes
 
-Three weeks of meeting notes, Slack threads and sketches had to become a two-page memo for a leadership team. The source article reports a week to even start writing the old way and an afternoon with this sequence:
+Three weeks of meeting notes, Slack threads and sketches have to become a two-page memo for a leadership team. The old way is a week spent getting started; the alternative is an afternoon with this sequence:
 
 1. Ask what choices are actually being considered. This surfaced three options that had never been written down together.
 2. Ask for confirmed facts to be separated from someone's guess, so a hunch is not quietly promoted to a fact.

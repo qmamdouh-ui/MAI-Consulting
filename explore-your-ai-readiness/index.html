@@ -142,6 +142,34 @@ body{font-family:'Inter',sans-serif;background:var(--off);color:var(--charcoal);
 .ns-btn.ns-primary:hover{background:var(--gold-light,#e8c86a);}
 .ns-fine{font-size:11.5px;line-height:1.6;color:#6b7280;margin:0;}
 
+/* consent box above the download button */
+.consent-box{background:var(--white);border:1px solid var(--outline);border-left:3px solid var(--blue);border-radius:12px;padding:16px 18px;}
+.consent-k{font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue);margin-bottom:6px;}
+.consent-text{font-size:12px;line-height:1.6;color:var(--charcoal);margin:0 0 6px;}
+.consent-text a,.consent-item a{color:var(--blue);font-weight:600;}
+.consent-item{display:flex;align-items:flex-start;gap:9px;font-size:12px;line-height:1.5;color:var(--txt);cursor:pointer;margin-top:8px;}
+.consent-item input{margin-top:3px;accent-color:var(--blue);flex-shrink:0;}
+.consent-item.field-error span{color:var(--error);}
+
+/* analytical reading below the questions */
+.analysis-wrap{max-width:960px;margin:0 auto;padding:0 16px 60px;}
+.analysis-card{background:var(--white);border:1px solid var(--outline);border-radius:16px;padding:28px 30px;}
+.an-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:800;color:var(--txt);margin-bottom:4px;}
+.an-sub{font-size:12.5px;color:#777;margin-bottom:18px;line-height:1.6;}
+.an-wait{font-size:13px;color:#888;line-height:1.6;}
+.an-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:6px;}
+@media(max-width:700px){.an-grid{grid-template-columns:1fr;}}
+.an-block{background:var(--off);border-radius:12px;padding:16px 18px;}
+.an-block p{font-size:13px;line-height:1.65;color:var(--charcoal);margin:6px 0 0;}
+.an-k{font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue);margin:16px 0 6px;}
+.an-block .an-k{margin-top:0;}
+.an-score{font-family:'Playfair Display',serif;font-size:15px;font-weight:800;color:var(--txt);}
+.an-score span{font-size:34px;color:var(--gold);}
+.an-gaps,.an-30{margin:0 0 6px 20px;}
+.an-gaps li,.an-30 li{font-size:13px;line-height:1.6;color:var(--charcoal);margin-bottom:8px;}
+.an-move{color:var(--blue-dark);font-weight:600;}
+.an-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding:16px 18px;border:1px solid var(--outline);border-left:3px solid var(--gold);border-radius:12px;font-size:13px;line-height:1.6;color:var(--charcoal);}
+
 .completion-wrap{background:var(--white);border:1px solid var(--outline);border-radius:12px;padding:16px 20px;}
 .comp-label{display:flex;justify-content:space-between;font-size:11px;font-weight:600;color:var(--charcoal);margin-bottom:8px;}
 .comp-bar{background:var(--off);border-radius:9999px;height:7px;overflow:hidden;}
@@ -225,12 +253,12 @@ body > header{position:static !important}
     <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <ul class="mai-links" id="mai-links">
       <li><a href="../services/">Services</a></li>
+      <li><a href="../use-cases/">Levels</a></li>
       <li><a href="../estimate/">Estimate</a></li>
-      <li><a href="../for-funders/">For Investors</a></li>
-      <li><a href="../compare/">Compare</a></li>
+      <li><a href="../explore-your-ai-readiness/" aria-current="page">Free check</a></li>
       <li><a href="../knowledge/">Knowledge</a></li>
-      <li><a href="../explore-your-ai-readiness/" aria-current="page">Readiness Check</a></li>
-      <li><a href="../transformation-journey/">Use Cases</a></li>
+      <li><a href="../for-funders/">For funders</a></li>
+      <li><a href="../about/">About</a></li>
       <li><a class="mai-cta" href="../book/">Book a call</a></li>
     </ul>
   </div>
@@ -296,7 +324,7 @@ body > header{position:static !important}
       </div>
 
       <div class="ui-field" id="field-email">
-        <label>Email Address <span style="color:var(--error)">*</span></label>
+        <label>Email (we send your results to this address) <span style="color:var(--error)">*</span></label>
         <input type="email" id="u-email" placeholder="e.g. sara@example.com"
                oninput="updateUser();clearFieldError('field-email')"/>
       </div>
@@ -337,6 +365,12 @@ body > header{position:static !important}
       <div id="rec-content" class="rec-text">Answer questions to receive personalized recommendations based on your specific weak spots.</div>
     </div>
     <div class="validation-banner" id="validation-banner"></div>
+    <div class="consent-box" id="consent-box">
+      <div class="consent-k">Before you download</div>
+      <p class="consent-text">When you press the button, your report is generated in your browser and downloaded. A copy of the PDF and the details you entered above are stored in M.A.I. Consulting's Google Drive and sent to us by email, so that we can send you the results and follow up once. Nothing leaves your browser before you press it. Details: <a href="../privacy/" target="_blank" rel="noopener">privacy policy</a>.</p>
+      <label class="consent-item" id="field-consent"><input type="checkbox" id="u-consent" onchange="clearFieldError('field-consent')"/><span>I agree to the processing described in the <a href="../privacy/" target="_blank" rel="noopener">privacy policy</a>. <span style="color:var(--error)">*</span></span></label>
+      <label class="consent-item"><input type="checkbox" id="u-benchmark"/><span>You may use my anonymised answers in aggregate benchmarks (optional).</span></label>
+    </div>
     <button class="dl-btn" id="dl-btn" onclick="downloadPDF()">⬇ Download PDF Report</button>
     <div class="next-step" id="next-step">
       <div class="ns-k">What to do with this</div>
@@ -345,17 +379,27 @@ body > header{position:static !important}
         <a class="ns-btn ns-primary" href="../book/">Book a free 30-minute debrief</a>
         <a class="ns-btn" href="../services/">See services and prices</a>
       </div>
-      <p class="ns-fine">On the call we walk through your three weakest dimensions and what to do about each. No pitch. If the right first step is a free programme, that is what we will tell you.</p>
+      <p class="ns-fine">On the call we walk through your three weakest dimensions and what to do about each. No pitch. If the right first step is a free programme, that is what we will tell you. Your full reading appears <a href="#analysis-wrap" style="color:var(--blue);font-weight:700">below the questions</a> once all 28 are answered.</p>
     </div>
   </div>
 </div>
+
+<section class="analysis-wrap" id="analysis-wrap">
+  <div class="analysis-card">
+    <div class="an-title">Your reading</div>
+    <p class="an-sub">What the score means, where the pattern is and what to do first. Built from your answers only; the same text goes into the PDF.</p>
+    <div id="analysis-body"><p class="an-wait">Your reading appears here once all 28 questions are answered.</p></div>
+  </div>
+</section>
 
 <script>
 // ── EmailJS Configuration ─────────────────────────────────────────────
 const EMAILJS_PUBLIC_KEY  = 'JJs3lu55OHI_pbjth';
 const EMAILJS_SERVICE_ID  = 'service_an94235';
-const EMAILJS_TEMPLATE_ID = 'template_ellvbp8';
+const EMAILJS_TEMPLATE_ID = 'template_ellvbp8';            // owner notification (existing)
+const EMAILJS_RESPONDENT_TEMPLATE_ID = 'TEMPLATE_ID_TO_SET'; // respondent copy: set after creating the template (see sendRespondentEmail)
 const NOTIFY_EMAIL        = 'q.mamdouh@mai4consulting.com';
+const BOOK_URL            = 'https://mai4consulting.com/book/';
 // ── Google Apps Script Web App (PDF -> Drive) ─────────────────────────
 const GAS_URL = 'https://script.google.com/macros/s/AKfycbw8R6_1KygGdVMfe6NeVm2ZSBUy8-rGv5ppr16N3A-3UC0hc_Crvpc4QVF5s8l4www3/exec';
 // ─────────────────────────────────────────────────────────────────────
@@ -419,7 +463,7 @@ const Q_RECS={
   d2q4:{threshold:3,rec:'Train staff to spot deficit-based or stigmatizing framing (especially around beneficiaries, gender, age, ability)'},
   d2q5:{threshold:3,rec:'Add a "why did the AI say that?" reflection step to high-stakes use cases, beyond a quality check on the output'},
   d2q6:{threshold:5,rec:'Add a mission-fit check to your AI review process: does this output match how we talk about our work and the people we serve?'},
-  d2q7:{threshold:3,rec:'When AI gives a poor response, debug the prompt before re-asking, because the prompt is usually where the problem started'},
+  d2q7:{threshold:3,rec:'When AI gives a poor response, debug the prompt before re-asking: check what it asked for, what context it gave and what it left out'},
   d3q1:{threshold:3,rec:'Make it explicit that whoever shares an AI-assisted output owns its accuracy, with no "the AI said so" disclaimers'},
   d3q2:{threshold:5,rec:'Adopt a simple AI-disclosure standard: when, how, and to whom you flag AI involvement (funders, partners, beneficiaries)'},
   d3q3:{threshold:3,rec:'Review the data-handling terms of every AI vendor you use (training opt-out, retention, sub-processors, region)'},
@@ -509,7 +553,7 @@ function updateUser(){
 /* ── Validation helpers ─────────────────────────────────────────────── */
 function clearFieldError(fieldId){
   document.getElementById(fieldId).classList.remove('field-error');
-  if(!document.querySelector('.ui-field.field-error') && !document.querySelector('.dimension-block.dim-error')){
+  if(!document.querySelector('.ui-field.field-error, .consent-item.field-error') && !document.querySelector('.dimension-block.dim-error')){
     document.getElementById('validation-banner').style.display='none';
   }
 }
@@ -519,7 +563,7 @@ function clearDimError(di){
   const allAnswered=QUESTIONS.filter(q=>q.dim===di).every(q=>scores[q.id]!==undefined&&!isNaN(scores[q.id]));
   if(allAnswered){
     block.classList.remove('dim-error');
-    if(!document.querySelector('.ui-field.field-error') && !document.querySelector('.dimension-block.dim-error')){
+    if(!document.querySelector('.ui-field.field-error, .consent-item.field-error') && !document.querySelector('.dimension-block.dim-error')){
       document.getElementById('validation-banner').style.display='none';
     }
   }
@@ -571,6 +615,13 @@ function validateForm(){
     }
     issues.push(`All questions in ${DIMS[di].name}`);
   });
+
+  const consentEl=document.getElementById('u-consent');
+  if(!consentEl||!consentEl.checked){
+    document.getElementById('field-consent').classList.add('field-error');
+    issues.push('Tick the box agreeing to the processing described in the privacy policy');
+    if(!firstEl) firstEl=document.getElementById('consent-box');
+  }
 
   if(issues.length>0){
     const banner=document.getElementById('validation-banner');
@@ -637,6 +688,7 @@ function recalc(){
   });
   updateRec(pct,dimScores,dimMax);
   drawRadar(dimScores,dimMax);
+  renderAnalysis();
 }
 
 function getLevel(pct){
@@ -679,13 +731,136 @@ function drawRadar(ds,dm,ctx,W,H){
   angles.forEach((a,i)=>{const lx=cx+Math.cos(a)*(r+r*0.28),ly=cy+Math.sin(a)*(r+r*0.28);ctx.fillStyle=colors[i];ctx.fillText(labels[i],lx,ly);});
 }
 
+/* ── Analytical reading ─────────────────────────────────────────────────
+   Every sentence below is selected by a rule over the respondent's own
+   answers (score band, ordering of the four competency percentages, the
+   per-question thresholds in Q_RECS). No external statistics are used. */
+const LEVEL_TEXT={
+  'Not Ready':'Your answers describe AI use that is unplanned: tasks are not sorted into what AI should and should not touch, prompts carry little context, outputs are rarely checked and nobody has been asked to own the result. The practical risk is not that AI is absent but that it is in use informally, without rules. The first job is to make the current use visible and agree three or four basic rules.',
+  'Early Stage':'Your answers show the beginnings of practice in some competencies, but little that is shared or written down. Results depend on which person is using the tool, so quality is uneven and there is no way to tell good use from bad. The first job is to turn the strongest individual habits into a short shared standard.',
+  'Developing':'Your answers describe working practice in most competencies, with clear gaps in a few. Where the gaps sit is shown in the breakdown: the lagging competencies are where errors leave the organisation. The practical job is to close the named gaps rather than to add more tools.',
+  'Progressing':'Your answers describe consistent practice across most of the four competencies. The remaining gaps are specific rather than structural. The practical job is to document what already works so it survives staff turnover and tool changes, and to fix the items flagged below.',
+  'Advanced':'Your answers describe disciplined, shared practice across all four competencies. The practical risk at this level is decay: tools change, people leave and the standard drifts unless someone re-measures. The job is maintenance: a named owner, a review rhythm and a re-score.',
+  'AI-Ready':'Your answers describe mature practice in every competency. Treat this as a self-reported baseline to verify rather than a certificate: the next step is to check it against actual work samples and to keep it current.'
+};
+/* PATTERNS[strongest][weakest] for the four competencies 0 Delegation, 1 Description, 2 Discernment, 3 Diligence */
+const PATTERNS={
+  0:{1:'You know what to hand over but the instructions are thin, so the output needs rework. The fix is in the prompt, not the tool.',
+     2:'Work is handed over to AI but not checked: the risk is in what leaves the building.',
+     3:'Tasks are delegated with confidence but nobody formally owns the result or discloses the AI involvement. The exposure is accountability, not capability.'},
+  1:{0:'People write good prompts but the organisation has not decided which tasks belong to AI. Skill is ahead of policy; the risk is scattered, inconsistent use.',
+     2:'Instructions are precise but the outputs are trusted too readily. Good prompts produce confident, well-formatted errors; checking is the missing step.',
+     3:'Prompting is strong, ownership is weak: outputs are well made and nobody vouches for them. Add review and disclosure before scaling.'},
+  2:{0:'You check carefully but have not settled which tasks are worth delegating, so effort goes into verifying work that may not have needed AI at all. Decide the task list first.',
+     1:'Outputs are checked carefully but prompts are weak, so the checking catches avoidable errors. Better briefs would cut the review burden.',
+     3:'Individuals check their own work but there is no shared standard for ownership, disclosure or data hygiene. Quality depends on the person, not the organisation.'},
+  3:{0:'Rules and ownership exist but the organisation has not decided where AI adds value. Governance is ahead of use; the risk is a policy that nobody applies.',
+     1:'Governance is in place but people get mediocre results because prompts are thin. The next gain is skill, not policy.',
+     2:'Responsibility is accepted formally, but the practical skill of spotting errors is weak. Ownership without detection is exposure.'}
+};
+const FLAT_PATTERN='Your four competencies are within ten points of each other, so the pattern is one of overall level rather than a single weak link. Work on the lowest-scoring questions rather than on one competency.';
+function thirtyDayByBand(pct){
+  if(pct<40) return 'Write down the three AI uses already happening in your team and the three that are off-limits, and share the page with everyone who uses AI.';
+  if(pct<70) return 'Pick one recurring task, document the prompt and the review step that work, and make that the shared standard for it.';
+  return 'Name an owner for AI practice and put a re-score in the diary six months from now.';
+}
+function isComplete(){
+  return QUESTIONS.every(q=>scores[q.id]!==undefined&&!isNaN(scores[q.id]));
+}
+function buildAnalysis(){
+  const{dimScores,dimMax}=getDimData();
+  const total=dimScores.reduce((a,b)=>a+b,0), max=dimMax.reduce((a,b)=>a+b,0);
+  const pct=Math.round(total/max*100);
+  const{label}=getLevel(pct);
+  const dimPct=dimScores.map((s,i)=>Math.round(s/dimMax[i]*100));
+  const order=dimPct.map((p,i)=>({i,p})).sort((a,b)=>a.p-b.p||a.i-b.i);
+  const weakest=order[0], strongest=order[order.length-1];
+  const spread=strongest.p-weakest.p;
+  const pattern=spread<10?FLAT_PATTERN:PATTERNS[strongest.i][weakest.i];
+  const perDim={}; const gaps=[];
+  getTriggeredRecs().forEach(t=>{
+    if(gaps.length>=3) return;
+    perDim[t.dim]=(perDim[t.dim]||0);
+    if(perDim[t.dim]>=2) return;           // at most two gaps from one competency
+    perDim[t.dim]++;
+    gaps.push({dim:DIMS[t.dim].name,color:DIMS[t.dim].color,question:t.q.text,answer:answerLabel(t.q,t.score),move:t.rec});
+  });
+  const thirty=[
+    'Check the reading: share this report with two colleagues who use AI daily and confirm the answers match what actually happens.',
+    gaps.length?('Start on the largest gap: '+gaps[0].move+'.'):'Take the lowest-scoring question in the table and decide one change for it.',
+    thirtyDayByBand(pct)
+  ];
+  return{pct,label,levelText:LEVEL_TEXT[label]||LEVEL_TEXT['Not Ready'],dimPct,strongest,weakest,spread,pattern,gaps,thirty,complete:isComplete()};
+}
+function renderAnalysis(){
+  const el=document.getElementById('analysis-body'); if(!el) return;
+  const answered=Object.keys(scores).filter(k=>scores[k]!==undefined&&!isNaN(scores[k])).length;
+  if(!isComplete()){
+    el.innerHTML=`<p class="an-wait">Your reading appears here once all ${QUESTIONS.length} questions are answered (${answered} so far). Unanswered questions count as zero, so a partial score is not a reliable reading.</p>`;
+    return;
+  }
+  const a=buildAnalysis();
+  const S=DIMS[a.strongest.i], W=DIMS[a.weakest.i];
+  let h='<div class="an-grid">';
+  h+=`<div class="an-block"><div class="an-k">Overall</div><div class="an-score"><span>${a.pct}</span>/100 · ${esc(a.label)}</div><p>${esc(a.levelText)}</p></div>`;
+  h+=`<div class="an-block"><div class="an-k">Pattern</div><p style="margin-top:0"><b style="color:${S.color}">Strongest: ${esc(S.name)} (${a.strongest.p}%)</b><br/><b style="color:${W.color}">Weakest: ${esc(W.name)} (${a.weakest.p}%)</b></p><p>${esc(a.pattern)}</p></div>`;
+  h+='</div>';
+  h+='<div class="an-k">Top three gaps and the next move for each</div>';
+  if(a.gaps.length===0){
+    h+='<p class="an-wait">No answer fell below the practice threshold, so there is no gap to rank. Use the 30-day list to keep the standard current.</p>';
+  }else{
+    h+='<ol class="an-gaps">';
+    a.gaps.forEach(g=>{h+=`<li><b style="color:${g.color}">${esc(g.dim)}:</b> &ldquo;${esc(g.question)}&rdquo; &mdash; you answered <b>${esc(g.answer)}</b>.<br/><span class="an-move">Next move: ${esc(g.move)}.</span></li>`;});
+    h+='</ol>';
+  }
+  h+=`<div class="an-k">The next 30 days</div><ol class="an-30">${a.thirty.map(t=>`<li>${esc(t)}</li>`).join('')}</ol>`;
+  h+=`<div class="an-cta"><div><b>If you want to go through this with us.</b> A free 30-minute debrief on the gaps above and what to do about each. No pitch.</div><a class="ns-btn ns-primary" href="../book/">Book the 30-minute debrief</a></div>`;
+  el.innerHTML=h;
+}
+
+/* ── Respondent copy of the result ───────────────────────────────────────
+   Sent through EmailJS from q.mamdouh@mai4consulting.com. The owner creates
+   the template in EmailJS (planned 7 November) and pastes its ID into
+   EMAILJS_RESPONDENT_TEMPLATE_ID above. Until then the send is skipped.
+   Template settings:
+     To Email:   {{to_email}}
+     From Name:  M.A.I. Consulting
+     Reply-To:   q.mamdouh@mai4consulting.com
+     Subject:    Your AI Readiness Check: {{overall_score}}/100 ({{readiness_level}})
+   Body fields: {{to_name}}, {{overall_score}}, {{readiness_level}}, {{strongest}},
+     {{weakest}}, {{top_recommendations}} (multi-line: wrap in a block with
+     white-space:pre-line), {{pdf_link}}, {{book_url}}.                       */
+async function sendRespondentEmail(an,pdfLink){
+  if(EMAILJS_RESPONDENT_TEMPLATE_ID==='TEMPLATE_ID_TO_SET'){ console.log('Respondent email not configured; skipped.'); return null; }
+  if(!userInfo.email) return null;
+  emailjs.init({publicKey:EMAILJS_PUBLIC_KEY});
+  const S=DIMS[an.strongest.i], W=DIMS[an.weakest.i];
+  const topRecs=an.gaps.length
+    ? an.gaps.map((g,i)=>`${i+1}. [${g.dim}] ${g.move}.`).join('\n')
+    : 'No answer fell below the practice threshold.';
+  return emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_RESPONDENT_TEMPLATE_ID,{
+    to_email:            userInfo.email,
+    to_name:             userInfo.name||'there',
+    overall_score:       an.pct,
+    readiness_level:     an.label,
+    strongest:           `${S.name} (${an.strongest.p}%)`,
+    weakest:             `${W.name} (${an.weakest.p}%)`,
+    top_recommendations: topRecs,
+    pdf_link:            /^https?:/.test(pdfLink)?pdfLink:'The PDF was saved to your device when you pressed the button.',
+    book_url:            BOOK_URL
+  });
+}
+
 /* ── Email notification (sends a Google Drive link to the PDF) ───────── */
 async function sendEmailNotification(pct,label,dimScores,dimMax,triggered,pdfLink){
   emailjs.init({publicKey:EMAILJS_PUBLIC_KEY});
   const date=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
   const dimBreakdown=DIMS.map((d,i)=>`${d.name}: ${Math.round((dimScores[i]/dimMax[i])*100)}%`).join(' | ');
   const topRecs=triggered.slice(0,5).map(t=>`• [${DIMS[t.dim].name}] ${t.rec}`).join('\n')||'No urgent gaps flagged.';
+  const benchmarkEl=document.getElementById('u-benchmark');
   return emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID,{
+    benchmark_consent:   benchmarkEl&&benchmarkEl.checked?'yes':'no',
+    privacy_consent:     'yes',
     notify_email:        NOTIFY_EMAIL,
     assessment_date:     date,
     user_name:           userInfo.name    ||'Not provided',
@@ -712,7 +887,7 @@ async function downloadPDF(){
   const btn=document.getElementById('dl-btn');
   const orig=btn.innerHTML;
   btn.disabled=true;
-  btn.innerHTML='⏳ Generating & Uploading…';
+  btn.innerHTML='⏳ Preparing your report…';
   try{
     const pdf = buildPrintReport(); // returns a jsPDF drawn with REAL TEXT (selectable)
 
@@ -768,6 +943,11 @@ async function downloadPDF(){
         console.error('EmailJS FAILED. status:', st, 'text:', tx, err);
       });
 
+    // 5. Copy of the result to the respondent (skipped until the template ID is set)
+    sendRespondentEmail(buildAnalysis(),finalPdfLink)
+      .then(r=>{ if(r) console.log('Respondent email OK:', r.status); })
+      .catch(err=>{ console.error('Respondent email FAILED:', err && (err.text||err.message||err)); });
+
   }catch(e){
     console.error(e);alert('Generation failed: '+e.message);
   }finally{
@@ -799,23 +979,19 @@ function buildPrintReport(){
   const answered=Object.keys(scores).filter(k=>scores[k]!==undefined&&!isNaN(scores[k])).length;
   const date=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
   const lvlRGB = pct<40?[192,57,43]:pct<60?[154,111,30]:pct<75?[26,122,74]:pct<90?[0,62,138]:[201,168,76];
-  const phaseText=pct<40
-    ?'Your organization is in the early stages of AI readiness. The priority is foundational: build shared understanding of capabilities and limits, identify safe initial use cases, and establish basic disciplines around review and disclosure before scaling.'
-    :pct<70
-      ?'Your organization is developing solid AI practices. The next phase is consistency: turn individual habits into shared norms, document what works, and address the specific gaps flagged below.'
-      :'Your organization shows strong AI readiness. Focus now turns to scaling what works, reinforcing the few remaining weak spots, and staying current as practices evolve.';
+  const an=buildAnalysis();
   const triggered=getTriggeredRecs();
   const byDim={0:[],1:[],2:[],3:[]};
   triggered.forEach(t=>byDim[t.dim].push(t));
 
   const BLUE=[0,62,138], DARK=[0,24,48], GOLD=[201,168,76], INK=[26,26,46], GREY=[120,120,130], LINE=[225,228,236];
-  let curPageLabel='Page 1 · Snapshot & Recommendations';
+  let curPageLabel='Snapshot & Reading';
 
   function footer(pageLabel){
     doc.setDrawColor(225,228,236); doc.setLineWidth(0.2);
     doc.line(ML,PH-14,PW-MR,PH-14);
     doc.setFont('helvetica','normal'); doc.setFontSize(7); doc.setTextColor(150,150,150);
-    doc.text(pageLabel, ML, PH-9);
+    doc.text('Page '+doc.internal.getCurrentPageInfo().pageNumber+' · '+pageLabel, ML, PH-9);
     doc.text('M.A.I. Consulting · '+date, PW-MR, PH-9, {align:'right'});
   }
   function ensure(space){
@@ -903,14 +1079,62 @@ function buildPrintReport(){
   });
   y+=Math.max(gH, dimScores.length*8.5)+8;
 
-  /* ===== Where you stand ===== */
-  sectionTitle('Where You Stand');
-  doc.setFont('helvetica','normal'); doc.setFontSize(9); doc.setTextColor(77,77,77);
-  const ptx=doc.splitTextToSize(phaseText, CW);
-  ensure(ptx.length*4.6+4);
-  doc.text(ptx, ML, y); y+=ptx.length*4.6+8;
+  /* ===== Your reading: level, pattern, gaps, 30 days, debrief ===== */
+  function para(txt, size, color, indent){
+    doc.setFont('helvetica','normal'); doc.setFontSize(size||9); doc.setTextColor(color[0],color[1],color[2]);
+    const lines=doc.splitTextToSize(txt, CW-(indent||0));
+    const lh=(size||9)*0.5;
+    ensure(lines.length*lh+3);
+    doc.text(lines, ML+(indent||0), y); y+=lines.length*lh+3;
+  }
+  sectionTitle('What Your Score Means');
+  para(an.pct+' out of 100: '+an.label+'. '+an.levelText, 9, [77,77,77]);
+  y+=3;
+
+  sectionTitle('Pattern: Strongest and Weakest Competency');
+  { const SD=DIMS[an.strongest.i], WD=DIMS[an.weakest.i];
+    const sc=hexRGB(SD.color), wc=hexRGB(WD.color);
+    ensure(10);
+    doc.setFont('helvetica','bold'); doc.setFontSize(9);
+    doc.setTextColor(sc[0],sc[1],sc[2]); doc.text('Strongest: '+SD.name+' ('+an.strongest.p+'%)', ML, y);
+    doc.setTextColor(wc[0],wc[1],wc[2]); doc.text('Weakest: '+WD.name+' ('+an.weakest.p+'%)', ML+CW/2, y);
+    y+=5;
+    para(an.pattern, 9, [77,77,77]); y+=3; }
+
+  sectionTitle('Top Three Gaps and the Next Move for Each');
+  if(an.gaps.length===0){
+    para('No answer fell below the practice threshold, so there is no gap to rank. Use the 30-day list to keep the standard current.', 9, [26,122,74]);
+  } else {
+    an.gaps.forEach((g,gi)=>{
+      const l1=doc.splitTextToSize((gi+1)+'. '+g.dim+': "'+g.question+'" - you answered '+g.answer+'.', CW-2);
+      const l2=doc.splitTextToSize('Next move: '+g.move+'.', CW-8);
+      ensure(l1.length*4.2+l2.length*4.2+5);
+      doc.setFont('helvetica','bold'); doc.setFontSize(8.5); doc.setTextColor(INK[0],INK[1],INK[2]);
+      doc.text(l1, ML, y); y+=l1.length*4.2+1;
+      doc.setFont('helvetica','normal'); doc.setTextColor(BLUE[0],BLUE[1],BLUE[2]);
+      doc.text(l2, ML+5, y); y+=l2.length*4.2+4;
+    });
+  }
+  y+=2;
+
+  sectionTitle('The Next 30 Days');
+  an.thirty.forEach((t,ti)=>{ para((ti+1)+'. '+t, 8.5, [77,77,77]); });
+  y+=2;
+
+  /* debrief box */
+  ensure(24);
+  doc.setFillColor(246,248,252); doc.roundedRect(ML,y,CW,20,1.5,1.5,'F');
+  doc.setFillColor(GOLD[0],GOLD[1],GOLD[2]); doc.rect(ML,y,1.5,20,'F');
+  doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(INK[0],INK[1],INK[2]);
+  doc.text('If you want to go through this with us', ML+5, y+7);
+  doc.setFont('helvetica','normal'); doc.setFontSize(8.5); doc.setTextColor(77,77,77);
+  doc.text('A free 30-minute debrief on the gaps above and what to do about each. Book at', ML+5, y+13);
+  doc.setTextColor(BLUE[0],BLUE[1],BLUE[2]);
+  doc.textWithLink(BOOK_URL, ML+5+doc.getTextWidth('A free 30-minute debrief on the gaps above and what to do about each. Book at ')+1, y+13, {url:BOOK_URL});
+  y+=26;
 
   /* ===== Targeted recommendations ===== */
+  curPageLabel='Recommendations';
   sectionTitle('Targeted Recommendations Based on Your Answers');
   if(triggered.length===0){
     doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(26,122,74);
@@ -945,7 +1169,7 @@ function buildPrintReport(){
   }
 
   /* ===== Page 2: Full score table ===== */
-  footer(curPageLabel); doc.addPage(); y=18; curPageLabel='Page 2 · Detail';
+  footer(curPageLabel); doc.addPage(); y=18; curPageLabel='Detail';
   sectionTitle('Full Score Breakdown');
   const ratings=p=>p>=85?'5/5':p>=70?'4/5':p>=50?'3/5':p>=30?'2/5':'1/5';
   const th=['Dimension','Score','Max','%','Rating'];
@@ -1048,24 +1272,38 @@ drawRadar([0,0,0,0],[35,35,35,35]);
   <nav class="footer-nav" aria-label="Site">
     <ul>
       <li><a href="../">Home</a></li>
-      <li><a href="../services/">Services</a></li>
+      <li><span class="fn-group">Services</span></li>
+      <li><a href="../services/">All services</a></li>
+      <li><a href="../services/assessment/">Readiness Assessment</a></li>
+      <li><a href="../services/policy/">AI Use Policy</a></li>
+      <li><a href="../services/training/">Team AI Training</a></li>
+      <li><a href="../services/support/">Fluency Support</a></li>
+      <li><a href="../services/agents/">Custom Agents, Skills & Tools</a></li>
+      <li><a href="../for-funders/">For funders</a></li>
       <li><a href="../estimate/">Price estimate</a></li>
-      <li><a href="../for-funders/">For Investors</a></li>
-      <li><a href="../about/">About</a></li>
-      <li><a href="../compare/">Compare the market</a></li>
-      <li><a href="../knowledge/">Knowledge</a></li>
-      <li><span class="footer-nav-current" aria-current="page">Readiness Check</span></li>
-      <li><a href="../our-clients/">Who We Work With</a></li>
-      <li><a href="../contact-us/">Contact</a></li>
-      <li><span class="fn-group">Read</span></li>
-      <li><a href="../playbook/">Sample Playbook</a></li>
+      <li><span class="fn-group">Learn</span></li>
+      <li><a href="../use-cases/">The seven levels</a></li>
+      <li><a href="../use-cases/level-3/">Level 3: Structured</a></li>
+      <li><a href="../use-cases/level-4/">Level 4: Set up</a></li>
+      <li><a href="../use-cases/level-5/">Level 5: Delegating</a></li>
+      <li><a href="../use-cases/level-6/">Level 6: Building</a></li>
+      <li><a href="../use-cases/level-7/">Level 7: At the terminal</a></li>
+      <li><a href="../transformation-journey/">The journey, role by role</a></li>
+      <li><a href="../playbook/">Sample playbook</a></li>
+      <li><a href="../knowledge/">Knowledge library</a></li>
+      <li><span class="fn-group">Free tools</span></li>
+      <li><span class="footer-nav-current" aria-current="page">AI Readiness Check (12 min)</span></li>
+      <li><a href="../extensive-ai-readiness-analysis/">Extended assessment (60 questions)</a></li>
+      <li><span class="fn-group">Reference</span></li>
       <li><a href="../eu-ai-act-article-4/">EU AI Act Article 4</a></li>
-      <li><a href="../use-cases/">AI Use Cases</a></li>
-      <li><a href="../transformation-journey/">Use Cases: the journey</a></li>
       <li><a href="../claude-in-chrome/">Claude in Chrome</a></li>
-      <li><a href="../save-claude-tokens/">Claude for Business</a></li>
-      <li><a href="../extensive-ai-readiness-analysis/">Extended Assessment</a></li>
-      <li><span class="fn-group">Legal</span></li>
+      <li><a href="../save-claude-tokens/">Claude: Skills, CLAUDE.md and tokens</a></li>
+      <li><span class="fn-group">Company</span></li>
+      <li><a href="../about/">About</a></li>
+      <li><a href="../our-clients/">Who we work with</a></li>
+      <li><a href="../compare/">Compare the market</a></li>
+      <li><a href="../contact-us/">Contact</a></li>
+      <li><a href="../book/">Book a call</a></li>
       <li><a href="../privacy/">Privacy</a></li>
     </ul>
   </nav>
@@ -1082,13 +1320,13 @@ function updateNextStep(pct, answered, total){
   if(answered === 0){
     msg = 'Answer the questions to see what your score means and what to fix first.';
   } else if(answered < total){
-    msg = answered + ' of ' + total + ' answered. Finish the assessment for a reliable reading \u2014 partial scores skew high.';
+    msg = answered + ' of ' + total + ' answered. Finish the assessment for a reliable reading: unanswered questions count as zero.';
   } else if(pct < 40){
-    msg = '<b>Below 40.</b> This almost always means AI is already in daily use with no policy behind it. It is the ordinary case, and it is the fastest thing to fix. Start with an <b>AI Use Policy</b>.';
+    msg = '<b>Below 40.</b> Your answers describe AI use with no agreed rules behind it. That is the fastest thing to fix: start with an <b>AI Use Policy</b>.';
   } else if(pct < 70){
-    msg = '<b>Between 40 and 70.</b> In this band the gap is usually between departments \u2014 one team is fluent and three are guessing. Start with <b>Team AI Training</b>, one lab per department.';
+    msg = '<b>Between 40 and 70.</b> Your answers show practice in some competencies and gaps in others; the breakdown shows which. Start with <b>Team AI Training</b> on the weakest.';
   } else {
-    msg = '<b>Above 70.</b> You are ahead of most organisations your size. The risk now is decay as tools and staff change. Look at <b>Fluency Support</b> and a re-score in six months.';
+    msg = '<b>Above 70.</b> Your answers describe established practice. The risk now is decay as tools and staff change. Look at <b>Fluency Support</b> and a re-score in six months.';
   }
   el.innerHTML = msg;
 }

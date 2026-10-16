@@ -17,7 +17,7 @@ featured: false
 ---
 A small nonprofit buys AI tools, sends staff to a webinar or two, and a month later almost nobody uses them. Or the opposite happens: everyone uses them at once and the output drifts away from what the organisation stands for. Both outcomes have the same root. The adoption plan started with the tool instead of the mission.
 
-The examples below come from the source articles and are illustrative accounts of small nonprofits, not studies.
+The examples below are illustrative accounts of small nonprofits, not studies and not reports from client engagements.
 
 ## Lead with what the time is for
 
@@ -37,7 +37,7 @@ The difference is concrete. Telling a caseworker "this will save you two hours a
 
 A programme director had sent her team to three AI webinars that year. Attendance was fine and nothing changed. What worked was thirty minutes with someone who sat beside a caseworker, looked at the intake form she filled in every week, and worked out together which parts a tool could help with.
 
-Why it worked, according to the source:
+Why it works:
 
 - Courses teach the tool in general, while the team's problem is specific, such as a three-page intake form.
 - Under-resourced teams have spare minutes, not spare hours. Thirty minutes inside a real task competes with nothing, because it is the task.
@@ -77,7 +77,7 @@ A small trade-support organisation that asked for help getting started expected 
 
 Order matters as much as content. Name the task before touching any tool. Use one subscription for thirty days before adding another, because evaluating five tools in parallel is where months disappear. Write down what "better" means before asking the tool for anything: a faster first draft, fewer follow-up emails, one fewer round of edits. Without that line there is no way to tell a real improvement from a feeling of one.
 
-One organisation that ran the kit for thirty days reported no transformation, which made the report useful. The most tedious task, first-pass replies to routine enquiries, improved within the first week. The vaguely defined task, "improve internal communications", stalled because nobody could say what better meant. The two tasks that worked each had someone checking in on them unprompted; the one that stalled had no clear owner. Narrowed to "first draft of the weekly internal update", it started to stick the following month.
+An organisation that runs the kit for thirty days should expect no transformation, and that is what makes the thirty-day report useful. In the illustrative case, the most tedious task, first-pass replies to routine enquiries, improves within the first week. The vaguely defined task, "improve internal communications", stalls because nobody can say what better means. The two tasks that work each have someone checking in on them unprompted; the one that stalls has no clear owner. Narrowed to "first draft of the weekly internal update", it starts to stick the following month.
 
 ## Build the mindset before you buy
 

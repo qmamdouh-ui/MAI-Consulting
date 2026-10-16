@@ -1,7 +1,7 @@
 ---
 slug: fundraising-revisited-what-changed-after-twelve-months
-title: 'Fundraising AI playbook revisited: what changed after twelve months'
-summary: A year after publishing our fundraising playbook, what real use corrected, including a second axis for how personal a message claims to be, bundled prospect research, mid-level donor trust and ownership.
+title: 'Fundraising AI playbook revisited: what a twelve-month review would look like'
+summary: A scenario, not a report. What a twelve-month review of a fundraising playbook would probably correct, including a second axis for how personal a message claims to be, bundled prospect research, mid-level donor trust and ownership.
 short_slug: fundraising-playbook-revisited-twelve-months
 featured: false
 service: support
@@ -23,29 +23,29 @@ source_ref: 'mai-kb tree #37 / draft 7502946886744535040'
 cluster: 3A Department playbooks
 ---
 
-Twelve months ago we published a fundraising department playbook, the only one of the seven that existed on our site before this series of six began. We treated it as a finished artefact: sorted into what was worth delegating and what never should be, published, and left alone. This piece is different from the others in the series. It is not a fresh sort of a new department. It is a case-based look at what the original playbook actually got wrong once fundraising teams used it for a year, applying the same honest-caveat discipline this series has used throughout to our own earlier miss, not someone else's.
+**Correction, 16 October 2026.** An earlier version of this entry was written as if the sample fundraising playbook on this site had been in use for a year and reported what that year had corrected. It had not: the sample playbook was published weeks earlier, and no client team has used it for twelve months. This version keeps the substance and states what it is: a scenario of what a twelve-month review would be likely to find, written so that a team can run that review on its own playbook.
 
-This piece reports what changed and why, drawing on a year of fundraising teams actually working inside the boundaries the original playbook drew, rather than sorting a new set of tasks from scratch.
+The sample fundraising playbook on this site was the only one of the seven departments to exist before this series of six began. It is a finished-looking artefact: sorted into what is worth delegating and what never should be, published, and, unless someone owns it, left alone. This piece is different from the others in the series. It is not a fresh sort of a new department. It is a thought experiment: take that playbook, imagine a fundraising team working inside its boundaries for a year, and ask what the review at month twelve would most probably correct. The point of writing the review before it happens is that the questions are then on the table from day one.
 
-## What the original playbook got right
+## What would probably hold up
 
-The basic split held up under real use: drafting a mass appeal letter or a routine acknowledgement is delegable work, and deciding whether and how to approach a specific major donor personally is not. Nobody who used the playbook for a year reported that split as wrong. The problems turned out to sit elsewhere, in distinctions the original version never drew at all.
+The basic split is the part most likely to survive: drafting a mass appeal letter or a routine acknowledgement is delegable work, and deciding whether and how to approach a specific major donor personally is not. That line is drawn on the type of task, and task type is the distinction a team is least likely to get wrong. The problems a review would find are more likely to sit elsewhere, in distinctions the first version never drew at all.
 
-## What twelve months of real use corrected
+## What a twelve-month review would most likely correct
 
-- **The line needs a second axis, not just task type.** Drafting versus deciding was the only axis in the original version, but donor communications turned out to need a second cut: how personal the message claims to be. A donor who discovers a message that reads as one-to-one was drafted by a tool feels differently deceived than one who received an obviously mass appeal, even when a human reviewed both.
-- **"Researching a prospect" and "deciding when to approach them" turned out to be one task wearing two names.** The original playbook delegated the first and reserved the second, but fundraising staff kept delegating both together, because the tools they actually used bundled prospect research and outreach-timing suggestions into a single output nobody had separated at the point of use.
-- **Mid-level donor stewardship, not major gifts, is where trust erodes fastest.** The original playbook worried almost entirely about major-gift relationships. A year in, the complaints came from mid-level donors who noticed a templated note before any major donor raised a concern at all.
-- **A playbook written once and left alone stops matching what staff actually do.** Nobody owned updating the document when a new tool arrived or a donor complaint surfaced, and the gap between what the page said and what fundraising staff actually did widened quietly for months before anyone noticed it had opened.
+- **The line needs a second axis, not just task type.** Drafting versus deciding is the only axis in the first version, but donor communications need a second cut: how personal the message claims to be. A donor who discovers that a message reading as one-to-one was drafted by a tool feels differently deceived than one who received an obviously mass appeal, even when a human reviewed both.
+- **"Researching a prospect" and "deciding when to approach them" are one task wearing two names.** The first version delegates the first and reserves the second, but the tools fundraising staff actually use bundle prospect research and outreach-timing suggestions into a single output. Unless someone separates the two at the point of use, both get delegated together.
+- **Mid-level donor stewardship, not major gifts, is where trust is likely to erode first.** The first version worries almost entirely about major-gift relationships. Mid-level donors receive more templated contact, so a templated note that reads as personal is more likely to be noticed there, and noticed before any major donor raises a concern.
+- **A playbook written once and left alone stops matching what staff actually do.** If nobody owns updating the document when a new tool arrives or a donor complaint surfaces, the gap between what the page says and what staff do widens quietly for months before anyone notices it has opened.
 
 > A playbook that is never revised is not a playbook. It is a photograph of the day it was written.
 
-## The trade-off in publishing a correction to our own guidance
+## The trade-off in writing the review before the year
 
-Admitting the original playbook missed things risks looking like the first version was careless, and a funder-facing audience might read a listed mistake as an ongoing risk rather than evidence that the review process actually works. The honest answer is that every playbook in this series, including the six new ones, will look exactly like this one in twelve months, because no first version survives contact with a year of real use unchanged. Publishing the correction openly is more credible than quietly editing the original page and hoping nobody compares versions, even though it costs something in the moment to say the first version was incomplete.
+Publishing a list of likely gaps in your own sample deliverable risks looking like the first version was careless, and a funder-facing audience might read a listed gap as an ongoing risk rather than as evidence that a review process exists. The honest answer is that every playbook in this series, including the six new ones, will need a review like this one at month twelve, because no first version survives twelve months of real use unchanged. Naming the probable corrections openly, and then measuring at month twelve which ones actually materialised, is more credible than quietly editing the page later and hoping nobody compares versions.
 
 ## The practical takeaway
 
-**Revise the playbook against a second axis, how personal a message claims to be rather than only who drafted it; name a single owner for keeping it current; and treat mid-level donor stewardship as seriously as major-gift cultivation.**
+**Build the twelve-month review into the playbook on the day it is published: add a second axis for how personal a message claims to be; name a single owner for keeping it current; treat mid-level donor stewardship as seriously as major-gift cultivation; and record at month twelve which of these predictions held.**
 
-*No external statistic cited; this article presents an internal case-based retrospective rather than third-party evidence.*
+*No external statistic cited; this article is a scenario, not a retrospective on client use.*

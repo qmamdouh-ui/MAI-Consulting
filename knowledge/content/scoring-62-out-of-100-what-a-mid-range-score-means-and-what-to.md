@@ -23,7 +23,7 @@ source_ref: 'mai-kb tree #20 / draft 7502878335413186560'
 cluster: 2A Getting a baseline
 ---
 
-You have run the assessment. The number came back 62 out of 100. It is the most common outcome we see, and also the least understood, because it sits exactly where it invites two opposite, equally wrong reactions: relief that you passed, or alarm that you failed. Neither is the right response to a mid-range score, and neither tells you what to do on Monday morning.
+You have run the assessment. The number came back 62 out of 100. It is the kind of result a ten-dimension average produces often, and also the least understood, because it sits exactly where it invites two opposite, equally wrong reactions: relief that you passed, or alarm that you failed. Neither is the right response to a mid-range score, and neither tells you what to do on Monday morning.
 
 This piece is about the actual next step, not the number itself.
 
@@ -41,7 +41,7 @@ Before doing anything else, go and find which specific dimensions are dragging t
 
 ## The second move: pick one dimension, not three
 
-The instinct, once the low dimensions are visible, is to fix all of them at once. Resist it. Spreading limited attention across three or four dimensions simultaneously means none of them move far enough, in the time leadership's patience actually allows, to look like progress. The most common way a 62 stays a 62 for two years running is an organisation that started five initiatives and finished none of them convincingly.
+The instinct, once the low dimensions are visible, is to fix all of them at once. Resist it. Spreading limited attention across three or four dimensions simultaneously means none of them move far enough, in the time leadership's patience actually allows, to look like progress. The usual way a 62 stays a 62 for two years running is an organisation that started five initiatives and finished none of them convincingly.
 
 ## How to choose which one goes first
 

@@ -21,12 +21,12 @@ The notes below come from a few months of daily use, described as of September 2
 
 ## Outlook and the inbox: stop re-reading
 
-After a week of travel an inbox reached three hundred unread messages. An AI pass of about twenty minutes (the source does not say which tool) sorted subject lines and senders into "needs a reply today", "can wait" and "doesn't need one", drafted the easy replies, and set the two or three hard messages aside, marked. The point is that an inbox needs sorting first so the order becomes obvious. Anything with real stakes, such as an unhappy client or a commitment of money or time, is read in full.
+After a week of travel an inbox reached three hundred unread messages. An AI pass of about twenty minutes sorted subject lines and senders into "needs a reply today", "can wait" and "doesn't need one", drafted the easy replies, and set the two or three hard messages aside, marked. The point is that an inbox needs sorting first so the order becomes obvious. Anything with real stakes, such as an unhappy client or a commitment of money or time, is read in full.
 
 Inside Outlook, the habits that paid back fastest:
 
-- Ask for the gist of a long thread (the source cites a fifteen-reply chain) before scrolling it. This saved more time in a week than any other change.
-- Draft replies from three bullet points of your decision. The source reports routine replies taking less than half the time.
+- Ask for the gist of a long thread (a fifteen-reply chain, say) before scrolling it. This saved more time in a week than any other change.
+- Draft replies from three bullet points of your decision. Routine replies go out noticeably faster.
 - Ask "what does this person need from me", which finds asks buried in paragraph three.
 
 Tone was the weak point. A reply that read as professional to Copilot sometimes read as cold to the recipient, so every external email got a human tone check.
@@ -57,7 +57,7 @@ Multi-sheet models with cross-references and named ranges confused it more than 
 
 ## A sequence for board and donor packs
 
-Mamdouh reports that a half-day pack became about ninety minutes with the same order each time:
+An illustrative sequence, one that can take a half-day pack down to something closer to ninety minutes when followed in the same order each time:
 
 1. Write down what the board or donor must decide before opening any document.
 2. Pull specific figures from source documents first, then ask for commentary. Mismatched numbers surface while cheap to fix.

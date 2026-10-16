@@ -84,7 +84,7 @@ The exercise takes perhaps half an hour and produces a document that a board can
 ## Questions for your next leadership meeting
 
 - For the last AI recommendation we received, could we state the adviser's incentive?
-- Did we see an option that would have cost the adviser revenue?
+- Were we shown an option that would have cost the adviser revenue?
 - If we accepted the advice and it failed, what would we still own?
 
 ## The bottom line

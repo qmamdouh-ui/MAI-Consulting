@@ -15,7 +15,7 @@ linkedin_url: ''
 source_ref: "profile articles #93, #95, #96, #98, #99"
 featured: false
 ---
-An AI draft looks finished the moment it appears, and that is when mistakes get through. A single unchecked number made it into a client email; finding it before sending would have taken thirty seconds, and finding it afterwards took an afternoon of damage control.
+An AI draft looks finished the moment it appears, and that is when mistakes get through. Picture a single unchecked number that makes it into a client email: finding it before sending would take thirty seconds, and finding it afterwards takes an afternoon of damage control. The scenarios in this guide are illustrative, not reports from client engagements.
 
 This guide gives you five practical habits for the review itself. For the question of how much to trust a given answer in the first place, see the companion guide on calibrating trust.
 
@@ -33,7 +33,7 @@ AI collapses the line between a draft looking finished and being correct more co
 
 ## 2. Check against the goal, not just the instruction
 
-An AI tool was asked to shorten a report to under 500 words. It returned 498 words, technically compliant, with the paragraph that mattered most cut to one vague sentence. The instruction was followed to the letter. The goal, a shorter report that still worked, was missed.
+Suppose an AI tool is asked to shorten a report to under 500 words. It returns 498 words, technically compliant, with the paragraph that mattered most cut to one vague sentence. The instruction was followed to the letter. The goal, a shorter report that still works, was missed.
 
 Watch for three forms of this:
 
@@ -45,7 +45,7 @@ A person usually infers the unstated goal. An AI tool optimises for the instruct
 
 ## 3. Own the output
 
-A factually wrong figure from an AI draft reached a client-facing report. The first instinct was to explain that the tool had got it wrong. That explanation did not change who sent the report. The person who reviewed, approved and signed it owned the mistake.
+Suppose a factually wrong figure from an AI draft reaches a client-facing report. The first instinct is to explain that the tool got it wrong. That explanation does not change who sent the report. The person who reviewed, approved and signed it owns the mistake.
 
 - **The review is the job.** A quick skim, justified by "it usually gets it right," turns diligence into a formality.
 - **Disclosure does not transfer responsibility.** Saying AI helped draft something is honest, but accountability for what is wrong in the final version stays with you.
@@ -55,7 +55,7 @@ This blurs with AI because a human collaborator's errors feel like theirs, while
 
 ## 4. Build the thirty-second check
 
-The habit that would have prevented the client-email mistake was smaller than the mistake by orders of magnitude. Three versions:
+The habit that would prevent the client-email mistake above is smaller than the mistake by orders of magnitude. Three versions:
 
 - **Trace every number to its source before it leaves your hands.** One click back to the original document, not a mental note to check later.
 - **Read the first and last sentence of anything long out loud.** Skimming misses tone problems and dropped context that a few seconds of reading aloud usually catches.
@@ -65,7 +65,7 @@ The habit does not stick on its own because nothing bad happens the first ten ti
 
 ## 5. Put checkpoints into long tasks
 
-A long AI-assisted project ran two hours before anyone looked at the output. An early wrong assumption had spread through every later step, and the work had to be redone from where it first appeared. One checkpoint an hour in would have caught it.
+Imagine a long AI-assisted project that runs two hours before anyone looks at the output. An early wrong assumption has spread through every later step, and the work has to be redone from where it first appeared. One checkpoint an hour in would catch it.
 
 Place checks:
 

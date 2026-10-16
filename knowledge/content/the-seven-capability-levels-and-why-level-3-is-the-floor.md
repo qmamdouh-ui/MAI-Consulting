@@ -1,7 +1,7 @@
 ---
 slug: the-seven-capability-levels-and-why-level-3-is-the-floor
 title: The seven capability levels, and why Level 3 is the floor
-summary: A seven-level ladder of AI capability from awareness to practice-shaping, and the case for judging training by how many staff reach Level 3, independent competent use.
+summary: A seven-level ladder of AI capability from Not started to At the terminal, and the case for judging training by how many staff reach Level 3, Structured use, the floor.
 short_slug: seven-capability-levels-level-3-floor
 featured: false
 service: training
@@ -23,7 +23,7 @@ cluster: 2C Making training stick
 
 We wrote before about why generic AI training does not change the work: staff complete the course, and nothing is different a month later, because a course teaches the tool and the tool was never the obstacle. This piece names the actual ladder training is supposed to climb, and the specific rung below which nothing durable has happened yet.
 
-None of what follows is complicated. It is a plain list of seven capability levels, in the order most people actually move through them, and a case for treating one particular level as the minimum a training programme should be judged against.
+None of what follows is complicated. It is a plain list of seven capability levels, in the order most people actually move through them, and a case for treating one particular level as the minimum a training programme should be judged against. The names below are the ones used across this site, including the Use Cases pages and the training service, so a level quoted in a proposal means the same thing here.
 
 ## Why seven, and why in this order
 
@@ -31,21 +31,21 @@ Fewer levels and the model cannot tell the difference between someone who can fo
 
 ## The seven capability levels, named
 
-- **Awareness.** Knows AI tools exist and roughly what they can do, has not yet used one to complete real work.
-- **Guided use.** Can complete a simple task with a tool when someone else has written the prompt, or is watching over their shoulder.
-- **Independent competence.** Can complete a real task alone, correctly, and knows on their own when the output needs a second look before it goes anywhere.
-- **Delegation judgement.** Knows which tasks are safe to hand to a tool and which are not, without being told case by case.
-- **Verification discipline.** Checks output against an agreed standard before use as a matter of routine, not memory or mood.
-- **Peer support.** Can unblock a colleague who is stuck, without escalating to the champion or an outside consultant.
-- **Practice-shaping.** Feeds back into how the team actually works: writes the playbook, flags what the training missed, changes the default approach for people who come after them.
+- **Level 1, Not started.** Has not used an assistant for work.
+- **Level 2, Occasional.** Asks for a summary, a search or a first draft, without a method. Results vary by person and by day.
+- **Level 3, Structured.** Writes a full brief, grounds it in the real document, and verifies before anything leaves the team. The floor.
+- **Level 4, Set up.** Loads context once (Projects, custom instructions, Skills), so nothing is briefed twice and quality stops depending on who asked.
+- **Level 5, Delegating.** Hands whole multi-step jobs to agents, supervises rather than types, and runs workstreams in parallel.
+- **Level 6, Building.** Builds Skills, agents and connections for colleagues, reviews their output, and owns the operating guide, which in practice includes the team's playbook.
+- **Level 7, At the terminal.** Runs agentic work on folders of files from the terminal (Claude Code, for example), without writing code.
 
 ## Why Level 3 is the floor, not Level 1 or Level 2
 
-Levels 1 and 2 both depend on somebody else being present, physically or in the prompt they wrote. The moment that person leaves the room, the capability leaves with them, and what looked like training success on the day quietly reverts within weeks. Level 3 is the first level that survives without a hand on the tiller: the person can do the task correctly, alone, and knows unprompted when to be suspicious of what came back. Everything below that is a demonstration of the tool, not a capability the organisation actually owns.
+Levels 1 and 2 have no method. Results depend on the person, the day, and whoever happened to be helping, physically or in the prompt they wrote. The moment that person leaves the room, the capability leaves with them, and what looked like training success on the day quietly reverts within weeks. Level 3 is the first level that survives without a hand on the tiller: the person briefs the task fully, grounds it in the real document, does the task correctly alone, and checks what came back before it goes anywhere. Everything below that is a demonstration of the tool, not a capability the organisation actually owns.
 
 > A capability that disappears when the trainer leaves the room was never a capability. It was a demonstration.
 
-This is the same mechanism we described in generic training: a course that stops at guided use produces confident completion certificates and no lasting change, because certificates measure attendance, not the point at which the trainer's presence stopped mattering.
+This is the same mechanism we described in generic training: a course that stops at occasional use produces confident completion certificates and no lasting change, because certificates measure attendance, not the point at which the trainer's presence stopped mattering.
 
 ## The trade-off in insisting on Level 3 before calling training done
 
@@ -53,6 +53,6 @@ Training to Level 3 for every relevant tool costs more time and more follow-up t
 
 ## The practical takeaway
 
-**Measure training success by how many staff reach Level 3, independent competent use, not by how many completed the course; below Level 3, the capability leaves the building with the trainer.**
+**Measure training success by how many staff reach Level 3, Structured use, not by how many completed the course; below Level 3, the capability leaves the building with the trainer.**
 
 *No external statistic cited; this article defines the organisation's own training maturity model rather than presenting third-party evidence.*
