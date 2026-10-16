@@ -5,14 +5,14 @@ summary: "Weekly reports, audience summaries, translations and board or donor up
 service: training
 format: Guide
 level: Practitioner
-date: 2026-09-22
+date: 2026-10-16
 author: Mamdouh Alqudsi
 series: work-with-ai
 series_order: 7
 tags: [reporting, audiences, translation, board updates, templates]
 related: ["before-and-after-one-grant-report-honestly-measured", "plain-language-rewriting-the-highest-value-low-risk-task-in-the", "repeatable-ai-workflows-grants-donors-meetings"]
 linkedin_url: ''
-source_ref: "profile articles #55, #62, #66, #67"
+source_ref: "profile articles #55, #62, #66, #67, #139 (newsletter ed 25)"
 featured: false
 ---
 The same information has to go to several people, or the same report has to go out every week, and each version is written as if for the first time. The cost is not the typing. It is rebuilding structure, tone and framing again and again, and the risk is that the versions quietly drift apart.
@@ -49,6 +49,14 @@ A policy update had to reach staff in four languages within the week. The old wa
 
 A translation can read perfectly and still say something slightly different from the source. A native speaker was still needed: one phrase was correct but came across as unintentionally blunt in a culture where that directness reads as rude, and a single read by that speaker caught it.
 
+The same approach scales to outreach without a translation team. A communications lead covering four languages for a campaign had no translators, only a habit built over several campaigns:
+
+- **Draft the strongest version once,** in whichever language the message is clearest in. Four drafts from scratch produce four weaker versions.
+- **Ask for adaptation, not word swapping.** Name the register and context: a donor update and a community flyer need different tones in every language.
+- **Route every version through one native or near-native reviewer** before it goes out. Adaptation closes most of the distance between languages but does not reliably catch the phrase that is technically correct and locally off.
+
+It only works as a standing workflow, in the same order every time, with the reviewer step never skipped under deadline pressure. Teams that treat it as an occasional favour from whoever speaks the second language end up depending on one person's availability.
+
 ## Board and donor updates
 
 A quarterly donor update was due the next morning after the usual writer was pulled away. The draft became usable because of three instructions:
@@ -76,4 +84,5 @@ Relationship knowledge was added by hand. One donor needed a warmer opening beca
 - Choose your own threshold for flagging a change and put it in the request.
 - For the next multi-audience document, write down each audience's single question before you ask for any summary.
 - Rewrite any text that will be translated in short sentences without idioms, then have a native speaker read each version.
+- For multilingual outreach, name one native or near-native reviewer per language before the campaign starts, and ask for adaptation by register, not translation.
 - Start your next update with what changed, and put the ask in its own section.

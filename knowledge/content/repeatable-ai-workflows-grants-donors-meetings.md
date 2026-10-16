@@ -1,23 +1,23 @@
 ---
 slug: repeatable-ai-workflows-grants-donors-meetings
-title: "Three repeatable AI workflows for small teams: grants, donor updates, meeting recaps"
-summary: "Brief the tool on mission, audience and constraints, feed it real inputs, and have a person who knows the facts check every claim before a grant, donor update or meeting recap goes out."
+title: "Repeatable AI workflows for small teams: grants, donor updates, meetings, field reports"
+summary: "Brief the tool on mission, audience and constraints, feed it real inputs, and have a person who knows the facts check every claim before a grant, donor update, meeting recap or field report goes out."
 service: training
 format: Guide
 level: Practitioner
-date: 2026-10-09
+date: 2026-10-16
 author: Mamdouh Alqudsi
 series: work-with-ai
 series_order: 9
 tags: [workflows, grants, donor updates, meeting notes, nonprofit]
 related: ["task-decomposition-finding-the-handover-point", "the-unit-of-ai-value-is-a-task-never-a-job", "before-and-after-one-grant-report-honestly-measured"]
 linkedin_url: ''
-source_ref: "profile articles #49, #116, #118, #119"
+source_ref: "profile articles #49, #116, #118, #119, #136, #138 (newsletter ed 25)"
 featured: false
 ---
-Small teams write grant applications, donor updates and meeting recaps with nobody whose job title covers them. AI can turn that from a dreaded solo task into an afternoon, but only if the tool is given real material and a person checks what comes back. A tool alone makes each step of a broken process faster, which is not the same as making the process better.
+Small teams write grant applications, donor updates, meeting recaps and field reports with nobody whose job title covers them. AI can turn that from a dreaded solo task into an afternoon, but only if the tool is given real material and a person checks what comes back. A tool alone makes each step of a broken process faster, which is not the same as making the process better.
 
-The three workflows below share one shape: brief, feed real inputs, draft in small pieces, check by someone who knows the facts.
+The four workflows below share one shape: brief, feed real inputs, draft in small pieces, check by someone who knows the facts.
 
 ## Step zero: brief the tool before you type the task
 
@@ -40,6 +40,14 @@ A four-person community organisation had to submit six applications in a quarter
 
 The point is a process that survives whoever happens to be free that week.
 
+Build it in the calm weeks, not the deadline week. A programme officer described her grant cycle as fine in planning and chaotic in the final week; the habit that helped was a five-minute check set up beforehand that was already automatic when the pressure hit.
+
+- **Draft the routine sections the moment the cycle opens:** budget narrative, organisational background, boilerplate compliance language. Only the parts that need full human attention are left for the last week.
+- **Trace every number to its source document before it goes in.** A busy week is when a wrong figure slips through.
+- **Keep a running list of what the tool got wrong last cycle,** and update it between cycles, not during them.
+
+The trap is that the calm weeks are the only time the habit is easy to build and the time it feels least necessary. Treat the calm week as the real deadline.
+
 ## Workflow 2: a donor update
 
 A small environmental nonprofit owed major donors a quarterly update, and the executive director, not a writer, had a spreadsheet of outcomes and a folder of field photos. The tool did not write the update. It turned her raw material into a structured first draft she could fix, cut and make sound like herself.
@@ -61,6 +69,16 @@ Most meeting notes die in a shared document nobody reopens. The gap is the ten m
 
 Before sending, check for any action assigned to someone who was not in the meeting, and any deadline that sounds invented. Both happen more than you would expect and undermine trust in the whole recap.
 
+## Workflow 4: a field-visit report the same day
+
+A field officer used to spend the two days after a site visit retyping her own handwriting, and by the time the report reached anyone the visit felt like old news. The fix was to treat her notes, however messy, as a draft that already existed when she got back to her desk.
+
+- **Capture straight after the visit.** Dictate a voice memo or photograph the notebook pages and feed them to the tool the same afternoon, while the detail is still there.
+- **Ask for structure before polish.** The first pass turns scattered notes into sections, findings and open questions, so you edit a shape instead of facing a blank page.
+- **Mark impressions separately from facts.** Flag every claim that needs a second source before it reaches the final version, so a same-day report does not overstate what one visit proved.
+
+The old delay came from waiting for a clear block of writing time that rarely arrived. Once the first draft comes from the notes within hours, there is no separate writing day to schedule.
+
 ## What to do next
 
 - Write your mission, audience and constraints for your next recurring document, and keep them as a block to paste at the top.
@@ -68,3 +86,5 @@ Before sending, check for any action assigned to someone who was not in the meet
 - Gather the numbers and one real story for your next donor update before opening the tool.
 - Name a second reader who checks every claim against the programme, and agree that nothing goes out without it.
 - Use owner, action, deadline for your next meeting recap, and check every name and date against what was said.
+- In the calm weeks before your next grant deadline, draft the routine sections and start a list of what the tool got wrong.
+- After your next field visit, record or photograph your notes before you leave and ask for a structured first draft that afternoon.
