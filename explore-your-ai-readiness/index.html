@@ -170,6 +170,99 @@ body{font-family:'Inter',sans-serif;background:var(--off);color:var(--charcoal);
 .an-move{color:var(--blue-dark);font-weight:600;}
 .an-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding:16px 18px;border:1px solid var(--outline);border-left:3px solid var(--gold);border-radius:12px;font-size:13px;line-height:1.6;color:var(--charcoal);}
 
+/* results dashboard (rendered by dashboardHTML) */
+.db{display:flex;flex-direction:column;gap:16px;}
+.db-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:10px;background:linear-gradient(140deg,#00122e,var(--blue));color:var(--white);border-radius:12px;padding:18px 22px;}
+.db-eyebrow{font-size:10px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold);}
+.db-org{font-family:'Playfair Display',serif;font-size:22px;font-weight:800;line-height:1.2;margin-top:4px;word-break:break-word;}
+.db-who{font-size:12px;color:rgba(255,255,255,.75);margin-top:2px;}
+.db-meta{display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-size:12px;color:rgba(255,255,255,.8);}
+.db-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;}
+.db-kpi{background:var(--white);border:1px solid #e5e7eb;border-top:4px solid var(--blue);border-radius:10px;padding:14px 16px;min-width:0;}
+.db-kpi-k{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#4b5563;}
+.db-kpi-v{font-size:34px;font-weight:800;color:var(--txt);line-height:1.1;margin-top:6px;font-variant-numeric:tabular-nums;}
+.db-kpi-v small{font-size:14px;font-weight:600;color:#6b7280;margin-left:2px;}
+.db-kpi-s{font-size:13px;font-weight:700;color:var(--txt);margin-top:4px;}
+.db-kpi-n{font-size:11.5px;color:#6b7280;margin-top:4px;line-height:1.4;}
+.db-chip{display:inline-block;padding:2px 10px;border-radius:9999px;font-size:11.5px;font-weight:700;white-space:nowrap;}
+.db-row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;}
+.db-card{background:var(--white);border:1px solid #e5e7eb;border-radius:12px;padding:18px 20px;min-width:0;}
+.db-h{font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue);margin:0 0 12px;}
+.db-h-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 12px;margin-bottom:12px;}
+.db-h-row .db-h{margin:0;}
+.db-note{font-size:12px;color:#4b5563;}
+.db-gauge{display:block;width:100%;max-width:330px;margin:0 auto;font-family:'Inter',sans-serif;}
+.db-levels{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;margin-top:10px;}
+.db-levels li{font-size:12px;color:#4b5563;display:flex;align-items:center;gap:6px;}
+.db-levels li span{font-variant-numeric:tabular-nums;min-width:44px;}
+.db-levels li i,.db-legend li i{width:10px;height:10px;border-radius:2px;flex-shrink:0;display:inline-block;}
+.db-levels li.on{color:var(--txt);font-weight:700;}
+.db-lead{font-size:14px;line-height:1.6;color:var(--txt);border-left:4px solid var(--blue);padding:2px 0 2px 12px;margin:0 0 12px;}
+.db-p{font-size:13px;line-height:1.65;color:var(--charcoal);margin:0 0 10px;}
+.db-p:last-child{margin-bottom:0;}
+.db-tgt-key{font-size:12px;color:#374151;display:inline-flex;align-items:center;gap:6px;}
+.db-tgt-key i{width:2px;height:14px;background:#001f4d;display:inline-block;}
+.db-bars{display:flex;flex-direction:column;gap:12px;}
+.db-bar-row{display:grid;grid-template-columns:190px minmax(0,1fr) 52px;column-gap:12px;align-items:center;}
+.db-bar-name{font-size:13.5px;font-weight:700;color:var(--txt);}
+.db-bar-name span{display:block;font-size:11px;font-weight:500;color:#6b7280;margin-top:1px;}
+.db-bar-svg{display:block;width:100%;height:24px;}
+.db-bar-val{font-size:16px;font-weight:800;text-align:right;font-variant-numeric:tabular-nums;}
+.db-bar-mean{grid-column:2 / 4;font-size:12px;color:#4b5563;margin:4px 0 0;line-height:1.45;}
+.db-axis-row{margin-top:-6px;}
+.db-axis{position:relative;height:14px;}
+.db-axis span{position:absolute;top:0;transform:translateX(-50%);font-size:10.5px;color:#6b7280;font-variant-numeric:tabular-nums;}
+.db-axis span:first-child{transform:none;}
+.db-axis span:last-child{transform:translateX(-100%);}
+.db-legend{list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:14px;padding-top:12px;border-top:1px solid #e5e7eb;}
+.db-legend li{font-size:11.5px;color:#4b5563;display:flex;align-items:center;gap:6px;}
+.db-table{width:100%;border-collapse:collapse;font-size:12.5px;line-height:1.5;color:var(--charcoal);}
+.db-table th{background:var(--blue-dark);color:var(--white);text-align:left;font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:8px 10px;}
+.db-table td{padding:10px;border-bottom:1px solid #e5e7eb;vertical-align:top;}
+.db-table tbody tr:nth-child(odd) td{background:#f9fafb;}
+.db-table td:first-child{font-weight:800;color:var(--txt);}
+.db-ans{display:block;font-size:11.5px;color:#4b5563;font-style:italic;margin-top:4px;}
+.db-table td:last-child{color:var(--blue-dark);font-weight:600;}
+.db-fine{font-size:11.5px;line-height:1.55;color:#6b7280;margin:10px 0 0;}
+.db-check{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.db-check li{display:flex;gap:10px;font-size:13px;line-height:1.6;color:var(--charcoal);}
+.db-check b{color:var(--blue-dark);}
+.db-box{width:16px;height:16px;border:2px solid var(--blue);border-radius:3px;flex-shrink:0;margin-top:3px;}
+.db-help{border-left:4px solid var(--gold);}
+.db-links{list-style:none;display:flex;flex-direction:column;gap:6px;margin:4px 0 14px;}
+.db-links a{color:var(--blue);font-weight:700;font-size:13px;}
+.db-book{display:inline-block;}
+@media(max-width:860px){.db-kpis{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:760px){
+  .db-row2{grid-template-columns:1fr;}
+  .db-bar-row{grid-template-columns:minmax(0,1fr) 48px;}
+  .db-bar-name{grid-column:1 / -1;margin-bottom:4px;}
+  .db-bar-mean{grid-column:1 / -1;}
+  .db-axis-row > div:first-child{display:none;}
+  .db-table thead{display:none;}
+  .db-table,.db-table tbody,.db-table tr,.db-table td{display:block;width:100%;}
+  .db-table tr{border:1px solid #e5e7eb;border-radius:10px;margin-bottom:10px;overflow:hidden;}
+  .db-table td{border-bottom:1px solid #f0f1f4;}
+  .db-table td::before{content:attr(data-l);display:block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6b7280;margin-bottom:2px;}
+}
+@media(max-width:480px){
+  .db-kpis{grid-template-columns:1fr;}
+  .db-head{padding:16px;}
+  .db-meta{align-items:flex-start;}
+  .db-card{padding:16px 14px;}
+  .analysis-card{padding:20px 14px;}
+  .db-levels{grid-template-columns:1fr;}
+}
+@media print{
+  .mai-topbar,.header,.user-info-wrap,.main,footer{display:none !important;}
+  body{background:#fff;}
+  .analysis-wrap{max-width:none;padding:0;}
+  .analysis-card{border:none;padding:0;}
+  .db-card,.db-kpi,.db-head,.db-table tr{break-inside:avoid;page-break-inside:avoid;}
+  .db-book{display:none;}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
 .completion-wrap{background:var(--white);border:1px solid var(--outline);border-radius:12px;padding:16px 20px;}
 .comp-label{display:flex;justify-content:space-between;font-size:11px;font-weight:600;color:var(--charcoal);margin-bottom:8px;}
 .comp-bar{background:var(--off);border-radius:9999px;height:7px;overflow:hidden;}
@@ -386,9 +479,9 @@ body > header{position:static !important}
 
 <section class="analysis-wrap" id="analysis-wrap">
   <div class="analysis-card">
-    <div class="an-title">Your reading</div>
-    <p class="an-sub">What the score means, where the pattern is and what to do first. Built from your answers only; the same text goes into the PDF.</p>
-    <div id="analysis-body"><p class="an-wait">Your reading appears here once all 28 questions are answered.</p></div>
+    <div class="an-title">Your results</div>
+    <p class="an-sub">A dashboard built from your answers only: what each number means, what to fix first and where we can help. The same figures go into the PDF report.</p>
+    <div id="analysis-body"><p class="an-wait">Your results dashboard appears here once all 28 questions are answered.</p></div>
   </div>
 </section>
 
@@ -765,6 +858,50 @@ function thirtyDayByBand(pct){
   if(pct<70) return 'Pick one recurring task, document the prompt and the review step that work, and make that the shared standard for it.';
   return 'Name an owner for AI practice and put a re-score in the diary six months from now.';
 }
+/* ── Dashboard: status bands, meanings, service mapping ────────────────────
+   TARGET_PCT is 60: three out of five on a question, the practice threshold
+   most Q_RECS items use, and the start of the 'Progressing' level in getLevel().
+   LEVEL_BANDS mirrors the thresholds in getLevel() for drawing only. */
+const TARGET_PCT=60;
+const SITE_ROOT='https://mai4consulting.com/';
+const CONTACT_EMAIL='q.mamdouh@mai4consulting.com';
+const LEVEL_BANDS=[
+  {from:0,to:19,label:'Not Ready'},{from:20,to:39,label:'Early Stage'},{from:40,to:59,label:'Developing'},
+  {from:60,to:74,label:'Progressing'},{from:75,to:89,label:'Advanced'},{from:90,to:100,label:'AI-Ready'}
+];
+function bandOf(pct){
+  if(pct<40) return {name:'Needs attention',fill:'#dc2626',text:'#b91c1c',tint:'#fee2e2'};
+  if(pct<60) return {name:'Below target',fill:'#d97706',text:'#b45309',tint:'#fef3c7'};
+  if(pct<75) return {name:'On target',fill:'#16a34a',text:'#15803d',tint:'#dcfce7'};
+  return {name:'Strong',fill:'#1d4ed8',text:'#1d4ed8',tint:'#dbeafe'};
+}
+const BAND_LEGEND=[
+  {fill:'#dc2626',txt:'Red: below 40, needs attention'},{fill:'#d97706',txt:'Amber: 40 to 59, below target'},
+  {fill:'#16a34a',txt:'Green: 60 to 74, on target'},{fill:'#1d4ed8',txt:'Blue: 75 and above, strong'}
+];
+const LEVEL_MEANING={
+  'Not Ready':'AI is used, if at all, without agreed rules, so quality and risk depend entirely on the individual.',
+  'Early Stage':'Some good individual habits exist, but little is shared or written down, so results vary from person to person.',
+  'Developing':'Working practice exists in most areas, with specific gaps where errors can still leave the organisation.',
+  'Progressing':'Practice is consistent across most competencies; the remaining gaps are specific and fixable.',
+  'Advanced':'Practice is disciplined and shared; the main risk now is drift as tools and staff change.',
+  'AI-Ready':'Practice is mature in every competency; the job now is to verify it against real work and keep it current.'
+};
+const DIM_WHY={
+  0:'Without an agreed task list, AI ends up where it adds risk and is skipped where it would save time.',
+  1:'Thin instructions produce generic output that has to be rewritten, which erases the time saved.',
+  2:'Unchecked output is how invented facts and biased wording reach funders, partners and the people you serve.',
+  3:'When nobody owns AI-assisted work, data leaks and undisclosed AI use become the organisation\'s liability.'
+};
+const HELP={
+  0:{service:'AI Readiness Assessment',href:'services/assessment/',text:'Our AI Readiness Assessment maps the tasks and tools your team already uses and marks which work AI should take on and which stays human.'},
+  1:{service:'Team AI Training',href:'services/training/',text:'Our Team AI Training works on your own tasks: giving AI context, format and constraints, with a shared prompt library your team keeps using.'},
+  2:{service:'Team AI Training',href:'services/training/',text:'Our Team AI Training builds the checking habit: spotting invented facts and biased wording, and verifying claims before anything leaves the organisation.'},
+  3:{service:'AI Use Policy',href:'services/policy/',text:'Our AI Use Policy service drafts with you who owns AI-assisted work, what to disclose and what never goes into an AI tool.'}
+};
+const WEEKS=['Week 1','Weeks 2 to 3','Week 4'];
+function priorityOf(gap){ return gap>=4?'High':gap>=2?'Medium':'Low'; }
+const PRI_STYLE={High:{fill:'#fee2e2',text:'#b91c1c'},Medium:{fill:'#fef3c7',text:'#b45309'},Low:{fill:'#e5e7eb',text:'#374151'}};
 function isComplete(){
   return QUESTIONS.every(q=>scores[q.id]!==undefined&&!isNaN(scores[q.id]));
 }
@@ -779,44 +916,139 @@ function buildAnalysis(){
   const spread=strongest.p-weakest.p;
   const pattern=spread<10?FLAT_PATTERN:PATTERNS[strongest.i][weakest.i];
   const perDim={}; const gaps=[];
-  getTriggeredRecs().forEach(t=>{
+  const trig=getTriggeredRecs();
+  const dimFlags=[0,0,0,0]; trig.forEach(t=>dimFlags[t.dim]++);
+  trig.forEach(t=>{
     if(gaps.length>=3) return;
     perDim[t.dim]=(perDim[t.dim]||0);
     if(perDim[t.dim]>=2) return;           // at most two gaps from one competency
     perDim[t.dim]++;
-    gaps.push({dim:DIMS[t.dim].name,color:DIMS[t.dim].color,question:t.q.text,answer:answerLabel(t.q,t.score),move:t.rec});
+    gaps.push({dim:DIMS[t.dim].name,color:DIMS[t.dim].color,question:t.q.text,answer:answerLabel(t.q,t.score),move:t.rec,
+      di:t.dim,score:t.score,max:t.q.max,threshold:Q_RECS[t.qid].threshold,gap:t.gap,priority:priorityOf(t.gap),why:DIM_WHY[t.dim]});
   });
   const thirty=[
     'Check the reading: share this report with two colleagues who use AI daily and confirm the answers match what actually happens.',
     gaps.length?('Start on the largest gap: '+gaps[0].move+'.'):'Take the lowest-scoring question in the table and decide one change for it.',
     thirtyDayByBand(pct)
   ];
-  return{pct,label,levelText:LEVEL_TEXT[label]||LEVEL_TEXT['Not Ready'],dimPct,strongest,weakest,spread,pattern,gaps,thirty,complete:isComplete()};
+  return{pct,label,levelText:LEVEL_TEXT[label]||LEVEL_TEXT['Not Ready'],meaning:LEVEL_MEANING[label]||LEVEL_MEANING['Not Ready'],
+    band:bandOf(pct),total,max,dimScores,dimMax,dimPct,dimFlags,flagged:trig.length,strongest,weakest,spread,pattern,gaps,thirty,
+    help:HELP[weakest.i],complete:isComplete()};
+}
+
+/* ── Dashboard rendering (inline SVG, no libraries) ──────────────────────── */
+function gaugeSVG(pct,label){
+  const cx=120,cy=118, ang=v=>Math.PI*(1-v/100);
+  const pt=(r,v)=>(cx+r*Math.cos(ang(v))).toFixed(2)+','+(cy-r*Math.sin(ang(v))).toFixed(2);
+  const arc=(r1,r2,v0,v1)=>`M${pt(r2,v0)} A${r2} ${r2} 0 0 1 ${pt(r2,v1)} L${pt(r1,v1)} A${r1} ${r1} 0 0 0 ${pt(r1,v0)} Z`;
+  const b=bandOf(pct);
+  let s=`<svg class="db-gauge" viewBox="0 0 240 136" role="img" aria-label="Gauge: overall score ${pct} out of 100, level ${esc(label)}; target ${TARGET_PCT}">`;
+  LEVEL_BANDS.forEach(l=>{
+    const to=l.to===100?100:l.to+1;
+    s+=`<path d="${arc(88,98,l.from,to)}" fill="${bandOf(l.from).fill}" fill-opacity="${l.label===label?1:.28}" stroke="#fff" stroke-width="1.5"/>`;
+  });
+  s+=`<path d="${arc(60,82,0,99.99)}" fill="#e5e7eb"/>`;
+  if(pct>0) s+=`<path d="${arc(60,82,0,Math.min(pct,99.99))}" fill="${b.fill}"/>`;
+  s+=`<line x1="${pt(56,TARGET_PCT).split(',')[0]}" y1="${pt(56,TARGET_PCT).split(',')[1]}" x2="${pt(100,TARGET_PCT).split(',')[0]}" y2="${pt(100,TARGET_PCT).split(',')[1]}" stroke="#001f4d" stroke-width="2"/>`;
+  [20,40,60,75,90].forEach(v=>{
+    const [x,y]=pt(108,v).split(',').map(Number);
+    const anchor=v<50?'end':v>50?'start':'middle';
+    const tgt=v===TARGET_PCT;
+    s+=`<text x="${x}" y="${(y+3).toFixed(1)}" text-anchor="${anchor}" font-size="${tgt?9.5:9}" font-weight="${tgt?700:500}" fill="${tgt?'#001f4d':'#6b7280'}">${tgt?v+' target':v}</text>`;
+  });
+  s+=`<text x="${cx-93}" y="${cy+13}" text-anchor="middle" font-size="9" fill="#6b7280">0</text><text x="${cx+93}" y="${cy+13}" text-anchor="middle" font-size="9" fill="#6b7280">100</text>`;
+  s+=`<text x="${cx}" y="${cy-14}" text-anchor="middle" font-size="36" font-weight="800" fill="#1a1a2e">${pct}</text>`;
+  s+=`<text x="${cx}" y="${cy+2}" text-anchor="middle" font-size="10" fill="#4b5563">out of 100</text>`;
+  return s+'</svg>';
+}
+function barSVG(p,name){
+  const b=bandOf(p);
+  let s=`<svg class="db-bar-svg" viewBox="0 0 100 20" preserveAspectRatio="none" role="img" aria-label="${esc(name)}: ${p} percent, target ${TARGET_PCT} percent">`;
+  s+='<rect x="0" y="0" width="100" height="20" fill="#f3f4f6"/>';
+  [25,50,75].forEach(v=>{s+=`<line x1="${v}" y1="0" x2="${v}" y2="20" stroke="#d1d5db" stroke-width="1" vector-effect="non-scaling-stroke"/>`;});
+  if(p>0) s+=`<rect x="0" y="4" width="${p}" height="12" fill="${b.fill}"/>`;
+  s+=`<line x1="${TARGET_PCT}" y1="0" x2="${TARGET_PCT}" y2="20" stroke="#001f4d" stroke-width="2" vector-effect="non-scaling-stroke"/>`;
+  return s+'</svg>';
+}
+function dimMeaning(p,flags){
+  const d=p-TARGET_PCT;
+  const vs=d===0?'at the target of '+TARGET_PCT:d<0?(-d)+' points below the target of '+TARGET_PCT:d+' points above the target of '+TARGET_PCT;
+  return `${bandOf(p).name}: ${vs}. ${flags} of 7 answers below the practice threshold.`;
+}
+function kpiHTML(k,val,unit,sub,accent,note){
+  return `<div class="db-kpi" style="border-top-color:${accent}"><div class="db-kpi-k">${k}</div><div class="db-kpi-v">${val}<small>${unit}</small></div><div class="db-kpi-s">${sub}</div><div class="db-kpi-n">${note}</div></div>`;
 }
 function renderAnalysis(){
   const el=document.getElementById('analysis-body'); if(!el) return;
   const answered=Object.keys(scores).filter(k=>scores[k]!==undefined&&!isNaN(scores[k])).length;
   if(!isComplete()){
-    el.innerHTML=`<p class="an-wait">Your reading appears here once all ${QUESTIONS.length} questions are answered (${answered} so far). Unanswered questions count as zero, so a partial score is not a reliable reading.</p>`;
+    el.innerHTML=`<p class="an-wait">Your results dashboard appears here once all ${QUESTIONS.length} questions are answered (${answered} so far). Unanswered questions count as zero, so a partial score is not a reliable reading.</p>`;
     return;
   }
-  const a=buildAnalysis();
-  const S=DIMS[a.strongest.i], W=DIMS[a.weakest.i];
-  let h='<div class="an-grid">';
-  h+=`<div class="an-block"><div class="an-k">Overall</div><div class="an-score"><span>${a.pct}</span>/100 · ${esc(a.label)}</div><p>${esc(a.levelText)}</p></div>`;
-  h+=`<div class="an-block"><div class="an-k">Pattern</div><p style="margin-top:0"><b style="color:${S.color}">Strongest: ${esc(S.name)} (${a.strongest.p}%)</b><br/><b style="color:${W.color}">Weakest: ${esc(W.name)} (${a.weakest.p}%)</b></p><p>${esc(a.pattern)}</p></div>`;
+  el.innerHTML=dashboardHTML(buildAnalysis());
+}
+function dashboardHTML(a){
+  const S=DIMS[a.strongest.i], W=DIMS[a.weakest.i], b=a.band;
+  const date=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+  let h='<div class="db">';
+  /* header strip */
+  h+=`<div class="db-head"><div><div class="db-eyebrow">AI Readiness Check &middot; results dashboard</div><div class="db-org">${userInfo.org?esc(userInfo.org):'Your organisation'}</div>${userInfo.name?`<div class="db-who">${esc(userInfo.name)}${userInfo.role?', '+esc(userInfo.role):''}</div>`:''}</div><div class="db-meta"><span>${esc(date)}</span><span>28 questions &middot; 4 competencies</span></div></div>`;
+  /* KPI cards */
+  h+='<div class="db-kpis">';
+  h+=kpiHTML('Overall score',a.pct,'/100',`<span class="db-chip" style="background:${b.tint};color:${b.text}">${esc(a.label)}</span>`,b.fill,`${a.total} of ${a.max} points, scaled to 100`);
+  h+=kpiHTML('Strongest competency',a.strongest.p,'%',esc(S.name),bandOf(a.strongest.p).fill,`${a.dimScores[a.strongest.i]} of ${a.dimMax[a.strongest.i]} points`);
+  h+=kpiHTML('Weakest competency',a.weakest.p,'%',esc(W.name),bandOf(a.weakest.p).fill,`${a.dimScores[a.weakest.i]} of ${a.dimMax[a.weakest.i]} points`);
+  h+=kpiHTML('Priority gaps',a.flagged,'/28','answers below the practice threshold','#003E8A',a.gaps.length?`top ${a.gaps.length} ranked below`:'nothing to rank');
   h+='</div>';
-  h+='<div class="an-k">Top three gaps and the next move for each</div>';
-  if(a.gaps.length===0){
-    h+='<p class="an-wait">No answer fell below the practice threshold, so there is no gap to rank. Use the 30-day list to keep the standard current.</p>';
+  /* overall gauge + meaning */
+  h+='<div class="db-row2">';
+  h+=`<section class="db-card"><h3 class="db-h">Overall score against the six levels</h3>${gaugeSVG(a.pct,a.label)}<ul class="db-levels">${LEVEL_BANDS.map(l=>`<li class="${l.label===a.label?'on':''}"><i style="background:${bandOf(l.from).fill}"></i><span>${l.from}&ndash;${l.to}</span> ${l.label}</li>`).join('')}</ul></section>`;
+  h+=`<section class="db-card"><h3 class="db-h">What this score means</h3><p class="db-lead" style="border-left-color:${b.fill}"><b>${a.pct}/100, ${esc(a.label)}.</b> ${esc(a.meaning)}</p><p class="db-p">${esc(a.levelText)}</p><p class="db-p"><b>Pattern.</b> ${esc(a.pattern)}</p></section>`;
+  h+='</div>';
+  /* competency bars */
+  h+=`<section class="db-card"><div class="db-h-row"><h3 class="db-h">Competency scores against target</h3><span class="db-tgt-key"><i></i>Target ${TARGET_PCT}%: consistent practice</span></div><div class="db-bars">`;
+  DIMS.forEach((d,i)=>{
+    const p=a.dimPct[i], bd=bandOf(p);
+    h+=`<div class="db-bar-row"><div class="db-bar-name">${esc(d.name)}<span>${esc(d.label)}</span></div><div class="db-bar-track">${barSVG(p,d.name)}</div><div class="db-bar-val" style="color:${bd.text}">${p}%</div><p class="db-bar-mean">${esc(dimMeaning(p,a.dimFlags[i]))}</p></div>`;
+  });
+  h+=`<div class="db-bar-row db-axis-row"><div></div><div class="db-axis">${[0,25,50,75,100].map(v=>`<span style="left:${v}%">${v}</span>`).join('')}</div><div></div></div>`;
+  h+=`</div><ul class="db-legend">${BAND_LEGEND.map(l=>`<li><i style="background:${l.fill}"></i>${l.txt}</li>`).join('')}</ul></section>`;
+  /* priority gaps */
+  h+=`<section class="db-card"><div class="db-h-row"><h3 class="db-h">Priority gaps: what to fix first</h3><span class="db-note">${a.gaps.length?`Top ${a.gaps.length} of ${a.flagged} flagged answers`:'No flagged answers'}</span></div>`;
+  if(!a.gaps.length){
+    h+='<p class="db-p">No answer fell below the practice threshold, so there is no gap to rank. Use the 30-day list to keep the standard current.</p>';
   }else{
-    h+='<ol class="an-gaps">';
-    a.gaps.forEach(g=>{h+=`<li><b style="color:${g.color}">${esc(g.dim)}:</b> &ldquo;${esc(g.question)}&rdquo; &mdash; you answered <b>${esc(g.answer)}</b>.<br/><span class="an-move">Next move: ${esc(g.move)}.</span></li>`;});
-    h+='</ol>';
+    h+='<table class="db-table"><thead><tr><th>#</th><th>Priority</th><th>Competency</th><th>What scored low</th><th>Why it matters</th><th>30-day action</th></tr></thead><tbody>';
+    a.gaps.forEach((g,i)=>{
+      const ps=PRI_STYLE[g.priority];
+      h+=`<tr><td data-l="Rank">${i+1}</td><td data-l="Priority"><span class="db-chip" style="background:${ps.fill};color:${ps.text}">${g.priority}</span></td><td data-l="Competency"><b>${esc(g.dim)}</b></td><td data-l="What scored low">&ldquo;${esc(g.question)}&rdquo;<span class="db-ans">You answered ${esc(g.answer)}: ${g.score} of ${g.max} points, threshold ${g.threshold}</span></td><td data-l="Why it matters">${esc(g.why)}</td><td data-l="30-day action">${esc(g.move)}.</td></tr>`;
+    });
+    h+='</tbody></table><p class="db-fine">Priority is how far the answer sits below its threshold: High 4 to 5 points, Medium 2 to 3, Low 1. At most two gaps per competency are ranked; every flagged answer is listed in the PDF.</p>';
   }
-  h+=`<div class="an-k">The next 30 days</div><ol class="an-30">${a.thirty.map(t=>`<li>${esc(t)}</li>`).join('')}</ol>`;
-  h+=`<div class="an-cta"><div><b>If you want to go through this with us.</b> A free 30-minute debrief on the gaps above and what to do about each. No pitch.</div><a class="ns-btn ns-primary" href="../book/">Book the 30-minute debrief</a></div>`;
-  el.innerHTML=h;
+  h+='</section>';
+  /* 30 days + how we help */
+  h+='<div class="db-row2">';
+  h+=`<section class="db-card"><h3 class="db-h">Your next 30 days</h3><ol class="db-check">${a.thirty.map((t,i)=>`<li><span class="db-box" aria-hidden="true"></span><div><b>${WEEKS[i]}.</b> ${esc(t)}</div></li>`).join('')}</ol></section>`;
+  h+=`<section class="db-card db-help"><h3 class="db-h">How M.A.I. Consulting can help</h3><p class="db-p">Your lowest-scoring competency is <b>${esc(W.name)} (${a.weakest.p}%)</b>. ${esc(a.help.text)}</p><ul class="db-links"><li><a href='../${a.help.href}'>${esc(a.help.service)}</a></li><li><a href="../use-cases/">The seven levels of AI use</a></li></ul><a class="ns-btn ns-primary db-book" href='${BOOK_URL}'>Book a call</a><p class="db-fine">A free 30-minute call to go through this dashboard and the gaps above. No pitch.</p></section>`;
+  h+='</div></div>';
+  return h;
+}
+
+/* Email-safe competency bars for the respondent template ({{{dim_bars_html}}}):
+   tables and inline styles only, no SVG, no classes. */
+function dimBarsEmailHTML(dimPct){
+  const F='font-family:Arial,Helvetica,sans-serif;';
+  let rows='';
+  DIMS.forEach((d,i)=>{
+    const p=Math.max(0,Math.min(100,Math.round(dimPct[i]))), bd=bandOf(p), w=Math.max(p,1);
+    rows+=`<tr><td style="${F}font-size:13px;font-weight:bold;color:#1a1a2e;padding:6px 10px 6px 0;width:110px">${esc(d.name)}</td>`
+      +`<td style="padding:6px 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#e5e7eb"><tr>`
+      +`<td width="${w}%" style="background:${bd.fill};height:14px;font-size:0;line-height:0">&nbsp;</td>`
+      +(w<100?'<td style="font-size:0;line-height:0">&nbsp;</td>':'')
+      +`</tr></table></td><td style="${F}font-size:13px;font-weight:bold;color:${bd.text};padding:6px 0 6px 10px;width:44px;text-align:right">${p}%</td></tr>`;
+  });
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px">${rows}`
+    +`<tr><td></td><td colspan="2" style="${F}font-size:11px;color:#6b7280;padding-top:4px">Target ${TARGET_PCT}%: consistent practice. Red below 40, amber 40 to 59, green 60 to 74, blue 75 and above.</td></tr></table>`;
 }
 
 /* ── Respondent copy of the result ───────────────────────────────────────
@@ -830,7 +1062,10 @@ function renderAnalysis(){
      Subject:    Your AI Readiness Check: {{overall_score}}/100 ({{readiness_level}})
    Body fields: {{to_name}}, {{overall_score}}, {{readiness_level}}, {{strongest}},
      {{weakest}}, {{top_recommendations}} (multi-line: wrap in a block with
-     white-space:pre-line), {{pdf_link}}, {{book_url}}; attachment report_pdf.                       */
+     white-space:pre-line), {{pdf_link}}, {{book_url}}; attachment report_pdf.
+   Dashboard fields: {{score_color}} (hex of the overall status band), {{level_meaning}} (one sentence),
+     {{{dim_bars_html}}} (triple braces: email-safe table of the four competency bars) and
+     {{how_we_help}} (weakest competency mapped to the matching M.A.I. service).                     */
 async function sendRespondentEmail(an,pdfLink,pdfDataUri){
   if(EMAILJS_RESPONDENT_TEMPLATE_ID==='TEMPLATE_ID_TO_SET'){ console.log('Respondent email not configured; skipped.'); return null; }
   if(!userInfo.email) return null;
@@ -853,7 +1088,11 @@ async function sendRespondentEmail(an,pdfLink,pdfDataUri){
     top_recommendations: topRecs,
     pdf_link:            /^https?:/.test(pdfLink)?pdfLink:REPORT_FALLBACK_URL,
     pdf_status:          /^https?:/.test(pdfLink)?'A copy is also saved online at the link below.':(attach?'Your report is attached to this email as a PDF.':'Your report was saved to your device when you pressed the button.'),
-    book_url:            BOOK_URL
+    book_url:            BOOK_URL,
+    score_color:         an.band.fill,
+    level_meaning:       an.meaning,
+    dim_bars_html:       dimBarsEmailHTML(an.dimPct),
+    how_we_help:         `Your lowest-scoring competency is ${W.name} (${an.weakest.p}%). ${an.help.text}`
   };
   if(!attach) return emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_RESPONDENT_TEMPLATE_ID,params);
   try{
@@ -980,295 +1219,299 @@ function hexRGB(hex){
   return m?[parseInt(m[1],16),parseInt(m[2],16),parseInt(m[3],16)]:[0,0,0];
 }
 
-/* Build the report as a native jsPDF vector document with REAL TEXT.
-   Returns the jsPDF instance (selectable / copy-pasteable text). */
+/* Keep PDF text inside the standard-font character set (Latin-1). */
+function pdfSafe(s){
+  return String(s==null?'':s).replace(/[–—]/g,'-').replace(/[‘’]/g,"'").replace(/[“”]/g,'"')
+    .replace(/→/g,'->').replace(/…/g,'...').replace(/ /g,' ').replace(/[^\x09\x0A\x0D\x20-\x7E\xA0-\xFF]/g,'?');
+}
+
+/* Build the report as a native jsPDF vector document with REAL TEXT (no images).
+   Page 1 executive dashboard; page 2 gap analysis, 30-day plan and how M.A.I.
+   Consulting can help; page 3 appendix of the 28 answers, booking and contact. Returns the jsPDF instance. */
 function buildPrintReport(){
   const{jsPDF}=window.jspdf;
   const doc=new jsPDF({orientation:'p',unit:'mm',format:'a4',compress:true});
+  const _text=doc.text.bind(doc), _split=doc.splitTextToSize.bind(doc);
+  doc.text=function(t,...r){ return _text(Array.isArray(t)?t.map(pdfSafe):pdfSafe(t),...r); };
+  doc.splitTextToSize=function(t,w,o){ return _split(pdfSafe(t),w,o); };
 
-  const PW=210, PH=297;
-  const ML=16, MR=16, CW=PW-ML-MR;
+  const PW=210, PH=297, ML=16, MR=16, CW=PW-ML-MR, TOP=24, BOTTOM=PH-20;
+  const an=buildAnalysis();
+  const date=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+  const org=userInfo.org||'Your organisation';
+  const NAVY=[0,31,77], BLUE=[0,62,138], INK=[26,26,46], BODY=[64,64,76], MUTED=[107,114,128],
+        GRID=[209,213,219], TRACK=[243,244,246], PANEL=[246,248,252], GOLD=[201,168,76], WHITE=[255,255,255];
+  const rgb=hexRGB;
+  const fillC=c=>doc.setFillColor(c[0],c[1],c[2]);
+  const drawC=c=>doc.setDrawColor(c[0],c[1],c[2]);
+  function font(style,size,c){ doc.setFont('helvetica',style); doc.setFontSize(size); doc.setTextColor(c[0],c[1],c[2]); }
   let y=0;
 
-  const{dimScores,dimMax}=getDimData();
-  const totalScore=dimScores.reduce((a,b)=>a+b,0);
-  const totalMax=dimMax.reduce((a,b)=>a+b,0);
-  const pct=Math.round((totalScore/totalMax)*100);
-  const{label}=getLevel(pct);
-  const answered=Object.keys(scores).filter(k=>scores[k]!==undefined&&!isNaN(scores[k])).length;
-  const date=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
-  const lvlRGB = pct<40?[192,57,43]:pct<60?[154,111,30]:pct<75?[26,122,74]:pct<90?[0,62,138]:[201,168,76];
-  const an=buildAnalysis();
-  const triggered=getTriggeredRecs();
-  const byDim={0:[],1:[],2:[],3:[]};
-  triggered.forEach(t=>byDim[t.dim].push(t));
-
-  const BLUE=[0,62,138], DARK=[0,24,48], GOLD=[201,168,76], INK=[26,26,46], GREY=[120,120,130], LINE=[225,228,236];
-  let curPageLabel='Snapshot & Reading';
-
-  function footer(pageLabel){
-    doc.setDrawColor(225,228,236); doc.setLineWidth(0.2);
-    doc.line(ML,PH-14,PW-MR,PH-14);
-    doc.setFont('helvetica','normal'); doc.setFontSize(7); doc.setTextColor(150,150,150);
-    doc.text('Page '+doc.internal.getCurrentPageInfo().pageNumber+' · '+pageLabel, ML, PH-9);
-    doc.text('M.A.I. Consulting · '+date, PW-MR, PH-9, {align:'right'});
+  function pageHeader(){
+    fillC(NAVY); doc.rect(0,0,PW,12,'F'); fillC(GOLD); doc.rect(0,12,PW,0.8,'F');
+    font('bold',8,WHITE); doc.text('M.A.I. CONSULTING', ML, 7.8);
+    font('normal',8,[190,200,215]); doc.text('AI Readiness Check  |  '+org.slice(0,60), PW-MR, 7.8, {align:'right'});
+    y=TOP;
   }
-  function ensure(space){
-    if(y+space > PH-18){ footer(curPageLabel); doc.addPage(); y=18; return true; }
-    return false;
+  function newPage(){ doc.addPage(); pageHeader(); }
+  function ensure(h){ if(y+h>BOTTOM){ newPage(); return true; } return false; }
+  function section(t,sub){
+    ensure(18);
+    font('bold',11,NAVY); doc.text(t, ML, y);
+    if(sub){ font('normal',7.5,MUTED); doc.text(sub, PW-MR, y, {align:'right'}); }
+    y+=2.2; drawC(GRID); doc.setLineWidth(0.3); doc.line(ML,y,PW-MR,y); y+=6;
   }
-  function sectionTitle(t){
-    ensure(14);
-    doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(BLUE[0],BLUE[1],BLUE[2]);
-    doc.text(t.toUpperCase(), ML, y);
-    y+=2; doc.setDrawColor(LINE[0],LINE[1],LINE[2]); doc.setLineWidth(0.4);
-    doc.line(ML,y,PW-MR,y); y+=6;
+  function poly(pts,c){
+    const rel=[]; for(let k=1;k<pts.length;k++) rel.push([pts[k][0]-pts[k-1][0], pts[k][1]-pts[k-1][1]]);
+    fillC(c); doc.lines(rel, pts[0][0], pts[0][1], [1,1], 'F', true);
+  }
+  function arcBand(cx,cy,r1,r2,v0,v1,c){
+    const n=Math.max(3,Math.ceil((v1-v0)/2)), pts=[], P=v=>Math.PI*(1-v/100);
+    for(let k=0;k<=n;k++){ const t=P(v0+(v1-v0)*k/n); pts.push([cx+r2*Math.cos(t), cy-r2*Math.sin(t)]); }
+    for(let k=n;k>=0;k--){ const t=P(v0+(v1-v0)*k/n); pts.push([cx+r1*Math.cos(t), cy-r1*Math.sin(t)]); }
+    poly(pts,c);
+  }
+  const mix=(c,a)=>c.map(v=>Math.round(255-(255-v)*a));   // tint of a colour on white
+  function chip(x,yy,label,fillRGB,textRGB,size){
+    font('bold',size||7,textRGB); const w=doc.getTextWidth(label)+4;
+    fillC(fillRGB); doc.roundedRect(x,yy-3.1,w,4.3,1.2,1.2,'F'); doc.text(label, x+2, yy); return w;
   }
 
-  /* ===== Header band ===== */
-  doc.setFillColor(DARK[0],DARK[1],DARK[2]);
-  doc.rect(0,0,PW,42,'F');
-  doc.setFillColor(GOLD[0],GOLD[1],GOLD[2]);
-  doc.rect(0,42,PW,1.4,'F');
-  doc.setFont('helvetica','bold'); doc.setFontSize(8); doc.setTextColor(180,190,205);
-  doc.text('M.A.I. CONSULTING · STRATEGY · AI · IMPACT', ML, 16);
-  doc.setFontSize(22); doc.setTextColor(255,255,255);
-  doc.text('AI Readiness', ML, 27);
-  doc.setTextColor(GOLD[0],GOLD[1],GOLD[2]);
-  doc.text('Assessment Report', ML, 36);
-  doc.setFont('helvetica','normal'); doc.setFontSize(8); doc.setTextColor(180,190,205);
-  doc.text(date+'  ·  4D Framework · 28 questions', PW-MR, 36, {align:'right'});
-  y=54;
+  /* ================= PAGE 1: executive dashboard ================= */
+  fillC(NAVY); doc.rect(0,0,PW,40,'F'); fillC(GOLD); doc.rect(0,40,PW,1.2,'F');
+  font('bold',7.5,[180,190,205]); doc.text('M.A.I. CONSULTING  |  AI READINESS CHECK', ML, 12);
+  font('bold',21,WHITE); doc.text('Results dashboard', ML, 23);
+  font('bold',12,GOLD); doc.text(org.slice(0,58), ML, 31.5);
+  font('normal',8,[190,200,215]);
+  doc.text(date, PW-MR, 12, {align:'right'});
+  if(userInfo.name) doc.text((userInfo.name+(userInfo.role?', '+userInfo.role:'')).slice(0,60), PW-MR, 23, {align:'right'});
+  doc.text('28 questions  |  4 competencies', PW-MR, 31.5, {align:'right'});
+  y=50;
 
-  /* ===== Profile ===== */
-  sectionTitle('Profile');
-  const prof=[
-    ['Name', userInfo.name||'-', 'Organization', userInfo.org||'-'],
-    ['Role', userInfo.role||'-', 'Email', userInfo.email||'-'],
-    ['Sector', userInfo.sector||'-', 'Team Size', userInfo.size||'-'],
-    ['Questions', answered+' / '+QUESTIONS.length, 'Total Score', totalScore+' / '+totalMax],
-    ['Overall', pct+'%  ('+label+')', 'Gaps Flagged', String(triggered.length)],
-  ];
-  doc.setFillColor(246,248,252);
-  doc.roundedRect(ML,y,CW,prof.length*8+4,2,2,'F');
-  let py=y+6;
-  const colA=ML+4, colAV=ML+30, colB=ML+CW/2+2, colBV=ML+CW/2+28;
-  prof.forEach(r=>{
-    doc.setFont('helvetica','normal'); doc.setFontSize(8); doc.setTextColor(GREY[0],GREY[1],GREY[2]);
-    doc.text(r[0], colA, py);
-    doc.text(r[2], colB, py);
-    doc.setFont('helvetica','bold'); doc.setTextColor(INK[0],INK[1],INK[2]); doc.setFontSize(8.5);
-    doc.text(String(r[1]).slice(0,34), colAV, py);
-    doc.text(String(r[3]).slice(0,34), colBV, py);
-    py+=8;
-  });
-  y+=prof.length*8+10;
-
-  /* ===== Score gauge + breakdown ===== */
-  sectionTitle('Overall Score & Dimension Breakdown');
-  const gW=46, gH=40;
-  doc.setFillColor(DARK[0],DARK[1],DARK[2]);
-  doc.roundedRect(ML,y,gW,gH,2,2,'F');
-  doc.setFont('helvetica','bold'); doc.setFontSize(7); doc.setTextColor(170,180,195);
-  doc.text('OVERALL', ML+gW/2, y+8, {align:'center'});
-  doc.setFontSize(26); doc.setTextColor(GOLD[0],GOLD[1],GOLD[2]);
-  doc.text(String(pct), ML+gW/2, y+22, {align:'center'});
-  doc.setFontSize(7); doc.setTextColor(150,160,175);
-  doc.text('out of 100', ML+gW/2, y+28, {align:'center'});
-  doc.setFillColor(lvlRGB[0],lvlRGB[1],lvlRGB[2]);
-  doc.roundedRect(ML+6,y+31,gW-12,6,3,3,'F');
-  doc.setFontSize(7); doc.setTextColor(255,255,255);
-  doc.text(label.toUpperCase(), ML+gW/2, y+35, {align:'center'});
-
-  const bx=ML+gW+8, bw=CW-gW-8;
-  let by=y+4;
-  dimScores.forEach((s,i)=>{
-    const p=Math.round((s/dimMax[i])*100);
-    const c=hexRGB(DIMS[i].color);
-    doc.setFont('helvetica','bold'); doc.setFontSize(8.5); doc.setTextColor(c[0],c[1],c[2]);
-    doc.text(DIMS[i].name, bx, by+3);
-    const barX=bx+40, barW=bw-40-14;
-    doc.setFillColor(238,240,245);
-    doc.roundedRect(barX,by,barW,3.4,1.7,1.7,'F');
-    doc.setFillColor(c[0],c[1],c[2]);
-    doc.roundedRect(barX,by,Math.max(1,barW*p/100),3.4,1.7,1.7,'F');
-    doc.setTextColor(INK[0],INK[1],INK[2]); doc.setFontSize(8.5);
-    doc.text(p+'%', bx+bw, by+3, {align:'right'});
-    by+=8.5;
-  });
-  y+=Math.max(gH, dimScores.length*8.5)+8;
-
-  /* ===== Your reading: level, pattern, gaps, 30 days, debrief ===== */
-  function para(txt, size, color, indent){
-    doc.setFont('helvetica','normal'); doc.setFontSize(size||9); doc.setTextColor(color[0],color[1],color[2]);
-    const lines=doc.splitTextToSize(txt, CW-(indent||0));
-    const lh=(size||9)*0.5;
-    ensure(lines.length*lh+3);
-    doc.text(lines, ML+(indent||0), y); y+=lines.length*lh+3;
+  /* KPI tiles */
+  { const gap=4, tw=(CW-3*gap)/4, th=30;
+    const S=DIMS[an.strongest.i], W=DIMS[an.weakest.i];
+    const tiles=[
+      {k:'OVERALL SCORE', v:String(an.pct), u:'/100', s:an.label, sc:rgb(an.band.text), n:an.total+' of '+an.max+' points, scaled', a:rgb(an.band.fill)},
+      {k:'STRONGEST COMPETENCY', v:String(an.strongest.p), u:'%', s:S.name, sc:INK, n:an.dimScores[an.strongest.i]+' of '+an.dimMax[an.strongest.i]+' points', a:rgb(bandOf(an.strongest.p).fill)},
+      {k:'WEAKEST COMPETENCY', v:String(an.weakest.p), u:'%', s:W.name, sc:INK, n:an.dimScores[an.weakest.i]+' of '+an.dimMax[an.weakest.i]+' points', a:rgb(bandOf(an.weakest.p).fill)},
+      {k:'PRIORITY GAPS', v:String(an.flagged), u:'/28', s:'answers below threshold', sc:INK, n:an.gaps.length?'top '+an.gaps.length+' ranked on page 2':'nothing to rank', a:BLUE}
+    ];
+    tiles.forEach((t,i)=>{
+      const x=ML+i*(tw+gap);
+      fillC(PANEL); doc.rect(x,y,tw,th,'F'); fillC(t.a); doc.rect(x,y,tw,1.6,'F');
+      font('bold',6.3,MUTED); doc.text(t.k, x+3, y+6.5);
+      font('bold',20,INK); doc.text(t.v, x+3, y+16.5);
+      const vw=doc.getTextWidth(t.v); font('normal',8.5,MUTED); doc.text(t.u, x+3+vw+0.8, y+16.5);
+      font('bold',8,t.sc); doc.text(t.s, x+3, y+22.5);
+      font('normal',6.5,MUTED); doc.text(t.n, x+3, y+27);
+    });
+    y+=th+10;
   }
-  sectionTitle('What Your Score Means');
-  para(an.pct+' out of 100: '+an.label+'. '+an.levelText, 9, [77,77,77]);
-  y+=3;
 
-  sectionTitle('Pattern: Strongest and Weakest Competency');
-  { const SD=DIMS[an.strongest.i], WD=DIMS[an.weakest.i];
-    const sc=hexRGB(SD.color), wc=hexRGB(WD.color);
-    ensure(10);
-    doc.setFont('helvetica','bold'); doc.setFontSize(9);
-    doc.setTextColor(sc[0],sc[1],sc[2]); doc.text('Strongest: '+SD.name+' ('+an.strongest.p+'%)', ML, y);
-    doc.setTextColor(wc[0],wc[1],wc[2]); doc.text('Weakest: '+WD.name+' ('+an.weakest.p+'%)', ML+CW/2, y);
-    y+=5;
-    para(an.pattern, 9, [77,77,77]); y+=3; }
+  /* Overall gauge + what it means */
+  section('Overall score against the six levels', 'Score 0 to 100');
+  { const top=y, gx=ML+38, gy=y+36, b=an.band;
+    LEVEL_BANDS.forEach(l=>{
+      const to=l.to===100?100:l.to+1, c=rgb(bandOf(l.from).fill);
+      arcBand(gx,gy,30,34,l.from+0.4,to-0.4,l.label===an.label?c:mix(c,.3));
+    });
+    arcBand(gx,gy,19,27,0,100,TRACK.map(v=>v-14));
+    if(an.pct>0) arcBand(gx,gy,19,27,0,an.pct,rgb(b.fill));
+    { const t=Math.PI*(1-TARGET_PCT/100); drawC(NAVY); doc.setLineWidth(0.7);
+      doc.line(gx+17.5*Math.cos(t), gy-17.5*Math.sin(t), gx+35.5*Math.cos(t), gy-35.5*Math.sin(t)); }
+    [20,40,60,75,90].forEach(v=>{
+      const t=Math.PI*(1-v/100), x=gx+38.5*Math.cos(t), yy=gy-38.5*Math.sin(t)+1;
+      const tgt=v===TARGET_PCT;
+      font(tgt?'bold':'normal',6.5,tgt?NAVY:MUTED);
+      doc.text(tgt?v+' target':String(v), x, yy, {align:v<50?'right':v>50?'left':'center'});
+    });
+    font('normal',6.5,MUTED); doc.text('0', gx-32, gy+4, {align:'center'}); doc.text('100', gx+32, gy+4, {align:'center'});
+    font('bold',22,INK); doc.text(String(an.pct), gx, gy-5, {align:'center'});
+    font('normal',7,MUTED); doc.text('out of 100', gx, gy+0.5, {align:'center'});
+    /* level legend under the gauge: 2 columns x 3 rows */
+    let ly=gy+10;
+    LEVEL_BANDS.forEach((l,i)=>{
+      const x=ML+(i%2)*40, yy=ly+Math.floor(i/2)*4.6, on=l.label===an.label;
+      fillC(rgb(bandOf(l.from).fill)); doc.rect(x,yy-2.4,2.6,2.6,'F');
+      font(on?'bold':'normal',6.8,on?INK:MUTED); doc.text(l.from+'-'+l.to+'  '+l.label+(on?'  (you)':''), x+4, yy);
+    });
+    const leftBottom=ly+3*4.6;
+    /* right column */
+    const rx=ML+86, rw=CW-86; let ry=top+1;
+    font('bold',9,NAVY); doc.text('What this score means', rx, ry); ry+=5.5;
+    fillC(rgb(b.fill));
+    font('bold',9,INK);
+    const lead=doc.splitTextToSize(an.pct+'/100, '+an.label+'. '+an.meaning, rw-4);
+    doc.rect(rx,ry-3.6,1.2,lead.length*4.3+1,'F');
+    font('bold',9,INK); doc.text(lead, rx+3.5, ry); ry+=lead.length*4.3+3;
+    font('normal',8,BODY); const lt=doc.splitTextToSize(an.levelText, rw); doc.text(lt, rx, ry); ry+=lt.length*3.7+2.5;
+    font('bold',8,INK); doc.text('Pattern.', rx, ry);
+    const pw=doc.getTextWidth('Pattern. ');
+    font('normal',8,BODY); const pl=doc.splitTextToSize(an.pattern, rw-pw);
+    doc.text(pl[0]||'', rx+pw, ry);
+    if(pl.length>1){ const rest=doc.splitTextToSize(pl.slice(1).join(' '), rw); doc.text(rest, rx, ry+3.7); ry+=rest.length*3.7; }
+    ry+=4;
+    y=Math.max(leftBottom, ry)+6;
+  }
 
-  sectionTitle('Top Three Gaps and the Next Move for Each');
-  if(an.gaps.length===0){
-    para('No answer fell below the practice threshold, so there is no gap to rank. Use the 30-day list to keep the standard current.', 9, [26,122,74]);
+  /* Competency bar chart */
+  section('Competency scores against target', 'Target '+TARGET_PCT+'% = consistent practice');
+  { const lx=ML, x0=ML+42, x1=PW-MR-26, bw=x1-x0, rowH=14, top=y+4, n=DIMS.length;
+    const bottom=top+n*rowH;
+    /* grid + axis */
+    [0,25,50,75,100].forEach(v=>{
+      const x=x0+bw*v/100; drawC(GRID); doc.setLineWidth(0.15); doc.line(x,top-1,x,bottom);
+      font('normal',6.5,MUTED); doc.text(String(v), x, bottom+3.5, {align:'center'});
+    });
+    font('normal',6.5,MUTED); doc.text('% of points', x1, bottom+7, {align:'right'});
+    DIMS.forEach((d,i)=>{
+      const p=an.dimPct[i], bd=bandOf(p), ry=top+i*rowH;
+      font('bold',8.5,INK); doc.text(d.name, lx, ry+4);
+      font('normal',6.3,MUTED); doc.text(doc.splitTextToSize(d.label,40)[0], lx, ry+7.4);
+      fillC(TRACK); doc.rect(x0,ry+0.8,bw,5,'F');
+      if(p>0){ fillC(rgb(bd.fill)); doc.rect(x0,ry+0.8,bw*p/100,5,'F'); }
+      font('bold',9,rgb(bd.text)); doc.text(p+'%', x1+3, ry+4.6);
+      font('normal',6.5,MUTED); doc.text(bd.name, x1+3, ry+7.8);
+      font('normal',6.5,BODY); doc.text(dimMeaning(p,an.dimFlags[i]).replace(/^[^:]+: /,''), x0, ry+10);
+    });
+    /* target line */
+    const tx=x0+bw*TARGET_PCT/100;
+    drawC(NAVY); doc.setLineWidth(0.5); doc.setLineDashPattern([1.2,0.9],0);
+    doc.line(tx,top-2.5,tx,top-0.2);
+    DIMS.forEach((d,i)=>{ const ry=top+i*rowH; doc.line(tx,ry-0.2,tx,ry+6.8); });
+    doc.setLineDashPattern([],0);
+    font('bold',6.5,NAVY); doc.text('Target '+TARGET_PCT, tx, top-3.5, {align:'center'});
+    y=bottom+10;
+  }
+
+  /* Colour legend */
+  { ensure(10); font('bold',7,INK); doc.text('Colour key', ML, y); let x=ML+16;
+    BAND_LEGEND.forEach(l=>{ fillC(rgb(l.fill)); doc.rect(x,y-2.5,3,3,'F'); font('normal',6.8,BODY); doc.text(l.txt, x+4.5, y); x+=4.5+doc.getTextWidth(l.txt)+5; });
+    y+=5; font('normal',6.5,MUTED);
+    const sn=doc.splitTextToSize('How to read the numbers. Every score is the share of available points: 5 points per question, 7 questions (35 points) per competency, 140 points in total. The target line marks 60%, the practice threshold most questions use.', CW);
+    doc.text(sn, ML, y); y+=sn.length*3+2;
+    const disc=doc.splitTextToSize('About this check. Based on the AI Fluency 4D Framework (Delegation, Description, Discernment, Diligence) by Prof. Rick Dakan and Prof. Joseph Feller with Anthropic and Giving Tuesday, CC BY-NC-SA 4.0. Each answer is compared with a practice threshold; answers below it are flagged as gaps. Scores are self-reported and indicative; they are not a compliance audit.', CW);
+    doc.text(disc, ML, y);
+  }
+
+  /* ================= PAGE 2: gap analysis and 30-day plan ================= */
+  newPage();
+  section('Priority gaps: what to fix first', an.gaps.length?('Top '+an.gaps.length+' of '+an.flagged+' flagged answers'):'No flagged answers');
+  if(!an.gaps.length){
+    font('normal',9,[21,128,61]);
+    const ok=doc.splitTextToSize('No answer fell below the practice threshold, so there is no gap to rank. Use the 30-day plan to keep the standard current.', CW);
+    doc.text(ok, ML, y); y+=ok.length*4.4+4;
   } else {
-    an.gaps.forEach((g,gi)=>{
-      const l1=doc.splitTextToSize((gi+1)+'. '+g.dim+': "'+g.question+'" - you answered '+g.answer+'.', CW-2);
-      const l2=doc.splitTextToSize('Next move: '+g.move+'.', CW-8);
-      ensure(l1.length*4.2+l2.length*4.2+5);
-      doc.setFont('helvetica','bold'); doc.setFontSize(8.5); doc.setTextColor(INK[0],INK[1],INK[2]);
-      doc.text(l1, ML, y); y+=l1.length*4.2+1;
-      doc.setFont('helvetica','normal'); doc.setTextColor(BLUE[0],BLUE[1],BLUE[2]);
-      doc.text(l2, ML+5, y); y+=l2.length*4.2+4;
-    });
-  }
-  y+=2;
-
-  sectionTitle('The Next 30 Days');
-  an.thirty.forEach((t,ti)=>{ para((ti+1)+'. '+t, 8.5, [77,77,77]); });
-  y+=2;
-
-  /* debrief box */
-  ensure(24);
-  doc.setFillColor(246,248,252); doc.roundedRect(ML,y,CW,20,1.5,1.5,'F');
-  doc.setFillColor(GOLD[0],GOLD[1],GOLD[2]); doc.rect(ML,y,1.5,20,'F');
-  doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(INK[0],INK[1],INK[2]);
-  doc.text('If you want to go through this with us', ML+5, y+7);
-  doc.setFont('helvetica','normal'); doc.setFontSize(8.5); doc.setTextColor(77,77,77);
-  doc.text('A free 30-minute debrief on the gaps above and what to do about each. Book at', ML+5, y+13);
-  doc.setTextColor(BLUE[0],BLUE[1],BLUE[2]);
-  doc.textWithLink(BOOK_URL, ML+5+doc.getTextWidth('A free 30-minute debrief on the gaps above and what to do about each. Book at ')+1, y+13, {url:BOOK_URL});
-  y+=26;
-
-  /* ===== Targeted recommendations ===== */
-  curPageLabel='Recommendations';
-  sectionTitle('Targeted Recommendations Based on Your Answers');
-  if(triggered.length===0){
-    doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(26,122,74);
-    const ok=doc.splitTextToSize('No urgent gaps flagged. Keep reinforcing current practices and consider expanding scope.', CW);
-    ensure(ok.length*4.6+4);
-    doc.text(ok, ML, y); y+=ok.length*4.6+6;
-  } else {
-    [0,1,2,3].filter(di=>byDim[di].length>0).forEach(di=>{
-      const D=DIMS[di]; const c=hexRGB(D.color);
-      ensure(12);
-      doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(c[0],c[1],c[2]);
-      doc.text(`${D.name}: ${byDim[di].length} gap${byDim[di].length===1?'':'s'}`, ML, y);
-      y+=5;
-      byDim[di].forEach(t=>{
-        const recL=doc.splitTextToSize('-  '+t.rec, CW-2);
-        const ansL=doc.splitTextToSize('   Triggered by: "'+t.q.text+'" -> you answered: '+answerLabel(t.q,t.score), CW-2);
-        const need=recL.length*4.0 + ansL.length*3.4 + 4;
-        ensure(need);
-        doc.setFillColor(246,248,252);
-        doc.roundedRect(ML,y-1,CW,need,1,1,'F');
-        doc.setFillColor(c[0],c[1],c[2]);
-        doc.rect(ML,y-1,1.4,need,'F');
-        doc.setFont('helvetica','normal'); doc.setFontSize(8.5); doc.setTextColor(60,60,60);
-        doc.text(recL, ML+4, y+3);
-        let yy=y+3+recL.length*4.0;
-        doc.setFont('helvetica','italic'); doc.setFontSize(7.5); doc.setTextColor(140,140,140);
-        doc.text(ansL, ML+4, yy);
-        y+=need+2;
-      });
-      y+=2;
-    });
-  }
-
-  /* ===== Page 2: Full score table ===== */
-  footer(curPageLabel); doc.addPage(); y=18; curPageLabel='Detail';
-  sectionTitle('Full Score Breakdown');
-  const ratings=p=>p>=85?'5/5':p>=70?'4/5':p>=50?'3/5':p>=30?'2/5':'1/5';
-  const th=['Dimension','Score','Max','%','Rating'];
-  const cwd=[CW-72,18,18,18,18];
-  function trow(cells, head){
-    ensure(7);
-    if(head){ doc.setFillColor(BLUE[0],BLUE[1],BLUE[2]); doc.rect(ML,y,CW,7,'F');
-      doc.setFont('helvetica','bold'); doc.setTextColor(255,255,255); }
-    else { doc.setFont('helvetica','normal'); doc.setTextColor(INK[0],INK[1],INK[2]); }
-    doc.setFontSize(8);
-    let x=ML;
-    cells.forEach((cell,i)=>{
-      const al = i>=1 ? 'right' : 'left';
-      const tx = al==='right'? x+cwd[i]-2 : x+2;
-      doc.text(String(cell), tx, y+4.7, {align:al});
-      x+=cwd[i];
-    });
-    doc.setDrawColor(LINE[0],LINE[1],LINE[2]); doc.setLineWidth(0.15);
-    doc.line(ML,y+7,ML+CW,y+7);
+    const cols=[{h:'#',w:7},{h:'Priority',w:17},{h:'Competency',w:23},{h:'What scored low',w:47},{h:'Why it matters',w:40},{h:'30-day action',w:44}];
+    fillC(NAVY); doc.rect(ML,y,CW,7,'F'); font('bold',7.3,WHITE);
+    { let x=ML; cols.forEach(c=>{ doc.text(c.h, x+2, y+4.7); x+=c.w; }); }
     y+=7;
-  }
-  trow(th,true);
-  dimScores.forEach((s,i)=>{
-    const p=Math.round((s/dimMax[i])*100);
-    trow([DIMS[i].name, Math.round(s), dimMax[i], p+'%', ratings(p)],false);
-  });
-  doc.setFillColor(DARK[0],DARK[1],DARK[2]); doc.rect(ML,y,CW,7,'F');
-  doc.setFont('helvetica','bold'); doc.setTextColor(255,255,255); doc.setFontSize(8);
-  {let x=ML; const tot=['TOTAL',totalScore,totalMax,pct+'%',label];
-   tot.forEach((cell,i)=>{const al=i>=1?'right':'left';const tx=al==='right'?x+cwd[i]-2:x+2;
-     doc.text(String(cell),tx,y+4.7,{align:al}); x+=cwd[i];});}
-  y+=12;
-
-  /* ===== Question-level results ===== */
-  sectionTitle('Question-Level Results');
-  DIMS.forEach((D,di)=>{
-    const dimQs=QUESTIONS.filter(q=>q.dim===di);
-    ensure(9);
-    const c=hexRGB(D.color);
-    doc.setFillColor(250,251,253); doc.rect(ML,y,CW,6,'F');
-    doc.setDrawColor(c[0],c[1],c[2]); doc.setLineWidth(0.5); doc.line(ML,y,ML+CW,y);
-    doc.setFont('helvetica','bold'); doc.setFontSize(8); doc.setTextColor(c[0],c[1],c[2]);
-    doc.text(D.name, ML+2, y+4); y+=8;
-    dimQs.forEach((q,qi)=>{
-      const sc=scores[q.id];
-      const display=(sc===undefined||isNaN(sc))?'-':Math.round(sc);
-      const ans=answerLabel(q,sc);
-      const r=Q_RECS[q.id];
-      const flagged=(sc!==undefined&&!isNaN(sc)&&r&&sc<r.threshold);
-      const qline=doc.splitTextToSize((qi+1)+'. '+q.text, CW-44);
-      const need=Math.max(qline.length*3.8, 5)+2;
-      ensure(need);
-      doc.setFont('helvetica','normal'); doc.setFontSize(7.5); doc.setTextColor(INK[0],INK[1],INK[2]);
-      doc.text(qline, ML, y+3);
-      const rightX=ML+CW;
-      doc.setFont('helvetica','bold'); doc.setTextColor(BLUE[0],BLUE[1],BLUE[2]);
-      doc.text(`${ans}  (${display}/${q.max})`, rightX, y+3, {align:'right'});
-      if(flagged){
-        doc.setTextColor(192,57,43); doc.setFontSize(7.5);
-        doc.text('● flagged', rightX, y+3+3.6, {align:'right'});
-      }
-      y+=need;
-      doc.setDrawColor(245,245,248); doc.setLineWidth(0.1);
-      doc.line(ML,y-1,ML+CW,y-1);
+    an.gaps.forEach((g,i)=>{
+      font('normal',7.3,BODY);
+      const q=doc.splitTextToSize('"'+g.question+'"', cols[3].w-4);
+      const ans=doc.splitTextToSize('You answered '+g.answer+': '+g.score+' of '+g.max+' points, threshold '+g.threshold+'.', cols[3].w-4);
+      const why=doc.splitTextToSize(g.why, cols[4].w-4);
+      font('bold',7.3,BLUE); const mv=doc.splitTextToSize(g.move+'.', cols[5].w-4);
+      const lh=3.3, rh=Math.max(q.length+ans.length, why.length, mv.length, 2)*lh+5;
+      ensure(rh);
+      if(i%2===0){ fillC(PANEL); doc.rect(ML,y,CW,rh,'F'); }
+      let x=ML; const ty=y+4.2;
+      font('bold',8,INK); doc.text(String(i+1), x+2, ty); x+=cols[0].w;
+      const ps=PRI_STYLE[g.priority]; chip(x+1.5, ty, g.priority, rgb(ps.fill), rgb(ps.text), 6.8); x+=cols[1].w;
+      font('bold',7.5,INK); doc.text(doc.splitTextToSize(g.dim, cols[2].w-4), x+2, ty); x+=cols[2].w;
+      font('normal',7.3,INK); doc.text(q, x+2, ty);
+      font('italic',7,MUTED); doc.text(ans, x+2, ty+q.length*lh); x+=cols[3].w;
+      font('normal',7.3,BODY); doc.text(why, x+2, ty); x+=cols[4].w;
+      font('bold',7.3,BLUE); doc.text(mv, x+2, ty);
+      y+=rh; drawC(GRID); doc.setLineWidth(0.15); doc.line(ML,y,ML+CW,y);
     });
-    y+=3;
+    y+=4; font('normal',6.8,MUTED);
+    const pn=doc.splitTextToSize('Priority is how far the answer sits below its threshold: High 4 to 5 points, Medium 2 to 3, Low 1. At most two gaps per competency are ranked. Every flagged answer, with its action, is listed in the appendix.', CW);
+    doc.text(pn, ML, y); y+=pn.length*3.2+8;
+  }
+
+  section('Your next 30 days', 'Tick each step when done');
+  an.thirty.forEach((t,i)=>{
+    font('normal',8.5,BODY);
+    const L=doc.splitTextToSize(t, CW-34);
+    ensure(L.length*4.2+5);
+    drawC(NAVY); doc.setLineWidth(0.35); doc.rect(ML, y-3.3, 4, 4);
+    font('bold',8.5,NAVY); doc.text(WEEKS[i], ML+7, y);
+    font('normal',8.5,BODY); doc.text(L, ML+34, y);
+    y+=L.length*4.2+4;
   });
+  y+=4;
 
-  /* ===== Disclaimer ===== */
-  ensure(28);
-  doc.setFillColor(246,248,252);
-  const disc='About this assessment. Based on the AI Fluency 4D Framework (Delegation, Description, Discernment, Diligence) developed by Prof. Rick Dakan and Prof. Joseph Feller in partnership with Anthropic and Giving Tuesday - CC BY-NC-SA 4.0. Recommendations on this report are generated by comparing each of your answers to a threshold of acceptable practice; items below threshold are flagged in the question-level table and a corresponding action in the recommendations section. Scores are indicative and self-reported; they do not constitute a compliance audit.';
-  const dl=doc.splitTextToSize(disc, CW-8);
-  const dh=dl.length*3.6+8;
-  doc.roundedRect(ML,y,CW,dh,1.5,1.5,'F');
-  doc.setFont('helvetica','normal'); doc.setFontSize(7); doc.setTextColor(110,110,110);
-  doc.text(dl, ML+4, y+5);
-  y+=dh+4;
+  /* How M.A.I. Consulting can help (closes the two-page report) */
+  { const W=DIMS[an.weakest.i];
+    font('normal',8.3,BODY);
+    const body=doc.splitTextToSize('Your lowest-scoring competency is '+W.name+' ('+an.weakest.p+'%). '+an.help.text, CW-12);
+    const h=body.length*4+33;
+    ensure(h+2);
+    fillC(PANEL); doc.rect(ML,y,CW,h,'F'); fillC(GOLD); doc.rect(ML,y,1.6,h,'F');
+    let by=y+7;
+    font('bold',10.5,NAVY); doc.text('How M.A.I. Consulting can help', ML+6, by); by+=6;
+    font('normal',8.3,BODY); doc.text(body, ML+6, by); by+=body.length*4+2;
+    const link=(label,url)=>{ font('bold',8,INK); doc.text(label, ML+6, by); font('normal',8,BLUE);
+      doc.textWithLink(url, ML+44, by, {url:url.indexOf('@')>0?'mailto:'+url:url}); by+=4.6; };
+    link(an.help.service+':', SITE_ROOT+an.help.href);
+    link('Book a call:', BOOK_URL);
+    link('Contact:', CONTACT_EMAIL);
+    font('normal',7,MUTED); doc.text('A free 30-minute call to go through this report. No pitch.', ML+6, by+0.5);
+    y+=h+5;
+  }
 
-  footer(curPageLabel);
+  /* ================= PAGE 3: appendix, the 28 answers ================= */
+  newPage();
+  section('Appendix: your 28 answers', 'Flagged answers carry their action');
+  { const cols=[{h:'Question',w:126},{h:'Your answer',w:25},{h:'Points vs threshold',w:27}];
+    const head=()=>{ fillC(NAVY); doc.rect(ML,y,CW,6,'F'); font('bold',7,WHITE); let x=ML;
+      cols.forEach((c,i)=>{ doc.text(c.h, i===2?x+c.w-2:x+2, y+4.1, {align:i===2?'right':'left'}); x+=c.w; }); y+=6; };
+    head();
+    DIMS.forEach((D,di)=>{
+      if(ensure(12)) head();
+      const p=an.dimPct[di];
+      fillC(mix(rgb(bandOf(p).fill),.12)); doc.rect(ML,y,CW,5,'F');
+      font('bold',7.5,INK); doc.text(D.name, ML+2, y+3.5);
+      font('bold',7.5,rgb(bandOf(p).text)); doc.text(an.dimScores[di]+' of '+an.dimMax[di]+' points ('+p+'%), '+bandOf(p).name.toLowerCase(), ML+CW-2, y+3.5, {align:'right'});
+      y+=5;
+      QUESTIONS.filter(q=>q.dim===di).forEach(q=>{
+        const sc=scores[q.id], r=Q_RECS[q.id], flagged=!!(r&&sc<r.threshold);
+        font('normal',6.6,INK); const L=doc.splitTextToSize(q.text, cols[0].w-4);
+        font('normal',6.2,BLUE); const A=flagged?doc.splitTextToSize('Action: '+r.rec+'.', cols[0].w-4):[];
+        const rh=L.length*2.75+A.length*2.65+1.9;
+        if(ensure(rh)) head();
+        const ty=y+2.7; let x=ML;
+        font('normal',6.6,INK); doc.text(L, x+2, ty);
+        if(A.length){ font('normal',6.2,BLUE); doc.text(A, x+2, ty+L.length*2.75); }
+        x+=cols[0].w;
+        font('normal',6.7,BODY); doc.text(doc.splitTextToSize(answerLabel(q,sc), cols[1].w-3)[0], x+2, ty); x+=cols[1].w;
+        font('bold',6.7,flagged?[185,28,28]:[21,128,61]);
+        doc.text(sc+'/'+q.max+(r?(flagged?', below '+r.threshold:', meets '+r.threshold):''), x+cols[2].w-2, ty, {align:'right'});
+        y+=rh; drawC([236,238,242]); doc.setLineWidth(0.1); doc.line(ML,y,ML+CW,y);
+      });
+    });
+    y+=4;
+  }
+
+  /* final block: booking and contact */
+  { y-=1; ensure(10); fillC(NAVY); doc.rect(ML,y,CW,9,'F');
+    font('bold',8,WHITE); doc.text('Book a call:', ML+4, y+5.8);
+    font('normal',8,[230,236,245]); doc.textWithLink(BOOK_URL, ML+23, y+5.8, {url:BOOK_URL});
+    font('bold',8,WHITE); doc.text('Contact:', ML+CW/2+10, y+5.8);
+    font('normal',8,[230,236,245]); doc.textWithLink(CONTACT_EMAIL, ML+CW/2+25, y+5.8, {url:'mailto:'+CONTACT_EMAIL});
+    y+=12; }
+  /* footers with page numbers */
+  const N=doc.internal.getNumberOfPages();
+  for(let i=1;i<=N;i++){
+    doc.setPage(i);
+    drawC(GRID); doc.setLineWidth(0.2); doc.line(ML,PH-13,PW-MR,PH-13);
+    font('normal',7,MUTED);
+    doc.text('M.A.I. Consulting  |  AI Readiness Check  |  '+date, ML, PH-8.5);
+    doc.text('mai4consulting.com', PW/2, PH-8.5, {align:'center'});
+    doc.text('Page '+i+' of '+N, PW-MR, PH-8.5, {align:'right'});
+  }
   return doc;
 }
 
