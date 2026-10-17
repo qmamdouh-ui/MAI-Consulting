@@ -416,6 +416,7 @@ const EMAILJS_PUBLIC_KEY  = 'JJs3lu55OHI_pbjth';
 const EMAILJS_SERVICE_ID  = 'service_an94235';
 const EMAILJS_TEMPLATE_ID = 'template_ellvbp8';            // owner notification (existing)
 const EMAILJS_RESPONDENT_TEMPLATE_ID = 'template_p8wi3id';
+const REPORTS_FOLDER_URL = 'https://drive.google.com/drive/folders/1mrY60Go6ZX6OIwF217yr4A1OMvdeD9YX'; // owner-only fallback for the notification email
 const REPORT_FALLBACK_URL = location.origin + location.pathname; // a valid page for link fields when no Drive URL exists // respondent copy: set after creating the template (see sendRespondentEmail)
 const NOTIFY_EMAIL        = 'q.mamdouh@mai4consulting.com';
 const BOOK_URL            = 'https://mai4consulting.com/book/';
@@ -1250,8 +1251,8 @@ async function sendEmailNotification(pct,label,dimScores,dimMax,weakest,pdfLink,
     dim_breakdown:       dim_breakdown,
     top_recommendations: top_recommendations,
     // NEW: link to the PDF stored in Google Drive (no attachment payload).
-    pdf_link:            hasUrl?pdfLink:REPORT_FALLBACK_URL,
-    pdf_status:          hasUrl?'Saved to Google Drive.':'Drive upload failed. The PDF is attached to this email when the template has the report_pdf attachment; the respondent also received it.',
+    pdf_link:            hasUrl?pdfLink:REPORTS_FOLDER_URL,
+    pdf_status:          hasUrl?'Saved to Google Drive.':'The page could not read the Drive link. The report is in the Drive folder MAI assessment reports (link above) and attached when the template has the report_pdf attachment.',
   };
   if(!(pdfDataUri && pdfDataUri.length < 1900000)) return emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID,params);
   try{ return await emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID,Object.assign({},params,{report_pdf:pdfDataUri})); }
