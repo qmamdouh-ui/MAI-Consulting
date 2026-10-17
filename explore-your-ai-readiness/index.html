@@ -397,7 +397,7 @@ body > header{position:static !important}
 const EMAILJS_PUBLIC_KEY  = 'JJs3lu55OHI_pbjth';
 const EMAILJS_SERVICE_ID  = 'service_an94235';
 const EMAILJS_TEMPLATE_ID = 'template_ellvbp8';            // owner notification (existing)
-const EMAILJS_RESPONDENT_TEMPLATE_ID = 'TEMPLATE_ID_TO_SET'; // respondent copy: set after creating the template (see sendRespondentEmail)
+const EMAILJS_RESPONDENT_TEMPLATE_ID = 'template_p8wi3id'; // respondent copy: set after creating the template (see sendRespondentEmail)
 const NOTIFY_EMAIL        = 'q.mamdouh@mai4consulting.com';
 const BOOK_URL            = 'https://mai4consulting.com/book/';
 // ── Google Apps Script Web App (PDF -> Drive) ─────────────────────────
@@ -829,8 +829,8 @@ function renderAnalysis(){
      Subject:    Your AI Readiness Check: {{overall_score}}/100 ({{readiness_level}})
    Body fields: {{to_name}}, {{overall_score}}, {{readiness_level}}, {{strongest}},
      {{weakest}}, {{top_recommendations}} (multi-line: wrap in a block with
-     white-space:pre-line), {{pdf_link}}, {{book_url}}.                       */
-async function sendRespondentEmail(an,pdfLink){
+     white-space:pre-line), {{pdf_link}}, {{book_url}}; attachment report_pdf.                       */
+async function sendRespondentEmail(an,pdfLink,pdfDataUri){
   if(EMAILJS_RESPONDENT_TEMPLATE_ID==='TEMPLATE_ID_TO_SET'){ console.log('Respondent email not configured; skipped.'); return null; }
   if(!userInfo.email) return null;
   emailjs.init({publicKey:EMAILJS_PUBLIC_KEY});
@@ -838,7 +838,11 @@ async function sendRespondentEmail(an,pdfLink){
   const topRecs=an.gaps.length
     ? an.gaps.map((g,i)=>`${i+1}. [${g.dim}] ${g.move}.`).join('\n')
     : 'No answer fell below the practice threshold.';
-  return emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_RESPONDENT_TEMPLATE_ID,{
+  /* The PDF goes as an EmailJS Variable Attachment named report_pdf (template: Attachments tab,
+     Variable Attachment, parameter report_pdf). Kept under ~1.4 MB; if the send with the
+     attachment fails, it is retried once with the Drive link only. */
+  const attach = !!(pdfDataUri && pdfDataUri.length < 1900000);
+  const params = {
     to_email:            userInfo.email,
     to_name:             userInfo.name||'there',
     overall_score:       an.pct,
@@ -846,9 +850,17 @@ async function sendRespondentEmail(an,pdfLink){
     strongest:           `${S.name} (${an.strongest.p}%)`,
     weakest:             `${W.name} (${an.weakest.p}%)`,
     top_recommendations: topRecs,
-    pdf_link:            /^https?:/.test(pdfLink)?pdfLink:'The PDF was saved to your device when you pressed the button.',
+    pdf_link:            /^https?:/.test(pdfLink)?pdfLink:(attach?'Attached to this email.':'The PDF was saved to your device when you pressed the button.'),
     book_url:            BOOK_URL
-  });
+  };
+  if(!attach) return emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_RESPONDENT_TEMPLATE_ID,params);
+  try{
+    return await emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_RESPONDENT_TEMPLATE_ID,Object.assign({},params,{report_pdf:pdfDataUri}));
+  }catch(err){
+    console.warn('Respondent email with attachment failed, retrying with the link only:', err && (err.text||err.message||err));
+    params.pdf_link = /^https?:/.test(pdfLink)?pdfLink:'Please reply to this email and we will send your report.';
+    return emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_RESPONDENT_TEMPLATE_ID,params);
+  }
 }
 
 /* ── Email notification (sends a Google Drive link to the PDF) ───────── */
@@ -944,7 +956,7 @@ async function downloadPDF(){
       });
 
     // 5. Copy of the result to the respondent (skipped until the template ID is set)
-    sendRespondentEmail(buildAnalysis(),finalPdfLink)
+    sendRespondentEmail(buildAnalysis(),finalPdfLink,'data:application/pdf;base64,'+base64Data)
       .then(r=>{ if(r) console.log('Respondent email OK:', r.status); })
       .catch(err=>{ console.error('Respondent email FAILED:', err && (err.text||err.message||err)); });
 
