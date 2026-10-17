@@ -121,4 +121,4 @@ Each level lists: **Understand** (the background, kept to the minimum sufficient
 
 ## Course for individuals and representatives
 
-Three delivery days reach level 3 from 1 or 2. Higher levels add the days in the ladder. Online or in person; in person adds venue, hotel and hospitality at cost. Price is per delivery day (see `docs/SITE_OPERATIONS.md` §4).
+Three delivery days reach level 3 from 1 or 2. Higher levels add the days in the ladder. Online or in person; in person, the venue, hotel and hospitality are arranged by the practice. Priced per engagement, with a written quote after a free scoping call (see `docs/SITE_OPERATIONS.md` §4).

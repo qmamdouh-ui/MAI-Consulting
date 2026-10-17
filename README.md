@@ -18,10 +18,10 @@ The published site lives in the **repository root**, served by GitHub Pages at
 | Path | Purpose |
 | --- | --- |
 | `/` | Home |
-| `/services/` | The offer page: five services and three ready-made scopes; prices via the estimator |
+| `/services/` | The offer page: five services and three ready-made scopes; delivery days via the estimator |
 | `/about/` | Who delivers the work: background, credentials, standards |
 | `/cheatsheet/` | Sample of the one-page deliverable each department receives |
-| `/estimate/` | Price estimator: type, size, scope → indicative range; 200+ staff routed to a call; selections emailed to the owner. The scope model lives in the page script and is deliberately not rendered |
+| `/estimate/` | Scope estimator: type, size, scope → estimated delivery days (no prices); 200+ staff routed to a call; selections emailed to the owner. The scope model lives in the page script and is deliberately not rendered |
 | `/for-funders/` | Portfolio programmes for foundations and donors, a second buyer rather than a second sector |
 | `/compare/` | Market and competitor comparison with published prices, sources, and the value case |
 | `/knowledge/` | Searchable library of published articles filed by service, format, level and reading path, plus package guide |
