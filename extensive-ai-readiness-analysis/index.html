@@ -185,6 +185,98 @@ a.std-pill:hover{color:#C9A84C;border-color:rgba(201,168,76,.5);background:rgba(
 .comp-bar{background:var(--off);border-radius:9999px;height:7px;overflow:hidden;}
 .comp-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--gold));border-radius:9999px;transition:width .4s;}
 
+/* results dashboard (rendered by renderAnalysis) */
+.db-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:10px 20px;background:linear-gradient(140deg,#00122e,var(--blue));color:#fff;border-radius:12px;padding:18px 22px;margin-bottom:16px;border-bottom:3px solid var(--gold);}
+.db-eyebrow{font-size:10px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold);}
+.db-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:800;line-height:1.2;margin-top:2px;}
+.db-meta{font-size:12px;line-height:1.6;color:rgba(255,255,255,.75);text-align:right;}
+.db-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px;}
+.db-kpi{background:var(--white);border:1px solid var(--outline);border-top:4px solid var(--k,#003E8A);border-radius:10px;padding:14px 16px;min-width:0;}
+.db-kpi-l{font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6b7280;}
+.db-kpi-v{font-size:34px;font-weight:800;color:var(--txt);line-height:1.1;margin:6px 0 4px;font-variant-numeric:tabular-nums;}
+.db-kpi-v small{font-size:14px;font-weight:600;color:#6b7280;}
+.db-kpi-s{font-size:12.5px;font-weight:600;color:var(--txt);line-height:1.4;}
+.db-chip{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:9999px;white-space:nowrap;}
+.db-grid{display:grid;gap:16px;margin-bottom:16px;}
+.db-grid-2{grid-template-columns:repeat(2,minmax(0,1fr));}
+.db-grid-rt{grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);align-items:start;}
+.db-card{background:var(--white);border:1px solid var(--outline);border-radius:12px;padding:18px 20px;min-width:0;margin-bottom:16px;}
+.db-grid>.db-card{margin-bottom:0;}
+.db-card-t{font-size:11px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase;color:var(--blue);margin:0 0 10px;}
+.db-card-t~.db-card-t{margin-top:16px;}
+.db-hint{font-weight:500;letter-spacing:0;text-transform:none;color:#6b7280;}
+.db-p{font-size:13px;line-height:1.65;color:var(--charcoal);margin:0 0 8px;}
+.db-note{font-size:11.5px;line-height:1.55;color:#6b7280;margin:8px 0 0;}
+.db-mean{font-size:13px;line-height:1.6;color:var(--txt);background:var(--off);border-radius:8px;padding:10px 12px;margin:10px 0 0;}
+.db-svg{display:block;width:100%;height:auto;font-family:'Inter',sans-serif;}
+.db-gauge{max-width:340px;margin:0 auto;}
+.db-radar{max-width:360px;margin:0 auto;}
+.db-svg .db-ax{font-size:11px;fill:#6b7280;}
+.db-svg .db-ax-s{font-size:9px;}
+.db-svg .db-tgt{fill:#001f4d;font-weight:700;}
+.db-svg .db-lbl{font-size:12px;fill:#1a1a2e;font-weight:600;}
+.db-svg .db-lbl-s{font-size:10.5px;}
+.db-svg .db-val{font-size:12px;font-weight:700;}
+.db-svg .db-g-num{font-size:44px;font-weight:800;fill:#1a1a2e;}
+.db-svg .db-g-lvl{font-size:15px;font-weight:800;}
+.db-svg g[tabindex]:focus{outline:2px solid var(--blue);outline-offset:2px;}
+.db-bar:hover rect:nth-of-type(2){opacity:.85;}
+.db-levels{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 12px;font-size:11px;color:#6b7280;margin-top:4px;}
+.db-levels span.on{color:var(--txt);font-weight:800;}
+.db-levels i,.db-legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px;}
+.db-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:11.5px;color:var(--charcoal);margin-top:10px;}
+.db-legend i.db-legend-tgt{width:14px;height:0;border-top:2px dashed #001f4d;border-radius:0;vertical-align:3px;}
+.db-scroll{overflow-x:auto;}
+.db-table{width:100%;border-collapse:collapse;font-size:12.5px;color:var(--charcoal);}
+.db-table th{text-align:left;font-size:10.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#6b7280;padding:8px 10px;border-bottom:2px solid var(--outline);white-space:nowrap;}
+.db-table td{padding:10px;border-bottom:1px solid #eef0f4;vertical-align:top;line-height:1.5;}
+.db-table .r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+.db-table b{color:var(--txt);}
+.db-table .db-tot td{background:var(--off);border-bottom:none;}
+.db-sub{display:block;font-size:11px;color:#6b7280;margin-top:2px;}
+.db-meas{color:#4b5563;font-size:12px;}
+.db-mini{display:inline-block;width:60px;height:7px;background:#eef0f4;border-radius:2px;overflow:hidden;margin-right:8px;vertical-align:1px;}
+.db-mini i{display:block;height:100%;}
+.db-gap ul{margin:0;padding-left:16px;}
+.db-gap li{margin-bottom:6px;}
+.db-ans{display:block;font-size:11.5px;color:#6b7280;}
+.db-rank{font-size:18px;font-weight:800;color:var(--blue);}
+.db-act{color:var(--blue-dark);font-weight:600;}
+.db-read{margin:0;padding-left:18px;font-size:12.5px;line-height:1.6;color:var(--charcoal);}
+.db-read li{margin-bottom:4px;}
+.db-plan ol{margin:0;padding-left:20px;}
+.db-plan li{font-size:13px;line-height:1.6;color:var(--charcoal);margin-bottom:8px;}
+.db-help-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;}
+.db-svc{display:flex;flex-direction:column;gap:4px;text-decoration:none;border:1px solid var(--outline);border-left:3px solid var(--gold);border-radius:10px;padding:12px 14px;color:var(--charcoal);font-size:12.5px;line-height:1.5;transition:border-color .2s,background .2s;}
+.db-svc:hover{background:var(--off);border-color:var(--blue);}
+.db-svc b{color:var(--blue);font-size:14px;}
+.db-svc-k{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6b7280;}
+.db-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;padding:14px 16px;background:var(--off);border-radius:10px;font-size:13px;line-height:1.6;color:var(--charcoal);}
+.db-std{margin:0 0 4px;border:1px solid var(--outline);border-radius:12px;padding:12px 16px;background:var(--off);}
+.db-std summary{cursor:pointer;font-size:12.5px;font-weight:700;color:var(--blue);}
+.db-std .db-table{margin-top:10px;background:var(--white);}
+@media(max-width:860px){.db-kpis{grid-template-columns:repeat(2,minmax(0,1fr));}.db-grid-2,.db-grid-rt{grid-template-columns:1fr;}.db-meta{text-align:left;}}
+@media(max-width:720px){
+  .analysis-card{padding:20px 16px;}
+  .db-rt thead{display:none;}
+  .db-rt,.db-rt tbody,.db-rt tr,.db-rt td{display:block;width:100%;}
+  .db-rt tr{border-bottom:1px solid var(--outline);padding:8px 0;}
+  .db-rt td{border:none;padding:4px 0;text-align:left !important;}
+  .db-rt td::before{content:attr(data-l);display:block;font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;}
+  .db-rt .db-rank::before{display:inline;margin-right:8px;}
+}
+@media(max-width:420px){.db-kpis{grid-template-columns:1fr 1fr;gap:8px;}.db-kpi{padding:12px;}.db-kpi-v{font-size:28px;}.db-card{padding:14px 12px;}.db-head{padding:14px 16px;}}
+@media print{
+  body.db-ready .mai-topbar,body.db-ready .header,body.db-ready .user-info-wrap,body.db-ready .main,body.db-ready footer,body.db-ready #print-root{display:none !important;}
+  body.db-ready{background:#fff;}
+  body.db-ready .analysis-wrap{max-width:none;padding:0;}
+  body.db-ready .analysis-card{border:none;padding:0;}
+  .db-head,.db-chip,.db-kpi,.db-mini i,.db-legend i,.db-levels i{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .db-card,.db-kpi,.db-table tr,.db-svc{break-inside:avoid;page-break-inside:avoid;}
+  .db-grid-2,.db-grid-rt{grid-template-columns:1fr 1fr;}
+  .db-kpis{grid-template-columns:repeat(4,1fr);}
+}
+
 #print-root{position:absolute;left:-99999px;top:0;width:794px;background:#fff;font-family:'Inter',sans-serif;color:#1a1a2e;}
 #print-root .pg{width:794px;min-height:1123px;padding:50px 50px 40px;background:#fff;page-break-after:always;position:relative;}
 #print-root .pg:last-child{page-break-after:auto;}
@@ -460,9 +552,9 @@ body > header{position:static !important}
 
 <section class="analysis-wrap" id="analysis-wrap">
   <div class="analysis-card">
-    <div class="an-title">Your reading</div>
-    <p class="an-sub">What the score means, where the pattern is and what to do first. Built from your answers only; the same text goes into the PDF. The standards mapping at the end is optional.</p>
-    <div id="analysis-body"><p class="an-wait">Your reading appears here once all required questions are answered.</p></div>
+    <div class="an-title">Your results</div>
+    <p class="an-sub">What each number means, what to do first and where we can help. Built from your answers only; the PDF report shows the same figures. The standards mapping at the end is optional.</p>
+    <div id="analysis-body"><p class="an-wait">Your dashboard appears here once all required questions are answered.</p></div>
   </div>
 </section>
 
@@ -1059,36 +1151,286 @@ function buildAnalysis(){
   ];
   return{pct,label,levelText:LEVEL_TEXT[label]||LEVEL_TEXT['Not Ready'],dimPct,strongest,weakest,weakestThree,spread,pattern,gaps,thirty,complete:isComplete()};
 }
+/* ── Results dashboard ─────────────────────────────────────────────────
+   One model (buildDashModel) feeds the on-page dashboard, the PDF and the
+   respondent email, so all three show the same numbers, bands and actions.
+   Scoring maths and level thresholds are unchanged (getDimData, getLevel). */
+const DASH_TARGET=60; // practice target: lower bound of the "Progressing" level in getLevel()
+const LEVEL_BANDS=[
+  {from:0, to:20, label:'Not Ready',  color:'#dc2626'},
+  {from:20,to:40, label:'Early Stage',color:'#f87171'},
+  {from:40,to:60, label:'Developing', color:'#d97706'},
+  {from:60,to:75, label:'Progressing',color:'#16a34a'},
+  {from:75,to:90, label:'Advanced',   color:'#1d4ed8'},
+  {from:90,to:100,label:'AI-Ready',   color:'#001f4d'}
+];
+/* Status colour of a score: red below 40, amber 40-59, green 60-74 (on target), blue 75+.
+   Boundaries follow getLevel(): 40 = Developing, 60 = Progressing, 75 = Advanced. */
+function statusBand(p){
+  if(p<40)          return {key:'gap',   name:'Gap',        range:'below 40%',    fill:'#dc2626',text:'#b91c1c',tint:'#fee2e2'};
+  if(p<DASH_TARGET) return {key:'dev',   name:'Developing', range:'40 to 59%',    fill:'#d97706',text:'#92400e',tint:'#fef3c7'};
+  if(p<75)          return {key:'ok',    name:'On target',  range:'60 to 74%',    fill:'#16a34a',text:'#166534',tint:'#dcfce7'};
+  return                   {key:'strong',name:'Strong',     range:'75% and above',fill:'#1d4ed8',text:'#1e40af',tint:'#dbeafe'};
+}
+const STATUS_LEGEND=[statusBand(10),statusBand(50),statusBand(65),statusBand(80)];
+const LEVEL_ONE_LINE={
+  'Not Ready':'AI is being used informally, with no rules, owner or data boundary behind it yet.',
+  'Early Stage':'Some good individual habits exist, but little is shared, written down or owned.',
+  'Developing':'There is working practice in most areas, with clear gaps in a few dimensions.',
+  'Progressing':'Practice is consistent across most dimensions; the remaining gaps are specific.',
+  'Advanced':'Practice is disciplined and shared; the main risk now is drift as tools and people change.',
+  'AI-Ready':'Practice is mature in every dimension and should now be verified against real work and kept current.'
+};
+const DIM_MEANING=[
+  'Whether the organisation has decided which tasks go to AI and which stay human.',
+  'How well people brief AI: context, format, audience and constraints in the prompt.',
+  'Whether AI outputs are checked for errors, outdated facts and bias before use.',
+  'Whether someone reviews, owns and discloses AI-assisted work, and keeps personal data out.',
+  'Whether there are clear rules on what data may enter AI tools and how harm and bias are checked.',
+  'Whether a written policy, a named owner and an inventory of AI systems exist.',
+  'Whether the effect of AI on roles, workload, morale and quality is tracked and managed.',
+  'Whether decision rights, escalation and unsanctioned (shadow) AI use are under control.',
+  'Whether staff can voice doubts and flag AI errors without fear of blame.',
+  'Whether the organisation scans for change, experiments and shares what it learns.'
+];
+const DIM_WHY=[
+  'Without a task list, AI use is ad hoc: work that should stay human gets delegated and useful work is missed.',
+  'Thin briefs produce generic or wrong outputs that staff rework or, worse, send out as they are.',
+  'Unchecked outputs are where errors and biased wording leave the organisation under your name.',
+  'If nobody owns AI-assisted work, mistakes reach funders, clients or the public with no one accountable.',
+  'Personal or confidential data pasted into the wrong tool is a legal and reputational exposure you cannot undo.',
+  'Without a policy, owner and inventory nobody can say what is permitted, and every other fix lacks an anchor.',
+  'AI that adds hidden review work or erodes morale cancels its own productivity gains.',
+  'Contested decision rights and shadow AI mean risk is being taken where nobody can see it.',
+  'If people fear blame, the errors and misuse you most need to hear about stay hidden.',
+  'Practice that is not refreshed dates quickly as tools and regulation change.'
+];
+/* Weakest dimension -> the M.A.I. Consulting offer that addresses it (paths relative to the site root). */
+const DIM_HELP=[
+  {path:'use-cases/',           label:'The seven AI levels',           short:'to decide which tasks to hand to AI next', hw:'our free seven-level guide', line:'Find the level your teams are at, which tasks to hand to AI next and what to skip.'},
+  {path:'services/training/',   label:'Team AI Training',              short:'to build briefing and checking skills',     line:'One module for all staff, then a 90-minute lab per department built on that team\'s own tasks, ending in a working playbook.'},
+  {path:'services/training/',   label:'Team AI Training',              short:'to build briefing and checking skills',     line:'The department labs include checking outputs against sources and spotting biased or stigmatising wording.'},
+  {path:'services/policy/',     label:'AI Use Policy',                 short:'to set review, disclosure and data rules',  line:'Sets review, disclosure and data-hygiene rules as clear permissions by role, with an approved tool list.'},
+  {path:'services/policy/',     label:'AI Use Policy',                 short:'to set review, disclosure and data rules',  line:'Writes data classification, red lines, disclosure and escalation into one board-ready policy.'},
+  {path:'services/assessment/', label:'AI Readiness Assessment',       short:'to build the inventory and a 90-day plan',  line:'Staff interviews and a documented tool inventory, producing a scored report and a ranked 90-day plan.'},
+  {path:'services/assessment/', label:'AI Readiness Assessment',       short:'to build the inventory and a 90-day plan',  line:'Staff interviews show where AI adds hidden work and how roles are changing, with a ranked 90-day plan.'},
+  {path:'services/agents/',     label:'Custom Agents, Skills & Tools', short:'to give staff sanctioned tools',            line:'Configured assistants and reusable skills on the platforms you already approve: a sanctioned alternative to shadow AI.'},
+  {path:'services/support/',    label:'Fluency Support',               short:'to keep practice safe and current',         line:'Monthly office hours and coaching for internal champions give staff a safe place to raise doubts and errors.'},
+  {path:'services/support/',    label:'Fluency Support',               short:'to keep practice safe and current',         line:'Playbook updates as tools change and a re-score at six months, so the capability does not decay.'}
+];
+const SITE_ROOT='https://mai4consulting.com/';
+
+function buildDashModel(){
+  const an=buildAnalysis();
+  const{dimScores,dimMax}=getDimData();
+  const totalPts=dimScores.reduce((a,b)=>a+b,0), totalMax=dimMax.reduce((a,b)=>a+b,0);
+  const dims=DIMS.map((D,i)=>({i,name:D.name,short:D.short,group:D.group,
+    pts:Math.round(dimScores[i]),max:dimMax[i],pct:an.dimPct[i],band:statusBand(an.dimPct[i]),meaning:DIM_MEANING[i]}));
+  const sorted=dims.slice().sort((a,b)=>a.pct-b.pct||a.i-b.i);   // weakest first
+  const below=dims.filter(d=>d.pct<DASH_TARGET).length;
+  const gapRows=an.weakestThree.map((w,rank)=>{
+    const qs=QUESTIONS.filter(q=>q.dim===w.i&&!q.info&&scores[q.id]!==undefined&&!isNaN(scores[q.id])&&scores[q.id]<q.max)
+      .map(q=>({q,s:scores[q.id],gap:(q.max-scores[q.id])/q.max}))
+      .sort((a,b)=>b.gap-a.gap);
+    const low=qs.slice(0,2).map(x=>{const lab=answerLabel(x.q,x.s),pts=Math.round(x.s);return {text:x.q.text,answer:lab,pts,max:x.q.max,full:lab+(/\//.test(lab)?'':' ('+pts+' of '+x.q.max+' points)')};});
+    const mv=qs.length?(Q_REC_MAP[qs[0].q.id]||[w.i,0]):[w.i,0];
+    const a30=RECS[mv[0]][mv[1]];
+    const a90=RECS[w.i].find(r=>r!==a30)||RECS[w.i][0];
+    return {rank:rank+1,i:w.i,name:DIMS[w.i].name,pct:w.p,band:statusBand(w.p),low,why:DIM_WHY[w.i],a30,a90,std:STD_MAP[w.i]};
+  });
+  const plan90=gapRows.map(g=>g.name+': '+g.a90+'.');
+  plan90.push('Re-run this assessment around day 90 and compare each dimension with today\'s scores.');
+  const help=[]; const seen={};
+  gapRows.forEach(g=>{
+    const H=DIM_HELP[g.i];
+    if(seen[H.path]){ seen[H.path].dims.push(g.name); return; }
+    seen[H.path]={label:H.label,short:H.short,hw:H.hw,line:H.line,path:H.path,url:SITE_ROOT+H.path,dims:[g.name]};
+    help.push(seen[H.path]);
+  });
+  const lvl=LEVEL_ONE_LINE[an.label]||LEVEL_ONE_LINE['Not Ready'];
+  const weakNames=gapRows.slice(0,2).map(g=>g.name+' ('+g.pct+'%)');
+  const howWeHelp=(gapRows.length&&below===0
+      ? 'All ten dimensions are at or above the '+DASH_TARGET+'% target; the lowest are '+weakNames.join(' and ')+'. M.A.I. Consulting can help keep it there with Fluency Support: office hours, playbook updates as tools change and a re-score at six months.'
+      : gapRows.length
+      ? 'Your weakest areas are '+weakNames.join(' and ')+'. M.A.I. Consulting can help with '+help.slice(0,2).map(h=>(h.hw||h.label)+' '+h.short).join(', and with ')+'.'
+      : 'M.A.I. Consulting can help you keep this standard current.')
+    +' A free 30-minute debrief walks through these gaps and the right first step: '+BOOK_URL;
+  return {an,dims,sorted,below,gapRows,plan30:an.thirty,plan90,help,levelLine:lvl,howWeHelp,
+    overallBand:statusBand(an.pct),totalPts:Math.round(totalPts),totalMax,
+    date:new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}),
+    org:(userInfo.org||'').trim(),sector:(userInfo.sector||'').trim(),name:(userInfo.name||'').trim()};
+}
+
+/* Email-safe bar list: table layout, inline styles only, weakest first. */
+function buildDimBarsHtml(m){
+  const F='font:13px Arial,Helvetica,sans-serif;';
+  let h='<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;border-collapse:collapse">';
+  m.sorted.forEach(d=>{
+    const w=Math.max(1,Math.min(100,d.pct));
+    h+='<tr><td style="'+F+'color:#1a1a2e;padding:4px 10px 4px 0;width:190px">'+esc(d.name)+'</td>'
+      +'<td style="padding:4px 0"><table width="100%" cellpadding="0" cellspacing="0" style="background:#e5e7eb"><tr>'
+      +'<td width="'+w+'%" style="background:'+d.band.fill+';height:10px;font-size:0">&nbsp;</td>'
+      +(w<100?'<td style="font-size:0">&nbsp;</td>':'')+'</tr></table></td>'
+      +'<td style="'+F+'font-weight:bold;color:'+d.band.text+';padding:4px 0 4px 10px;width:44px;text-align:right">'+d.pct+'%</td></tr>';
+  });
+  h+='<tr><td colspan="3" style="font:11px Arial,Helvetica,sans-serif;color:#6b7280;padding:8px 0 0">Weakest first. Red: below 40%. Amber: 40 to 59%. Green: 60 to 74% (target 60%). Blue: 75% and above.</td></tr></table>';
+  return h;
+}
+
+/* ── SVG helpers (inline, no libraries) ── */
+function svgArcPath(cx,cy,r1,r2,v1,v2){
+  const P=(r,v)=>{const t=Math.PI*(1-v/100);return [(cx+r*Math.cos(t)).toFixed(2),(cy-r*Math.sin(t)).toFixed(2)];};
+  const a=P(r2,v1),b=P(r2,v2),c=P(r1,v2),d=P(r1,v1);
+  return `M${a[0]} ${a[1]}A${r2} ${r2} 0 0 1 ${b[0]} ${b[1]}L${c[0]} ${c[1]}A${r1} ${r1} 0 0 0 ${d[0]} ${d[1]}Z`;
+}
+function gaugeSVG(pct,label,band){
+  const cx=150,cy=138,rO=112,rI=84;
+  let s=`<svg class="db-svg db-gauge" viewBox="0 0 300 172" role="img" aria-label="Overall score ${pct} out of 100, level ${esc(label)}">`;
+  s+=`<path d="${svgArcPath(cx,cy,rI,rO,0,100)}" fill="#eef0f4"/>`;
+  if(pct>0) s+=`<path d="${svgArcPath(cx,cy,rI,rO,0,Math.min(100,pct))}" fill="${band.fill}"/>`;
+  LEVEL_BANDS.forEach(L=>{s+=`<path d="${svgArcPath(cx,cy,rO+4,rO+10,L.from,L.to)}" fill="${L.color}"><title>${esc(L.label)}: ${L.from} to ${L.to===100?100:L.to-1}</title></path>`;});
+  [0,20,40,60,75,90,100].forEach(v=>{
+    const t=Math.PI*(1-v/100), x=cx+(rO+20)*Math.cos(t), y=cy-(rO+20)*Math.sin(t);
+    s+=`<text x="${x.toFixed(1)}" y="${(y+3).toFixed(1)}" text-anchor="middle" class="db-ax">${v}</text>`;
+  });
+  const t=Math.PI*(1-Math.min(100,pct)/100);
+  s+=`<line x1="${(cx+(rI-6)*Math.cos(t)).toFixed(1)}" y1="${(cy-(rI-6)*Math.sin(t)).toFixed(1)}" x2="${(cx+(rO+12)*Math.cos(t)).toFixed(1)}" y2="${(cy-(rO+12)*Math.sin(t)).toFixed(1)}" stroke="#001f4d" stroke-width="3.5" stroke-linecap="round"><title>Your score: ${pct}</title></line>`;
+  s+=`<text x="${cx}" y="${cy-22}" text-anchor="middle" class="db-g-num">${pct}</text>`;
+  s+=`<text x="${cx}" y="${cy-4}" text-anchor="middle" class="db-ax">out of 100</text>`;
+  s+=`<text x="${cx}" y="${cy+24}" text-anchor="middle" class="db-g-lvl" fill="${band.text}">${esc(label)}</text>`;
+  return s+'</svg>';
+}
+function barsSVG(list,W){
+  W=Math.max(280,Math.round(W||720));
+  const narrow=W<540;
+  const labelW=narrow?0:Math.min(220,Math.round(W*0.3));
+  const x0=narrow?0:labelW+10, padR=46, top=26, rowH=narrow?42:30, barH=14;
+  const plotW=W-x0-padR, H=top+list.length*rowH+24;
+  const X=v=>x0+plotW*v/100;
+  let s=`<svg class="db-svg" viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Bar chart of the ten dimension scores, weakest first, with the ${DASH_TARGET}% target marked">`;
+  for(let v=0;v<=100;v+=20){
+    s+=`<line x1="${X(v)}" y1="${top-8}" x2="${X(v)}" y2="${H-20}" stroke="#e5e7eb" stroke-width="1"/>`;
+    s+=`<text x="${X(v)}" y="${H-6}" text-anchor="middle" class="db-ax">${v}%</text>`;
+  }
+  list.forEach((d,k)=>{
+    const yR=top+k*rowH, by=narrow?yR+18:yR+(rowH-barH)/2, bw=Math.max(2,plotW*d.pct/100);
+    s+=`<g class="db-bar" tabindex="0"><title>${esc(d.name)}: ${d.pct}% (${d.pts} of ${d.max} points). ${esc(d.band.name)}. ${esc(d.meaning)}</title>`;
+    if(narrow) s+=`<text x="0" y="${yR+12}" class="db-lbl">${esc(d.name)}</text>`;
+    else s+=`<text x="${labelW}" y="${by+barH-3}" text-anchor="end" class="db-lbl">${esc(d.name)}</text>`;
+    s+=`<rect x="${x0}" y="${by}" width="${plotW}" height="${barH}" fill="#f3f4f6" rx="2"/>`;
+    s+=`<rect x="${x0}" y="${by}" width="${bw.toFixed(1)}" height="${barH}" fill="${d.band.fill}" rx="2"/>`;
+    s+=`<text x="${(x0+bw+6).toFixed(1)}" y="${by+barH-3}" class="db-val" fill="${d.band.text}">${d.pct}%</text></g>`;
+  });
+  const tx=X(DASH_TARGET);
+  s+=`<line x1="${tx}" y1="${top-10}" x2="${tx}" y2="${H-20}" stroke="#001f4d" stroke-width="1.5" stroke-dasharray="5 3"/>`;
+  s+=`<text x="${tx+4}" y="${top-12}" class="db-ax db-tgt">Target ${DASH_TARGET}%</text>`;
+  return s+'</svg>';
+}
+function radarSVG(dims){
+  const cx=170,cy=158,r=104,n=dims.length;
+  const A=i=>(i/n)*Math.PI*2-Math.PI/2;
+  const pt=(i,f)=>[(cx+Math.cos(A(i))*r*f).toFixed(1),(cy+Math.sin(A(i))*r*f).toFixed(1)];
+  let s=`<svg class="db-svg db-radar" viewBox="0 0 340 316" role="img" aria-label="Radar chart of the ten dimension scores with the ${DASH_TARGET}% target ring">`;
+  [.2,.4,.6,.8,1].forEach(f=>{
+    const tgt=Math.abs(f*100-DASH_TARGET)<1;
+    s+=`<polygon points="${dims.map((_,i)=>pt(i,f).join(',')).join(' ')}" fill="none" stroke="${tgt?'#001f4d':'#e5e7eb'}" stroke-width="${tgt?1.4:1}"${tgt?' stroke-dasharray="5 3"':''}/>`;
+  });
+  dims.forEach((_,i)=>{const p=pt(i,1);s+=`<line x1="${cx}" y1="${cy}" x2="${p[0]}" y2="${p[1]}" stroke="#e5e7eb"/>`;});
+  [20,60,100].forEach(v=>{s+=`<text x="${cx+3}" y="${(cy-r*v/100+10).toFixed(1)}" class="db-ax db-ax-s">${v}</text>`;});
+  s+=`<polygon points="${dims.map((d,i)=>pt(i,Math.max(.02,d.pct/100)).join(',')).join(' ')}" fill="rgba(0,62,138,.14)" stroke="#003E8A" stroke-width="2"/>`;
+  dims.forEach((d,i)=>{
+    const p=pt(i,Math.max(.02,d.pct/100)), l=pt(i,1.2);
+    s+=`<g tabindex="0"><title>${esc(d.name)}: ${d.pct}%. ${esc(d.meaning)}</title><circle cx="${p[0]}" cy="${p[1]}" r="4.5" fill="${d.band.fill}" stroke="#fff" stroke-width="1.5"/>`;
+    s+=`<text x="${l[0]}" y="${(+l[1]+4).toFixed(1)}" text-anchor="middle" class="db-lbl db-lbl-s">${d.short} ${d.pct}%</text></g>`;
+  });
+  return s+'</svg>';
+}
+function statusLegendHTML(){
+  return '<div class="db-legend">'+STATUS_LEGEND.map(b=>`<span><i style="background:${b.fill}"></i>${esc(b.name)} (${esc(b.range)})</span>`).join('')
+    +`<span><i class="db-legend-tgt"></i>Target ${DASH_TARGET}% (start of the Progressing level)</span></div>`;
+}
+function chip(b,txt){return `<span class="db-chip" style="background:${b.tint};color:${b.text}">${esc(txt||b.name)}</span>`;}
+
 function renderAnalysis(){
   const el=document.getElementById('analysis-body'); if(!el) return;
   const required=QUESTIONS.filter(isMandatory).length;
   const done=QUESTIONS.filter(q=>isMandatory(q)&&scores[q.id]!==undefined&&!isNaN(scores[q.id])).length;
   if(!isComplete()){
-    el.innerHTML=`<p class="an-wait">Your reading appears here once all ${required} required questions are answered (${done} so far). Unanswered questions count as zero, so a partial score is not a reliable reading.</p>`;
+    document.body.classList.remove('db-ready');
+    el.innerHTML=`<p class="an-wait">Your dashboard appears here once all ${required} required questions are answered (${done} so far). Unanswered questions count as zero, so a partial score is not a reliable reading.</p>`;
     return;
   }
-  const a=buildAnalysis();
-  const S=DIMS[a.strongest.i], W=DIMS[a.weakest.i];
-  let h='<div class="an-grid">';
-  h+=`<div class="an-block"><div class="an-k">Overall</div><div class="an-score"><span>${a.pct}</span>/100 · ${esc(a.label)}</div><p>${esc(a.levelText)}</p></div>`;
-  h+=`<div class="an-block"><div class="an-k">Pattern</div><p style="margin-top:0"><b style="color:${S.color}">Strongest: ${esc(S.name)} (${a.strongest.p}%)</b><br/><b style="color:${W.color}">Weakest: ${esc(W.name)} (${a.weakest.p}%)</b></p><p>${esc(a.pattern)}</p></div>`;
+  const stdOpen=!!(el.querySelector('details.db-std')||{}).open;
+  const m=buildDashModel(), a=m.an, ob=m.overallBand;
+  const S=m.dims[a.strongest.i], Wk=m.dims[a.weakest.i];
+  const meta=[m.org,m.sector,m.date].filter(Boolean).map(esc).join(' <span aria-hidden="true">|</span> ');
+  let h='';
+  h+=`<div class="db-head"><div><div class="db-eyebrow">Extended AI readiness</div><div class="db-title">Your results dashboard</div></div><div class="db-meta">${meta}<br/>60 questions, 10 dimensions, self-reported</div></div>`;
+
+  h+='<div class="db-kpis">';
+  h+=`<div class="db-kpi" style="--k:${ob.fill}"><div class="db-kpi-l">Overall score</div><div class="db-kpi-v">${a.pct}<small>/100</small></div><div class="db-kpi-s">${chip(ob,a.label)}</div></div>`;
+  h+=`<div class="db-kpi" style="--k:${S.band.fill}"><div class="db-kpi-l">Strongest dimension</div><div class="db-kpi-v">${S.pct}<small>%</small></div><div class="db-kpi-s">${esc(S.name)}</div></div>`;
+  h+=`<div class="db-kpi" style="--k:${Wk.band.fill}"><div class="db-kpi-l">Weakest dimension</div><div class="db-kpi-v">${Wk.pct}<small>%</small></div><div class="db-kpi-s">${esc(Wk.name)}</div></div>`;
+  h+=`<div class="db-kpi" style="--k:${m.below?'#d97706':'#16a34a'}"><div class="db-kpi-l">Below the ${DASH_TARGET}% target</div><div class="db-kpi-v">${m.below}<small> of 10</small></div><div class="db-kpi-s">dimension${m.below===1?'':'s'} to work on</div></div>`;
   h+='</div>';
-  h+='<div class="an-k">Top three gaps and the next move for each</div>';
-  if(a.gaps.length===0){
-    h+='<p class="an-wait">Every scored answer is at the maximum, so there is no gap to rank. Use the 30-day list to keep the standard current.</p>';
-  }else{
-    h+='<ol class="an-gaps">';
-    a.gaps.forEach(g=>{h+=`<li><b style="color:${g.color}">${esc(g.dim)}:</b> &ldquo;${esc(g.question)}&rdquo; &mdash; you answered <b>${esc(g.answer)}</b>.<br/><span class="an-move">Next move: ${esc(g.move)}.</span></li>`;});
-    h+='</ol>';
-  }
-  h+=`<div class="an-k">The next 30 days</div><ol class="an-30">${a.thirty.map(t=>`<li>${esc(t)}</li>`).join('')}</ol>`;
-  h+=`<div class="an-cta"><div><b>If you want to go through this with us.</b> A free 30-minute debrief on the gaps above and what to do about each. No pitch.</div><a class="ns-btn ns-primary" href="../book/">Book the 30-minute debrief</a></div>`;
-  h+='<details class="an-std"><summary>Standards mapping: optional</summary>';
-  h+='<p class="an-std-note">Indicative mapping of your three weakest dimensions to the frameworks referenced by this assessment (ISO/IEC 42001, NIST AI RMF, EU AI Act, GDPR, OECD, UNESCO). Useful if a board, funder or regulator asks where a gap sits. Verify clause numbers against the current text before quoting them.</p>';
-  a.weakestThree.forEach(w=>{const D=DIMS[w.i];h+=`<p><b style="color:${D.color}">${esc(D.name)} (${w.p}%)</b><br/>${esc(STD_MAP[w.i])}</p>`;});
-  h+='</details>';
+
+  h+='<div class="db-grid db-grid-2">';
+  h+=`<div class="db-card"><div class="db-card-t">Overall score against the six levels</div>${gaugeSVG(a.pct,a.label,ob)}`;
+  h+='<div class="db-levels">'+LEVEL_BANDS.map(L=>`<span class="${L.label===a.label?'on':''}"><i style="background:${L.color}"></i>${esc(L.label)} ${L.from}${L.to===100?'+':'-'+(L.to-1)}</span>`).join('')+'</div>';
+  h+=`<p class="db-mean"><b>What this score means:</b> ${esc(m.levelLine)}</p></div>`;
+  h+=`<div class="db-card"><div class="db-card-t">Reading</div><p class="db-p">${esc(a.levelText)}</p><div class="db-card-t">Pattern</div><p class="db-p"><b style="color:${S.band.text}">Strongest: ${esc(S.name)} (${S.pct}%)</b> <span aria-hidden="true">|</span> <b style="color:${Wk.band.text}">Weakest: ${esc(Wk.name)} (${Wk.pct}%)</b></p><p class="db-p">${esc(a.pattern)}</p><div class="db-card-t">How to read the numbers</div><ul class="db-read"><li><b>Overall score:</b> points from all scored answers (${m.totalPts} of ${m.totalMax}) expressed out of 100.</li><li><b>Dimension %:</b> points scored in that dimension divided by the points available in it.</li><li><b>Target ${DASH_TARGET}%:</b> where the assessment calls practice consistent (the Progressing level).</li><li><b>Spread, ${a.spread} points:</b> the distance between your strongest and weakest dimension.</li></ul></div>`;
+  h+='</div>';
+
+  const barW=Math.max(0,(el.clientWidth||0)-44)||720;
+  h+=`<div class="db-card"><div class="db-card-t">Ten dimensions, weakest first <span class="db-hint">(score = points scored / points available; hover a bar for its meaning)</span></div>${barsSVG(m.sorted,barW)}${statusLegendHTML()}</div>`;
+
+  h+='<div class="db-grid db-grid-rt">';
+  h+=`<div class="db-card"><div class="db-card-t">Profile shape</div>${radarSVG(m.dims)}<p class="db-note">Shaded area: your scores. Dashed ring: the ${DASH_TARGET}% target. A dent shows where practice is thinnest.</p></div>`;
+  h+='<div class="db-card db-scroll"><div class="db-card-t">Dimension detail</div><table class="db-table db-rt"><thead><tr><th>Dimension</th><th class="r">Points</th><th>Score</th><th>Status</th><th>What it measures</th></tr></thead><tbody>';
+  m.dims.forEach(d=>{
+    h+=`<tr><td data-l="Dimension"><b>${d.i+1}. ${esc(d.name)}</b><span class="db-sub">${esc(d.group)}</span></td><td data-l="Points" class="r">${d.pts} / ${d.max}</td><td data-l="Score"><span class="db-mini"><i style="width:${d.pct}%;background:${d.band.fill}"></i></span><b style="color:${d.band.text}">${d.pct}%</b></td><td data-l="Status">${chip(d.band)}</td><td data-l="Measures" class="db-meas">${esc(d.meaning)}</td></tr>`;
+  });
+  h+=`<tr class="db-tot"><td data-l="Overall"><b>Overall</b></td><td data-l="Points" class="r">${m.totalPts} / ${m.totalMax}</td><td data-l="Score"><b>${a.pct}%</b></td><td data-l="Level">${chip(ob,a.label)}</td><td data-l="Measures" class="db-meas">${esc(m.levelLine)}</td></tr>`;
+  h+='</tbody></table></div></div>';
+
+  h+=`<div class="db-card"><div class="db-card-t">Gap analysis: your three weakest dimensions</div>`;
+  h+='<table class="db-table db-rt db-gap"><thead><tr><th>#</th><th>Dimension</th><th>Where you scored low</th><th>Why it matters</th><th>Next 30 days</th><th>By day 90</th></tr></thead><tbody>';
+  m.gapRows.forEach(g=>{
+    const low=g.low.length?'<ul>'+g.low.map(l=>`<li>${esc(l.text)} <span class="db-ans">You answered: ${esc(l.full)}</span></li>`).join('')+'</ul>':'<span class="db-sub">Every answer in this dimension is at the maximum.</span>';
+    h+=`<tr><td data-l="Rank" class="db-rank">${g.rank}</td><td data-l="Dimension"><b>${esc(g.name)}</b><span class="db-sub"><b style="color:${g.band.text}">${g.pct}%</b> ${chip(g.band)}</span></td><td data-l="Scored low">${low}</td><td data-l="Why it matters">${esc(g.why)}</td><td data-l="Next 30 days" class="db-act">${esc(g.a30)}.</td><td data-l="By day 90" class="db-act">${esc(g.a90)}.</td></tr>`;
+  });
+  h+='</tbody></table></div>';
+
+  h+='<div class="db-grid db-grid-2">';
+  h+=`<div class="db-card db-plan"><div class="db-card-t">Your next 30 days</div><ol>${m.plan30.map(t=>`<li>${esc(t)}</li>`).join('')}</ol></div>`;
+  h+=`<div class="db-card db-plan"><div class="db-card-t">By day 90</div><ol>${m.plan90.map(t=>`<li>${esc(t)}</li>`).join('')}</ol></div>`;
+  h+='</div>';
+
+  h+='<div class="db-card db-help"><div class="db-card-t">How M.A.I. Consulting can help</div><div class="db-help-grid">';
+  m.help.forEach(s=>{h+=`<a class="db-svc" href=${JSON.stringify('../'+s.path)}><span class="db-svc-k">For ${esc(s.dims.join(' and '))}</span><b>${esc(s.label)}</b><span>${esc(s.line)}</span></a>`;});
+  if(!m.help.some(s=>s.path==='use-cases/')) h+=`<a class="db-svc" href="../use-cases/"><span class="db-svc-k">For every team</span><b>Find your AI level</b><span>Three questions place each team on the seven levels and show what to learn next.</span></a>`;
+  h+=`</div><div class="db-cta"><div><b>Go through this with us.</b> A free 30-minute debrief on your three weakest dimensions and what to do about each. No pitch.</div><a class="ns-btn ns-primary" href=${JSON.stringify(BOOK_URL)}>Book a call</a></div></div>`;
+
+  h+=`<details class="db-std"${stdOpen?' open':''}><summary>Standards mapping (optional guidance)</summary>`;
+  h+='<p class="db-note">Where your three weakest dimensions sit in the frameworks this assessment references (ISO/IEC 42001, NIST AI RMF, EU AI Act, GDPR, OECD, UNESCO). Useful if a board, funder or regulator asks. Indicative guidance only: it is not a compliance service, audit or legal advice. Verify clause numbers against the current text before quoting them.</p>';
+  h+='<table class="db-table db-rt"><thead><tr><th>Dimension</th><th>Score</th><th>Where the gap sits</th></tr></thead><tbody>';
+  m.gapRows.forEach(g=>{h+=`<tr><td data-l="Dimension"><b>${esc(g.name)}</b></td><td data-l="Score"><b style="color:${g.band.text}">${g.pct}%</b></td><td data-l="Frameworks">${esc(g.std)}</td></tr>`;});
+  h+='</tbody></table></details>';
   el.innerHTML=h;
+  document.body.classList.add('db-ready');
 }
+(function(){
+  let t=null,lastW=0;
+  window.addEventListener('resize',function(){
+    clearTimeout(t);
+    t=setTimeout(function(){
+      const el=document.getElementById('analysis-body');
+      if(!el||!isComplete()) return;
+      const w=el.clientWidth; if(Math.abs(w-lastW)<24) return; lastW=w;
+      renderAnalysis();
+    },200);
+  });
+})();
 
 /* ── Respondent copy of the result ───────────────────────────────────────
    Sent through EmailJS from q.mamdouh@mai4consulting.com. The owner creates
@@ -1101,12 +1443,16 @@ function renderAnalysis(){
      Subject:    Your Extended AI Readiness Assessment: {{overall_score}}/100 ({{readiness_level}})
    Body fields: {{to_name}}, {{overall_score}}, {{readiness_level}}, {{strongest}},
      {{weakest}}, {{top_recommendations}} (multi-line: wrap in a block with
-     white-space:pre-line), {{pdf_link}}, {{book_url}}; attachment report_pdf.                       */
+     white-space:pre-line), {{pdf_link}}, {{book_url}}; attachment report_pdf.
+   Dashboard fields: {{score_color}} (hex of the overall status band), {{level_meaning}}
+     (one sentence), {{{dim_bars_html}}} (triple braces: email-safe table of the ten
+     dimensions, weakest first, text already escaped) and {{how_we_help}}.                       */
 async function sendRespondentEmail(an,pdfLink,pdfDataUri){
   if(EMAILJS_RESPONDENT_TEMPLATE_ID==='TEMPLATE_ID_TO_SET'){ console.log('Respondent email not configured; skipped.'); return null; }
   if(!userInfo.email) return null;
   emailjs.init({publicKey:EMAILJS_PUBLIC_KEY});
   const S=DIMS[an.strongest.i], W=DIMS[an.weakest.i];
+  const dm=buildDashModel();
   const topRecs=an.gaps.length
     ? an.gaps.map((g,i)=>`${i+1}. [${g.dim}] ${g.move}.`).join('\n')
     : 'Every scored answer is at the maximum.';
@@ -1124,7 +1470,12 @@ async function sendRespondentEmail(an,pdfLink,pdfDataUri){
     top_recommendations: topRecs,
     pdf_link:            /^https?:/.test(pdfLink)?pdfLink:REPORT_FALLBACK_URL,
     pdf_status:          /^https?:/.test(pdfLink)?'A copy is also saved online at the link below.':(attach?'Your report is attached to this email as a PDF.':'Your report was saved to your device when you pressed the button.'),
-    book_url:            BOOK_URL
+    book_url:            BOOK_URL,
+    // Dashboard fields for the HTML template (same model as the page and the PDF).
+    score_color:         dm.overallBand.fill,
+    level_meaning:       dm.levelLine,
+    dim_bars_html:       buildDimBarsHtml(dm),   // render as {{{dim_bars_html}}}
+    how_we_help:         dm.howWeHelp
   };
   if(!attach) return emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_RESPONDENT_TEMPLATE_ID,params);
   try{
@@ -1269,351 +1620,310 @@ function hexRGB(hex){
   return m?[parseInt(m[1],16),parseInt(m[2],16),parseInt(m[3],16)]:[0,0,0];
 }
 
-/* Build the report as a native jsPDF vector document with REAL TEXT.
-   Returns the jsPDF instance. */
+/* Build the report as a native jsPDF vector document with REAL TEXT (no images).
+   Page 1 executive dashboard, page 2 dimension detail, page 3 gap analysis and plan,
+   page 4 standards mapping (optional guidance) and how M.A.I. Consulting can help,
+   then a one-page appendix with every answer. Returns the jsPDF instance. */
 function buildPrintReport(){
   const{jsPDF}=window.jspdf;
   const doc=new jsPDF({orientation:'p',unit:'mm',format:'a4',compress:true});
-
-  const PW=210, PH=297;
-  const ML=16, MR=16, CW=PW-ML-MR;
-  let y=0;
-
-  const{dimScores,dimMax}=getDimData();
-  const totalScore=dimScores.reduce((a,b)=>a+b,0);
-  const totalMax=dimMax.reduce((a,b)=>a+b,0);
-  const pct=Math.round((totalScore/totalMax)*100);
-  const{label}=getLevel(pct);
-  const answered=countAnswered();
-  const date=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
-  const weakest=getWeakestDims(dimScores,dimMax,3);
-  const lvlRGB = pct<40?[192,57,43]:pct<60?[154,111,30]:pct<75?[26,122,74]:pct<90?[0,62,138]:[201,168,76];
-  const an=buildAnalysis();
-  const ethicsStd=getMultiAnswer('dpe_std');
-  const govStd=getMultiAnswer('gov_std');
-
-  const BLUE=[0,62,138], DARK=[0,24,48], GOLD=[201,168,76], INK=[26,26,46], GREY=[120,120,130], LINE=[225,228,236];
-  let curPageLabel='Snapshot';
-
-  function footer(pageLabel){
-    doc.setDrawColor(225,228,236); doc.setLineWidth(0.2);
-    doc.line(ML,PH-14,PW-MR,PH-14);
-    doc.setFont('helvetica','normal'); doc.setFontSize(7); doc.setTextColor(150,150,150);
-    doc.text('Page '+doc.internal.getCurrentPageInfo().pageNumber+' · '+pageLabel, ML, PH-9);
-    doc.text('M.A.I. Consulting · '+date, PW-MR, PH-9, {align:'right'});
+  doc.setLineHeightFactor(1.3);
+  const PW=210, PH=297, ML=16, MR=16, CW=PW-ML-MR, TOP=24, BOTTOM=PH-18;
+  const m=buildDashModel(), an=m.an, ob=m.overallBand;
+  const C={navy:[0,31,77],blue:[0,62,138],ink:[26,26,46],body:[64,68,76],grey:[107,114,128],grid:[229,231,235],soft:[246,248,252],track:[238,240,244],gold:[201,168,76],white:[255,255,255]};
+  const F=c=>doc.setFillColor(c[0],c[1],c[2]);
+  const D=c=>doc.setDrawColor(c[0],c[1],c[2]);
+  const T=c=>doc.setTextColor(c[0],c[1],c[2]);
+  const font=(w,s)=>{doc.setFont('helvetica',w);doc.setFontSize(s);};
+  const H=h=>hexRGB(h);
+  const fit=(t,w)=>{const l=doc.splitTextToSize(String(t),w);return l.length>1?l[0].replace(/[\s,.;:]+$/,'')+'...':(l[0]||'');};
+  const pageLabels=['Executive dashboard'];
+  let y=TOP;
+  function newPage(label){doc.addPage();y=TOP;pageLabels.push(label||pageLabels[pageLabels.length-1]);}
+  function ensure(h){if(y+h>BOTTOM){newPage();return true;}return false;}
+  function h2(t,sub){
+    ensure(16);
+    font('bold',11); T(C.navy); doc.text(t,ML,y);
+    if(sub){font('normal',7.5);T(C.grey);doc.text(sub,PW-MR,y,{align:'right'});}
+    y+=2; D(C.grid); doc.setLineWidth(0.4); doc.line(ML,y,PW-MR,y); y+=6;
   }
-  function ensure(space){
-    if(y+space > PH-18){ footer(curPageLabel); doc.addPage(); y=18; return true; }
-    return false;
+  function label(t,x,yy,c){font('bold',6.8);T(c||C.blue);doc.text(String(t).toUpperCase(),x,yy);}
+  function wrap(t,x,w,size,color,lh,weight){
+    font(weight||'normal',size); T(color);
+    const lines=doc.splitTextToSize(String(t),w); doc.text(lines,x,y); y+=lines.length*lh; return lines.length;
   }
-  function sectionTitle(t){
-    ensure(14);
-    doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(BLUE[0],BLUE[1],BLUE[2]);
-    doc.text(t.toUpperCase(), ML, y);
-    y+=2; doc.setDrawColor(LINE[0],LINE[1],LINE[2]); doc.setLineWidth(0.4);
-    doc.line(ML,y,PW-MR,y); y+=6;
+  function poly(pts){const segs=[];for(let k=1;k<pts.length;k++)segs.push([pts[k][0]-pts[k-1][0],pts[k][1]-pts[k-1][1]]);doc.lines(segs,pts[0][0],pts[0][1],[1,1],'F',true);}
+  function arcBand(cx,cy,r1,r2,v1,v2,col){
+    const N=Math.max(2,Math.ceil((v2-v1)/2)), pts=[];
+    for(let k=0;k<=N;k++){const t=Math.PI*(1-(v1+(v2-v1)*k/N)/100);pts.push([cx+r2*Math.cos(t),cy-r2*Math.sin(t)]);}
+    for(let k=N;k>=0;k--){const t=Math.PI*(1-(v1+(v2-v1)*k/N)/100);pts.push([cx+r1*Math.cos(t),cy-r1*Math.sin(t)]);}
+    F(col); poly(pts);
+  }
+  function chipPDF(b,txt,x,yy){
+    font('bold',6.8); const w=doc.getTextWidth(txt)+4;
+    F(H(b.tint)); doc.roundedRect(x,yy-3.2,w,4.4,1.2,1.2,'F'); T(H(b.text)); doc.text(txt,x+2,yy); return w;
   }
 
-  /* ===== Header band ===== */
-  doc.setFillColor(DARK[0],DARK[1],DARK[2]);
-  doc.rect(0,0,PW,42,'F');
-  doc.setFillColor(GOLD[0],GOLD[1],GOLD[2]);
-  doc.rect(0,42,PW,1.4,'F');
-  doc.setFont('helvetica','bold'); doc.setFontSize(8); doc.setTextColor(180,190,205);
-  doc.text('M.A.I. CONSULTING · STRATEGY · AI · IMPACT', ML, 16);
-  doc.setFontSize(22); doc.setTextColor(255,255,255);
-  doc.text('AI Readiness', ML, 27);
-  doc.setTextColor(GOLD[0],GOLD[1],GOLD[2]);
-  doc.text('Assessment Report', ML, 36);
-  doc.setFont('helvetica','normal'); doc.setFontSize(8); doc.setTextColor(180,190,205);
-  doc.text(date+'  ·  10 dimensions, 60 questions', PW-MR, 36, {align:'right'});
-  y=54;
+  /* ===== Page 1: executive dashboard ===== */
+  font('bold',19); T(C.ink); doc.text('AI Readiness Dashboard',ML,y+4);
+  font('normal',8.5); T(C.grey);
+  const meta=[m.org,m.sector,m.name?('Prepared for '+m.name+(userInfo.role?', '+userInfo.role:'')):'',m.date].filter(Boolean).join('   |   ');
+  doc.text(fit(meta,CW),ML,y+10.5);
+  font('normal',7.5); doc.text('Extended assessment: 60 questions across 10 dimensions. Scores are self-reported.',ML,y+15);
+  y+=21;
 
-  /* ===== Profile ===== */
-  sectionTitle('Profile');
-  const prof=[
-    ['Name', userInfo.name||'-', 'Organization', userInfo.org||'-'],
-    ['Role', userInfo.role||'-', 'Email', userInfo.email||'-'],
-    ['Sector', userInfo.sector||'-', 'Team Size', userInfo.size||'-'],
-    ['EU AI Act', userInfo.eu||'-', 'Answered', answered+' / '+QUESTIONS.length],
-    ['Total Score', totalScore+' / '+totalMax, 'Overall', pct+'%'],
+  /* KPI tiles */
+  const kw=(CW-3*4)/4, kh=26;
+  const S=m.dims[an.strongest.i], W=m.dims[an.weakest.i];
+  const tiles=[
+    {l:'Overall score',v:String(an.pct),u:'/100',s:an.label,c:ob.fill,sc:ob.text},
+    {l:'Strongest dimension',v:String(S.pct),u:'%',s:S.name,c:S.band.fill,sc:C.ink},
+    {l:'Weakest dimension',v:String(W.pct),u:'%',s:W.name,c:W.band.fill,sc:C.ink},
+    {l:'Below the '+DASH_TARGET+'% target',v:String(m.below),u:' of 10',s:'dimension'+(m.below===1?'':'s')+' to work on',c:m.below?'#d97706':'#16a34a',sc:C.ink}
   ];
-  doc.setFillColor(246,248,252);
-  doc.roundedRect(ML,y,CW,prof.length*8+4,2,2,'F');
-  let py=y+6;
-  const colA=ML+4, colAV=ML+30, colB=ML+CW/2+2, colBV=ML+CW/2+28;
-  prof.forEach(r=>{
-    doc.setFont('helvetica','normal'); doc.setFontSize(8); doc.setTextColor(GREY[0],GREY[1],GREY[2]);
-    doc.text(r[0], colA, py);
-    doc.text(r[2], colB, py);
-    doc.setFont('helvetica','bold'); doc.setTextColor(INK[0],INK[1],INK[2]); doc.setFontSize(8.5);
-    doc.text(String(r[1]).slice(0,34), colAV, py);
-    doc.text(String(r[3]).slice(0,34), colBV, py);
-    py+=8;
+  tiles.forEach((t,k)=>{
+    const x=ML+k*(kw+4);
+    F(C.soft); doc.roundedRect(x,y,kw,kh,1.6,1.6,'F');
+    F(H(t.c)); doc.rect(x,y,kw,1.4,'F');
+    label(t.l,x+3.5,y+6.5,C.grey);
+    font('bold',19); T(C.ink); doc.text(t.v,x+3.5,y+16.5);
+    const vw=doc.getTextWidth(t.v); font('normal',8); T(C.grey); doc.text(t.u,x+3.5+vw+0.8,y+16.5);
+    font('bold',7.5); T(Array.isArray(t.sc)?t.sc:H(t.sc)); doc.text(fit(t.s,kw-7),x+3.5,y+22);
   });
-  y+=prof.length*8+10;
+  y+=kh+9;
 
-  /* ===== Score gauge + breakdown ===== */
-  sectionTitle('Overall Score & Dimension Breakdown');
-  const gW=46, gH=40;
-  doc.setFillColor(DARK[0],DARK[1],DARK[2]);
-  doc.roundedRect(ML,y,gW,gH,2,2,'F');
-  doc.setFont('helvetica','bold'); doc.setFontSize(7); doc.setTextColor(170,180,195);
-  doc.text('OVERALL', ML+gW/2, y+8, {align:'center'});
-  doc.setFontSize(26); doc.setTextColor(GOLD[0],GOLD[1],GOLD[2]);
-  doc.text(String(pct), ML+gW/2, y+22, {align:'center'});
-  doc.setFontSize(7); doc.setTextColor(150,160,175);
-  doc.text('out of 100', ML+gW/2, y+28, {align:'center'});
-  doc.setFillColor(lvlRGB[0],lvlRGB[1],lvlRGB[2]);
-  doc.roundedRect(ML+6,y+31,gW-12,6,3,3,'F');
-  doc.setFontSize(7); doc.setTextColor(255,255,255);
-  doc.text(label.toUpperCase(), ML+gW/2, y+35, {align:'center'});
-
-  const bx=ML+gW+8, bw=CW-gW-8;
-  let by=y+2;
-  dimScores.forEach((s,i)=>{
-    const p=Math.round((s/dimMax[i])*100);
-    const c=hexRGB(DIMS[i].color);
-    doc.setFont('helvetica','bold'); doc.setFontSize(7.5); doc.setTextColor(c[0],c[1],c[2]);
-    doc.text(DIMS[i].name.slice(0,30), bx, by+2.5);
-    const barX=bx+46, barW=bw-46-12;
-    doc.setFillColor(238,240,245);
-    doc.roundedRect(barX,by,barW,2.6,1.3,1.3,'F');
-    doc.setFillColor(c[0],c[1],c[2]);
-    doc.roundedRect(barX,by,Math.max(1,barW*p/100),2.6,1.3,1.3,'F');
-    doc.setTextColor(INK[0],INK[1],INK[2]); doc.setFontSize(7.5);
-    doc.text(p+'%', bx+bw, by+2.5, {align:'right'});
-    by+=4;
+  /* Gauge + meaning */
+  h2('Overall score','Level bands from the assessment: 20 / 40 / 60 / 75 / 90');
+  const gx=ML+38, gy=y+36, rO=29, rI=20;
+  arcBand(gx,gy,rI,rO,0,100,C.track);
+  if(an.pct>0) arcBand(gx,gy,rI,rO,0,Math.min(100,an.pct),H(ob.fill));
+  LEVEL_BANDS.forEach(L=>arcBand(gx,gy,rO+1,rO+3,L.from,L.to,H(L.color)));
+  font('normal',6); T(C.grey);
+  [0,20,40,60,75,90,100].forEach(v=>{const t=Math.PI*(1-v/100);doc.text(String(v),gx+(rO+6.5)*Math.cos(t),gy-(rO+6.5)*Math.sin(t)+1,{align:'center'});});
+  {const t=Math.PI*(1-Math.min(100,an.pct)/100); D(C.navy); doc.setLineWidth(1.1); doc.line(gx+(rI-2)*Math.cos(t),gy-(rI-2)*Math.sin(t),gx+(rO+4)*Math.cos(t),gy-(rO+4)*Math.sin(t));}
+  font('bold',20); T(C.ink); doc.text(String(an.pct),gx,gy-5,{align:'center'});
+  font('normal',6.5); T(C.grey); doc.text('out of 100',gx,gy-0.6,{align:'center'});
+  font('bold',8.5); T(H(ob.text)); doc.text(an.label,gx,gy+6,{align:'center'});
+  /* level legend under the gauge */
+  let ly=gy+12;
+  LEVEL_BANDS.forEach((L,k)=>{
+    const lx=ML+(k%3)*26.5, yy=ly+Math.floor(k/3)*4.4;
+    F(H(L.color)); doc.rect(lx,yy-2.2,2.4,2.4,'F');
+    font(L.label===an.label?'bold':'normal',6.2); T(L.label===an.label?C.ink:C.grey);
+    doc.text(L.label+' '+L.from+(L.to===100?'+':'-'+(L.to-1)),lx+3.2,yy);
   });
-  y+=Math.max(gH, dimScores.length*4)+8;
+  /* what this score means */
+  const mx=ML+86, mw=CW-86; let my=y+2;
+  label('What this score means',mx,my); my+=5;
+  font('bold',9.5); T(C.ink); let ml=doc.splitTextToSize(m.levelLine,mw); doc.text(ml,mx,my); my+=ml.length*4.4+1.5;
+  font('normal',8); T(C.body); ml=doc.splitTextToSize(an.levelText,mw); doc.text(ml,mx,my); my+=ml.length*3.7+2;
+  label('Pattern',mx,my); my+=4.4;
+  font('normal',8); T(C.body); ml=doc.splitTextToSize('Strongest: '+S.name+' ('+S.pct+'%). Weakest: '+W.name+' ('+W.pct+'%). Spread: '+an.spread+' points.',mw); doc.text(ml,mx,my); my+=ml.length*3.7;
+  y=Math.max(ly+9,my)+6;
 
-  /* ===== Standards adopted ===== */
-  sectionTitle('Standards & Frameworks Adopted (Self-Reported)');
-  doc.setFont('helvetica','bold'); doc.setFontSize(8); doc.setTextColor(GREY[0],GREY[1],GREY[2]);
-  doc.text('Ethical AI principles:', ML, y);
-  doc.setFont('helvetica','normal'); doc.setTextColor(INK[0],INK[1],INK[2]);
-  let et=doc.splitTextToSize(ethicsStd, CW-44);
-  doc.text(et, ML+44, y);
-  y+=Math.max(5, et.length*4)+1;
-  doc.setFont('helvetica','bold'); doc.setTextColor(GREY[0],GREY[1],GREY[2]);
-  doc.text('Governance & compliance:', ML, y);
-  doc.setFont('helvetica','normal'); doc.setTextColor(INK[0],INK[1],INK[2]);
-  let gt=doc.splitTextToSize(govStd, CW-44);
-  doc.text(gt, ML+44, y);
-  y+=Math.max(5, gt.length*4)+8;
-
-  /* ===== Your reading: level, pattern, gaps, 30 days, debrief ===== */
-  function para(txt, size, color, indent){
-    doc.setFont('helvetica','normal'); doc.setFontSize(size||9); doc.setTextColor(color[0],color[1],color[2]);
-    const lines=doc.splitTextToSize(txt, CW-(indent||0));
-    const lh=(size||9)*0.5;
-    ensure(lines.length*lh+3);
-    doc.text(lines, ML+(indent||0), y); y+=lines.length*lh+3;
-  }
-  sectionTitle('What Your Score Means');
-  para(an.pct+' out of 100: '+an.label+'. '+an.levelText, 9, [77,77,77]);
-  y+=3;
-
-  sectionTitle('Pattern: Strongest and Weakest Dimension');
-  { const SD=DIMS[an.strongest.i], WD=DIMS[an.weakest.i];
-    const sc=hexRGB(SD.color), wc=hexRGB(WD.color);
-    ensure(10);
-    doc.setFont('helvetica','bold'); doc.setFontSize(9);
-    doc.setTextColor(sc[0],sc[1],sc[2]); doc.text('Strongest: '+SD.name+' ('+an.strongest.p+'%)', ML, y);
-    doc.setTextColor(wc[0],wc[1],wc[2]); doc.text('Weakest: '+WD.name+' ('+an.weakest.p+'%)', ML+CW/2, y);
-    y+=5;
-    para(an.pattern, 9, [77,77,77]); y+=3; }
-
-  sectionTitle('Top Three Gaps and the Next Move for Each');
-  if(an.gaps.length===0){
-    para('Every scored answer is at the maximum, so there is no gap to rank. Use the 30-day list to keep the standard current.', 9, [26,122,74]);
-  } else {
-    an.gaps.forEach((g,gi)=>{
-      const l1=doc.splitTextToSize((gi+1)+'. '+g.dim+': "'+g.question+'" - you answered '+g.answer+'.', CW-2);
-      const l2=doc.splitTextToSize('Next move: '+g.move+'.', CW-8);
-      ensure(l1.length*4.2+l2.length*4.2+5);
-      doc.setFont('helvetica','bold'); doc.setFontSize(8.5); doc.setTextColor(INK[0],INK[1],INK[2]);
-      doc.text(l1, ML, y); y+=l1.length*4.2+1;
-      doc.setFont('helvetica','normal'); doc.setTextColor(BLUE[0],BLUE[1],BLUE[2]);
-      doc.text(l2, ML+5, y); y+=l2.length*4.2+4;
-    });
-  }
-  y+=2;
-
-  sectionTitle('The Next 30 Days');
-  an.thirty.forEach((t,ti)=>{ para((ti+1)+'. '+t, 8.5, [77,77,77]); });
-  y+=2;
-
-  /* debrief box */
-  ensure(24);
-  doc.setFillColor(246,248,252); doc.roundedRect(ML,y,CW,20,1.5,1.5,'F');
-  doc.setFillColor(GOLD[0],GOLD[1],GOLD[2]); doc.rect(ML,y,1.5,20,'F');
-  doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(INK[0],INK[1],INK[2]);
-  doc.text('If you want to go through this with us', ML+5, y+7);
-  doc.setFont('helvetica','normal'); doc.setFontSize(8.5); doc.setTextColor(77,77,77);
-  doc.text('A free 30-minute debrief on the gaps above and what to do about each. Book at', ML+5, y+13);
-  doc.setTextColor(BLUE[0],BLUE[1],BLUE[2]);
-  doc.textWithLink(BOOK_URL, ML+5+doc.getTextWidth('A free 30-minute debrief on the gaps above and what to do about each. Book at ')+1, y+13, {url:BOOK_URL});
-  y+=26;
-
-  /* ===== Standards mapping (optional) ===== */
-  sectionTitle('Standards Mapping (Optional)');
-  para('Indicative mapping of your three weakest dimensions to the clauses and functions of the frameworks referenced by this assessment. Use it if a board, funder or regulator asks where a gap sits; otherwise it can be skipped. Verify clause numbers against the current text before quoting them.', 8, [120,120,130]);
-  an.weakestThree.forEach(w=>{
-    const D=DIMS[w.i]; const c=hexRGB(D.color);
-    ensure(10);
-    doc.setFont('helvetica','bold'); doc.setFontSize(8.5); doc.setTextColor(c[0],c[1],c[2]);
-    doc.text(D.name+' ('+w.p+'%)', ML, y); y+=4.5;
-    para(STD_MAP[w.i], 8, [77,77,77], 4);
+  /* Ten-dimension bar chart */
+  h2('Ten dimensions, weakest first','Score = points scored / points available, in %');
+  const lw=52, bx=ML+lw+2, bwMax=CW-lw-2-12, rowH=6.6, barH=3.8, top=y+3;
+  const X=v=>bx+bwMax*v/100, chartBottom=top+m.sorted.length*rowH;
+  D(C.grid); doc.setLineWidth(0.15);
+  for(let v=0;v<=100;v+=20){doc.line(X(v),top-2,X(v),chartBottom+1);font('normal',6.2);T(C.grey);doc.text(v+'%',X(v),chartBottom+4.5,{align:'center'});}
+  D(C.navy); doc.setLineWidth(0.4); doc.setLineDashPattern([1.2,0.9],0);
+  doc.line(X(DASH_TARGET),top-3,X(DASH_TARGET),chartBottom+1); doc.setLineDashPattern([],0);
+  font('bold',6.4); T(C.navy); doc.text('Target '+DASH_TARGET+'%',X(DASH_TARGET)+1,top-3.2);
+  m.sorted.forEach((d,k)=>{
+    const yy=top+k*rowH+(rowH-barH)/2;
+    font('normal',7.6); T(C.ink); doc.text(fit(d.name,lw-2),ML+lw,yy+barH-0.8,{align:'right'});
+    F([243,244,246]); doc.rect(bx,yy,bwMax,barH,'F');
+    F(H(d.band.fill)); doc.rect(bx,yy,Math.max(0.6,bwMax*d.pct/100),barH,'F');
+    font('bold',7.2); T(H(d.band.text)); doc.text(d.pct+'%',bx+Math.max(0.6,bwMax*d.pct/100)+1.5,yy+barH-0.8);
   });
-  y+=2;
+  y=chartBottom+10;
+  /* colour legend */
+  let lx=ML;
+  STATUS_LEGEND.forEach(b=>{F(H(b.fill));doc.rect(lx,y-2.4,3,3,'F');font('normal',6.8);T(C.body);const t=b.name+' ('+b.range+')';doc.text(t,lx+4,y);lx+=doc.getTextWidth(t)+9;});
+  D(C.navy); doc.setLineWidth(0.4); doc.setLineDashPattern([1.2,0.9],0); doc.line(lx,y-0.9,lx+5,y-0.9); doc.setLineDashPattern([],0);
+  doc.text('Target '+DASH_TARGET+'%',lx+6.5,y);
+  y+=5;
+  font('normal',6.8); T(C.grey);
+  doc.text(doc.splitTextToSize('The target is '+DASH_TARGET+'%, the score at which the assessment calls practice consistent (the Progressing level). Colours show status only; the full table is on page 2.',CW),ML,y);
+  y+=9;
+  {const rows=[['Overall score',an.pct+' / 100','Points from all scored answers ('+m.totalPts+' of '+m.totalMax+') expressed out of 100.'],
+     ['Dimension %','0 to 100%','Points scored in one dimension divided by the points available in it.'],
+     ['Below target',m.below+' of 10','Dimensions scoring under '+DASH_TARGET+'%: where the next 90 days should go.'],
+     ['Spread',an.spread+' points','Distance between your strongest and weakest dimension. Under 10 means an even profile.']];
+   const bh=9+rows.length*5.2;
+   F(C.soft); doc.roundedRect(ML,y,CW,bh,1.5,1.5,'F');
+   label('How to read these numbers',ML+4,y+5.5);
+   rows.forEach((r,k)=>{const yy=y+11+k*5.2; font('bold',7.4); T(C.ink); doc.text(r[0],ML+4,yy); T(C.blue); doc.text(r[1],ML+34,yy); font('normal',7.4); T(C.body); doc.text(fit(r[2],CW-62),ML+58,yy);});
+   y+=bh;}
 
-  /* ===== Top 3 priority dimensions ===== */
-  curPageLabel='Priorities';
-  sectionTitle('Top 3 Priority Dimensions');
-  weakest.forEach(w=>{
-    const D=DIMS[w.i]; const p=Math.round(w.pct*100); const c=hexRGB(D.color);
-    const recs=RECS[w.i];
-    const blockH = 9 + recs.length*4.4 + 4;
-    ensure(blockH);
-    doc.setFillColor(246,248,252);
-    doc.roundedRect(ML,y,CW,blockH,1.5,1.5,'F');
-    doc.setFillColor(c[0],c[1],c[2]);
-    doc.rect(ML,y,1.5,blockH,'F');
-    doc.setFont('helvetica','bold'); doc.setFontSize(10); doc.setTextColor(c[0],c[1],c[2]);
-    doc.text(D.name+'  ('+p+'%)', ML+5, y+6);
-    doc.setFont('helvetica','normal'); doc.setFontSize(8.5); doc.setTextColor(77,77,77);
-    let ry=y+11;
-    recs.forEach(r=>{
-      const rl=doc.splitTextToSize('-  '+r, CW-10);
-      doc.text(rl, ML+5, ry); ry+=rl.length*4.2;
-    });
-    y+=blockH+5;
-  });
-
-  /* ===== Page 2: Roadmap ===== */
-  footer(curPageLabel); doc.addPage(); y=18; curPageLabel='Roadmap';
-  sectionTitle('Recommended Roadmap (90-Day Horizon)');
-  doc.setFont('helvetica','normal'); doc.setFontSize(8.5); doc.setTextColor(77,77,77);
-  const rp=doc.splitTextToSize('Based on your weakest dimensions, the following actions are sequenced for the next 90 days. Adjust to your organization\u2019s capacity and regulatory exposure.', CW);
-  doc.text(rp, ML, y); y+=rp.length*4.4+6;
-  weakest.forEach((w,idx)=>{
-    const D=DIMS[w.i]; const p=Math.round(w.pct*100); const c=hexRGB(D.color);
-    const win=idx===0?'Days 0-30':idx===1?'Days 30-60':'Days 60-90';
-    const recs=RECS[w.i];
-    const blockH = 9 + recs.length*4.4 + 4;
-    ensure(blockH);
-    doc.setFillColor(246,248,252);
-    doc.roundedRect(ML,y,CW,blockH,1.5,1.5,'F');
-    doc.setFillColor(c[0],c[1],c[2]);
-    doc.rect(ML,y,1.5,blockH,'F');
-    doc.setFont('helvetica','bold'); doc.setFontSize(10); doc.setTextColor(c[0],c[1],c[2]);
-    doc.text(win+'  ·  '+D.name+'  ('+p+'%)', ML+5, y+6);
-    doc.setFont('helvetica','normal'); doc.setFontSize(8.5); doc.setTextColor(77,77,77);
-    let ry=y+11;
-    recs.forEach(r=>{
-      const rl=doc.splitTextToSize('-  '+r, CW-10);
-      doc.text(rl, ML+5, ry); ry+=rl.length*4.2;
-    });
-    y+=blockH+5;
-  });
-
-  /* ===== Full score table ===== */
-  ensure(20);
-  sectionTitle('Full Score Breakdown by Dimension');
-  const ratings=p=>p>=85?'5/5':p>=70?'4/5':p>=50?'3/5':p>=30?'2/5':'1/5';
-  const th=['Dimension','Group','Score','Max','%','Rating'];
-  const cwd=[52,46,18,16,16,CW-148];
-  function trow(cells, head){
-    ensure(7);
-    if(head){ doc.setFillColor(BLUE[0],BLUE[1],BLUE[2]); doc.rect(ML,y,CW,7,'F');
-      doc.setFont('helvetica','bold'); doc.setTextColor(255,255,255); }
-    else { doc.setFont('helvetica','normal'); doc.setTextColor(INK[0],INK[1],INK[2]); }
-    doc.setFontSize(7.5);
+  /* ===== Page 2: dimension detail ===== */
+  newPage('Dimension detail');
+  h2('Dimension detail','All ten dimensions in assessment order');
+  font('normal',8); T(C.body);
+  {const l=doc.splitTextToSize('Each dimension is scored from five to seven questions. The points you scored are divided by the points available and shown as a percentage. Status: red below 40%, amber 40 to 59%, green 60 to 74% (at or above the '+DASH_TARGET+'% target), blue 75% and above.',CW);doc.text(l,ML,y);y+=l.length*3.7+3;}
+  const cols=[{t:'Dimension',w:46},{t:'Points',w:16,r:1},{t:'Score',w:32},{t:'Status',w:20},{t:'What it measures',w:CW-114}];
+  function headRow(){F(C.blue);doc.rect(ML,y,CW,7,'F');font('bold',7.2);T(C.white);let x=ML;cols.forEach(c=>{doc.text(c.t,c.r?x+c.w-2:x+2,y+4.7,{align:c.r?'right':'left'});x+=c.w;});y+=7;}
+  headRow();
+  m.dims.forEach((d,k)=>{
+    font('normal',7); const ml2=doc.splitTextToSize(d.meaning,cols[4].w-3);
+    font('bold',7.6); const nl=doc.splitTextToSize((d.i+1)+'. '+d.name,cols[0].w-3);
+    const rh=Math.max(6.5+nl.length*3.3,ml2.length*3.3+4);
+    if(ensure(rh)) headRow();
+    if(k%2===1){F([250,251,253]);doc.rect(ML,y,CW,rh,'F');}
     let x=ML;
-    cells.forEach((cell,i)=>{
-      const al = i>=2 ? 'right' : 'left';
-      const tx = al==='right'? x+cwd[i]-2 : x+2;
-      doc.text(String(cell).slice(0,38), tx, y+4.7, {align:al});
-      x+=cwd[i];
+    font('bold',7.6); T(C.ink); doc.text(nl,x+2,y+4.4);
+    font('normal',6.4); T(C.grey); doc.text(d.group,x+2,y+4.6+nl.length*3.3); x+=cols[0].w;
+    font('normal',7.4); T(C.ink); doc.text(d.pts+' / '+d.max,x+cols[1].w-2,y+4.4,{align:'right'}); x+=cols[1].w;
+    F(C.track); doc.rect(x+2,y+2.2,18,2.6,'F'); F(H(d.band.fill)); doc.rect(x+2,y+2.2,Math.max(0.4,18*d.pct/100),2.6,'F');
+    font('bold',7.6); T(H(d.band.text)); doc.text(d.pct+'%',x+cols[2].w-2,y+4.4,{align:'right'}); x+=cols[2].w;
+    chipPDF(d.band,d.band.name,x+1.5,y+4.6); x+=cols[3].w;
+    font('normal',7); T(C.body); doc.text(ml2,x+2,y+4.2);
+    D(C.grid); doc.setLineWidth(0.15); doc.line(ML,y+rh,ML+CW,y+rh);
+    y+=rh;
+  });
+  font('normal',6.8); const totL=doc.splitTextToSize(m.levelLine,cols[4].w-3); const toth=Math.max(8,totL.length*3.1+4);
+  F(C.navy); doc.rect(ML,y,CW,toth,'F');
+  {let x=ML; font('bold',7.6); T(C.white); doc.text('Overall',x+2,y+5.2); x+=cols[0].w;
+   doc.text(m.totalPts+' / '+m.totalMax,x+cols[1].w-2,y+5.2,{align:'right'}); x+=cols[1].w;
+   doc.text(an.pct+'%',x+cols[2].w-2,y+5.2,{align:'right'}); x+=cols[2].w;
+   doc.text(an.label,x+2,y+5.2); x+=cols[3].w;
+   font('normal',6.8); doc.text(totL,x+2,y+4.6);}
+  y+=toth+10;
+
+  h2('Pattern');
+  {const sc=H(S.band.text), wc=H(W.band.text);
+   font('bold',8.6); T(sc); doc.text('Strongest: '+S.name+' ('+S.pct+'%)',ML,y);
+   T(wc); doc.text('Weakest: '+W.name+' ('+W.pct+'%)',ML+CW/2,y); y+=5;
+   wrap(an.pattern,ML,CW,8.2,C.body,3.9); y+=5;}
+
+  h2('Profile');
+  {const prof=[['Name',userInfo.name],['Organisation',userInfo.org],['Role',userInfo.role],['Email',userInfo.email],['Sector',userInfo.sector],['Team size',userInfo.size],['EU AI Act exposure',userInfo.eu],['Questions answered',countAnswered()+' / '+QUESTIONS.length]];
+   ensure(Math.ceil(prof.length/2)*6+4);
+   F(C.soft); doc.roundedRect(ML,y-4,CW,Math.ceil(prof.length/2)*6+3,1.5,1.5,'F');
+   prof.forEach((p,k)=>{const x=ML+3+(k%2)*(CW/2), yy=y+Math.floor(k/2)*6;
+     font('normal',7.2);T(C.grey);doc.text(p[0],x,yy);font('bold',7.6);T(C.ink);doc.text(fit(p[1]||'-',CW/2-36),x+30,yy);});
+   y+=Math.ceil(prof.length/2)*6+5;}
+  label('Standards and frameworks adopted (self-reported, not scored)',ML,y); y+=4.6;
+  [['Ethical AI principles',getMultiAnswer('dpe_std')],['Governance and compliance',getMultiAnswer('gov_std')]].forEach(r=>{
+    font('normal',7.4); const l=doc.splitTextToSize(r[1],CW-44); ensure(l.length*3.6+2);
+    T(C.grey); doc.text(r[0],ML,y); T(C.ink); doc.text(l,ML+44,y); y+=l.length*3.6+2;
+  });
+
+  /* ===== Page 3: gap analysis and 30/90-day plan ===== */
+  newPage('Gap analysis and plan');
+  h2('Gap analysis: your three weakest dimensions','Ranked by dimension score, lowest first');
+  const colW=(CW-10)/2;
+  m.gapRows.forEach(g=>{
+    font('normal',7.4);
+    const lowTxt=g.low.length?g.low.map(l=>'- '+l.text+' You answered: '+l.full+'.'):['- Every answer in this dimension is at the maximum.'];
+    const lowL=[]; lowTxt.forEach(t=>doc.splitTextToSize(t,colW).forEach(x=>lowL.push(x)));
+    const whyL=doc.splitTextToSize(g.why,colW), a30L=doc.splitTextToSize(g.a30+'.',colW), a90L=doc.splitTextToSize(g.a90+'.',colW);
+    const left=4.5+lowL.length*3.4+3+4.5+whyL.length*3.4, right=4.5+a30L.length*3.4+3+4.5+a90L.length*3.4;
+    const bh=11+Math.max(left,right)+4;
+    ensure(bh+4);
+    F(C.soft); doc.roundedRect(ML,y,CW,bh,1.6,1.6,'F'); F(H(g.band.fill)); doc.rect(ML,y,1.6,bh,'F');
+    F(C.navy); doc.circle(ML+7,y+5.6,2.8,'F'); font('bold',8); T(C.white); doc.text(String(g.rank),ML+7,y+6.8,{align:'center'});
+    font('bold',9.6); T(C.ink); doc.text(g.name,ML+12,y+6.6);
+    let cx=ML+12+doc.getTextWidth(g.name)+3; font('bold',9.6); T(H(g.band.text)); doc.text(g.pct+'%',cx,y+6.6); cx+=doc.getTextWidth(g.pct+'%')+3;
+    chipPDF(g.band,g.band.name,cx,y+6.4);
+    const x1=ML+5, x2=ML+5+colW+5; let yl=y+13, yr=y+13;
+    label('Where you scored low',x1,yl); yl+=4.5; font('normal',7.4); T(C.body); doc.text(lowL,x1,yl); yl+=lowL.length*3.4+3;
+    label('Why it matters',x1,yl); yl+=4.5; font('normal',7.4); T(C.body); doc.text(whyL,x1,yl);
+    label('Next 30 days',x2,yr); yr+=4.5; font('bold',7.4); T(C.blue); doc.text(a30L,x2,yr); yr+=a30L.length*3.4+3;
+    label('By day 90',x2,yr); yr+=4.5; font('normal',7.4); T(C.ink); doc.text(a90L,x2,yr);
+    y+=bh+5;
+  });
+  y+=2;
+  h2('Your next 30 / 90 days');
+  {font('normal',7.8);
+   const l30=[],l90=[];
+   m.plan30.forEach((t,k)=>doc.splitTextToSize((k+1)+'. '+t,colW).forEach((x,j)=>l30.push(x)));
+   m.plan90.forEach((t,k)=>doc.splitTextToSize((k+1)+'. '+t,colW).forEach((x,j)=>l90.push(x)));
+   const ph=6+Math.max(l30.length,l90.length)*3.7+4;
+   ensure(ph);
+   F(C.soft); doc.roundedRect(ML,y,colW+3,ph,1.5,1.5,'F'); doc.roundedRect(ML+colW+7,y,colW+3,ph,1.5,1.5,'F');
+   label('Next 30 days',ML+3,y+5); label('By day 90',ML+colW+10,y+5);
+   font('normal',7.8); T(C.body); doc.text(l30,ML+3,y+10); doc.text(l90,ML+colW+10,y+10);
+   y+=ph+4;}
+
+  /* ===== Page 4: standards mapping (optional) and how we can help ===== */
+  newPage('Standards and support');
+  h2('Standards mapping (optional guidance)');
+  wrap('Where your three weakest dimensions sit in the frameworks this assessment references. Useful if a board, funder or regulator asks where a gap sits; otherwise skip it. Indicative guidance only, not a compliance service, audit or legal advice. Verify clause numbers against the current text before quoting them.',ML,CW,7.6,C.grey,3.6);
+  y+=2;
+  F(C.blue); doc.rect(ML,y,CW,7,'F'); font('bold',7.2); T(C.white);
+  doc.text('Dimension',ML+2,y+4.7); doc.text('Score',ML+50,y+4.7); doc.text('Where the gap sits',ML+66,y+4.7); y+=7;
+  m.gapRows.forEach(g=>{
+    font('normal',7.2); const l=doc.splitTextToSize(g.std,CW-68); const rh=Math.max(8,l.length*3.4+4);
+    ensure(rh);
+    font('bold',7.6); T(C.ink); doc.text(fit(g.name,46),ML+2,y+4.6);
+    T(H(g.band.text)); doc.text(g.pct+'%',ML+50,y+4.6);
+    font('normal',7.2); T(C.body); doc.text(l,ML+66,y+4.4);
+    D(C.grid); doc.setLineWidth(0.15); doc.line(ML,y+rh,ML+CW,y+rh); y+=rh;
+  });
+  y+=9;
+  h2('How M.A.I. Consulting can help');
+  m.help.forEach(s=>{
+    font('normal',7.6); const l=doc.splitTextToSize(s.line,CW-8); const bh=12+l.length*3.6;
+    ensure(bh+3);
+    F(C.soft); doc.roundedRect(ML,y,CW,bh,1.5,1.5,'F'); F(C.gold); doc.rect(ML,y,1.4,bh,'F');
+    font('bold',6.6); T(C.grey); doc.text(('For '+s.dims.join(' and ')).toUpperCase(),ML+5,y+4.8);
+    font('bold',9); T(C.ink); doc.text(s.label,ML+5,y+9.4);
+    font('normal',7.2); T(C.blue); doc.textWithLink(s.url,PW-MR-3-doc.getTextWidth(s.url),y+9.4,{url:s.url});
+    font('normal',7.6); T(C.body); doc.text(l,ML+5,y+13.4);
+    y+=bh+3;
+  });
+  y+=3; ensure(30);
+  F(C.navy); doc.roundedRect(ML,y,CW,27,1.8,1.8,'F'); F(C.gold); doc.rect(ML,y,CW,1.2,'F');
+  font('bold',11); T(C.white); doc.text('Book a free 30-minute debrief',ML+6,y+9);
+  font('normal',8); T([200,210,225]); doc.text('We walk through your three weakest dimensions and what to do about each. No pitch.',ML+6,y+14.5);
+  font('bold',8.5); T(C.gold); doc.textWithLink(BOOK_URL,ML+6,y+21.5,{url:BOOK_URL});
+  const mail='q.mamdouh@mai4consulting.com';
+  doc.textWithLink(mail,PW-MR-6-doc.getTextWidth(mail),y+21.5,{url:'mailto:'+mail});
+  y+=34;
+  {font('normal',6.8);
+   const disc='About this assessment. The first four dimensions (Delegation, Description, Discernment, Diligence) draw on the AI Fluency 4D Framework developed by Rick Dakan and Joseph Feller in partnership with Anthropic. The remaining six dimensions were added by M.A.I. Consulting and mapped against ISO/IEC 42001, NIST AI RMF 1.0, the EU AI Act, GDPR, the OECD AI Principles and the UNESCO Recommendation on the Ethics of AI. Scores are indicative and self-reported; they do not constitute legal advice or a compliance audit. Two questions (ethics standard adopted, governance standard adopted) are informational and do not contribute to your score.';
+   const l=doc.splitTextToSize(disc,CW-8); const dh=l.length*3.3+6; ensure(dh);
+   F(C.soft); doc.roundedRect(ML,y,CW,dh,1.5,1.5,'F'); T(C.grey); doc.text(l,ML+4,y+4.6); y+=dh;}
+
+  /* ===== Appendix: every answer ===== */
+  newPage('Appendix: your answers');
+  h2('Appendix: your answers','Points per question (info questions are not scored)');
+  DIMS.forEach((Dm,di)=>{
+    ensure(10);
+    const c=H(Dm.color);
+    F([246,248,252]); doc.rect(ML,y-3.2,CW,4.4,'F'); D(c); doc.setLineWidth(0.5); doc.line(ML,y-3.2,ML,y+1.2);
+    font('bold',7.2); T(C.ink); doc.text((di+1)+'. '+Dm.name,ML+2,y);
+    font('bold',7); T(H(m.dims[di].band.text)); doc.text(m.dims[di].pts+' / '+m.dims[di].max+'  ('+m.dims[di].pct+'%)',PW-MR-1,y,{align:'right'});
+    y+=4.1;
+    QUESTIONS.filter(q=>q.dim===di).forEach(q=>{
+      ensure(3.6);
+      const sc=scores[q.id];
+      const ans=q.info?fit(getMultiAnswer(q.id),58):answerLabel(q,sc);
+      const pts=q.info?'info':((sc===undefined||isNaN(sc))?'-':Math.round(sc))+'/'+q.max;
+      font('normal',6.4); T(C.body); doc.text(fit(q.text,CW-74),ML+2,y);
+      T(C.ink); doc.text(fit(ans,58),PW-MR-14,y,{align:'right'});
+      font('bold',6.4); T(C.blue); doc.text(pts,PW-MR-1,y,{align:'right'});
+      y+=3.1;
     });
-    doc.setDrawColor(LINE[0],LINE[1],LINE[2]); doc.setLineWidth(0.15);
-    doc.line(ML,y+7,ML+CW,y+7);
-    y+=7;
+    y+=1.4;
+  });
+
+  /* ===== Header and footer on every page ===== */
+  const N=doc.getNumberOfPages();
+  for(let p=1;p<=N;p++){
+    doc.setPage(p);
+    F(C.navy); doc.rect(0,0,PW,12,'F'); F(C.gold); doc.rect(0,12,PW,0.7,'F');
+    font('bold',7.5); T(C.white); doc.text('M.A.I. CONSULTING',ML,7.6);
+    font('normal',7.2); T([190,200,215]);
+    doc.text(fit('Extended AI Readiness Report'+(m.org?'  |  '+m.org:''),110),PW-MR,7.6,{align:'right'});
+    D(C.grid); doc.setLineWidth(0.2); doc.line(ML,PH-13,PW-MR,PH-13);
+    font('normal',7); T([140,145,155]);
+    doc.text('Page '+p+' of '+N+'  |  '+(pageLabels[p-1]||''),ML,PH-8.5);
+    doc.text('mai4consulting.com  |  '+m.date,PW-MR,PH-8.5,{align:'right'});
   }
-  trow(th,true);
-  dimScores.forEach((s,i)=>{
-    const p=Math.round((s/dimMax[i])*100);
-    trow([DIMS[i].name, DIMS[i].group, Math.round(s), dimMax[i], p+'%', ratings(p)],false);
-  });
-  doc.setFillColor(DARK[0],DARK[1],DARK[2]); doc.rect(ML,y,CW,7,'F');
-  doc.setFont('helvetica','bold'); doc.setTextColor(255,255,255); doc.setFontSize(7.5);
-  {let x=ML; const tot=['TOTAL','',totalScore,totalMax,pct+'%',label];
-   tot.forEach((cell,i)=>{const al=i>=2?'right':'left';const tx=al==='right'?x+cwd[i]-2:x+2;
-     doc.text(String(cell).slice(0,38),tx,y+4.7,{align:al}); x+=cwd[i];});}
-  y+=11;
-
-  /* ===== Page 3: Question-level results ===== */
-  footer(curPageLabel); doc.addPage(); y=18; curPageLabel='Detail';
-  sectionTitle('Question-Level Results');
-  DIMS.forEach((D,di)=>{
-    const dimQs=QUESTIONS.filter(q=>q.dim===di);
-    ensure(9);
-    const c=hexRGB(D.color);
-    doc.setFillColor(250,251,253); doc.rect(ML,y,CW,6,'F');
-    doc.setDrawColor(c[0],c[1],c[2]); doc.setLineWidth(0.5); doc.line(ML,y,ML+CW,y);
-    doc.setFont('helvetica','bold'); doc.setFontSize(8); doc.setTextColor(c[0],c[1],c[2]);
-    doc.text(D.name, ML+2, y+4); y+=8;
-    dimQs.forEach((q,qi)=>{
-      let scTxt;
-      if(q.info){ scTxt='info: '+getMultiAnswer(q.id); }
-      else { const sc=scores[q.id]; scTxt=((sc===undefined||isNaN(sc))?'-':Math.round(sc))+' / '+q.max; }
-      const qline=doc.splitTextToSize((qi+1)+'. '+q.text, CW-34);
-      const need=Math.max(qline.length*3.8, 5)+2;
-      ensure(need);
-      doc.setFont('helvetica','normal'); doc.setFontSize(7.5); doc.setTextColor(INK[0],INK[1],INK[2]);
-      doc.text(qline, ML, y+3);
-      doc.setFont('helvetica','bold'); doc.setTextColor(BLUE[0],BLUE[1],BLUE[2]);
-      doc.text(scTxt, ML+CW, y+3, {align:'right'});
-      y+=need;
-      doc.setDrawColor(245,245,248); doc.setLineWidth(0.1);
-      doc.line(ML,y-1,ML+CW,y-1);
-    });
-    y+=3;
-  });
-
-  /* ===== Standards reference + disclaimer ===== */
-  ensure(20);
-  sectionTitle('Standards Reference');
-  const refs=[
-    ['ISO/IEC 42001:2023','International AI Management System standard. Certifiable framework covering leadership, risk, impact assessment, lifecycle and supplier oversight.'],
-    ['NIST AI RMF 1.0','Voluntary US framework around four functions - Govern, Map, Measure, Manage - plus the Generative AI Profile (AI 600-1).'],
-    ['EU AI Act (Reg. 2024/1689)','Risk-tiered regulation. Prohibited practices and AI-literacy obligations since Feb 2025; GPAI obligations since Aug 2025; bulk of high-risk obligations from 2 Aug 2026.'],
-    ['GDPR · DPIA (Art. 35)','Data Protection Impact Assessment required for high-risk processing, including most AI handling personal data.'],
-    ['OECD AI Principles','Adopted by OECD members and other adherent jurisdictions; updated in 2024. Five values-based principles: inclusive growth, human-centred values and fairness, transparency, robustness, accountability.'],
-    ['UNESCO Recommendation on the Ethics of AI','Adopted by UNESCO member states in November 2021. Ethics scaffold covering human rights, environment, gender equality, and oversight.'],
-  ];
-  refs.forEach(rf=>{
-    const body=doc.splitTextToSize(rf[1], CW-4);
-    const bh=6+body.length*3.8+3;
-    ensure(bh);
-    doc.setFont('helvetica','bold'); doc.setFontSize(8.5); doc.setTextColor(BLUE[0],BLUE[1],BLUE[2]);
-    doc.text(rf[0], ML, y+4);
-    doc.setFont('helvetica','normal'); doc.setFontSize(7.5); doc.setTextColor(77,77,77);
-    doc.text(body, ML, y+8);
-    y+=bh+1;
-  });
-  ensure(28);
-  doc.setFillColor(246,248,252);
-  const disc='About this assessment. The first four dimensions (Delegation, Description, Discernment, Diligence) draw on the AI Fluency 4D Framework developed by Rick Dakan and Joseph Feller in partnership with Anthropic. The remaining six dimensions were added by M.A.I. Consulting and mapped against ISO/IEC 42001, NIST AI RMF 1.0, the EU AI Act, GDPR, the OECD AI Principles, and the UNESCO Recommendation on the Ethics of AI. Scores are indicative and self-reported; they do not constitute legal advice or a compliance audit. Two questions (ethics standard adopted, governance standard adopted) are informational and do not contribute to your score.';
-  const dl=doc.splitTextToSize(disc, CW-8);
-  const dh=dl.length*3.6+8;
-  doc.roundedRect(ML,y,CW,dh,1.5,1.5,'F');
-  doc.setFont('helvetica','normal'); doc.setFontSize(7); doc.setTextColor(110,110,110);
-  doc.text(dl, ML+4, y+5);
-  y+=dh+4;
-
-  footer(curPageLabel);
+  doc.setPage(N);
   return doc;
 }
 
