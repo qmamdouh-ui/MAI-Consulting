@@ -473,7 +473,8 @@ body > header{position:static !important}
 const EMAILJS_PUBLIC_KEY  = 'JJs3lu55OHI_pbjth';
 const EMAILJS_SERVICE_ID  = 'service_an94235';
 const EMAILJS_TEMPLATE_ID = 'template_ellvbp8';            // owner notification (existing)
-const EMAILJS_RESPONDENT_TEMPLATE_ID = 'template_p8wi3id'; // respondent copy: set after creating the template (see sendRespondentEmail)
+const EMAILJS_RESPONDENT_TEMPLATE_ID = 'template_p8wi3id';
+const REPORT_FALLBACK_URL = location.origin + location.pathname; // a valid page for link fields when no Drive URL exists // respondent copy: set after creating the template (see sendRespondentEmail)
 const NOTIFY_EMAIL        = 'q.mamdouh@mai4consulting.com';
 const BOOK_URL            = 'https://mai4consulting.com/book/';
 // ─────────────────────────────────────────────────────────────────────
@@ -1121,7 +1122,8 @@ async function sendRespondentEmail(an,pdfLink,pdfDataUri){
     strongest:           `${S.name} (${an.strongest.p}%)`,
     weakest:             `${W.name} (${an.weakest.p}%)`,
     top_recommendations: topRecs,
-    pdf_link:            /^https?:/.test(pdfLink)?pdfLink:(attach?'Attached to this email.':'The PDF was saved to your device when you pressed the button.'),
+    pdf_link:            /^https?:/.test(pdfLink)?pdfLink:REPORT_FALLBACK_URL,
+    pdf_status:          /^https?:/.test(pdfLink)?'A copy is also saved online at the link below.':(attach?'Your report is attached to this email as a PDF.':'Your report was saved to your device when you pressed the button.'),
     book_url:            BOOK_URL
   };
   if(!attach) return emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_RESPONDENT_TEMPLATE_ID,params);
@@ -1129,13 +1131,13 @@ async function sendRespondentEmail(an,pdfLink,pdfDataUri){
     return await emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_RESPONDENT_TEMPLATE_ID,Object.assign({},params,{report_pdf:pdfDataUri}));
   }catch(err){
     console.warn('Respondent email with attachment failed, retrying with the link only:', err && (err.text||err.message||err));
-    params.pdf_link = /^https?:/.test(pdfLink)?pdfLink:'Please reply to this email and we will send your report.';
+    params.pdf_status = /^https?:/.test(pdfLink)?params.pdf_status:'Reply to this email and we will send your report.';
     return emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_RESPONDENT_TEMPLATE_ID,params);
   }
 }
 
 /* ── Email notification (sends a Google Drive link to the PDF) ───────── */
-async function sendEmailNotification(pct,label,dimScores,dimMax,weakest,pdfLink){
+async function sendEmailNotification(pct,label,dimScores,dimMax,weakest,pdfLink,pdfDataUri){
   emailjs.init({publicKey:EMAILJS_PUBLIC_KEY});
   const date=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
   const ethicsStd=getMultiAnswer('dpe_std');
@@ -1145,7 +1147,8 @@ async function sendEmailNotification(pct,label,dimScores,dimMax,weakest,pdfLink)
   const top_recommendations=weakest.map(w=>`• ${DIMS[w.i].name} (${Math.round(w.pct*100)}%)\n${RECS[w.i].map(r=>`   – ${r}`).join('\n')}`).join('\n\n');
   const benchmarkEl=document.getElementById('u-benchmark');
 
-  return emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID,{
+  const hasUrl = /^https?:/.test(pdfLink||'');
+  const params = {
     benchmark_consent:   benchmarkEl&&benchmarkEl.checked?'yes':'no',
     privacy_consent:     'yes',
     notify_email:        NOTIFY_EMAIL,
@@ -1166,8 +1169,12 @@ async function sendEmailNotification(pct,label,dimScores,dimMax,weakest,pdfLink)
     dim_breakdown:       dim_breakdown,
     top_recommendations: top_recommendations,
     // NEW: link to the PDF stored in Google Drive (no attachment payload).
-    pdf_link:            pdfLink,
-  });
+    pdf_link:            hasUrl?pdfLink:REPORT_FALLBACK_URL,
+    pdf_status:          hasUrl?'Saved to Google Drive.':'Drive upload failed. The PDF is attached to this email when the template has the report_pdf attachment; the respondent also received it.',
+  };
+  if(!(pdfDataUri && pdfDataUri.length < 1900000)) return emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID,params);
+  try{ return await emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID,Object.assign({},params,{report_pdf:pdfDataUri})); }
+  catch(err){ console.warn('Owner email with attachment failed, retrying without:', err && (err.text||err.message||err)); return emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID,params); }
 }
 
 /* ── PDF generation (vector/text), upload to Google Drive, email link ── */
@@ -1213,11 +1220,11 @@ async function downloadPDF(){
         console.log('Drive upload OK:', finalPdfLink);
       } else {
         console.error('Drive upload failed:', driveResult);
-        finalPdfLink = 'Upload failed. Please contact us directly for your report.';
+        finalPdfLink = '';
       }
     }catch(driveErr){
       console.error('Drive upload error:', driveErr);
-      finalPdfLink = 'Upload failed. Please contact us directly for your report.';
+      finalPdfLink = '';
     }
 
     // 4. Email the notification with the Drive link
@@ -1228,7 +1235,7 @@ async function downloadPDF(){
     const{label:_label}=getLevel(_pct);
     const _weakest=getWeakestDims(dimScores,dimMax,3);
 
-    sendEmailNotification(_pct,_label,dimScores,dimMax,_weakest,finalPdfLink)
+    sendEmailNotification(_pct,_label,dimScores,dimMax,_weakest,finalPdfLink,'data:application/pdf;base64,'+base64Data)
       .then(r=>{ console.log('EmailJS OK:', r && r.status, r && r.text); })
       .catch(err=>{
         const st = err && (err.status||'');
