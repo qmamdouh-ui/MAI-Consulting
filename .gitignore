@@ -1,3 +1,6 @@
 .claude/
 **/.generated
 logs/
+docs/curriculum/build/node_modules/
+docs/curriculum/build/package.json
+docs/curriculum/build/package-lock.json
