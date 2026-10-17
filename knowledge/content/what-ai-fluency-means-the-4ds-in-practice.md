@@ -1,6 +1,6 @@
 ---
 slug: what-ai-fluency-means-the-4ds-in-practice
-title: "What AI fluency actually means: the 4Ds after a hundred days of practice"
+title: "What AI fluency actually means: the 4Ds, reread after in-house practice"
 summary: "AI fluency is not tool knowledge, speed or confidence. It is one habit, ask for something specific and check it against what you know, and the 4Ds show where that habit takes real work."
 service: training
 format: Explainer
@@ -39,7 +39,7 @@ Someone with only this habit can get value on day one. They ask the tool to draf
 
 ## The 4Ds, reread after practice
 
-The 4Ds are Anthropic's AI Fluency Framework: Delegation, Description, Discernment and Diligence. On first reading they look like a tidy list. After a hundred-plus days and dozens of real tasks, the four words stay the same, but the weight each one carries changes.
+The 4Ds are Anthropic's AI Fluency Framework: Delegation, Description, Discernment and Diligence. On first reading they look like a tidy list. After a period of in-house practice (building this website with AI, testing prompts on real tasks, probing where the tools are strong and where they fail, and trying every training module on ourselves before teaching it), the four words stay the same, but the weight each one carries changes.
 
 - **Delegation turned out to be the easy one.** Deciding what to hand off got faster within weeks, because a short list of recurring tasks made it obvious which belonged to a tool and which did not.
 - **Description never stopped improving.** Every stalled task traced back to this D more than any other. Being specific enough, every time, stayed the hardest habit to keep.
