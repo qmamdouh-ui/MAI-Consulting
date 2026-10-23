@@ -5,14 +5,14 @@ summary: "Brief the tool on mission, audience and constraints, feed it real inpu
 service: training
 format: Guide
 level: Practitioner
-date: 2026-10-16
+date: 2026-10-19
 author: Mamdouh Alqudsi
 series: work-with-ai
 series_order: 9
 tags: [workflows, grants, donor updates, meeting notes, nonprofit]
 related: ["task-decomposition-finding-the-handover-point", "the-unit-of-ai-value-is-a-task-never-a-job", "before-and-after-one-grant-report-honestly-measured"]
 linkedin_url: ''
-source_ref: "profile articles #49, #116, #118, #119, #136, #138 (newsletter ed 25)"
+source_ref: "profile articles #49, #116, #118, #119, #136, #138, #143 (newsletter eds 25, 26)"
 featured: false
 ---
 Small teams write grant applications, donor updates, meeting recaps and field reports with nobody whose job title covers them. AI can turn that from a dreaded solo task into an afternoon, but only if the tool is given real material and a person checks what comes back. A tool alone makes each step of a broken process faster, which is not the same as making the process better.
@@ -48,6 +48,10 @@ Build it in the calm weeks, not the deadline week. A programme officer described
 
 The trap is that the calm weeks are the only time the habit is easy to build and the time it feels least necessary. Treat the calm week as the real deadline.
 
+### Where the line falls in a proposal
+
+Let AI draft what is true for any funder: organisational background, compliance language and standard sections. Write the specific ask yourself, meaning why this funder, why now and why this project matters to them. AI does not have that information and should not invent it. Check every figure before it reaches a funder, because a budget error can disqualify an application. Under deadline pressure the temptation is to let AI draft everything and edit lightly, which is how proposals end up reading as sent to everyone. Decide where the line sits before you start drafting, and treat it as a rule.
+
 ## Workflow 2: a donor update
 
 A small environmental nonprofit owed major donors a quarterly update, and the executive director, not a writer, had a spreadsheet of outcomes and a folder of field photos. The tool did not write the update. It turned her raw material into a structured first draft she could fix, cut and make sound like herself.
@@ -82,6 +86,7 @@ The old delay came from waiting for a clear block of writing time that rarely ar
 ## What to do next
 
 - Write your mission, audience and constraints for your next recurring document, and keep them as a block to paste at the top.
+- Mark in your next proposal which sections AI may draft and which you write yourself, before drafting begins.
 - For your next grant, request an outline in the funder's own structure before drafting anything.
 - Gather the numbers and one real story for your next donor update before opening the tool.
 - Name a second reader who checks every claim against the programme, and agree that nothing goes out without it.

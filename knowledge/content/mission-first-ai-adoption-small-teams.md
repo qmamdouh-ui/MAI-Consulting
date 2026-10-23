@@ -5,14 +5,14 @@ summary: "Small, mission-driven teams adopt AI when it is tied to the mission, s
 service: general
 format: Analysis
 level: Practitioner
-date: 2026-10-16
+date: 2026-10-22
 author: Mamdouh Alqudsi
 series: lead-adoption
 series_order: 1
 tags: [nonprofit, adoption, mission, training, small teams]
 related: ["which-department-should-go-first", "the-pilot-that-produces-evidence-instead-of-anecdote", "why-the-playbook-belongs-to-the-team-not-the-trainer"]
 linkedin_url: ''
-source_ref: "profile articles #113, #114, #115, #117, #120, #123, #126, #127, #130, #131, #137 (newsletter eds 21 to 23, 25)"
+source_ref: "profile articles #113, #114, #115, #117, #120, #123, #126, #127, #130, #131, #137, #142, #145, #153, #155 (newsletter eds 21 to 23, 25, 26, 27, 29)"
 featured: false
 ---
 A small nonprofit buys AI tools, sends staff to a webinar or two, and a month later almost nobody uses them. Or the opposite happens: everyone uses them at once and the output drifts away from what the organisation stands for. Both outcomes have the same root. The adoption plan started with the tool instead of the mission.
@@ -97,8 +97,22 @@ One nonprofit's leadership spent three staff meetings debating an "AI strategy" 
 
 A trade-promotion agency ran an AI pilot with its best team, on its best-documented programme, with its most tech-comfortable staff volunteering first. It went well and then stayed a pilot, because a best-case result says little about the typical team. Three things stall the sector after the pilot: early volunteers are not representative of the organisation; donor and mandate cycles reward visible novelty over the habits and review steps that make use reliable; and multi-country, multilingual work does not transfer from a headquarters team writing English reports to field offices with different languages, rules and connectivity. Moving on needs the rollout itself treated as the project, with its own timeline, budget line and owner, so that what worked for five enthusiasts becomes something a sceptical, busy team of fifty can use.
 
+## Attach the habit to work that comes back every week
+
+Two organisations start in the same month. One produces a long AI strategy that is still circulating for approval three months later. The other, a small team, builds one habit: every weekly report gets its first draft from AI and a human review before it goes out. By month three, only the second has changed anyone's working week. A strategy describes what an organisation intends. A habit is what it does.
+
+The same pattern separates colleagues who keep using a tool from those who quietly stop. Neither is more technical. The difference is whether the tool is tied to a task that returns regardless of enthusiasm.
+
+- **Pick one recurring task and use it daily before adding a second.** A weekly report, a follow-up email or a meeting summary will arrive whether or not anyone feels like experimenting.
+- **Automate the assembly, not the judgement.** For a communications team of one, a saved prompt that gathers last week's posts, results and open items into a first draft can reclaim a Monday morning. Deciding what the numbers mean stays with the person, who reviews the draft with the source open beside it.
+- **Expect to edit.** Treat the first output as a draft, so a mediocre result is a normal step and not a reason to quit.
+- **Review weekly.** A short Friday note with three lists (what AI got wrong, which prompts saved real time, which task is worth making a standing habit) turns scattered wins into a skill. Daily review is too frequent to show a pattern and monthly review too infrequent to catch one.
+- **Let the habit prove itself before you formalise it.** A strategy written before anyone has used the tool is speculation. A habit that has run for a month is evidence.
+
 ## What to do next
 
+- Pick the one weekly task that costs the most time and needs the least judgement, and save a prompt for it.
+- Keep a Friday note for a month: what AI got wrong, what saved time, what is worth repeating.
 - Write one sentence saying what your team would do with the time AI frees, and use it in place of "save time".
 - Choose one weekly task, book thirty minutes with its owner, and work through it live with the tool.
 - Pick one repeated check (a grant, newsletter or outreach email) and make it a fixed step.

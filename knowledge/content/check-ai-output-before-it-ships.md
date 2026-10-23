@@ -1,23 +1,23 @@
 ---
 slug: check-ai-output-before-it-ships
-title: "Checking AI output before it ships: five habits that cost minutes, not afternoons"
-summary: "Read AI drafts as an editor, own what carries your name, check against the goal as well as the instruction, and build thirty-second checks and checkpoints into the work."
+title: "Checking AI output before it ships: ten habits that cost minutes, not afternoons"
+summary: "Read AI drafts as an editor, own what carries your name, check against the goal, recompute numbers, look for omissions in summaries, and build short checks and checkpoints into the work."
 service: training
 format: Guide
 level: Practitioner
-date: 2026-10-02
+date: 2026-10-22
 author: Mamdouh Alqudsi
 series: fluency-foundations
 series_order: 3
 tags: [verification, review, diligence, checkpoints, discernment]
 related: ["calibrate-trust-in-ai-output", "the-four-checks-before-anything-leaves-the-building", "the-verification-tax-what-checking-costs-and-when-it-exceeds-the"]
 linkedin_url: ''
-source_ref: "profile articles #93, #95, #96, #98, #99"
+source_ref: "profile articles #93, #95, #96, #98, #99, #140, #141, #149, #152, #154 (newsletter eds 26, 28, 29)"
 featured: false
 ---
 An AI draft looks finished the moment it appears, and that is when mistakes get through. Picture a single unchecked number that makes it into a client email: finding it before sending would take thirty seconds, and finding it afterwards takes an afternoon of damage control. The scenarios in this guide are illustrative, not reports from client engagements.
 
-This guide gives you five practical habits for the review itself. For the question of how much to trust a given answer in the first place, see the companion guide on calibrating trust.
+This guide gives you ten practical habits for the review itself. For the question of how much to trust a given answer in the first place, see the companion guide on calibrating trust.
 
 ## 1. Read like an editor, not a customer
 
@@ -75,8 +75,55 @@ Place checks:
 
 A checkpoint does not need to be thorough. It needs to exist while catching a problem is still cheap. Momentum makes stopping feel slow, but skipping checks is what makes long tasks slow, later and by more.
 
+## 6. Take five minutes before anything important is sent
+
+Picture an email to a donor, drafted almost entirely by AI and ready to go. Five minutes spent on it first will cover three things:
+
+- **Read it once as the recipient, not as the writer.** A draft that makes sense to the person who asked for it often does not make sense to the person who has to act on it.
+- **Check every number and name against its source.** A wrong figure in a sent email cannot be quietly revised after it lands.
+- **Cut the one sentence that sounds good but says nothing.** AI drafts often carry a smooth transitional sentence that adds length and no information.
+
+Five minutes is short enough to survive a busy week. A longer review starts to cancel the time the quick draft saved, and people drop habits that erode their own benefit.
+
+## 7. Recompute the number; a confident tone is not evidence
+
+An AI summary can contain a figure that fits the surrounding text perfectly and is still wrong. Fluent writing and an accurate number come from different processes, so the first tells you nothing about the second.
+
+- **Recompute independently.** Pull the source figures and do the sum separately. Re-reading the number repeats the same reasoning that produced the error.
+- **Ask the tool to show its working.** A calculation laid out step by step is more likely to expose its own mistake than a bare final figure.
+- **Build the check in calm moments.** The urge to trust a plausible number is strongest when time is short, which is when a wrong number costs most.
+
+## 8. Read summaries for what they left out
+
+Early on, the instinct is to scan a summary for something that looks wrong. With more use, the better question is what it omitted, because an omission never announces itself.
+
+- **Check the omission, not only the error.** An accurate summary can still mislead if it drops the one caveat that changes the conclusion.
+- **Go back to the source for anything that will inform a decision,** not only for anything that looks off.
+- **Trust structure more than conclusions.** How a summary groups and orders material is usually sound. Its top-line conclusion is the part to double-check.
+
+This calibration comes from repeated use across real documents, not from being told that summaries can be wrong.
+
+## 9. Judge a first draft by how easy it is to improve
+
+Ask for a two-page brief and receive three polished pages that say little, and the polish is the trap. A useful first draft:
+
+- **States one clear main point early.** If you cannot say what it argues after the first paragraph, it is not ready to improve.
+- **Marks claims that still need a source,** instead of giving every sentence the same confidence.
+- **Leaves obvious room for your judgement,** such as context, priorities and what you actually recommend.
+
+Asking for a shorter, plainer draft with open questions listed at the end keeps you in charge of what the brief finally says.
+
+## 10. Make the check visible to a sceptic
+
+A board member who is not told how a summary was made reads every number with an unspoken question mark. Arguing that the tool is reliable does not help. Making this output easy to check does:
+
+- **Say which parts AI drafted and which a person checked.**
+- **Show where one figure comes from,** by pointing to its source document.
+- **Name the weakest part of the work yourself,** before you are asked.
+
 ## What to do next
 
+- Before you send your next important email, spend five minutes reading it as the recipient and checking each number against its source.
 - Before you accept your next AI draft, write one line answering "what is wrong with this?" and only then decide whether to use it.
 - Add the goal to your prompts for anything with a limit (length, format, tone), and check the result against the goal, not the limit.
 - Before sending anything with a figure, open the source and confirm each number.

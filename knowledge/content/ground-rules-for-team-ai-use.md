@@ -5,14 +5,14 @@ summary: "Three things a manager can set in an afternoon: a specific list of wha
 service: policy
 format: Framework
 level: Entry
-date: 2026-09-13
+date: 2026-10-21
 author: Mamdouh Alqudsi
 series: lead-adoption
 series_order: 4
 tags: [ground rules, data privacy, managers, disclosure, vocabulary]
 related: ["red-lines-the-decisions-that-never-get-delegated", "permitted-use-by-role-the-table-that-does-the-work", "what-personal-data-means-once-a-prompt-leaves-the-building"]
 linkedin_url: ''
-source_ref: "profile articles #44, #45, #50"
+source_ref: "profile articles #44, #45, #50, #148 (newsletter ed 28)"
 featured: false
 ---
 If you manage people, your job is not to use AI well yourself. It is to make sure the people who report to you do. Most of that comes down to three small pieces of groundwork: what stays out of the chat window, what people feel safe saying about their own use, and a shared set of words.
@@ -44,6 +44,14 @@ The thirty-second habit: before pasting, ask who else could plausibly see this i
 
 A policy nobody remembers is the same as no policy.
 
+The cheapest place to say it is a short email on a new hire's first day. By week three people have already formed habits by watching colleagues and guessing, and some of those habits will be wrong. The email needs three things:
+
+- **Which tools are approved and for what,** so nobody guesses between the sanctioned assistant and a personal account.
+- **One concrete example of the review habit expected.** "Always check figures against the source before sending" can be followed. "Use AI responsibly" cannot.
+- **What never gets pasted in,** named plainly, such as donor personal information, unpublished financials and anything under a confidentiality agreement.
+
+Vague guidance produces inconsistent behaviour, not cautious behaviour.
+
 ## Rule 3: Make disclosure normal
 
 The real risk is not people using AI too much. It is people submitting AI output unchecked because they are afraid to admit they used it. Make it ordinary to say "I used AI for the first draft", and the checking happens in the open instead of in secret.
@@ -70,6 +78,7 @@ Skip the architecture, the training process and the maths. Vocabulary that does 
 
 - Write your own never-paste list for your team, with two or three examples from your actual work.
 - Name the one approved AI tool and tell the team it is the default.
+- Write the day-one onboarding email covering approved tools, one review habit and the never-paste list.
 - Say aloud in your next team meeting that you used AI for a first draft, and what you changed.
 - Ask each person in their next one-to-one what they had to fix after using AI.
 - Print the five terms and agree them at the start of your next AI discussion.

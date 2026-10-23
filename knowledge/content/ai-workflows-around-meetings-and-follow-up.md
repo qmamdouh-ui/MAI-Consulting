@@ -5,14 +5,14 @@ summary: "Meeting prep in minutes, same-day follow-up emails, hour-long training
 service: training
 format: Guide
 level: Entry
-date: 2026-09-23
+date: 2026-10-21
 author: Mamdouh Alqudsi
 series: work-with-ai
 series_order: 8
 tags: [meetings, follow-up, workshops, training sessions, preparation]
 related: ["ai-workflow-method-for-messy-work", "ground-rules-for-team-ai-use", "the-four-checks-before-anything-leaves-the-building"]
 linkedin_url: ''
-source_ref: "profile articles #56, #63, #68, #69"
+source_ref: "profile articles #56, #63, #68, #69, #144, #150 (newsletter eds 27, 28)"
 featured: false
 ---
 A call lands with ten minutes' notice, a workshop ends with forty sticky notes and no plan, a promising conversation needs a follow-up that never quite gets written. The work around a meeting is where momentum is lost, because it is rarely scheduled and always rushed.
@@ -63,6 +63,22 @@ A two-day strategy workshop ended with whiteboard photos, a disorganised shared 
 
 The facilitator still had to judge. Two themes that looked separate were one underlying issue in different language, and only someone who had been in the room reading the group's energy would have merged them.
 
+## When meetings come back to back
+
+On a day with six consecutive meetings, you can end up with six sets of half-remembered notes and no clear record of what was decided. A transcript remembers everything said, and a decision log remembers the part that matters afterwards. Three rules help:
+
+- **Capture decisions and owners, not a transcript.** A short log of what was decided and who owns the next step is the thing people actually reopen.
+- **Review the notes within the hour.** Details that feel obvious straight after a meeting are hard to reconstruct once two more have happened.
+- **Flag what the AI missed while memory is fresh.** A quick cross-check straight afterwards is the only backstop against a note that left out something important.
+
+## Consultations: prepare and synthesise, but be in the room
+
+Suppose you are preparing a round of community consultations. AI can draft the question list, structure the agenda and later turn raw notes into themes. It cannot tell you who stayed quiet, which answer changed when a particular person spoke, or what a hesitant answer meant.
+
+- **Use AI to prepare questions, not to run the room.** A drafted list frees you to listen instead of improvising structure.
+- **Ask it to synthesise notes, not to interpret tone.**
+- **Keep your own read of what was not said.** No synthesis step recovers it afterwards.
+
 ## What the four have in common
 
 | Moment | Ask for | Add yourself |
@@ -79,4 +95,5 @@ In every case the request is short and specific, and the output is something you
 - Before your next call, paste in the last three threads and ask for the status paragraph, three likely topics and one question.
 - Draft your next follow-up from three bullets within an hour of the call ending.
 - When you have to teach something quickly, write the end-of-hour outcome first and ask for a mid-session check.
+- On your next day of back-to-back meetings, review each set of notes within the hour and write down only decisions and owners.
 - After your next workshop, put every note into one document and ask for themes, owners and next steps before you tidy anything.

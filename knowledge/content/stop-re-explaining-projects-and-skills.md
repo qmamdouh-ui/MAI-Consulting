@@ -5,13 +5,13 @@ summary: "A Project holds standing context, a Skill holds a repeatable process; 
 service: agents
 format: Guide
 level: Practitioner
-date: 2026-09-12
+date: 2026-10-20
 author: Mamdouh Alqudsi
 series:
 tags: [claude projects, skills, repeatable tasks, instructions, workflow]
 related: ["agent-skill-or-tool-three-things-with-three-different-costs", "write-the-method-before-you-buy-the-agent", "ground-rules-for-team-ai-use"]
 linkedin_url: ''
-source_ref: "profile articles #27, #28, #46"
+source_ref: "profile articles #27, #28, #46, #146 (newsletter ed 27)"
 featured: false
 ---
 Every new chat starts from zero. Whatever you explained carefully last week, whatever correction you made, whatever format you finally settled on, none of it carries forward unless you retype it. If you have pasted the same background into a chat for the third time this week, you have a memory problem that two features address in different ways.
@@ -40,6 +40,10 @@ A Project is not a smarter model. It is the same model with better memory of you
 - **Skip it for one-off questions.** If you will never ask a related question again, a normal chat is faster to start and nothing is lost.
 
 The habit that makes a Project worth the setup: the first time you catch yourself making the same correction twice, update the instructions. That is the signal the Project is missing something it should already know, and fixing it once saves every conversation after.
+
+### Set it up before the big report, not after the third re-explanation
+
+A short one-off task rarely repays setup time. A report with several sections, rounds of revision and questions that arrive over days or weeks does. Load the actual source documents first, since the reports, data files and background material are what make later questions answerable. Add one clear standing instruction covering tone, audience and what "done" looks like, rather than ten overlapping preferences. Then update the Project as the report evolves instead of rebuilding it.
 
 ## What a Skill preserves
 
