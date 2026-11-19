@@ -356,40 +356,40 @@ function detect(q){
   return "en";
 }
 var UI={
- en:{title:"Site assistant",sub:"Understands your need, then passes it to the team",ph:"Ask about services, prices, who it is for…",send:"Ask",
+ en:{title:"Site assistant",ai:"You are chatting with an automated AI assistant, not a person. It answers only from the content of this website.",sub:"Understands your need, then passes it to the team",ph:"Ask about services, prices, who it is for…",send:"Ask",
      note:"I ask a few questions to understand what you need, and answer from what is written on this site. I do not quote prices: the call does that. What you tell me is emailed to the team so nobody asks you to repeat it.",
      hello:"Hello! I can tell you about the services, how pricing works, who they are for, or how an engagement runs, in English, French or Arabic. What would you like to know?",
      dk:"That one is not on the website, and I would rather not guess. I can pass it to the team, who usually reply within a business day, or you can use the contact form.",
      off:"That is outside what I can help with here. I know this practice, its services, prices, who they are for and how it works. Ask me one of those and I will do my best.",
      sendBtn:"Send to the team",contact:"Contact form",emailPh:"Your email (optional, so they can reply)",sending:"Sending…",sent:"Sent. The team will reply",sentTo:" to ",fail:"Could not send. Please use the ",
      yes:"Yes. ",thanks:"You are welcome. If anything else is unclear, the contact form goes straight to the team.",bye:"Goodbye. If you want the short version of all this, the estimator takes about a minute.",
-     ident:"I am the assistant on this site, neither a person nor a general chatbot. I only repeat what is written here, in English, French or Arabic. For anything the site does not cover, the team is one message away.",
+     ident:"I am the automated AI assistant on this site, not a person and not a general chatbot. I only repeat what is written here, in English, French or Arabic. For anything the site does not cover, the team is one message away.",
      cando:"I can explain the five services, show you the delivery days for your scope with the estimator, tell you who they are for, walk you through how an engagement runs, and point you to the free assessment or the sample playbook. Ask in English, French or Arabic.",
      langyes:"Yes. Write to me in English, French or Arabic and I will answer in the same language. The team delivers sessions and materials in all three as well.",
      fine:"Doing well, thank you. What can I help you find?",
      chips:["What does it cost?","Who is this for?","What is the playbook?","Do you work with funders?","What is Article 4?","How do I book a call?"],
      more:"Read more"},
- fr:{title:"Assistant du site",sub:"Cerne votre besoin, puis le transmet à l’équipe",ph:"Services, tarifs, pour qui…",send:"Envoyer",
+ fr:{title:"Assistant du site",ai:"Vous échangez avec un assistant automatisé d’IA, pas avec une personne. Il répond uniquement à partir du contenu de ce site.",sub:"Cerne votre besoin, puis le transmet à l’équipe",ph:"Services, tarifs, pour qui…",send:"Envoyer",
      note:"Je pose quelques questions pour cerner votre besoin et je réponds à partir de ce qui est écrit sur ce site. Je ne donne pas de prix : c’est l’entretien qui le fait. Ce que vous me dites est transmis par courriel à l’équipe, pour que personne ne vous fasse répéter.",
      hello:"Bonjour ! Je peux vous parler des services, de la façon dont le tarif est établi, de leurs destinataires ou du déroulement d’une mission, en français, en anglais ou en arabe. Que souhaitez-vous savoir ?",
      dk:"Ce point n’est pas sur le site et je préfère ne pas deviner. Je peux le transmettre à l’équipe, qui répond en général sous un jour ouvré, ou vous pouvez utiliser le formulaire de contact.",
      off:"Cela sort de ce que je peux faire ici. Je connais ce cabinet, ses services, ses tarifs, ses destinataires et son fonctionnement. Posez-moi une question sur l’un de ces sujets.",
      sendBtn:"Transmettre à l’équipe",contact:"Formulaire de contact",emailPh:"Votre courriel (facultatif, pour la réponse)",sending:"Envoi…",sent:"Envoyé. L’équipe vous répondra",sentTo:" à ",fail:"Envoi impossible. Merci d’utiliser le ",
      yes:"Oui. ",thanks:"Avec plaisir. Si quelque chose reste flou, le formulaire de contact arrive directement à l’équipe.",bye:"Au revoir. Pour la version courte de tout ceci, l’estimateur prend une minute.",
-     ident:"Je suis l’assistant de ce site, ni une personne ni un chatbot généraliste. Je ne répète que ce qui est écrit ici, en français, en anglais ou en arabe. Pour tout ce que le site ne couvre pas, l’équipe est à un message.",
+     ident:"Je suis l’assistant automatisé d’IA de ce site, ni une personne ni un chatbot généraliste. Je ne répète que ce qui est écrit ici, en français, en anglais ou en arabe. Pour tout ce que le site ne couvre pas, l’équipe est à un message.",
      cando:"Je peux expliquer les cinq services, vous montrer les journées de votre périmètre avec l’estimateur, vous dire à qui ils s’adressent, décrire le déroulement d’une mission, et vous orienter vers l’évaluation gratuite ou la fiche exemple. En français, en anglais ou en arabe.",
      langyes:"Oui. Écrivez-moi en français, en anglais ou en arabe et je répondrai dans la même langue. L’équipe assure aussi les séances et les supports dans ces trois langues.",
      fine:"Très bien, merci. Que puis-je vous aider à trouver ?",
      chips:["Combien ça coûte ?","Pour qui est-ce ?","La fiche pratique ?","Travaillez-vous avec des bailleurs ?","L’article 4 ?","Prendre rendez-vous"],
      more:"En savoir plus"},
- ar:{title:"مساعد الموقع",sub:"يفهم حاجتكم ثم يحيلها إلى الفريق",ph:"اسأل عن الخدمات أو الأسعار أو لمن هي…",send:"اسأل",
+ ar:{title:"مساعد الموقع",ai:"أنتم تتحدّثون مع مساعدٍ آليّ قائمٍ على الذكاء الاصطناعي، لا مع شخص. ولا يجيب إلا من محتوى هذا الموقع.",sub:"يفهم حاجتكم ثم يحيلها إلى الفريق",ph:"اسأل عن الخدمات أو الأسعار أو لمن هي…",send:"اسأل",
      note:"أطرح أسئلةً قليلة لأفهم حاجتكم، وأجيب ممّا هو مكتوبٌ على هذا الموقع. ولا أعطي أسعاراً؛ فذلك شأنُ المكالمة. وما تقولونه يصل إلى الفريق بالبريد كي لا يطلب منكم أحدٌ إعادتَه.",
      hello:"أهلاً بكم! أستطيع أن أحدّثكم عن الخدمات وكيف يُحدَّد سعرها ولمن هي وكيف تسير المهمّة، بالعربية أو الإنجليزية أو الفرنسية. ما الذي تودّون معرفته؟",
      dk:"هذا الأمر ليس على الموقع، وأُفضِّل ألّا أخمّن. أستطيع إحالتَه إلى الفريق، وهم يردّون عادةً في غضون يوم عمل، أو يمكنكم استعمال نموذج التواصل.",
      off:"هذا خارج ما أستطيع مساعدتكم فيه هنا؛ فأنا أعرف هذا المكتب وخدماته وأسعاره ولمن هي وكيف يعمل. اسألوني عن أحد هذه الأمور وسأجيبكم قدر استطاعتي.",
      sendBtn:"أحِل السؤال إلى الفريق",contact:"نموذج التواصل",emailPh:"بريدكم الإلكتروني (اختياري، ليردّوا عليكم)",sending:"جارٍ الإرسال…",sent:"أُرسل. سيردّ عليكم الفريق",sentTo:" على ",fail:"لم يتمّ الإرسال. يُرجى استعمال ",
      yes:"نعم، ",thanks:"على الرحب والسعة. وإن بقي شيءٌ غيرَ واضح فنموذجُ التواصل يصل إلى الفريق مباشرةً.",bye:"إلى اللقاء، وإن أردتم الخلاصةَ من كل هذا فحاسبةُ التقدير لا تستغرق سوى دقيقة.",
-     ident:"أنا مساعدُ هذا الموقع، لستُ شخصاً ولا روبوتَ محادثةٍ عامّاً. أكرّر ما هو مكتوبٌ هنا فقط، بالعربية أو الإنجليزية أو الفرنسية. وما لا يشمله الموقع فالفريقُ على بُعد رسالة.",
+     ident:"أنا المساعدُ الآليّ لهذا الموقع، قائمٌ على الذكاء الاصطناعي، لستُ شخصاً ولا روبوتَ محادثةٍ عامّاً. أكرّر ما هو مكتوبٌ هنا فقط، بالعربية أو الإنجليزية أو الفرنسية. وما لا يشمله الموقع فالفريقُ على بُعد رسالة.",
      cando:"أستطيع أن أشرح الخدمات الخمس، وأن أعرض عليكم أيامَ التقديم لنطاقكم عبر حاسبة التقدير، وأن أخبركم لمن هي، وأن أصف كيف تسير المهمّة، وأن أرشدكم إلى التقييم المجاني أو النموذج المرجعي. اسألوا بالعربية أو الإنجليزية أو الفرنسية.",
      langyes:"نعم، اكتبوا لي بالعربية أو الإنجليزية أو الفرنسية وسأجيب باللغة نفسها. ويقدّم الفريقُ الجلسات والمواد باللغات الثلاث أيضاً.",
      fine:"بخير، شكراً لكم. بماذا أساعدكم؟",
@@ -464,7 +464,7 @@ var YN=rx("^(do|does|can|could|is|are|will|would|have|has|should|est-ce|avez|ete
 
 var AGT = {
   en: {
-    open: "Hello. I work with the M.A.I. Consulting team, and my job here is to understand what you need well enough that whoever calls you already knows your situation. It takes about two minutes, and you can ask me anything along the way. What brings you to the site today?",
+    open: "Hello. I am the site's automated AI assistant, working for the M.A.I. Consulting team, and my job here is to understand what you need well enough that whoever calls you already knows your situation. It takes about two minutes, and you can ask me anything along the way. What brings you to the site today?",
     openChips: ["Our staff use AI with no rules", "We need training", "A funder is asking about AI", "We want to automate a task", "Just looking around"],
     ackShort: ["Understood.", "That helps.", "Noted.", "Right."],
     back: "Back to where we were.",
@@ -507,7 +507,7 @@ var AGT = {
     priceQ: "On price"
   },
   fr: {
-    open: "Bonjour. Je travaille avec l'équipe de M.A.I. Consulting, et mon rôle ici est de comprendre votre besoin assez précisément pour que la personne qui vous rappellera connaisse déjà votre situation. Comptez deux minutes, et posez-moi vos questions au passage. Qu'est-ce qui vous amène aujourd'hui ?",
+    open: "Bonjour. Je suis l'assistant automatisé d'IA du site, au service de l'équipe de M.A.I. Consulting, et mon rôle ici est de comprendre votre besoin assez précisément pour que la personne qui vous rappellera connaisse déjà votre situation. Comptez deux minutes, et posez-moi vos questions au passage. Qu'est-ce qui vous amène aujourd'hui ?",
     openChips: ["Nos équipes utilisent l'IA sans règles", "Nous avons besoin d'une formation", "Un bailleur nous interroge", "Nous voulons automatiser une tâche", "Je regarde simplement"],
     ackShort: ["Compris.", "C'est utile.", "Noté.", "Très bien."],
     back: "Revenons à notre fil.",
@@ -550,7 +550,7 @@ var AGT = {
     priceQ: "Sur le prix"
   },
   ar: {
-    open: "أهلاً بكم. أعمل مع فريق «إم إيه آي كونسلتنغ»، ومهمّتي هنا أن أفهم حاجتكم فهماً كافياً ليعرف مَن يتّصل بكم وضعَكم سلفاً. يستغرق ذلك دقيقتين، ويمكنكم سؤالي عن أيّ شيء في أثنائه. ما الذي جاء بكم اليوم؟",
+    open: "أهلاً بكم. أنا المساعدُ الآليّ للموقع، قائمٌ على الذكاء الاصطناعي وفي خدمة فريق «إم إيه آي كونسلتنغ»، ومهمّتي هنا أن أفهم حاجتكم فهماً كافياً ليعرف مَن يتّصل بكم وضعَكم سلفاً. يستغرق ذلك دقيقتين، ويمكنكم سؤالي عن أيّ شيء في أثنائه. ما الذي جاء بكم اليوم؟",
     openChips: ["موظفونا يستعملون الذكاء الاصطناعي بلا قواعد", "نحتاج تدريباً", "جهة مانحة تسألنا", "نريد أتمتة مهمّة", "أتصفّح فقط"],
     ackShort: ["فهمت.", "هذا مفيد.", "سجّلتُ ذلك.", "حسناً."],
     back: "لنعد إلى ما كنّا فيه.",
@@ -883,7 +883,7 @@ var CSS='\
 .mai-lang{display:flex;gap:.2rem}.mai-lang button{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:5px;font:700 .64rem Inter,sans-serif;padding:.22rem .4rem;cursor:pointer}\
 .mai-lang button[aria-pressed=true]{background:#C9A84C;color:#001830;border-color:#C9A84C}\
 .mai-chat-x{background:none;border:none;color:#fff;font-size:1.2rem;cursor:pointer;padding:.2rem .4rem;line-height:1}\
-.mai-chat-m{flex:1;overflow-y:auto;padding:.9rem;background:#f6f8fc;display:flex;flex-direction:column;gap:.6rem}\
+.mai-chat-ai{font-size:.7rem;line-height:1.45;font-weight:600;color:#001830;background:#fbf3dc;border-bottom:1px solid rgba(201,168,76,.45);padding:.45rem .9rem}\n.mai-chat-m{flex:1;overflow-y:auto;padding:.9rem;background:#f6f8fc;display:flex;flex-direction:column;gap:.6rem}\
 .mai-msg{max-width:92%;padding:.65rem .85rem;border-radius:10px;font-size:.85rem;line-height:1.65;color:#1a1a2e}\
 .mai-msg.bot{background:#fff;border:1px solid rgba(0,62,138,.12);align-self:flex-start;border-bottom-left-radius:3px}\
 .mai-chat[dir=rtl] .mai-msg.bot{align-self:flex-end;border-bottom-left-radius:10px;border-bottom-right-radius:3px}\
@@ -904,12 +904,12 @@ var CSS='\
 
 function el(t,c,h){var e=document.createElement(t); if(c) e.className=c; if(h!=null) e.innerHTML=h; return e;}
 function esc(s){return s.replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
-var lang="en", box, m, chips, inp, btn, hTitle, hSub, hNote, sendBtn, langBtns={};
+var lang="en", box, m, chips, inp, btn, hTitle, hSub, hNote, hAi, sendBtn, langBtns={};
 function T(){return UI[lang];}
 function setLang(l){
   lang=l; var t=T();
   box.setAttribute("dir", l==="ar"?"rtl":"ltr"); box.setAttribute("lang", l);
-  hTitle.textContent=t.title; hSub.textContent=t.sub; inp.placeholder=t.ph; sendBtn.textContent=t.send; hNote.textContent=t.note;
+  hTitle.textContent=t.title; hSub.textContent=t.sub; inp.placeholder=t.ph; sendBtn.textContent=t.send; hNote.textContent=t.note; hAi.textContent=t.ai;
   for(var k in langBtns) langBtns[k].setAttribute("aria-pressed", k===l?"true":"false");
 }
 function build(){
@@ -918,12 +918,12 @@ function build(){
   btn.setAttribute("aria-label","Open the site assistant"); btn.setAttribute("aria-expanded","false");
   box=el("div","mai-chat"); box.setAttribute("role","dialog"); box.setAttribute("aria-label","Site assistant");
   box.innerHTML='<div class="mai-chat-h"><div><b id="mai-t"></b><small id="mai-s"></small></div><div style="display:flex;align-items:center;gap:.4rem"><div class="mai-lang" id="mai-lang"><button type="button" data-l="en">EN</button><button type="button" data-l="fr">FR</button><button type="button" data-l="ar">ع</button></div><button class="mai-chat-x" aria-label="Close">&times;</button></div></div>'+
-    '<div class="mai-chat-m" id="mai-chat-m"></div><div class="mai-chips" id="mai-chips"></div>'+
+    '<div class="mai-chat-ai" id="mai-ai" role="note"></div><div class="mai-chat-m" id="mai-chat-m"></div><div class="mai-chips" id="mai-chips"></div>'+
     '<form class="mai-chat-f" id="mai-chat-f"><input id="mai-chat-i" type="text" autocomplete="off" aria-label="Your question"/><button type="submit" id="mai-send"></button></form>'+
     '<div class="mai-chat-n" id="mai-n"></div>';
   document.body.appendChild(btn); document.body.appendChild(box);
   m=box.querySelector("#mai-chat-m"); chips=box.querySelector("#mai-chips"); inp=box.querySelector("#mai-chat-i");
-  hTitle=box.querySelector("#mai-t"); hSub=box.querySelector("#mai-s"); hNote=box.querySelector("#mai-n"); sendBtn=box.querySelector("#mai-send");
+  hTitle=box.querySelector("#mai-t"); hSub=box.querySelector("#mai-s"); hNote=box.querySelector("#mai-n"); hAi=box.querySelector("#mai-ai"); sendBtn=box.querySelector("#mai-send");
   box.querySelectorAll("#mai-lang button").forEach(function(b){ langBtns[b.getAttribute("data-l")]=b; b.onclick=function(){ setLang(b.getAttribute("data-l")); say(esc(S.stage==="intake"&&!S.log.length?A().open:resumeLine())); renderChips(S.stage==="intake"&&!filled()?A().openChips:T().chips); }; });
   var startLang=/^ar\b/i.test(navigator.language||"")?"ar":(/^fr\b/i.test(navigator.language||"")?"fr":"en");
   setLang(startLang);
