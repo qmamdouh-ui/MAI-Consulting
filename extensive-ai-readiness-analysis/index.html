@@ -404,6 +404,7 @@ body > header{position:static !important}
   <div class="analysis-card">
     <div class="an-title">Your results</div>
     <p class="an-sub">What each number means, what to do first and where we can help. Built from your answers only; the PDF report shows the same figures. The standards mapping at the end is optional.</p>
+<p class="an-sub">Scores are indicative and self-reported. They are not legal advice, an audit, a certification or a conformity assessment under the EU AI Act (Regulation (EU) 2024/1689, as amended by Regulation (EU) 2026/1744), ISO/IEC 42001 or any other standard. The standards mapping shows where a gap sits in each framework; it does not determine your obligations under the EU AI Act, the GDPR or the Swiss Federal Act on Data Protection. Check clause references against the current texts before relying on them.</p>
     <div id="analysis-body"><p class="an-wait">Your dashboard appears here once all required questions are answered.</p></div>
   </div>
 </section>
@@ -1146,7 +1147,7 @@ function buildReportModel(m){
       `Threshold: ${ANSWER_THRESHOLD} of 5 points, the ${DASH_TARGET}% target applied to one question (answer detail).`,
       `Spread: ${a.spread} points between your strongest and weakest dimension.`
     ],
-    about:'The first four dimensions (Delegation, Description, Discernment, Diligence) draw on the AI Fluency 4D Framework developed by Rick Dakan and Joseph Feller in partnership with Anthropic. The remaining six were added by M.A.I. Consulting and mapped against ISO/IEC 42001, NIST AI RMF 1.0, the EU AI Act, GDPR, the OECD AI Principles and the UNESCO Recommendation on the Ethics of AI. Scores are indicative and self-reported; they do not constitute legal advice or a compliance audit. Two questions (ethics standard adopted, governance standard adopted) are informational and do not count towards the score.',
+    about:'The first four dimensions (Delegation, Description, Discernment, Diligence) draw on the AI Fluency 4D Framework developed by Rick Dakan and Joseph Feller in partnership with Anthropic. The remaining six were added by M.A.I. Consulting and mapped against ISO/IEC 42001, NIST AI RMF 1.0, the EU AI Act (as amended by Regulation (EU) 2026/1744), GDPR, the OECD AI Principles and the UNESCO Recommendation on the Ethics of AI. Scores are indicative and self-reported. They are not legal advice, an audit, a certification or a conformity assessment under the EU AI Act or any other standard, and the mapping does not determine legal obligations. Two questions (ethics standard adopted, governance standard adopted) are informational and do not count towards the score.',
     bookUrl:BOOK_URL, contactEmail:'q.mamdouh@mai4consulting.com'
   };
 }
