@@ -2,7 +2,7 @@
 #
 #   .\tools\knowledge-sync.ps1             run now: snapshot LinkedIn, sync, commit on a branch (never pushes)
 #   .\tools\knowledge-sync.ps1 -Publish    also merge to main and push when the QA gate passes
-#   .\tools\knowledge-sync.ps1 -Register   plan the Friday 16:00 task (add -Apply to create it)
+#   .\tools\knowledge-sync.ps1 -Register   plan the daily 07:35 task (add -Apply to create it; add -Publish to publish)
 #   .\tools\knowledge-sync.ps1 -Register -Remove -Apply   delete the task
 #
 # One run = up to 3 attempts, $RetryMinutes apart. An attempt is:
@@ -37,14 +37,15 @@ if ($Register) {
         else { "would remove $TaskName (add -Apply)" }
         return
     }
-    "Plan: Fridays 16:00 (machine time; keep Windows on Geneva time): powershell.exe $arg"
+    "Plan: daily 07:35 (machine time; keep Windows on Geneva time): powershell.exe $arg"
     if ($Apply) {
         $action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument $arg -WorkingDirectory $Root
-        $trigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Friday -At '16:00'
+        # Daily since 2026-11-25: Kit took over the cloud routine's daily mirror (Dax, retired).
+        $trigger = New-ScheduledTaskTrigger -Daily -At '07:35'
         $limit = New-TimeSpan -Minutes ($MaxAttempts * ($TimeoutMinutes + $RetryMinutes + 5))
         $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -ExecutionTimeLimit $limit -MultipleInstances IgnoreNew
         Register-ScheduledTask -TaskName $TaskName -Action $action -Trigger $trigger -Settings $settings `
-            -Description 'Weekly Knowledge sync for mai4consulting.com (reads LinkedIn read-only, 3 attempts, then waits for next week)' -Force | Out-Null
+            -Description 'Daily Knowledge sync for mai4consulting.com (Kit; local sources only, 3 attempts, then waits for the next day)' -Force | Out-Null
         "registered $TaskName (runs only while you are logged on; starts when available if the PC was off)"
     } else { 'nothing changed (add -Apply)' }
     return
@@ -86,7 +87,7 @@ function Invoke-Attempt([int]$n) {
     $publishText = if ($Publish) {
         'PUBLISH MODE IS ON: only if tools/check_knowledge.py exits 0 and the build succeeded, merge the sync branch into main (fast-forward) and `git push origin main`. If anything fails, do not merge or push; stay on the branch and say BLOCKED with the reason.'
     } else { 'Do NOT merge into main and do NOT push. Stop on the committed branch.' }
-    $task = "Run the weekly Knowledge sync in UNATTENDED mode as defined in your agent file (section `"Unattended mode`"). Today is $today (Europe/Zurich). Sources are the local queues and LinkedIn-Strategy state named in your agent file; no LinkedIn snapshot is used. $publishText"
+    $task = "Run the daily Knowledge sync in UNATTENDED mode as defined in your agent file (section `"Unattended mode`"). Today is $today (Europe/Zurich). Sources are the local queues and LinkedIn-Strategy state named in your agent file; no LinkedIn snapshot is used. $publishText"
     $unattended = 'You are running unattended: no human is present and nobody can answer questions. Do not summarise these instructions, do not ask for clarification, do not open a browser and do not touch linkedin.com. Either do the task or stop with one plain line starting "BLOCKED:" saying exactly what is missing. Finding nothing new is a normal outcome: log it and stop. End with a short report: found, brought, merged, skipped (with reasons), anything you published on schedule dates alone (not confirmed on LinkedIn), and anything needing the owner.'
     $promptFile = Join-Path $env:TEMP "knowledge-sync-$PID.prompt.txt"
     $outFile = Join-Path $env:TEMP "knowledge-sync-$PID.out.txt"
@@ -120,7 +121,7 @@ try {
         if ($ok) { Write-Log "DONE on attempt $n"; exit 0 }
         if ($n -lt $MaxAttempts) { Write-Log "attempt $n failed; retrying in $RetryMinutes minutes"; Start-Sleep -Seconds ($RetryMinutes * 60) }
     }
-    Write-Log "FAILED: $MaxAttempts attempts. Waiting until the next scheduled run (next Friday 16:00). Nothing was published."
+    Write-Log "FAILED: $MaxAttempts attempts. Waiting until the next scheduled run (tomorrow 07:35). Nothing was published."
     exit 1
 } finally {
     $lock.Dispose()

@@ -106,7 +106,7 @@ Every price is a published list price with a linked source, dated September
 2026. Re-check them before quoting the page in a proposal; providers change
 prices and the page states the date it was checked.
 
-## The site assistant (`assets/chat.js`)
+## The site assistant, Ina (`assets/chat.js`)
 
 A retrieval-only assistant on every content page, in English, French and Arabic (auto-detected per message, with a manual switch; Arabic renders right-to-left). It calls no language model:
 every answer is a knowledge-base entry written from copy on this site, so it

@@ -1,4 +1,7 @@
-.claude/
+.claude/*
+!.claude/agents/
+.claude/agents/*
+!.claude/agents/knowledge-curator.md
 **/.generated
 logs/
 
