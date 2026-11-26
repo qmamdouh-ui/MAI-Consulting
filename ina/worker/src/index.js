@@ -66,7 +66,7 @@ async function chat(req, env, c, tester) {
     headers: { "content-type": "application/json", "x-api-key": env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01" },
     body: JSON.stringify({
       model: env.MODEL,
-      max_tokens: 500,
+      max_tokens: 700,
       system: [
         { type: "text", text: PROMPT },
         { type: "text", text: "# Knowledge base\n\n" + KNOWLEDGE, cache_control: { type: "ephemeral" } },
@@ -89,7 +89,8 @@ async function chat(req, env, c, tester) {
       meta = { parse_error: true };
     }
   }
-  const reply = raw.replace(META_RE, "").trim();
+  // An unclosed trailer (output cut off, or the closing tag missing) must never reach the visitor.
+  const reply = raw.replace(META_RE, "").replace(/<ina-meta>[\s\S]*$/i, "").trim();
   if (!reply) return json({ error: "empty" }, 502, c.headers);
   await append(env, day, session, body, turns, { reply, meta, usage: data.usage || null }, null, tester);
   return json(
