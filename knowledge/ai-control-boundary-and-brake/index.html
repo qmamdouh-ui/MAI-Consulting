@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Two kinds of AI control: the authorisation boundary and the brake | M.A.I. Consulting</title>
+<meta name="description" content="A boundary decides what an AI system can reach; a brake decides how fast it can be stopped. The Fence and Brake Test shows which control a given use needs first, and why neither replaces the other."/>
+<link rel="canonical" href="https://mai4consulting.com/knowledge/ai-control-boundary-and-brake/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="M.A.I. Consulting"/>
+<meta property="og:title" content="Two kinds of AI control: the authorisation boundary and the brake"/>
+<meta property="og:description" content="A boundary decides what an AI system can reach; a brake decides how fast it can be stopped. The Fence and Brake Test shows which control a given use needs first, and why neither replaces the other."/>
+<meta property="og:url" content="https://mai4consulting.com/knowledge/ai-control-boundary-and-brake/"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../../assets/site.css"/>
+<link rel="stylesheet" href="../../assets/knowledge.css"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Two kinds of AI control: the authorisation boundary and the brake", "description": "A boundary decides what an AI system can reach; a brake decides how fast it can be stopped. The Fence and Brake Test shows which control a given use needs first, and why neither replaces the other.", "datePublished": "2026-10-29", "mainEntityOfPage": "https://mai4consulting.com/knowledge/ai-control-boundary-and-brake/", "author": {"@type": "Organization", "name": "M.A.I. Consulting"}, "publisher": {"@type": "Organization", "name": "M.A.I. Consulting"}}</script>
+</head>
+<body>
+<div class="mai-topbar">
+  <div class="mai-topbar-inner">
+    <a class="mai-brand" href="../../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
+    <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="mai-links" id="mai-links">
+      <li><a href="../../services/">Services</a></li>
+      <li><a href="../../use-cases/">Levels</a></li>
+      <li><a href="../../estimate/">Estimate</a></li>
+      <li><a href="../../explore-your-ai-readiness/">Free check</a></li>
+      <li><a href="../../knowledge/" aria-current="page">Knowledge</a></li>
+      <li><a href="../../for-funders/">For funders</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a class="mai-cta" href="../../book/">Book a call</a></li>
+    </ul>
+  </div>
+</div>
+<section class="hero hero-art"><div class="inner-narrow">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../../knowledge/">Knowledge</a> <span>/</span> <a href="../../knowledge/#s-agents">Custom Agents &amp; Tools</a></nav>
+  <div class="art-meta"><span class="pill">Framework</span><span class="pill pill-line">Practitioner</span><span>29 October 2026</span><span>5 min read</span></div>
+  <h1>Two kinds of AI control: the authorisation boundary and the brake</h1>
+  <p class="hero-sub">A boundary decides what an AI system can reach; a brake decides how fast it can be stopped. The Fence and Brake Test shows which control a given use needs first, and why neither replaces the other.</p>
+  <p class="byline">By M.A.I. Consulting</p>
+</div></section>
+<section class="band"><div class="inner-narrow prose">
+<p>Ask a group of executives how they would keep an AI system under control and the answers tend to fall into two camps. One camp says: make sure we can stop it. A kill switch, an approval step, a person watching. The other says: make sure it cannot do the wrong thing in the first place. Restrict what it can access, and limit what it is allowed to do.</p>
+<p>Both camps are right, and each tends to underrate the other. They are describing two different kinds of control, with different strengths and different failure modes. Organisations that treat them as alternatives usually end up with one, and discover the missing one at an unhelpful moment.</p>
+<p><em>A brake decides when to stop; a boundary decides what is possible at all.</em></p>
+<h2>Two controls, defined plainly</h2>
+<p>An authorisation boundary is set before anything runs. It defines what a tool, an agent or a person using AI is permitted to touch and to do: which data, which systems, which actions, with whose approval. Whatever falls outside the boundary is not possible, however the system behaves.</p>
+<p>A brake operates while or after something runs. It is the ability to notice a problem and halt or reverse it: a human review before an output is sent, an alert that pauses a process, a rollback. Whatever is inside the boundary can still go wrong, and the brake is what limits the damage.</p>
+<p>The two answer different questions. The boundary answers: what is the worst this could reach? The brake answers: how quickly can we stop it once we see it?</p>
+<h2>The Fence and Brake Test</h2>
+<p>We use a simple test to see which control an organisation needs first for a given use of AI. It asks two questions about the task.</p>
+<ul>
+<li><strong>Can the harm be foreseen?</strong> If the ways it could go wrong are known, such as a summary revealing confidential data, a boundary can prevent them directly. Restrict the input, and the harm cannot occur. Foreseeable harms are best met with fences.</li>
+<li><strong>Can the harm be reversed in time?</strong> If an error can be caught and corrected before it matters, such as a draft that a person reviews before it goes out, a brake is sufficient and often cheaper. Reversible harms are best met with brakes.</li>
+<li><strong>If the harm is unforeseeable and irreversible, use both.</strong> Where the system might do something nobody anticipated, and the consequence cannot be undone, such as sending communications to beneficiaries or moving money, you need a tight fence and a fast brake together.</li>
+<li><strong>If the harm is foreseeable and reversible, do not over-engineer.</strong> A low-stakes drafting aid needs light controls of each kind. Heavy controls here mostly teach staff to work around them.</li>
+</ul>
+<p>The test does not require technical expertise. It requires asking, for each use, what could go wrong and whether it could be put right.</p>
+<h2>Why organisations reach for the brake first</h2>
+<p>Brakes feel reassuring. A human in the loop, an approval step or a kill switch are visible, and they signal diligence. Boundaries are less visible: a well-set permission that quietly prevents a problem produces no incident to point to.</p>
+<p>There is also a budgeting reason. Brakes are often added after a system is built and can be attached to almost anything. Boundaries need to be designed in, which means deciding at the start what the system will be allowed to touch. That is a harder conversation, and it is easily postponed until an incident makes it urgent.</p>
+<p>The result is a familiar pattern: an approval step on every output, with the system nonetheless holding access to far more data than the task requires. The brake is busy while the fence is missing.</p>
+<blockquote>
+<p>A brake without a boundary is a person standing in front of an open door, hoping to notice who walks through.</p>
+</blockquote>
+<h2>Why brakes alone fail</h2>
+<p>A brake depends on someone noticing in time. Reviewers tire, and approvals become habitual clicks. A process that runs fast may complete its damage before a person could intervene. And the person applying the brake must understand what they are looking at, which is not guaranteed when outputs are long or technical.</p>
+<p>Brakes also carry a hidden cost. Every approval takes time, and time is the first thing removed when a project is under budget pressure. A control that depends on someone's attention is fragile in exactly the conditions where it matters.</p>
+<h2>Why boundaries alone fail</h2>
+<p>Boundaries handle the harms you thought of. They are weak against the ones you did not. A system confined to a single folder may still produce a misleading summary of what is in it. A tool restricted to drafting may still draft something wrong or inappropriate. Boundaries limit reach; they do not guarantee quality.</p>
+<p>They also age. Permissions set at launch tend to widen as people ask for one more integration, and nobody reviews the accumulated access. A boundary that was tight in January can be loose by autumn.</p>
+<h2>A practical starting point</h2>
+<p>Take the three AI uses that matter most in your organisation. For each, write down in two lines what the boundary is, meaning what data, systems and actions it may touch, and what the brake is, meaning who or what can stop it, and how fast. If either line is blank, you have found your next piece of work. If the brake depends on one person's attention, ask what happens when they are away.</p>
+<p>Then set a review date for the boundary, because permissions widen quietly and someone should be asked to confirm that they still fit the purpose.</p>
+<h2>Questions for your next leadership meeting</h2>
+<ul>
+<li>For each important AI use, can we state its boundary and its brake in a sentence each?</li>
+<li>Where are we relying on a person's attention to compensate for access that is wider than the task needs?</li>
+<li>When were the permissions on our AI tools last reviewed by someone who did not set them?</li>
+</ul>
+<h2>The bottom line</h2>
+<p><strong>Decide first what an AI system may reach, then decide how quickly you can stop it, and treat neither as a substitute for the other.</strong> A boundary limits the damage a system can do, and a brake limits how long it can do it.</p>
+<h2>Sources</h2>
+<p>No external statistics cited. The Fence and Brake Test is a framework proposed by M.A.I. Consulting.</p>
+</div></section>
+<section class="band band-alt"><div class="inner-narrow"><div class="kicker">Series &middot; AI Consulting: leadership briefings &middot; part 25 of 30</div><div class="series-nav"><a href="../../knowledge/independent-ai-evaluation-ladder/"><small>Previous</small>Who tests the tester? Independent evaluation an organisation can afford</a><a href="../../knowledge/ai-job-design-task-contract/" class="r"><small>Next</small>Hiring and job design for an AI-fluent team: what belongs in the job description</a></div></div></section>
+<section class="band"><div class="inner"><div class="kicker">Keep reading</div><div class="grid-3"><a class="art" href="../../knowledge/blast-radius-what-an-automation-can-reach/"><span class="m">Framework &middot; 2 October 2026</span><h4>Blast radius: designing what an automation can reach</h4><p>Before connecting an agent to a new system, ask what it could reach on its worst day. Grant access per task rather than per agent, and separate read, write and send, so one mistake stays contained.</p><span class="foot">Custom Agents &amp; Tools &middot; 4 min</span></a><a class="art" href="../../knowledge/human-in-the-loop-where-humans-add-value/"><span class="m">Framework &middot; 2 October 2026</span><h4>Human-in-the-loop, and where the human actually adds value</h4><p>Human review only protects you if it sits where an agent&#x27;s confidence and competence diverge, before output is polished into fluent prose. Batch approvals and late reviews are oversight in name only.</p><span class="foot">Custom Agents &amp; Tools &middot; 4 min</span></a><a class="art" href="../../knowledge/browser-agents-logged-in-session-risk/"><span class="m">Briefing &middot; 2 October 2026</span><h4>Browser agents in a logged-in session: should you allow them at all?</h4><p>A browser agent in a logged-in session inherits everything that login can reach. Judge the session, not the task, and default to no where irreversible or highly sensitive actions are available.</p><span class="foot">Custom Agents &amp; Tools &middot; 4 min</span></a></div></div></section>
+<section class="band band-dark" style="text-align:center"><div class="inner">
+  <div class="kicker">05 · Custom Agents &amp; Tools</div>
+  <h2 style="margin:0 auto 1rem">Can the tool we already pay for do this task for us, every time?</h2>
+  <p class="lede" style="margin:0 auto 2rem">If this is the question on your desk, a thirty-minute call tells you whether the service fits, or that you do not need us yet.</p>
+  <div class="btn-row" style="justify-content:center"><a class="btn btn-gold" href="../../services/agents/">See the service</a><a class="btn btn-ghost" href="../../book/">Book a call</a><a class="btn btn-ghost" href="https://www.linkedin.com/company/94284867/" target="_blank" rel="noopener">Follow on LinkedIn</a></div>
+</div></section>
+<footer class="mai-footer">
+  <div class="mai-footer-inner">
+    <div>
+      <div class="mai-footer-logo">M.A.I. Consulting</div>
+      <div class="mai-footer-tag">Strategy &middot; AI &middot; Impact</div>
+    </div>
+    <div class="mai-footer-right">
+      <div class="footer-nav"><a href="../../services/">Services</a> <a href="../../use-cases/">The seven levels</a> <a href="../../knowledge/">Knowledge</a> <a href="../../explore-your-ai-readiness/">Free check</a> <a href="../../about/">About</a> <a href="../../privacy/">Privacy</a> <a href="../../contact-us/">Contact</a></div>
+      <div class="mai-footer-copy">mai4consulting.com &middot; &copy; 2026 M.A.I. Consulting</div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var b=document.getElementById('mai-burger'), l=document.getElementById('mai-links');
+  if(b&&l){b.addEventListener('click',function(){var o=l.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false');});}
+})();
+</script>
+<script src="../../assets/chat.js" defer></script>
+</body>
+</html>

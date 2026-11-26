@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>A new AI model is optional; its retirement date is not | M.A.I. Consulting</title>
+<meta name="description" content="Treat model launches as optional and retirement dates as deadlines: list which tools call which model, name an owner for each vendor notice, and keep ten real tasks as a test set for either decision."/>
+<link rel="canonical" href="https://mai4consulting.com/knowledge/ai-model-launches-and-retirements/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="M.A.I. Consulting"/>
+<meta property="og:title" content="A new AI model is optional; its retirement date is not"/>
+<meta property="og:description" content="Treat model launches as optional and retirement dates as deadlines: list which tools call which model, name an owner for each vendor notice, and keep ten real tasks as a test set for either decision."/>
+<meta property="og:url" content="https://mai4consulting.com/knowledge/ai-model-launches-and-retirements/"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../../assets/site.css"/>
+<link rel="stylesheet" href="../../assets/knowledge.css"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "A new AI model is optional; its retirement date is not", "description": "Treat model launches as optional and retirement dates as deadlines: list which tools call which model, name an owner for each vendor notice, and keep ten real tasks as a test set for either decision.", "datePublished": "2026-11-10", "mainEntityOfPage": "https://mai4consulting.com/knowledge/ai-model-launches-and-retirements/", "author": {"@type": "Person", "name": "Mamdouh Alqudsi"}, "publisher": {"@type": "Organization", "name": "M.A.I. Consulting"}}</script>
+</head>
+<body>
+<div class="mai-topbar">
+  <div class="mai-topbar-inner">
+    <a class="mai-brand" href="../../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
+    <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="mai-links" id="mai-links">
+      <li><a href="../../services/">Services</a></li>
+      <li><a href="../../use-cases/">Levels</a></li>
+      <li><a href="../../estimate/">Estimate</a></li>
+      <li><a href="../../explore-your-ai-readiness/">Free check</a></li>
+      <li><a href="../../knowledge/" aria-current="page">Knowledge</a></li>
+      <li><a href="../../for-funders/">For funders</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a class="mai-cta" href="../../book/">Book a call</a></li>
+    </ul>
+  </div>
+</div>
+<section class="hero hero-art"><div class="inner-narrow">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../../knowledge/">Knowledge</a> <span>/</span> <a href="../../knowledge/#s-support">Fluency Support</a></nav>
+  <div class="art-meta"><span class="pill">Guide</span><span class="pill pill-line">Practitioner</span><span>10 November 2026</span><span>5 min read</span></div>
+  <h1>A new AI model is optional; its retirement date is not</h1>
+  <p class="hero-sub">Treat model launches as optional and retirement dates as deadlines: list which tools call which model, name an owner for each vendor notice, and keep ten real tasks as a test set for either decision.</p>
+  <p class="byline">By Mamdouh Alqudsi</p>
+</div></section>
+<section class="band"><div class="inner-narrow prose">
+<p>Two dates on the vendors' own pages matter more to your team than any new model. Anthropic retires Claude Sonnet 4.5 on its API on 30 November 2026. Google lists 1 December 2026 as the earliest possible shutdown date for Gemini 2.5 Pro and Gemini 2.5 Flash. If a tool your team relies on calls one of those models through an API, it stops working at or soon after those dates (as of November 2026).</p>
+<p><em>Treat a new model as optional and a retirement date as a deadline, and keep ten of your own tasks ready so either decision takes an afternoon.</em></p>
+<p><strong>Do this week.</strong> Ask whoever runs your AI-based tools for one list with three columns: tool, model, platform. Check each model against the two dates above.</p>
+<h2>Launches are optional: decide once what would make you switch</h2>
+<p>The pace is the point. Anthropic's release table shows new Claude models on 1 September, 22 September, 28 September and 7 October. If every launch reopens the question of which tool your team uses, you will be reopening it every week or two.</p>
+<ul>
+<li><strong>The vendor's own default is a fine place to stop.</strong> Anthropic's model guide says plainly: "Most workloads start with Claude Opus 5.5." Its other advice is to start with a cheaper model where speed and volume matter and upgrade "only if necessary for specific capability gaps".</li>
+<li><strong>Write down your switching criterion now.</strong> For example: "We change the default when a new model does better on our test set, or when the current one is deprecated." One sentence, agreed once, saves a debate per launch.</li>
+<li><strong>The limit of this advice.</strong> If your hard tasks are clearly failing today, a launch may be the fix. Then test it, as in the third section. Optional does not mean ignore. It means you choose when.</li>
+</ul>
+<h2>Retirements are deadlines: find out what is built on which model</h2>
+<p>This is where the real risk sits, and it is mostly invisible to a manager. It does not concern people typing into a chat app. It concerns anything built on the APIs: a vendor's tool, an internal assistant, an automation someone set up last year. Each one names a specific model, and that model has an end date.</p>
+<ul>
+<li><strong>What happens at the date.</strong> Anthropic's deprecations page says "Requests to retired models fail", and promises at least 60 days' notice for publicly released models. Claude Sonnet 4.5 was deprecated on 30 September and retires on 30 November 2026, with Claude Sonnet 5.5 as the recommended replacement.</li>
+<li><strong>Google publishes earliest dates, not final ones.</strong> Its page says the listed dates are "the earliest possible dates" and that the exact date will come "with advance notice". Five preview models, all text-to-speech or audio, are listed for 17 November. Gemini 2.5 Pro and 2.5 Flash are listed for 1 December.</li>
+<li><strong>Where it runs changes the date.</strong> Anthropic's dates apply to its own platforms. Its page says Amazon Bedrock and Claude models on Google Cloud (Google managed) "set their own retirement schedules". So the question is not only which model, but through whose cloud.</li>
+</ul>
+<blockquote>
+<p>A launch changes what is possible. A retirement changes what still works. Only one of them has a deadline.</p>
+</blockquote>
+<h2>Keep ten real tasks as your test set</h2>
+<p>Both decisions need the same evidence: does the new model do our work at least as well as the old one? Anthropic's guide says "Having a good evaluation set is the most important step in the process". For a team, that does not mean a technical benchmark. It means a short folder of real work.</p>
+<ul>
+<li><strong>Pick ten tasks your team actually does.</strong> A donor update drafted from notes, a table summarised, a policy question answered from a long document. Keep the prompt, the input and the answer you accepted. Remove anything confidential first.</li>
+<li><strong>Judge on what the vendor lists.</strong> Anthropic's checklist is accuracy of responses, response quality and handling of edge cases, then weighing performance against cost. A one-line note per task ("same", "better", "missed the figure in row 12") is enough.</li>
+<li><strong>Rerun it on a trigger, not on every launch.</strong> Run it when a deprecation notice arrives, when your switching criterion is met, or when someone reports that the hard tasks are failing. An afternoon, not a project.</li>
+</ul>
+<h2>Name who reads the notice, and what they check</h2>
+<p>Anthropic says affected customers are notified by email. In many small organisations the address on the account belongs to a former colleague, a shared inbox nobody reads, or a vendor. The most useful thing a manager can do here takes ten minutes and one conversation.</p>
+<ul>
+<li><strong>Name one owner per AI system.</strong> For each tool built on an API, someone who knows which model it calls, through which platform, and who receives the vendor's notices.</li>
+<li><strong>Ask your vendor the direct question.</strong> "Which model and version does your product call, and what is your plan when it retires?" A vendor who cannot answer has a gap you will inherit.</li>
+<li><strong>Use the audit the vendor provides.</strong> For direct Claude API use, Anthropic's page describes a usage export: in Claude Console, open Usage, click Export, and the CSV breaks usage down by API key and model. That shows in one file whether anything still calls a deprecated model.</li>
+</ul>
+<h2>The bottom line</h2>
+<p><strong>Let launches wait until your own test set says they help, and put every retirement date in the calendar of a named owner.</strong></p>
+<h2>Sources</h2>
+<ul>
+<li>https://platform.claude.com/docs/en/about-claude/model-deprecations</li>
+<li>https://platform.claude.com/docs/en/about-claude/models/choosing-a-model</li>
+<li>https://aistudio.google.com/docs/deprecations</li>
+</ul>
+</div></section>
+<section class="band"><div class="inner"><div class="kicker">Keep reading</div><div class="grid-3"><a class="art" href="../../knowledge/vendor-concentration-exit-plan-ai-suppliers/"><span class="m">Analysis &middot; 6 October 2026</span><h4>Vendor concentration and the exit plan: diversify AI suppliers without doubling cost</h4><p>One AI supplier means one set of prices, terms and roadmaps. The Portability Ladder tests four things: method, data, workflow and account control. Diversify by being able to move, not by buying twice.</p><span class="foot">Custom Agents &amp; Tools &middot; 6 min</span></a><a class="art" href="../../knowledge/ai-tool-inventory-unlocks-everything/"><span class="m">Guide &middot; 11 September 2026</span><h4>The AI tool inventory: the least glamorous artefact that unlocks everything else</h4><p>A five-column spreadsheet of the AI tools staff actually use is the prerequisite for any policy or assessment, and it only works if built in an amnesty spirit.</p><span class="foot">AI Readiness Assessment &middot; 4 min</span></a><a class="art" href="../../knowledge/ai-adoption-year-two-problem/"><span class="m">Framework &middot; 9 November 2026</span><h4>The year-two problem: what happens after AI adoption succeeds</h4><p>A successful first year of AI adoption brings its own risks. Four drifts (demand, dependency, evidence and purpose) set in during year two, and each has a simple control and needs a named owner.</p><span class="foot">Fluency Support &middot; 5 min</span></a></div></div></section>
+<section class="band band-dark" style="text-align:center"><div class="inner">
+  <div class="kicker">04 · Fluency Support</div>
+  <h2 style="margin:0 auto 1rem">How do we stop this decaying in six months?</h2>
+  <p class="lede" style="margin:0 auto 2rem">If this is the question on your desk, a thirty-minute call tells you whether the service fits, or that you do not need us yet.</p>
+  <div class="btn-row" style="justify-content:center"><a class="btn btn-gold" href="../../services/support/">See the service</a><a class="btn btn-ghost" href="../../book/">Book a call</a><a class="btn btn-ghost" href="https://www.linkedin.com/company/94284867/" target="_blank" rel="noopener">Follow on LinkedIn</a></div>
+</div></section>
+<footer class="mai-footer">
+  <div class="mai-footer-inner">
+    <div>
+      <div class="mai-footer-logo">M.A.I. Consulting</div>
+      <div class="mai-footer-tag">Strategy &middot; AI &middot; Impact</div>
+    </div>
+    <div class="mai-footer-right">
+      <div class="footer-nav"><a href="../../services/">Services</a> <a href="../../use-cases/">The seven levels</a> <a href="../../knowledge/">Knowledge</a> <a href="../../explore-your-ai-readiness/">Free check</a> <a href="../../about/">About</a> <a href="../../privacy/">Privacy</a> <a href="../../contact-us/">Contact</a></div>
+      <div class="mai-footer-copy">mai4consulting.com &middot; &copy; 2026 M.A.I. Consulting</div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var b=document.getElementById('mai-burger'), l=document.getElementById('mai-links');
+  if(b&&l){b.addEventListener('click',function(){var o=l.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false');});}
+})();
+</script>
+<script src="../../assets/chat.js" defer></script>
+</body>
+</html>

@@ -1,17 +1,17 @@
 ---
 slug: stop-re-explaining-projects-and-skills
 title: "Stop re-explaining yourself: when to use a Project and when to build a Skill"
-summary: "A Project holds standing context, a Skill holds a repeatable process; this guide shows how to set up each, what to put in, and how to turn five manual steps into a Skill."
+summary: "A Project holds standing context, a Skill holds a repeatable process, memory keeps facts between chats and connectors replace pasting; how to set up each and turn five manual steps into a Skill."
 service: agents
 format: Guide
 level: Practitioner
-date: 2026-10-20
+date: 2026-10-26
 author: Mamdouh Alqudsi
 series:
-tags: [claude projects, skills, repeatable tasks, instructions, workflow]
+tags: [claude projects, skills, memory, connectors, instructions]
 related: ["agent-skill-or-tool-three-things-with-three-different-costs", "write-the-method-before-you-buy-the-agent", "ground-rules-for-team-ai-use"]
 linkedin_url: ''
-source_ref: "profile articles #27, #28, #46, #146 (newsletter ed 27)"
+source_ref: "profile articles #27, #28, #46, #146 (newsletter ed 27); newsletter ed 31 (write-down-what-you-retype, turn-the-playbook-into-a-command, connect-instead-of-paste)"
 featured: false
 ---
 Every new chat starts from zero. Whatever you explained carefully last week, whatever correction you made, whatever format you finally settled on, none of it carries forward unless you retype it. If you have pasted the same background into a chat for the third time this week, you have a memory problem that two features address in different ways.
@@ -63,6 +63,24 @@ Most recurring tasks already have an informal process. If you could talk a new c
 4. **Write as if teaching a competent stranger.** No shorthand, no "obviously". If a new hire would need it spelled out, so does the Skill.
 5. **Name it for the task, not the tool.** "Weekly Status Draft" gets used. "Report Helper" gets forgotten.
 
+### Facts go in instructions, procedures go in Skills
+
+Anthropic draws the line itself: Projects provide static background knowledge that is always loaded, while Skills provide specialised procedures that load only when needed. Anthropic describes a Skill as a folder of instructions, scripts and resources. In the Claude apps, Skills sit in the Customize menu, work on Free, Pro, Max, Team and Enterprise plans, need code execution switched on, and basic custom Skills need no coding. In Claude Code, a Skill becomes a slash command: the folder that holds its SKILL.md file names the command you type.
+
+The practical signal is size. When a Project's instructions, or a Claude Code CLAUDE.md file, have grown from facts about you into a step-by-step procedure, split the procedure out into a Skill. The instructions stay short and the procedure loads only when the task comes up.
+
+## Memory: what Claude keeps between chats
+
+Claude's chat memory is a third place for the context you would otherwise retype. Anthropic says memory is on by default on Free, Pro and Max plans; Claude saves it as separate topics as you work, and you can say "remember this" to save something directly. Every saved topic can be opened, edited or deleted in Settings, incognito chats are not saved to memory, and each Project keeps its own memory, so a grant-reporting Project does not mix with a newsletter Project.
+
+In Claude Code the same idea is a plain-text CLAUDE.md file. Anthropic suggests adding to it when Claude makes the same mistake twice, and recommends keeping each file under about 200 lines because longer files reduce adherence. Specific beats vague: "Write in British English, address donors by first name, never promise outcomes" can be checked; "keep the tone right" cannot.
+
+## Connect the tool instead of pasting from it
+
+The last form of re-explaining is copying content out of other apps into the chat. Connectors let Claude read from, and act in, those apps directly. On a personal account you add one from the "+" menu in a chat (Manage connectors), then sign in and grant permissions. On Team and Enterprise plans an Owner must add the connector first and can set each action to always allow, needs approval or blocked; restricting actions never grants more access than the source system already gives that person.
+
+Anthropic advises connecting only trusted services and reviewing the access each one requests, and notes that connected services may process data outside the US regardless of Claude's inference location settings. For an organisation holding donor or beneficiary data, settle that question before anyone clicks Connect. Connect the few tools you actually paste from: the aim is less copying, not more access.
+
 ## Test it on real work
 
 Run the Skill on a real example, not a hypothetical one, and compare the result with what you would have written by hand. Where it is off, do not just fix that one output. Fix the instruction that caused it. That correction is permanent, which is the point: the second run should already be better than the first, and the tenth should need no correction at all.
@@ -74,3 +92,12 @@ Run the Skill on a real example, not a hypothetical one, and compare the result 
 - Turn that page into a Skill named for the task, and run it on a real example today.
 - Fix the instruction, not the output, each time the Skill gets something wrong.
 - Review your Project's files and remove anything the conversations do not actually need.
+- Open your saved memory topics and delete any that are no longer true.
+
+## Sources
+
+- Anthropic, chat search and memory: https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context
+- Claude Code, memory: https://code.claude.com/docs/en/memory
+- Anthropic, what are Skills: https://support.claude.com/en/articles/12512176-what-are-skills
+- Claude Code, Skills: https://code.claude.com/docs/en/skills
+- Anthropic, connectors: https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities

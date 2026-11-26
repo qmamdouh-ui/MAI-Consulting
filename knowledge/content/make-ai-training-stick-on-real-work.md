@@ -5,14 +5,14 @@ summary: "Adoption stalls when a rollout ends at licences and a webinar, so desi
 service: support
 format: Guide
 level: Practitioner
-date: 2026-10-15
+date: 2026-11-02
 author: Mamdouh Alqudsi
 series: lead-adoption
 series_order: 2
 tags: [adoption, training design, change management, team habits, managers]
 related: ["the-seven-capability-levels-and-why-level-3-is-the-floor", "training-breadth-vs-behavioural-depth-the-trade-off-nobody", "the-attendance-record-trivial-to-keep-impossible-to-reconstruct"]
 linkedin_url: ''
-source_ref: "profile articles #101, #102, #104, #105, #109, #112, #121, #122, #124, #125, #134 (newsletter eds 21, 22, 24)"
+source_ref: "profile articles #101, #102, #104, #105, #109, #112, #121, #122, #124, #125, #134 (newsletter eds 21, 22, 24); newsletter ed 36 (claude-learning-style, gemini-guided-learning, quiz-yourself-on-your-notes, try-first-then-compare)"
 featured: false
 ---
 You have bought the licences and run the kickoff, and three months later most of your team works exactly as before. Take an illustrative case: adoption stalls at around a tenth of the team after licences and a single webinar. The tool has not changed. Nobody had been given a reason, a process or the time to change how they worked.
@@ -105,6 +105,17 @@ The same logic applies to inclusion programmes. A vocational training centre gav
 
 The largest jump in a team's output rarely comes from a better prompt. It comes from one person spending twenty minutes showing a colleague how they draft, check and send AI-assisted work. A personal habit has a ceiling of one person's week; a taught habit also removes the bottleneck where every request routes through the one person who knows how. Explaining it aloud exposes which steps were real judgement calls. No slides were needed: they sat together, opened a real task and narrated each decision, what to delegate, how to phrase the request, what to check before it went out.
 
+## Ask to be taught, not answered, when the skill matters
+
+An assistant that hands over the finished answer every time teaches nothing, and the skill a team member will have to repeat, explain or defend is exactly the one worth learning. Both main assistants have a tutoring mode that holds the answer back:
+
+- **Claude's Learning style.** Anthropic introduced Learning mode with Claude for Education on 2 April 2025, and Engadget reported on 14 August 2025 that a Learning option had been added to the style menu for all Claude.ai users, in which Claude guides you towards your own solution instead of giving it outright. Anthropic says styles are being migrated to skills, so check what your menu shows; typing "guide me step by step and ask me questions instead of giving the answer" works in any case.
+- **Gemini Guided Learning.** Google's help centre says you start it at gemini.google.com from Add Files, then More tools, then Guided Learning. Google describes it as a study partner that asks you questions and adapts to your level (Google blog, 23 September 2025), and you can upload the document you will actually use.
+- **A quiz on your own notes.** Google's August 2025 announcement says Gemini can build quizzes, flashcards and study guides in Canvas from your materials, for users aged 18 and over at launch. With Claude, the same result comes from a plain request: paste your notes and ask for ten questions, one at a time, with feedback after each answer. That is a suggestion, not a product feature.
+- **Try first, then compare.** Write your own paragraph or approach, then ask the AI to find the gaps. Engadget reported that Claude Code's Learning mode does this for code, leaving a marker that asks you to write five to ten lines yourself.
+
+Use answer mode when you only need the result, and tutoring mode for anything you will have to do again without help. A tutor can be wrong, so check facts against the source before you teach them to someone else.
+
 ## What to do next
 
 - Name one specific first use case per person, tied to a deliverable already on their calendar.
@@ -116,3 +127,12 @@ The largest jump in a team's output rarely comes from a better prompt. It comes 
 - If you have no training budget, take fifteen minutes from an existing weekly meeting and teach one real task.
 - If you fund or run a programme, schedule the one-month check-in before the workshop happens.
 - Ask your most fluent person to spend twenty minutes narrating a real task to one colleague this week.
+- Pick one topic you must learn this month, draft your own attempt first, and ask the AI to question you on it.
+
+## Sources
+
+- Anthropic, introducing Claude for Education: https://www.anthropic.com/news/introducing-claude-for-education
+- Engadget on Claude's Learning mode (14 August 2025): https://www.engadget.com/ai/anthropic-brings-claudes-learning-mode-to-regular-users-and-devs-170018471.html
+- Google, Guided Learning help: https://support.google.com/gemini/answer/16448384
+- Google blog, Guided Learning: https://blog.google/products/gemini/guided-learning-google-gemini/
+- Google Workspace Updates, Gemini study tools: https://workspaceupdates.googleblog.com/2025/08/gemini-study-tools.html

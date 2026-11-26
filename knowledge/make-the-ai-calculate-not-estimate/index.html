@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Make the AI calculate, not estimate: spreadsheet questions in Claude and Gemini | M.A.I. Consulting</title>
+<meta name="description" content="When the answer is a number, ask Claude or Gemini to calculate it inside the file and show the code or formula, then recount one figure yourself. Where to switch it on, what to ask and what to check."/>
+<link rel="canonical" href="https://mai4consulting.com/knowledge/make-the-ai-calculate-not-estimate/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="M.A.I. Consulting"/>
+<meta property="og:title" content="Make the AI calculate, not estimate: spreadsheet questions in Claude and Gemini"/>
+<meta property="og:description" content="When the answer is a number, ask Claude or Gemini to calculate it inside the file and show the code or formula, then recount one figure yourself. Where to switch it on, what to ask and what to check."/>
+<meta property="og:url" content="https://mai4consulting.com/knowledge/make-the-ai-calculate-not-estimate/"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23001830'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../../assets/site.css"/>
+<link rel="stylesheet" href="../../assets/knowledge.css"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Make the AI calculate, not estimate: spreadsheet questions in Claude and Gemini", "description": "When the answer is a number, ask Claude or Gemini to calculate it inside the file and show the code or formula, then recount one figure yourself. Where to switch it on, what to ask and what to check.", "datePublished": "2026-11-03", "mainEntityOfPage": "https://mai4consulting.com/knowledge/make-the-ai-calculate-not-estimate/", "author": {"@type": "Person", "name": "Mamdouh Alqudsi"}, "publisher": {"@type": "Organization", "name": "M.A.I. Consulting"}}</script>
+</head>
+<body>
+<div class="mai-topbar">
+  <div class="mai-topbar-inner">
+    <a class="mai-brand" href="../../"><span class="mai-brand-dot"></span>M.A.I. Consulting</a>
+    <button class="mai-burger" id="mai-burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="mai-links" id="mai-links">
+      <li><a href="../../services/">Services</a></li>
+      <li><a href="../../use-cases/">Levels</a></li>
+      <li><a href="../../estimate/">Estimate</a></li>
+      <li><a href="../../explore-your-ai-readiness/">Free check</a></li>
+      <li><a href="../../knowledge/" aria-current="page">Knowledge</a></li>
+      <li><a href="../../for-funders/">For funders</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a class="mai-cta" href="../../book/">Book a call</a></li>
+    </ul>
+  </div>
+</div>
+<section class="hero hero-art"><div class="inner-narrow">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../../knowledge/">Knowledge</a> <span>/</span> <a href="../../knowledge/#s-training">Team AI Training</a></nav>
+  <div class="art-meta"><span class="pill">Guide</span><span class="pill pill-line">Practitioner</span><span>3 November 2026</span><span>5 min read</span></div>
+  <h1>Make the AI calculate, not estimate: spreadsheet questions in Claude and Gemini</h1>
+  <p class="hero-sub">When the answer is a number, ask Claude or Gemini to calculate it inside the file and show the code or formula, then recount one figure yourself. Where to switch it on, what to ask and what to check.</p>
+  <p class="byline">By Mamdouh Alqudsi</p>
+</div></section>
+<section class="band"><div class="inner-narrow prose">
+<p>Paste a table into a chat, ask for the total or the trend, and the AI will give you a confident number. Sometimes it is right. The better habit is to make the AI calculate inside the file, using the tool built for that, and show you how it got there. Claude and Gemini both offer this now (as of October 2026). This guide covers where to switch it on, what to ask, and the one check that stays with you.</p>
+<p><em>When the answer is a number, ask the AI to calculate it and show the method, not just to read the table and reply.</em></p>
+<h2>Claude: switch on the tool that runs the numbers</h2>
+<p>Claude can write and run code on a file you upload, so a total or an average is computed rather than read off the page. That is the thesis in its simplest form: the number comes from a calculation you can inspect.</p>
+<ul>
+<li><strong>Turn it on first.</strong> Anthropic's help page (updated 6 August 2026) says to go to Settings &gt; Capabilities and turn on "Code execution and file creation". It is on by default for Free, Pro and Max. On Team and Enterprise, the organisation's owners control it.</li>
+<li><strong>Upload the data, then ask for the calculation.</strong> Export the sheet as CSV, upload it, and try: "Calculate the total and the monthly average for each region. Show the code you used and the number of rows you counted." The limit is 30 MB per file.</li>
+<li><strong>Ask for a spreadsheet back, not only an answer.</strong> The same page says Claude can create Excel files with working formulas. Ask for the result as an .xlsx so the formulas sit in the cells where you can read them. Anthropic notes this uses more of your usage limit than a normal chat.</li>
+</ul>
+<h2>Claude for Excel: ask where the number came from</h2>
+<p>If your work already lives in Excel, the add-in brings Claude into the workbook itself. Here the habit is to ask for the derivation, because the answer then points at real cells you can open.</p>
+<ul>
+<li><strong>Who has it.</strong> Anthropic's documentation says Claude for Excel is generally available on the Pro, Max, Team and Enterprise plans. It runs on Excel on the web, on Windows with Microsoft 365, and on Mac. It does not run on Excel for iPad or Android, or on Excel 2016 and 2019.</li>
+<li><strong>Ask it to trace, not just to answer.</strong> The documentation's own example prompt is: "Walk me through how the revenue number in cell C42 is calculated." Answers include cell-level citations you can click to jump to the cell.</li>
+<li><strong>Use it to find errors too.</strong> Another documented prompt: "Trace why cell H15 is returning #DIV/0." Anthropic warns you before Claude overwrites existing data, and asks you to confirm risky operations.</li>
+</ul>
+<blockquote>
+<p>A number you can trace back to a cell is worth more than a better-sounding number you cannot.</p>
+</blockquote>
+<h2>Gemini in Google Sheets: let it write the formula, then read it</h2>
+<p>Gemini works from a side panel in Sheets. It can put a formula into a cell, which is the most checkable form a calculation can take, and it can show the code behind an analysis.</p>
+<ul>
+<li><strong>Open it and ask for a formula.</strong> Google's help page says to click Ask Gemini at the top right of the spreadsheet. Its example prompt is "Create a formula that divides goals by games." You can insert the result into the selected cell or ask for another version.</li>
+<li><strong>For analysis, open the code.</strong> Ask "Identify trends in this table", then use "Show code" on the response to see what Gemini ran. When a formula shows an error, hover over the cell and click Fix.</li>
+<li><strong>Know the limits Google lists.</strong> It works best with native Google Sheets files, so save an Excel file as a Sheet first. An inserted chart does not update when the original data changes. On Android (launched 10 September 2026) you can ask about your data and create charts, but formulas need the web version. It requires an eligible Google Workspace or Google AI plan.</li>
+</ul>
+<h2>Check one number yourself before you trust the rest</h2>
+<p>All three tools make the method visible. None of them makes it correct by default. The last step is yours, and it is short.</p>
+<ul>
+<li><strong>Recount one figure by hand.</strong> Pick a single total or average, filter the sheet yourself and compare. If the row count or the figure differs, the method is wrong somewhere, and the other numbers are suspect too.</li>
+<li><strong>Read the method, not only the result.</strong> In the code or formula, check which columns were used, whether blanks were skipped and whether the date range is the one you meant.</li>
+<li><strong>Only use files you trust.</strong> Anthropic warns that files from external sources can carry hidden instructions that try to make Claude leak data or change records. Its own guidance says Claude for Excel is not recommended for audit-critical calculations without verification.</li>
+</ul>
+<p>A calculation you can see is easier to check, but someone still has to check it.</p>
+<h2>The bottom line</h2>
+<p><strong>When the answer is a number, ask the AI to calculate it in the file and show its method, then check one figure yourself.</strong> Try it today: take a sheet you report from every month, ask Claude or Gemini for one total with the code or formula shown, and compare it with the figure you already have.</p>
+<h2>Sources</h2>
+<ul>
+<li>https://support.claude.com/en/articles/12111783</li>
+<li>https://claude.com/docs/office-agents/excel</li>
+<li>https://support.google.com/docs/answer/14356410?hl=en</li>
+<li>https://workspaceupdates.googleblog.com/2026/08/gemini-in-google-sheets-is-now-available-on-Android-devices.html</li>
+</ul>
+</div></section>
+<section class="band band-alt"><div class="inner-narrow"><div class="kicker">Series &middot; Working with AI day to day &middot; part 11 of 15</div><div class="series-nav"><a href="../../knowledge/getting-work-into-and-out-of-claude-and-gemini/"><small>Previous</small>Getting work into and out of Claude and Gemini: show the screen, ask for the file</a><a href="../../knowledge/fix-one-paragraph-without-rewriting-the-rest/" class="r"><small>Next</small>Fix one paragraph without rewriting the rest: selection editing in Claude and Gemini</a></div></div></section>
+<section class="band"><div class="inner"><div class="kicker">Keep reading</div><div class="grid-3"><a class="art" href="../../knowledge/check-ai-output-before-it-ships/"><span class="m">Guide &middot; 28 October 2026</span><h4>Checking AI output before it ships: ten habits that cost minutes, not afternoons</h4><p>Read AI drafts as an editor, own what carries your name, check against the goal, recompute numbers, look for omissions in summaries, and build short checks and checkpoints into the work.</p><span class="foot">Team AI Training &middot; 10 min</span></a><a class="art" href="../../knowledge/getting-work-into-and-out-of-claude-and-gemini/"><span class="m">Guide &middot; 26 November 2026</span><h4>Getting work into and out of Claude and Gemini: show the screen, ask for the file</h4><p>Two kinds of retyping waste time with AI: describing a screen on the way in and reformatting text on the way out. Upload paths, limits and export options for Claude and Gemini, and the check at each end.</p><span class="foot">Team AI Training &middot; 7 min</span></a><a class="art" href="../../knowledge/ai-playbook-finance-administration/"><span class="m">Guide &middot; 17 September 2026</span><h4>AI playbook for Finance and Administration: what to delegate, what to keep</h4><p>Which Finance and Administration tasks to delegate to AI, such as first-pass reconciliation and drafting, and which never to hand over, including authorising payments, signing year-end statements and investigating irregularities.</p><span class="foot">Team AI Training &middot; 3 min</span></a></div></div></section>
+<section class="band band-dark" style="text-align:center"><div class="inner">
+  <div class="kicker">03 · Team AI Training</div>
+  <h2 style="margin:0 auto 1rem">How should AI be used in my role?</h2>
+  <p class="lede" style="margin:0 auto 2rem">If this is the question on your desk, a thirty-minute call tells you whether the service fits, or that you do not need us yet.</p>
+  <div class="btn-row" style="justify-content:center"><a class="btn btn-gold" href="../../services/training/">See the service</a><a class="btn btn-ghost" href="../../book/">Book a call</a><a class="btn btn-ghost" href="https://www.linkedin.com/company/94284867/" target="_blank" rel="noopener">Follow on LinkedIn</a></div>
+</div></section>
+<footer class="mai-footer">
+  <div class="mai-footer-inner">
+    <div>
+      <div class="mai-footer-logo">M.A.I. Consulting</div>
+      <div class="mai-footer-tag">Strategy &middot; AI &middot; Impact</div>
+    </div>
+    <div class="mai-footer-right">
+      <div class="footer-nav"><a href="../../services/">Services</a> <a href="../../use-cases/">The seven levels</a> <a href="../../knowledge/">Knowledge</a> <a href="../../explore-your-ai-readiness/">Free check</a> <a href="../../about/">About</a> <a href="../../privacy/">Privacy</a> <a href="../../contact-us/">Contact</a></div>
+      <div class="mai-footer-copy">mai4consulting.com &middot; &copy; 2026 M.A.I. Consulting</div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var b=document.getElementById('mai-burger'), l=document.getElementById('mai-links');
+  if(b&&l){b.addEventListener('click',function(){var o=l.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false');});}
+})();
+</script>
+<script src="../../assets/chat.js" defer></script>
+</body>
+</html>

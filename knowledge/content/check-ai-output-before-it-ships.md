@@ -5,14 +5,14 @@ summary: "Read AI drafts as an editor, own what carries your name, check against
 service: training
 format: Guide
 level: Practitioner
-date: 2026-10-22
+date: 2026-10-28
 author: Mamdouh Alqudsi
 series: fluency-foundations
 series_order: 3
 tags: [verification, review, diligence, checkpoints, discernment]
 related: ["calibrate-trust-in-ai-output", "the-four-checks-before-anything-leaves-the-building", "the-verification-tax-what-checking-costs-and-when-it-exceeds-the"]
 linkedin_url: ''
-source_ref: "profile articles #93, #95, #96, #98, #99, #140, #141, #149, #152, #154 (newsletter eds 26, 28, 29)"
+source_ref: "profile articles #93, #95, #96, #98, #99, #140, #141, #149, #152, #154 (newsletter eds 26, 28, 29); newsletter ed 33 (fluent-is-not-verified, make-claims-checkable, a-named-person-before-send)"
 featured: false
 ---
 An AI draft looks finished the moment it appears, and that is when mistakes get through. Picture a single unchecked number that makes it into a client email: finding it before sending would take thirty seconds, and finding it afterwards takes an afternoon of damage control. The scenarios in this guide are illustrative, not reports from client engagements.
@@ -52,6 +52,8 @@ Suppose a factually wrong figure from an AI draft reaches a client-facing report
 - **The standard is the same as for your own writing.** You would not submit your own unchecked first draft as final work.
 
 This blurs with AI because a human collaborator's errors feel like theirs, while a tool's errors can feel like nobody's. With no one to blame, the checking quietly loosens. Nobody downstream asks which model made the mistake. They ask who signed off.
+
+Ownership only works when it has a name attached. Microsoft's Copilot privacy page says responses "aren't guaranteed to be 100% factual" and that users "should still use their judgment when reviewing the output before sending them to others". A small team can turn that into a rule short enough to survive a busy week: internal notes get a self-check; anything external, financial or about a person gets a second reader, and that reader's name goes in the file.
 
 ## 4. Build the thirty-second check
 
@@ -93,6 +95,18 @@ An AI summary can contain a figure that fits the surrounding text perfectly and 
 - **Ask the tool to show its working.** A calculation laid out step by step is more likely to expose its own mistake than a bare final figure.
 - **Build the check in calm moments.** The urge to trust a plausible number is strongest when time is short, which is when a wrong number costs most.
 
+Confident and wrong is documented, expected behaviour. NIST's Generative AI Profile (NIST AI 600-1, July 2024) defines confabulation as systems that "generate and confidently present erroneous or false content", and adds that outputs "may also include confabulated logic or citations that purport to justify or explain the system's answer". The cost is real: in 2025 Deloitte Australia agreed to partially refund an AU$440,000 government contract after a report it produced was found to contain references to non-existent research and a fabricated quotation from a federal court judgment; the firm later disclosed that a generative AI model had been used in the work (City A.M. report). You do not need to verify every word. Check what would hurt if wrong: every citation, statistic, name, date and amount. Open each cited source, confirm it exists and says what the draft says, and recompute any number that drives a decision.
+
+### Ask for the evidence before you check
+
+Verification is faster when the draft is built to be checked. Anthropic's guidance on reducing hallucinations comes down to three prompting habits:
+
+- **Give permission not to know.** Anthropic says explicitly allowing Claude to admit uncertainty "can drastically reduce false information". A line such as "if the document does not say, tell me so" costs nothing.
+- **Ground the answer in quotes.** For long documents, ask for word-for-word quotes first and an analysis based only on those quotes, so every point traces back to the source text.
+- **Make it retract what it cannot support.** After drafting, ask for a supporting quote for each claim and the removal of any claim without one, with the gap marked so a person sees it.
+
+The same page is plain about the limit: these techniques "significantly reduce hallucinations, they don't eliminate them entirely". A draft with quotes attached and gaps marked turns the human check into a comparison instead of a search.
+
 ## 8. Read summaries for what they left out
 
 Early on, the instinct is to scan a summary for something that looks wrong. With more use, the better question is what it omitted, because an omission never announces itself.
@@ -128,4 +142,13 @@ A board member who is not told how a summary was made reads every number with an
 - Add the goal to your prompts for anything with a limit (length, format, tone), and check the result against the goal, not the limit.
 - Before sending anything with a figure, open the source and confirm each number.
 - For any task longer than an hour, mark in advance where the first output and each change of work type will be checked.
-- Agree with your team that the person who sends the work owns it, whichever tool drafted it.
+- Agree with your team that the person who sends the work owns it, whichever tool drafted it, and that external work carries a named second reader.
+- In your next prompt on a long document, ask for supporting quotes and for "not stated" where the document is silent.
+
+## Sources
+
+- NIST AI 600-1, Generative AI Profile (July 2024): https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf
+- City A.M. on the Deloitte Australia refund: https://www.cityam.com/?p=2367690
+- Anthropic, reduce hallucinations: https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations
+- Anthropic support, incorrect or misleading responses: https://support.claude.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on
+- Microsoft, Microsoft 365 Copilot privacy: https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy

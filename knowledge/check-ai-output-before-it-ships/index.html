@@ -18,7 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="../../assets/site.css"/>
 <link rel="stylesheet" href="../../assets/knowledge.css"/>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Checking AI output before it ships: ten habits that cost minutes, not afternoons", "description": "Read AI drafts as an editor, own what carries your name, check against the goal, recompute numbers, look for omissions in summaries, and build short checks and checkpoints into the work.", "datePublished": "2026-10-22", "mainEntityOfPage": "https://mai4consulting.com/knowledge/check-ai-output-before-it-ships/", "author": {"@type": "Person", "name": "Mamdouh Alqudsi"}, "publisher": {"@type": "Organization", "name": "M.A.I. Consulting"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Checking AI output before it ships: ten habits that cost minutes, not afternoons", "description": "Read AI drafts as an editor, own what carries your name, check against the goal, recompute numbers, look for omissions in summaries, and build short checks and checkpoints into the work.", "datePublished": "2026-10-28", "mainEntityOfPage": "https://mai4consulting.com/knowledge/check-ai-output-before-it-ships/", "author": {"@type": "Person", "name": "Mamdouh Alqudsi"}, "publisher": {"@type": "Organization", "name": "M.A.I. Consulting"}}</script>
 </head>
 <body>
 <div class="mai-topbar">
@@ -39,7 +39,7 @@
 </div>
 <section class="hero hero-art"><div class="inner-narrow">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="../../knowledge/">Knowledge</a> <span>/</span> <a href="../../knowledge/#s-training">Team AI Training</a></nav>
-  <div class="art-meta"><span class="pill">Guide</span><span class="pill pill-line">Practitioner</span><span>22 October 2026</span><span>8 min read</span></div>
+  <div class="art-meta"><span class="pill">Guide</span><span class="pill pill-line">Practitioner</span><span>28 October 2026</span><span>10 min read</span></div>
   <h1>Checking AI output before it ships: ten habits that cost minutes, not afternoons</h1>
   <p class="hero-sub">Read AI drafts as an editor, own what carries your name, check against the goal, recompute numbers, look for omissions in summaries, and build short checks and checkpoints into the work.</p>
   <p class="byline">By Mamdouh Alqudsi</p>
@@ -75,6 +75,7 @@
 <li><strong>The standard is the same as for your own writing.</strong> You would not submit your own unchecked first draft as final work.</li>
 </ul>
 <p>This blurs with AI because a human collaborator's errors feel like theirs, while a tool's errors can feel like nobody's. With no one to blame, the checking quietly loosens. Nobody downstream asks which model made the mistake. They ask who signed off.</p>
+<p>Ownership only works when it has a name attached. Microsoft's Copilot privacy page says responses "aren't guaranteed to be 100% factual" and that users "should still use their judgment when reviewing the output before sending them to others". A small team can turn that into a rule short enough to survive a busy week: internal notes get a self-check; anything external, financial or about a person gets a second reader, and that reader's name goes in the file.</p>
 <h2>4. Build the thirty-second check</h2>
 <p>The habit that would prevent the client-email mistake above is smaller than the mistake by orders of magnitude. Three versions:</p>
 <ul>
@@ -107,6 +108,15 @@
 <li><strong>Ask the tool to show its working.</strong> A calculation laid out step by step is more likely to expose its own mistake than a bare final figure.</li>
 <li><strong>Build the check in calm moments.</strong> The urge to trust a plausible number is strongest when time is short, which is when a wrong number costs most.</li>
 </ul>
+<p>Confident and wrong is documented, expected behaviour. NIST's Generative AI Profile (NIST AI 600-1, July 2024) defines confabulation as systems that "generate and confidently present erroneous or false content", and adds that outputs "may also include confabulated logic or citations that purport to justify or explain the system's answer". The cost is real: in 2025 Deloitte Australia agreed to partially refund an AU$440,000 government contract after a report it produced was found to contain references to non-existent research and a fabricated quotation from a federal court judgment; the firm later disclosed that a generative AI model had been used in the work (City A.M. report). You do not need to verify every word. Check what would hurt if wrong: every citation, statistic, name, date and amount. Open each cited source, confirm it exists and says what the draft says, and recompute any number that drives a decision.</p>
+<h3>Ask for the evidence before you check</h3>
+<p>Verification is faster when the draft is built to be checked. Anthropic's guidance on reducing hallucinations comes down to three prompting habits:</p>
+<ul>
+<li><strong>Give permission not to know.</strong> Anthropic says explicitly allowing Claude to admit uncertainty "can drastically reduce false information". A line such as "if the document does not say, tell me so" costs nothing.</li>
+<li><strong>Ground the answer in quotes.</strong> For long documents, ask for word-for-word quotes first and an analysis based only on those quotes, so every point traces back to the source text.</li>
+<li><strong>Make it retract what it cannot support.</strong> After drafting, ask for a supporting quote for each claim and the removal of any claim without one, with the gap marked so a person sees it.</li>
+</ul>
+<p>The same page is plain about the limit: these techniques "significantly reduce hallucinations, they don't eliminate them entirely". A draft with quotes attached and gaps marked turns the human check into a comparison instead of a search.</p>
 <h2>8. Read summaries for what they left out</h2>
 <p>Early on, the instinct is to scan a summary for something that looks wrong. With more use, the better question is what it omitted, because an omission never announces itself.</p>
 <ul>
@@ -137,7 +147,16 @@
 <li>Add the goal to your prompts for anything with a limit (length, format, tone), and check the result against the goal, not the limit.</li>
 <li>Before sending anything with a figure, open the source and confirm each number.</li>
 <li>For any task longer than an hour, mark in advance where the first output and each change of work type will be checked.</li>
-<li>Agree with your team that the person who sends the work owns it, whichever tool drafted it.</li>
+<li>Agree with your team that the person who sends the work owns it, whichever tool drafted it, and that external work carries a named second reader.</li>
+<li>In your next prompt on a long document, ask for supporting quotes and for "not stated" where the document is silent.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>NIST AI 600-1, Generative AI Profile (July 2024): https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf</li>
+<li>City A.M. on the Deloitte Australia refund: https://www.cityam.com/?p=2367690</li>
+<li>Anthropic, reduce hallucinations: https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations</li>
+<li>Anthropic support, incorrect or misleading responses: https://support.claude.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on</li>
+<li>Microsoft, Microsoft 365 Copilot privacy: https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy</li>
 </ul>
 </div></section>
 <section class="band band-alt"><div class="inner-narrow"><div class="kicker">Series &middot; AI fluency foundations &middot; part 3 of 4</div><div class="series-nav"><a href="../../knowledge/calibrate-trust-in-ai-output/"><small>Previous</small>Calibrating trust in AI: diagnose the limit, match scrutiny to the stakes</a><a href="../../knowledge/what-ai-fluency-means-the-4ds-in-practice/" class="r"><small>Next</small>What AI fluency actually means: the 4Ds, reread after in-house practice</a></div></div></section>

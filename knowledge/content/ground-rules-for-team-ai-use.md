@@ -5,14 +5,14 @@ summary: "Three things a manager can set in an afternoon: a specific list of wha
 service: policy
 format: Framework
 level: Entry
-date: 2026-10-21
+date: 2026-10-28
 author: Mamdouh Alqudsi
 series: lead-adoption
 series_order: 4
 tags: [ground rules, data privacy, managers, disclosure, vocabulary]
 related: ["red-lines-the-decisions-that-never-get-delegated", "permitted-use-by-role-the-table-that-does-the-work", "what-personal-data-means-once-a-prompt-leaves-the-building"]
 linkedin_url: ''
-source_ref: "profile articles #44, #45, #50, #148 (newsletter ed 28)"
+source_ref: "profile articles #44, #45, #50, #148 (newsletter ed 28); newsletter ed 33 (know-what-goes-in)"
 featured: false
 ---
 If you manage people, your job is not to use AI well yourself. It is to make sure the people who report to you do. Most of that comes down to three small pieces of groundwork: what stays out of the chat window, what people feel safe saying about their own use, and a shared set of words.
@@ -35,6 +35,12 @@ Most AI tools are safe for most work. The exception is not a type of task but a 
 > If you wouldn't paste it into a public Slack channel at your company, don't paste it into a chat window either.
 
 The thirty-second habit: before pasting, ask who else could plausibly see this if it left the room right now. If the honest answer includes people who should not see it, redact, generalise or leave it out.
+
+### Know which account you are typing into
+
+The same tool can carry different terms depending on the plan. Anthropic's update of 28 August 2025 gave Claude Free, Pro and Max users a choice over whether their chats are used for model training, with data kept for up to five years if they opt in and 30 days if they do not; Claude for Work, Government, Education and API use were not affected. Microsoft states that prompts, responses and data accessed through Microsoft Graph in Microsoft 365 Copilot are not used to train foundation models, and that Copilot only surfaces organisational data the user already has permission to view. The UK government's 2024 guidance to civil servants, since superseded by a broader framework, drew the line most bluntly: "Never put sensitive information or personal data into these tools."
+
+Two checks follow. Confirm which plan each person on the team actually uses for work, and where its training setting sits. Then tidy file permissions before you connect anything: Copilot works within SharePoint and other existing permissions, so an over-shared folder becomes an over-shared answer.
 
 ## Rule 2: Set the boundary once, specifically
 
@@ -82,3 +88,10 @@ Skip the architecture, the training process and the maths. Vocabulary that does 
 - Say aloud in your next team meeting that you used AI for a first draft, and what you changed.
 - Ask each person in their next one-to-one what they had to fix after using AI.
 - Print the five terms and agree them at the start of your next AI discussion.
+- List which plan each person uses for work, and check its training setting.
+
+## Sources
+
+- Anthropic, updates to consumer terms (28 August 2025): https://www.anthropic.com/news/updates-to-our-consumer-terms
+- Microsoft, Microsoft 365 Copilot privacy: https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy
+- UK government, guidance to civil servants on use of generative AI: https://www.gov.uk/government/publications/guidance-to-civil-servants-on-use-of-generative-ai/guidance-to-civil-servants-on-use-of-generative-ai
