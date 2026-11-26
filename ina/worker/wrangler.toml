@@ -1,0 +1,29 @@
+name = "ina-chat"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+
+[vars]
+MODEL = "claude-sonnet-5-5"
+ALLOWED_ORIGINS = "https://mai4consulting.com,https://www.mai4consulting.com"
+HOURLY_PER_VISITOR = "30"   # messages per visitor per hour
+MAX_PER_SESSION = "40"      # messages per conversation
+DAILY_CAP = "600"           # messages per day across the site: the cost ceiling
+LOG_TTL_DAYS = "1095"       # three years, as the privacy page says for assistant transcripts
+TEST_HOURLY = "40"          # messages per hour for each community agent that tests her
+LOG_REPO = "qmamdouh-ui/MAI-Consulting-Employees"   # private repo that receives the logs
+LOG_PATH = "agent-logs/site-intake"
+
+# Copies each day's conversations to GitHub every 10 minutes.
+[triggers]
+crons = ["*/10 * * * *"]
+
+# Create with: wrangler kv namespace create INA_KV   (paste the id below)
+[[kv_namespaces]]
+binding = "INA_KV"
+id = "8bf981a77359489486c2add5309eb654"
+
+# Secrets, set with `wrangler secret put <NAME>`; never written to a file:
+#   ANTHROPIC_API_KEY   the key Ina uses
+#   LOG_TOKEN           bearer token for the /logs endpoint (manual pulls)
+#   GITHUB_TOKEN        fine-grained token: Contents read and write on the Employees repo only
+#   TEST_TOKEN          shared token the community agents use to test Ina

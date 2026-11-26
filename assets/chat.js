@@ -948,6 +948,53 @@ function build(){
   }
   /* ── conversation state ── */
   var S = { stage: "intake", slots: {}, needs: {}, log: [], asked: [], cur: null, rec: null, contact: {}, cap: null, started: new Date().toISOString() };
+  /* Language-model mode. Off unless the page sets window.MAI_INA_ENDPOINT; if the service fails, the
+     rule-based assistant below takes over for the rest of the visit. The model never sees more than
+     this conversation; the service adds the rules and the knowledge base and keeps the log. */
+  var INA_ENDPOINT_DEFAULT = "https://ina-chat.ina-maiconsulting.workers.dev";   /* set to the Worker URL when Ina goes live; empty keeps the rule-based assistant */
+  var INA_URL = (window.MAI_INA_ENDPOINT || INA_ENDPOINT_DEFAULT).replace(/\/+$/, "");
+  var LLM = { on: !!INA_URL, down: false, busy: false, replay: false, sent: false, msgs: [],
+              sid: Date.now().toString(36) + Math.random().toString(36).slice(2, 10) };
+  function linkify(h) {
+    return h.replace(/https:\/\/(?:www\.)?mai4consulting\.com\/[^\s<]*[^\s<.,;:)]/g, function (u) { return '<a href="' + u + '" target="_blank" rel="noopener">' + u + "</a>"; }).replace(/\n/g, "<br/>");
+  }
+  function llmSend(meta) {
+    var ld = meta && meta.lead || {};
+    if (LLM.sent || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(ld.email || "")) return;
+    LLM.sent = true;
+    var msg = "CONVERSATION WITH THE SITE ASSISTANT (language model)\n\nLanguage: " + lang.toUpperCase() + "\nPage: " + location.href +
+      "\nStarted: " + S.started + "\nNeed: " + (meta.need || "not stated") + "\nServices Ina suggested: " + ((meta.suggested || []).join(", ") || "none") +
+      "\nCall requested: " + (meta.call_requested ? "yes" : "not yet") + "\n\n--- CONTACT ---\nName: " + (ld.name || "not given") + "\nEmail: " + ld.email +
+      "\nOrganisation: " + (ld.organisation || "not given") + "\nSession: " + LLM.sid + "\n\n--- FULL TRANSCRIPT ---\n" +
+      S.log.map(function (t) { return (t.r === "u" ? "Visitor: " : "Ina: ") + t.t; }).join("\n\n");
+    loadEmailJS().then(function () {
+      try { window.emailjs.init({ publicKey: "JJs3lu55OHI_pbjth" }); } catch (e) {}
+      return window.emailjs.send("service_an94235", "template_bv6m1l3", {
+        from_name: (ld.name || "Website visitor") + " (via Ina, the site assistant)", from_email: ld.email,
+        organization: ld.organisation || "not given", job_title: "not given", sector: "not given", team_size: "not given",
+        service: "Assistant conversation: " + ((meta.suggested || []).join(", ") || "general enquiry"), referral: "Ina (site assistant)",
+        preferred: meta.call_requested ? "Call requested" : "Email", message: msg, to_email: "q.mamdouh@mai4consulting.com" });
+    }).catch(function () { LLM.sent = false; });
+  }
+  function llmAsk(q) {
+    if (LLM.busy) return;
+    LLM.busy = true; LLM.msgs.push({ role: "user", content: q }); chips.innerHTML = "";
+    var wait = add("bot", "…"), ctl = new AbortController(), to = setTimeout(function () { ctl.abort(); }, 30000);
+    fetch(INA_URL + "/chat", { method: "POST", headers: { "content-type": "application/json" }, signal: ctl.signal,
+      body: JSON.stringify({ session: LLM.sid, messages: LLM.msgs.slice(-16), lang: lang, page: location.pathname }) })
+      .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
+      .then(function (d) {
+        clearTimeout(to);
+        if (!d || typeof d.reply !== "string" || !d.reply) throw new Error("empty");
+        wait.remove(); LLM.msgs.push({ role: "assistant", content: d.reply }); LLM.busy = false;
+        var meta = d.meta || {};
+        if (meta.lang && UI[meta.lang] && meta.lang !== lang) setLang(meta.lang);
+        say(linkify(esc(d.reply)), d.reply); llmSend(meta);
+      })
+      .catch(function () {
+        clearTimeout(to); wait.remove(); LLM.msgs.pop(); LLM.busy = false; LLM.down = true; LLM.replay = true; ask(q);
+      });
+  }
   function A() { return AGT[lang] || AGT.en; }
   function logT(r, t) { S.log.push({ r: r, t: t }); if (S.log.length > 60) S.log.shift(); }
   function say(html, plain) { add("bot", html); logT("b", plain || html.replace(/<[^>]*>/g, "")); }
@@ -1045,7 +1092,9 @@ function build(){
 
   function ask(q) {
     q = (q || "").trim(); if (!q) return;
-    add("user", esc(q)); logT("u", q); inp.value = "";
+    if (!LLM.replay) { add("user", esc(q)); logT("u", q); }
+    LLM.replay = false; inp.value = "";
+    if (LLM.on && !LLM.down) { llmAsk(q); return; }
     /* a short answer with no French or Arabic marker is not a switch back to English */
     var dl = detect(q);
     if (dl !== lang && (dl !== "en" || q.trim().split(/\s+/).length >= 5)) setLang(dl);

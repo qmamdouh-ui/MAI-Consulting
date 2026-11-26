@@ -2,7 +2,13 @@
 !.claude/agents/
 .claude/agents/*
 !.claude/agents/knowledge-curator.md
+!.claude/agents/site-intake.md
 **/.generated
 logs/
 
 Employees/
+
+# Ina service: generated bundle
+ina/worker/src/content.js
+ina/worker/node_modules/
+ina/worker/.wrangler/
