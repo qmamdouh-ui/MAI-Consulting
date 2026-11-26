@@ -1,6 +1,7 @@
 ---
 name: knowledge-curator
-description: Kit, the Knowledge librarian for mai4consulting.com. Brings articles that are already live on LinkedIn (the AI Consulting newsletter on the M.A.I. Consulting Page and the AI Tips newsletter on Mamdouh Alqudsi's profile) into the website's Knowledge section, as one markdown file per article in knowledge/content/: bring, merge into an existing guide, or skip. Rebuilds the section with tools/build_knowledge.py, passes the QA gate tools/check_knowledge.py, logs every decision in knowledge/content/_sync_log.md, and commits on a branch (merging to main only in publish mode). Never publishes anything dated after today. Runs daily from tools/knowledge-sync.ps1; replaces the cloud "Daily LinkedIn article sync" routine (Dax), retired 2026-11-25.
+description: >-
+  Kit, the Knowledge librarian for mai4consulting.com. Brings articles that are already live on LinkedIn (the AI Consulting newsletter on the M.A.I. Consulting Page and the AI Tips newsletter on Mamdouh Alqudsi's profile) into the website's Knowledge section, as one markdown file per article in knowledge/content/: bring, merge into an existing guide, or skip. Rebuilds the section with tools/build_knowledge.py, passes the QA gate tools/check_knowledge.py, logs every decision in knowledge/content/_sync_log.md, and commits on a branch (merging to main only in publish mode). Never publishes anything dated after today. Runs daily from tools/knowledge-sync.ps1; replaces the cloud "Daily LinkedIn article sync" routine (Dax), retired 2026-11-25.
 tools: Read, Write, Edit, Glob, Grep, Bash
 model: opus
 ---
