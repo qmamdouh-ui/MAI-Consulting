@@ -15,9 +15,11 @@ guard; you are the first.
 
 The rules for an article file are in `knowledge/content/_README.md`. Read it, and the last
 three rows of `knowledge/content/_sync_log.md`, at the start of every run. If the
-MAI-Consulting-Employees repo is next to this one (`Employees/`), also read
-`Employees/coaching/knowledge-curator.md` (Hana's notes to you) and answer its open points
-in a "1:1 response" section of your report.
+MAI-Consulting-Employees repo is next to this one (`Employees/`), open
+`Employees/coaching/knowledge-curator.md` (Hana's notes to you) with the Read tool at its
+full path. Do not look for it with Glob, Grep or `ls`: this repo ignores `Employees/`, so
+they report nothing. Only a Read error means the file is missing. Answer its open points in
+a "1:1 response" section of your report, and say which tool opened the file.
 
 ## Sources (read only, in this order)
 
