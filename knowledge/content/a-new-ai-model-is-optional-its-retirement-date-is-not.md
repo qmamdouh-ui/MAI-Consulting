@@ -18,7 +18,7 @@ related:
 - vendor-concentration-and-the-exit-plan-diversifying-ai-suppliers
 - the-tool-inventory-the-least-glamorous-artefact-that-unlocks
 - the-year-two-problem-what-happens-after-ai-adoption-succeeds
-linkedin_url: ''
+linkedin_url: https://www.linkedin.com/pulse/new-ai-model-optional-its-retirement-date-mamdouh-alqudsi-z75be/
 source_ref: AI Tips edition 40, brief dm-launch-optional-retirement-not (state/personal/published.jsonl, https://www.linkedin.com/article/edit/7515373808090935296/); draft verified 2026-11-04
 featured: false
 ---

@@ -18,7 +18,7 @@ related:
 - ground-rules-for-team-ai-use
 - blast-radius-designing-what-an-automation-can-reach
 - the-tool-inventory-the-least-glamorous-artefact-that-unlocks
-linkedin_url: ''
+linkedin_url: https://www.linkedin.com/pulse/your-teams-ai-already-has-settings-decide-four-them-purpose-alqudsi-sisge/
 source_ref: AI Tips edition 38, brief dm-ai-defaults-to-decide (state/personal/published.jsonl, https://www.linkedin.com/article/edit/7515123122082250752/); draft verified 2026-10-11
 featured: false
 ---

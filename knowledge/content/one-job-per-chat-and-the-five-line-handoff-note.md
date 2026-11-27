@@ -19,7 +19,7 @@ related:
 - prompt-in-short-checked-steps
 - stop-re-explaining-projects-and-skills
 - ten-minutes-to-see-what-your-ai-remembers-about-you
-linkedin_url: ''
+linkedin_url: https://www.linkedin.com/pulse/when-start-new-chat-5-line-note-carries-over-mamdouh-alqudsi-ug5de/
 source_ref: AI Tips edition 43, brief l2-one-job-per-chat (state/personal/published.jsonl, https://www.linkedin.com/article/edit/7516460931908882432/); draft verified 2026-11-04
 featured: false
 ---

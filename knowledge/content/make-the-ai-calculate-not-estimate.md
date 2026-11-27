@@ -19,7 +19,7 @@ related:
 - check-ai-output-before-it-ships
 - getting-work-into-and-out-of-claude-and-gemini
 - finance-and-administration
-linkedin_url: ''
+linkedin_url: https://www.linkedin.com/pulse/make-ai-calculate-estimate-spreadsheet-questions-claude-alqudsi-gvf4e/
 source_ref: AI Tips edition 37, brief l2-make-the-ai-calculate (state/personal/published.jsonl, https://www.linkedin.com/article/edit/7515127983276359680/); draft verified 2026-10-11
 featured: false
 ---

@@ -19,7 +19,7 @@ related:
 - prompt-in-short-checked-steps
 - context-engineering-vs-prompt-engineering
 - ground-rules-for-team-ai-use
-linkedin_url: ''
+linkedin_url: https://www.linkedin.com/pulse/say-brief-out-loud-better-context-one-minute-mamdouh-alqudsi-a1xge/
 source_ref: AI Tips edition 44, brief l2-say-the-brief-out-loud (state/personal/published.jsonl, https://www.linkedin.com/article/edit/7516098545188364289/); draft verified 2026-11-04
 featured: false
 ---

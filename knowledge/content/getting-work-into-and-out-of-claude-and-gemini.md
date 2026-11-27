@@ -11,7 +11,7 @@ series: work-with-ai
 series_order: 10
 tags: [uploads, file export, screenshots, claude, gemini]
 related: [make-the-ai-calculate-not-estimate, check-ai-output-before-it-ships, ai-assisted-decision-documents]
-linkedin_url: ''
+linkedin_url: https://www.linkedin.com/pulse/save-every-way-out-claude-gemini-mamdouh-alqudsi-emble/
 source_ref: 'AI Tips edition 42, brief l2-show-the-screen (https://www.linkedin.com/article/edit/7515125489779515392/, 2026-11-17) and edition 45, brief l2-in-and-out-reference (https://www.linkedin.com/article/edit/7515736835864616962/, 2026-11-26), state/personal/published.jsonl; drafts verified 2026-11-04; newsletter ed 34 (long-files-messy-text)'
 featured: false
 ---

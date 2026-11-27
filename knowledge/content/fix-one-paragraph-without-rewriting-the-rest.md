@@ -19,7 +19,7 @@ related:
 - prompt-in-short-checked-steps
 - check-ai-output-before-it-ships
 - one-report-many-audiences-with-ai
-linkedin_url: ''
+linkedin_url: https://www.linkedin.com/pulse/fix-one-paragraph-without-rewriting-rest-mamdouh-alqudsi-ssowe/
 source_ref: AI Tips edition 39, brief l2-edit-the-passage (state/personal/published.jsonl, https://www.linkedin.com/article/edit/7523759641571291136/); draft verified 2026-11-04
 featured: false
 ---

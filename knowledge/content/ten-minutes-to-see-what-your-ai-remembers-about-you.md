@@ -20,7 +20,7 @@ related:
 - stop-re-explaining-projects-and-skills
 - ground-rules-for-team-ai-use
 - what-personal-data-means-once-a-prompt-leaves-the-building
-linkedin_url: ''
+linkedin_url: https://www.linkedin.com/pulse/10-minutes-see-what-your-ai-remembers-you-mamdouh-alqudsi-q3ave/
 source_ref: AI Tips edition 41, brief l2-read-what-it-remembers (state/personal/published.jsonl, https://www.linkedin.com/article/edit/7523764509593812992/); draft verified 2026-11-04
 featured: false
 ---
