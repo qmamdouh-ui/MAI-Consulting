@@ -996,7 +996,28 @@ function build(){
       });
   }
   function A() { return AGT[lang] || AGT.en; }
-  function logT(r, t) { S.log.push({ r: r, t: t }); if (S.log.length > 60) S.log.shift(); }
+  function logT(r, t) { S.log.push({ r: r, t: t }); if (S.log.length > 60) S.log.shift(); persist(); }
+  /* The conversation survives a refresh or a move to another page in the same tab. It is kept in
+     sessionStorage, which the browser clears when the tab closes; nothing extra leaves the browser. */
+  var STORE = "mai-ina-v1";
+  function persist() {
+    try {
+      sessionStorage.setItem(STORE, JSON.stringify({ at: Date.now(), lang: lang, open: box.classList.contains("open"), S: S,
+        llm: { sid: LLM.sid, msgs: LLM.msgs.slice(-16), down: LLM.down, sent: LLM.sent } }));
+    } catch (e) {}
+  }
+  function restore() {
+    var d;
+    try { d = JSON.parse(sessionStorage.getItem(STORE) || "null"); } catch (e) { d = null; }
+    if (!d || !d.S || !d.S.log || !d.S.log.length || Date.now() - d.at > 6 * 3600e3) return;
+    S = d.S;
+    if (d.llm) { LLM.sid = d.llm.sid || LLM.sid; LLM.msgs = d.llm.msgs || []; LLM.down = !!d.llm.down; LLM.sent = !!d.llm.sent; }
+    /* a question still waiting for its answer when the page changed is not resent */
+    while (LLM.msgs.length && LLM.msgs[LLM.msgs.length - 1].role === "user") LLM.msgs.pop();
+    if (d.lang && UI[d.lang]) setLang(d.lang);
+    S.log.forEach(function (t) { add(t.r === "u" ? "user" : "bot", linkify(esc(t.t))); });
+    if (d.open) open(true);
+  }
   function say(html, plain) { add("bot", html); logT("b", plain || html.replace(/<[^>]*>/g, "")); }
   function pick(a) { return a[Math.floor(Math.random() * a.length)]; }
   /* figures in knowledge answers are kept as written */
@@ -1174,7 +1195,8 @@ function build(){
   }
 
   box.querySelector("#mai-chat-f").addEventListener("submit",function(ev){ev.preventDefault(); ask(inp.value);});
-  function open(o){ box.classList.toggle("open",o); btn.setAttribute("aria-expanded",o?"true":"false"); if(o){ if(!m.children.length){ say(esc(A().open)); renderChips(A().openChips);} inp.focus(); } }
+  function open(o){ box.classList.toggle("open",o); btn.setAttribute("aria-expanded",o?"true":"false"); if(o){ if(!m.children.length){ say(esc(A().open)); renderChips(A().openChips);} inp.focus(); } if(S.log.length) persist(); }
+  restore();
   btn.onclick=function(){open(!box.classList.contains("open"));};
   box.querySelector(".mai-chat-x").onclick=function(){open(false);};
   document.addEventListener("keydown",function(e){ if(e.key==="Escape") open(false); });

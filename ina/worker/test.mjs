@@ -23,9 +23,12 @@ globalThis.fetch = async (url, init) => {
     return new Response("{}", { status: 201 });
   }
   const b = JSON.parse(init.body);
+  sentBody = b;
   sentSystem = b.system.map((s) => s.text).join("\n");
-  return new Response(JSON.stringify({ content: [{ type: "text", text: 'This sounds like a case for the AI Use Policy. The call is where we confirm it.\n<ina-meta>{"stage":"suggest","need":"policy","suggested":["policy"],"call_requested":false,"lang":"en","flags":["price_pressed"],"lead":{"name":"","email":"a@b.org","organisation":""}}</ina-meta>' }], usage: { input_tokens: 1, output_tokens: 1 } }), { status: 200 });
+  return new Response(JSON.stringify({ content: [{ type: "thinking", thinking: "" }, { type: "text", text: modelText }], stop_reason: modelStop, usage: { input_tokens: 1, output_tokens: 1 } }), { status: 200 });
 };
+const FULL = 'This sounds like a case for the AI Use Policy. The call is where we confirm it.\n<ina-meta>{"stage":"suggest","need":"policy","suggested":["policy"],"call_requested":false,"lang":"en","flags":["price_pressed"],"lead":{"name":"","email":"a@b.org","organisation":""}}</ina-meta>';
+let modelText = FULL, modelStop = "end_turn", sentBody = null;
 
 const post = (origin, body, ip = "1.1.1.1") =>
   worker.fetch(new Request("https://w/chat", { method: "POST", headers: { Origin: origin, "CF-Connecting-IP": ip, "content-type": "application/json" }, body: JSON.stringify(body) }), env);
@@ -77,9 +80,26 @@ const all = (await r.text()).trim().split("\n").map((l) => JSON.parse(l));
 const t = all.find((x) => x.source === "test");
 ok(t && t.tester === "mai-page-engagement" && t.scenario.startsWith("A funder"), "test conversation marked with agent and scenario");
 
+// trailer variants the live model has produced (27 Nov logs)
+const vpost = (n) => post("https://mai4consulting.com", { ...good, session: "variant" + n + "abcd" }, "9.9.9." + n);
+modelText = "Bonjour.\n\n`" + FULL.split("\n")[1] + "`";
+d = await (await vpost(1)).json();
+ok(d.reply === "Bonjour." && d.meta.suggested[0] === "policy", "trailer in backticks: stripped and parsed");
+modelText = 'Bonjour.\n\n``\n<ina-meta>{"stage":"sugg'; modelStop = "max_tokens";
+d = await (await vpost(2)).json();
+ok(d.reply === "Bonjour.", "cut-off trailer and stray backticks never reach the visitor");
+modelText = '<ina-meta>{"stage":"closed"}</ina-meta>'; modelStop = "refusal";
+r = await vpost(3);
+ok(r.status === 502, "a reply with no text is an error, so the page falls back");
+modelText = FULL; modelStop = "end_turn";
+ok(sentBody.max_tokens >= 2000 && sentBody.output_config.effort === "low", "room for thinking: max_tokens " + sentBody.max_tokens + ", effort low");
+r = await worker.fetch(new Request(`https://w/logs?date=${day}`, { headers: { Authorization: "Bearer tok" } }), env);
+const vlog = (await r.text()).trim().split("\n").map((l) => JSON.parse(l));
+ok(vlog.find((x) => x.session === "variant2abcd").turns.some((t) => t.stop === "max_tokens") && vlog.find((x) => x.session === "variant3abcd").turns.some((t) => t.text === "empty_reply_refusal"), "stop reason logged");
+
 let res = await flush(env);
 const pushed = [...gh.keys()][0];
 ok(res[day] === "pushed" && pushed === `agent-logs/site-intake/${day}.jsonl`, "log pushed to GitHub: " + JSON.stringify(res));
-ok(gh.get(pushed).trim().split("\n").length === all.length, "GitHub copy holds every conversation");
+ok(gh.get(pushed).trim().split("\n").length === vlog.length, "GitHub copy holds every conversation");
 res = await flush(env);
 ok(res[day] === "unchanged", "second flush makes no commit");

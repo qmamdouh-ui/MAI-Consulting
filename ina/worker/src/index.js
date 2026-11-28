@@ -66,7 +66,10 @@ async function chat(req, env, c, tester) {
     headers: { "content-type": "application/json", "x-api-key": env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01" },
     body: JSON.stringify({
       model: env.MODEL,
-      max_tokens: 700,
+      // The model thinks before it answers and that thinking counts against max_tokens: at 700 the reply or its
+      // trailer was cut off. Low effort keeps the thinking short; the limit leaves room for both.
+      max_tokens: 4000,
+      output_config: { effort: "low" },
       system: [
         { type: "text", text: PROMPT },
         { type: "text", text: "# Knowledge base\n\n" + KNOWLEDGE, cache_control: { type: "ephemeral" } },
@@ -90,9 +93,13 @@ async function chat(req, env, c, tester) {
     }
   }
   // An unclosed trailer (output cut off, or the closing tag missing) must never reach the visitor.
-  const reply = raw.replace(META_RE, "").replace(/<ina-meta>[\s\S]*$/i, "").trim();
-  if (!reply) return json({ error: "empty" }, 502, c.headers);
-  await append(env, day, session, body, turns, { reply, meta, usage: data.usage || null }, null, tester);
+  // Backticks the model sometimes puts around the trailer go with it.
+  const reply = raw.replace(META_RE, "").replace(/<ina-meta>[\s\S]*$/i, "").replace(/[`\s]+$/, "").trim();
+  if (!reply) {
+    await append(env, day, session, body, turns, null, "empty_reply_" + (data.stop_reason || "unknown"), tester);
+    return json({ error: "empty" }, 502, c.headers);
+  }
+  await append(env, day, session, body, turns, { reply, meta, usage: data.usage || null, stop: data.stop_reason || null }, null, tester);
   return json(
     { reply, meta: { lang: meta.lang, need: meta.need, suggested: meta.suggested, call_requested: !!meta.call_requested, lead: meta.lead } },
     200,
@@ -115,7 +122,7 @@ async function append(env, day, session, body, turns, result, error, tester) {
   };
   const now = new Date().toISOString();
   prev.turns.push({ at: now, role: "visitor", text: turns[turns.length - 1].content });
-  if (result) prev.turns.push({ at: now, role: "ina", text: result.reply, meta: result.meta, usage: result.usage });
+  if (result) prev.turns.push({ at: now, role: "ina", text: result.reply, meta: result.meta, usage: result.usage, stop: result.stop });
   if (error) prev.turns.push({ at: now, role: "system", text: error });
   prev.updated = now;
   prev.model = env.MODEL;
